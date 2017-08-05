@@ -5,11 +5,16 @@
 #' @return A dataframe with all the documents in the filing along with their
 #'    meta info
 #'
-#' @importFrom xml2 read_html
+#' @importFrom methods is
 #'
 #' @export
 filing_documents <- function(href) {
-  data <- read_html(href)
+  # We want to accept a pre-fetched document or possibly a sub-page node
+  if (is(href, "xml_node")) {
+    doc <- href
+  } else {
+    doc <- xml2::read_html(href)
+  }
 
   entries_xpath <- paste0(
     "//table[@summary='Document Format Files']/tr[not(descendant::th)]|",
@@ -24,7 +29,7 @@ filing_documents <- function(href) {
     "size" = "td[5]"
     )
 
-  res <- map_xml(data, entries_xpath, info_pieces)
+  res <- map_xml(doc, entries_xpath, info_pieces)
 
   return(res)
 }

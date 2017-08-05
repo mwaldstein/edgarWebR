@@ -1,6 +1,6 @@
 Package: edgarWebR
 Title: SEC Filings Access for R
-Version: 0.0.1
+Version: 0.0.2
 Author: Micah J Waldstein <micah@waldste.in>
 Maintainer: Micah J Waldstein <micah@waldste.in>
 Description: The SEC provides a web interface to access its information about
@@ -10,12 +10,17 @@ Date: 2017-07-27
 Depends: 
     R (>= 3.3.2)
 Imports:
-    xml2
+    xml2,
+    methods
 Suggests:
     knitr,
+    rmarkdown,
     devtools,
     roxygen2,
-    testthat
+    testthat,
+    ggplot2,
+    dplyr
+VignetteBuilder: knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

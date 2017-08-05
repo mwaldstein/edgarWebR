@@ -12,7 +12,16 @@ EdgarWebR does *not* provide any functionality to extract financial data or
 other information from filings, only the metadata and company information. For
 processing of the financia data.
 
-## Other Packages
+### Installation
+Until the API stablilizes, the package is not yet available from CRAN. The best
+way to install it is from github using devtools:
+```{r}
+# Install the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("mwaldstein/edgarWebR")
+```
+
+## Related Packages
  * [XBRL](https://cran.r-project.org/web/packages/XBRL/index.html) - Low level
    extration of data from XBRL financial files
  * [finstr](https://github.com/bergant/finstr) - Process XBRL to extract data,

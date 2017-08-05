@@ -4,20 +4,25 @@
 #' 
 #' @return A dataframe with all the funds associated with a given filing
 #'
-#' @importFrom xml2 read_html
+#' @importFrom methods is
 #'
 #' @export
 filing_funds <- function(href) {
-  data <- xml2::read_html(href)
+  # We want to accept a pre-fetched document or possibly a sub-page node
+  if (is(href, "xml_node")) {
+    doc <- href
+  } else {
+    doc <- xml2::read_html(href)
+  }
 
   entries_xpath <- "//td[@class='classContract']"
 
   #entries <- xml2::xml_find_all(data, entries_xpath)
 
   info_pieces <- list(
-    "cik" = "preceding::td[@class='CIKname'][descendant::a][1]/a/text()",
-    "cik_href" = "preceding::td[@class='CIKname'][descendant::a][1]/a/@href",
-    "series" = "preceding::td[@class='seriesName'][1]/a/text()",
+    "cik" = "preceding::td[@class='CIKname']/a",
+    "cik_href" = "preceding::td[@class='CIKname']/a/@href",
+    "series" = "preceding::td[@class='seriesName'][1]/a",
     "series_href" = "preceding::td[@class='seriesName'][1]/a/@href",
     "series_name" = "preceding::td[@class='seriesName'][1]/following-sibling::td[2]/text()",
     "contract" = "a/text()",
@@ -26,7 +31,7 @@ filing_funds <- function(href) {
     "ticker" = "following-sibling::td[3]/text()"
     )
 
-  res <- map_xml(data, entries_xpath, info_pieces)
+  res <- map_xml(doc, entries_xpath, info_pieces)
 
   return(res)
 }

@@ -9,6 +9,8 @@
 #' @param count Number of filings to fetch per page
 #' @param page Which page of results to return
 #'
+#' @importFrom utils URLencode
+#'
 #' @return A xml document
 browse_edgar <- function(ticker, 
                          ownership = FALSE, 
@@ -17,9 +19,9 @@ browse_edgar <- function(ticker,
                          count = 40,
                          page = 1) {
   href <- paste0("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany",
-                "&CIK=", ticker,
-                "&owner=", ifelse(ownership,"include","exclude"),
-                "&type=", type,
+                "&CIK=", URLencode(ticker, reserved=TRUE),
+                "&owner=", ifelse(ownership, "include", "exclude"),
+                "&type=", URLencode(type, reserved=TRUE),
                 "&dateb=", before,
                 "&start=", (page - 1) * count,
                 "&count=", count,

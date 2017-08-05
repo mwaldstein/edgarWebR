@@ -1,5 +1,5 @@
 all: clean doc build
-.PHONY: doc clean
+.PHONY: doc clean build vignettes check
 
 # build package documentation
 doc:
@@ -8,10 +8,20 @@ doc:
 test:
 	Rscript -e 'devtools::test()'
 
-build:
+build: doc
 	Rscript -e 'devtools::build()'
 
-clean:
+vignettes:
+	Rscript -e 'devtools::build_vignettes()'
 
-cran_check: doc build
-	cd ..;R CMD check --as-cran edgarWebR_0.0.1.tar.gz
+clean:
+	rm ../edgarWebR_*.tar.gz
+
+cran_check: clean doc build
+	cd ..;R CMD check --as-cran edgarWebR_*.tar.gz
+
+install:
+	Rscript -e 'devtools::install()'
+
+check: clean build
+	cd ..;R CMD check edgarWebR_*.tar.gz

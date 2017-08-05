@@ -1,0 +1,109 @@
+---
+title: "Introducing edgarWebR"
+output: rmarkdown::html_vignette
+date: "August 2, 2017"
+autho: "Micah J Waldstein <micah@waldste.in>"
+vignette: >
+  %\VignetteIndexEntry{Introducing edgarWebR}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(edgarWebR)
+set.seed(0451)
+```
+There are plenty of packages for R that allow for fetching and manipulation of
+companies' financial data, often fetching that direct from public filings with
+the SEC. All of these packages have the goal of getting to the XBRL data,
+containing financial statements, typically in annual (10-K) or quarterly (10-Q)
+filings.
+
+SEC filings however contain far more information. edgarWebR is the first step
+in accessing that data by providing an interface to the SEC EDGAR search tools
+and the metadata they provide.
+
+## Current Features
+ * Search for companies and mutual funds.
+ * List filings for a company or mutual fund.
+ * Get all information associated with a particular filing
+
+## Simple Usecase
+Using information about filings, we can use edgarWebR to see how long after the
+close of a financial period it takes for a company to make a filing. We can
+also see how that time has changed. 
+
+### Get Data
+First, we'll fetch a bunch of 10-K and 10-Q filings for our given company using
+`company_filings()`. To make sure we're going far enough back we'll take a peak
+at the tail of our results
+```{r}
+ticker <- "EA"
+
+filings <- company_filings(ticker, type="10-", count=100)
+# Specifying the type provides all forms that start with 10-, so we need to
+# manually filter.
+filings <- filings[filings$type == "10-K" | filings$type == "10-Q",]
+knitr::kable(tail(filings)[,c("filing_date","accession","size", "href")])
+```
+
+We're back to 1995 which seems good enough for our purposes, so next we'll get
+the filing information for each filing.
+
+```{r cache=TRUE}
+# this can take a while - we're fetching ~100 html files!
+filings$info <- lapply(filings$href, filing_information) 
+
+# pull relevant fields out of the info
+filings$filing_delay <- sapply(filings$info, function(info) {
+                                 info$filing_date - info$period_date})
+filings$filing_size <- sapply(filings$info, function(info) {info$filing_bytes})
+filings$documents <- sapply(filings$info, function(info) {info$documents})
+```
+
+### Basic Analysis
+Now our data is arranged, we can run some summary statistics and plots
+```{r}
+library(dplyr)
+library(ggplot2)
+
+filings <- filings %>% select(type, filing_date, filing_delay, filing_size,
+                              documents)
+
+knitr::kable(filings %>% 
+             select(-filing_date) %>% # group_by doesn't like date classes
+             group_by(type) %>% summarize(
+               n=n(),
+               `mean delay (days)` = mean(filing_delay),
+               `median delay (days)` = median(filing_delay),
+               `mean size (KB)` = mean(filing_size / 1024),
+               `mean documents (#)` = mean(documents)
+               )
+             )
+```
+No surprise, yearly filings (10-K's) are larger and take more time than
+quarterly filings (10-K's). Lets see how the times are destributed:
+```{r fig.width=6}
+ggplot(filings, aes(x = factor(type), y=filing_delay)) +
+  geom_violin() + geom_jitter(height = 0, width = 0.1) +
+  labs(x = "Filing Date", y = "Filing delay (days)")
+```
+
+We can alos examine how the filing delay has changed over time:
+```{r fig.width=6}
+ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) + 
+  geom_point() + geom_line() +
+  labs(x = "Filing Type", y = "Filing delay (days)")
+```
+Whether because of some internal change or change to SEC rules, the time
+between the end of the fiscal year and the 10-K has dropped quite a bit, though
+there is still a bit of variation. 
+
+An interesting extension would be to compare the filing delays to the company's
+stock price, overall market performance and other companies to see if there are
+particular drivers to the pattern.
+
+## More to come
+The SEC contains a wealth of information and we're only scratching the surface.
+edgarWebR itself has a lot more functionality than what we've explored here and
+there is more coming.
