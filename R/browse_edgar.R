@@ -9,6 +9,8 @@
 #' @param count Number of filings to fetch per page
 #' @param page Which page of results to return
 #'
+#' @keywords internal
+#'
 #' @importFrom utils URLencode
 #'
 #' @return A xml document

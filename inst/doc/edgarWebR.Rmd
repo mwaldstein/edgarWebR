@@ -2,18 +2,17 @@
 title: "Introducing edgarWebR"
 output: rmarkdown::html_vignette
 date: "August 2, 2017"
+autho: "Micah J Waldstein <micah@waldste.in>"
 vignette: >
   %\VignetteIndexEntry{Introducing edgarWebR}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
-
 ```{r, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 library(edgarWebR)
 set.seed(0451)
 ```
-
 There are plenty of packages for R that allow for fetching and manipulation of
 companies' financial data, often fetching that direct from public filings with
 the SEC. All of these packages have the goal of getting to the XBRL data,
@@ -25,13 +24,11 @@ in accessing that data by providing an interface to the SEC EDGAR search tools
 and the metadata they provide.
 
 ## Current Features
-
  * Search for companies and mutual funds.
  * List filings for a company or mutual fund.
  * Get all information associated with a particular filing
 
 ## Simple Usecase
-
 Using information about filings, we can use edgarWebR to see how long after the
 close of a financial period it takes for a company to make a filing. We can
 also see how that time has changed. 
@@ -62,14 +59,11 @@ filings$filing_delay <- sapply(filings$info, function(info) {
                                  info$filing_date - info$period_date})
 filings$filing_size <- sapply(filings$info, function(info) {info$filing_bytes})
 filings$documents <- sapply(filings$info, function(info) {info$documents})
-# The library returns these as characters for now
-filings$filing_size <- as.numeric(filings$filing_size)
-filings$documents <- as.numeric(filings$documents)
 ```
 
 ### Basic Analysis
-Now our data is arranged an
-```{r fig.width=6}
+Now our data is arranged, we can run some summary statistics and plots
+```{r}
 library(dplyr)
 library(ggplot2)
 
@@ -83,28 +77,51 @@ knitr::kable(filings %>%
                `mean delay (days)` = mean(filing_delay),
                `median delay (days)` = median(filing_delay),
                `mean size (KB)` = mean(filing_size / 1024),
-               `mean documents (#)` = mean(documents)
-               )
+               `mean documents (count)` = mean(documents)
              )
+            )
+```
 
+No surprise, yearly filings (10-K's) are larger and take more time than
+quarterly filings (10-K's). Lets see how the times are destributed:
+
+```{r fig.width=6}
 ggplot(filings, aes(x = factor(type), y=filing_delay)) +
   geom_violin() + geom_jitter(height = 0, width = 0.1) +
   labs(x = "Filing Date", y = "Filing delay (days)")
 ```
 
-No surprise, yearly filings (10-K's) are larger and take more time than
-quarterly filings (10-K's).
-
+We can also examine how the filing delay has changed over time:
 ```{r fig.width=6}
 ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) + 
   geom_point() + geom_line() +
   labs(x = "Filing Type", y = "Filing delay (days)")
 ```
+Whether because of some internal change or change to SEC rules, the time
+between the end of the fiscal year and the 10-K has dropped quite a bit, though
+there is still a bit of variation. 
 
-## Conclusion
-While the original example required manually looking up the links to the XBRL
-files, limiting extensibility, using edgarWebR we can easily fetch filing
-information for any company over any time period with ease.
+An interesting extension would be to compare the filing delays to the company's
+stock price, overall market performance and other companies to see if there are
+particular drivers to the pattern.
+
+```{r fig.width=6}
+ggplot(filings, aes(x = filing_date, y=filing_size/1024, group=type, color=type)) + 
+  geom_point() + geom_line() +
+  labs(x = "Filing Type", y = "Filing Size (KB)")
+```
+The jump in size ~2010 is the requirement for inclusion of financial datafiles
+starting, but there is still interesting variations.
 
 ## More to come
-There are plenty of ways in R to get a company's financials, it is all the
+The SEC contains a wealth of information and we're only scratching the surface.
+edgarWebR itself has a lot more functionality than what we've explored here and
+there is more coming.
+
+## How to Download
+edgarWebR is not yet of CRAN, as the API hasn't stabilized yet. In the
+meantime, you can get a copy from github by using devtools:
+```{r eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("mwaldstein/edgarWebR")
+```

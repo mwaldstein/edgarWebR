@@ -21,3 +21,4 @@ A dataframe with one row per entry and columns from parts
 \description{
 Extracts a dataframe from an xml document.
 }
+\keyword{internal}

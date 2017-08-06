@@ -7,8 +7,9 @@
 #' @param parts a list in the form column name = xpath locator
 #' @param trim a list of columns that need to have whitespace trimmed
 #'
-#' @return A dataframe with one row per entry and columns from parts
+#' @keywords internal
 #'
+#' @return A dataframe with one row per entry and columns from parts
 map_xml <- function(doc, entries_xpath, parts, trim = c()) {
   xml2::xml_ns_strip(doc)
   entries <- xml2::xml_find_all(doc, entries_xpath)

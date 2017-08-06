@@ -21,11 +21,8 @@ filings$filing_delay <- sapply(filings$info, function(info) {
                                  info$filing_date - info$period_date})
 filings$filing_size <- sapply(filings$info, function(info) {info$filing_bytes})
 filings$documents <- sapply(filings$info, function(info) {info$documents})
-# The library returns these as characters for now
-filings$filing_size <- as.numeric(filings$filing_size)
-filings$documents <- as.numeric(filings$documents)
 
-## ----fig.width=6---------------------------------------------------------
+## ------------------------------------------------------------------------
 library(dplyr)
 library(ggplot2)
 
@@ -39,10 +36,11 @@ knitr::kable(filings %>%
                `mean delay (days)` = mean(filing_delay),
                `median delay (days)` = median(filing_delay),
                `mean size (KB)` = mean(filing_size / 1024),
-               `mean documents (#)` = mean(documents)
-               )
+               `mean documents (count)` = mean(documents)
              )
+            )
 
+## ----fig.width=6---------------------------------------------------------
 ggplot(filings, aes(x = factor(type), y=filing_delay)) +
   geom_violin() + geom_jitter(height = 0, width = 0.1) +
   labs(x = "Filing Date", y = "Filing delay (days)")
@@ -51,4 +49,13 @@ ggplot(filings, aes(x = factor(type), y=filing_delay)) +
 ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) + 
   geom_point() + geom_line() +
   labs(x = "Filing Type", y = "Filing delay (days)")
+
+## ----fig.width=6---------------------------------------------------------
+ggplot(filings, aes(x = filing_date, y=filing_size/1024, group=type, color=type)) + 
+  geom_point() + geom_line() +
+  labs(x = "Filing Type", y = "Filing Size (KB)")
+
+## ----eval=FALSE----------------------------------------------------------
+#  # install.packages("devtools")
+#  devtools::install_github("mwaldstein/edgarWebR")
 

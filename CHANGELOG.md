@@ -6,7 +6,7 @@ __WARNING:__ edgarWebR is still in active development and new vesions will
 bread old code.
 
 ## v0.0.2 - The "XPath is is powerful" release
-**_UNSTABE_ - Function calls and returns likely to change without warning**
+**_UNSTABLE_ - Function calls and returns likely to change without warning**
 
 ### Features
  * [filings] `filing_information` provides general filing information
@@ -24,4 +24,4 @@ bread old code.
  * [browse_edgar] escape text fields
 
 ## v0.0.1 - Initial Release
-**_UNSTABE_ - Function calls and returns likely to change without warning**
+**_UNSTABLE_ - Function calls and returns likely to change without warning**

@@ -4,16 +4,18 @@
 #' all the metainformation about the filing. 
 #' 
 #' Information returned:
-#'  * type
-#'  * description
-#'  * accession_number
-#'  * filing_date
-#'  * accepted_date
-#'  * documents
-#'  * period_date
-#'  * changed_date
-#'  * effective_date
-#'  * filing_bytes
+#' \itemize{
+#'  \item type
+#'  \item description
+#'  \item accession_number
+#'  \item filing_date
+#'  \item accepted_date
+#'  \item documents
+#'  \item period_date
+#'  \item changed_date
+#'  \item effective_date
+#'  \item filing_bytes
+#' }
 #' Not all details are valid for all filings, but the column will always be present
 #'
 #' If you know you're going to want all the details of a filing, including documents

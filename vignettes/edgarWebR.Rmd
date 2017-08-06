@@ -77,19 +77,21 @@ knitr::kable(filings %>%
                `mean delay (days)` = mean(filing_delay),
                `median delay (days)` = median(filing_delay),
                `mean size (KB)` = mean(filing_size / 1024),
-               `mean documents (#)` = mean(documents)
-               )
+               `mean documents (count)` = mean(documents)
              )
+            )
 ```
+
 No surprise, yearly filings (10-K's) are larger and take more time than
 quarterly filings (10-K's). Lets see how the times are destributed:
+
 ```{r fig.width=6}
 ggplot(filings, aes(x = factor(type), y=filing_delay)) +
   geom_violin() + geom_jitter(height = 0, width = 0.1) +
   labs(x = "Filing Date", y = "Filing delay (days)")
 ```
 
-We can alos examine how the filing delay has changed over time:
+We can also examine how the filing delay has changed over time:
 ```{r fig.width=6}
 ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) + 
   geom_point() + geom_line() +
@@ -103,7 +105,23 @@ An interesting extension would be to compare the filing delays to the company's
 stock price, overall market performance and other companies to see if there are
 particular drivers to the pattern.
 
+```{r fig.width=6}
+ggplot(filings, aes(x = filing_date, y=filing_size/1024, group=type, color=type)) + 
+  geom_point() + geom_line() +
+  labs(x = "Filing Type", y = "Filing Size (KB)")
+```
+The jump in size ~2010 is the requirement for inclusion of financial datafiles
+starting, but there is still interesting variations.
+
 ## More to come
 The SEC contains a wealth of information and we're only scratching the surface.
 edgarWebR itself has a lot more functionality than what we've explored here and
 there is more coming.
+
+## How to Download
+edgarWebR is not yet of CRAN, as the API hasn't stabilized yet. In the
+meantime, you can get a copy from github by using devtools:
+```{r eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("mwaldstein/edgarWebR")
+```

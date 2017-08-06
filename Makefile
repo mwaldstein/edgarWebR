@@ -15,7 +15,7 @@ vignettes:
 	Rscript -e 'devtools::build_vignettes()'
 
 clean:
-	rm ../edgarWebR_*.tar.gz
+	-rm -f ../edgarWebR_*.tar.gz
 
 cran_check: clean doc build
 	cd ..;R CMD check --as-cran edgarWebR_*.tar.gz
