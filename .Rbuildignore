@@ -1,4 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 Makefile
-^\..Rcheck
+^\.\.Rcheck
+^\.gitignore
+^vignettes/*.html
+^vignettes/.*\.html$
+^vignettes/.*_cache
+^vignettes/.*_files

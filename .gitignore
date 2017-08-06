@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 ..Rcheck/
+# when directly testing vignettes, some garbage appears
+vignettes/*.html
+vignettes/*_cache/
+vignettes/*_files/

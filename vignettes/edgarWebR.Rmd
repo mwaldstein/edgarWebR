@@ -11,6 +11,9 @@ vignette: >
 ```{r, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 library(edgarWebR)
+library(dplyr)
+library(purrr)
+library(ggplot2)
 set.seed(0451)
 ```
 There are plenty of packages for R that allow for fetching and manipulation of
@@ -50,33 +53,30 @@ knitr::kable(tail(filings)[,c("filing_date","accession","size", "href")])
 We're back to 1995 which seems good enough for our purposes, so next we'll get
 the filing information for each filing.
 
+So far we've done everything in base R, but now we'll use some useful functions
+from dplyr and purrr to make things a bit easier.
 ```{r cache=TRUE}
 # this can take a while - we're fetching ~100 html files!
-filings$info <- lapply(filings$href, filing_information) 
+filing_infos <- map_df(filings$href, filing_information)
 
-# pull relevant fields out of the info
-filings$filing_delay <- sapply(filings$info, function(info) {
-                                 info$filing_date - info$period_date})
-filings$filing_size <- sapply(filings$info, function(info) {info$filing_bytes})
-filings$documents <- sapply(filings$info, function(info) {info$documents})
+filings <- bind_cols(filings, filing_infos)
+filings$filing_delay <- filings$filing_date - filings$period_date
+
+# Take a peak at the data
+knitr::kable(head(filings) %>% select(filing_date, filing_delay, type,
+                                      documents, size, filing_bytes))
 ```
 
 ### Basic Analysis
-Now our data is arranged, we can run some summary statistics and plots
+Now our data is arranged, we can run some summary statistics and plot using
+ggplot2.
 ```{r}
-library(dplyr)
-library(ggplot2)
-
-filings <- filings %>% select(type, filing_date, filing_delay, filing_size,
-                              documents)
-
 knitr::kable(filings %>% 
-             select(-filing_date) %>% # group_by doesn't like date classes
              group_by(type) %>% summarize(
                n=n(),
                `mean delay (days)` = mean(filing_delay),
                `median delay (days)` = median(filing_delay),
-               `mean size (KB)` = mean(filing_size / 1024),
+               `mean size (KB)` = mean(filing_bytes / 1024),
                `mean documents (count)` = mean(documents)
              )
             )
@@ -93,7 +93,7 @@ ggplot(filings, aes(x = factor(type), y=filing_delay)) +
 
 We can also examine how the filing delay has changed over time:
 ```{r fig.width=6}
-ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) + 
+ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) +
   geom_point() + geom_line() +
   labs(x = "Filing Type", y = "Filing delay (days)")
 ```
@@ -106,7 +106,7 @@ stock price, overall market performance and other companies to see if there are
 particular drivers to the pattern.
 
 ```{r fig.width=6}
-ggplot(filings, aes(x = filing_date, y=filing_size/1024, group=type, color=type)) + 
+ggplot(filings, aes(x = filing_date, y=filing_bytes/1024, group=type, color=type)) +
   geom_point() + geom_line() +
   labs(x = "Filing Type", y = "Filing Size (KB)")
 ```

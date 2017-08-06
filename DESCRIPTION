@@ -19,7 +19,8 @@ Suggests:
     roxygen2,
     testthat,
     ggplot2,
-    dplyr
+    dplyr,
+    purrr
 VignetteBuilder: knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
