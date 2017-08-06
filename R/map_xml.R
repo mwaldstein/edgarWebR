@@ -50,7 +50,7 @@ map_xml <- function(doc, entries_xpath, parts, trim = c()) {
 
   date_cols <- colnames(res)[grepl("date$", colnames(res))]
   for (ref in date_cols) {
-    res[[ref]] <- as.POSIXlt(res[[ref]])
+    res[[ref]] <- as.POSIXct(res[[ref]])
   }
 
   return(res)
