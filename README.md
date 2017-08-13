@@ -20,6 +20,7 @@ all of the provided tools, but for now it is focused on covering company and
 fund search and resultant filings.
 
 *Search Interfaces:*
+
 | Tool | URL | edgarWebR function(s) |
 | --- | --- | --- |
 | Company | https://www.sec.gov/edgar/searchedgar/companysearch.html | `company_information` |
