@@ -1,5 +1,8 @@
 # edgarWebR
 
+[![Travis-CI Build
+Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
+
 * Author/Maintainer: [Micah J Waldstein](https://micah.waldste.in)
 * License: [MIT](https://opensource.org/licenses/MIT)
 

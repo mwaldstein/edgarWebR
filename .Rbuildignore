@@ -8,3 +8,4 @@ Makefile
 ^vignettes/.*cache
 ^vignettes/.*figure
 ^vignettes/.*_files
+^\.travis\.yml$
