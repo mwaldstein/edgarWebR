@@ -13,15 +13,14 @@ Imports:
     xml2,
     methods
 Suggests:
-    knitr,
-    rmarkdown,
-    tidyr,
-    devtools,
-    roxygen2,
-    testthat,
-    ggplot2,
+    covr,
     dplyr,
-    purrr
+    ggplot2,
+    knitr,
+    purrr,
+    rmarkdown,
+    testthat,
+    tidyr
 VignetteBuilder: knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
