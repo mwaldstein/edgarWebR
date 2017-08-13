@@ -30,7 +30,7 @@ live-test:
 	Rscript -e 'testthat::auto_test_package()'
 
 coverage:
-	Rscript -e 'covr::report(covr::package_coverage(), file="./edgarWebR-cov.html", browse = FALSE)'
+	Rscript -e 'covr::report(covr::package_coverage(), file="~/public_html/edgarWebR-cov.html", browse = FALSE)'
 
 lint:
 	Rscript -e 'lintr::lint_package()'
