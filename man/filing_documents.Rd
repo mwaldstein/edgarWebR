@@ -4,15 +4,27 @@
 \alias{filing_documents}
 \title{SEC Filing Documents}
 \usage{
-filing_documents(href)
+filing_documents(x)
 }
 \arguments{
-\item{href}{URL to a SEC filing index page}
+\item{x}{URL or xml_document for a SEC filing index page}
 }
 \value{
 A dataframe with all the documents in the filing along with their
    meta info
 }
 \description{
-SEC Filing Documents
+If you know you're going to want all the details of a filing, including documents
+funds and filers, look at `filing_details`
+}
+\details{
+Information returned:
+\itemize{
+ \item seq
+ \item description
+ \item document
+ \item href
+ \item type
+ \item size
+}
 }

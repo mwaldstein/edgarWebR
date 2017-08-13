@@ -6,11 +6,16 @@
 #' @param entries_xpath an xpath locator for all starting points
 #' @param parts a list in the form column name = xpath locator
 #' @param trim a list of columns that need to have whitespace trimmed
+#' @param integers a list of columns that need to converted to integers
 #'
 #' @keywords internal
 #'
 #' @return A dataframe with one row per entry and columns from parts
-map_xml <- function(doc, entries_xpath, parts, trim = c()) {
+map_xml <- function(doc,
+                    entries_xpath,
+                    parts,
+                    trim = c(),
+                    integers = c()) {
   xml2::xml_ns_strip(doc)
   entries <- xml2::xml_find_all(doc, entries_xpath)
 
@@ -36,6 +41,14 @@ map_xml <- function(doc, entries_xpath, parts, trim = c()) {
 
   for (col in trim) {
     res[[col]] <- trimws(res[[col]])
+  }
+
+  for (col in integers) {
+    # To suppress warnings that don't matter, first convert spaces to NA
+    # from https://stackoverflow.com/questions/43734293/remove-non-breaking-space-character-in-string-in-r-on-linux
+    empties <- grepl("(*UCP)^\\s*$", res[[col]], perl = TRUE)
+    res[empties, col] <- NA
+    res[[col]] <- as.integer(res[[col]])
   }
 
   link_cols <- colnames(res)[grepl("href$", colnames(res))]

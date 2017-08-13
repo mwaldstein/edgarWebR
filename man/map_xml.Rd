@@ -4,7 +4,7 @@
 \alias{map_xml}
 \title{Map XML Entries}
 \usage{
-map_xml(doc, entries_xpath, parts, trim = c())
+map_xml(doc, entries_xpath, parts, trim = c(), integers = c())
 }
 \arguments{
 \item{doc}{An XML document}
@@ -14,6 +14,8 @@ map_xml(doc, entries_xpath, parts, trim = c())
 \item{parts}{a list in the form column name = xpath locator}
 
 \item{trim}{a list of columns that need to have whitespace trimmed}
+
+\item{integers}{a list of columns that need to converted to integers}
 }
 \value{
 A dataframe with one row per entry and columns from parts

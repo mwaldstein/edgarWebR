@@ -1,19 +1,14 @@
 #' SEC Filing Funds
 #'
-#' @param href URL to a SEC filing index page
+#' @param x URL to a SEC filing index page
 #' 
 #' @return A dataframe with all the funds associated with a given filing
 #'
 #' @importFrom methods is
 #'
 #' @export
-filing_funds <- function(href) {
-  # We want to accept a pre-fetched document or possibly a sub-page node
-  if (is(href, "xml_node")) {
-    doc <- href
-  } else {
-    doc <- xml2::read_html(href)
-  }
+filing_funds <- function(x) {
+  doc <- if (is(x,"xml_node")) { x } else { xml2::read_html(x) }
 
   entries_xpath <- "//td[@class='classContract']"
 

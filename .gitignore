@@ -4,5 +4,7 @@
 ..Rcheck/
 # when directly testing vignettes, some garbage appears
 vignettes/*.html
-vignettes/*_cache/
+vignettes/*.md
+vignettes/*cache/
+vignettes/*figure/
 vignettes/*_files/

@@ -1,11 +1,11 @@
 context("running company_filings")
 
-test_that("running ", {
+test_that("running", {
             expect_error(company_filings("EAR"))
             res <- company_filings("AAPL")
             expect_is(res, "data.frame")
 
-            expect_length(res, 10)
+            expect_length(res, 11)
             expect_equal(nrow(res), 40)
 })
 

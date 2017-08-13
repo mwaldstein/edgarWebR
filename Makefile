@@ -25,3 +25,12 @@ install:
 
 check: clean build
 	cd ..;R CMD check edgarWebR_*.tar.gz
+
+live-test:
+	Rscript -e 'testthat::auto_test_package()'
+
+coverage:
+	Rscript -e 'covr::report(covr::package_coverage(), file="./edgarWebR-cov.html", browse = FALSE)'
+
+lint:
+	Rscript -e 'lintr::lint_package()'

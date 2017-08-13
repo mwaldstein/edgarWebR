@@ -1,12 +1,10 @@
-#' SEC Filing Details
+#' SEC Company Details
 #'
 #' The SEC generates a html page as an index for every filing it receives containing
 #' all the metainformation about the filing. We extract 3 main types of information: 
 #'\itemize{
-#'  \item Filing Information - Filing date, accepted date, etc.
-#'  \item Documents - All the documents included in the filing
-#'  \item Filers - Companies included in the filing
-#'  \item Funds - Funds included in the filing
+#'  \item Company Information - Filing date, accepted date, etc.
+#'  \item Filings - Companies included in the filing
 #'}
 #'
 #' For a company, there is typically a single filer and no funds, but many filings
@@ -22,24 +20,28 @@
 #' @importFrom methods is
 #'
 #' @export
-filing_details <- function(x) {
+company_details <- function(x, 
+                         ownership = FALSE, 
+                         type = "",
+                         before="", 
+                         count = 40,
+                         page = 1) {
   # We want to accept a pre-fetched document or possibly a sub-page node
-  doc <- if (is(x, "xml_node")) { x } else { xml2::read_html(x) }
+  doc <- if (is(x, "xml_node")) { x } else {
+           browse_edgar(x,
+                        ownership = ownership,
+                        type = type,
+                        before = before,
+                        count = count,
+                        page = page)
+  }
 
   # 1 - Basic info
-  info <- filing_information(doc)
+  info <- company_information(doc)
 
   # 2 - Get documents
-  documents <- filing_documents(doc)
-
-  # 2 - Extract key/value pairs from he  # 3 - Get filers
-  filers <- filing_filers(doc)
-
-  # 4 - Get funds
-  funds <- filing_funds(doc)
+  filings <- company_filings(doc)
 
   return(list("information" = info,
-              "documents" = documents,
-              "filers" = filers,
-              "funds" = funds))
+              "filings" = filings))
 }

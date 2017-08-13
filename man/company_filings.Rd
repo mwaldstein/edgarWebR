@@ -4,11 +4,11 @@
 \alias{company_filings}
 \title{SEC Company Filings}
 \usage{
-company_filings(ticker, ownership = FALSE, type = "", before = "",
+company_filings(x, ownership = FALSE, type = "", before = "",
   count = 40, page = 1)
 }
 \arguments{
-\item{ticker}{either a stock ticker or CIK number}
+\item{x}{either a stock ticker or CIK number}
 
 \item{ownership}{boolean for inclusion of company change filings}
 

@@ -1,6 +1,19 @@
 #' SEC Filing Documents
 #'
-#' @param href URL to a SEC filing index page
+#' If you know you're going to want all the details of a filing, including documents
+#' funds and filers, look at `filing_details`
+#'
+#' Information returned:
+#' \itemize{
+#'  \item seq
+#'  \item description
+#'  \item document
+#'  \item href
+#'  \item type
+#'  \item size
+#' }
+#'
+#' @param x URL or xml_document for a SEC filing index page
 #' 
 #' @return A dataframe with all the documents in the filing along with their
 #'    meta info
@@ -8,13 +21,8 @@
 #' @importFrom methods is
 #'
 #' @export
-filing_documents <- function(href) {
-  # We want to accept a pre-fetched document or possibly a sub-page node
-  if (is(href, "xml_node")) {
-    doc <- href
-  } else {
-    doc <- xml2::read_html(href)
-  }
+filing_documents <- function(x) {
+  doc <- if (is(x,"xml_node")) { x } else { xml2::read_html(x) }
 
   entries_xpath <- paste0(
     "//table[@summary='Document Format Files']/tr[not(descendant::th)]|",
@@ -29,7 +37,7 @@ filing_documents <- function(href) {
     "size" = "td[5]"
     )
 
-  res <- map_xml(doc, entries_xpath, info_pieces)
+  res <- map_xml(doc, entries_xpath, info_pieces, integers = c("seq", "size"))
 
   return(res)
 }

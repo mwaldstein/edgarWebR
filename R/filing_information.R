@@ -21,20 +21,15 @@
 #' If you know you're going to want all the details of a filing, including documents
 #' funds and filers, look at `filing_details`
 #'
-#' @param href URL to a SEC filing index page
+#' @param x URL or xml_document for a SEC filing index page
 #' 
 #' @return A dataframe with all the parsed meta-info on the filing
 #'
 #' @importFrom methods is
 #'
 #' @export
-filing_information <- function(href) {
-  # We want to accept a pre-fetched document or possibly a sub-page node
-  if (is(href, "xml_node")) {
-    doc <- href
-  } else {
-    doc <- xml2::read_html(href)
-  }
+filing_information <- function(x) {
+  doc <- if (is(x, "xml_node")) { x } else { xml2::read_html(x) }
 
   info_xpath <- "."
   info_pieces <- list(
@@ -47,13 +42,11 @@ filing_information <- function(href) {
     "period_date" = "//div[@class='infoHead'][. = 'Period of Report']/following-sibling::div[1]",
     "changed_date" = "//div[@class='infoHead'][. = 'Filing Date Changed']/following-sibling::div[1]",
     "effective_date" = "//div[@class='infoHead'][. = 'Effectiveness Date']/following-sibling::div[1]",
-    "filing_bytes" = "//td[@scope='row'][. = 'Complete submission text file']/following-sibling::td[3]"
+    "bytes" = "//td[@scope='row'][. = 'Complete submission text file']/following-sibling::td[3]"
     )
   info_trim <- c("description", "accession_number")
-  info <- map_xml(doc, info_xpath, info_pieces, trim = info_trim)
 
-  info$filing_bytes <- as.numeric(info$filing_bytes)
-  info$documents <- as.numeric(info$documents)
+  info <- map_xml(doc, info_xpath, info_pieces, trim = info_trim, integers = c("bytes", "documents"))
 
   return(info)
 }

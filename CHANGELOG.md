@@ -6,12 +6,23 @@ __WARNING:__ edgarWebR is still in active development and new vesions will
 bread old code.
 
 ## v0.0.3 - *Under Development*
+**_UNSTABLE_ - Function calls and returns likely to change without warning**
+
+### Features
+ * All methods which took a URL as a parameter now accept either a href or 
+   pre-loaded xml document. This facilitates loading a filing from a local
+   file, fetching the filing separately for customized parsing, and testing.
+ * Some column names have shifted to better align to overall naming scheme
 
 ### Package
  * [vignettes] changed Introduction to use purrr for clearer code
 
 ### Internal
- * Added caches to ignore files
+ * Added caches and markdown folders to ignore files
+ * Made map_xml handle parsing integers
+ * Added live_test to Makefile
+ * Way more tests
+ * coverage target added to makefile
 
 ## v0.0.2 - The "XPath is is powerful" release
 **_UNSTABLE_ - Function calls and returns likely to change without warning**

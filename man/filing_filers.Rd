@@ -4,10 +4,10 @@
 \alias{filing_filers}
 \title{SEC Filing Included Filers}
 \usage{
-filing_filers(href)
+filing_filers(x)
 }
 \arguments{
-\item{href}{URL to a SEC filing index page}
+\item{x}{URL to a SEC filing index page}
 }
 \value{
 A dataframe with all the filers in the filing along with their info

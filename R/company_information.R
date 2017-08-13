@@ -2,14 +2,15 @@
 #'
 #' Fetches basic information on a given company from the SEC site
 #'
-#' @param ticker Either a stock symbol (for the 10,000 largest companies) or CIK
+#' @param x Either a stock symbol (for the 10,000 largest companies) or CIK
 #'   code
 #'
 #' @return a dataframe with all SEC company information
 #'
 #' @export
-company_info <- function(ticker) {
-  data <- browse_edgar(ticker)
+company_information <- function(x) {
+  # We want to accept a pre-fetched document or possibly a sub-page node
+  doc <- if (is(x,"xml_node")) { x } else { browse_edgar(x) }
 
   entry_xpath <- "company-info"
 
@@ -32,6 +33,6 @@ company_info <- function(ticker) {
     "business_phone" = "//address[@type='business']/phone"
     )
 
-  res <- map_xml(data, entry_xpath, info_pieces)
+  res <- map_xml(doc, entry_xpath, info_pieces)
   return(res)
 }

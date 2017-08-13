@@ -2,16 +2,14 @@
 #'
 #' @param term Search term to look for funds
 #'
-#' @importFrom xml2 read_html
-#'
 #' @export
 fund_search <- function(term) {
   uri <- paste0("https://www.sec.gov/cgi-bin/series?type=N-PX",
                 "&sc=companyseries",
-                "&ticker=", term,
+                "&ticker=", URLencode(term, reserved = TRUE),
                 "&CIK=",
                 "&Find=Search")
-  data <- read_html(uri)
+  data <- xml2::read_html(uri)
 
   entries_xpath <- "//a[starts-with(.,'C')]"
 
@@ -30,9 +28,9 @@ fund_search <- function(term) {
     cik_funds_href = "preceding::td[@colspan=3][1]/following-sibling::td[1]/a/@href"
   )
 
-  trim_cols = c("class_ticker")
+  trim_cols <- c("class_ticker")
 
-  res <- map_xml(data,entries_xpath, pieces, trim = trim_cols)
+  res <- map_xml(data, entries_xpath, pieces, trim = trim_cols)
 
   return(res)
 }

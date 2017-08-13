@@ -4,10 +4,10 @@
 \alias{filing_funds}
 \title{SEC Filing Funds}
 \usage{
-filing_funds(href)
+filing_funds(x)
 }
 \arguments{
-\item{href}{URL to a SEC filing index page}
+\item{x}{URL to a SEC filing index page}
 }
 \value{
 A dataframe with all the funds associated with a given filing

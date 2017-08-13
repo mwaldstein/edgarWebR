@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
-```{r, echo = FALSE, message = FALSE}
+```{r setup, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 library(edgarWebR)
 library(dplyr)
@@ -40,7 +40,7 @@ also see how that time has changed.
 First, we'll fetch a bunch of 10-K and 10-Q filings for our given company using
 `company_filings()`. To make sure we're going far enough back we'll take a peak
 at the tail of our results
-```{r}
+```{r companyInfo}
 ticker <- "EA"
 
 filings <- company_filings(ticker, type="10-", count=100)
@@ -55,7 +55,7 @@ Note that explicitly filtering caused us to go from `r initial_count` to
 
 ```{r}
 filings$md_href <- paste0("[Link](", filings$href, ")")
-knitr::kable(tail(filings)[,c("type", "filing_date", "accession", "size",
+knitr::kable(tail(filings)[,c("type", "filing_date", "accession_number", "size",
                               "md_href")],
              col.names=c("Type", "Filing Date", "Accession No.", "Size", "Link"),
              digits = 2,
@@ -67,7 +67,7 @@ purposes, so next we'll get the filing information for each filing.
 
 So far we've done everything in base R, but now we'll use some useful functions
 from dplyr and purrr to make things a bit easier.
-```{r cache=TRUE}
+```{r filingInfo,cache=TRUE}
 # this can take a while - we're fetching ~100 html files!
 filing_infos <- map_df(filings$href, filing_information)
 
@@ -76,7 +76,7 @@ filings$filing_delay <- filings$filing_date - filings$period_date
 
 # Take a peak at the data
 knitr::kable(head(filings) %>% select(type, filing_date, period_date,
-                                      filing_delay, documents, filing_bytes) %>% 
+                                      filing_delay, documents, bytes) %>% 
              mutate(filing_delay = as.numeric(filing_delay)),
              col.names=c("Type", "Filing Date", "Period Date", "Delay",
                          "Documents", "Size (B)"),
@@ -87,13 +87,13 @@ knitr::kable(head(filings) %>% select(type, filing_date, period_date,
 ### Basic Analysis
 Now our data is arranged, we can run some summary statistics and plot using
 ggplot2.
-```{r}
+```{r filingAnalysis}
 knitr::kable(filings %>%
              group_by(type) %>% summarize(
                n=n(),
                avg_delay = as.numeric(mean(filing_delay)),
                median_delay = as.numeric(median(filing_delay)),
-               avg_size = mean(filing_bytes / 1024),
+               avg_size = mean(bytes / 1024),
                avg_docs = mean(documents)
              ),
              col.names=c("Type", "Count", "Avg. Delay", "Median Delay",
@@ -105,14 +105,14 @@ knitr::kable(filings %>%
 No surprise, yearly filings (10-K's) are larger and take more time than
 quarterly filings (10-K's). Lets see how the times are destributed:
 
-```{r fig.width=6}
+```{r plotDelay, fig.width=6}
 ggplot(filings, aes(x = factor(type), y=filing_delay)) +
   geom_violin() + geom_jitter(height = 0, width = 0.1) +
   labs(x = "Filing Date", y = "Filing delay (days)")
 ```
 
 We can also examine how the filing delay has changed over time:
-```{r fig.width=6}
+```{r plotType, fig.width=6}
 ggplot(filings, aes(x = filing_date, y=filing_delay, group=type, color=type)) +
   geom_point() + geom_line() +
   labs(x = "Filing Type", y = "Filing delay (days)")
@@ -125,8 +125,8 @@ An interesting extension would be to compare the filing delays to the company's
 stock price, overall market performance and other companies to see if there are
 particular drivers to the pattern.
 
-```{r fig.width=6}
-ggplot(filings, aes(x = filing_date, y=filing_bytes/1024, group=type, color=type)) +
+```{r plotSize, fig.width=6}
+ggplot(filings, aes(x = filing_date, y=bytes/1024, group=type, color=type)) +
   geom_point() + geom_line() +
   labs(x = "Filing Type", y = "Filing Size (KB)")
 ```

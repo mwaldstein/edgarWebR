@@ -4,10 +4,10 @@
 \alias{filing_information}
 \title{SEC Filing Information}
 \usage{
-filing_information(href)
+filing_information(x)
 }
 \arguments{
-\item{href}{URL to a SEC filing index page}
+\item{x}{URL or xml_document for a SEC filing index page}
 }
 \value{
 A dataframe with all the parsed meta-info on the filing

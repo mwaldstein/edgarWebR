@@ -1,8 +1,8 @@
-context("running company_info")
+context("running company_information")
 
 test_that("running ", {
-            expect_error(company_info("EAR"))
-            res <- company_info("EA")
+            expect_error(company_information("EAR"))
+            res <- company_information("EA")
             expect_is(res, "data.frame")
 
             expect_length(res, 16)
