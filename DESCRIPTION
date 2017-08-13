@@ -15,7 +15,6 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-    covr,
     tidyr,
     devtools,
     roxygen2,

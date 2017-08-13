@@ -9,3 +9,6 @@ Makefile
 ^vignettes/.*figure
 ^vignettes/.*_files
 ^\.travis\.yml$
+^CHANGELOG\.md
+^CONDUCT\.md
+^TODO\.md

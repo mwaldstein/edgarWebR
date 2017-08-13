@@ -1,7 +1,8 @@
 # edgarWebR
 
-[![Travis-CI Build
-Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
+[![Travis-CI Build Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
+[![codecov.io](https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master)](https://codecov.io/github/mwaldstein/edgarWebR?branch=master)
+
 
 * Author/Maintainer: [Micah J Waldstein](https://micah.waldste.in)
 * License: [MIT](https://opensource.org/licenses/MIT)
