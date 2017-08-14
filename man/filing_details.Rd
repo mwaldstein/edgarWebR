@@ -10,7 +10,13 @@ filing_details(x)
 \item{x}{URL to a SEC filing index page}
 }
 \value{
-A dataframe with all the parsed meta-info on the filing
+A list with the following components:
+  \describe{
+    \item{information}{A data.frame as returned by \code{filing_information}}
+    \item{documents}{A data.frame as returned by \code{filing_documents}}
+    \item{filers}{A data.frame as returned by \code{filing_filers}}
+    \item{funds}{A data.frame as returned by \code{filing_funds}}
+ }
 }
 \description{
 The SEC generates a html page as an index for every filing it receives containing

@@ -123,16 +123,7 @@ funds and filers, look at `filing_details`</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='filing_details.html'>filing_details</a></span>(<span class='st'>"https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm"</span>)</div><div class='output co'>#&gt; $information
-#&gt;   type                              description     accession_number
-#&gt; 1 10-Q Quarterly report [Sections 13 or 15(d)]: 0000712515-17-000063
-#&gt;   filing_date       accepted_date documents period_date changed_date
-#&gt; 1  2017-08-08 2017-08-08 17:05:57        87  2017-06-30   2017-08-08
-#&gt;   effective_date   bytes
-#&gt; 1           &lt;NA&gt; 8947076
-#&gt; 
-#&gt; $documents
-#&gt;    seq                                                         description
+    <pre class="examples"><div class='input'><span class='fu'>filing_documents</span>(<span class='st'>"https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm"</span>)</div><div class='output co'>#&gt;    seq                                                         description
 #&gt; 1    1                                       QUARTERLY REPORT ON FORM 10-Q
 #&gt; 2    2                                        AWARENESS LETTER OF KPMG LLP
 #&gt; 3    3 CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO RULE 13A-14(A)
@@ -187,31 +178,7 @@ funds and filers, look at `filing_details`</p>
 #&gt; 10 EX-101.CAL   92568
 #&gt; 11 EX-101.DEF  479648
 #&gt; 12 EX-101.LAB  888418
-#&gt; 13 EX-101.PRE  574659
-#&gt; 
-#&gt; $filers
-#&gt;            mailing_address_1     mailing_address_2 mailing_address_3
-#&gt; 1 209 REDWOOD SHORES PARKWAY REDWOOD CITY CA 94065              &lt;NA&gt;
-#&gt;   mailing_address_4         business_address_1    business_address_2
-#&gt; 1              &lt;NA&gt; 209 REDWOOD SHORES PARKWAY REDWOOD CITY CA 94065
-#&gt;   business_address_3 business_address_4         company_name company_cik
-#&gt; 1       650-628-1500               &lt;NA&gt; ELECTRONIC ARTS INC.  0000712515
-#&gt;                                                        company_filings_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000712515&amp;action=getcompany
-#&gt;   company_irs_number company_incorporation_state company_fiscal_year_end
-#&gt; 1          942838567                          DE                    0331
-#&gt;   filing_type filing_act
-#&gt; 1        10-Q         34
-#&gt;                                                               file_number_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?filenum=000-17948&amp;action=getcompany
-#&gt;   file_number film_number sic_code
-#&gt; 1   000-17948   171015593     7372
-#&gt;                                                                            sic_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;SIC=7372&amp;owner=include
-#&gt; 
-#&gt; $funds
-#&gt; data frame with 0 columns and 0 rows
-#&gt; </div></pre>
+#&gt; 13 EX-101.PRE  574659</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

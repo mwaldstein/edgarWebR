@@ -112,7 +112,13 @@ all the metainformation about the filing. We extract 3 main types of information
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe with all the parsed meta-info on the filing</p>
+    <p>A list with the following components:</p><dl class='dl-horizontal'>
+    <dt>information</dt><dd><p>A data.frame as returned by <code>filing_information</code></p></dd>
+    <dt>documents</dt><dd><p>A data.frame as returned by <code>filing_documents</code></p></dd>
+    <dt>filers</dt><dd><p>A data.frame as returned by <code>filing_filers</code></p></dd>
+    <dt>funds</dt><dd><p>A data.frame as returned by <code>filing_funds</code></p></dd>
+ </dl>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 

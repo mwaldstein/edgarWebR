@@ -91,7 +91,7 @@
 
     
     <p>The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing. We extract 3 main types of information:</p><dl class='dl-horizontal'>
+all the metainformation about the filing. We extract 2 types of information:</p><dl class='dl-horizontal'>
  <dt>Company Information</dt><dd><p>Filing date, accepted date, etc.</p></dd>
  <dt>Filings</dt><dd><p>Companies included in the filing</p></dd>
 </dl>
@@ -135,7 +135,11 @@ you only get the type you want, best practice would be to filter the results.</p
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe with all the parsed meta-info on the filing</p>
+    <p>A list with the following components</p><dl class='dl-horizontal'>
+   <dt>information</dt><dd><p>data.frame as returned by <code>company_information</code></p></dd>
+   <dt>filings</dt><dd><p>data.frame as returned by <code>company_filings</code></p></dd>
+ </dl>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 

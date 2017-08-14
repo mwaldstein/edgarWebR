@@ -17,8 +17,13 @@
 #'
 #' @param x URL to a SEC filing index page
 #' 
-#' @return A dataframe with all the parsed meta-info on the filing
-#'
+#' @return A list with the following components:
+#'   \describe{
+#'     \item{information}{A data.frame as returned by \code{filing_information}}
+#'     \item{documents}{A data.frame as returned by \code{filing_documents}}
+#'     \item{filers}{A data.frame as returned by \code{filing_filers}}
+#'     \item{funds}{A data.frame as returned by \code{filing_funds}}
+#'  }
 #' @importFrom methods is
 #' @examples
 #' filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")

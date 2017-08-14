@@ -25,11 +25,15 @@ you only get the type you want, best practice would be to filter the results.}
 \item{page}{Which page of results to return.}
 }
 \value{
-A dataframe with all the parsed meta-info on the filing
+A list with the following components
+ \describe{
+   \item{information}{data.frame as returned by \code{company_information}}
+   \item{filings}{data.frame as returned by \code{company_filings}}
+ }
 }
 \description{
 The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing. We extract 3 main types of information: 
+all the metainformation about the filing. We extract 2 types of information: 
 \describe{
  \item{Company Information}{Filing date, accepted date, etc.}
  \item{Filings}{Companies included in the filing}

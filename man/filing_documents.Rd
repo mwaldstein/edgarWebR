@@ -29,5 +29,5 @@ Information returned:
 }
 }
 \examples{
-filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
+filing_documents("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
 }
