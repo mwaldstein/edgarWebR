@@ -1,4 +1,4 @@
-# edgarWebR 0.1.0 - "Hello World" Release
+# edgarWebR 0.1.0 - "Hello World"
 
 First CRAN release of edgarWebR. At this point, function parameters, return
 colums and general shape of data will not change without a deprecation process
@@ -23,7 +23,7 @@ and due warning.
  * Way more tests
  * coverage target added to makefile
 
-# edgarWebR 0.0.2 - The "XPath is is powerful" release
+# edgarWebR 0.0.2 - "XPath is is powerful"
 **_UNSTABLE_ - Function calls and returns likely to change without warning**
 
 ## Features
