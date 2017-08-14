@@ -15,7 +15,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-vignette">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -61,8 +61,14 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
-    <div id="edgarwebr" class="section level1">
+  <div class="col-md-9">
+    
+
+    
+    
+<div class="contents">
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<div id="edgarwebr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#edgarwebr" class="anchor"></a>edgarWebR</h1></div>
 
@@ -99,7 +105,7 @@
 <td>Company</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/companysearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/companysearch.html</a></td>
 <td>
-<code>company_information</code>, <code>company_details</code>, <code>company_filings</code>
+<code><a href="reference/company_information.html">company_information()</a></code>, <code><a href="reference/company_details.html">company_details()</a></code>, <code><a href="reference/company_filings.html">company_filings()</a></code>
 </td>
 </tr>
 <tr class="even">
@@ -130,7 +136,7 @@
 <tr class="odd">
 <td>Fund Search</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/mutualsearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/mutualsearch.html</a></td>
-<td><code>fund_search</code></td>
+<td><code><a href="reference/fund_search.html">fund_search()</a></code></td>
 </tr>
 <tr class="even">
 <td>Var. Insurance Products</td>
@@ -166,19 +172,19 @@
 </table>
 <p>Once a filing is found via any of the above, there are a number of functions to process the result -</p>
 <ul>
-<li><code>filing_details</code></li>
-<li><code>filing_documents</code></li>
-<li><code>filing_filers</code></li>
-<li><code>filing_funds</code></li>
-<li><code>filing_information</code></li>
+<li><code><a href="reference/filing_details.html">filing_details()</a></code></li>
+<li><code><a href="reference/filing_documents.html">filing_documents()</a></code></li>
+<li><code><a href="reference/filing_filers.html">filing_filers()</a></code></li>
+<li><code><a href="reference/filing_funds.html">filing_funds()</a></code></li>
+<li><code><a href="reference/filing_information.html">filing_information()</a></code></li>
 </ul>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
 <p>Until the API stablilizes, the package is not yet available from CRAN. The best way to install it is from github using devtools:</p>
-<pre class="{r}"><code><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github"># Install the development version from GitHub:
-# install.packages("devtools")
-devtools::install_github("mwaldstein/edgarWebR")</a></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install the development version from GitHub:</span>
+<span class="co"># install.packages("devtools")</span>
+devtools::<span class="kw">install_github</span>(<span class="st">"mwaldstein/edgarWebR"</span>)</code></pre></div>
 </div>
 </div>
 <div id="related-packages" class="section level2">
@@ -199,10 +205,12 @@ devtools::install_github("mwaldstein/edgarWebR")</a></code></pre>
 <p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms. Report violations to (<a href="mailto:micah@waldste.in">micah@waldste.in</a>).</p>
 </div>
 </div>
+</div>
   </div>
 
-  <div class="col-md-3" id="sidebar">
-    <h2>Links</h2>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2 class="hasAnchor">
+<a href="#sidebar" class="anchor"></a>Links</h2>
 <ul class="list-unstyled">
 <li>Browse source code at <br><a href="https://mwaldstein.github.io/edgarWebR">https://​mwaldstein.github.io/​edgarWebR</a>
 </li>
@@ -222,6 +230,7 @@ devtools::install_github("mwaldstein/edgarWebR")</a></code></pre>
 <li><a href="https://codecov.io/github/mwaldstein/edgarWebR?branch=master"><img src="https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master" alt="codecov.io"></a></li>
 </ul>
 </div>
+
 </div>
 
 

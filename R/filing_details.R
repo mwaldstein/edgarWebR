@@ -19,10 +19,10 @@
 #' 
 #' @return A list with the following components:
 #'   \describe{
-#'     \item{information}{A data.frame as returned by \code{filing_information}}
-#'     \item{documents}{A data.frame as returned by \code{filing_documents}}
-#'     \item{filers}{A data.frame as returned by \code{filing_filers}}
-#'     \item{funds}{A data.frame as returned by \code{filing_funds}}
+#'     \item{information}{A data.frame as returned by \code{\link{filing_information}}}
+#'     \item{documents}{A data.frame as returned by \code{\link{filing_documents}}}
+#'     \item{filers}{A data.frame as returned by \code{\link{filing_filers}}}
+#'     \item{funds}{A data.frame as returned by \code{\link{filing_funds}}}
 #'  }
 #' @importFrom methods is
 #' @examples

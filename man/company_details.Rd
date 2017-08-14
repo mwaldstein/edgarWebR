@@ -27,8 +27,8 @@ you only get the type you want, best practice would be to filter the results.}
 \value{
 A list with the following components
  \describe{
-   \item{information}{data.frame as returned by \code{company_information}}
-   \item{filings}{data.frame as returned by \code{company_filings}}
+   \item{information}{data.frame as returned by \code{\link{company_information}}}
+   \item{filings}{data.frame as returned by \code{\link{company_filings}}}
  }
 }
 \description{

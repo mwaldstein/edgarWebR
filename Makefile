@@ -2,7 +2,7 @@ all: clean doc build
 .PHONY: doc clean build vignettes check
 
 # build package documentation
-doc:
+doc: readme
 	Rscript -e 'devtools::document()'
 
 test:
@@ -35,5 +35,8 @@ coverage:
 lint:
 	Rscript -e 'lintr::lint_package()'
 
-site:
+site: doc
 	Rscript -e 'pkgdown::build_site()'
+
+readme:
+	Rscript -e 'knitr::knit("README.Rmd")'

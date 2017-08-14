@@ -4,7 +4,13 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
 # edgarWebR
 
 [![Travis-CI Build Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
@@ -61,8 +67,7 @@ process the result -
 ### Installation
 Until the API stablilizes, the package is not yet available from CRAN. The best
 way to install it is from github using devtools:
-
-```r
+```{r install, eval=FALSE}
 # Install the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("mwaldstein/edgarWebR")
