@@ -91,6 +91,79 @@
     </div>
 
     <div class="contents">
+    <div id="edgarwebr-0-1-0---hello-world-release" class="section level1">
+<h1 class="hasAnchor">
+<a href="#edgarwebr-0-1-0---hello-world-release" class="anchor"></a>edgarWebR 0.1.0 - “Hello World” Release</h1>
+<p>First CRAN release of edgarWebR. At this point, function parameters, return colums and general shape of data will not change without a deprecation process and due warning.</p>
+</div>
+    <div id="edgarwebr-0-0-3---under-development" class="section level1">
+<h1 class="hasAnchor">
+<a href="#edgarwebr-0-0-3---under-development" class="anchor"></a>edgarWebR 0.0.3 - <em>Under Development</em>
+</h1>
+<p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
+<div id="features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h2>
+<ul>
+<li>All methods which took a URL as a parameter now accept either a href or pre-loaded xml document. This facilitates loading a filing from a local file, fetching the filing separately for customized parsing, and testing.</li>
+<li>Some column names have shifted to better align to overall naming scheme</li>
+</ul>
+</div>
+<div id="package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package" class="anchor"></a>Package</h2>
+<ul>
+<li>[vignettes] changed Introduction to use purrr for clearer code</li>
+</ul>
+</div>
+<div id="internal" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal" class="anchor"></a>Internal</h2>
+<ul>
+<li>Added caches and markdown folders to ignore files</li>
+<li>Made map_xml handle parsing integers</li>
+<li>Added live_test to Makefile</li>
+<li>Way more tests</li>
+<li>coverage target added to makefile</li>
+</ul>
+</div>
+</div>
+    <div id="edgarwebr-0-0-2---the-xpath-is-is-powerful-release" class="section level1">
+<h1 class="hasAnchor">
+<a href="#edgarwebr-0-0-2---the-xpath-is-is-powerful-release" class="anchor"></a>edgarWebR 0.0.2 - The “XPath is is powerful” release</h1>
+<p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
+<div id="features-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features-1" class="anchor"></a>Features</h2>
+<ul>
+<li>[filings] <code>filing_information</code> provides general filing information</li>
+<li>[filings] <code>filing_funds</code> gives all funds associated with a filing</li>
+<li>[filings] <code>filing_filers</code> gives all filers associated with a filing</li>
+<li>[filings] <code>filing_details</code> returns the information, funds, filers and documents for a filing</li>
+</ul>
+</div>
+<div id="package-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package-1" class="anchor"></a>Package</h2>
+<ul>
+<li>[vignettes] We now have a basic introductory vignette</li>
+<li>[tests] initial testes created</li>
+</ul>
+</div>
+<div id="internal-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal-1" class="anchor"></a>Internal</h2>
+<ul>
+<li>[map_xml] map_xml now parses date/time columns into POSIXlt dates</li>
+<li>[browse_edgar] escape text fields</li>
+</ul>
+</div>
+</div>
+    <div id="edgarwebr-0-0-1---initial-release" class="section level1">
+<h1 class="hasAnchor">
+<a href="#edgarwebr-0-0-1---initial-release" class="anchor"></a>edgarWebR 0.0.1 - Initial Release</h1>
+<p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
+</div>
     </div>
   </div>
 
@@ -98,6 +171,10 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#edgarwebr-0-1-0---hello-world-release">0.1.0</a></li>
+        <li><a href="#edgarwebr-0-0-3---under-development">0.0.3</a></li>
+        <li><a href="#edgarwebr-0-0-2---the-xpath-is-is-powerful-release">0.0.2</a></li>
+        <li><a href="#edgarwebr-0-0-1---initial-release">0.0.1</a></li>
       </ul>
     </div>
   </div>

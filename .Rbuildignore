@@ -9,7 +9,7 @@ Makefile
 ^vignettes/.*figure
 ^vignettes/.*_files
 ^\.travis\.yml$
-^CHANGELOG\.md
+^NEWS
 ^CONDUCT\.md
 ^TODO\.md
 ^docs$
