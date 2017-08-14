@@ -14,7 +14,7 @@ all: clean doc build
 .PHONY: doc clean build vignettes check
 
 # build package documentation
-doc: readme
+doc: readme vignettes
 	Rscript -e 'devtools::document()'
 
 test:

@@ -17,7 +17,7 @@ works, it is actually is a 'starts-with' search, so for instance specifying
 'type = "10-K" will return "10-K/A" and "10-K405" filings as well. To ensure
 you only get the type you want, best practice would be to filter the results.}
 
-\item{before}{yyyymmdd fromat of latest filing to fetch}
+\item{before}{yyyymmdd format of latest filing to fetch}
 
 \item{count}{Number of filings to fetch per page. Valid options are 10, 20, 40,
 80, or 100. Other values will result in the closest count.}
@@ -32,19 +32,12 @@ A list with the following components
  }
 }
 \description{
-The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing. We extract 2 types of information: 
+For a given company, either by ticker, CIK, or pre-fetched page, we extract 2 
+sets of information: 
 \describe{
  \item{Company Information}{Filing date, accepted date, etc.}
  \item{Filings}{Companies included in the filing}
 }
-}
-\details{
-For a company, there is typically a single filer and no funds, but many filings
-for funds get more complicated - e.g. 400+ funds with 100's of companies
-
-NOTE: This can get process intensive for large fund pages. If you don't need all
-components, try just usning filing_info
 }
 \examples{
 company_details("AAPL")

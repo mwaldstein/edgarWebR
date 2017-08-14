@@ -90,8 +90,8 @@
     </div>
 
     
-    <p>The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing. We extract 2 types of information:</p><dl class='dl-horizontal'>
+    <p>For a given company, either by ticker, CIK, or pre-fetched page, we extract 2 
+sets of information:</p><dl class='dl-horizontal'>
  <dt>Company Information</dt><dd><p>Filing date, accepted date, etc.</p></dd>
  <dt>Filings</dt><dd><p>Companies included in the filing</p></dd>
 </dl>
@@ -120,7 +120,7 @@ you only get the type you want, best practice would be to filter the results.</p
     </tr>
     <tr>
       <th>before</th>
-      <td><p>yyyymmdd fromat of latest filing to fetch</p></td>
+      <td><p>yyyymmdd format of latest filing to fetch</p></td>
     </tr>
     <tr>
       <th>count</th>
@@ -140,13 +140,6 @@ you only get the type you want, best practice would be to filter the results.</p
    <dt>filings</dt><dd><p>data.frame as returned by <code><a href='company_filings.html'>company_filings</a></code></p></dd>
  </dl>
 
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>For a company, there is typically a single filer and no funds, but many filings
-for funds get more complicated - e.g. 400+ funds with 100's of companies</p>
-<p>NOTE: This can get process intensive for large fund pages. If you don't need all
-components, try just usning filing_info</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -372,8 +365,6 @@ components, try just usning filing_info</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

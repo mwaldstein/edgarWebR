@@ -20,7 +20,7 @@ A list with the following components:
 }
 \description{
 The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing. We extract 3 main types of information: 
+all the meta-information about the filing. We extract 3 main types of information: 
 \describe{
  \item{Filing Information}{Filing date, accepted date, etc.}
  \item{Documents}{All the documents included in the filing}
@@ -33,7 +33,7 @@ For a company, there is typically a single filer and no funds, but many filings
 for funds get more complicated - e.g. 400+ funds with 100's of companies
 
 NOTE: This can get process intensive for large fund pages. If you don't need all
-components, try just usning filing_info
+components, try just using filing_info
 }
 \examples{
 # Typically you'd get the URL from one of the search functions

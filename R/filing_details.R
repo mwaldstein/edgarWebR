@@ -13,7 +13,7 @@
 #' for funds get more complicated - e.g. 400+ funds with 100's of companies
 #'
 #' NOTE: This can get process intensive for large fund pages. If you don't need all
-#' components, try just usning filing_info
+#' components, try just using filing_info
 #'
 #' @param x URL to a SEC filing index page
 #' 

@@ -14,7 +14,7 @@ A dataframe with all the parsed meta-info on the filing
 }
 \description{
 The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing.
+all the meta-information about the filing.
 }
 \details{
 Information returned:

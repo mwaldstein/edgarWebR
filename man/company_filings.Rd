@@ -17,7 +17,7 @@ works, it is actually is a 'starts-with' search, so for instance specifying
 'type = "10-K" will return "10-K/A" and "10-K405" filings as well. To ensure
 you only get the type you want, best practice would be to filter the results.}
 
-\item{before}{yyyymmdd fromat of latest filing to fetch}
+\item{before}{yyyymmdd format of latest filing to fetch}
 
 \item{count}{Number of filings to fetch per page. Valid options are 10, 20, 40,
 80, or 100. Other values will result in the closest count.}

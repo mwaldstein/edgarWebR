@@ -14,7 +14,7 @@ browse_edgar(ticker, ownership = FALSE, type = "", before = "",
 
 \item{type}{Type of filing to fetch}
 
-\item{before}{yyyymmdd fromat of latest filing to fetch}
+\item{before}{yyyymmdd format of latest filing to fetch}
 
 \item{count}{Number of filings to fetch per page}
 
