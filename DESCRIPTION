@@ -1,12 +1,14 @@
 Package: edgarWebR
 Title: SEC Filings Access for R
 Version: 0.0.3
-Author: Micah J Waldstein <micah@waldste.in>
+Authors@R: c(
+    person(c("Micah", "J"), "Waldstein", email = "micah@waldste.in", role = c("aut", "cre"))
+    )
 Maintainer: Micah J Waldstein <micah@waldste.in>
 Description: The SEC provides a web interface to access its information about
     companies and their financial filings. This package provides access to that 
-    interface. It does not do any processing of any of the filing contents.
-Date: 2017-07-27
+    interface and all the rich meta-data available
+Date: 2017-08-14
 Depends: 
     R (>= 3.3.2)
 Imports:
@@ -26,3 +28,5 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+URL: https://github.com/mwaldstein/edgarWebR
+BugReports: https://github.com/mwaldstein/edgarWebR/issues

@@ -17,7 +17,7 @@ vignettes:
 clean:
 	-rm -f ../edgarWebR_*.tar.gz
 
-cran_check: clean doc build
+cran-check: clean doc build
 	cd ..;R CMD check --as-cran edgarWebR_*.tar.gz
 
 install:
@@ -34,3 +34,6 @@ coverage:
 
 lint:
 	Rscript -e 'lintr::lint_package()'
+
+site:
+	Rscript -e 'pkgdown::build_site()'

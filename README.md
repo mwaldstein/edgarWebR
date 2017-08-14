@@ -52,7 +52,7 @@ devtools::install_github("mwaldstein/edgarWebR")
 ```
 
 ## Related Packages
- * [XBRL](https://cran.r-project.org/web/packages/XBRL/index.html) - Low level
+ * [XBRL](https://CRAN.R-project.org/package=XBRL) - Low level
    extration of data from XBRL financial files
  * [finstr](https://github.com/bergant/finstr) - Process XBRL to extract data,
    combine periods, and make basic financial calulations.

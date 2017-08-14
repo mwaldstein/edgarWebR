@@ -12,3 +12,4 @@ Makefile
 ^CHANGELOG\.md
 ^CONDUCT\.md
 ^TODO\.md
+^docs$
