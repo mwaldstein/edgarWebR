@@ -66,6 +66,9 @@ site: doc
 readme:
 	Rscript -e 'rmarkdown::render("README.Rmd")'
 
+# Makes reading builds easier on appveyor and travis
 version:
 	sed "s/^version:.*/version: '$(PKGVERS).{build}'/" appveyor.yml > appveyor.tmp
 	mv appveyor.tmp appveyor.yml
+	sed "s/^  - PACKAGE.*/  - PACKAGE_VERSION=\"$(PKGVERS)\"/" .travis.yml > travis.tmp
+	mv travis.tmp .travis.yml
