@@ -13,3 +13,4 @@ Makefile
 ^CONDUCT\.md
 ^TODO\.md
 ^docs$
+^appveyor\.yml$
