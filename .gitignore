@@ -9,3 +9,4 @@ vignettes/*cache/
 vignettes/*figure/
 vignettes/*_files/
 docs/*cache/
+docs/articles/*cache/
