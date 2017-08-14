@@ -4,7 +4,14 @@
 * Windows i386-w64-mingw32 (on appveyor), R 3.4.1 Patched (2017-08-11 r73088)
 
 ## R CMD check results
-There were no ERRORs, WARNINGs, or NOTEs. 
+There were no ERRORs or WARNINGs.
+
+There was 1 NOTE:
+
+* checking CRAN incoming feasibility ... NOTE
+  Maintainer: ‘Micah J Waldstein <micah@waldste.in>’
+
+  New submission
 
 ## Downstream dependencies
 There are no downstream dependencies at this point.

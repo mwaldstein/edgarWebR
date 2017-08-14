@@ -5,7 +5,7 @@
 #' @param ticker either a stock ticker or CIK number
 #' @param ownership boolean for inclusion of company change filings
 #' @param type Type of filing to fetch
-#' @param before yyyymmdd fromat of latest filing to fetch
+#' @param before yyyymmdd format of latest filing to fetch
 #' @param count Number of filings to fetch per page
 #' @param page Which page of results to return
 #'

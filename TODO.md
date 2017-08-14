@@ -9,12 +9,10 @@ A bit of a roadmap/todo
  * Alias company\_ functions to filer\_ to cover non-company filers better
 
 ## Bugs
- * Align naming of properties across functions - e.g. url vs href
 
 ## Internal
  * Passing lints
 
 ## Package
- * Test all the things
  * Vignette pulling XBL files using finstr
  * pkgdown & URL's in description

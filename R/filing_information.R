@@ -1,7 +1,7 @@
 #' SEC Filing Information
 #'
 #' The SEC generates a html page as an index for every filing it receives containing
-#' all the metainformation about the filing. 
+#' all the meta-information about the filing. 
 #' 
 #' Information returned:
 #' \itemize{
