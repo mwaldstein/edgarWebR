@@ -1,0 +1,14 @@
+base
+datasets
+utils
+grDevices
+graphics
+stats
+RWordPress
+knitr
+yaml
+edgarWebR
+dplyr
+purrr
+ggplot2
+bindrcpp
