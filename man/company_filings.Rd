@@ -30,3 +30,6 @@ A dataframe of company filings
 \description{
 SEC Company Filings
 }
+\examples{
+company_filings("AAPL")
+}

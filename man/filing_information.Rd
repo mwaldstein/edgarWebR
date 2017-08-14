@@ -35,3 +35,6 @@ Not all details are valid for all filings, but the column will always be present
 If you know you're going to want all the details of a filing, including documents
 funds and filers, look at `filing_details`
 }
+\examples{
+filing_information("https://www.sec.gov/Archives/edgar/data/933691/000119312517247698/0001193125-17-247698-index.htm")
+}

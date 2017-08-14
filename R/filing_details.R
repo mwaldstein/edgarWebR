@@ -2,11 +2,11 @@
 #'
 #' The SEC generates a html page as an index for every filing it receives containing
 #' all the metainformation about the filing. We extract 3 main types of information: 
-#'\itemize{
-#'  \item Filing Information - Filing date, accepted date, etc.
-#'  \item Documents - All the documents included in the filing
-#'  \item Filers - Companies included in the filing
-#'  \item Funds - Funds included in the filing
+#'\describe{
+#'  \item{Filing Information}{Filing date, accepted date, etc.}
+#'  \item{Documents}{All the documents included in the filing}
+#'  \item{Filers}{Companies included in the filing}
+#'  \item{Funds}{Funds included in the filing}
 #'}
 #'
 #' For a company, there is typically a single filer and no funds, but many filings
@@ -20,7 +20,8 @@
 #' @return A dataframe with all the parsed meta-info on the filing
 #'
 #' @importFrom methods is
-#'
+#' @examples
+#' filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
 #' @export
 filing_details <- function(x) {
   # We want to accept a pre-fetched document or possibly a sub-page node

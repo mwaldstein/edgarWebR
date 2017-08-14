@@ -15,3 +15,6 @@ A dataframe with all the filers in the filing along with their info
 \description{
 SEC Filing Included Filers
 }
+\examples{
+filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
+}

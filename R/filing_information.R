@@ -26,7 +26,8 @@
 #' @return A dataframe with all the parsed meta-info on the filing
 #'
 #' @importFrom methods is
-#'
+#' @examples
+#' filing_information("https://www.sec.gov/Archives/edgar/data/933691/000119312517247698/0001193125-17-247698-index.htm")
 #' @export
 filing_information <- function(x) {
   doc <- if (is(x, "xml_node")) { x } else { xml2::read_html(x) }

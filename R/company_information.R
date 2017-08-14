@@ -6,7 +6,8 @@
 #'   code
 #'
 #' @return a dataframe with all SEC company information
-#'
+#' @examples
+#' company_information("INTC")
 #' @export
 company_information <- function(x) {
   # We want to accept a pre-fetched document or possibly a sub-page node

@@ -16,3 +16,6 @@ a dataframe with all SEC company information
 \description{
 Fetches basic information on a given company from the SEC site
 }
+\examples{
+company_information("INTC")
+}

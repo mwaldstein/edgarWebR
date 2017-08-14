@@ -15,11 +15,11 @@ A dataframe with all the parsed meta-info on the filing
 \description{
 The SEC generates a html page as an index for every filing it receives containing
 all the metainformation about the filing. We extract 3 main types of information: 
-\itemize{
- \item Filing Information - Filing date, accepted date, etc.
- \item Documents - All the documents included in the filing
- \item Filers - Companies included in the filing
- \item Funds - Funds included in the filing
+\describe{
+ \item{Filing Information}{Filing date, accepted date, etc.}
+ \item{Documents}{All the documents included in the filing}
+ \item{Filers}{Companies included in the filing}
+ \item{Funds}{Funds included in the filing}
 }
 }
 \details{
@@ -28,4 +28,7 @@ for funds get more complicated - e.g. 400+ funds with 100's of companies
 
 NOTE: This can get process intensive for large fund pages. If you don't need all
 components, try just usning filing_info
+}
+\examples{
+filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
 }

@@ -91,10 +91,10 @@
 
     
     <p>The SEC generates a html page as an index for every filing it receives containing
-all the metainformation about the filing. We extract 3 main types of information:</p><ul>
-<li><p>Company Information - Filing date, accepted date, etc.</p></li>
-<li><p>Filings - Companies included in the filing</p></li>
-</ul>
+all the metainformation about the filing. We extract 3 main types of information:</p><dl class='dl-horizontal'>
+ <dt>Company Information</dt><dd><p>Filing date, accepted date, etc.</p></dd>
+ <dt>Filings</dt><dd><p>Companies included in the filing</p></dd>
+</dl>
     
 
     <pre class="usage"><span class='fu'>company_details</span>(<span class='no'>x</span>, <span class='kw'>ownership</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>before</span> <span class='kw'>=</span> <span class='st'>""</span>,
@@ -145,6 +145,222 @@ for funds get more complicated - e.g. 400+ funds with 100's of companies</p>
 components, try just usning filing_info</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>company_details</span>(<span class='st'>"AAPL"</span>)</div><div class='output co'>#&gt; $information
+#&gt;        name        cik fiscal_year_end  sic      sic_description state_location
+#&gt; 1 APPLE INC 0000320193            0930 3571 ELECTRONIC COMPUTERS             CA
+#&gt;   state_incorporation mailing_city mailing_state mailing_zip    mailing_street
+#&gt; 1                  CA    CUPERTINO            CA       95014 ONE INFINITE LOOP
+#&gt;   business_city business_state business_zip   business_street business_phone
+#&gt; 1     CUPERTINO             CA        95014 ONE INFINITE LOOP (408) 996-1010
+#&gt; 
+#&gt; $filings
+#&gt;        accession_number act file_number filing_date accepted_date
+#&gt; 1  0000320193-17-000009  34   001-36743  2017-08-02    2017-08-02
+#&gt; 2  0000320193-17-000006  34   001-36743  2017-08-01    2017-08-01
+#&gt; 3  0001193125-17-208226  34   001-36743  2017-06-20    2017-06-20
+#&gt; 4  0001193125-17-203548  33  333-210983  2017-06-14    2017-06-14
+#&gt; 5  0001193125-17-202772  34  333-210983  2017-06-14    2017-06-13
+#&gt; 6  0001193125-17-201958  33  333-210983  2017-06-13    2017-06-13
+#&gt; 7  9999999997-17-006550  34   001-36743  2017-05-25    2017-05-25
+#&gt; 8  0001193125-17-181871  34   001-36743  2017-05-24    2017-05-24
+#&gt; 9  0001193125-17-181867  34   001-36743  2017-05-24    2017-05-24
+#&gt; 10 0001193125-17-175330  33  333-210983  2017-05-18    2017-05-18
+#&gt; 11 0001193125-17-173678  34  333-210983  2017-05-17    2017-05-17
+#&gt; 12 0001193125-17-172693  33  333-210983  2017-05-17    2017-05-17
+#&gt; 13 0001193125-17-167400  34   001-36743  2017-05-11    2017-05-11
+#&gt; 14 0001193125-17-160948  33  333-210983  2017-05-05    2017-05-05
+#&gt; 15 0001193125-17-159397  34   001-36743  2017-05-05    2017-05-05
+#&gt; 16 0001193125-17-159324  34  333-210983  2017-05-05    2017-05-04
+#&gt; 17 0001193125-17-157385  33  333-210983  2017-05-04    2017-05-04
+#&gt; 18 0001628280-17-004790  34   001-36743  2017-05-03    2017-05-03
+#&gt; 19 0001628280-17-004663  34   001-36743  2017-05-02    2017-05-02
+#&gt; 20 0001193125-17-069853  34   001-36743  2017-03-03    2017-03-03
+#&gt; 21 0001193125-17-064019  34   001-36743  2017-03-01    2017-03-01
+#&gt; 22 0001193125-17-044564  33  333-210983  2017-02-15    2017-02-15
+#&gt; 23 0001193125-17-042083  34  333-210983  2017-02-14    2017-02-14
+#&gt; 24 0001193125-17-041233  33  333-210983  2017-02-14    2017-02-13
+#&gt; 25 0001193125-17-036283  34   001-36743  2017-02-09    2017-02-09
+#&gt; 26 0000932471-17-000777  34   005-33632  2017-02-09    2017-02-09
+#&gt; 27 0001193125-17-030832  33  333-210983  2017-02-03    2017-02-03
+#&gt; 28 0001193125-17-029548  34  333-210983  2017-02-03    2017-02-02
+#&gt; 29 0001193125-17-028315  33  333-210983  2017-02-02    2017-02-02
+#&gt; 30 0001628280-17-000717  34   001-36743  2017-02-01    2017-02-01
+#&gt; 31 0001628280-17-000663  34   001-36743  2017-01-31    2017-01-31
+#&gt; 32 0001214659-17-000547  34   001-36743  2017-01-31    2017-01-31
+#&gt; 33 0000215457-17-001275  34   005-33632  2017-01-19    2017-01-19
+#&gt; 34 0001193125-17-003764  34   001-36743  2017-01-06    2017-01-06
+#&gt; 35 0001193125-17-003753  34   001-36743  2017-01-06    2017-01-06
+#&gt; 36 0001628280-16-022047  34   001-36743  2016-12-15    2016-12-15
+#&gt; 37 9999999997-17-000002  34   001-36743  2016-12-05    2017-01-03
+#&gt; 38 9999999997-17-000809  34   001-36743  2016-10-27    2017-02-16
+#&gt; 39 9999999997-16-026607  34   001-36743  2016-10-26    2016-11-01
+#&gt; 40 0001628280-16-020309  34   001-36743  2016-10-26    2016-10-26
+#&gt;                                                                                                href
+#&gt; 1  https://www.sec.gov/Archives/edgar/data/320193/000032019317000009/0000320193-17-000009-index.htm
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/320193/000032019317000006/0000320193-17-000006-index.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/320193/000119312517208226/0001193125-17-208226-index.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/320193/000119312517203548/0001193125-17-203548-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/320193/000119312517202772/0001193125-17-202772-index.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/320193/000119312517201958/0001193125-17-201958-index.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/320193/999999999717006550/9999999997-17-006550-index.htm
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/320193/000119312517181871/0001193125-17-181871-index.htm
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/320193/000119312517181867/0001193125-17-181867-index.htm
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/320193/000119312517175330/0001193125-17-175330-index.htm
+#&gt; 11 https://www.sec.gov/Archives/edgar/data/320193/000119312517173678/0001193125-17-173678-index.htm
+#&gt; 12 https://www.sec.gov/Archives/edgar/data/320193/000119312517172693/0001193125-17-172693-index.htm
+#&gt; 13 https://www.sec.gov/Archives/edgar/data/320193/000119312517167400/0001193125-17-167400-index.htm
+#&gt; 14 https://www.sec.gov/Archives/edgar/data/320193/000119312517160948/0001193125-17-160948-index.htm
+#&gt; 15 https://www.sec.gov/Archives/edgar/data/320193/000119312517159397/0001193125-17-159397-index.htm
+#&gt; 16 https://www.sec.gov/Archives/edgar/data/320193/000119312517159324/0001193125-17-159324-index.htm
+#&gt; 17 https://www.sec.gov/Archives/edgar/data/320193/000119312517157385/0001193125-17-157385-index.htm
+#&gt; 18 https://www.sec.gov/Archives/edgar/data/320193/000162828017004790/0001628280-17-004790-index.htm
+#&gt; 19 https://www.sec.gov/Archives/edgar/data/320193/000162828017004663/0001628280-17-004663-index.htm
+#&gt; 20 https://www.sec.gov/Archives/edgar/data/320193/000119312517069853/0001193125-17-069853-index.htm
+#&gt; 21 https://www.sec.gov/Archives/edgar/data/320193/000119312517064019/0001193125-17-064019-index.htm
+#&gt; 22 https://www.sec.gov/Archives/edgar/data/320193/000119312517044564/0001193125-17-044564-index.htm
+#&gt; 23 https://www.sec.gov/Archives/edgar/data/320193/000119312517042083/0001193125-17-042083-index.htm
+#&gt; 24 https://www.sec.gov/Archives/edgar/data/320193/000119312517041233/0001193125-17-041233-index.htm
+#&gt; 25 https://www.sec.gov/Archives/edgar/data/320193/000119312517036283/0001193125-17-036283-index.htm
+#&gt; 26 https://www.sec.gov/Archives/edgar/data/320193/000093247117000777/0000932471-17-000777-index.htm
+#&gt; 27 https://www.sec.gov/Archives/edgar/data/320193/000119312517030832/0001193125-17-030832-index.htm
+#&gt; 28 https://www.sec.gov/Archives/edgar/data/320193/000119312517029548/0001193125-17-029548-index.htm
+#&gt; 29 https://www.sec.gov/Archives/edgar/data/320193/000119312517028315/0001193125-17-028315-index.htm
+#&gt; 30 https://www.sec.gov/Archives/edgar/data/320193/000162828017000717/0001628280-17-000717-index.htm
+#&gt; 31 https://www.sec.gov/Archives/edgar/data/320193/000162828017000663/0001628280-17-000663-index.htm
+#&gt; 32 https://www.sec.gov/Archives/edgar/data/320193/000121465917000547/0001214659-17-000547-index.htm
+#&gt; 33 https://www.sec.gov/Archives/edgar/data/320193/000021545717001275/0000215457-17-001275-index.htm
+#&gt; 34 https://www.sec.gov/Archives/edgar/data/320193/000119312517003764/0001193125-17-003764-index.htm
+#&gt; 35 https://www.sec.gov/Archives/edgar/data/320193/000119312517003753/0001193125-17-003753-index.htm
+#&gt; 36 https://www.sec.gov/Archives/edgar/data/320193/000162828016022047/0001628280-16-022047-index.htm
+#&gt; 37 https://www.sec.gov/Archives/edgar/data/320193/999999999717000002/9999999997-17-000002-index.htm
+#&gt; 38 https://www.sec.gov/Archives/edgar/data/320193/999999999717000809/9999999997-17-000809-index.htm
+#&gt; 39 https://www.sec.gov/Archives/edgar/data/320193/999999999716026607/9999999997-16-026607-index.htm
+#&gt; 40 https://www.sec.gov/Archives/edgar/data/320193/000162828016020309/0001628280-16-020309-index.htm
+#&gt;        type film_number
+#&gt; 1      10-Q   171000359
+#&gt; 2       8-K    17997093
+#&gt; 3       8-K    17921171
+#&gt; 4     424B2    17911569
+#&gt; 5       FWP    17910189
+#&gt; 6     424B2    17907933
+#&gt; 7   CERTNYS    17010416
+#&gt; 8    8-A12B    17867595
+#&gt; 9       8-K    17867578
+#&gt; 10    424B2    17855370
+#&gt; 11      FWP    17852308
+#&gt; 12    424B2    17850239
+#&gt; 13      8-K    17835158
+#&gt; 14    424B2    17819168
+#&gt; 15       SD    17816013
+#&gt; 16      FWP    17815909
+#&gt; 17    424B2    17811979
+#&gt; 18     10-Q    17809653
+#&gt; 19      8-K    17805508
+#&gt; 20      8-K    17664239
+#&gt; 21      8-K    17651574
+#&gt; 22    424B2    17613002
+#&gt; 23      FWP    17602904
+#&gt; 24    424B2    17601961
+#&gt; 25      8-K    17588362
+#&gt; 26 SC 13G/A    17586504
+#&gt; 27    424B2    17572868
+#&gt; 28      FWP    17570099
+#&gt; 29    424B2    17566778
+#&gt; 30     10-Q    17565317
+#&gt; 31      8-K    17561519
+#&gt; 32  PX14A6G    17559872
+#&gt; 33 SC 13G/A    17536781
+#&gt; 34  DEFA14A    17512909
+#&gt; 35  DEF 14A    17512896
+#&gt; 36      8-K   162054250
+#&gt; 37   NO ACT    16005019
+#&gt; 38   NO ACT    20160005
+#&gt; 39   NO ACT    16005137
+#&gt; 40     10-K   161953070
+#&gt;                                                                        form_name
+#&gt; 1                                        Quarterly report [Sections 13 or 15(d)]
+#&gt; 2                                                                 Current report
+#&gt; 3                                                                 Current report
+#&gt; 4                                                    Prospectus [Rule 424(b)(2)]
+#&gt; 5         Filing under Securities Act Rules 163/433 of free writing prospectuses
+#&gt; 6                                                    Prospectus [Rule 424(b)(2)]
+#&gt; 7  Certification by the New York Stock Exchange approving securities for listing
+#&gt; 8                                     Registration of securities [Section 12(b)]
+#&gt; 9                                                                 Current report
+#&gt; 10                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 11        Filing under Securities Act Rules 163/433 of free writing prospectuses
+#&gt; 12                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 13                                                                Current report
+#&gt; 14                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 15                                                                          &lt;NA&gt;
+#&gt; 16        Filing under Securities Act Rules 163/433 of free writing prospectuses
+#&gt; 17                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 18                                       Quarterly report [Sections 13 or 15(d)]
+#&gt; 19                                                                Current report
+#&gt; 20                                                                Current report
+#&gt; 21                                                                Current report
+#&gt; 22                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 23        Filing under Securities Act Rules 163/433 of free writing prospectuses
+#&gt; 24                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 25                                                                Current report
+#&gt; 26               Statement of acquisition of beneficial ownership by individuals
+#&gt; 27                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 28        Filing under Securities Act Rules 163/433 of free writing prospectuses
+#&gt; 29                                                   Prospectus [Rule 424(b)(2)]
+#&gt; 30                                       Quarterly report [Sections 13 or 15(d)]
+#&gt; 31                                                                Current report
+#&gt; 32                                                 Notice of exempt solicitation
+#&gt; 33               Statement of acquisition of beneficial ownership by individuals
+#&gt; 34  Additional definitive proxy soliciting materials and Rule 14(a)(12) material
+#&gt; 35                                             Other definitive proxy statements
+#&gt; 36                                                                Current report
+#&gt; 37                                                              No Action Letter
+#&gt; 38                                                              No Action Letter
+#&gt; 39                                                              No Action Letter
+#&gt; 40                        Annual report [Section 13 and 15(d), not S-K Item 405]
+#&gt;            description   size
+#&gt; 1                 &lt;NA&gt;  10 MB
+#&gt; 2  items 2.02 and 9.01 406 KB
+#&gt; 3  items 8.01 and 9.01 217 KB
+#&gt; 4                 &lt;NA&gt; 426 KB
+#&gt; 5                 &lt;NA&gt;  16 KB
+#&gt; 6                 &lt;NA&gt; 422 KB
+#&gt; 7                 &lt;NA&gt;   1 KB
+#&gt; 8                 &lt;NA&gt;  17 KB
+#&gt; 9  items 8.01 and 9.01 309 KB
+#&gt; 10                &lt;NA&gt; 469 KB
+#&gt; 11                &lt;NA&gt;  30 KB
+#&gt; 12                &lt;NA&gt; 462 KB
+#&gt; 13 items 8.01 and 9.01 514 KB
+#&gt; 14                &lt;NA&gt; 460 KB
+#&gt; 15                &lt;NA&gt; 835 KB
+#&gt; 16                &lt;NA&gt;  54 KB
+#&gt; 17                &lt;NA&gt; 428 KB
+#&gt; 18                &lt;NA&gt;   9 MB
+#&gt; 19 items 2.02 and 9.01 430 KB
+#&gt; 20 items 8.01 and 9.01 234 KB
+#&gt; 21           item 5.07  49 KB
+#&gt; 22                &lt;NA&gt; 476 KB
+#&gt; 23                &lt;NA&gt;  13 KB
+#&gt; 24                &lt;NA&gt; 476 KB
+#&gt; 25 items 8.01 and 9.01 675 KB
+#&gt; 26                &lt;NA&gt;  37 KB
+#&gt; 27                &lt;NA&gt; 544 KB
+#&gt; 28                &lt;NA&gt;  96 KB
+#&gt; 29                &lt;NA&gt; 498 KB
+#&gt; 30                &lt;NA&gt;   8 MB
+#&gt; 31 items 2.02 and 9.01 390 KB
+#&gt; 32                &lt;NA&gt;  28 KB
+#&gt; 33                &lt;NA&gt;  13 KB
+#&gt; 34                &lt;NA&gt; 674 KB
+#&gt; 35                &lt;NA&gt;   5 MB
+#&gt; 36 items 5.03 and 9.01 248 KB
+#&gt; 37                &lt;NA&gt;   1 KB
+#&gt; 38                &lt;NA&gt;   1 KB
+#&gt; 39                &lt;NA&gt;   1 KB
+#&gt; 40                &lt;NA&gt;  13 MB
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -154,7 +370,9 @@ components, try just usning filing_info</p>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

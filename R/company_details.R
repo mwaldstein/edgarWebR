@@ -2,9 +2,9 @@
 #'
 #' The SEC generates a html page as an index for every filing it receives containing
 #' all the metainformation about the filing. We extract 3 main types of information: 
-#'\itemize{
-#'  \item Company Information - Filing date, accepted date, etc.
-#'  \item Filings - Companies included in the filing
+#'\describe{
+#'  \item{Company Information}{Filing date, accepted date, etc.}
+#'  \item{Filings}{Companies included in the filing}
 #'}
 #'
 #' For a company, there is typically a single filer and no funds, but many filings
@@ -27,12 +27,13 @@
 #' @return A dataframe with all the parsed meta-info on the filing
 #'
 #' @importFrom methods is
-#'
+#' @examples
+#' company_details("AAPL")
 #' @export
-company_details <- function(x, 
-                         ownership = FALSE, 
+company_details <- function(x,
+                         ownership = FALSE,
                          type = "",
-                         before="", 
+                         before="",
                          count = 40,
                          page = 1) {
   # We want to accept a pre-fetched document or possibly a sub-page node

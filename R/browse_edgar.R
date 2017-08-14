@@ -14,10 +14,10 @@
 #' @importFrom utils URLencode
 #'
 #' @return A xml document
-browse_edgar <- function(ticker, 
-                         ownership = FALSE, 
+browse_edgar <- function(ticker,
+                         ownership = FALSE,
                          type = "",
-                         before="", 
+                         before="",
                          count = 40,
                          page = 1) {
   href <- paste0("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany",

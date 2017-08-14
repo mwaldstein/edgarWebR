@@ -15,3 +15,6 @@ A dataframe with all the funds associated with a given filing
 \description{
 SEC Filing Funds
 }
+\examples{
+filing_funds("https://www.sec.gov/Archives/edgar/data/933691/000119312517247698/0001193125-17-247698-index.htm")
+}

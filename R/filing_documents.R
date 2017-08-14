@@ -19,7 +19,8 @@
 #'    meta info
 #'
 #' @importFrom methods is
-#'
+#' @examples
+#' filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
 #' @export
 filing_documents <- function(x) {
   doc <- if (is(x,"xml_node")) { x } else { xml2::read_html(x) }

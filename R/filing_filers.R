@@ -5,7 +5,8 @@
 #' @return A dataframe with all the filers in the filing along with their info
 #'
 #' @importFrom methods is
-#'
+#' @examples
+#' filing_details("https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm")
 #' @export
 filing_filers <- function(x) {
   # We want to accept a pre-fetched document or possibly a sub-page node

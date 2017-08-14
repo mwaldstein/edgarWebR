@@ -5,14 +5,13 @@
 #' @return A dataframe with all the funds associated with a given filing
 #'
 #' @importFrom methods is
-#'
+#' @examples
+#' filing_funds("https://www.sec.gov/Archives/edgar/data/933691/000119312517247698/0001193125-17-247698-index.htm")
 #' @export
 filing_funds <- function(x) {
   doc <- if (is(x,"xml_node")) { x } else { xml2::read_html(x) }
 
   entries_xpath <- "//td[@class='classContract']"
-
-  #entries <- xml2::xml_find_all(data, entries_xpath)
 
   info_pieces <- list(
     "cik" = "preceding::td[@class='CIKname']/a",

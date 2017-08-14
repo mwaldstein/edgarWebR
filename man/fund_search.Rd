@@ -9,6 +9,26 @@ fund_search(term)
 \arguments{
 \item{term}{Search term to look for funds}
 }
+\value{
+A dataframe of funds found including the following columns -
+  \itemize{
+    \item class_id
+    \item class_filings_href
+    \item class_name
+    \item class_ticker
+    \item series_id
+    \item series_filings_href
+    \item series_name
+    \item series_funds_href
+    \item cik
+    \item cik_name
+    \item cik_filings_href
+    \item cik_funds_href
+  }
+}
 \description{
 SEC Mutual Fund Search
+}
+\examples{
+fund_search("precious metals")
 }

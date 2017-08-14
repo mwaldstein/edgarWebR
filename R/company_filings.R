@@ -12,7 +12,8 @@
 #' @param page Which page of results to return.
 #'
 #' @return A dataframe of company filings
-#'
+#' @examples
+#' company_filings("AAPL")
 #' @export
 company_filings <- function(x,
                          ownership = FALSE,
@@ -20,7 +21,7 @@ company_filings <- function(x,
                          before="",
                          count = 40,
                          page = 1) {
-  doc <- if (is(x,"xml_node")) { x } else { 
+  doc <- if (is(x,"xml_node")) { x } else {
            browse_edgar(x,
                         ownership = ownership,
                         type = type,
