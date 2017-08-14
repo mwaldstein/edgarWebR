@@ -36,5 +36,8 @@ If you know you're going to want all the details of a filing, including document
 funds and filers, look at `filing_details`
 }
 \examples{
-filing_information("https://www.sec.gov/Archives/edgar/data/933691/000119312517247698/0001193125-17-247698-index.htm")
+# Typically you'd get the URL from one of the search functions
+x <- paste0("https://www.sec.gov/Archives/edgar/data/",
+            "933691/000119312517247698/0001193125-17-247698-index.htm")
+filing_information(x)
 }

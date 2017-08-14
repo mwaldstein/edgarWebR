@@ -4,12 +4,21 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
+```{r echo=FALSE}
+# We jump through these hoops to make sure we're re-using the same cache path
+cache.path = if (file.exists(file.path(getwd(),"docs"))) {
+               file.path(getwd(),"docs","README_cache/")
+             } else {
+               file.path(getwd(),"README_cache/")
+             }
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "README-",
+  cache.path = cache.path
 )
+
+library(edgarWebR)
 ```
 # edgarWebR
 
@@ -58,11 +67,11 @@ fund search and resultant filings.
 Once a filing is found via any of the above, there are a number of functions to
 process the result - 
 
- * `filing_details()`
  * `filing_documents()`
  * `filing_filers()`
  * `filing_funds()`
  * `filing_information()`
+ * `filing_details()` - returns all 4 of the filing components in a list.
 
 ### Installation
 Until the API stablilizes, the package is not yet available from CRAN. The best
@@ -71,6 +80,11 @@ way to install it is from github using devtools:
 # Install the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("mwaldstein/edgarWebR")
+```
+
+## Example
+```{r example, cache=TRUE}
+company_filings("AAPL", type = "10-K", count = 10)
 ```
 
 ## Related Packages

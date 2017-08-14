@@ -172,11 +172,12 @@
 </table>
 <p>Once a filing is found via any of the above, there are a number of functions to process the result -</p>
 <ul>
-<li><code><a href="reference/filing_details.html">filing_details()</a></code></li>
 <li><code><a href="reference/filing_documents.html">filing_documents()</a></code></li>
 <li><code><a href="reference/filing_filers.html">filing_filers()</a></code></li>
 <li><code><a href="reference/filing_funds.html">filing_funds()</a></code></li>
 <li><code><a href="reference/filing_information.html">filing_information()</a></code></li>
+<li>
+<code><a href="reference/filing_details.html">filing_details()</a></code> - returns all 4 of the filing components in a list.</li>
 </ul>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
@@ -186,6 +187,66 @@
 <span class="co"># install.packages("devtools")</span>
 devtools::<span class="kw">install_github</span>(<span class="st">"mwaldstein/edgarWebR"</span>)</code></pre></div>
 </div>
+</div>
+<div id="example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example" class="anchor"></a>Example</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/company_filings.html">company_filings</a></span>(<span class="st">"AAPL"</span>, <span class="dt">type =</span> <span class="st">"10-K"</span>, <span class="dt">count =</span> <span class="dv">10</span>)
+<span class="co">#&gt;        accession_number act file_number filing_date accepted_date</span>
+<span class="co">#&gt; 1  0001628280-16-020309  34   001-36743  2016-10-26    2016-10-26</span>
+<span class="co">#&gt; 2  0001193125-15-356351  34   001-36743  2015-10-28    2015-10-28</span>
+<span class="co">#&gt; 3  0001193125-14-383437  34   000-10030  2014-10-27    2014-10-27</span>
+<span class="co">#&gt; 4  0001193125-13-416534  34   000-10030  2013-10-30    2013-10-29</span>
+<span class="co">#&gt; 5  0001193125-12-444068  34   000-10030  2012-10-31    2012-10-31</span>
+<span class="co">#&gt; 6  0001193125-11-282113  34   000-10030  2011-10-26    2011-10-26</span>
+<span class="co">#&gt; 7  0001193125-10-238044  34   000-10030  2010-10-27    2010-10-27</span>
+<span class="co">#&gt; 8  0001193125-10-012091  34   000-10030  2010-01-25    2010-01-25</span>
+<span class="co">#&gt; 9  0001193125-09-214859  34   000-10030  2009-10-27    2009-10-27</span>
+<span class="co">#&gt; 10 0001193125-08-224958  34   000-10030  2008-11-05    2008-11-05</span>
+<span class="co">#&gt;                                                                                                href</span>
+<span class="co">#&gt; 1  https://www.sec.gov/Archives/edgar/data/320193/000162828016020309/0001628280-16-020309-index.htm</span>
+<span class="co">#&gt; 2  https://www.sec.gov/Archives/edgar/data/320193/000119312515356351/0001193125-15-356351-index.htm</span>
+<span class="co">#&gt; 3  https://www.sec.gov/Archives/edgar/data/320193/000119312514383437/0001193125-14-383437-index.htm</span>
+<span class="co">#&gt; 4  https://www.sec.gov/Archives/edgar/data/320193/000119312513416534/0001193125-13-416534-index.htm</span>
+<span class="co">#&gt; 5  https://www.sec.gov/Archives/edgar/data/320193/000119312512444068/0001193125-12-444068-index.htm</span>
+<span class="co">#&gt; 6  https://www.sec.gov/Archives/edgar/data/320193/000119312511282113/0001193125-11-282113-index.htm</span>
+<span class="co">#&gt; 7  https://www.sec.gov/Archives/edgar/data/320193/000119312510238044/0001193125-10-238044-index.htm</span>
+<span class="co">#&gt; 8  https://www.sec.gov/Archives/edgar/data/320193/000119312510012091/0001193125-10-012091-index.htm</span>
+<span class="co">#&gt; 9  https://www.sec.gov/Archives/edgar/data/320193/000119312509214859/0001193125-09-214859-index.htm</span>
+<span class="co">#&gt; 10 https://www.sec.gov/Archives/edgar/data/320193/000119312508224958/0001193125-08-224958-index.htm</span>
+<span class="co">#&gt;      type film_number</span>
+<span class="co">#&gt; 1    10-K   161953070</span>
+<span class="co">#&gt; 2    10-K   151180619</span>
+<span class="co">#&gt; 3    10-K   141175110</span>
+<span class="co">#&gt; 4    10-K   131177575</span>
+<span class="co">#&gt; 5    10-K   121171452</span>
+<span class="co">#&gt; 6    10-K   111159350</span>
+<span class="co">#&gt; 7    10-K   101145250</span>
+<span class="co">#&gt; 8  10-K/A    10545024</span>
+<span class="co">#&gt; 9    10-K   091139493</span>
+<span class="co">#&gt; 10   10-K   081162315</span>
+<span class="co">#&gt;                                                 form_name description</span>
+<span class="co">#&gt; 1  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 2  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 3  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 4  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 5  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 6  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 7  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 8  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 9  Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt; 10 Annual report [Section 13 and 15(d), not S-K Item 405]        &lt;NA&gt;</span>
+<span class="co">#&gt;     size</span>
+<span class="co">#&gt; 1  13 MB</span>
+<span class="co">#&gt; 2   9 MB</span>
+<span class="co">#&gt; 3  12 MB</span>
+<span class="co">#&gt; 4  11 MB</span>
+<span class="co">#&gt; 5   9 MB</span>
+<span class="co">#&gt; 6   9 MB</span>
+<span class="co">#&gt; 7  13 MB</span>
+<span class="co">#&gt; 8   5 MB</span>
+<span class="co">#&gt; 9   3 MB</span>
+<span class="co">#&gt; 10  1 MB</span></code></pre></div>
 </div>
 <div id="related-packages" class="section level2">
 <h2 class="hasAnchor">

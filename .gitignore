@@ -8,3 +8,4 @@ vignettes/*.md
 vignettes/*cache/
 vignettes/*figure/
 vignettes/*_files/
+docs/*cache/

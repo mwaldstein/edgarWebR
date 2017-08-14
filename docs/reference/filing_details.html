@@ -129,7 +129,10 @@ components, try just usning filing_info</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>filing_details</span>(<span class='st'>"https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063-index.htm"</span>)</div><div class='output co'>#&gt; $information
+    <pre class="examples"><div class='input'><span class='co'># Typically you'd get the URL from one of the search functions</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>paste0</span>(<span class='st'>"https://www.sec.gov/Archives/edgar/data/"</span>,
+            <span class='st'>"712515/000071251517000063/0000712515-17-000063-index.htm"</span>)
+<span class='fu'>filing_details</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; $information
 #&gt;   type                              description     accession_number
 #&gt; 1 10-Q Quarterly report [Sections 13 or 15(d)]: 0000712515-17-000063
 #&gt;   filing_date       accepted_date documents period_date changed_date
