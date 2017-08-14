@@ -28,7 +28,7 @@ fund search and resultant filings.
 
 | Tool                          | URL                                                             | edgarWebR function(s) |
 |-------------------------------|-----------------------------------------------------------------|-----------------------|
-| Company                       | https://www.sec.gov/edgar/searchedgar/companysearch.html        | `company_information` |
+| Company                       | https://www.sec.gov/edgar/searchedgar/companysearch.html        | `company_information`, `company_details`, `company_filings` |
 | Recent Filings                | https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent      | N/A |
 | Full Text                     | http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp | N/A |
 | Adv. Search                   | https://www.sec.gov/cgi-bin/srch-edgar                          | N/A |
@@ -41,6 +41,14 @@ fund search and resultant filings.
 | CIK                           | https://www.sec.gov/edgar/searchedgar/cik.htm                   | N/A |
 | Daily Filings                 | https://www.sec.gov/edgar/searchedgar/currentevents.htm         | N/A |
 | Correspondence                | https://www.sec.gov/answers/edgarletters.htm                    | N/A |
+
+Once a filing is found via any of the above, there are a number of functions to
+process the result - 
+ * `filing_details`
+ * `filing_documents`
+ * `filing_filers`
+ * `filing_funds`
+ * `filing_information`
 
 ### Installation
 Until the API stablilizes, the package is not yet available from CRAN. The best

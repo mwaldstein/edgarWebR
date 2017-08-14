@@ -98,7 +98,9 @@
 <tr class="odd">
 <td>Company</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/companysearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/companysearch.html</a></td>
-<td><code>company_information</code></td>
+<td>
+<code>company_information</code>, <code>company_details</code>, <code>company_filings</code>
+</td>
 </tr>
 <tr class="even">
 <td>Recent Filings</td>
@@ -162,6 +164,14 @@
 </tr>
 </tbody>
 </table>
+<p>Once a filing is found via any of the above, there are a number of functions to process the result -</p>
+<ul>
+<li><code>filing_details</code></li>
+<li><code>filing_documents</code></li>
+<li><code>filing_filers</code></li>
+<li><code>filing_funds</code></li>
+<li><code>filing_information</code></li>
+</ul>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
@@ -194,7 +204,7 @@ devtools::install_github("mwaldstein/edgarWebR")</a></code></pre>
   <div class="col-md-3" id="sidebar">
     <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/mwaldstein/edgarWebR">https://​github.com/​mwaldstein/​edgarWebR</a>
+<li>Browse source code at <br><a href="https://mwaldstein.github.io/edgarWebR">https://​mwaldstein.github.io/​edgarWebR</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/mwaldstein/edgarWebR/issues">https://​github.com/​mwaldstein/​edgarWebR/​issues</a>
 </li>
