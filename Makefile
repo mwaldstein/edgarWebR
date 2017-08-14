@@ -65,3 +65,7 @@ site: doc
 
 readme:
 	Rscript -e 'rmarkdown::render("README.Rmd")'
+
+version:
+	sed "s/^version:.*/version: '$(PKGVERS).{build}'/" appveyor.yml > appveyor.tmp
+	mv appveyor.tmp appveyor.yml

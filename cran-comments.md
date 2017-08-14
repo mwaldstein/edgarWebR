@@ -1,3 +1,9 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Removed redundant 'for R' from DESCRIPTION
+* Described "SEC" and added URL to Description in DESCRIPTION
+
 ## Test environments
 * OS X 10.11.6 (on travis-ci), R 3.4.1
 * Ubuntu 14.04 (on travis-ci), R 3.4.1
