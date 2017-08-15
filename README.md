@@ -3,7 +3,7 @@
 edgarWebR
 =========
 
-[![Travis-CI Build Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mwaldstein/edgarWebR?branch=master&svg=true)](https://ci.appveyor.com/project/mwaldstein/edgarWebR) [![codecov.io](https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master)](https://codecov.io/github/mwaldstein/edgarWebR?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/edgarWebR)](http://cran.r-project.org/package=edgarWebR) [![Travis-CI Build Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mwaldstein/edgarWebR?branch=master&svg=true)](https://ci.appveyor.com/project/mwaldstein/edgarWebR) [![codecov.io](https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master)](https://codecov.io/github/mwaldstein/edgarWebR?branch=master)
 
 -   Author/Maintainer: [Micah J Waldstein](https://micah.waldste.in)
 -   License: [MIT](https://opensource.org/licenses/MIT)
@@ -114,7 +114,13 @@ Once a filing is found via any of the above, there are a number of functions to 
 
 ### Installation
 
-Until the API stablilizes, the package is not yet available from CRAN. The best way to install it is from github using devtools:
+edgarWebR is available from CRAN, so can be simply installed via
+
+``` r
+install.packages("edgarWebR")
+```
+
+To install the development version,
 
 ``` r
 # Install the development version from GitHub:

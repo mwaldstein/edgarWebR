@@ -31,5 +31,5 @@ A dataframe of company filings
 SEC Company Filings
 }
 \examples{
-company_filings("AAPL")
+company_filings("AAPL", before = "20170810")
 }

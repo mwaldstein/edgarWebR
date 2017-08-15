@@ -24,6 +24,7 @@ library(edgarWebR)
 ```
 # edgarWebR
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/edgarWebR)](http://cran.r-project.org/package=edgarWebR)
 [![Travis-CI Build Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mwaldstein/edgarWebR?branch=master&svg=true)](https://ci.appveyor.com/project/mwaldstein/edgarWebR)
 [![codecov.io](https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master)](https://codecov.io/github/mwaldstein/edgarWebR?branch=master)
@@ -76,9 +77,13 @@ process the result -
  * `filing_details()` - returns all 4 of the filing components in a list.
 
 ### Installation
-Until the API stablilizes, the package is not yet available from CRAN. The best
-way to install it is from github using devtools:
+edgarWebR is available from CRAN, so can be simply installed via
 ```{r install, eval=FALSE}
+install.packages("edgarWebR")
+```
+
+To install the development version,
+```{r install_dev, eval=FALSE}
 # Install the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("mwaldstein/edgarWebR")

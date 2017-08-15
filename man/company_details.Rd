@@ -40,5 +40,5 @@ sets of information:
 }
 }
 \examples{
-company_details("AAPL")
+company_details("AAPL", before = "20170810")
 }

@@ -13,7 +13,7 @@
 #'
 #' @return A dataframe of company filings
 #' @examples
-#' company_filings("AAPL")
+#' company_filings("AAPL", before = "20170810")
 #' @export
 company_filings <- function(x,
                          ownership = FALSE,
