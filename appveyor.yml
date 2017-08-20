@@ -15,7 +15,7 @@ cache:
 
 # Adapt as necessary starting from here
 
-version: '0.1.0.9000.{build}'
+version: '0.1.1.{build}'
 
 environment:
   global:

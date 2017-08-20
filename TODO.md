@@ -12,7 +12,9 @@ A bit of a roadmap/todo
 
 ## Internal
  * Passing lints
+ * Imporove testing using httptest https://github.com/nealrichardson/httptest
+ * Improve makefile http://kbroman.org/minimal_make/,
+   https://github.com/ComputationalProteomicsUnit/maker
 
 ## Package
  * Vignette pulling XBL files using finstr
- * pkgdown & URL's in description

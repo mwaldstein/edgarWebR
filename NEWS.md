@@ -1,5 +1,10 @@
 # edgarWebR 0.1.0.9000 - **DEVELOPMENT**
 
+## Bugfixes
+ * Removed a test for the "changed_date" field in filing information as the
+   source test document removed the field. Permanent fix will be to use a
+   a more stable data source for testing.
+
 # edgarWebR 0.1.0 - "Hello World"
 
 First CRAN release of edgarWebR. At this point, function parameters, return
