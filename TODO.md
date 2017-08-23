@@ -18,6 +18,7 @@ A bit of a roadmap/todo
  * Have travis/appveyor run tests without cache for assurances
  * tests for util.R and get company_information to 100% coverage
  * downstream checks
+ * add no-vignettes options as a cache alternative
 
 ## Package
  * Vignette pulling XBL files using finstr

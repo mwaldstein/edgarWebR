@@ -10,7 +10,7 @@ TGZVNR  := $(PKGSRC)_$(PKGVERS)-vignettes-not-rebuilt.tar.gz
 # containing the first instance of R on the PATH.
 RBIN ?= $(shell dirname "`which R`")
 
-all: clean doc build
+all: version doc build
 .PHONY: doc clean build vignettes check
 
 # build package documentation
@@ -53,14 +53,14 @@ dist-clean: clean test-cleancache
 	$(RM) README.md
 	$(RM) -r inst
 
-cran-check: clean doc build
-	cd ..;R CMD check --as-cran edgarWebR_*.tar.gz
-
 install:
 	Rscript -e 'devtools::install()'
 
-check: clean build
-	cd ..;R CMD check edgarWebR_*.tar.gz
+check: build
+	cd ..;R CMD check $(TGZ)
+
+cran-check: version doc build
+	cd ..;R CMD check --as-cran $(TGZ)
 
 live-test:
 	Rscript -e 'library(httptest); testthat::auto_test_package()'
