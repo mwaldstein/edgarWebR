@@ -23,6 +23,8 @@ Suggests:
     purrr,
     rmarkdown,
     httptest,
+    devtools,
+    roxygen2,
     tidyr
 VignetteBuilder: knitr
 License: MIT + file LICENSE
