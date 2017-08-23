@@ -24,7 +24,6 @@
 #'     \item{filers}{A data.frame as returned by \code{\link{filing_filers}}}
 #'     \item{funds}{A data.frame as returned by \code{\link{filing_funds}}}
 #'  }
-#' @importFrom methods is
 #' @examples
 #' # Typically you'd get the URL from one of the search functions
 #' x <- paste0("https://www.sec.gov/Archives/edgar/data/",
@@ -32,20 +31,29 @@
 #' filing_details(x)
 #' @export
 filing_details <- function(x) {
-  # We want to accept a pre-fetched document or possibly a sub-page node
-  doc <- if (is(x, "xml_node")) { x } else { xml2::read_html(x) }
+  UseMethod("filing_details")
+}
 
+#' @rdname filing_details
+#' @export
+filing_details.character <- function(x) {
+  filing_details(charToDoc(x))
+}
+
+#' @rdname filing_details
+#' @export
+filing_details.xml_node <- function(x) {
   # 1 - Basic info
-  info <- filing_information(doc)
+  info <- filing_information(x)
 
   # 2 - Get documents
-  documents <- filing_documents(doc)
+  documents <- filing_documents(x)
 
   # 2 - Extract key/value pairs from he  # 3 - Get filers
-  filers <- filing_filers(doc)
+  filers <- filing_filers(x)
 
   # 4 - Get funds
-  funds <- filing_funds(doc)
+  funds <- filing_funds(x)
 
   return(list("information" = info,
               "documents" = documents,

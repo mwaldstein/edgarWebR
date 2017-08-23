@@ -28,13 +28,11 @@ browse_edgar <- function(ticker,
                 "&start=", (page - 1) * count,
                 "&count=", count,
                 "&output=atom")
-  data <- try(xml2::read_xml(href), silent = TRUE)
 
-  suppressWarnings({
-  if (class(data) == "try-error") {
-    stop("No matching company found.");
+  res <- httr::GET(href)
+  if (res$status != "200" | res$headers["content-type"] != "application/atom+xml") {
+    stop(paste0("Could not find company: ", ticker));
   }
-  })
 
-  return(data)
+  xml2::read_xml(res, base_url = href)
 }

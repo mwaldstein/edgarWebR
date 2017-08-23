@@ -14,14 +14,25 @@ all: clean doc build
 .PHONY: doc clean build vignettes check
 
 # build package documentation
-doc: readme vignettes
+doc:
 	Rscript -e 'devtools::document()'
 
 test:
-	Rscript -e 'devtools::test()'
+	Rscript -e 'library(httptest); devtools::test()'
+
+test-nocache:
+	MOCK_BYPASS="true" Rscript -e 'library(httptest); devtools::test()'
+
+test-buildcache: test-cleancache
+	MOCK_BYPASS="capture" Rscript -e 'library(httptest); devtools::test()'
+
+test-cleancache:
+	${RM} -r tests/cache
 
 build: doc
 	Rscript -e 'devtools::build()'
+
+doc-all: doc readme vignettes
 
 vignettes:
 	Rscript -e 'devtools::build_vignettes()'
@@ -36,7 +47,7 @@ clean:
 	$(RM) -r docs/articles/*cache
 
 # Purge all generated files, leave only true source
-dist-clean: clean
+dist-clean: clean test-cleancache
 	$(RM) -r man
 	$(RM) -r doc
 	$(RM) README.md
@@ -52,7 +63,7 @@ check: clean build
 	cd ..;R CMD check edgarWebR_*.tar.gz
 
 live-test:
-	Rscript -e 'testthat::auto_test_package()'
+	Rscript -e 'library(httptest); testthat::auto_test_package()'
 
 coverage:
 	Rscript -e 'covr::report(covr::package_coverage(), file="~/public_html/edgarWebR-cov.html", browse = FALSE)'
@@ -72,3 +83,6 @@ version:
 	mv appveyor.tmp appveyor.yml
 	sed "s/^  - PACKAGE.*/  - PACKAGE_VERSION=\"$(PKGVERS)\"/" .travis.yml > travis.tmp
 	mv travis.tmp .travis.yml
+
+ubuntu-deps:
+	apt-get install texlive-latex-base texlive-fonts-extra

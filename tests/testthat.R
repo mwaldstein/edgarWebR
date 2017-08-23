@@ -1,2 +1,2 @@
-library(testthat)
+library(httptest)
 test_check("edgarWebR")

@@ -1,4 +1,14 @@
-# edgarWebR 0.1.0.9000 - **DEVELOPMENT**
+# edgarWebR 0.1.1.9000 - **DEVELOPMENT**
+
+## Internal
+ * Incorporated [httptest](https://github.com/nealrichardson/httptest) for cached testing. Altered most functions to use [httr](https://cran.r-project.org/package=httr) for remote calls to support this test method.
+ * New Makefile targets to support cached testing -
+   - `make test` - uses cached responses
+   - `make test-nocache` - makes all remote calls
+   - `make test-buildcache` - runs tests, caching remote requests.
+   - `make test-cleancache` - deletes the test cache
+
+# edgarWebR 0.1.1 - "Whoops 1"
 
 ## Bugfixes
  * Removed a test for the "changed_date" field in filing information as the

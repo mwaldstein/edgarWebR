@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SEC Filing Details — filing_details • edgarWebR</title>
+<title>SEC Filing Details <U+2014> filing_details <e2><80><a2> edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -99,7 +99,13 @@ all the meta-information about the filing. We extract 3 main types of informatio
 </dl>
     
 
-    <pre class="usage"><span class='fu'>filing_details</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>filing_details</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for character</span>
+<span class='fu'>filing_details</span>(<span class='no'>x</span>)
+
+<span class='co'># S3 method for xml_node</span>
+<span class='fu'>filing_details</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -136,7 +142,7 @@ components, try just using filing_info</p>
 #&gt;   type                              description     accession_number
 #&gt; 1 10-Q Quarterly report [Sections 13 or 15(d)]: 0000712515-17-000063
 #&gt;   filing_date       accepted_date documents period_date changed_date
-#&gt; 1  2017-08-08 2017-08-08 17:05:57        87  2017-06-30   2017-08-08
+#&gt; 1  2017-08-08 2017-08-08 17:05:57        87  2017-06-30         &lt;NA&gt;
 #&gt;   effective_date   bytes
 #&gt; 1           &lt;NA&gt; 8947076
 #&gt; 
@@ -190,7 +196,7 @@ components, try just using filing_info</p>
 #&gt; 4     EX-31.2   15281
 #&gt; 5     EX-32.1    7059
 #&gt; 6     EX-32.2    7248
-#&gt; 7             8947076
+#&gt; 7    &lt;U+00A0&gt; 8947076
 #&gt; 8  EX-101.INS 2088048
 #&gt; 9  EX-101.SCH   74416
 #&gt; 10 EX-101.CAL   92568

@@ -6,6 +6,7 @@
 #'   code
 #'
 #' @return a dataframe with all SEC company information
+#' @importFrom methods is
 #' @examples
 #' company_information("INTC")
 #' @export

@@ -4,7 +4,6 @@
 #' 
 #' @return A dataframe with all the funds associated with a given filing
 #'
-#' @importFrom methods is
 #' @examples
 #' # Typically you'd get the URL from one of the search functions
 #' x <- paste0("https://www.sec.gov/Archives/edgar/data/",
@@ -12,8 +11,18 @@
 #' filing_funds(x)
 #' @export
 filing_funds <- function(x) {
-  doc <- if (is(x,"xml_node")) { x } else { xml2::read_html(x) }
+  UseMethod("filing_funds")
+}
 
+#' @rdname filing_funds
+#' @export
+filing_funds.character <- function(x) {
+  filing_funds(charToDoc(x))
+}
+
+#' @rdname filing_funds
+#' @export
+filing_funds.xml_node <- function(x) {
   entries_xpath <- "//td[@class='classContract']"
 
   info_pieces <- list(
@@ -28,7 +37,7 @@ filing_funds <- function(x) {
     "ticker" = "following-sibling::td[3]/text()"
     )
 
-  res <- map_xml(doc, entries_xpath, info_pieces)
+  res <- map_xml(x, entries_xpath, info_pieces)
 
   return(res)
 }

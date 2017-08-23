@@ -25,7 +25,6 @@
 #' 
 #' @return A dataframe with all the parsed meta-info on the filing
 #'
-#' @importFrom methods is
 #' @examples
 #' # Typically you'd get the URL from one of the search functions
 #' x <- paste0("https://www.sec.gov/Archives/edgar/data/",
@@ -33,8 +32,18 @@
 #' filing_information(x)
 #' @export
 filing_information <- function(x) {
-  doc <- if (is(x, "xml_node")) { x } else { xml2::read_html(x) }
+  UseMethod("filing_information")
+}
 
+#' rdname filing_information
+#' @export
+filing_information.character <- function(x) {
+  filing_information(charToDoc(x))
+}
+
+#' rdname filing_information
+#' @export
+filing_information.xml_node <- function(x) {
   info_xpath <- "."
   info_pieces <- list(
     "type" = "substring-after(//div[@id='formName']/strong, 'Form ')",
@@ -50,7 +59,7 @@ filing_information <- function(x) {
     )
   info_trim <- c("description", "accession_number")
 
-  info <- map_xml(doc, info_xpath, info_pieces, trim = info_trim, integers = c("bytes", "documents"))
+  info <- map_xml(x, info_xpath, info_pieces, trim = info_trim, integers = c("bytes", "documents"))
 
   return(info)
 }

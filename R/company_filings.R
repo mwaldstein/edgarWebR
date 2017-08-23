@@ -12,6 +12,7 @@
 #' @param page Which page of results to return.
 #'
 #' @return A dataframe of company filings
+#' @importFrom methods is
 #' @examples
 #' company_filings("AAPL", before = "20170810")
 #' @export

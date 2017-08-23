@@ -2,9 +2,15 @@
 % Please edit documentation in R/filing_funds.R
 \name{filing_funds}
 \alias{filing_funds}
+\alias{filing_funds.character}
+\alias{filing_funds.xml_node}
 \title{SEC Filing Funds}
 \usage{
 filing_funds(x)
+
+\method{filing_funds}{character}(x)
+
+\method{filing_funds}{xml_node}(x)
 }
 \arguments{
 \item{x}{URL to a SEC filing index page}

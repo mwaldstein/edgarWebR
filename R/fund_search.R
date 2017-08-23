@@ -20,12 +20,13 @@
 #' fund_search("precious metals")
 #' @export
 fund_search <- function(term) {
-  uri <- paste0("https://www.sec.gov/cgi-bin/series?type=N-PX",
+  href <- paste0("https://www.sec.gov/cgi-bin/series?type=N-PX",
                 "&sc=companyseries",
                 "&ticker=", URLencode(term, reserved = TRUE),
                 "&CIK=",
                 "&Find=Search")
-  data <- xml2::read_html(uri)
+  res <- httr::GET(href)
+  doc <- xml2::read_html(res, base_url = href)
 
   entries_xpath <- "//a[starts-with(.,'C')]"
 
@@ -46,7 +47,7 @@ fund_search <- function(term) {
 
   trim_cols <- c("class_ticker")
 
-  res <- map_xml(data, entries_xpath, pieces, trim = trim_cols)
+  res <- map_xml(doc, entries_xpath, pieces, trim = trim_cols)
 
   return(res)
 }

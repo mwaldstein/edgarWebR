@@ -18,7 +18,6 @@
 #' @return A dataframe with all the documents in the filing along with their
 #'    meta info
 #'
-#' @importFrom methods is
 #' @examples
 #' # Typically you'd get the URL from one of the search functions
 #' x <- paste0("https://www.sec.gov/Archives/edgar/data/",
@@ -26,8 +25,18 @@
 #' filing_documents(x)
 #' @export
 filing_documents <- function(x) {
-  doc <- if (is(x,"xml_node")) { x } else { xml2::read_html(x) }
+  UseMethod("filing_documents")
+}
 
+#' @rdname filing_documents
+#' @export
+filing_documents.character <- function(x) {
+  filing_documents(charToDoc(x))
+}
+
+#' @rdname filing_documents
+#' @export
+filing_documents.xml_node <- function(x) {
   entries_xpath <- paste0(
     "//table[@summary='Document Format Files']/tr[not(descendant::th)]|",
     "//table[@summary='Data Files']/tr[not(descendant::th)]")
@@ -41,7 +50,7 @@ filing_documents <- function(x) {
     "size" = "td[5]"
     )
 
-  res <- map_xml(doc, entries_xpath, info_pieces, integers = c("seq", "size"))
+  res <- map_xml(x, entries_xpath, info_pieces, integers = c("seq", "size"))
 
   return(res)
 }

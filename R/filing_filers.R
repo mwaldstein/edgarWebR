@@ -4,7 +4,6 @@
 #' 
 #' @return A dataframe with all the filers in the filing along with their info
 #'
-#' @importFrom methods is
 #' @examples
 #' # Typically you'd get the URL from one of the search functions
 #' x <- paste0("https://www.sec.gov/Archives/edgar/data/",
@@ -12,9 +11,18 @@
 #' filing_filers(x)
 #' @export
 filing_filers <- function(x) {
-  # We want to accept a pre-fetched document or possibly a sub-page node
-  doc <- if (is(x, "xml_node")) { x } else { xml2::read_html(x) }
+  UseMethod("filing_filers")
+}
 
+#' rdname filing_filers
+#' @export
+filing_filers.character <- function(x) {
+  filing_filers(charToDoc(x))
+}
+
+#' rdname filing_filers
+#' @export
+filing_filers.xml_node <- function(x) {
   entries_xpath <- "//div[@id='filerDiv']"
 
   # This gets really ugly thanks to some unstructured formatting
@@ -46,7 +54,7 @@ filing_filers <- function(x) {
                  paste0("mailing_address_", seq(4)),
                  paste0("business_address_", seq(4)))
 
-  res <- map_xml(doc, entries_xpath, info_pieces, trim = filer_trim)
+  res <- map_xml(x, entries_xpath, info_pieces, trim = filer_trim)
 
   return(res)
 }
