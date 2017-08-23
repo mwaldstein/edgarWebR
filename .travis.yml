@@ -14,3 +14,4 @@ os:
 
 after_success:
     - Rscript -e 'covr::codecov()'
+    - make test-nocache
