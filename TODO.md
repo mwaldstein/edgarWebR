@@ -12,9 +12,12 @@ A bit of a roadmap/todo
 
 ## Internal
  * Passing lints
- * Imporove testing using httptest https://github.com/nealrichardson/httptest
  * Improve makefile http://kbroman.org/minimal_make/,
    https://github.com/ComputationalProteomicsUnit/maker
+ * Cache for vignettes - longest part of build at the moment
+ * Have travis/appveyor run tests without cache for assurances
+ * tests for util.R and get company_information to 100% coverage
+ * downstream checks
 
 ## Package
  * Vignette pulling XBL files using finstr

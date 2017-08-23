@@ -1,9 +1,3 @@
-## FIXING CRAN ERRORS
-
-Existing v0.1.0 on CRAN produces test errors due to instability in remote
-source data. Re-aigned with tests with source, longer term solution will be to
-adjust test strategy to use stable submissions.
-
 ## Test environments
 * OS X 10.11.6 (on travis-ci), R 3.4.1
 * Ubuntu 14.04 (on travis-ci), R 3.4.1
