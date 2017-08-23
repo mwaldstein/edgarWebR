@@ -14,13 +14,13 @@ filing_filers <- function(x) {
   UseMethod("filing_filers")
 }
 
-#' rdname filing_filers
+#' @rdname filing_filers
 #' @export
 filing_filers.character <- function(x) {
   filing_filers(charToDoc(x))
 }
 
-#' rdname filing_filers
+#' @rdname filing_filers
 #' @export
 filing_filers.xml_node <- function(x) {
   entries_xpath <- "//div[@id='filerDiv']"

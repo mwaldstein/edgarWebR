@@ -99,7 +99,16 @@
 <h2 class="hasAnchor">
 <a href="#internal" class="anchor"></a>Internal</h2>
 <ul>
-<li>Incorporated httptest for cached testing. Altered most functions to use httr for remote calls to support this test method.</li>
+<li>Incorporated <a href="https://github.com/nealrichardson/httptest">httptest</a> for cached testing. Altered most functions to use <a href="https://cran.r-project.org/package=httr">httr</a> for remote calls to support this test method.</li>
+<li>New Makefile targets to support cached testing -</li>
+<li>
+<code>make test</code> - uses cached responses</li>
+<li>
+<code>make test-nocache</code> - makes all remote calls</li>
+<li>
+<code>make test-buildcache</code> - runs tests, caching remote requests.</li>
+<li>
+<code>make test-cleancache</code> - deletes the test cache</li>
 </ul>
 </div>
 </div>

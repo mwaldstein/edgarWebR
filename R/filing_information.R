@@ -35,13 +35,13 @@ filing_information <- function(x) {
   UseMethod("filing_information")
 }
 
-#' rdname filing_information
+#' @rdname filing_information
 #' @export
 filing_information.character <- function(x) {
   filing_information(charToDoc(x))
 }
 
-#' rdname filing_information
+#' @rdname filing_information
 #' @export
 filing_information.xml_node <- function(x) {
   info_xpath <- "."

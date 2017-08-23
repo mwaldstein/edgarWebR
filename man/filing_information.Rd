@@ -2,9 +2,15 @@
 % Please edit documentation in R/filing_information.R
 \name{filing_information}
 \alias{filing_information}
+\alias{filing_information.character}
+\alias{filing_information.xml_node}
 \title{SEC Filing Information}
 \usage{
 filing_information(x)
+
+\method{filing_information}{character}(x)
+
+\method{filing_information}{xml_node}(x)
 }
 \arguments{
 \item{x}{URL or xml_document for a SEC filing index page}

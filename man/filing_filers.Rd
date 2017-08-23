@@ -2,9 +2,15 @@
 % Please edit documentation in R/filing_filers.R
 \name{filing_filers}
 \alias{filing_filers}
+\alias{filing_filers.character}
+\alias{filing_filers.xml_node}
 \title{SEC Filing Included Filers}
 \usage{
 filing_filers(x)
+
+\method{filing_filers}{character}(x)
+
+\method{filing_filers}{xml_node}(x)
 }
 \arguments{
 \item{x}{URL to a SEC filing index page}
