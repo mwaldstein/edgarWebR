@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SEC Company Details <U+2014> company_details <e2><80><a2> edgarWebR</title>
+<title>SEC Company Details — company_details • edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -143,7 +143,32 @@ you only get the type you want, best practice would be to filter the results.</p
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>company_details</span>(<span class='st'>"AAPL"</span>, <span class='kw'>before</span> <span class='kw'>=</span> <span class='st'>"20170810"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in curl::curl_fetch_memory(url, handle = handle): Timeout was reached: Operation timed out after 10000 milliseconds with 0 out of 0 bytes received</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>company_details</span>(<span class='st'>"AAPL"</span>, <span class='kw'>before</span> <span class='kw'>=</span> <span class='st'>"20170810"</span>)</div><div class='output co'>#&gt; $information
+#&gt;        name        cik fiscal_year_end  sic      sic_description state_location
+#&gt; 1 APPLE INC 0000320193            0930 3571 ELECTRONIC COMPUTERS             CA
+#&gt;   state_incorporation mailing_city mailing_state mailing_zip    mailing_street
+#&gt; 1                  CA    CUPERTINO            CA       95014 ONE INFINITE LOOP
+#&gt;   business_city business_state business_zip   business_street business_phone
+#&gt; 1     CUPERTINO             CA        95014 ONE INFINITE LOOP (408) 996-1010
+#&gt; 
+#&gt; $filings
+#&gt;        accession_number act file_number filing_date accepted_date
+#&gt; 1  0000320193-17-000009  34   001-36743  2017-08-02    2017-08-02
+#&gt; 2  0000320193-17-000006  34   001-36743  2017-08-01    2017-08-01
+#&gt;                                                                                                href
+#&gt; 1  https://www.sec.gov/Archives/edgar/data/320193/000032019317000009/0000320193-17-000009-index.htm
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/320193/000032019317000006/0000320193-17-000006-index.htm
+#&gt;        type film_number
+#&gt; 1      10-Q   171000359
+#&gt; 2       8-K    17997093
+#&gt;                                                                        form_name
+#&gt; 1                                        Quarterly report [Sections 13 or 15(d)]
+#&gt; 2                                                                 Current report
+#&gt;            description   size
+#&gt; 1                 &lt;NA&gt;  10 MB
+#&gt; 2  items 2.02 and 9.01 406 KB
+#&gt;  [ reached getOption("max.print") -- omitted 38 rows ]
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
