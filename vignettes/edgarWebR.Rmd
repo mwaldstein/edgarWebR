@@ -141,8 +141,13 @@ edgarWebR itself has a lot more functionality than what we've explored here and
 there is more coming.
 
 ## How to Download
-edgarWebR is not yet of CRAN, as the API hasn't stabilized yet. In the
-meantime, you can get a copy from github by using devtools:
+edgarWebR is available from CRAN, so can be simply installed via
+```{r eval=FALSE}
+install.packages("edgarWebR")
+```
+
+If you want the latest and greatest, you can get a copy of the development version
+from github by using devtools:
 ```{r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("mwaldstein/edgarWebR")
