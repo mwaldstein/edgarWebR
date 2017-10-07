@@ -11,6 +11,7 @@
 #'
 #' @examples
 #' parse_submission('https://www.sec.gov/Archives/edgar/data/37996/000003799617000084/0000037996-17-000084.txt')
+#' @importFrom dplyr %>%
 #' @export
 parse_submission <- function (uri) {
   res <- getText(uri)
