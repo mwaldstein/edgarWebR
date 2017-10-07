@@ -14,11 +14,13 @@ a tibble with one row per document, the content nested in TEXT
 }
 \description{
 SEC filings are sent in a SGML file - this parses that master submission
-into component documents, with content lines in a nested tibble.
+into component documents, with content lines in list column 'TEXT'.
 }
 \details{
-*NOTE:* non-text documents are uuencoded.
+*NOTE:* non-text documents are uuencoded and likely are missing needed
+padding on lines to allow uudecode to work.
 }
 \examples{
-parse_submission('https://www.sec.gov/Archives/edgar/data/37996/000003799617000084/0000037996-17-000084.txt')
+parse_submission(paste0('https://www.sec.gov/Archives/edgar/data/',
+                 '37996/000003799617000084/0000037996-17-000084.txt'))
 }

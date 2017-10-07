@@ -11,10 +11,10 @@ charToDoc <- function(x) {
   }
 }
 
-getText <- function(x) {
+charToText <- function(x) {
   if (is_url(x)) {
     res <- httr::GET(x)
-    return(httr::content(res, encoding="UTF-8"))
+    return(httr::content(res, encoding = "UTF-8"))
   } else {
     return(x)
   }

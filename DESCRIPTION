@@ -14,9 +14,7 @@ Depends:
 Imports:
     xml2,
     methods,
-    httr,
-    dplyr,
-    tidyr
+    httr
 Suggests:
     covr,
     ggplot2,
@@ -25,6 +23,8 @@ Suggests:
     rmarkdown,
     httptest,
     devtools,
+    dplyr,
+    tidyr,
     roxygen2
 VignetteBuilder: knitr
 License: MIT + file LICENSE
