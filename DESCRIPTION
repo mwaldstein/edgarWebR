@@ -14,18 +14,18 @@ Depends:
 Imports:
     xml2,
     methods,
-    httr
+    httr,
+    dplyr,
+    tidyr
 Suggests:
     covr,
-    dplyr,
     ggplot2,
     knitr,
     purrr,
     rmarkdown,
     httptest,
     devtools,
-    roxygen2,
-    tidyr
+    roxygen2
 VignetteBuilder: knitr
 License: MIT + file LICENSE
 Encoding: UTF-8

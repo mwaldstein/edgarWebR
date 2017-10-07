@@ -10,3 +10,12 @@ charToDoc <- function(x) {
     xml2::read_html(x)
   }
 }
+
+getText <- function(x) {
+  if (is_url(x)) {
+    res <- httr::GET(x)
+    return(httr::content(res, encoding="UTF-8"))
+  } else {
+    return(x)
+  }
+}
