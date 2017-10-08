@@ -4,7 +4,7 @@ context("running parse_submission")
 # important to test a wide range of values
 
 with_mock_API({
-  test_that("Basics (type 4)", {
+  test_that("Basics (type 8-K)", {
     href <- "https://www.sec.gov/Archives/edgar/data/37996/000003799617000084/0000037996-17-000084.txt"
     res <- parse_submission(href)
     expect_is(res, "data.frame")

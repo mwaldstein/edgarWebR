@@ -7,6 +7,9 @@ A bit of a roadmap/todo
    - https://www.sec.gov/cgi-bin/own-disp?CIK=0000051143&action=getissuer
  * [filing_filers] - parse out filer type/role
  * Alias company\_ functions to filer\_ to cover non-company filers better
+ * company href given CIK
+ * Return master filing href where possible
+ * parse filing document header
 
 ## Bugs
 

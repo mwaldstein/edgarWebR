@@ -10,15 +10,30 @@ parse_submission(uri)
 \item{uri}{- URL to a SEC complete submiision text file}
 }
 \value{
-a tibble with one row per document, the content nested in TEXT
+a dataframe with one row per document.
 }
 \description{
-SEC filings are sent in a SGML file - this parses that master submission
+Raw SEC filings are sent in a SGML file - this parses that master submission
 into component documents, with content lines in list column 'TEXT'.
 }
 \details{
-*NOTE:* non-text documents are uuencoded and likely are missing needed
-padding on lines to allow uudecode to work.
+Most of the time the information you need along with the sepecific files
+will be available by using \code{\link{filing_documents}}, but there are
+scenarios where you may want to access the full contents of the master
+submission - 
+  \describe{
+    \item{Old Submissions}{Older submissions are not parsed into component
+          documents by the SEC so access requires parsing the main filing}
+    \item{Full Document List}{The SEC only provides what it considers the
+          relevant documents, but filings often include many more ancillary
+          files}
+    \item{Efficient Downloading}{If you're fetching many documents from a
+          filing over many filings, there can be effiency gains fromjust
+          downloading a single file.}
+  }
+
+*NOTE:* non-text documents are uuencoded and need a sepate decoder to be
+viewed.
 }
 \examples{
 parse_submission(paste0('https://www.sec.gov/Archives/edgar/data/',

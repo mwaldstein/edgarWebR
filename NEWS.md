@@ -1,5 +1,20 @@
 # edgarWebR 0.1.1.9000 - **DEVELOPMENT**
 
+## Features
+
+### Parse Filings
+New functionality in `parse_filing` to annotate a filing with part and item
+identifiers. This enables easy extraction of risks or management discussions.
+
+*NOTE:* While tested on a range of documents, due to the high variation in
+filing formats, it is likely not to work on every document. Please open an
+issue if errors are encountered.
+
+### Parse Submission
+New function `parse_submission` extracts documents from the full submission file.
+This is needed for older submissions and accessing documents that are not extracted
+individually online.
+
 ## Internal
  * Incorporated [httptest](https://github.com/nealrichardson/httptest) for cached testing. Altered most functions to use [httr](https://cran.r-project.org/package=httr) for remote calls to support this test method.
  * New Makefile targets to support cached testing -

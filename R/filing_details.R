@@ -16,7 +16,7 @@
 #' components, try just using filing_info
 #'
 #' @param x URL to a SEC filing index page
-#' 
+#'
 #' @return A list with the following components:
 #'   \describe{
 #'     \item{information}{A data.frame as returned by \code{\link{filing_information}}}
