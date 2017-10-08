@@ -62,6 +62,9 @@ parse_filing <- function (uri, strip = TRUE, include.raw = FALSE) {
 }
 
 #' Part/Item Processing
+#'
+#' @param doc - A dataframe with at minimum a 'text' column
+#' @noRd
 compute_parts <- function (doc) {
   return_cols <- colnames(doc)
 

@@ -136,58 +136,19 @@ company_filings("AAPL", type = "10-K", count = 10)
 #>        accession_number act file_number filing_date accepted_date
 #> 1  0001628280-16-020309  34   001-36743  2016-10-26    2016-10-26
 #> 2  0001193125-15-356351  34   001-36743  2015-10-28    2015-10-28
-#> 3  0001193125-14-383437  34   000-10030  2014-10-27    2014-10-27
-#> 4  0001193125-13-416534  34   000-10030  2013-10-30    2013-10-29
-#> 5  0001193125-12-444068  34   000-10030  2012-10-31    2012-10-31
-#> 6  0001193125-11-282113  34   000-10030  2011-10-26    2011-10-26
-#> 7  0001193125-10-238044  34   000-10030  2010-10-27    2010-10-27
-#> 8  0001193125-10-012091  34   000-10030  2010-01-25    2010-01-25
-#> 9  0001193125-09-214859  34   000-10030  2009-10-27    2009-10-27
-#> 10 0001193125-08-224958  34   000-10030  2008-11-05    2008-11-05
 #>                                                                                                href
 #> 1  https://www.sec.gov/Archives/edgar/data/320193/000162828016020309/0001628280-16-020309-index.htm
 #> 2  https://www.sec.gov/Archives/edgar/data/320193/000119312515356351/0001193125-15-356351-index.htm
-#> 3  https://www.sec.gov/Archives/edgar/data/320193/000119312514383437/0001193125-14-383437-index.htm
-#> 4  https://www.sec.gov/Archives/edgar/data/320193/000119312513416534/0001193125-13-416534-index.htm
-#> 5  https://www.sec.gov/Archives/edgar/data/320193/000119312512444068/0001193125-12-444068-index.htm
-#> 6  https://www.sec.gov/Archives/edgar/data/320193/000119312511282113/0001193125-11-282113-index.htm
-#> 7  https://www.sec.gov/Archives/edgar/data/320193/000119312510238044/0001193125-10-238044-index.htm
-#> 8  https://www.sec.gov/Archives/edgar/data/320193/000119312510012091/0001193125-10-012091-index.htm
-#> 9  https://www.sec.gov/Archives/edgar/data/320193/000119312509214859/0001193125-09-214859-index.htm
-#> 10 https://www.sec.gov/Archives/edgar/data/320193/000119312508224958/0001193125-08-224958-index.htm
 #>      type film_number
 #> 1    10-K   161953070
 #> 2    10-K   151180619
-#> 3    10-K   141175110
-#> 4    10-K   131177575
-#> 5    10-K   121171452
-#> 6    10-K   111159350
-#> 7    10-K   101145250
-#> 8  10-K/A    10545024
-#> 9    10-K   091139493
-#> 10   10-K   081162315
 #>                                                 form_name description
 #> 1  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
 #> 2  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 3  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 4  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 5  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 6  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 7  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 8  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 9  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
-#> 10 Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
 #>     size
 #> 1  13 MB
 #> 2   9 MB
-#> 3  12 MB
-#> 4  11 MB
-#> 5   9 MB
-#> 6   9 MB
-#> 7  13 MB
-#> 8   5 MB
-#> 9   3 MB
-#> 10  1 MB
+#>  [ reached getOption("max.print") -- omitted 8 rows ]
 ```
 
 Related Packages

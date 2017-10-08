@@ -69,6 +69,9 @@ ggplot(filings, aes(x = filing_date, y=bytes/1024, group=type, color=type)) +
   labs(x = "Filing Type", y = "Filing Size (KB)")
 
 ## ----eval=FALSE----------------------------------------------------------
+#  install.packages("edgarWebR")
+
+## ----eval=FALSE----------------------------------------------------------
 #  # install.packages("devtools")
 #  devtools::install_github("mwaldstein/edgarWebR")
 
