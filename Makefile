@@ -71,7 +71,7 @@ coverage:
 lint:
 	Rscript -e 'lintr::lint_package()'
 
-site: doc
+site: doc-all
 	Rscript -e 'pkgdown::build_site()'
 
 readme:

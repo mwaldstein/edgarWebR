@@ -32,3 +32,7 @@ section - e.g. just the Risk Factors.
 differences could cause failures. Please report an issue for any document
 that isn't parsed correctly.
 }
+\examples{
+parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
+             '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm'))
+}
