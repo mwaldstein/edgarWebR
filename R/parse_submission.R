@@ -3,7 +3,7 @@
 #' Raw SEC filings are sent in a SGML file - this parses that master submission
 #' into component documents, with content lines in list column 'TEXT'.
 #'
-#' Most of the time the information you need along with the sepecific files
+#' Most of the time the information you need along with the specific files
 #' will be available by using \code{\link{filing_documents}}, but there are
 #' scenarios where you may want to access the full contents of the master
 #' submission - 
@@ -14,14 +14,14 @@
 #'           relevant documents, but filings often include many more ancillary
 #'           files}
 #'     \item{Efficient Downloading}{If you're fetching many documents from a
-#'           filing over many filings, there can be effiency gains fromjust
+#'           filing over many filings, there can be efficiency gains from just
 #'           downloading a single file.}
 #'   }
 #'
-#' *NOTE:* non-text documents are uuencoded and need a sepate decoder to be
+#' *NOTE:* non-text documents are uuencoded and need a separate decoder to be
 #' viewed.
 #'
-#' @param uri - URL to a SEC complete submiision text file
+#' @param uri - URL to a SEC complete submission text file
 #'
 #' @return a dataframe with one row per document.
 #'

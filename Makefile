@@ -89,3 +89,9 @@ version:
 
 ubuntu-deps:
 	apt-get install texlive-latex-base texlive-fonts-extra
+
+release:
+	Rscript -e 'devtools::release()'
+
+revdep:
+	cd revdep; Rscript check.R
