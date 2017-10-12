@@ -112,6 +112,13 @@ Once a filing is found via any of the above, there are a number of functions to 
 -   `filing_information()`
 -   `filing_details()` - returns all 4 of the filing components in a list.
 
+### Parsing Tools
+
+While edgarWebR is primarily focused on providing an interface to the online SEC tools, there are a few activities for handling filing documents for which no current tools exist.
+
+-   `parse_submission()` - takes a full submission SGML document and parses out compontent documents. Most of the time, the documents of interest in a particular submission will be online and accessible via `filing_documents()` - this function is to unpack the raw submission to get all the doucments. You may also find it more efficient if you're regularly downloading all of the files in a given submission.
+-   `parse_filing()` - Takes a HTML narrative filing and annotates each paragraph with item and part numbers.
+
 ### Installation
 
 edgarWebR is available from CRAN, so can be simply installed via

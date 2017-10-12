@@ -4,10 +4,10 @@
 \alias{parse_filing}
 \title{Parse Filing}
 \usage{
-parse_filing(uri, strip = TRUE, include.raw = FALSE)
+parse_filing(x, strip = TRUE, include.raw = FALSE)
 }
 \arguments{
-\item{uri}{- URL to a filing HTML document}
+\item{x}{- URL to a filing HTML document, html text or xml_document}
 
 \item{strip}{- Should non-text elements be removed? Default: true}
 
@@ -25,7 +25,8 @@ a dataframe with one row per paragraph
 \description{
 Given a link to filing document (e.g. the 10-K, 8-K) in HTML, process the
 file into parts and items. This enables follow-up processing of a desired
-section - e.g. just the Risk Factors.
+section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
+directly from the document without any attempt to normalize.
 }
 \details{
 *NOTE:* This has been tested on a range of documents, but formatting
@@ -33,6 +34,6 @@ differences could cause failures. Please report an issue for any document
 that isn't parsed correctly.
 }
 \examples{
-parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
-             '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm'))
+head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
+     '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
 }

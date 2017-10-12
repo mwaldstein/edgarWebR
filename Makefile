@@ -37,6 +37,9 @@ doc-all: doc readme vignettes
 vignettes:
 	Rscript -e 'devtools::build_vignettes()'
 
+live-vignettes:
+	Rscript -e 'servr::rmdv2(dir="vignettes",port = 8080)'
+
 # Tidy, but keep everything in git
 clean:
 	$(RM) -r vignettes/*cache
