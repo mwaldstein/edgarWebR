@@ -11,7 +11,7 @@ TGZVNR  := $(PKGSRC)_$(PKGVERS)-vignettes-not-rebuilt.tar.gz
 RBIN ?= $(shell dirname "`which R`")
 
 all: version doc build
-.PHONY: doc clean build vignettes check
+.PHONY: doc clean build vignettes check revdep
 
 # build package documentation
 doc:
@@ -89,9 +89,6 @@ version:
 
 ubuntu-deps:
 	apt-get install texlive-latex-base texlive-fonts-extra
-
-release:
-	Rscript -e 'devtools::release()'
 
 revdep:
 	cd revdep; Rscript check.R
