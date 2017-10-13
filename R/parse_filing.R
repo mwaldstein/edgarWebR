@@ -41,8 +41,8 @@ parse_filing <- function (x, strip = TRUE, include.raw = FALSE) {
   nodes <- xml2::xml_find_all(doc,
     paste0(xpath_base, "/*[name() != 'div'] | ",
            xpath_base, "/div[count(p|div) <= 1] | ",
-           xpath_base, "/div[count(p|div) > 1]/*[count(b|font) <= 1] | ",
-           xpath_base, "/div[count(p|div) > 1]/*[count(b|font) > 1]/*"))
+           xpath_base, "/div[count(p|div) > 1]/*[count(b) <= 1] | ",
+           xpath_base, "/div[count(p|div) > 1]/*[count(b) > 1]/*"))
 
   if (strip) {
     nodes <- nodes[xml2::xml_name(nodes) != "hr"]
@@ -77,7 +77,7 @@ compute_parts <- function (doc) {
   # when we merge in the parts/items, order gets wonky - this preserves it
   doc$original_order <- seq(nrow(doc))
 
-  part.lines <- grepl("^part", doc$text, ignore.case = TRUE)
+  part.lines <- grepl("^part[ \u00a0][\\dIV]{1,2}", doc$text, ignore.case = TRUE)
   doc$part <- cumsum(part.lines)
   parts <- doc[part.lines, c("part", "text")]
   parts$text <- gsub("\u00a0", " ", parts$text)

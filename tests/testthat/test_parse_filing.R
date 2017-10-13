@@ -59,7 +59,7 @@ with_mock_API({
     expect_length(res, 3)
     expect_equal(length(unique(res$item.name)), 21)
     expect_equal(length(unique(res$part.name)), 5)
-    expect_equal(nrow(res), 554)
+    expect_equal(nrow(res), 541)
   })
   test_that("Handles 10-K (Ford)", {
     href <- "https://www.sec.gov/Archives/edgar/data/37996/000003799617000013/f1231201610-k.htm"
@@ -69,5 +69,15 @@ with_mock_API({
     expect_equal(length(unique(res$item.name)), 23)
     expect_equal(length(unique(res$part.name)), 5)
     expect_equal(nrow(res), 1675)
+  })
+  test_that("Handles 10-K (WLL)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/1255474/000125547417000005/wll-20161231x10k.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 22)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART I",
+                               "item.name"])), 7)
   })
 })

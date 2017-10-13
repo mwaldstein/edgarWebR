@@ -1,4 +1,9 @@
-# edgarWebR 0.1.1.9000 - **DEVELOPMENT**
+# edgarWebR 0.2.0.9000 - **DEVELOPMENT**
+
+## Bugfixes
+Parser covers a wider range of document formats.
+
+# edgarWebR 0.2.0 - "Parse all the things"
 
 ## Features
 

@@ -44,7 +44,7 @@ knitr::kable(tail(parsed_docs[,c("SEQUENCE", "TYPE", "DESCRIPTION", "FILENAME")]
              format.args = list(big.mark=","))
 
 ## ----show_text-----------------------------------------------------------
-# NOTE: the filing document is not always #1, so it is a good idea ti also look
+# NOTE: the filing document is not always #1, so it is a good idea to also look
 # at the type & Description
 filing_doc <- parsed_docs[parsed_docs$TYPE == '10-Q' &
                           parsed_docs$DESCRIPTION == '10-Q', 'TEXT']

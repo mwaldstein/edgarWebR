@@ -269,7 +269,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">head</span>(parsed_docs[,<
 </tbody>
 </table>
 <p>The 10-Q Filing document is Seq. 1, with the full text of the document in the TEXT column.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># NOTE: the filing document is not always #1, so it is a good idea ti also look</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># NOTE: the filing document is not always #1, so it is a good idea to also look</span>
 <span class="co"># at the type &amp; Description</span>
 filing_doc &lt;-<span class="st"> </span>parsed_docs[parsed_docs$TYPE ==<span class="st"> '10-Q'</span> &amp;
 <span class="st">                          </span>parsed_docs$DESCRIPTION ==<span class="st"> '10-Q'</span>, <span class="st">'TEXT'</span>]
