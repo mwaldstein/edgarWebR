@@ -38,11 +38,22 @@ parse_filing <- function (x, strip = TRUE, include.raw = FALSE) {
     xpath_base <- '//body'
   }
 
-  nodes <- xml2::xml_find_all(doc,
-    paste0(xpath_base, "/*[name() != 'div'] | ",
-           xpath_base, "/div[count(p|div) <= 1] | ",
-           xpath_base, "/div[count(p|div) > 1]/*[count(b) <= 1] | ",
-           xpath_base, "/div[count(p|div) > 1]/*[count(b) > 1]/*"))
+  xpath_parts <- c(
+    "/*[name() != 'div' and not(font[count(div) > 1])]",
+    "/div[count(p|div) <= 1 and not(div[count(div) > 1]) and not(count(div/div/div) > 1)]",
+    "/div[count(p|div) <= 1 and div[count(div) > 1]]/div/*",
+    paste0("/div[count(div) <= 1 and ",
+           #"not(div[count(div) > 1]) and ",
+           "count(div/div/div) > 1]/div/div/div"),
+    "/div[count(p|div) <= 1 and div[count(div) > 1]]/div/*",
+    "/div[count(p|div) > 1]/*[count(b|div) <= 1]",
+    "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div) <= 1]",
+    "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div)> 1]/*",
+    "/p/font[count(p|div) > 1]/*")
+
+  xpath_parts <- paste0(xpath_base, xpath_parts)
+
+  nodes <- xml2::xml_find_all(doc, paste0(xpath_parts, collapse = " | "))
 
   if (strip) {
     nodes <- nodes[xml2::xml_name(nodes) != "hr"]
@@ -52,6 +63,8 @@ parse_filing <- function (x, strip = TRUE, include.raw = FALSE) {
                           stringsAsFactors = FALSE)
   # strip nbspace
   doc.parts$text <- gsub("(*UCP)^\\s*|\\s*$", "", doc.parts$text, perl = TRUE)
+  # QOL improvement
+  doc.parts$text <- gsub("\n", " ", doc.parts$text)
 
   if (include.raw) {
     doc.parts$raw <- as.character(nodes)
@@ -69,41 +82,45 @@ parse_filing <- function (x, strip = TRUE, include.raw = FALSE) {
 
 #' Part/Item Processing
 #'
-#' @param doc - A dataframe with at minimum a 'text' column
+#' @param doc.parsed - A dataframe with at minimum a 'text' column
 #' @noRd
-compute_parts <- function (doc) {
-  return_cols <- colnames(doc)
+compute_parts <- function (doc.parsed) {
+  return_cols <- colnames(doc.parsed)
 
   # when we merge in the parts/items, order gets wonky - this preserves it
-  doc$original_order <- seq(nrow(doc))
+  doc.parsed$original_order <- seq(nrow(doc.parsed))
 
-  part.lines <- grepl("^part[ \u00a0][\\dIV]{1,2}", doc$text, ignore.case = TRUE)
-  doc$part <- cumsum(part.lines)
-  parts <- doc[part.lines, c("part", "text")]
+  part.lines <- grepl("^part[[:space:]\u00a0]+[\\dIV]{1,3}\\b",
+                      doc.parsed$text, ignore.case = TRUE) &
+                (nchar(doc.parsed$text) < 50) # Hack to skip paragraphs and TOC
+  doc.parsed$part <- cumsum(part.lines)
+  parts <- doc.parsed[part.lines, c("part", "text")]
   parts$text <- gsub("\u00a0", " ", parts$text)
   names(parts)[names(parts) == "text"] <- "part.name"
 
-  item.lines <- grepl("^item.{2,3}[\\.:]", doc$text, ignore.case = TRUE) &
-                !endsWith(doc$text, "(Continued)")
-  # We don't do this for every document as if there are no parts, we want to be
-  # inclusive...
+  item.lines <- grepl("^item[[:space:]\u00a0]+[[:alnum:]]{1,3}[\\.:\u00a0]",
+                      doc.parsed$text, ignore.case = TRUE) &
+                !endsWith(doc.parsed$text, "(Continued)")
+  # We don't do this for every doc.parsedument as if there are no parts, we want
+  # to be inclusive...
   if (nrow(parts) > 1) {
-    item.lines <- item.lines & doc$part > 0
+    item.lines <- item.lines & doc.parsed$part > 0
   }
-  doc$item <- cumsum(item.lines)
+  doc.parsed$item <- cumsum(item.lines)
 
-  items <- doc[item.lines, c("part", "item", "text")]
-  items$text <- gsub("\u00a0", " ", items$text)
+  items <- doc.parsed[item.lines, c("part", "item", "text")]
+  items$text <- gsub("[\u00a0[:space:]]+", " ", items$text)
   # items$item.number <- gsub("(*UCP)^item\\s*|\\..*", "", items$text, perl = TRUE)
   names(items)[names(items) == "text"] <- "item.name"
 
-  doc <- merge(doc, parts, all.x = TRUE)
-  doc <- merge(doc, items, by = c("part", "item"), all.x = TRUE)
-  doc[is.na(doc$part.name), "part.name"] <- ""
-  doc[is.na(doc$item.name), "item.name"] <- ""
+  doc.parsed <- merge(doc.parsed, parts, all.x = TRUE)
+  doc.parsed <- merge(doc.parsed, items, by = c("part", "item"), all.x = TRUE)
+  doc.parsed[is.na(doc.parsed$part.name), "part.name"] <- ""
+  doc.parsed[is.na(doc.parsed$item.name), "item.name"] <- ""
 
-  doc <- doc[order(doc$original_order), c(return_cols, "part.name", "item.name")]
-  rownames(doc) <- NULL
+  doc.parsed <- doc.parsed[order(doc.parsed$original_order),
+                           c(return_cols, "part.name", "item.name")]
+  rownames(doc.parsed) <- NULL
 
-  return(doc)
+  return(doc.parsed)
 }

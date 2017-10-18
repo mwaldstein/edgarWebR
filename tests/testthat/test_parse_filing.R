@@ -80,4 +80,54 @@ with_mock_API({
     expect_equal(length(unique(res[res$part.name == "PART I",
                                "item.name"])), 7)
   })
+  test_that("Handles 10-K (YUM)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/1041061/000104106109000077/form_10-k22309.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 21)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART I",
+                               "item.name"])), 7)
+  })
+  test_that("Handles 10-K (DELL)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/826083/000095013406005149/d33857e10vk.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 16)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART I",
+                               "item.name"])), 7)
+  })
+  test_that("Handles 10-K (Alcoa)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/4281/000119312516470162/d216801d10k.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 21)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART I",
+                               "item.name"])), 7)
+  })
+  test_that("Handles 10-K (Tenga)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/39899/000003989916000034/tgna-20151231x10k.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 20)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART I",
+                               "item.name"])), 7)
+  })
+  test_that("Handles 10-K (Pacific Corp)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/878560/000087856012000008/form10-k.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 21)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART I",
+                               "item.name"])), 7)
+  })
 })
