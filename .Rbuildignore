@@ -18,3 +18,4 @@ Makefile
 ^README\.Rmd$
 ^README-.*\.png$
 ^revdep
+^tests/dev_test

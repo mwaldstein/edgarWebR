@@ -4,7 +4,7 @@
 \alias{parse_filing}
 \title{Parse Filing}
 \usage{
-parse_filing(x, strip = TRUE, include.raw = FALSE)
+parse_filing(x, strip = TRUE, include.raw = FALSE, fix.errors = TRUE)
 }
 \arguments{
 \item{x}{- URL to a filing HTML document, html text or xml_document}
@@ -12,6 +12,9 @@ parse_filing(x, strip = TRUE, include.raw = FALSE)
 \item{strip}{- Should non-text elements be removed? Default: true}
 
 \item{include.raw}{- Include unprocessed nodes in result? Default: false}
+
+\item{fix.errors}{- Try to fix document errors (e.g. missing part labels).
+WIP. Default: true}
 }
 \value{
 a dataframe with one row per paragraph

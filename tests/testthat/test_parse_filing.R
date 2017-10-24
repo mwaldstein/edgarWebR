@@ -130,4 +130,14 @@ with_mock_API({
     expect_equal(length(unique(res[res$part.name == "PART I",
                                "item.name"])), 7)
   })
+  test_that("Handles 10-K (Macy's)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/794367/000079436713000092/m-02022013x10k.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 20)
+    expect_equal(length(unique(res$part.name)), 4)
+    expect_equal(length(unique(res[res$part.name == "PART II",
+                               "item.name"])), 8)
+  })
 })

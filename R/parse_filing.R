@@ -12,6 +12,8 @@
 #' @param x - URL to a filing HTML document, html text or xml_document
 #' @param strip - Should non-text elements be removed? Default: true
 #' @param include.raw - Include unprocessed nodes in result? Default: false
+#' @param fix.errors - Try to fix document errors (e.g. missing part labels).
+#'        WIP. Default: true
 #'
 #' @return a dataframe with one row per paragraph
 #'   \describe{
@@ -25,7 +27,10 @@
 #' head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
 #'      '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
 #' @export
-parse_filing <- function (x, strip = TRUE, include.raw = FALSE) {
+parse_filing <- function (x,
+                          strip = TRUE,
+                          include.raw = FALSE,
+                          fix.errors = TRUE) {
   # TODO: This should see if we just have a text document
   if (typeof(x) == "character") {
     doc <- charToDoc(x)
@@ -83,8 +88,11 @@ parse_filing <- function (x, strip = TRUE, include.raw = FALSE) {
 #' Part/Item Processing
 #'
 #' @param doc.parsed - A dataframe with at minimum a 'text' column
+#' @param fix.errors - Try to fix document errors (e.g. missing part labels)
+#'        Default: true
 #' @noRd
-compute_parts <- function (doc.parsed) {
+compute_parts <- function (doc.parsed,
+                           fix.errors = TRUE) {
   return_cols <- colnames(doc.parsed)
 
   # when we merge in the parts/items, order gets wonky - this preserves it
@@ -92,20 +100,16 @@ compute_parts <- function (doc.parsed) {
 
   part.lines <- grepl("^part[[:space:]\u00a0]+[\\dIV]{1,3}\\b",
                       doc.parsed$text, ignore.case = TRUE) &
-                (nchar(doc.parsed$text) < 50) # Hack to skip paragraphs and TOC
+                (nchar(doc.parsed$text) < 34) # Hack to skip paragraphs, TOC
+                                              # and page footers
   doc.parsed$part <- cumsum(part.lines)
   parts <- doc.parsed[part.lines, c("part", "text")]
   parts$text <- gsub("\u00a0", " ", parts$text)
   names(parts)[names(parts) == "text"] <- "part.name"
 
-  item.lines <- grepl("^item[[:space:]\u00a0]+[[:alnum:]]{1,3}[\\.:\u00a0]",
+  item.lines <- grepl("^item[[:space:]\u00a0]+[[:digit:]]{1}[[:alnum:]]{0,2}[\\.:\u00a0]",
                       doc.parsed$text, ignore.case = TRUE) &
                 !endsWith(doc.parsed$text, "(Continued)")
-  # We don't do this for every doc.parsedument as if there are no parts, we want
-  # to be inclusive...
-  if (nrow(parts) > 1) {
-    item.lines <- item.lines & doc.parsed$part > 0
-  }
   doc.parsed$item <- cumsum(item.lines)
 
   items <- doc.parsed[item.lines, c("part", "item", "text")]
