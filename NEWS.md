@@ -1,7 +1,9 @@
 # edgarWebR 0.2.0.9000 - **DEVELOPMENT**
 
 ## Bugfixes
-Parser covers a wider range of document formats.
+ * Parser covers a wider range of document formats for 10-K's.
+ * `filing_documents` correctly provides the href for the document not the
+   iXBRL viewer when present.
 
 # edgarWebR 0.2.0 - "Parse all the things"
 

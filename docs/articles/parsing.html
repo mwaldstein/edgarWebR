@@ -289,22 +289,22 @@ filing_doc &lt;-<span class="st"> </span>parsed_docs[parsed_docs$TYPE ==<span cl
 <span class="kw">unique</span>(doc$part.name)
 <span class="co">#&gt; [1] ""        "PART I"  "PART II"</span>
 <span class="kw">unique</span>(doc$item.name)
-<span class="co">#&gt;  [1] ""                                                                                                   </span>
-<span class="co">#&gt;  [2] "ITEM 1.\nFINANCIAL STATEMENTS"                                                                      </span>
-<span class="co">#&gt;  [3] "ITEM 2.\nMANAGEMENT\u0092S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS"</span>
-<span class="co">#&gt;  [4] "ITEM 3.\nQUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK"                                </span>
-<span class="co">#&gt;  [5] "ITEM 4.\nCONTROLS AND PROCEDURES"                                                                   </span>
-<span class="co">#&gt;  [6] "ITEM 1.\nLEGAL PROCEEDINGS"                                                                         </span>
-<span class="co">#&gt;  [7] "ITEM 1A.\nRISK FACTORS"                                                                             </span>
-<span class="co">#&gt;  [8] "ITEM 2.\nUNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS"                               </span>
-<span class="co">#&gt;  [9] "ITEM 3.\nDEFAULTS UPON SENIOR SECURITIES"                                                           </span>
-<span class="co">#&gt; [10] "ITEM 4.\nMINE SAFETY DISCLOSURES"                                                                   </span>
-<span class="co">#&gt; [11] "ITEM 5.\nOTHER INFORMATION"                                                                         </span>
-<span class="co">#&gt; [12] "ITEM 6.\nEXHIBITS"</span>
+<span class="co">#&gt;  [1] ""                                                                                                  </span>
+<span class="co">#&gt;  [2] "ITEM 1. FINANCIAL STATEMENTS"                                                                      </span>
+<span class="co">#&gt;  [3] "ITEM 2. MANAGEMENT\u0092S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS"</span>
+<span class="co">#&gt;  [4] "ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK"                                </span>
+<span class="co">#&gt;  [5] "ITEM 4. CONTROLS AND PROCEDURES"                                                                   </span>
+<span class="co">#&gt;  [6] "ITEM 1. LEGAL PROCEEDINGS"                                                                         </span>
+<span class="co">#&gt;  [7] "ITEM 1A. RISK FACTORS"                                                                             </span>
+<span class="co">#&gt;  [8] "ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS"                               </span>
+<span class="co">#&gt;  [9] "ITEM 3. DEFAULTS UPON SENIOR SECURITIES"                                                           </span>
+<span class="co">#&gt; [10] "ITEM 4. MINE SAFETY DISCLOSURES"                                                                   </span>
+<span class="co">#&gt; [11] "ITEM 5. OTHER INFORMATION"                                                                         </span>
+<span class="co">#&gt; [12] "ITEM 6. EXHIBITS"</span>
 <span class="kw">head</span>(doc[<span class="kw">grepl</span>(<span class="st">"market risk"</span>, doc$item.name, <span class="dt">ignore.case=</span><span class="ot">TRUE</span>),<span class="st">"text"</span>], <span class="dv">3</span>)
-<span class="co">#&gt; [1] "ITEM 3.\nQUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK"                                                                                                                                                                                                                                                                                                                                                                                                                               </span>
-<span class="co">#&gt; [2] "We have exposure to market\nrisks due to the volatility of interest rates, foreign currency exchange rates, equity and bond markets. A portion of these risks are hedged, but fluctuations could impact our results of operations, financial position and cash flows. Additionally,\nwe have exposure to downgrades in the credit ratings of our counterparties as well as exposure related to our credit rating changes."                                                                         </span>
-<span class="co">#&gt; [3] "Interest Rate Risk. Our exposure to market risk for changes in interest rates relates primarily to our investment portfolio. As of\nMarch 31, 2017, we had no material available-for-sale securities that had been in a continuous unrealized loss position for a period greater than 12 months. We\ndetermined no available-for-sale securities were other-than-temporarily impaired as of March 31, 2017. We currently do not use derivative financial instruments in\nour investment portfolio."</span>
+<span class="co">#&gt; [1] "ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK"                                                                                                                                                                                                                                                                                                                                                                                                                             </span>
+<span class="co">#&gt; [2] "We have exposure to market risks due to the volatility of interest rates, foreign currency exchange rates, equity and bond markets. A portion of these risks are hedged, but fluctuations could impact our results of operations, financial position and cash flows. Additionally, we have exposure to downgrades in the credit ratings of our counterparties as well as exposure related to our credit rating changes."                                                                        </span>
+<span class="co">#&gt; [3] "Interest Rate Risk. Our exposure to market risk for changes in interest rates relates primarily to our investment portfolio. As of March 31, 2017, we had no material available-for-sale securities that had been in a continuous unrealized loss position for a period greater than 12 months. We determined no available-for-sale securities were other-than-temporarily impaired as of March 31, 2017. We currently do not use derivative financial instruments in our investment portfolio."</span>
 risks &lt;-<span class="st"> </span>doc[<span class="kw">grepl</span>(<span class="st">"market risk"</span>, doc$item.name, <span class="dt">ignore.case=</span><span class="ot">TRUE</span>),<span class="st">"raw"</span>]</code></pre></div>
 <p>Now the document is all ready for whatever further processing we want. As a quick example we’ll pull out all the italicized risks.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">risks &lt;-<span class="st"> </span>risks[<span class="kw">grep</span>(<span class="st">'&lt;i&gt;'</span>,risks)]

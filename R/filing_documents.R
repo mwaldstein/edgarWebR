@@ -52,5 +52,8 @@ filing_documents.xml_node <- function(x) {
 
   res <- map_xml(x, entries_xpath, info_pieces, integers = c("seq", "size"))
 
+  # Fix links for iXBRL documents that lead to interactive viewers.
+  res$href <- sub('ix?doc=/', '', res$href, fixed=TRUE)
+
   return(res)
 }
