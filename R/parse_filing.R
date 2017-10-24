@@ -44,17 +44,18 @@ parse_filing <- function (x,
   }
 
   xpath_parts <- c(
-    "/*[name() != 'div' and not(font[count(div) > 1])]",
-    "/div[count(p|div) <= 1 and not(div[count(div) > 1]) and not(count(div/div/div) > 1)]",
+    "/*[name() != 'div' and not(font[count(div) > 1]) and
+      not(starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART'))]",
+    "/div[count(p|div) <= 1 and not(div[count(div) > 1]) and
+      not(count(div/div/div) > 1)]",
     "/div[count(p|div) <= 1 and div[count(div) > 1]]/div/*",
-    paste0("/div[count(div) <= 1 and ",
-           #"not(div[count(div) > 1]) and ",
-           "count(div/div/div) > 1]/div/div/div"),
+    "/div[count(div) <= 1 and count(div/div/div) > 1]/div/div/div",
     "/div[count(p|div) <= 1 and div[count(div) > 1]]/div/*",
     "/div[count(p|div) > 1]/*[count(b|div) <= 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div) <= 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div)> 1]/*",
-    "/p/font[count(p|div) > 1]/*")
+    "/p/font[count(p|div) > 1]/*",
+    "/table[starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART')]/tr")
 
   xpath_parts <- paste0(xpath_base, xpath_parts)
 
@@ -107,9 +108,10 @@ compute_parts <- function (doc.parsed,
   parts$text <- gsub("\u00a0", " ", parts$text)
   names(parts)[names(parts) == "text"] <- "part.name"
 
-  item.lines <- grepl("^item[[:space:]\u00a0]+[[:digit:]]{1}[[:alnum:]]{0,2}[\\.:\u00a0]",
-                      doc.parsed$text, ignore.case = TRUE) &
-                !endsWith(doc.parsed$text, "(Continued)")
+  item.lines <-
+    grepl("^item[[:space:]\u00a0]+[[:digit:]]{1}[[:alnum:]]{0,2}([\\.:\u00a0]|$)",
+          doc.parsed$text, ignore.case = TRUE) &
+    !endsWith(doc.parsed$text, "(Continued)")
   doc.parsed$item <- cumsum(item.lines)
 
   items <- doc.parsed[item.lines, c("part", "item", "text")]

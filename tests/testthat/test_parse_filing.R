@@ -140,4 +140,24 @@ with_mock_API({
     expect_equal(length(unique(res[res$part.name == "PART II",
                                "item.name"])), 8)
   })
+  test_that("Handles 10-K (Verizon)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/732712/000119312509036349/d10k.htm#tx90102_1"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 21)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART II",
+                               "item.name"])), 9)
+  })
+  test_that("Handles 10-K (Vulcan)", {
+    href <- "https://www.sec.gov/Archives/edgar/data/1396009/000139600916000044/vmc-20151231x10k.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(length(unique(res$item.name)), 21)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res[res$part.name == "PART II",
+                               "item.name"])), 9)
+  })
 })
