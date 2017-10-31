@@ -9,7 +9,7 @@
 #' differences could cause failures. Please report an issue for any document
 #' that isn't parsed correctly.
 #'
-#' \strong{FURTHER NOTE:} Not all filingings are well formed - missing headings, bad
+#' \strong{FURTHER NOTE:} Not all filings are well formed - missing headings, bad
 #' spacing, etc. These can all throw the parsing off!
 #'
 #' @param x - URL to a filing HTML document, html text or xml_document
