@@ -6,7 +6,7 @@ cache: packages
 warnings_are_errors: true
 
 env:
-  - PACKAGE_VERSION="0.2.0.9000"
+  - PACKAGE_VERSION="0.2.1"
 
 os:
   - linux
