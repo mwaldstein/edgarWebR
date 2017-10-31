@@ -1,4 +1,4 @@
-# edgarWebR 0.2.0.9000 - **DEVELOPMENT**
+# edgarWebR 0.2.1 - "Thanks Testers"
 
 Many thanks to everyone providing feedback, particularly Günter Leitold for
 rigorously testing the `parse_filing` funcion.
