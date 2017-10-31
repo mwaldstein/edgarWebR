@@ -117,6 +117,13 @@
 <code>filing_documents</code> correctly provides the href for the document not the iXBRL viewer when present.</li>
 </ul>
 </div>
+<div id="internal" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal" class="anchor"></a>Internal</h2>
+<ul>
+<li>Limited testing of <code>parse_filing</code> on CRAN.</li>
+</ul>
+</div>
 </div>
     <div id="edgarwebr-0-2-0---parse-all-the-things" class="section level1">
 <h1 class="hasAnchor">
@@ -136,9 +143,9 @@
 <p>New function <code>parse_submission</code> extracts documents from the full submission file. This is needed for older submissions and accessing documents that are not extracted individually online.</p>
 </div>
 </div>
-<div id="internal" class="section level2">
+<div id="internal-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal" class="anchor"></a>Internal</h2>
+<a href="#internal-1" class="anchor"></a>Internal</h2>
 <ul>
 <li>Incorporated <a href="https://github.com/nealrichardson/httptest">httptest</a> for cached testing. Altered most functions to use <a href="https://cran.r-project.org/package=httr">httr</a> for remote calls to support this test method.</li>
 <li>New Makefile targets to support cached testing -</li>
@@ -211,9 +218,9 @@
 <li>[vignettes] changed Introduction to use purrr for clearer code</li>
 </ul>
 </div>
-<div id="internal-1" class="section level2">
+<div id="internal-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-1" class="anchor"></a>Internal</h2>
+<a href="#internal-2" class="anchor"></a>Internal</h2>
 <ul>
 <li>Added caches and markdown folders to ignore files</li>
 <li>Made map_xml handle parsing integers</li>
@@ -245,9 +252,9 @@
 <li>[tests] initial testes created</li>
 </ul>
 </div>
-<div id="internal-2" class="section level2">
+<div id="internal-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-2" class="anchor"></a>Internal</h2>
+<a href="#internal-3" class="anchor"></a>Internal</h2>
 <ul>
 <li>[map_xml] map_xml now parses date/time columns into POSIXlt dates</li>
 <li>[browse_edgar] escape text fields</li>

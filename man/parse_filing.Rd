@@ -32,11 +32,11 @@ section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
 directly from the document without any attempt to normalize.
 }
 \details{
-*NOTE:* This has been tested on a range of documents, but formatting
+\strong{NOTE:} This has been tested on a range of documents, but formatting
 differences could cause failures. Please report an issue for any document
 that isn't parsed correctly.
 
-*FURTHER NOTE:* Not all filingings are well formed - missing headings, bad
+\strong{FURTHER NOTE:} Not all filingings are well formed - missing headings, bad
 spacing, etc. These can all throw the parsing off!
 }
 \examples{

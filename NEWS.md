@@ -8,6 +8,9 @@ rigorously testing the `parse_filing` funcion.
  * `filing_documents` correctly provides the href for the document not the
    iXBRL viewer when present.
 
+## Internal
+ * Limited testing of `parse_filing` on CRAN.
+
 # edgarWebR 0.2.0 - "Parse all the things"
 
 ## Features
