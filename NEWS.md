@@ -1,5 +1,8 @@
 # edgarWebR 0.2.0.9000 - **DEVELOPMENT**
 
+Many thanks to everyone providing feedback, particularly Günter Leitold for
+rigorously testing the `parse_filing` funcion.
+
 ## Bugfixes
  * Parser covers a wider range of document formats for 10-K's.
  * `filing_documents` correctly provides the href for the document not the

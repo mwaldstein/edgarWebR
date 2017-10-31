@@ -35,6 +35,9 @@ directly from the document without any attempt to normalize.
 *NOTE:* This has been tested on a range of documents, but formatting
 differences could cause failures. Please report an issue for any document
 that isn't parsed correctly.
+
+*FURTHER NOTE:* Not all filingings are well formed - missing headings, bad
+spacing, etc. These can all throw the parsing off!
 }
 \examples{
 head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',

@@ -8,6 +8,9 @@
 #' *NOTE:* This has been tested on a range of documents, but formatting
 #' differences could cause failures. Please report an issue for any document
 #' that isn't parsed correctly.
+#' 
+#' *FURTHER NOTE:* Not all filingings are well formed - missing headings, bad
+#' spacing, etc. These can all throw the parsing off!
 #'
 #' @param x - URL to a filing HTML document, html text or xml_document
 #' @param strip - Should non-text elements be removed? Default: true
@@ -43,14 +46,30 @@ parse_filing <- function (x,
     xpath_base <- '//body'
   }
 
+  # There be dragons here...
+  # Basically this extacts all the individual paragraphs from a document in one
+  # go. This is so bad on so many levels... but the inherent messiness of the
+  # filings prevents anything much more robust.
   xpath_parts <- c(
-    "/*[name() != 'div' and not(font[count(div) > 1]) and
-      not(starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART'))]",
-    "/div[count(p|div) <= 1 and not(div[count(div) > 1]) and
-      not(count(div/div/div) > 1)]",
-    "/div[count(p|div) <= 1 and div[count(div) > 1]]/div/*",
-    "/div[count(div) <= 1 and count(div/div/div) > 1]/div/div/div",
-    "/div[count(p|div) <= 1 and div[count(div) > 1]]/div/*",
+    "/*[name() != 'div' and
+        not(font[count(div) > 1]) and
+        not(starts-with(tr[2], 'PART') or
+            starts-with(tr[2], ' PART'))]",
+    "/div[count(p|div) <= 1 and
+          not(div[count(div) > 1]) and
+          not(count(div/div/div) > 1)]",
+    "/div[count(p|div) <= 1 and
+          count(div/div) > 1 and
+          count(div/div/div) <= 1]/div/*",
+    "/div[count(p|div) <= 1 and
+          count(div/div) > 1 and
+          count(div/div/div) >= 1]/div/div/*",
+    "/div[count(div) <= 1 and
+          count(div/div/div) > 1 and
+          count(div/div/div/div/div) <= 1]/div/div/div",
+    "/div[count(div/div/div/div/div) > 1]/div/div/div/div/*",
+    "/div[count(p|div) <= 1 and
+          count(div/div) > 1]/div/*",
     "/div[count(p|div) > 1]/*[count(b|div) <= 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div) <= 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div)> 1]/*",
@@ -100,6 +119,8 @@ compute_parts <- function (doc.parsed,
   doc.parsed$original_order <- seq(nrow(doc.parsed))
 
   part.lines <- grepl("^part[[:space:]\u00a0]+[\\dIV]{1,3}\\b",
+                      doc.parsed$text, ignore.case = TRUE) &
+                !grepl("^part[[:space:]\u00a0]+[\\dIV]{1,3}[[:space:]\u00a0]+\\d+$",
                       doc.parsed$text, ignore.case = TRUE) &
                 (nchar(doc.parsed$text) < 34) # Hack to skip paragraphs, TOC
                                               # and page footers
