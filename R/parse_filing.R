@@ -34,12 +34,7 @@ parse_filing <- function (x,
                           strip = TRUE,
                           include.raw = FALSE,
                           fix.errors = TRUE) {
-  # TODO: This should see if we just have a text document
-  if (typeof(x) == "character") {
-    doc <- charToDoc(x)
-  } else {
-    doc <- x
-  }
+  doc <- get_doc(x, clean = T)
 
   xpath_base <- '//text'
   if (is.na(xml2::xml_find_first(doc, xpath_base))) {
