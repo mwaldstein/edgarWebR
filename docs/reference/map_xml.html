@@ -105,7 +105,8 @@
     <p>Extracts a dataframe from an xml document.</p>
     
 
-    <pre class="usage"><span class='fu'>map_xml</span>(<span class='no'>doc</span>, <span class='no'>entries_xpath</span>, <span class='no'>parts</span>, <span class='kw'>trim</span> <span class='kw'>=</span> <span class='fu'>c</span>(), <span class='kw'>integers</span> <span class='kw'>=</span> <span class='fu'>c</span>())</pre>
+    <pre class="usage"><span class='fu'>map_xml</span>(<span class='no'>doc</span>, <span class='no'>entries_xpath</span>, <span class='no'>parts</span>, <span class='kw'>trim</span> <span class='kw'>=</span> <span class='fu'>c</span>(), <span class='kw'>integers</span> <span class='kw'>=</span> <span class='fu'>c</span>(),
+  <span class='kw'>date_format</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -129,6 +130,10 @@
     <tr>
       <th>integers</th>
       <td><p>a list of columns that need to converted to integers</p></td>
+    </tr>
+    <tr>
+      <th>date_format</th>
+      <td><p>how dates should be parsed</p></td>
     </tr>
     </table>
     

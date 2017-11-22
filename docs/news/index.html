@@ -103,22 +103,52 @@
     </div>
 
     <div class="contents">
+    <div id="edgarwebr-0-2-1-9000---development" class="section level1">
+<h1 class="hasAnchor">
+<a href="#edgarwebr-0-2-1-9000---development" class="anchor"></a>edgarWebR 0.2.1.9000 - “DEVELOPMENT”</h1>
+<div id="features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h2>
+<ul>
+<li>
+<code>full_text</code> provides access to the full-text filing search interface.</li>
+</ul>
+</div>
+<div id="bugfixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bugfixes" class="anchor"></a>Bugfixes</h2>
+<ul>
+<li>
+<code>parse_filings</code> now treats <code>&lt;br&gt;</code> as a space avoiding words separated only by a line return getting concatenated. (Fixes #2)</li>
+</ul>
+</div>
+<div id="internal" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal" class="anchor"></a>Internal</h2>
+<ul>
+<li>
+<code>map_xml</code> processes href’s out of javascript links</li>
+<li>
+<code>map_xml</code> add parameter for date format</li>
+</ul>
+</div>
+</div>
     <div id="edgarwebr-0-2-1---thanks-testers" class="section level1">
 <h1 class="hasAnchor">
 <a href="#edgarwebr-0-2-1---thanks-testers" class="anchor"></a>edgarWebR 0.2.1 - “Thanks Testers”</h1>
 <p>Many thanks to everyone providing feedback, particularly Günter Leitold for rigorously testing the <code>parse_filing</code> funcion.</p>
-<div id="bugfixes" class="section level2">
+<div id="bugfixes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-1" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>Parser covers a wider range of document formats for 10-K’s.</li>
 <li>
 <code>filing_documents</code> correctly provides the href for the document not the iXBRL viewer when present.</li>
 </ul>
 </div>
-<div id="internal" class="section level2">
+<div id="internal-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal" class="anchor"></a>Internal</h2>
+<a href="#internal-1" class="anchor"></a>Internal</h2>
 <ul>
 <li>Limited testing of <code>parse_filing</code> on CRAN.</li>
 </ul>
@@ -127,9 +157,9 @@
     <div id="edgarwebr-0-2-0---parse-all-the-things" class="section level1">
 <h1 class="hasAnchor">
 <a href="#edgarwebr-0-2-0---parse-all-the-things" class="anchor"></a>edgarWebR 0.2.0 - “Parse all the things”</h1>
-<div id="features" class="section level2">
+<div id="features-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#features" class="anchor"></a>Features</h2>
+<a href="#features-1" class="anchor"></a>Features</h2>
 <div id="parse-filings" class="section level3">
 <h3 class="hasAnchor">
 <a href="#parse-filings" class="anchor"></a>Parse Filings</h3>
@@ -142,9 +172,9 @@
 <p>New function <code>parse_submission</code> extracts documents from the full submission file. This is needed for older submissions and accessing documents that are not extracted individually online.</p>
 </div>
 </div>
-<div id="internal-1" class="section level2">
+<div id="internal-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-1" class="anchor"></a>Internal</h2>
+<a href="#internal-2" class="anchor"></a>Internal</h2>
 <ul>
 <li>Incorporated <a href="https://github.com/nealrichardson/httptest">httptest</a> for cached testing. Altered most functions to use <a href="https://cran.r-project.org/package=httr">httr</a> for remote calls to support this test method.</li>
 <li>New Makefile targets to support cached testing -</li>
@@ -162,9 +192,9 @@
     <div id="edgarwebr-0-1-1---whoops-1" class="section level1">
 <h1 class="hasAnchor">
 <a href="#edgarwebr-0-1-1---whoops-1" class="anchor"></a>edgarWebR 0.1.1 - “Whoops 1”</h1>
-<div id="bugfixes-1" class="section level2">
+<div id="bugfixes-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-1" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-2" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>Removed a test for the “changed_date” field in filing information as the source test document removed the field. Permanent fix will be to use a a more stable data source for testing.</li>
 </ul>
@@ -174,9 +204,9 @@
 <h1 class="hasAnchor">
 <a href="#edgarwebr-0-1-0---hello-world" class="anchor"></a>edgarWebR 0.1.0 - “Hello World”</h1>
 <p>First CRAN release of edgarWebR. At this point, function parameters, return colums and general shape of data will not change without a deprecation process and due warning.</p>
-<div id="features-1" class="section level2">
+<div id="features-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#features-1" class="anchor"></a>Features</h2>
+<a href="#features-2" class="anchor"></a>Features</h2>
 <div id="searching" class="section level3">
 <h3 class="hasAnchor">
 <a href="#searching" class="anchor"></a>Searching</h3>
@@ -202,9 +232,9 @@
 <h1 class="hasAnchor">
 <a href="#edgarwebr-0-0-3---now-getting-it-ready" class="anchor"></a>edgarWebR 0.0.3 - “Now Getting it Ready”</h1>
 <p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
-<div id="features-2" class="section level2">
+<div id="features-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#features-2" class="anchor"></a>Features</h2>
+<a href="#features-3" class="anchor"></a>Features</h2>
 <ul>
 <li>All methods which took a URL as a parameter now accept either a href or pre-loaded xml document. This facilitates loading a filing from a local file, fetching the filing separately for customized parsing, and testing.</li>
 <li>Some column names have shifted to better align to overall naming scheme</li>
@@ -217,9 +247,9 @@
 <li>[vignettes] changed Introduction to use purrr for clearer code</li>
 </ul>
 </div>
-<div id="internal-2" class="section level2">
+<div id="internal-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-2" class="anchor"></a>Internal</h2>
+<a href="#internal-3" class="anchor"></a>Internal</h2>
 <ul>
 <li>Added caches and markdown folders to ignore files</li>
 <li>Made map_xml handle parsing integers</li>
@@ -233,9 +263,9 @@
 <h1 class="hasAnchor">
 <a href="#edgarwebr-0-0-2---xpath-is-is-powerful" class="anchor"></a>edgarWebR 0.0.2 - “XPath is is powerful”</h1>
 <p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
-<div id="features-3" class="section level2">
+<div id="features-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#features-3" class="anchor"></a>Features</h2>
+<a href="#features-4" class="anchor"></a>Features</h2>
 <ul>
 <li>[filings] <code>filing_information</code> provides general filing information</li>
 <li>[filings] <code>filing_funds</code> gives all funds associated with a filing</li>
@@ -251,9 +281,9 @@
 <li>[tests] initial testes created</li>
 </ul>
 </div>
-<div id="internal-3" class="section level2">
+<div id="internal-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-3" class="anchor"></a>Internal</h2>
+<a href="#internal-4" class="anchor"></a>Internal</h2>
 <ul>
 <li>[map_xml] map_xml now parses date/time columns into POSIXlt dates</li>
 <li>[browse_edgar] escape text fields</li>
@@ -272,6 +302,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#edgarwebr-0-2-1-9000---development">0.2.1.9000</a></li>
         <li><a href="#edgarwebr-0-2-1---thanks-testers">0.2.1</a></li>
         <li><a href="#edgarwebr-0-2-0---parse-all-the-things">0.2.0</a></li>
         <li><a href="#edgarwebr-0-1-1---whoops-1">0.1.1</a></li>

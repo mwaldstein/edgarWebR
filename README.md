@@ -49,10 +49,10 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>Full Text</td>
 <td><a href="http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp" class="uri">http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp</a></td>
-<td>N/A</td>
+<td><code>full_text()</code></td>
 </tr>
 <tr class="even">
-<td>Adv. Search</td>
+<td>Header Search</td>
 <td><a href="https://www.sec.gov/cgi-bin/srch-edgar" class="uri">https://www.sec.gov/cgi-bin/srch-edgar</a></td>
 <td>N/A</td>
 </tr>
@@ -141,20 +141,20 @@ Example
 ``` r
 company_filings("AAPL", type = "10-K", count = 10)
 #>        accession_number act file_number filing_date accepted_date
-#> 1  0001628280-16-020309  34   001-36743  2016-10-26    2016-10-26
-#> 2  0001193125-15-356351  34   001-36743  2015-10-28    2015-10-28
+#> 1  0000320193-17-000070  34   001-36743  2017-11-03    2017-11-03
+#> 2  0001628280-16-020309  34   001-36743  2016-10-26    2016-10-26
 #>                                                                                                href
-#> 1  https://www.sec.gov/Archives/edgar/data/320193/000162828016020309/0001628280-16-020309-index.htm
-#> 2  https://www.sec.gov/Archives/edgar/data/320193/000119312515356351/0001193125-15-356351-index.htm
+#> 1  https://www.sec.gov/Archives/edgar/data/320193/000032019317000070/0000320193-17-000070-index.htm
+#> 2  https://www.sec.gov/Archives/edgar/data/320193/000162828016020309/0001628280-16-020309-index.htm
 #>      type film_number
-#> 1    10-K   161953070
-#> 2    10-K   151180619
+#> 1    10-K   171174673
+#> 2    10-K   161953070
 #>                                                 form_name description
 #> 1  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
 #> 2  Annual report [Section 13 and 15(d), not S-K Item 405]        <NA>
 #>     size
-#> 1  13 MB
-#> 2   9 MB
+#> 1  14 MB
+#> 2  13 MB
 #>  [ reached getOption("max.print") -- omitted 8 rows ]
 ```
 

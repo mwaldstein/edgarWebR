@@ -108,10 +108,10 @@ filings &lt;-<span class="st"> </span><span class="kw"><a href="../reference/com
 initial_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(filings)
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
-filings &lt;-<span class="st"> </span>filings[filings$type ==<span class="st"> "10-K"</span> |<span class="st"> </span>filings$type ==<span class="st"> "10-Q"</span>,]</code></pre></div>
-<p>Note that explicitly filtering caused us to go from 94 to 90 rows.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filings$md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filings$href, <span class="st">")"</span>)
-knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
+filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-K"</span> <span class="op">|</span><span class="st"> </span>filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-Q"</span>,]</code></pre></div>
+<p>Note that explicitly filtering caused us to go from 95 to 91 rows.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filings<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filings<span class="op">$</span>href, <span class="st">")"</span>)
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">tail</span>(filings)[,<span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
                               <span class="st">"md_href"</span>)],
              <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
@@ -127,7 +127,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>88</td>
+<td>89</td>
 <td align="left">10-Q</td>
 <td align="left">1996-08-14</td>
 <td align="left">0000950005-96-000615</td>
@@ -135,7 +135,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000950005-96-000615-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>89</td>
+<td>90</td>
 <td align="left">10-K</td>
 <td align="left">1996-07-01</td>
 <td align="left">0000912057-96-013563</td>
@@ -143,7 +143,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-013563-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>90</td>
+<td>91</td>
 <td align="left">10-Q</td>
 <td align="left">1996-02-14</td>
 <td align="left">0000912057-96-002551</td>
@@ -151,7 +151,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-002551-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>91</td>
+<td>92</td>
 <td align="left">10-Q</td>
 <td align="left">1995-11-14</td>
 <td align="left">0000912057-95-009843</td>
@@ -159,7 +159,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-95-009843-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>92</td>
+<td>93</td>
 <td align="left">10-Q</td>
 <td align="left">1995-08-10</td>
 <td align="left">0000912057-95-006218</td>
@@ -167,7 +167,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-95-006218-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>94</td>
+<td>95</td>
 <td align="left">10-Q</td>
 <td align="left">1995-02-13</td>
 <td align="left">0000912057-95-000644</td>
@@ -179,14 +179,14 @@ knitr::<span class="kw">kable</span>(<span class="kw">tail</span>(filings)[,<spa
 <p>We’ve received filings dating back to 1995 which seems good enough for our purposes, so next we’ll get the filing information for each filing.</p>
 <p>So far we’ve done everything in base R, but now we’ll use some useful functions from dplyr and purrr to make things a bit easier.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># this can take a while - we're fetching ~100 html files!</span>
-filing_infos &lt;-<span class="st"> </span><span class="kw">map_df</span>(filings$href, filing_information)
+filing_infos &lt;-<span class="st"> </span><span class="kw">map_df</span>(filings<span class="op">$</span>href, filing_information)
 
 filings &lt;-<span class="st"> </span><span class="kw">bind_cols</span>(filings, filing_infos)
-filings$filing_delay &lt;-<span class="st"> </span>filings$filing_date -<span class="st"> </span>filings$period_date
+filings<span class="op">$</span>filing_delay &lt;-<span class="st"> </span>filings<span class="op">$</span>filing_date <span class="op">-</span><span class="st"> </span>filings<span class="op">$</span>period_date
 
 <span class="co"># Take a peak at the data</span>
-knitr::<span class="kw">kable</span>(<span class="kw">head</span>(filings) %&gt;%<span class="st"> </span><span class="kw">select</span>(type, filing_date, period_date,
-                                      filing_delay, documents, bytes) %&gt;%<span class="st"> </span>
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(filings) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(type, filing_date, period_date,
+                                      filing_delay, documents, bytes) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">             </span><span class="kw">mutate</span>(<span class="dt">filing_delay =</span> <span class="kw">as.numeric</span>(filing_delay)),
              <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Period Date"</span>, <span class="st">"Delay"</span>,
                          <span class="st">"Documents"</span>, <span class="st">"Size (B)"</span>),
@@ -257,12 +257,12 @@ knitr::<span class="kw">kable</span>(<span class="kw">head</span>(filings) %&gt;
 <h3 class="hasAnchor">
 <a href="#basic-analysis" class="anchor"></a>Basic Analysis</h3>
 <p>Now our data is arranged, we can run some summary statistics and plot using ggplot2.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(filings %&gt;%
-<span class="st">             </span><span class="kw">group_by</span>(type) %&gt;%<span class="st"> </span><span class="kw">summarize</span>(
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(filings <span class="op">%&gt;%</span>
+<span class="st">             </span><span class="kw">group_by</span>(type) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(
                <span class="dt">n=</span><span class="kw">n</span>(),
                <span class="dt">avg_delay =</span> <span class="kw">as.numeric</span>(<span class="kw">mean</span>(filing_delay)),
                <span class="dt">median_delay =</span> <span class="kw">as.numeric</span>(<span class="kw">median</span>(filing_delay)),
-               <span class="dt">avg_size =</span> <span class="kw">mean</span>(bytes /<span class="st"> </span><span class="dv">1024</span>),
+               <span class="dt">avg_size =</span> <span class="kw">mean</span>(bytes <span class="op">/</span><span class="st"> </span><span class="dv">1024</span>),
                <span class="dt">avg_docs =</span> <span class="kw">mean</span>(documents)
              ),
              <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Count"</span>, <span class="st">"Avg. Delay"</span>, <span class="st">"Median Delay"</span>,
@@ -298,21 +298,21 @@ knitr::<span class="kw">kable</span>(<span class="kw">head</span>(filings) %&gt;
 </tbody>
 </table>
 <p>No surprise, yearly filings (10-K’s) are larger and take more time than quarterly filings (10-K’s). Lets see how the times are destributed:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(type), <span class="dt">y=</span>filing_delay)) +
-<span class="st">  </span><span class="kw">geom_violin</span>() +<span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">height =</span> <span class="dv">0</span>, <span class="dt">width =</span> <span class="fl">0.1</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(type), <span class="dt">y=</span>filing_delay)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">height =</span> <span class="dv">0</span>, <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Filing Date"</span>, <span class="dt">y =</span> <span class="st">"Filing delay (days)"</span>)
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></code></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotDelay-1.png" width="576"></p>
 <p>We can also examine how the filing delay has changed over time:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y=</span>filing_delay, <span class="dt">group=</span>type, <span class="dt">color=</span>type)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_line</span>() +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y=</span>filing_delay, <span class="dt">group=</span>type, <span class="dt">color=</span>type)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Filing Type"</span>, <span class="dt">y =</span> <span class="st">"Filing delay (days)"</span>)
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></code></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotType-1.png" width="576"></p>
 <p>Whether because of some internal change or change to SEC rules, the time between the end of the fiscal year and the 10-K has dropped quite a bit, though there is still a bit of variation.</p>
 <p>An interesting extension would be to compare the filing delays to the company’s stock price, overall market performance and other companies to see if there are particular drivers to the pattern.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y=</span>bytes/<span class="dv">1024</span>, <span class="dt">group=</span>type, <span class="dt">color=</span>type)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_line</span>() +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y=</span>bytes<span class="op">/</span><span class="dv">1024</span>, <span class="dt">group=</span>type, <span class="dt">color=</span>type)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Filing Type"</span>, <span class="dt">y =</span> <span class="st">"Filing Size (KB)"</span>)</code></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotSize-1.png" width="576"></p>
 <p>The jump in size ~2010 is the requirement for inclusion of financial datafiles starting, but there is still interesting variations.</p>
@@ -330,7 +330,7 @@ knitr::<span class="kw">kable</span>(<span class="kw">head</span>(filings) %&gt;
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"edgarWebR"</span>)</code></pre></div>
 <p>If you want the latest and greatest, you can get a copy of the development version from github by using devtools:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools::<span class="kw">install_github</span>(<span class="st">"mwaldstein/edgarWebR"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"mwaldstein/edgarWebR"</span>)</code></pre></div>
 </div>
 </div>
   </div>

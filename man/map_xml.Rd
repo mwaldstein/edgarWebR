@@ -4,7 +4,8 @@
 \alias{map_xml}
 \title{Map XML Entries}
 \usage{
-map_xml(doc, entries_xpath, parts, trim = c(), integers = c())
+map_xml(doc, entries_xpath, parts, trim = c(), integers = c(),
+  date_format = "")
 }
 \arguments{
 \item{doc}{An XML document}
@@ -16,6 +17,8 @@ map_xml(doc, entries_xpath, parts, trim = c(), integers = c())
 \item{trim}{a list of columns that need to have whitespace trimmed}
 
 \item{integers}{a list of columns that need to converted to integers}
+
+\item{date_format}{how dates should be parsed}
 }
 \value{
 A dataframe with one row per entry and columns from parts

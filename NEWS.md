@@ -1,3 +1,16 @@
+# edgarWebR 0.2.1.9000 - "DEVELOPMENT"
+
+## Features
+ * `full_text` provides access to the full-text filing search interface.
+
+## Bugfixes
+ * `parse_filings` now treats `<br>` as a space avoiding words separated only
+   by a line return getting concatenated. (Fixes #2)
+
+## Internal
+ * `map_xml` processes href's out of javascript links
+ * `map_xml` add parameter for date format
+
 # edgarWebR 0.2.1 - "Thanks Testers"
 
 Many thanks to everyone providing feedback, particularly Günter Leitold for

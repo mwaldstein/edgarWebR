@@ -7,6 +7,7 @@
 #' @param parts a list in the form column name = xpath locator
 #' @param trim a list of columns that need to have whitespace trimmed
 #' @param integers a list of columns that need to converted to integers
+#' @param date_format how dates should be parsed
 #'
 #' @keywords internal
 #'
@@ -15,7 +16,8 @@ map_xml <- function(doc,
                     entries_xpath,
                     parts,
                     trim = c(),
-                    integers = c()) {
+                    integers = c(),
+                    date_format = "") {
   xml2::xml_ns_strip(doc)
   entries <- xml2::xml_find_all(doc, entries_xpath)
 
@@ -53,6 +55,10 @@ map_xml <- function(doc,
 
   link_cols <- colnames(res)[grepl("href$", colnames(res))]
   for (ref in link_cols) {
+    res[[ref]] <- ifelse(startsWith(res[[ref]], "javascript"),
+                         regmatches(res[[ref]],
+                                    regexpr("http[^('|\")]+", res[[ref]])),
+                         res[[ref]])
     res[[ref]] <- ifelse(is.na(res[[ref]]), NA,
                          xml2::url_absolute(res[[ref]], xml2::xml_url(doc)))
 
@@ -63,7 +69,11 @@ map_xml <- function(doc,
 
   date_cols <- colnames(res)[grepl("date$", colnames(res))]
   for (ref in date_cols) {
-    res[[ref]] <- as.POSIXct(res[[ref]])
+    res[[ref]] <- if (date_format == "") {
+        as.POSIXct(res[[ref]])
+      } else {
+        as.POSIXct(res[[ref]], format = date_format)
+      }
   }
 
   return(res)
