@@ -44,7 +44,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="even">
 <td>Recent Filings</td>
 <td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent" class="uri">https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent</a></td>
-<td>N/A</td>
+<td><code>latest_filings()</code></td>
 </tr>
 <tr class="odd">
 <td>Full Text</td>

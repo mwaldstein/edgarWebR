@@ -2,6 +2,7 @@
 
 ## Features
  * `full_text` provides access to the full-text filing search interface.
+ * `latest_filings` provides access to the latest SEC filings.
 
 ## Bugfixes
  * `parse_filings` now treats `<br>` as a space avoiding words separated only
