@@ -17,9 +17,6 @@
 #' @param include.raw - Include unprocessed nodes in result? Default: false
 #' @param fix.errors - Try to fix document errors (e.g. missing part labels).
 #'        WIP. Default: true
-#' @param parser - there are a number of different approaches to extracting
-#'        components from a filing. Most of the time, leave this to the
-#'        default.
 #'
 #' @return a dataframe with one row per paragraph
 #'   \describe{
@@ -36,8 +33,7 @@
 parse_filing <- function (x,
                           strip = TRUE,
                           include.raw = FALSE,
-                          fix.errors = TRUE,
-                          parser = "v1") {
+                          fix.errors = TRUE) {
   doc <- get_doc(x, clean = T)
 
   xpath_base <- '//text'
@@ -55,15 +51,7 @@ parse_filing <- function (x,
                                include.raw = include.raw))
   }
 
-  if (parser == 'v1') {
-    doc.parts <- build_parts(doc, xpath_base, include.raw = include.raw)
-  } else if (parser == 'v2') {
-    doc.parts <- build_parts_v2(doc, xpath_base, include.raw = include.raw)
-  } else if (parser == 'v3') {
-    doc.parts <- build_parts_v3(doc, xpath_base, include.raw = include.raw)
-  } else{
-    stop('Parser must be "v1", "v2" or "v3"')
-  }
+  doc.parts <- build_parts(doc, xpath_base, include.raw = include.raw)
 
   if (strip) {
     doc.parts <- doc.parts[doc.parts$name != "hr", ]
@@ -91,7 +79,7 @@ parse_filing <- function (x,
 
 #' Parse Text Filing
 #'
-#' Given a link to filing document (e.g. the 10-K, 8-K) in HTML, process the
+#' Given a link to a filing document (e.g. the 10-K, 8-K) in TXT, process the
 #' file into parts and items. This enables follow-up processing of a desired
 #' section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
 #' directly from the document without any attempt to normalize.
@@ -103,7 +91,7 @@ parse_filing <- function (x,
 #' \strong{FURTHER NOTE:} Not all filings are well formed - missing headings, bad
 #' spacing, etc. These can all throw the parsing off!
 #'
-#' @param x - URL to a filing HTML document, html text or xml_document
+#' @param x - URL to a filing text document or actual text
 #' @param strip - Should non-text elements be removed? Default: true
 #' @param include.raw - Include unprocessed nodes in result? Default: false
 #' @param fix.errors - Try to fix document errors (e.g. missing part labels).
@@ -118,14 +106,14 @@ parse_filing <- function (x,
 #'   }
 #'
 #' @examples
-#' head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
-#'      '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
+#' head(parse_text_filing(
+#'   "https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"
+#' ))
 #' @export
 parse_text_filing <- function (x,
                           strip = TRUE,
                           include.raw = FALSE,
-                          # fix.errors = TRUE,
-                          parser = "v1") {
+                          fix.errors = TRUE) {
   doc <- charToText(x)
   if (strip) {
     doc <- gsub("^<PAGE>[:blank:]*[:digit:]+$", "", doc)
@@ -145,7 +133,8 @@ parse_text_filing <- function (x,
   return(parts)
 }
 
-# Manually identify the node paths
+#' Manually identify the node paths
+#' @noRd
 build_parts <- function(doc, xpath_base, include.raw = F) {
   # There be dragons here...
   # Basically this extacts all the individual paragraphs from a document in one
@@ -188,47 +177,6 @@ build_parts <- function(doc, xpath_base, include.raw = F) {
     doc.parts$raw <- as.character(nodes)
   }
   return(doc.parts)
-}
-
-# use a recursive algorithm to find the base
-build_parts_v2 <- function(doc, xpath_base, include.raw = F) {
-  base <- xml2::xml_find_first(doc, xpath_base)
-  nodes <- base_nodes(base)
-
-  doc.parts <- data.frame(text = sapply(nodes, xml2::xml_text),
-                          name = sapply(nodes, xml2::xml_name),
-                          stringsAsFactors = FALSE)
-  if (include.raw) {
-    doc.parts$raw <- sapply(nodes, as.character)
-  }
-  return(doc.parts)
-}
-
-# pull all nodes that have at least one non-space text node
-# might be improved by using contains(ascendents(), 'table')
-build_parts_v3 <- function(doc, xpath_base, include.raw = F) {
-  # 1 - remove all space-only text nodes
-  text_nodes <- xml2::xml_find_all(doc, "//text()")
-  space_nodes <- text_nodes[grepl("^[[:space:]\U00A0]*$", xml2::xml_text(text_nodes))]
-  xml2::xml_remove(space_nodes)
-
-  # 2 - find all parents of text nodes
-  xpath_parts <- c(
-    "//*[count(text()) > 0 and name() != 'td' and name() != 'td']"
-                   )
-
-  xpath_parts <- paste0(xpath_base, xpath_parts)
-
-  nodes <- xml2::xml_find_all(doc, paste0(xpath_parts, collapse = " | "))
-
-  doc.parts <- data.frame(text = xml2::xml_text(nodes),
-                          name = xml2::xml_name(nodes),
-                          stringsAsFactors = FALSE)
-  if (include.raw) {
-    doc.parts$raw <- as.character(nodes)
-  }
-  return(doc.parts)
-
 }
 
 #' Part/Item Processing

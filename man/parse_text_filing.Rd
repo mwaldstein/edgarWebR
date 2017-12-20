@@ -4,10 +4,10 @@
 \alias{parse_text_filing}
 \title{Parse Text Filing}
 \usage{
-parse_text_filing(x, strip = TRUE, include.raw = FALSE, parser = "v1")
+parse_text_filing(x, strip = TRUE, include.raw = FALSE, fix.errors = TRUE)
 }
 \arguments{
-\item{x}{- URL to a filing HTML document, html text or xml_document}
+\item{x}{- URL to a filing text document or actual text}
 
 \item{strip}{- Should non-text elements be removed? Default: true}
 
@@ -26,7 +26,7 @@ a dataframe with one row per paragraph
   }
 }
 \description{
-Given a link to filing document (e.g. the 10-K, 8-K) in HTML, process the
+Given a link to a filing document (e.g. the 10-K, 8-K) in TXT, process the
 file into parts and items. This enables follow-up processing of a desired
 section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
 directly from the document without any attempt to normalize.
@@ -40,6 +40,7 @@ that isn't parsed correctly.
 spacing, etc. These can all throw the parsing off!
 }
 \examples{
-head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
-     '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
+head(parse_text_filing(
+  "https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"
+))
 }
