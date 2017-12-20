@@ -7,7 +7,7 @@ with_mock_API ({
     expect_is(res, "data.frame")
     expect_length(res, 6)
     expect_equal(nrow(res), 3)
-  
+
     # A couple of spot checks.
     # TODO: do a larger dump/load
     expect_equal(res$seq[1], 1)
@@ -24,7 +24,7 @@ with_mock_API ({
     expect_is(res, "data.frame")
     expect_length(res, 6)
     expect_equal(nrow(res), 16)
-  
+
     # A couple of spot checks.
     # TODO: do a larger dump/load
     expect_equal(res$seq[1], 1)

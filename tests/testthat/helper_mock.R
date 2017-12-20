@@ -18,7 +18,10 @@ if (ewr_mock_bypass == "capture") {
 
 # override buildMockUrl to shorten paths
 # buildMockURL may not be locked in some circumstances, so try but fail quietly
-try({unlockBinding("buildMockURL", environment(httptest::buildMockURL))}, silent = TRUE)
+try({
+  unlockBinding("buildMockURL", environment(httptest::buildMockURL))
+  },
+  silent = TRUE)
 buildMockURL.orig <- httptest::buildMockURL
 buildMockURL.new <- function(req, method = "GET") {
   path <- buildMockURL.orig(req, method = method)
@@ -31,4 +34,6 @@ buildMockURL.new <- function(req, method = "GET") {
 
   path
 }
-assign("buildMockURL", buildMockURL.new, envir = environment(httptest::buildMockURL))
+assign("buildMockURL",
+       buildMockURL.new,
+       envir = environment(httptest::buildMockURL))

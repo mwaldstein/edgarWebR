@@ -42,9 +42,9 @@ charToText <- function(x) {
 # strips difficult to handle html bits we don't really care about
 # @param x text of an html document
 clean_html <- function(x) {
-  x <- gsub('&nbsp;',' ', x, ignore.case = T)
-  x <- gsub('<br>'  ,' ', x, ignore.case = T)
-  x <- gsub('<br/>' ,' ', x, ignore.case = T)
+  x <- gsub("&nbsp;", " ", x, ignore.case = T)
+  x <- gsub("<br>", " ", x, ignore.case = T)
+  x <- gsub("<br/>", " ", x, ignore.case = T)
   x
 }
 

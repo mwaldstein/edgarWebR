@@ -5,7 +5,7 @@ with_mock_API ({
     expect_error(company_details("EAR"))
     res <- company_details("AAPL")
     expect_is(res, "list")
-  
+
     expect_length(res, 2)
   })
 

@@ -197,8 +197,8 @@ with_mock_API({
   test_that("Treats <br> as space", {
     href <- "https://www.sec.gov/Archives/edgar/data/1399855/000119312514363235/d778787d10q.htm"
     res <- parse_filing(href)
-    tmp <- res[grepl('Weighted average exercise price', res$text,
-                     ignore.case=F), ]
+    tmp <- res[grepl("Weighted average exercise price", res$text,
+                     ignore.case = F), ]
     expect_equal(nrow(tmp), 1)
   })
   test_that("Handles HTML wrapped text filling (", {
