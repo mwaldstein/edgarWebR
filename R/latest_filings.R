@@ -27,8 +27,8 @@
 #'    \item accession_number
 #'    \item size
 #'  }
-#'@example
-#'latest_filing()
+#' @examples
+#' latest_filings()
 #'@export
 latest_filings <- function(name = "",
                            cik = "",

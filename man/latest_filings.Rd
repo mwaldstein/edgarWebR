@@ -43,3 +43,6 @@ a dataframe list of recent results, ordered by decending accepted
 \description{
 Provides access to the latest SEC filings from \href{https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent}{here}
 }
+\examples{
+latest_filings()
+}

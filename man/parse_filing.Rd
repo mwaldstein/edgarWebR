@@ -4,7 +4,8 @@
 \alias{parse_filing}
 \title{Parse Filing}
 \usage{
-parse_filing(x, strip = TRUE, include.raw = FALSE, fix.errors = TRUE)
+parse_filing(x, strip = TRUE, include.raw = FALSE, fix.errors = TRUE,
+  parser = "v1")
 }
 \arguments{
 \item{x}{- URL to a filing HTML document, html text or xml_document}
@@ -15,6 +16,10 @@ parse_filing(x, strip = TRUE, include.raw = FALSE, fix.errors = TRUE)
 
 \item{fix.errors}{- Try to fix document errors (e.g. missing part labels).
 WIP. Default: true}
+
+\item{parser}{- there are a number of different approaches to extracting
+components from a filing. Most of the time, leave this to the
+default.}
 }
 \value{
 a dataframe with one row per paragraph

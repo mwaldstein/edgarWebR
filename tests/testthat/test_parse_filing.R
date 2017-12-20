@@ -201,4 +201,15 @@ with_mock_API({
                      ignore.case=F), ]
     expect_equal(nrow(tmp), 1)
   })
+  test_that("Handles HTML wrapped text filling (", {
+    href <- "https://www.sec.gov/Archives/edgar/data/1424844/000092290708000774/form10k_122308.htm"
+    res <- parse_filing(href)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(nrow(res), 796)
+    expect_equal(length(unique(res$item.name)), 19)
+    expect_equal(length(unique(res$part.name)), 4)
+    expect_equal(length(unique(res[res$part.name == "PART II",
+                               "item.name"])), 8)
+  })
 })

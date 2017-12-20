@@ -3,10 +3,15 @@
 ## Features
  * `full_text` provides access to the full-text filing search interface.
  * `latest_filings` provides access to the latest SEC filings.
+ * `parse_text_filing` parses text-only 10-* filings.
+ * `parse_filing` detects when a filing is HTML wrapped plain text and uses
+   `parse_text_filing` when appropriate.
 
 ## Bugfixes
- * `parse_filings` now treats `<br>` as a space avoiding words separated only
+ * `parse_filing` now treats `<br>` as a space avoiding words separated only
    by a line return getting concatenated. (Fixes #2)
+ * `parse_filing` now tries to detect and remove TOC itemss/parts to avoid
+   duplicate entries
 
 ## Internal
  * `map_xml` processes href's out of javascript links

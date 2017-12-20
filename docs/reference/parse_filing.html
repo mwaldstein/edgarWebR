@@ -108,7 +108,8 @@ section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
 directly from the document without any attempt to normalize.</p>
     
 
-    <pre class="usage"><span class='fu'>parse_filing</span>(<span class='no'>x</span>, <span class='kw'>strip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>include.raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>fix.errors</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>parse_filing</span>(<span class='no'>x</span>, <span class='kw'>strip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>include.raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>fix.errors</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>parser</span> <span class='kw'>=</span> <span class='st'>"v1"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -129,6 +130,12 @@ directly from the document without any attempt to normalize.</p>
       <th>fix.errors</th>
       <td><p>- Try to fix document errors (e.g. missing part labels).
 WIP. Default: true</p></td>
+    </tr>
+    <tr>
+      <th>parser</th>
+      <td><p>- there are a number of different approaches to extracting
+components from a filing. Most of the time, leave this to the
+default.</p></td>
     </tr>
     </table>
     

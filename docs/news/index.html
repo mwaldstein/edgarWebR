@@ -114,6 +114,10 @@
 <code>full_text</code> provides access to the full-text filing search interface.</li>
 <li>
 <code>latest_filings</code> provides access to the latest SEC filings.</li>
+<li>
+<code>parse_text_filing</code> parses text-only 10-* filings.</li>
+<li>
+<code>parse_filing</code> detects when a filing is HTML wrapped plain text and uses <code>parse_text_filing</code> when appropriate.</li>
 </ul>
 </div>
 <div id="bugfixes" class="section level2">
@@ -121,7 +125,9 @@
 <a href="#bugfixes" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
-<code>parse_filings</code> now treats <code>&lt;br&gt;</code> as a space avoiding words separated only by a line return getting concatenated. (Fixes #2)</li>
+<code>parse_filing</code> now treats <code>&lt;br&gt;</code> as a space avoiding words separated only by a line return getting concatenated. (Fixes #2)</li>
+<li>
+<code>parse_filing</code> now tries to detect and remove TOC itemss/parts to avoid duplicate entries</li>
 </ul>
 </div>
 <div id="internal" class="section level2">
