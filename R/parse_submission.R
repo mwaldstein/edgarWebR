@@ -30,7 +30,7 @@
 #'                  '37996/000003799617000084/0000037996-17-000084.txt'))[ ,
 #'                    c('SEQUENCE', 'TYPE', 'DESCRIPTION', 'FILENAME')]
 #' @export
-parse_submission <- function (uri) {
+parse_submission <- function(uri) {
   res <- charToText(uri)
 
   parts <- data.frame(text = unlist(strsplit(res, "\n")),

@@ -30,10 +30,10 @@
 #' head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
 #'      '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
 #' @export
-parse_filing <- function (x,
-                          strip = TRUE,
-                          include.raw = FALSE,
-                          fix.errors = TRUE) {
+parse_filing <- function(x,
+                         strip = TRUE,
+                         include.raw = FALSE,
+                         fix.errors = TRUE) {
   doc <- get_doc(x, clean = T)
 
   xpath_base <- '//text'
@@ -44,11 +44,10 @@ parse_filing <- function (x,
   # detect html-wrapped plain text filings
   nodes <- xml2::xml_find_all(doc, paste0(xpath_base, "/*"))
   tag_names <- unique(xml2::xml_name(nodes))
-  if (!(FALSE %in% (tag_names %in% c('title', 'pre', 'hr')))) {
-    message("Using text parsing...")
-    return ( parse_text_filing(xml2::xml_text(doc),
-                               strip = strip,
-                               include.raw = include.raw))
+  if (!(FALSE %in% (tag_names %in% c("title", "pre", "hr")))) {
+    return(parse_text_filing(xml2::xml_text(doc),
+                             strip = strip,
+                             include.raw = include.raw))
   }
 
   doc.parts <- build_parts(doc, xpath_base, include.raw = include.raw)
@@ -110,10 +109,10 @@ parse_filing <- function (x,
 #'   "https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"
 #' ))
 #' @export
-parse_text_filing <- function (x,
-                          strip = TRUE,
-                          include.raw = FALSE,
-                          fix.errors = TRUE) {
+parse_text_filing <- function(x,
+                              strip = TRUE,
+                              include.raw = FALSE,
+                              fix.errors = TRUE) {
   doc <- charToText(x)
   if (strip) {
     doc <- gsub("^<PAGE>[:blank:]*[:digit:]+$", "", doc)
@@ -185,8 +184,8 @@ build_parts <- function(doc, xpath_base, include.raw = F) {
 #' @param fix.errors - Try to fix document errors (e.g. missing part labels)
 #'        Default: true
 #' @noRd
-compute_parts <- function (doc.parsed,
-                           fix.errors = TRUE) {
+compute_parts <- function(doc.parsed,
+                          fix.errors = TRUE) {
   return_cols <- colnames(doc.parsed)
 
   # when we merge in the parts/items, order gets wonky - this preserves it

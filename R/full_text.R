@@ -1,6 +1,7 @@
 #' SEC Full-Text Search
 #'
-#' Provides access to the SEC fillings \href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
+#' Provides access to the SEC fillings
+#' \href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
 #'
 #'@param q Search query. For details on special formatting, see the
 #' \href{https://www.sec.gov/edgar/searchedgar/edgarfulltextfaq.htm}{FAQ}.
@@ -105,10 +106,10 @@ map_form <- function(form) {
   return(form)
 }
 
-map_opt <- function (name, cik, sic) {
-  if (name != '') {
+map_opt <- function(name, cik, sic) {
+  if (name != "") {
     return(paste0("queryCo=", name, "&"))
-  } else if (cik != '') {
+  } else if (cik != "") {
     return(paste0("queryCik=", cik, "&"))
   } else if (sic != "") {
     return(paste0("querySic=", sic, "&"))

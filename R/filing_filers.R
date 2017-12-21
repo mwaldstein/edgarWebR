@@ -36,10 +36,14 @@ filing_filers.xml_node <- function(x) {
     "business_address_3" = "div[@class='mailer'][contains(.,'Business Address')]/span[3]",
     "business_address_4" = "div[@class='mailer'][contains(.,'Business Address')]/span[4]",
     "company_name" = "substring-before(div[@class='companyInfo']/span[@class='companyName']/text()[1], ' (')",
-    "company_cik" = "substring-before(div[@class='companyInfo']/span[@class='companyName']/a[contains(@href, 'browse-edgar')],' (')",
-    "company_filings_href" = "div[@class='companyInfo']/span[@class='companyName']/a[contains(@href, 'browse-edgar')]/@href",
-    "company_irs_number" = "div/p[@class='identInfo']/acronym[. = 'IRS No.']/following-sibling::strong[1]",
-    "company_incorporation_state" = "div/p[@class='identInfo']/text()[contains(.,'Incorp')]/following-sibling::strong[1]",
+    "company_cik" =
+      "substring-before(div[@class='companyInfo']/span[@class='companyName']/a[contains(@href, 'browse-edgar')],' (')",
+    "company_filings_href" =
+      "div[@class='companyInfo']/span[@class='companyName']/a[contains(@href, 'browse-edgar')]/@href",
+    "company_irs_number" =
+      "div/p[@class='identInfo']/acronym[. = 'IRS No.']/following-sibling::strong[1]",
+    "company_incorporation_state" =
+      "div/p[@class='identInfo']/text()[contains(.,'Incorp')]/following-sibling::strong[1]",
     "company_fiscal_year_end" = "div/p[@class='identInfo']/text()[contains(.,'Year End')]/following-sibling::strong[1]",
     "filing_type" = "div/p[@class='identInfo']/text()[contains(.,'Type:')]/following-sibling::strong[1]",
     "filing_act" = "div/p[@class='identInfo']/text()[contains(.,'Act:')]/following-sibling::strong[1]",

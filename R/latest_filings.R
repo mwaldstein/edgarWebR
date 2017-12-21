@@ -1,6 +1,7 @@
 #' SEC Latest Filings
 #'
-#' Provides access to the latest SEC filings from \href{https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent}{here}
+#' Provides access to the latest SEC filings from
+#' \href{https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent}{here}
 #'
 #'@param name Optional comany name to limit filing results
 #'@param cik Optional comany cik to limit filing results
