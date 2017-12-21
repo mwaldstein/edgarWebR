@@ -1,14 +1,14 @@
 #' SEC Company Details
 #'
-#' For a given company, either by ticker, CIK, or pre-fetched page, we extract 2 
-#' sets of information: 
+#' For a given company, either by ticker, CIK, or pre-fetched page, we extract 2
+#' sets of information:
 #'\describe{
 #'  \item{Company Information}{Filing date, accepted date, etc.}
 #'  \item{Filings}{Companies included in the filing}
 #'}
 #'
 #' @inheritParams company_filings
-#' 
+#'
 #' @return A list with the following components
 #'  \describe{
 #'    \item{information}{data.frame as returned by \code{\link{company_information}}}
@@ -25,7 +25,9 @@ company_details <- function(x,
                          count = 40,
                          page = 1) {
   # We want to accept a pre-fetched document or possibly a sub-page node
-  doc <- if (is(x, "xml_node")) { x } else {
+  doc <- if (is(x, "xml_node")) {
+           x
+         } else {
            browse_edgar(x,
                         ownership = ownership,
                         type = type,

@@ -37,7 +37,7 @@ specify `to`}
 specify `from`}
 }
 \value{
-A dataframe list of results including the following columns - 
+A dataframe list of results including the following columns -
  \itemize{
    \item filing_date
    \item name
@@ -51,7 +51,8 @@ A dataframe list of results including the following columns -
  }
 }
 \description{
-Provides access to the SEC fillings \href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
+Provides access to the SEC fillings
+\href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
 }
 \examples{
 full_text('intel')

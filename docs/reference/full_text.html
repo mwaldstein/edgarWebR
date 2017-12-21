@@ -102,7 +102,8 @@
     </div>
 
     
-    <p>Provides access to the SEC fillings <a href='https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp'>full-text search tool</a>.</p>
+    <p>Provides access to the SEC fillings
+<a href='https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp'>full-text search tool</a>.</p>
     
 
     <pre class="usage"><span class='fu'>full_text</span>(<span class='kw'>q</span> <span class='kw'>=</span> <span class='st'>"*"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>reverse_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>10</span>,
@@ -180,26 +181,34 @@ specify `from`</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                             name
-#&gt; 1   2017-12-20                           6-K for BLACKBERRY Ltd
-#&gt; 2   2017-12-19                                 424B2 for UBS AG
-#&gt; 3   2017-12-19                      POS AM for Yatra Online Inc
-#&gt;                                                                                       href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/1070235/000107023517000048/q318pressrelease.htm
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/1114446/000091412117001843/ub39902383-424b2.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1516899/000110465917074055/a17-28625_1posam.htm
-#&gt;                                company_name     cik  sic
-#&gt; 1                            BLACKBERRY Ltd 1070235 7372
-#&gt; 2                                    UBS AG 1114446 6021
-#&gt; 3                          Yatra Online Inc 1516899 4700
-#&gt;                                                                                                                                                                                                                                                                                                     content
-#&gt; 1                                                                                                                            Intel is collaborating in the development of this product Q3 Results Non-GAAP revenue for the third quarter of fiscal 2018 was $235 million with GAAP revenue of $226 million.
-#&gt; 2    PRICING SUPPLEMENT Dated December 15, 2017 Filed Pursuant to Rule 424(b)(2) Registration Statement No. 333-204908 (To Prospectus dated April 29, 2016 and Product Supplement dated September 30, 2016) UBS AG $5, 145, 000 Step Down Trigger Autocallable Notes Linked to the least performing between
-#&gt; 3                   As filed with the United States Securities and Exchange Commission on December 19, 2017. Registration No. 333-215653 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 POST-EFFECTIVE AMENDMENT NO. 4 TO FORM F-1 REGISTRATION STATEMENT UNDER THE SECURITIES ACT
-#&gt;    parent_href index_href
-#&gt; 1         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 2         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 3         &lt;NA&gt;       &lt;NA&gt;
+    <pre class="examples"><div class='input'><span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
+#&gt; 1   2017-12-21
+#&gt; 2   2017-12-21
+#&gt; 3   2017-12-21
+#&gt;                                                                 name
+#&gt; 1  485BPOS for SEPARATE ACCOUNT 3 OF AXA EQUITABLE LIFE INSURANCE CO
+#&gt; 2  485BPOS for SEPARATE ACCOUNT 4 OF AXA EQUITABLE LIFE INSURANCE CO
+#&gt; 3         INFORMATION TABLE of 13F-HR/A for Atlantic Trust Group LLC
+#&gt;                                                                                                href
+#&gt; 1            https://www.sec.gov/Archives/edgar/data/1397933/000119312517376107/d486789d485bpos.txt
+#&gt; 2            https://www.sec.gov/Archives/edgar/data/1397934/000119312517376133/d460685d485bpos.txt
+#&gt; 3       https://www.sec.gov/Archives/edgar/data/1298088/000129808817000016/xslForm13F_X01/Filer.xml
+#&gt;                                             company_name     cik  sic
+#&gt; 1  SEPARATE ACCOUNT 3 OF AXA EQUITABLE LIFE INSURANCE CO 1397933 &lt;NA&gt;
+#&gt; 2  SEPARATE ACCOUNT 4 OF AXA EQUITABLE LIFE INSURANCE CO 1397934 &lt;NA&gt;
+#&gt; 3                               Atlantic Trust Group LLC 1298088 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                                         content
+#&gt; 1  -PAGE- REGISTRATION NO.333-142459 = SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 - FORM N-3 REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933 [X] PRE-EFFECTIVE AMENDMENT NO. [_] POST-EFFECTIVE AMENDMENT NO. 13 [X] - AXA EQUITABLE LIFE INSURANCE COMPANY (EXACT NAME OF REGISTRANT) -
+#&gt; 2     -PAGE- REGISTRATION NO. 333-142461 = SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 - FORM N-3 REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933 [X] PRE-EFFECTIVE AMENDMENT NO. [_] POST-EFFECTIVE AMENDMENT NO. 13 [X] (CHECK APPROPRIATE BOX OR BOXES) - AXA EQUITABLE LIFE INSURANCE
+#&gt; 3         3 D SYS CORP DEL COM NEW COM NEW 88554D205 620 46320 SH DFND 2 0 0 46320 3M CO COM COM 88579Y101 19346 92160 SH DFND 1, 2 62485 0 29675 3M CO COM COM 88579Y101 394 1878 SH OTR 1 1878 0 0 AAON INC COM COM PAR $0.004 000360206 558 16188 SH DFND 1, 2 16188 0 0 ABB LTD SPONSORED ADR SPONSORED ADR
+#&gt;                                                                                          parent_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                      https://www.sec.gov/Archives/edgar/data/723125/000072312517000166/a2018q1.htm
+#&gt;                                                                                           index_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3   https://www.sec.gov/Archives/edgar/data/723125/000072312517000166/0000723125-17-000166-index.htm
 #&gt;  [ reached getOption("max.print") -- omitted 7 rows ]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

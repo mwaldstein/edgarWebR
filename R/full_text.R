@@ -20,7 +20,7 @@
 #'@param to End date. Must be in the form of `mm/dd/yyyy`. Must also
 #'       specify `from`
 #'
-#'@return A dataframe list of results including the following columns - 
+#'@return A dataframe list of results including the following columns -
 #'  \itemize{
 #'    \item filing_date
 #'    \item name
@@ -55,7 +55,7 @@ full_text <- function(
     "isAdv=true&",
     "stemming=", ifelse(stemming, "true", "false"), "&",
     ifelse(page != 1,
-           paste0("startDoc=", ( (page - 1) * count) + 1, "&"), ""),
+           paste0("startDoc=", count * (page - 1) + 1, "&"), ""),
     "numResults=", count, "&",
     map_opt(name, cik, sic),
     ifelse(from != "" && to != "",

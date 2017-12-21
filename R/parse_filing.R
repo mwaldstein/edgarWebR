@@ -120,7 +120,7 @@ parse_text_filing <- function(x,
   parts <- data.frame(text = trimws(unlist(strsplit(doc, "\n{2,}"))),
                       stringsAsFactors=F)
   if (strip) {
-    parts$text[1] <- sub("^.*<TEXT>[ \n]*","", parts$text[1])
+    parts$text[1] <- sub("^.*<TEXT>[ \n]*", "", parts$text[1])
 
     parts <- parts[parts$text != "", , drop = FALSE]
   }

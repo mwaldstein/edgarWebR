@@ -16,6 +16,7 @@
 ## Internal
  * `map_xml` processes href's out of javascript links
  * `map_xml` add parameter for date format
+ * linting setup to run in CI
 
 # edgarWebR 0.2.1 - "Thanks Testers"
 

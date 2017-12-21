@@ -12,7 +12,7 @@ company_details(x, ownership = FALSE, type = "", before = "",
 
 \item{ownership}{boolean for inclusion of company change filings}
 
-\item{type}{Type of filing to fetch. NOTE: due to the way the SEC EDGAR system 
+\item{type}{Type of filing to fetch. NOTE: due to the way the SEC EDGAR system
 works, it is actually is a 'starts-with' search, so for instance specifying
 'type = "10-K" will return "10-K/A" and "10-K405" filings as well. To ensure
 you only get the type you want, best practice would be to filter the results.}
@@ -32,8 +32,8 @@ A list with the following components
  }
 }
 \description{
-For a given company, either by ticker, CIK, or pre-fetched page, we extract 2 
-sets of information: 
+For a given company, either by ticker, CIK, or pre-fetched page, we extract 2
+sets of information:
 \describe{
  \item{Company Information}{Filing date, accepted date, etc.}
  \item{Filings}{Companies included in the filing}

@@ -1,7 +1,7 @@
 #' SEC Filing Details
 #'
 #' The SEC generates a html page as an index for every filing it receives containing
-#' all the meta-information about the filing. We extract 3 main types of information: 
+#' all the meta-information about the filing. We extract 3 main types of information:
 #'\describe{
 #'  \item{Filing Information}{Filing date, accepted date, etc.}
 #'  \item{Documents}{All the documents included in the filing}

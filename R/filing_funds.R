@@ -1,7 +1,7 @@
 #' SEC Filing Funds
 #'
 #' @param x URL to a SEC filing index page
-#' 
+#'
 #' @return A dataframe with all the funds associated with a given filing
 #'
 #' @examples

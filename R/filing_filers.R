@@ -1,7 +1,7 @@
 #' SEC Filing Included Filers
 #'
 #' @param x URL to a SEC filing index page
-#' 
+#'
 #' @return A dataframe with all the filers in the filing along with their info
 #'
 #' @examples

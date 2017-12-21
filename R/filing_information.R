@@ -1,8 +1,8 @@
 #' SEC Filing Information
 #'
 #' The SEC generates a html page as an index for every filing it receives containing
-#' all the meta-information about the filing. 
-#' 
+#' all the meta-information about the filing.
+#'
 #' Information returned:
 #' \itemize{
 #'  \item type
@@ -22,7 +22,7 @@
 #' funds and filers, look at `filing_details`
 #'
 #' @param x URL or xml_document for a SEC filing index page
-#' 
+#'
 #' @return A dataframe with all the parsed meta-info on the filing
 #'
 #' @examples

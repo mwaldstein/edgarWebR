@@ -2,7 +2,7 @@
 #'
 #' @param x either a stock ticker, CIK number, or XML document for a company page
 #' @param ownership boolean for inclusion of company change filings
-#' @param type Type of filing to fetch. NOTE: due to the way the SEC EDGAR system 
+#' @param type Type of filing to fetch. NOTE: due to the way the SEC EDGAR system
 #'     works, it is actually is a 'starts-with' search, so for instance specifying
 #'     'type = "10-K" will return "10-K/A" and "10-K405" filings as well. To ensure
 #'     you only get the type you want, best practice would be to filter the results.
@@ -22,14 +22,16 @@ company_filings <- function(x,
                          before="",
                          count = 40,
                          page = 1) {
-  doc <- if (is(x,"xml_node")) { x } else {
+  doc <- if (is(x, "xml_node")) {
+           x
+         } else {
            browse_edgar(x,
                         ownership = ownership,
                         type = type,
                         before = before,
                         count = count,
                         page = page)
-  }
+         }
 
   entries_xpath <- "entry"
 

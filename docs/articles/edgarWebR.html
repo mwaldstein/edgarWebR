@@ -108,11 +108,11 @@ filings &lt;-<span class="st"> </span><span class="kw"><a href="../reference/com
 initial_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(filings)
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
-filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-K"</span> <span class="op">|</span><span class="st"> </span>filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-Q"</span>,]</code></pre></div>
+filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-K"</span> <span class="op">|</span><span class="st"> </span>filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-Q"</span>, ]</code></pre></div>
 <p>Note that explicitly filtering caused us to go from 95 to 91 rows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filings<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filings<span class="op">$</span>href, <span class="st">")"</span>)
-knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">tail</span>(filings)[,<span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
-                              <span class="st">"md_href"</span>)],
+knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">tail</span>(filings)[, <span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
+                               <span class="st">"md_href"</span>)],
              <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
              <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark=</span><span class="st">","</span>))</code></pre></div>
@@ -186,7 +186,7 @@ filings<span class="op">$</span>filing_delay &lt;-<span class="st"> </span>filin
 
 <span class="co"># Take a peak at the data</span>
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(filings) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(type, filing_date, period_date,
-                                      filing_delay, documents, bytes) <span class="op">%&gt;%</span><span class="st"> </span>
+                                      filing_delay, documents, bytes) <span class="op">%&gt;%</span>
 <span class="st">             </span><span class="kw">mutate</span>(<span class="dt">filing_delay =</span> <span class="kw">as.numeric</span>(filing_delay)),
              <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Period Date"</span>, <span class="st">"Delay"</span>,
                          <span class="st">"Documents"</span>, <span class="st">"Size (B)"</span>),
@@ -204,13 +204,21 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <tbody>
 <tr class="odd">
 <td align="left">10-Q</td>
+<td align="left">2017-11-07</td>
+<td align="left">2017-09-30</td>
+<td align="right">38.04</td>
+<td align="right">88</td>
+<td align="right">9,961,835</td>
+</tr>
+<tr class="even">
+<td align="left">10-Q</td>
 <td align="left">2017-08-08</td>
 <td align="left">2017-06-30</td>
 <td align="right">39.00</td>
 <td align="right">87</td>
 <td align="right">8,947,076</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">10-K</td>
 <td align="left">2017-05-24</td>
 <td align="left">2017-03-31</td>
@@ -218,7 +226,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">127</td>
 <td align="right">14,944,223</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">10-Q</td>
 <td align="left">2017-02-07</td>
 <td align="left">2016-12-31</td>
@@ -226,7 +234,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">89</td>
 <td align="right">10,322,322</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">10-Q</td>
 <td align="left">2016-11-08</td>
 <td align="left">2016-09-30</td>
@@ -234,21 +242,13 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">89</td>
 <td align="right">10,233,460</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">10-Q</td>
 <td align="left">2016-08-09</td>
 <td align="left">2016-06-30</td>
 <td align="right">40.00</td>
 <td align="right">89</td>
 <td align="right">9,207,799</td>
-</tr>
-<tr class="even">
-<td align="left">10-K</td>
-<td align="left">2016-05-27</td>
-<td align="left">2016-03-31</td>
-<td align="right">57.00</td>
-<td align="right">133</td>
-<td align="right">15,865,077</td>
 </tr>
 </tbody>
 </table>
@@ -289,11 +289,11 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr>
 <tr class="even">
 <td align="left">10-Q</td>
-<td align="right">68</td>
-<td align="right">40.03</td>
-<td align="right">39.52</td>
-<td align="right">4,422.21</td>
-<td align="right">14.21</td>
+<td align="right">69</td>
+<td align="right">40.00</td>
+<td align="right">39.04</td>
+<td align="right">4,499.11</td>
+<td align="right">15.28</td>
 </tr>
 </tbody>
 </table>

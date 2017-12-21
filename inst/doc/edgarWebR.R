@@ -13,12 +13,12 @@ filings <- company_filings(ticker, type="10-", count=100)
 initial_count <- nrow(filings)
 # Specifying the type provides all forms that start with 10-, so we need to
 # manually filter.
-filings <- filings[filings$type == "10-K" | filings$type == "10-Q",]
+filings <- filings[filings$type == "10-K" | filings$type == "10-Q", ]
 
 ## ------------------------------------------------------------------------
 filings$md_href <- paste0("[Link](", filings$href, ")")
-knitr::kable(tail(filings)[,c("type", "filing_date", "accession_number", "size",
-                              "md_href")],
+knitr::kable(tail(filings)[, c("type", "filing_date", "accession_number", "size",
+                               "md_href")],
              col.names=c("Type", "Filing Date", "Accession No.", "Size", "Link"),
              digits = 2,
              format.args = list(big.mark=","))
@@ -58,4 +58,3 @@ ggplot(filings, aes(x = filing_date, y=bytes/1024, group=type, color=type)) +
 ## ----eval=FALSE----------------------------------------------------------
 #  # install.packages("devtools")
 #  devtools::install_github("mwaldstein/edgarWebR")
-

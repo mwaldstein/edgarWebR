@@ -14,7 +14,7 @@
 #' }
 #'
 #' @param x URL or xml_document for a SEC filing index page
-#' 
+#'
 #' @return A dataframe with all the documents in the filing along with their
 #'    meta info
 #'
@@ -53,7 +53,7 @@ filing_documents.xml_node <- function(x) {
   res <- map_xml(x, entries_xpath, info_pieces, integers = c("seq", "size"))
 
   # Fix links for iXBRL documents that lead to interactive viewers.
-  res$href <- sub('ix?doc=/', '', res$href, fixed=TRUE)
+  res$href <- sub("ix?doc=/", "", res$href, fixed = TRUE)
 
   return(res)
 }

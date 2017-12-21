@@ -3,6 +3,7 @@
 Makefile
 ^\.\.Rcheck
 ^\.gitignore
+^\.lintr
 ^vignettes/*.html
 ^vignettes/.*\.html$
 ^vignettes/.*cache

@@ -102,20 +102,20 @@
     </div>
 
     
-    <p>Given a link to filing document (e.g. the 10-K, 8-K) in HTML, process the
+    <p>Given a link to a filing document (e.g. the 10-K, 8-K) in TXT, process the
 file into parts and items. This enables follow-up processing of a desired
 section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
 directly from the document without any attempt to normalize.</p>
     
 
-    <pre class="usage"><span class='fu'>parse_text_filing</span>(<span class='no'>x</span>, <span class='kw'>strip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>include.raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>parser</span> <span class='kw'>=</span> <span class='st'>"v1"</span>)</pre>
+    <pre class="usage"><span class='fu'>parse_text_filing</span>(<span class='no'>x</span>, <span class='kw'>strip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>include.raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>fix.errors</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>- URL to a filing HTML document, html text or xml_document</p></td>
+      <td><p>- URL to a filing text document or actual text</p></td>
     </tr>
     <tr>
       <th>strip</th>
@@ -152,14 +152,22 @@ spacing, etc. These can all throw the parsing off!</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>head</span>(<span class='fu'><a href='parse_filing.html'>parse_filing</a></span>(<span class='fu'>paste0</span>(<span class='st'>'https://www.sec.gov/Archives/edgar/data/'</span>,
-     <span class='st'>'712515/000071251517000010/ea12312016-q3fy1710qdoc.htm'</span>)), <span class='fl'>6</span>)</div><div class='output co'>#&gt;                                 text part.name item.name
-#&gt; 1                           Document                    
-#&gt; 2                  Table of Contents                    
-#&gt; 3                      UNITED STATES                    
-#&gt; 4 SECURITIES AND EXCHANGE COMMISSION                    
-#&gt; 5             WASHINGTON, D.C. 20549                    
-#&gt; 6                          FORM 10-Q                    </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>head</span>(<span class='fu'>parse_text_filing</span>(
+  <span class='st'>"https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"</span>
+))</div><div class='output co'>#&gt;                                                                                                                            text
+#&gt; 1 UNITED STATES\n                       SECURITIES AND EXCHANGE COMMISSION\n                             Washington, D.C. 20549
+#&gt; 2                                                                                                                     FORM 10-K
+#&gt; 3                                                                                                                    (Mark One)
+#&gt; 4       X      Annual report pursuant to Section 13 or 15(d) of the Securities\n------   Exchange Act of 1934 (No Fee Required)
+#&gt; 5                                                                                   For the fiscal year ended December 31, 2001
+#&gt; 6                                                                                                                            or
+#&gt;   part.name item.name
+#&gt; 1                    
+#&gt; 2                    
+#&gt; 3                    
+#&gt; 4                    
+#&gt; 5                    
+#&gt; 6                    </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
