@@ -1,2 +1,17 @@
-linters: with_defaults(line_length_linter(120))
-exclusions: list.files("./tests/cache", recursive = T, full.names = T)
+linters: with_defaults(
+    # line_length_linter(120),
+    line_length_linter = NULL,
+    object_name_linter = NULL, # 54
+    infix_spaces_linter = NULL, # 33
+    commented_code_linter = NULL, # 20
+    single_quotes_linter = NULL, # 18
+    commas_linter = NULL, # 17
+    trailing_whitespace_linter = NULL, # 13
+    function_left_parentheses = NULL, # 8
+    closed_curly_linter = NULL, # 4
+    open_curly_linter = NULL, # 4
+    spaces_inside_linter = NULL, # 2
+    trailing_blank_lines_linter = NULL, # 2
+    object_usage_linter = NULL # 1
+  )
+exclusions: list.files(path = "tests/cache", recursive = T, full.names = T)

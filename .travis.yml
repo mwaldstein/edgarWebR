@@ -6,7 +6,7 @@ cache: packages
 warnings_are_errors: true
 
 r_github_packages:
-  - jimhester/lintr
+  - mwaldstein/lintr
 
 env:
   - PACKAGE_VERSION="0.2.1.9000"
