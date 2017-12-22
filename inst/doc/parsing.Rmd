@@ -39,7 +39,7 @@ filing <- filings[1, ]
 filing$md_href <- paste0("[Link](", filing$href, ")")
 knitr::kable(filing[, c("type", "filing_date", "accession_number", "size",
                                 "md_href")],
-             col.names=c("Type", "Filing Date", "Accession No.", "Size", "Link"),
+             col.names = c("Type", "Filing Date", "Accession No.", "Size", "Link"),
              digits = 2,
              format.args = list(big.mark = ","))
 ```
@@ -53,8 +53,8 @@ doc$md_href <- paste0("[Link](", doc$href, ")")
 
 knitr::kable(doc[, c("seq", "description", "document", "size",
                      "md_href")],
-             col.names=c("Sequence", "Description", "Document",
-                         "Size", "Link"),
+             col.names = c("Sequence", "Description", "Document",
+                           "Size", "Link"),
              digits = 2,
              format.args = list(big.mark = ","))
 ```
@@ -108,8 +108,8 @@ to the online document we can just pass in the full string.
 doc <- parse_filing(filing_doc, include.raw = TRUE)
 unique(doc$part.name)
 unique(doc$item.name)
-head(doc[grepl("market risk", doc$item.name, ignore.case=TRUE), "text"], 3)
-risks <- doc[grepl("market risk", doc$item.name, ignore.case=TRUE), "raw"]
+head(doc[grepl("market risk", doc$item.name, ignore.case = TRUE), "text"], 3)
+risks <- doc[grepl("market risk", doc$item.name, ignore.case = TRUE), "raw"]
 ```
 
 Now the document is all ready for whatever further processing we want. As a

@@ -60,11 +60,11 @@ latest_filings <- function(name = "",
   )
 
   res <- map_xml(doc, entries_xpath, info_pieces,
-                 date_format="%Y-%m-%dT%H:%M:%S")
+                 date_format = "%Y-%m-%dT%H:%M:%S")
 
   m <- regexpr('[0-9]{10}', res$title)
   res$company_name <- substr(res$title,
-                             nchar(res$type)+4,
+                             nchar(res$type) + 4,
                              m - 3)
   res$cik <- regmatches(res$title, m)
   m <- regexpr('\\(\\w+\\)$', res$title)

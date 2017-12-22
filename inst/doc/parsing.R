@@ -15,7 +15,7 @@ filing <- filings[1, ]
 filing$md_href <- paste0("[Link](", filing$href, ")")
 knitr::kable(filing[, c("type", "filing_date", "accession_number", "size",
                                 "md_href")],
-             col.names=c("Type", "Filing Date", "Accession No.", "Size", "Link"),
+             col.names = c("Type", "Filing Date", "Accession No.", "Size", "Link"),
              digits = 2,
              format.args = list(big.mark = ","))
 
@@ -26,8 +26,8 @@ doc$md_href <- paste0("[Link](", doc$href, ")")
 
 knitr::kable(doc[, c("seq", "description", "document", "size",
                      "md_href")],
-             col.names=c("Sequence", "Description", "Document",
-                         "Size", "Link"),
+             col.names = c("Sequence", "Description", "Document",
+                           "Size", "Link"),
              digits = 2,
              format.args = list(big.mark = ","))
 
@@ -55,8 +55,8 @@ substr(filing_doc, 1, 80)
 doc <- parse_filing(filing_doc, include.raw = TRUE)
 unique(doc$part.name)
 unique(doc$item.name)
-head(doc[grepl("market risk", doc$item.name, ignore.case=TRUE), "text"], 3)
-risks <- doc[grepl("market risk", doc$item.name, ignore.case=TRUE), "raw"]
+head(doc[grepl("market risk", doc$item.name, ignore.case = TRUE), "text"], 3)
+risks <- doc[grepl("market risk", doc$item.name, ignore.case = TRUE), "raw"]
 
 ## ----parseRisks----------------------------------------------------------
 risks <- risks[grep("<i>", risks)]
@@ -70,4 +70,3 @@ risks
 ## ----eval=FALSE----------------------------------------------------------
 #  # install.packages("devtools")
 #  devtools::install_github("mwaldstein/edgarWebR")
-

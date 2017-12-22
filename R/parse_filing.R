@@ -118,7 +118,7 @@ parse_text_filing <- function(x,
     doc <- gsub("^<PAGE>[:blank:]*[:digit:]+$", "", doc)
   }
   parts <- data.frame(text = trimws(unlist(strsplit(doc, "\n{2,}"))),
-                      stringsAsFactors=F)
+                      stringsAsFactors = F)
   if (strip) {
     parts$text[1] <- sub("^.*<TEXT>[ \n]*", "", parts$text[1])
 
