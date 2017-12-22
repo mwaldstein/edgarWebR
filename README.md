@@ -54,7 +54,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="even">
 <td>Header Search</td>
 <td><a href="https://www.sec.gov/cgi-bin/srch-edgar" class="uri">https://www.sec.gov/cgi-bin/srch-edgar</a></td>
-<td>N/A</td>
+<td><code>header_search()</code></td>
 </tr>
 <tr class="odd">
 <td>Fund Disclosures</td>

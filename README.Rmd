@@ -56,7 +56,7 @@ fund search and resultant filings.
 | Company                       | https://www.sec.gov/edgar/searchedgar/companysearch.html        | `company_information()`, `company_details()`, `company_filings()` |
 | Recent Filings                | https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent      | `latest_filings()` |
 | Full Text                     | http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp | `full_text()` |
-| Header Search                 | https://www.sec.gov/cgi-bin/srch-edgar                          | N/A |
+| Header Search                 | https://www.sec.gov/cgi-bin/srch-edgar                          | `header_search()` |
 | Fund Disclosures              | https://www.sec.gov/edgar/searchedgar/prospectus.htm            | N/A |
 | Fund Voting Records           | https://www.sec.gov/edgar/searchedgar/n-px.htm                  | N/A |
 | Fund Search                   | https://www.sec.gov/edgar/searchedgar/mutualsearch.html         | `fund_search()` |
