@@ -8,9 +8,9 @@ latest_filings(name = "", cik = "", type = "", owner = "include",
   count = 40, page = 1)
 }
 \arguments{
-\item{name}{Optional comany name to limit filing results}
+\item{name}{Optional company name to limit filing results}
 
-\item{cik}{Optional comany cik to limit filing results}
+\item{cik}{Optional company cik to limit filing results}
 
 \item{type}{Optional form type to limit filing results}
 
@@ -26,7 +26,7 @@ latest_filings(name = "", cik = "", type = "", owner = "include",
 \item{page}{Which page of results to return}
 }
 \value{
-a dataframe list of recent results, ordered by decending accepted
+a dataframe list of recent results, ordered by descending accepted
        date. Includes the following columns -
  \itemize{
    \item type
@@ -35,7 +35,7 @@ a dataframe list of recent results, ordered by decending accepted
    \item company_type
    \item cik
    \item filing_date
-   \item acceped_date
+   \item accepted_date
    \item accession_number
    \item size
  }

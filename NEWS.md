@@ -1,4 +1,4 @@
-# edgarWebR 0.2.1.9000 - "DEVELOPMENT"
+# edgarWebR 0.3.0 - "Going all the way back"
 
 ## Features
  * `full_text` provides access to the full-text filing search interface.

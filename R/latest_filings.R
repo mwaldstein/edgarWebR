@@ -3,8 +3,8 @@
 #' Provides access to the latest SEC filings from
 #' \href{https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent}{here}
 #'
-#'@param name Optional comany name to limit filing results
-#'@param cik Optional comany cik to limit filing results
+#'@param name Optional company name to limit filing results
+#'@param cik Optional company cik to limit filing results
 #'@param type Optional form type to limit filing results
 #'@param owner How to include ownership filings. Options are
 #'  \itemize{
@@ -15,7 +15,7 @@
 #'@param count Number of results to return
 #'@param page Which page of results to return
 #'
-#'@return a dataframe list of recent results, ordered by decending accepted
+#'@return a dataframe list of recent results, ordered by descending accepted
 #'        date. Includes the following columns -
 #'  \itemize{
 #'    \item type
@@ -24,7 +24,7 @@
 #'    \item company_type
 #'    \item cik
 #'    \item filing_date
-#'    \item acceped_date
+#'    \item accepted_date
 #'    \item accession_number
 #'    \item size
 #'  }

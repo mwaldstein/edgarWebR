@@ -58,3 +58,4 @@ ggplot(filings, aes(x = filing_date, y = bytes / 1024, group = type, color = typ
 ## ----eval=FALSE----------------------------------------------------------
 #  # install.packages("devtools")
 #  devtools::install_github("mwaldstein/edgarWebR")
+

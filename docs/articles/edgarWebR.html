@@ -104,7 +104,7 @@
 <p>First, we’ll fetch a bunch of 10-K and 10-Q filings for our given company using <code><a href="../reference/company_filings.html">company_filings()</a></code>. To make sure we’re going far enough back we’ll take a peak at the tail of our results</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ticker &lt;-<span class="st"> "EA"</span>
 
-filings &lt;-<span class="st"> </span><span class="kw"><a href="../reference/company_filings.html">company_filings</a></span>(ticker, <span class="dt">type=</span><span class="st">"10-"</span>, <span class="dt">count=</span><span class="dv">100</span>)
+filings &lt;-<span class="st"> </span><span class="kw"><a href="../reference/company_filings.html">company_filings</a></span>(ticker, <span class="dt">type =</span> <span class="st">"10-"</span>, <span class="dt">count =</span> <span class="dv">100</span>)
 initial_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(filings)
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
@@ -113,9 +113,9 @@ filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>ty
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filings<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filings<span class="op">$</span>href, <span class="st">")"</span>)
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">tail</span>(filings)[, <span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
                                <span class="st">"md_href"</span>)],
-             <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
+             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
-             <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark=</span><span class="st">","</span>))</code></pre></div>
+             <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark =</span> <span class="st">","</span>))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th></th>
@@ -188,10 +188,10 @@ filings<span class="op">$</span>filing_delay &lt;-<span class="st"> </span>filin
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">head</span>(filings) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(type, filing_date, period_date,
                                       filing_delay, documents, bytes) <span class="op">%&gt;%</span>
 <span class="st">             </span><span class="kw">mutate</span>(<span class="dt">filing_delay =</span> <span class="kw">as.numeric</span>(filing_delay)),
-             <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Period Date"</span>, <span class="st">"Delay"</span>,
-                         <span class="st">"Documents"</span>, <span class="st">"Size (B)"</span>),
+             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Period Date"</span>, <span class="st">"Delay"</span>,
+                           <span class="st">"Documents"</span>, <span class="st">"Size (B)"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
-             <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark=</span><span class="st">","</span>))</code></pre></div>
+             <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark =</span> <span class="st">","</span>))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Type</th>
@@ -259,16 +259,16 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <p>Now our data is arranged, we can run some summary statistics and plot using ggplot2.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(filings <span class="op">%&gt;%</span>
 <span class="st">             </span><span class="kw">group_by</span>(type) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(
-               <span class="dt">n=</span><span class="kw">n</span>(),
+               <span class="dt">n =</span> <span class="kw">n</span>(),
                <span class="dt">avg_delay =</span> <span class="kw">as.numeric</span>(<span class="kw">mean</span>(filing_delay)),
                <span class="dt">median_delay =</span> <span class="kw">as.numeric</span>(<span class="kw">median</span>(filing_delay)),
                <span class="dt">avg_size =</span> <span class="kw">mean</span>(bytes <span class="op">/</span><span class="st"> </span><span class="dv">1024</span>),
                <span class="dt">avg_docs =</span> <span class="kw">mean</span>(documents)
              ),
-             <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Count"</span>, <span class="st">"Avg. Delay"</span>, <span class="st">"Median Delay"</span>,
-                         <span class="st">"Avg. Size"</span>, <span class="st">"Avg. Docs"</span>),
+             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Count"</span>, <span class="st">"Avg. Delay"</span>, <span class="st">"Median Delay"</span>,
+                           <span class="st">"Avg. Size"</span>, <span class="st">"Avg. Docs"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
-             <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark=</span><span class="st">","</span>))</code></pre></div>
+             <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark =</span> <span class="st">","</span>))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Type</th>
@@ -298,20 +298,20 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tbody>
 </table>
 <p>No surprise, yearly filings (10-K’s) are larger and take more time than quarterly filings (10-K’s). Lets see how the times are destributed:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(type), <span class="dt">y=</span>filing_delay)) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(type), <span class="dt">y =</span> filing_delay)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">height =</span> <span class="dv">0</span>, <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Filing Date"</span>, <span class="dt">y =</span> <span class="st">"Filing delay (days)"</span>)
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></code></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotDelay-1.png" width="576"></p>
 <p>We can also examine how the filing delay has changed over time:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y=</span>filing_delay, <span class="dt">group=</span>type, <span class="dt">color=</span>type)) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y =</span> filing_delay, <span class="dt">group =</span> type, <span class="dt">color =</span> type)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Filing Type"</span>, <span class="dt">y =</span> <span class="st">"Filing delay (days)"</span>)
 <span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></code></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotType-1.png" width="576"></p>
 <p>Whether because of some internal change or change to SEC rules, the time between the end of the fiscal year and the 10-K has dropped quite a bit, though there is still a bit of variation.</p>
 <p>An interesting extension would be to compare the filing delays to the company’s stock price, overall market performance and other companies to see if there are particular drivers to the pattern.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y=</span>bytes<span class="op">/</span><span class="dv">1024</span>, <span class="dt">group=</span>type, <span class="dt">color=</span>type)) <span class="op">+</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filings, <span class="kw">aes</span>(<span class="dt">x =</span> filing_date, <span class="dt">y =</span> bytes <span class="op">/</span><span class="st"> </span><span class="dv">1024</span>, <span class="dt">group =</span> type, <span class="dt">color =</span> type)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">"Filing Type"</span>, <span class="dt">y =</span> <span class="st">"Filing Size (KB)"</span>)</code></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotSize-1.png" width="576"></p>

@@ -106,7 +106,7 @@ filing &lt;-<span class="st"> </span>filings[<span class="dv">1</span>, ]
 filing<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filing<span class="op">$</span>href, <span class="st">")"</span>)
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(filing[, <span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
                                 <span class="st">"md_href"</span>)],
-             <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
+             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
              <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark =</span> <span class="st">","</span>))</code></pre></div>
 <table class="table">
@@ -136,8 +136,8 @@ doc<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="k
 
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(doc[, <span class="kw">c</span>(<span class="st">"seq"</span>, <span class="st">"description"</span>, <span class="st">"document"</span>, <span class="st">"size"</span>,
                      <span class="st">"md_href"</span>)],
-             <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">"Sequence"</span>, <span class="st">"Description"</span>, <span class="st">"Document"</span>,
-                         <span class="st">"Size"</span>, <span class="st">"Link"</span>),
+             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">"Sequence"</span>, <span class="st">"Description"</span>, <span class="st">"Document"</span>,
+                           <span class="st">"Size"</span>, <span class="st">"Link"</span>),
              <span class="dt">digits =</span> <span class="dv">2</span>,
              <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark =</span> <span class="st">","</span>))</code></pre></div>
 <table class="table">
@@ -302,11 +302,11 @@ filing_doc &lt;-<span class="st"> </span>parsed_docs[parsed_docs<span class="op"
 <span class="co">#&gt; [10] "ITEM 4. MINE SAFETY DISCLOSURES"                                                                   </span>
 <span class="co">#&gt; [11] "ITEM 5. OTHER INFORMATION"                                                                         </span>
 <span class="co">#&gt; [12] "ITEM 6. EXHIBITS"</span>
-<span class="kw">head</span>(doc[<span class="kw">grepl</span>(<span class="st">"market risk"</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case=</span><span class="ot">TRUE</span>), <span class="st">"text"</span>], <span class="dv">3</span>)
+<span class="kw">head</span>(doc[<span class="kw">grepl</span>(<span class="st">"market risk"</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>), <span class="st">"text"</span>], <span class="dv">3</span>)
 <span class="co">#&gt; [1] "ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK"                                                                                                                                                                                                                                                                                                                                                                                                                                     </span>
 <span class="co">#&gt; [2] "We have exposure to market risks due to the volatility of interest rates, foreign currency exchange rates, credit rating changes, equity and bond markets. A portion of these risks may be hedged, but fluctuations could impact our results of operations, financial position and cash flows."                                                                                                                                                                                                         </span>
 <span class="co">#&gt; [3] "Interest Rate Risk. Our exposure to market risk for changes in interest rates relates primarily to our investment portfolio. As of September 29, 2017, we had no available-for-sale securities that had been in a continuous unrealized loss position for a period greater than 12 months. The Company determined no available-for-sale securities were other-than-temporarily impaired as of September 29, 2017. We currently do not use derivative financial instruments in our investment portfolio."</span>
-risks &lt;-<span class="st"> </span>doc[<span class="kw">grepl</span>(<span class="st">"market risk"</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case=</span><span class="ot">TRUE</span>), <span class="st">"raw"</span>]</code></pre></div>
+risks &lt;-<span class="st"> </span>doc[<span class="kw">grepl</span>(<span class="st">"market risk"</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>), <span class="st">"raw"</span>]</code></pre></div>
 <p>Now the document is all ready for whatever further processing we want. As a quick example we’ll pull out all the italicized risks.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">risks &lt;-<span class="st"> </span>risks[<span class="kw">grep</span>(<span class="st">"&lt;i&gt;"</span>, risks)]
 risks &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">"^.*&lt;i&gt;|&lt;/i&gt;.*$"</span>, <span class="st">""</span>, risks)
