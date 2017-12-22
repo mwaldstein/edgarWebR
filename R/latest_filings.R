@@ -63,17 +63,22 @@ latest_filings <- function(name = "",
                  date_format = "%Y-%m-%dT%H:%M:%S")
 
   m <- regexpr('[0-9]{10}', res$title)
+  res$cik <- regmatches(res$title, m)
   res$company_name <- substr(res$title,
                              nchar(res$type) + 4,
                              m - 3)
-  res$cik <- regmatches(res$title, m)
-  m <- regexpr('\\(\\w+\\)$', res$title)
+
+
+  m <- regexpr('\\([^)]+\\)$', res$title)
   res$company_type <- regmatches(res$title, m)
   res$company_type <- substr(res$company_type, 2, nchar(res$company_type) - 1)
   res$title <- NULL
 
-  res$filing_date <- substr(res$summary, 17, 27)
-  res$accession_number <- substr(res$summary, 42, 61)
+  m <- regexpr("Filed:</b> .{10}", res$summary)
+  res$filing_date <- substr(regmatches(res$summary, m), 12, 22)
+
+  m <- regexpr("AccNo:</b> .{20}", res$summary)
+  res$accession_number <- substr(regmatches(res$summary, m), 12, 32)
 
   m <- regexpr('Size:<\\/b> [0-9]+ (M|K)B', res$summary)
   sizes <- regmatches(res$summary, m)
