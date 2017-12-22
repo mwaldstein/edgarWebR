@@ -6,6 +6,7 @@
  * `parse_text_filing` parses text-only 10-* filings.
  * `parse_filing` detects when a filing is HTML wrapped plain text and uses
    `parse_text_filing` when appropriate.
+ * `header_search` provides access to search filing headers back to 1994
 
 ## Bugfixes
  * `parse_filing` now treats `<br>` as a space avoiding words separated only
