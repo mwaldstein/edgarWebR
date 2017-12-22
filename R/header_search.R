@@ -7,6 +7,7 @@
 #'   \href{here}{https://www.sec.gov/edgar/searchedgar/search_help.htm}
 #' @param from Start year (default: 1994)
 #' @param to End year (default: Current year)
+#' @param page Which results page to return (default: 1)
 #' @return A dataframe of funds found including the following columns -
 #'   \itemize{
 #'     \item company_name

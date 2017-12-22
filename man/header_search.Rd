@@ -10,6 +10,8 @@ header_search(q, page = 1, from = 1994, to = 2017)
 \item{q}{The search string. Documentation
 \href{here}{https://www.sec.gov/edgar/searchedgar/search_help.htm}}
 
+\item{page}{Which results page to return (default: 1)}
+
 \item{from}{Start year (default: 1994)}
 
 \item{to}{End year (default: Current year)}
