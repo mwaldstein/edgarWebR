@@ -40,10 +40,10 @@ siccodes <- as.data.frame(do.call(rbind, lapply(divisions, function(division) {
                  division_id = div_letter,
                  division = div_name,
                  major = major_name,
-                 group = group_name)
+                 group = group_name, stringsAsFactors = F)
                                })))
     })))
   })))
-})))
+})), stringsAsFactors = F)
 
 save(siccodes, file = "data/siccodes.rdata")
