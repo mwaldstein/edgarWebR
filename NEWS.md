@@ -1,3 +1,9 @@
+# edgarWebR 0.3.0.9000 - *DEVELOPMENT*
+
+## Features
+ * `siccodes` a dataset for sic codes from [US Department of
+   Labor](https://www.osha.gov/pls/imis/sic_manual.html)
+
 # edgarWebR 0.3.0 - "Going all the way back"
 
 ## Features

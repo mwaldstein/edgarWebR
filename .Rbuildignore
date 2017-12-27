@@ -20,3 +20,4 @@ Makefile
 ^README-.*\.png$
 ^revdep
 ^tests/dev_test
+^data-raw$

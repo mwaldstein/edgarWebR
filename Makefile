@@ -11,7 +11,7 @@ TGZVNR  := $(PKGSRC)_$(PKGVERS)-vignettes-not-rebuilt.tar.gz
 RBIN ?= $(shell dirname "`which R`")
 
 all: version doc build
-.PHONY: doc clean build vignettes check revdep
+.PHONY: doc clean build vignettes check revdep data
 
 # build package documentation
 doc:
@@ -92,3 +92,6 @@ ubuntu-deps:
 
 revdep:
 	cd revdep; Rscript check.R
+
+data:
+	Rscript data-raw/siccodes.R

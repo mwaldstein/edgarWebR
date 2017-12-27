@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • edgarWebR</title>
+<title>SIC Codes — siccodes • edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-vignette-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -95,21 +95,44 @@
       
       </header>
 
-      <div class="page-header">
-  <h1>Articles <small>version&nbsp;0.3.0.9000</small></h1>
-</div>
-
-<div class="row">
-  <div class="col-md-9">
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="edgarWebR.html">Introducing edgarWebR</a></li>
-        <li><a href="parsing.html">Parsing Functions in edgarWebR</a></li>
-      </ul>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>SIC Codes</h1>
     </div>
+
+    
+    <p>SIC code table with structure</p>
+    
+
+    <pre class="usage"><span class='no'>siccodes</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A data frame with 1005 rows and 6 variables:</p><dl class='dl-horizontal'>
+  <dt>sic</dt><dd><p>Standard Industrial Classification</p></dd>
+  <dt>industry</dt><dd><p>Name of industry</p></dd>
+  <dt>division_id</dt><dd><p>Letter code for the division</p></dd>
+  <dt>division</dt><dd><p>Name of the division</p></dd>
+  <dt>major</dt><dd><p>Name of the major group, identified by 1st 2 digits of the sic</p></dd>
+  <dt>group</dt><dd><p>Name of the group, identified by the 1st 3 digits of the sic</p></dd>
+</dl>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='https://www.osha.gov/pls/imis/sic_manual.html'>https://www.osha.gov/pls/imis/sic_manual.html</a></p>
+    
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      
+      <li><a href="#format">Format</a></li>
+
+      <li><a href="#source">Source</a></li>
+          </ul>
+
   </div>
 </div>
 

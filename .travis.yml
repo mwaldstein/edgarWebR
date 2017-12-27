@@ -9,7 +9,7 @@ r_github_packages:
   - jimhester/lintr
 
 env:
-  - PACKAGE_VERSION="0.3.0"
+  - PACKAGE_VERSION="0.3.0.9000"
 
 os:
   - linux
