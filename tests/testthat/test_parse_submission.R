@@ -24,7 +24,7 @@ with_mock_API({
     expect_equal(res$FILENAME[2], "exhibit99ceostrategicupd.htm")
     expect_equal(nchar(res$TEXT[2]), 17179)
 
-    expect_true(is.na(res$DESCRIPTION[7]))
+    expect_equal(res$DESCRIPTION[7], "")
     expect_equal(res$SEQUENCE[7], "7")
     expect_equal(res$TYPE[7], "GRAPHIC")
     expect_equal(res$FILENAME[7], "exhibit99ceostrategicupd005.jpg")

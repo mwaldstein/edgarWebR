@@ -157,6 +157,7 @@ build_parts <- function(doc, xpath_base, include.raw = F) {
           count(div/div/div) > 1 and
           count(div/div/div/div/div) <= 1]/div/div/div",
     "/div[count(div/div/div/div/div) > 1]/div/div/div/div/*",
+    "/div[count(div/div/div/*) >= 1]/div/div/div/*",
     "/div[count(p|div) <= 1 and
           count(div/div) > 1]/div/*",
     "/div[count(p|div) > 1]/*[count(b|div) <= 1]",
@@ -188,6 +189,14 @@ compute_parts <- function(doc.parsed,
                           fix.errors = TRUE) {
   return_cols <- colnames(doc.parsed)
 
+  if (nrow(doc.parsed) == 0) {
+    return(as.data.frame(setNames(replicate(length(return_cols) + 2,
+                                            character(),
+                                            simplify = F),
+                                  c(return_cols, "item.name", "part.name")
+                                  )))
+  }
+
   # when we merge in the parts/items, order gets wonky - this preserves it
   doc.parsed$original_order <- seq(nrow(doc.parsed))
 
@@ -195,23 +204,35 @@ compute_parts <- function(doc.parsed,
                       doc.parsed$text, ignore.case = TRUE) &
                 !grepl("^part[[:space:]\u00a0]+[\\dIV]{1,3}[[:space:]\u00a0]+\\d+$",
                       doc.parsed$text, ignore.case = TRUE) &
-                (nchar(doc.parsed$text) < 34) # Hack to skip paragraphs, TOC
+                (nchar(doc.parsed$text) < 100) # Hack to skip paragraphs, TOC
                                               # and page footers
   doc.parsed$part <- cumsum(part.lines)
   parts <- doc.parsed[part.lines, c("part", "text", "original_order")]
   parts$text <- gsub("\u00a0", " ", parts$text)
+  parts$text <- gsub("\\.$", "", parts$text)
   names(parts)[names(parts) == "text"] <- "part.name"
 
+  # for some situations, we'll have caught all items - this pulls the items
+  parts$part.name <-
+    gsub("[\\.[:space:\u00a0]*item[[:space:]\u00a0]+[[:digit:]]{1}[[:alnum:]]{0,2}.*$", "",
+         parts$part.name,
+         ignore.case = T)
+
+  # \u2014 is em-dash
   item.lines <-
-    grepl("^item[[:space:]\u00a0]+[[:digit:]]{1}[[:alnum:]]{0,2}([\\.:\u00a0]|$)",
+    grepl("^(part [IV]{1,3}. )?item[[:space:]\u00a0]+[[:digit:]]{1}[[:alnum:]]{0,2}([\\.:\u00a0\u2014 ]|$)",
           doc.parsed$text, ignore.case = TRUE) &
-    !endsWith(doc.parsed$text, "(Continued)")
+    !endsWith(doc.parsed$text, "(Continued)") &
+    (nchar(doc.parsed$text) < 300) # catch some bad item lines
   doc.parsed$item <- cumsum(item.lines)
 
   items <- doc.parsed[item.lines, c("part", "item", "text", "original_order")]
   items$text <- gsub("[\u00a0[:space:]]+", " ", items$text)
   # items$item.number <- gsub("(*UCP)^item\\s*|\\..*", "", items$text, perl = TRUE)
   names(items)[names(items) == "text"] <- "item.name"
+  # Strip the starting Part if present
+  items$item.name <- gsub("^part [IV]{1,3}\\. ", "", items$item.name,
+                          ignore.case = T)
 
   ##
   # Remove parts/items w/in the TOC

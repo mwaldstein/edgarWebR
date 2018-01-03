@@ -22,6 +22,10 @@
 #' viewed.
 #'
 #' @param uri - URL to a SEC complete submission text file
+#' @param include.binary - Default TRUE, determines if the content of binary
+#'        documents is returned.
+#' @param include.content - Default TRUE, determines if the content of
+#'        documents is returned.
 #'
 #' @return a dataframe with one row per document.
 #'
@@ -30,20 +34,50 @@
 #'                  '37996/000003799617000084/0000037996-17-000084.txt'))[ ,
 #'                    c('SEQUENCE', 'TYPE', 'DESCRIPTION', 'FILENAME')]
 #' @export
-parse_submission <- function(uri) {
+parse_submission <- function(uri,
+                             include.binary = T,
+                             include.content = T) {
   res <- charToText(uri)
+
+  # Checking if we have an SEC document is more efficient than checking if every
+  # string is a file
+  is.secdoc <- any(startsWith(res, c("-----BEGIN PRIVACY-ENHANCED MESSAGE-----",
+                                     "<SEC-DOCUMENT")))
+  if (is.secdoc & (nchar(res) > 8e6)) {
+    # For large documents, use a tmp file for processing
+    f <- tempfile()
+    con <- file(f, "wb")
+    writeChar(dat, con)
+    close(con)
+    con <- file(f, "rt")
+    res <- parse_submission.connection(con,
+                                       include.binary = include.binary,
+                                       include.content = include.content)
+    close(con)
+    unlink(f)
+    return(res)
+  } else if (!is.secdoc & file.exists(res)) {
+    con <- file(res, "rt")
+    res <- parse_submission.connection(con,
+                                       include.binary = include.binary,
+                                       include.content = include.content)
+    close(con)
+    return(res)
+  } else if (!is.secdoc) {
+    stop("Not an SEC submission document")
+  }
 
   parts <- data.frame(text = unlist(strsplit(res, "\n")),
                       stringsAsFactors = FALSE)
-  parts$doc <- cumsum(grepl("^<DOCUMENT>$", parts$text))
-  parts$in.text <- cumsum(grepl("^<TEXT>$", parts$text) -
-                          grepl("^</TEXT>$", parts$text))
+  parts$doc <- cumsum("<DOCUMENT>" == parts$text)
+  parts$in.text <- cumsum(("<TEXT>" == parts$text) -
+                          ("</TEXT>" == parts$text))
 
   docs <- parts[parts$in.text == 0 &
                 parts$doc > 0 &
                 parts$text != "<DOCUMENT>" &
-                substr(parts$text, 1, 1) == "<" &
-                substr(parts$text, 2, 2) != "/", ]
+                startsWith(parts$text, "<") &
+                !startsWith(parts$text, "</"), ]
   docs$key <- sub("^<([A-Z]+)>.*$", "\\1", docs$text)
   docs$val <- sub("^<[A-Z]+>(.*)$", "\\1", docs$text)
 
@@ -51,23 +85,28 @@ parse_submission <- function(uri) {
   doc.val <- function(doc.id, col.name) {
     val <- docs[docs$doc == doc.id &
                 docs$key == col.name, "val"]
-    return(ifelse(typeof(val) == "character", val, ""))
+    return(ifelse(length(val) == 0, "", val))
   }
 
   cols <- c("TYPE", "SEQUENCE", "FILENAME", "DESCRIPTION")
   res <- sapply(cols, function(key) {
     return(sapply(doc.ids, doc.val, key, simplify = TRUE))
   })
-  res <- data.frame(res, stringsAsFactors = FALSE)
+  res <- data.frame(rbind(res), stringsAsFactors = FALSE)
+  rownames(res) <- NULL
 
   get.lines <- function(doc.id) {
-    lines <- parts[parts$doc == doc.id &
-                   parts$in.text == 1 &
-                   parts$text != "<TEXT>", "text"]
+    if (!include.content) { return("") }
+
+    lines <- parts$text[parts$doc == doc.id &
+                        parts$in.text == 1 &
+                        parts$text != "<TEXT>"]
 
     # Check if this is a uuencoded chunk
-    if (substring(lines[1], 1, 6) == "begin " &
-        lines[length(lines)] == "end") {
+    is.binary <- substring(lines[1], 1, 6) == "begin " &
+                 lines[length(lines)] == "end"
+    if (is.binary & !include.binary) { return("") }
+    if (is.binary) {
         # If it is, make sure all the lines are the correct length
         lines[2:length(lines) - 1] <- sprintf("%-61s",
                                               lines[2:length(lines) - 1])
@@ -78,4 +117,63 @@ parse_submission <- function(uri) {
   res$TEXT <- unlist(lapply(doc.ids, get.lines))
 
   return(res)
+}
+
+#' @noRd
+parse_submission.connection <- function(con,
+                                        include.binary = T,
+                                        include.content = T) {
+  keys <- c("TYPE", "SEQUENCE", "FILENAME", "DESCRIPTION")
+  tags <- paste0("<", keys, ">")
+  result <- data.frame(matrix(NA, nrow = 0, ncol = length(keys) + 1),
+                       stringsAsFactors = F)
+  names(result) <- c(keys, "TEXT")
+
+  in.text <- F
+  is.binary <- F
+  text.line <- 0
+  content <- c()
+  while (length(l <- readLines(con, n = 1, warn = F)) > 0) {
+    if (in.text) {
+      if (startsWith(l, "</TEXT>")) {
+        in.text <- F
+        # is.binary = startsWith(content, "begin ") & endsWith(content, "end")
+        # if (is.binary & !include.binary) {
+        #   content <- ""
+        # }
+      } else {
+        text.line <- text.line + 1
+        if (text.line == 1 & startsWith(l, "begin ")) {
+          is.binary <- T
+        }
+        if (include.content & (!is.binary || include.binary) ) {
+          content <- c(content, l)
+        }
+      }
+      next
+    }
+    # New document, start a new row
+    if (startsWith(l, "<DOCUMENT")) {
+      file.row <- as.list(rep("", length(keys) + 1))
+      names(file.row) <- c(keys, "TEXT")
+    }
+    if (any(startsWith(l, tags))) {
+      file.row[keys[startsWith(l,tags)]] <- substr(l,
+                                                   nchar(tags[startsWith(l,tags)]) + 1,
+                                                   nchar(l))
+    }
+    if (startsWith(l, "</DOCUMENT")) {
+      file.row$TEXT <- paste0(content, collapse = "\n")
+      result <- rbind(result, file.row, stringsAsFactors = F)
+      # message(file.row$SEQUENCE, " ", file.row$FILENAME, " - [", text.line,
+      #         "] ", nchar(file.row$TEXT))
+    }
+    if (startsWith(l, "<TEXT")) {
+      in.text = T
+      is.binary <- F
+      text.line <- 0
+      content <- c()
+    }
+  }
+  result
 }

@@ -181,38 +181,30 @@ specify `from`</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
-#&gt; 1   2017-12-27
-#&gt; 2   2017-12-27
-#&gt; 3   2017-12-27
-#&gt;                                                                                      name
-#&gt; 1  EX-102 of ABS-EE for Bank of America Merrill Lynch Commercial Mortgage Trust 2017 BNK3
-#&gt; 2                                                                        424B2 for UBS AG
-#&gt; 3                                                                        424B2 for UBS AG
-#&gt;                                                                                      href
-#&gt; 1          https://www.sec.gov/Archives/edgar/data/1694649/000105640417005963/exh_102.xml
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/1114446/000111444617007888/tc4214518i_0fwp.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1114446/000111444617007891/tc4214518f_1fwp.htm
-#&gt;                                                         company_name     cik
-#&gt; 1  Bank of America Merrill Lynch Commercial Mortgage Trust 2017 BNK3 1694649
-#&gt; 2                                                             UBS AG 1114446
-#&gt; 3                                                             UBS AG 1114446
-#&gt;     sic
-#&gt; 1  6189
-#&gt; 2  6021
-#&gt; 3  6021
-#&gt;                                                                                                                                                                                                                                                                                                         content
-#&gt; 1      Prospectus Loan ID 1 11-14-2017 12-11-2017 BANA 12-20-2016 73325000.00 120 01-01-2027 0.04762 0.04762 3 1 120 02-01-2017 true 1 PP 3 300677.31 73325000.00 1 1 1 0 true true false false false 06-30-2026 THE SUMMIT BIRMINGHAM 214 SUMMIT BOULEVARD Birmingham AL 35243 Jefferson RT 681245 681245 1997
-#&gt; 2                                   Underlying Equity The common stock of Intel Corporation Contingent Coupon If the closing price of the underlying equity is equal to or greater than the coupon barrier on any observation date, UBS will pay you the contingent coupon applicable to such observation date.
-#&gt; 3                                   Underlying Equity The common stock of Intel Corporation Contingent Coupon If the closing price of the underlying equity is equal to or greater than the coupon barrier on any observation date, UBS will pay you the contingent coupon applicable to such observation date.
-#&gt;                                                                                     parent_href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/1694649/000105640417005963/bal17bk3_absee-201712.htm
-#&gt; 2                                                                                          &lt;NA&gt;
-#&gt; 3                                                                                          &lt;NA&gt;
-#&gt;                                                                                           index_href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/1694649/000105640417005963/0001056404-17-005963-index.htm
+    <pre class="examples"><div class='input'><span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                         name
+#&gt; 1   2018-01-03       INFORMATION TABLE of 13F-HR for NEVILLE RODIE SHAW INC
+#&gt; 2   2018-01-03                   N-30B-2 for POWERSHARES QQQ TRUST SERIES 1
+#&gt; 3   2018-01-03       INFORMATION TABLE of 13F-HR for BEACON FINANCIAL GROUP
+#&gt;                                                                                                     href
+#&gt; 1      https://www.sec.gov/Archives/edgar/data/71210/000007121018000001/xslForm13F_X01/nrs13fdec2017.xml
+#&gt; 2                   https://www.sec.gov/Archives/edgar/data/1067839/000119312518001208/d432220dn30b2.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1591379/000159137918000001/xslForm13F_X01/122917INFOTABLE.xml
+#&gt;                               company_name     cik  sic
+#&gt; 1                   NEVILLE RODIE SHAW INC   71210 &lt;NA&gt;
+#&gt; 2           POWERSHARES QQQ TRUST SERIES 1 1067839 &lt;NA&gt;
+#&gt; 3                   BEACON FINANCIAL GROUP 1591379 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                                        content
+#&gt; 1     3M COMPANY COM 88579Y101 5754 24446 SH SOLE 5545 0 18901 3M COMPANY COM 88579Y101 635 2700 SH OTR 0 0 2700 ABBOTT LABS COM 002824100 2319 40629 SH SOLE 20424 0 20205 ABBOTT LABS COM 002824100 1481 25948 SH OTR 11998 0 13950 ABBVIE INC COM 00287Y109 8902 92050 SH SOLE 25455 0 66595 ABBVIE INC COM
+#&gt; 2                                                                                                                                      September 30, 2017 2017 Annual Report to Shareholders QQQ PowerShares QQQ Trust SM , Series 1 Table of Contents PowerShares QQQ Trust SM , Series 1 1 2 4 5 6 7 8 13 14
+#&gt; 3   ABBOTT LABS COM 002824100 1370 24011 SH SOLE NONE 24011 0 0 ABBVIE INC COM 00287Y109 918 9495 SH SOLE NONE 9495 0 0 AFLAC INC COM 001055102 433 4938 SH SOLE NONE 4938 0 0 ALPHABET INC CL A 02079K305 892 847 SH SOLE NONE 847 0 0 ALPHABET INC CL C 02079K107 1031 985 SH SOLE NONE 985 0 0 ALTRIA GROUP
+#&gt;                                                                                          parent_href
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/71210/000007121018000001/xslForm13F_X01/primary_doc.xml
 #&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 3       https://www.sec.gov/Archives/edgar/data/1708131/000105640418000051/csc17sa8_absee-201712.htm
+#&gt;                                                                                           index_href
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/71210/000007121018000001/0000071210-18-000001-index.htm
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1708131/000105640418000051/0001056404-18-000051-index.htm
 #&gt;  [ reached getOption("max.print") -- omitted 7 rows ]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

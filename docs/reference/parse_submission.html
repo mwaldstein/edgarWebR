@@ -106,7 +106,7 @@
 into component documents, with content lines in list column 'TEXT'.</p>
     
 
-    <pre class="usage"><span class='fu'>parse_submission</span>(<span class='no'>uri</span>)</pre>
+    <pre class="usage"><span class='fu'>parse_submission</span>(<span class='no'>uri</span>, <span class='kw'>include.binary</span> <span class='kw'>=</span> <span class='no'>T</span>, <span class='kw'>include.content</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -114,6 +114,16 @@ into component documents, with content lines in list column 'TEXT'.</p>
     <tr>
       <th>uri</th>
       <td><p>- URL to a SEC complete submission text file</p></td>
+    </tr>
+    <tr>
+      <th>include.binary</th>
+      <td><p>- Default TRUE, determines if the content of binary
+documents is returned.</p></td>
+    </tr>
+    <tr>
+      <th>include.content</th>
+      <td><p>- Default TRUE, determines if the content of
+documents is returned.</p></td>
     </tr>
     </table>
     
@@ -146,11 +156,11 @@ viewed.</p>
                    <span class='fu'>c</span>(<span class='st'>'SEQUENCE'</span>, <span class='st'>'TYPE'</span>, <span class='st'>'DESCRIPTION'</span>, <span class='st'>'FILENAME'</span>)]</div><div class='output co'>#&gt;   SEQUENCE    TYPE DESCRIPTION                        FILENAME
 #&gt; 1        1     8-K         8-K       ceostrategicupdate8-k.htm
 #&gt; 2        2   EX-99  EXHIBIT 99    exhibit99ceostrategicupd.htm
-#&gt; 3        3 GRAPHIC        &lt;NA&gt; exhibit99ceostrategicupd001.jpg
-#&gt; 4        4 GRAPHIC        &lt;NA&gt; exhibit99ceostrategicupd002.jpg
-#&gt; 5        5 GRAPHIC        &lt;NA&gt; exhibit99ceostrategicupd003.jpg
-#&gt; 6        6 GRAPHIC        &lt;NA&gt; exhibit99ceostrategicupd004.jpg
-#&gt; 7        7 GRAPHIC        &lt;NA&gt; exhibit99ceostrategicupd005.jpg</div></pre>
+#&gt; 3        3 GRAPHIC             exhibit99ceostrategicupd001.jpg
+#&gt; 4        4 GRAPHIC             exhibit99ceostrategicupd002.jpg
+#&gt; 5        5 GRAPHIC             exhibit99ceostrategicupd003.jpg
+#&gt; 6        6 GRAPHIC             exhibit99ceostrategicupd004.jpg
+#&gt; 7        7 GRAPHIC             exhibit99ceostrategicupd005.jpg</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

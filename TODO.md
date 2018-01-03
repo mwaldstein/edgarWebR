@@ -9,19 +9,20 @@ A bit of a roadmap/todo
  * Alias company\_ functions to filer\_ to cover non-company filers better
  * company href given CIK
  * Return master filing href where possible
- * parse filing document header
+ * Parse filing page numbers to enable better manual section describing and TOC
+   parsing/usage.
 
 ## Bugs
+ * There are not enough "exclusions" in xpath for parse_filing leading to
+   parents and children getting selected. E.g.
+   https://www.sec.gov/Archives/edgar/data/7084/000000708409000051/adm10kfy09.htm
 
 ## Internal
  * Passing lints
  * Improve makefile http://kbroman.org/minimal_make/,
    https://github.com/ComputationalProteomicsUnit/maker
- * Cache for vignettes - longest part of build at the moment
- * Have travis/appveyor run tests without cache for assurances
  * tests for util.R and get company_information to 100% coverage
  * downstream checks
- * add no-vignettes options as a cache alternative
 
 ## Package
  * Vignette pulling XBL files using finstr

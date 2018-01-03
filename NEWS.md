@@ -1,6 +1,20 @@
 # edgarWebR 0.3.0.9000 - *DEVELOPMENT*
 
 ## Features
+ * `parse_submission` has options for skipping collection of all content or
+   just binary content
+
+## Bugfixes
+ * `parse_filing` properly processes recent AIG & Costco filings
+ * `parse_filing` properly processes ADM filings for fy08 & fy09
+ * `parse_filing` now fails gracefully given a unparsable filing
+ * `parse_filing` properly handles extraneous '<PAGE>' tags from ~08/09 filings
+   such as
+   [ADP](https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq
+ * `parse_submission` handles large files successfully using temp files.
+ * `parse_submission` handles submissions with single files correctly.
+
+## Features
  * `siccodes` a dataset for sic codes from [US Department of
    Labor](https://www.osha.gov/pls/imis/sic_manual.html)
 

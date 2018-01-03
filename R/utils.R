@@ -1,14 +1,21 @@
 is_url <- function(x) {
-  grepl("^(http|ftp)s?://", x)
+  grepl("^(http|ftp)s?://", x, ignore.case = T)
 }
 
 get_doc <- function(x, clean = F) {
   if (typeof(x) == "character") {
     if (is_url(x)) {
       res <- httr::GET(x)
-      doc <- xml2::read_html(res, base_url = x)
+      content <- httr::content(res, encoding = "UTF-8")
+      if (clean) {
+        content <- clean_html(content)
+      }
+      doc <- xml2::read_html(content, base_url = x)
     } else {
-      doc <- xml2::read_html(x)
+      if (clean) {
+        content <- clean_html(x)
+      }
+      doc <- xml2::read_html(content)
     }
   } else {
     doc <- x
@@ -43,8 +50,12 @@ charToText <- function(x) {
 # @param x text of an html document
 clean_html <- function(x) {
   x <- gsub("&nbsp;", " ", x, ignore.case = T)
+  x <- gsub("&#151;", " - ", x, ignore.case = T)
+  x <- gsub("\u00a0", " ", x, fixed = T) # Unicode nbsp
+  x <- gsub("\u0097", " - ", x, fixed = T) # EM dash (i think)
   x <- gsub("<br>", " ", x, ignore.case = T)
   x <- gsub("<br/>", " ", x, ignore.case = T)
+  x <- gsub("<page>", " ", x, ignore.case = T)
   x
 }
 

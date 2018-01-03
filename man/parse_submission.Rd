@@ -4,10 +4,16 @@
 \alias{parse_submission}
 \title{Parse Submission}
 \usage{
-parse_submission(uri)
+parse_submission(uri, include.binary = T, include.content = T)
 }
 \arguments{
 \item{uri}{- URL to a SEC complete submission text file}
+
+\item{include.binary}{- Default TRUE, determines if the content of binary
+documents is returned.}
+
+\item{include.content}{- Default TRUE, determines if the content of
+documents is returned.}
 }
 \value{
 a dataframe with one row per document.
