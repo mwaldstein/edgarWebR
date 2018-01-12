@@ -1,8 +1,12 @@
 # edgarWebR 0.3.0.9000 - *DEVELOPMENT*
 
 ## Features
+ * `sic_codes` a dataset for sic codes from [US Department of
+   Labor](https://www.osha.gov/pls/imis/sic_manual.html)
  * `parse_submission` has options for skipping collection of all content or
    just binary content
+ * Added utility functions `submission_index_href`, `submission_href`, and
+   `submission_file_href` for creating links to filings and their components.
 
 ## Bugfixes
  * `parse_filing` properly processes recent AIG & Costco filings
@@ -14,9 +18,10 @@
  * `parse_submission` handles large files successfully using temp files.
  * `parse_submission` handles submissions with single files correctly.
 
-## Features
- * `siccodes` a dataset for sic codes from [US Department of
-   Labor](https://www.osha.gov/pls/imis/sic_manual.html)
+## Internal
+ * Testing now requires tokenizers for testing if parsing adds words (it often
+   does...)
+ * Moved to testdata for parse_* functions rather than http cache
 
 # edgarWebR 0.3.0 - "Going all the way back"
 

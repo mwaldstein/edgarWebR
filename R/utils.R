@@ -1,3 +1,38 @@
+#' Submission URL Tools
+#'
+#' EDGAR submissions are organized fairly regularly. These functions help to
+#' fint the URL to submission components.
+#' @param cik Company code
+#' @param accession accession number for a filing
+#' @param filename filename provided in a submission
+#' @return A string with URL requested
+#' @examples
+#' submission_index_href("0000712515", "0000712515-17-000090")
+#' submission_href("0000712515", "0000712515-17-000090")
+#' submission_file_href("0000712515", "0000712515-17-000090",
+#'                      "pressrelease-ueberroth.htm")
+#' @export
+submission_index_href <- function(cik, accession) {
+  submission_file_href(cik, accession, paste0(accession, "-index.htm"))
+}
+
+#' @describeIn submission_index_href Creates a link to the master submission
+#' sgml submission file
+#' @export
+submission_href <- function(cik, accession) {
+  submission_file_href(cik, accession, paste0(accession, ".txt"))
+}
+
+#' @describeIn submission_index_href provides the link to a given file within a
+#' particular submission.
+#' @export
+submission_file_href <- function(cik, accession, filename) {
+  trim_cik <- gsub("^0+", "", cik)
+  dashless <- gsub("-", "", accession)
+  paste0("https://www.sec.gov/Archives/edgar/data/", trim_cik, "/", dashless,
+         "/", filename)
+}
+
 is_url <- function(x) {
   grepl("^(http|ftp)s?://", x, ignore.case = T)
 }
@@ -6,7 +41,7 @@ get_doc <- function(x, clean = F) {
   if (typeof(x) == "character") {
     if (is_url(x)) {
       res <- httr::GET(x)
-      content <- httr::content(res, encoding = "UTF-8")
+      content <- httr::content(res, encoding = "UTF-8", as = "text")
       if (clean) {
         content <- clean_html(content)
       }

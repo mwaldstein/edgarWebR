@@ -1,0 +1,20 @@
+reference:
+  - title: "Searching Functions"
+    contents:
+      - starts_with("company_")
+      - latest_filings
+      - full_text
+      - header_search
+      - fund_search
+  - title: "Filing Detail Functions"
+    contents:
+      - starts_with("filing_")
+  - title: "Parsing Functions"
+    contents:
+      - starts_with("parse_")
+  - title: "Utility Functions"
+    contents:
+      - ends_with("href")
+  - title: "Data"
+    contents:
+      - sic_codes

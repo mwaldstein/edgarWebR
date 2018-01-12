@@ -181,30 +181,34 @@ specify `from`</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                         name
-#&gt; 1   2018-01-03       INFORMATION TABLE of 13F-HR for NEVILLE RODIE SHAW INC
-#&gt; 2   2018-01-03                   N-30B-2 for POWERSHARES QQQ TRUST SERIES 1
-#&gt; 3   2018-01-03       INFORMATION TABLE of 13F-HR for BEACON FINANCIAL GROUP
-#&gt;                                                                                                     href
-#&gt; 1      https://www.sec.gov/Archives/edgar/data/71210/000007121018000001/xslForm13F_X01/nrs13fdec2017.xml
-#&gt; 2                   https://www.sec.gov/Archives/edgar/data/1067839/000119312518001208/d432220dn30b2.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1591379/000159137918000001/xslForm13F_X01/122917INFOTABLE.xml
+    <pre class="examples"><div class='input'><span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
+#&gt; 1   2018-01-12
+#&gt; 2   2018-01-12
+#&gt; 3   2018-01-12
+#&gt;                                                                       name
+#&gt; 1                                             N-CSRS for World Funds Trust
+#&gt; 2             INFORMATION TABLE of 13F-HR for NISA INVESTMENT ADVISORS LLC
+#&gt; 3                 INFORMATION TABLE of 13F-HR for APPLETON PARTNERS INC MA
+#&gt;                                                                                                      href
+#&gt; 1                    https://www.sec.gov/Archives/edgar/data/1396092/000089180418000025/wft72578-ncsr.htm
+#&gt; 2        https://www.sec.gov/Archives/edgar/data/937615/000093761518000003/xslForm13F_X01/13F12312017.xml
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1055290/000095012318000184/xslForm13F_X01/form13fInfoTable.xml
 #&gt;                               company_name     cik  sic
-#&gt; 1                   NEVILLE RODIE SHAW INC   71210 &lt;NA&gt;
-#&gt; 2           POWERSHARES QQQ TRUST SERIES 1 1067839 &lt;NA&gt;
-#&gt; 3                   BEACON FINANCIAL GROUP 1591379 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                        content
-#&gt; 1     3M COMPANY COM 88579Y101 5754 24446 SH SOLE 5545 0 18901 3M COMPANY COM 88579Y101 635 2700 SH OTR 0 0 2700 ABBOTT LABS COM 002824100 2319 40629 SH SOLE 20424 0 20205 ABBOTT LABS COM 002824100 1481 25948 SH OTR 11998 0 13950 ABBVIE INC COM 00287Y109 8902 92050 SH SOLE 25455 0 66595 ABBVIE INC COM
-#&gt; 2                                                                                                                                      September 30, 2017 2017 Annual Report to Shareholders QQQ PowerShares QQQ Trust SM , Series 1 Table of Contents PowerShares QQQ Trust SM , Series 1 1 2 4 5 6 7 8 13 14
-#&gt; 3   ABBOTT LABS COM 002824100 1370 24011 SH SOLE NONE 24011 0 0 ABBVIE INC COM 00287Y109 918 9495 SH SOLE NONE 9495 0 0 AFLAC INC COM 001055102 433 4938 SH SOLE NONE 4938 0 0 ALPHABET INC CL A 02079K305 892 847 SH SOLE NONE 847 0 0 ALPHABET INC CL C 02079K107 1031 985 SH SOLE NONE 985 0 0 ALTRIA GROUP
+#&gt; 1                        World Funds Trust 1396092 &lt;NA&gt;
+#&gt; 2             NISA INVESTMENT ADVISORS LLC  937615 &lt;NA&gt;
+#&gt; 3                 APPLETON PARTNERS INC MA 1055290 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                                         content
+#&gt; 1                    UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-22172 Exact name of registrant as specified in charter: World Funds Trust Address of
+#&gt; 2        AAC HOLDINGS INC COM 000307108 89 9900 SH SOLE 9900 0 0 AAON INC COM 000360206 15 420 SH SOLE 420 0 0 AAR CORP COM 000361105 201 5120 SH SOLE 5120 0 0 ACCO BRANDS CORP COM 00081T108 245 20120 SH SOLE 20120 0 0 ABM INDS INC COM 000957100 390 10349 SH SOLE 10349 0 0 AFLAC INC COM 001055102 14693
+#&gt; 3                                                                                                                                                                                                                                                                                     3M CO COMCOM88579Y1013839
 #&gt;                                                                                          parent_href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/71210/000007121018000001/xslForm13F_X01/primary_doc.xml
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3       https://www.sec.gov/Archives/edgar/data/1708131/000105640418000051/csc17sa8_absee-201712.htm
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/1055290/000095012318000184/xslForm13F_X01/primary_doc.xml
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1569452/000106299318000139/xslForm13F_X01/primary_doc.xml
 #&gt;                                                                                           index_href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/71210/000007121018000001/0000071210-18-000001-index.htm
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1708131/000105640418000051/0001056404-18-000051-index.htm
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/1055290/000095012318000184/0000950123-18-000184-index.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1569452/000106299318000139/0001062993-18-000139-index.htm
 #&gt;  [ reached getOption("max.print") -- omitted 7 rows ]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

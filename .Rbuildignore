@@ -21,3 +21,4 @@ Makefile
 ^revdep
 ^tests/dev_test
 ^data-raw$
+^_pkgdown\.yml$

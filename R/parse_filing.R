@@ -146,7 +146,8 @@ build_parts <- function(doc, xpath_base, include.raw = F) {
             starts-with(tr[2], ' PART'))]",
     "/div[count(p|div) <= 1 and
           not(div[count(div) > 1]) and
-          not(count(div/div/div) > 1)]",
+          not(count(div/div/div) > 1) and
+          count(div/font) = 0]",
     "/div[count(p|div) <= 1 and
           count(div/div) > 1 and
           count(div/div/div) <= 1]/div/*",
@@ -155,14 +156,20 @@ build_parts <- function(doc, xpath_base, include.raw = F) {
           count(div/div/div) >= 1]/div/div/*",
     "/div[count(div) <= 1 and
           count(div/div/div) > 1 and
-          count(div/div/div/div/div) <= 1]/div/div/div",
-    "/div[count(div/div/div/div/div) > 1]/div/div/div/div/*",
-    "/div[count(div/div/div/*) >= 1]/div/div/div/*",
+          count(div/div/div/div/div) <= 1 and
+          count(div/div/div/*) < 1]/div/div/div",
+    "/div[count(div/div/div/div/*) > 1]/div/div/div/div/*",
+    "/div[count(div/div/div/*) >= 1 and
+          count(div/div/div/div/*) < 1]/div/div/div/*[name() != 'font' and
+                                                      name() != 'table']",
     "/div[count(p|div) <= 1 and
-          count(div/div) > 1]/div/*",
+          count(div/div) > 1 and
+          count(div/div/div) <= 1]/div/*",
+    # "/div/div/font",
     "/div[count(p|div) > 1]/*[count(b|div) <= 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div) <= 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div)> 1]/*",
+    "/div[count(div) = 1]/div[count(div) = 1]/div[count(p)> 1]/*",
     "/p/font[count(p|div) > 1]/*",
     "/table[starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART')]/tr")
 
@@ -190,11 +197,10 @@ compute_parts <- function(doc.parsed,
   return_cols <- colnames(doc.parsed)
 
   if (nrow(doc.parsed) == 0) {
-    return(as.data.frame(setNames(replicate(length(return_cols) + 2,
-                                            character(),
-                                            simplify = F),
-                                  c(return_cols, "item.name", "part.name")
-                                  )))
+    result <- replicate(length(return_cols) + 2, character(), simplify = F)
+    names(result) <- c(return_cols, "item.name", "part.name")
+
+    return(as.data.frame(result))
   }
 
   # when we merge in the parts/items, order gets wonky - this preserves it

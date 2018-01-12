@@ -47,7 +47,7 @@ parse_submission <- function(uri,
     # For large documents, use a tmp file for processing
     f <- tempfile()
     con <- file(f, "wb")
-    writeChar(dat, con)
+    writeChar(res, con)
     close(con)
     con <- file(f, "rt")
     res <- parse_submission.connection(con,
@@ -112,7 +112,7 @@ parse_submission <- function(uri,
                                               lines[2:length(lines) - 1])
     }
 
-    return(paste0(lines, collapse = "\n"))
+    return(clean_sgml_text(lines))
   }
   res$TEXT <- unlist(lapply(doc.ids, get.lines))
 
@@ -163,7 +163,7 @@ parse_submission.connection <- function(con,
                                                    nchar(l))
     }
     if (startsWith(l, "</DOCUMENT")) {
-      file.row$TEXT <- paste0(content, collapse = "\n")
+      file.row$TEXT <- clean_sgml_text(content)
       result <- rbind(result, file.row, stringsAsFactors = F)
       # message(file.row$SEQUENCE, " ", file.row$FILENAME, " - [", text.line,
       #         "] ", nchar(file.row$TEXT))
@@ -176,4 +176,26 @@ parse_submission.connection <- function(con,
     }
   }
   result
+}
+
+#' Cleans up quirks to sqml
+#' specifically, when lines are trimmed to 1024 characters
+#' @noRd
+clean_sgml_text <- function(txt) {
+  if (length(txt) == 1) {
+    txt.lines <- unlist(strsplit(txt, "\n", fixed = T))
+  } else {
+    txt.lines <- txt
+  }
+  txt.length <- nchar(txt.lines)
+  # If we don't need to clean, bailout
+  if (!any(txt.length == 1023 | txt.length == 1025)) {
+    return(paste0(txt.lines, collapse = "\n"))
+  }
+  # leading dashes are escaped... weirdly
+  prior.long <- c(F, (txt.length == 1023 | txt.length == 1025)[-length(txt.length)])
+  txt.lines[prior.long & txt.length == 1025] <- sub("^- ", "",
+                                                    txt.lines[prior.long & txt.length == 1025])
+  txt.lines[txt.length < 1023] <- paste0(txt.lines[txt.length < 1023], "\n")
+  paste0(txt.lines, collapse = "")
 }

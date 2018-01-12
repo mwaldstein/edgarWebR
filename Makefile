@@ -94,4 +94,4 @@ revdep:
 	cd revdep; Rscript check.R
 
 data:
-	Rscript data-raw/siccodes.R
+	Rscript data-raw/sic_codes.R
