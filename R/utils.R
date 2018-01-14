@@ -86,6 +86,7 @@ charToText <- function(x) {
 clean_html <- function(x) {
   x <- gsub("&nbsp;", " ", x, ignore.case = T)
   x <- gsub("&#151;", " - ", x, ignore.case = T)
+  x <- gsub("&#146;", "'", x, ignore.case = T) # possessive quote
   x <- gsub("\u00a0", " ", x, fixed = T) # Unicode nbsp
   x <- gsub("\u0097", " - ", x, fixed = T) # EM dash (i think)
   x <- gsub("<br>", " ", x, ignore.case = T)
@@ -100,6 +101,15 @@ clean_doc <- function(doc) {
   replacement <- xml2::xml_find_first(xml2::read_xml("<p> </p>"),
                                       "/p/text()")
   xml2::xml_replace(xml2::xml_find_all(doc, "//br"), replacement)
+
+  # remove hidden divs
+  xml2::xml_remove(xml2::xml_find_all(doc, "//div[@style = 'display:none']"),
+                   free = T)
+
+  # strip messy inlineXBRL
+  if (length(xml2::xml_ns(doc)) > 1) {
+    xml2::xml_remove(xml2::xml_find_all(doc, "//header"), free = T)
+  }
 
   doc
 }
