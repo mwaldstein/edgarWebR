@@ -15,11 +15,13 @@
 }}
 \source{
 \url{https://www.osha.gov/pls/imis/sic_manual.html}
+
+\url{https://www.sec.gov/info/edgar/siccodes.htm}
 }
 \usage{
 sic_codes
 }
 \description{
-SIC code table with structure
+SIC code table with structure.
 }
 \keyword{datasets}

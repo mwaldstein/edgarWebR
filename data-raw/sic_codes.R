@@ -46,4 +46,49 @@ sic_codes <- as.data.frame(do.call(rbind, lapply(divisions, function(division) {
   })))
 })), stringsAsFactors = F)
 
+
+## Create SEC style sic overall codes
+# Majors
+majors <- data.frame(sic = paste0(substr(sic_codes$sic, 1, 2), "00"),
+                     industry = sic_codes$major,
+                     major = sic_codes$major,
+                     group = sic_codes$major,
+                     division = sic_codes$division,
+                     division_id = sic_codes$division_id,
+                     stringsAsFactors = F)
+majors <- unique(majors)
+# SEC drops leading 0's
+majors$sic[startsWith(majors$sic, "0")] <-
+  substr(majors$sic[startsWith(majors$sic, "0")], 2,4)
+groups <- data.frame(sic = paste0(substr(sic_codes$sic, 1, 3), "0"),
+                     industry = sic_codes$group,
+                     major = sic_codes$major,
+                     group = sic_codes$group,
+                     division = sic_codes$division,
+                     division_id = sic_codes$division_id,
+                     stringsAsFactors = F)
+groups <- unique(groups)
+sic_codes <- rbind(sic_codes, majors, groups)
+
+sec_sic_href <- "https://www.sec.gov/info/edgar/siccodes.htm"
+doc <- xml2::read_html(sec_sic_href)
+sec_sic <- data.frame(sic = xml_text(xml_find_all(doc, "//table/tr[count(td) = 4]/td[1]")),
+                      ad = xml_text(xml_find_all(doc, "//table/tr[count(td) = 4]/td[2]")),
+                      industry = xml_text(xml_find_all(doc, "//table/tr[count(td) = 4]/td[4]")),
+                      stringsAsFactors = F)
+sec_sic <- sec_sic[2:nrow(sec_sic),]
+sec_sic <- sec_sic[!(sec_sic$sic %in% sic_codes$sic), ]
+
+sec_sic$major_code <- paste0(substr(sec_sic$sic, 1, 2), "00")
+sec_sic$group_code <- paste0(substr(sec_sic$sic, 1, 3), "0")
+sec_sic <- merge(sec_sic, sic_codes[, c("sic", "division_id", "division", "major")],
+                 by.x = "major_code", by.y = "sic", all.x = T)
+sec_sic <- merge(sec_sic, sic_codes[, c("sic", "group")],
+                 by.x = "group_code", by.y = "sic", all.x = T)
+# not all groups in SEC exist, populate w/ industry as placeholder
+sec_sic$group[is.na(sec_sic$group)] <- sec_sic$industry[is.na(sec_sic$group)]
+sec_sic[, c("major_code", "group_code", "ad")] <- NULL
+
+sic_codes <- rbind(sec_sic, sic_codes)
+
 save(sic_codes, file = "data/sic_codes.rdata")

@@ -285,17 +285,17 @@ filing_doc &lt;-<span class="st"> </span>parsed_docs[parsed_docs<span class="op"
 <span class="kw">unique</span>(doc<span class="op">$</span>part.name)
 <span class="co">#&gt; [1] &quot;&quot;        &quot;PART I&quot;  &quot;PART II&quot;</span>
 <span class="kw">unique</span>(doc<span class="op">$</span>item.name)
-<span class="co">#&gt;  [1] &quot;&quot;                                                                                                  </span>
-<span class="co">#&gt;  [2] &quot;ITEM 1. FINANCIAL STATEMENTS&quot;                                                                      </span>
-<span class="co">#&gt;  [3] &quot;ITEM 2. MANAGEMENT\u0092S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS&quot;</span>
-<span class="co">#&gt;  [4] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                                </span>
-<span class="co">#&gt;  [5] &quot;ITEM 4. CONTROLS AND PROCEDURES&quot;                                                                   </span>
-<span class="co">#&gt;  [6] &quot;ITEM 1. LEGAL PROCEEDINGS&quot;                                                                         </span>
-<span class="co">#&gt;  [7] &quot;ITEM 1A. RISK FACTORS&quot;                                                                             </span>
-<span class="co">#&gt;  [8] &quot;ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS&quot;                               </span>
-<span class="co">#&gt;  [9] &quot;ITEM 3. DEFAULTS UPON SENIOR SECURITIES&quot;                                                           </span>
-<span class="co">#&gt; [10] &quot;ITEM 4. MINE SAFETY DISCLOSURES&quot;                                                                   </span>
-<span class="co">#&gt; [11] &quot;ITEM 5. OTHER INFORMATION&quot;                                                                         </span>
+<span class="co">#&gt;  [1] &quot;&quot;                                                                                             </span>
+<span class="co">#&gt;  [2] &quot;ITEM 1. FINANCIAL STATEMENTS&quot;                                                                 </span>
+<span class="co">#&gt;  [3] &quot;ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS&quot;</span>
+<span class="co">#&gt;  [4] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                           </span>
+<span class="co">#&gt;  [5] &quot;ITEM 4. CONTROLS AND PROCEDURES&quot;                                                              </span>
+<span class="co">#&gt;  [6] &quot;ITEM 1. LEGAL PROCEEDINGS&quot;                                                                    </span>
+<span class="co">#&gt;  [7] &quot;ITEM 1A. RISK FACTORS&quot;                                                                        </span>
+<span class="co">#&gt;  [8] &quot;ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS&quot;                          </span>
+<span class="co">#&gt;  [9] &quot;ITEM 3. DEFAULTS UPON SENIOR SECURITIES&quot;                                                      </span>
+<span class="co">#&gt; [10] &quot;ITEM 4. MINE SAFETY DISCLOSURES&quot;                                                              </span>
+<span class="co">#&gt; [11] &quot;ITEM 5. OTHER INFORMATION&quot;                                                                    </span>
 <span class="co">#&gt; [12] &quot;ITEM 6. EXHIBITS&quot;</span>
 <span class="kw">head</span>(doc[<span class="kw">grepl</span>(<span class="st">&quot;market risk&quot;</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>), <span class="st">&quot;text&quot;</span>], <span class="dv">3</span>)
 <span class="co">#&gt; [1] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                     </span>
