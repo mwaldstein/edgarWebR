@@ -84,11 +84,29 @@ charToText <- function(x) {
 # strips difficult to handle html bits we don't really care about
 # @param x text of an html document
 clean_html <- function(x) {
+  # Not cleaned:
+  # "&#254;"  - thorn
+  # "&#167;"  - sect
+  # "&#174;"  - reg
+  # "&#8482;" - trade
+  # "&#8226;" - bullet
+
   x <- gsub("&nbsp;", " ", x, ignore.case = T)
-  x <- gsub("&#151;", " - ", x, ignore.case = T)
-  x <- gsub("&#146;", "'", x, ignore.case = T) # possessive quote
   x <- gsub("\u00a0", " ", x, fixed = T) # Unicode nbsp
+  x <- gsub("&#160;", " ", x, ignore.case = T)
+  x <- gsub("&#32;", " ", x, ignore.case = T)
+
+
+  x <- gsub("&#151;", " - ", x, ignore.case = T)
+  x <- gsub("&#8211;", " - ", x, ignore.case = T) # ndash
+  x <- gsub("&#8212;", " - ", x, ignore.case = T) # mdash
   x <- gsub("\u0097", " - ", x, fixed = T) # EM dash (i think)
+
+  x <- gsub("&#146;", "'", x, ignore.case = T) # possessive quote
+  x <- gsub("&#8217;", "'", x, ignore.case = T) # another possessive quote
+  x <- gsub("&#8220;", "\"", x, ignore.case = T) # left double quote
+  x <- gsub("&#8221;", "\"", x, ignore.case = T) # right double quote
+
   x <- gsub("<br>", " ", x, ignore.case = T)
   x <- gsub("<br/>", " ", x, ignore.case = T)
   x <- gsub("<page>", " ", x, ignore.case = T)
