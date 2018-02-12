@@ -87,8 +87,8 @@ filings &lt;-<span class="st"> </span><span class="kw">company_filings</span>(ti
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
 filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;10-Q&quot;</span>, ]
-<span class="co"># We're only interested in the latest filing this time</span>
-filing &lt;-<span class="st"> </span>filings[<span class="dv">1</span>, ]
+<span class="co"># We're only interested in a particular filing</span>
+filing &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>filing_date <span class="op">==</span><span class="st"> &quot;2017-10-27&quot;</span>, ]
 filing<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;[Link](&quot;</span>, filing<span class="op">$</span>href, <span class="st">&quot;)&quot;</span>)
 knitr<span class="op">::</span><span class="kw">kable</span>(filing[, <span class="kw">c</span>(<span class="st">&quot;type&quot;</span>, <span class="st">&quot;filing_date&quot;</span>, <span class="st">&quot;accession_number&quot;</span>, <span class="st">&quot;size&quot;</span>,
                                 <span class="st">&quot;md_href&quot;</span>)],
@@ -98,6 +98,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(filing[, <span clas
 <table>
 <thead>
 <tr class="header">
+<th></th>
 <th align="left">Type</th>
 <th align="left">Filing Date</th>
 <th align="left">Accession No.</th>
@@ -107,6 +108,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(filing[, <span clas
 </thead>
 <tbody>
 <tr class="odd">
+<td>2</td>
 <td align="left">10-Q</td>
 <td align="left">2017-10-27</td>
 <td align="left">0001193125-17-323042</td>
@@ -285,22 +287,22 @@ filing_doc &lt;-<span class="st"> </span>parsed_docs[parsed_docs<span class="op"
 <span class="kw">unique</span>(doc<span class="op">$</span>part.name)
 <span class="co">#&gt; [1] &quot;&quot;        &quot;PART I&quot;  &quot;PART II&quot;</span>
 <span class="kw">unique</span>(doc<span class="op">$</span>item.name)
-<span class="co">#&gt;  [1] &quot;&quot;                                                                                                  </span>
-<span class="co">#&gt;  [2] &quot;ITEM 1. FINANCIAL STATEMENTS&quot;                                                                      </span>
-<span class="co">#&gt;  [3] &quot;ITEM 2. MANAGEMENT\u0092S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS&quot;</span>
-<span class="co">#&gt;  [4] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                                </span>
-<span class="co">#&gt;  [5] &quot;ITEM 4. CONTROLS AND PROCEDURES&quot;                                                                   </span>
-<span class="co">#&gt;  [6] &quot;ITEM 1. LEGAL PROCEEDINGS&quot;                                                                         </span>
-<span class="co">#&gt;  [7] &quot;ITEM 1A. RISK FACTORS&quot;                                                                             </span>
-<span class="co">#&gt;  [8] &quot;ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS&quot;                               </span>
-<span class="co">#&gt;  [9] &quot;ITEM 3. DEFAULTS UPON SENIOR SECURITIES&quot;                                                           </span>
-<span class="co">#&gt; [10] &quot;ITEM 4. MINE SAFETY DISCLOSURES&quot;                                                                   </span>
-<span class="co">#&gt; [11] &quot;ITEM 5. OTHER INFORMATION&quot;                                                                         </span>
+<span class="co">#&gt;  [1] &quot;&quot;                                                                                             </span>
+<span class="co">#&gt;  [2] &quot;ITEM 1. FINANCIAL STATEMENTS&quot;                                                                 </span>
+<span class="co">#&gt;  [3] &quot;ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS&quot;</span>
+<span class="co">#&gt;  [4] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                           </span>
+<span class="co">#&gt;  [5] &quot;ITEM 4. CONTROLS AND PROCEDURES&quot;                                                              </span>
+<span class="co">#&gt;  [6] &quot;ITEM 1. LEGAL PROCEEDINGS&quot;                                                                    </span>
+<span class="co">#&gt;  [7] &quot;ITEM 1A. RISK FACTORS&quot;                                                                        </span>
+<span class="co">#&gt;  [8] &quot;ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS&quot;                          </span>
+<span class="co">#&gt;  [9] &quot;ITEM 3. DEFAULTS UPON SENIOR SECURITIES&quot;                                                      </span>
+<span class="co">#&gt; [10] &quot;ITEM 4. MINE SAFETY DISCLOSURES&quot;                                                              </span>
+<span class="co">#&gt; [11] &quot;ITEM 5. OTHER INFORMATION&quot;                                                                    </span>
 <span class="co">#&gt; [12] &quot;ITEM 6. EXHIBITS&quot;</span>
 <span class="kw">head</span>(doc[<span class="kw">grepl</span>(<span class="st">&quot;market risk&quot;</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>), <span class="st">&quot;text&quot;</span>], <span class="dv">3</span>)
-<span class="co">#&gt; [1] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                     </span>
+<span class="co">#&gt; [1] &quot;ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                     </span>
 <span class="co">#&gt; [2] &quot;We have exposure to market risks due to the volatility of interest rates, foreign currency exchange rates, credit rating changes, equity and bond markets. A portion of these risks may be hedged, but fluctuations could impact our results of operations, financial position and cash flows.&quot;                                                                                                                                                                                                         </span>
-<span class="co">#&gt; [3] &quot;Interest Rate Risk. Our exposure to market risk for changes in interest rates relates primarily to our investment portfolio. As of September 29, 2017, we had no available-for-sale securities that had been in a continuous unrealized loss position for a period greater than 12 months. The Company determined no available-for-sale securities were other-than-temporarily impaired as of September 29, 2017. We currently do not use derivative financial instruments in our investment portfolio.&quot;</span>
+<span class="co">#&gt; [3] &quot;Interest Rate Risk. Our exposure to market risk for changes in interest rates relates primarily to our investment portfolio. As of September 29, 2017, we had no available-for-sale securities that had been in a continuous unrealized loss position for a period greater than 12 months. The Company determined no available-for-sale securities were other-than-temporarily impaired as of September 29, 2017. We currently do not use derivative financial instruments in our investment portfolio.&quot;</span>
 risks &lt;-<span class="st"> </span>doc[<span class="kw">grepl</span>(<span class="st">&quot;market risk&quot;</span>, doc<span class="op">$</span>item.name, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>), <span class="st">&quot;raw&quot;</span>]</code></pre></div>
 <p>Now the document is all ready for whatever further processing we want. As a quick example we’ll pull out all the italicized risks.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">risks &lt;-<span class="st"> </span>risks[<span class="kw">grep</span>(<span class="st">&quot;&lt;i&gt;&quot;</span>, risks)]

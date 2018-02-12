@@ -1,3 +1,9 @@
+# edgarWebR 0.3.1 - "Oh yeah, data changes"
+## Bugfixes
+ * `full_text` no longer runs example as it often is long-running
+ * Vignette 'parsing' now always fetches the same filing to avoid issues with
+   newer filings changing the output
+
 # edgarWebR 0.3.0 - "Going all the way back"
 
 ## Features
