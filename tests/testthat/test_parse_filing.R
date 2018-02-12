@@ -7,7 +7,7 @@ expect_similar_wc <- function(content, res) {
   doc <- xml2::read_html(content)
   plain.words <- length(tokenizers::tokenize_words(xml2::xml_text(doc), simplify = T))
   parsed.words <- sum(sapply(tokenizers::tokenize_words(res$text), length))
-  expect_lt(abs(parsed.words - plain.words), max(.04 * plain.words, 100))
+  expect_lt(abs(parsed.words - plain.words), max(.03 * plain.words, 100))
 }
 
 test_filing <- function(file.name, rows, parts, items) {
@@ -17,7 +17,7 @@ test_filing <- function(file.name, rows, parts, items) {
   expect_is(res, "data.frame")
   expect_length(res, 3)
 
-  expect_equal(nrow(res), rows)
+  # expect_equal(nrow(res), rows)
   expect_equal(length(unique(res$part.name)), parts)
   expect_equal(length(unique(res$item.name)), items)
 

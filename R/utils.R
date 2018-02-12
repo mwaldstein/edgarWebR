@@ -49,6 +49,8 @@ get_doc <- function(x, clean = F) {
     } else {
       if (clean) {
         content <- clean_html(x)
+      } else {
+        content <- x
       }
       doc <- xml2::read_html(content)
     }

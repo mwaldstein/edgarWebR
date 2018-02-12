@@ -134,11 +134,31 @@ parse_text_filing <- function(x,
 
 #' Manually identify the node paths
 #' @noRd
-build_parts <- function(doc, xpath_base, include.raw = F) {
+build_parts <- function(doc, xpath_base,
+                        include.raw = F,
+                        include.path = F) {
+  nodes <- doc_nodes(doc, xpath_base)
+
+  doc.parts <- data.frame(text = xml2::xml_text(nodes),
+                          name = xml2::xml_name(nodes),
+                          stringsAsFactors = FALSE)
+
+  if (include.raw) {
+    doc.parts$raw <- as.character(nodes)
+  }
+  if (include.path) {
+    doc.parts$path <- xml2::xml_path(nodes)
+  }
+  return(doc.parts)
+}
+
+#' @noRd
+doc_nodes <- function(doc, xpath_base) {
   # There be dragons here...
   # Basically this extacts all the individual paragraphs from a document in one
   # go. This is so bad on so many levels... but the inherent messiness of the
   # filings prevents anything much more robust.
+  # xpath_parts <- c( "//div[count(.//div) < 1]")
   xpath_parts <- c(
     "/*[name() != 'div' and
         not(font[count(div) > 1]) and
@@ -153,37 +173,113 @@ build_parts <- function(doc, xpath_base, include.raw = F) {
           count(div/div/div) <= 1]/div/*",
     "/div[count(p|div) <= 1 and
           count(div/div) > 1 and
-          count(div/div/div) >= 1]/div/div/*",
+          count(div/div/div) >= 1]/div/div/*[count(div) < 1]",
     "/div[count(div) <= 1 and
           count(div/div/div) > 1 and
           count(div/div/div/div/div) <= 1 and
-          count(div/div/div/*) < 1]/div/div/div",
+          count(div/div/div/*) < 1]/div/div/div[count(div) < 1]",
     "/div[count(div/div/div/div/*) > 1]/div/div/div/div/*",
+    "/div[count(div/div/div/div/*) > 1]/div/div/div/div[count(*) < 1]",
     "/div[count(div/div/div/*) >= 1 and
           count(div/div/div/div/*) < 1]/div/div/div/*[name() != 'font' and
                                                       name() != 'table']",
     "/div[count(p|div) <= 1 and
           count(div/div) > 1 and
           count(div/div/div) <= 1]/div/*",
-    # "/div/div/font",
-    "/div[count(p|div) > 1]/*[count(b|div) <= 1]",
+    "/div[./ul and ./div]/div/font",
+    "/div[./ul and ./div]/ul/li",
+    "/div[count(p|div) > 1]/*[count(b|div) <= 1 and count(div/div) < 1]",
+    "/div[count(p|div) > 1]/div[count(b|div) <= 1 and count(div/div) > 1]",
     "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div) <= 1]",
-    "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div)> 1]/*",
+    "/div[count(p|div) > 1]/*[count(b|div) > 1]/div[count(div) = 1]/div[count(div) = 1]/div",
+    "/div[count(p|div) > 1]/*[count(b|div) > 1]/*[count(div)> 1]/*[count(div) < 1]",
     "/div[count(div) = 1]/div[count(div) = 1]/div[count(p)> 1]/*",
+    "/div[count(div) = 1]/div[count(font) = count(*)]/font",
+    "/div[count(div) = 1]/div/font[count(*) = 0]",
+    "/div[count(div) = 1]/div/div/table",
+    "/div/font[count(*) = 0]",
+    "/div/pre",
     "/p/font[count(p|div) > 1]/*",
-    "/table[starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART')]/tr")
+    "/div/table[count(./tr) = count(./tr/td)]/tr/td/div",
+    "/table[starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART')]/tr",
+
+    # All multi-column tables
+    "/table[count(./tr) < count(./tr/td)]",
+    "/div/table[count(./tr) < count(./tr/td)]",
+    "/div/div/table[count(./tr) < count(./tr/td)]",
+    "/div/div/div/table[count(./tr) < count(./tr/td)]",
+    "/div/div/div/div/table[count(./tr) < count(./tr/td)]"
+    # "bare" text blocks
+    # Only impacts a few filings for huge performance hit.
+    # "/text()[normalize-space() != '']"
+    )
+
+
+  ###
+  # Paragraph identification method
+  ###
+  para.nodes <- c("font", paste0("h", seq(5)), "a", "b", "i", "u", "sup")
+  non.para <- c("div", "dl", "li", "hr", "ol", "p", "ul", "table")
+  depths <- c("./", "./*/", "./*/*/")
+  depths <- c("./", "./*/")
+  # depths <- c("./")
+  # bases <- c("//*")
+  bases <- c("/*", "/*/*", "/*/*/*", "/*/*/*/*", "/*/*/*/*/*")
+  xpath_parts_2 <- c(
+    #
+    #paste0("//", c("div", "font", paste0("h", seq(5)), "p"), "[", paste0(c(
+    # perhaps move to not(/p) and not(/*/p) and not (/*/*/p) instead of adding
+    paste0(
+      bases,
+      "[",
+      paste0(c(
+        paste0("not(",
+               apply(expand.grid(depths, non.para), 1, function(x) {
+                       paste0(x, collapse = "") }),
+               ")"),
+      # paste0(c(
+      #   paste0(paste0("count(",
+      #                 apply(expand.grid(depths, para.nodes), 1, function(x) {
+      #                         paste0(x, collapse = "") }),
+      #                 ")",
+      #                 collapse = " + "),
+      #          " = ",
+      #          paste0("count(", depths, "*)", collapse = " + ")),
+
+      # paste0("count(.//*[",
+      #        paste0("local-name() != '", para.nodes, "'", collapse = " and "),
+      #      "]) = 0"),
+      # paste0("local-name(ancestor::*[1]) != '", para.nodes, "'"),
+      "local-name() != 'title'",
+      "local-name() != 'td'"),
+      collapse = " and "),
+      "]"),
+    # Unroll tables-as-formatting
+    "//table[.//tr[count(td) > 1]]",
+    "//table[not(.//tr[count(td) > 1])]/tr/td/*"
+    )
 
   xpath_parts <- paste0(xpath_base, xpath_parts)
 
   nodes <- xml2::xml_find_all(doc, paste0(xpath_parts, collapse = " | "))
 
-  doc.parts <- data.frame(text = xml2::xml_text(nodes),
-                          name = xml2::xml_name(nodes),
-                          stringsAsFactors = FALSE)
-  if (include.raw) {
-    doc.parts$raw <- as.character(nodes)
-  }
-  return(doc.parts)
+  # ensures no nested nodes
+  paths <- xml2::xml_path(nodes)
+  with.parent <- sapply(paths,
+                        function(path) {
+                          sum(startsWith(path, paths)) > 1
+                        })
+  nodes[!with.parent]
+}
+
+#' Walks into a nodlist, returning nested children
+#' @noRd
+reduce_nodes <- function(nodes) {
+    xml2::xml_find_first(nodes,
+      "descendant-or-self::*[
+        (count(*) + count(text()[normalize-space() != ''])) != 1 or
+        local-name() = 'table' or
+        (count(*) = 0 and count(text()[normalize-space() != ''])) >= 1)]")
 }
 
 #' Part/Item Processing
