@@ -101,8 +101,8 @@ filings &lt;-<span class="st"> </span><span class="kw"><a href="../reference/com
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
 filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-Q"</span>, ]
-<span class="co"># We're only interested in the latest filing this time</span>
-filing &lt;-<span class="st"> </span>filings[<span class="dv">1</span>, ]
+<span class="co"># We're only interested in a particular filing</span>
+filing &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>filing_date <span class="op">==</span><span class="st"> "2017-10-27"</span>, ]
 filing<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filing<span class="op">$</span>href, <span class="st">")"</span>)
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(filing[, <span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
                                 <span class="st">"md_href"</span>)],
@@ -111,6 +111,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
              <span class="dt">format.args =</span> <span class="kw">list</span>(<span class="dt">big.mark =</span> <span class="st">","</span>))</code></pre></div>
 <table class="table">
 <thead><tr class="header">
+<th></th>
 <th align="left">Type</th>
 <th align="left">Filing Date</th>
 <th align="left">Accession No.</th>
@@ -118,6 +119,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <th align="left">Link</th>
 </tr></thead>
 <tbody><tr class="odd">
+<td>2</td>
 <td align="left">10-Q</td>
 <td align="left">2017-10-27</td>
 <td align="left">0001193125-17-323042</td>

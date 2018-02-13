@@ -17,7 +17,10 @@
 #'     \item size
 #'   }
 #' @examples
+#'\donttest{
+#'## This can be very slow running
 #' header_search("company-name = Apple")
+#'}
 #' @export
 header_search <- function(q, page = 1, from = 1994, to = 2017) {
   href <- paste0("https://www.sec.gov/cgi-bin/srch-edgar?",

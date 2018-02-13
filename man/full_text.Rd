@@ -55,5 +55,8 @@ Provides access to the SEC fillings
 \href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
 }
 \examples{
+\donttest{
+## This can be very slow running
 full_text('intel')
+}
 }

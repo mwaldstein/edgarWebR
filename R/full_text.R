@@ -33,7 +33,10 @@
 #'    \item index_href
 #'  }
 #' @examples
+#'\donttest{
+#'## This can be very slow running
 #' full_text('intel')
+#'}
 #'@export
 full_text <- function(
     q = "*",

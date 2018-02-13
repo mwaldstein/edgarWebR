@@ -34,8 +34,8 @@ filings <- company_filings(ticker, type = "10-Q", count = 40)
 # Specifying the type provides all forms that start with 10-, so we need to
 # manually filter.
 filings <- filings[filings$type == "10-Q", ]
-# We're only interested in the latest filing this time
-filing <- filings[1, ]
+# We're only interested in a particular filing
+filing <- filings[filings$filing_date == "2017-10-27", ]
 filing$md_href <- paste0("[Link](", filing$href, ")")
 knitr::kable(filing[, c("type", "filing_date", "accession_number", "size",
                                 "md_href")],

@@ -94,7 +94,7 @@ initial_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(filings
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
 filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;10-K&quot;</span> <span class="op">|</span><span class="st"> </span>filings<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;10-Q&quot;</span>, ]</code></pre></div>
-<p>Note that explicitly filtering caused us to go from 95 to 91 rows.</p>
+<p>Note that explicitly filtering caused us to go from 96 to 92 rows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filings<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;[Link](&quot;</span>, filings<span class="op">$</span>href, <span class="st">&quot;)&quot;</span>)
 knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">tail</span>(filings)[, <span class="kw">c</span>(<span class="st">&quot;type&quot;</span>, <span class="st">&quot;filing_date&quot;</span>, <span class="st">&quot;accession_number&quot;</span>, <span class="st">&quot;size&quot;</span>,
                                <span class="st">&quot;md_href&quot;</span>)],
@@ -114,7 +114,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">ta
 </thead>
 <tbody>
 <tr class="odd">
-<td>89</td>
+<td>90</td>
 <td align="left">10-Q</td>
 <td align="left">1996-08-14</td>
 <td align="left">0000950005-96-000615</td>
@@ -122,7 +122,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">ta
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000950005-96-000615-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>90</td>
+<td>91</td>
 <td align="left">10-K</td>
 <td align="left">1996-07-01</td>
 <td align="left">0000912057-96-013563</td>
@@ -130,7 +130,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">ta
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-013563-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>91</td>
+<td>92</td>
 <td align="left">10-Q</td>
 <td align="left">1996-02-14</td>
 <td align="left">0000912057-96-002551</td>
@@ -138,7 +138,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">ta
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-002551-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>92</td>
+<td>93</td>
 <td align="left">10-Q</td>
 <td align="left">1995-11-14</td>
 <td align="left">0000912057-95-009843</td>
@@ -146,7 +146,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">ta
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-95-009843-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>93</td>
+<td>94</td>
 <td align="left">10-Q</td>
 <td align="left">1995-08-10</td>
 <td align="left">0000912057-95-006218</td>
@@ -154,7 +154,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">ta
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-95-006218-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>95</td>
+<td>96</td>
 <td align="left">10-Q</td>
 <td align="left">1995-02-13</td>
 <td align="left">0000912057-95-000644</td>

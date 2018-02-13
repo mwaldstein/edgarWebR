@@ -87,8 +87,8 @@ filings &lt;-<span class="st"> </span><span class="kw">company_filings</span>(ti
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
 filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> &quot;10-Q&quot;</span>, ]
-<span class="co"># We're only interested in the latest filing this time</span>
-filing &lt;-<span class="st"> </span>filings[<span class="dv">1</span>, ]
+<span class="co"># We're only interested in a particular filing</span>
+filing &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>filing_date <span class="op">==</span><span class="st"> &quot;2017-10-27&quot;</span>, ]
 filing<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;[Link](&quot;</span>, filing<span class="op">$</span>href, <span class="st">&quot;)&quot;</span>)
 knitr<span class="op">::</span><span class="kw">kable</span>(filing[, <span class="kw">c</span>(<span class="st">&quot;type&quot;</span>, <span class="st">&quot;filing_date&quot;</span>, <span class="st">&quot;accession_number&quot;</span>, <span class="st">&quot;size&quot;</span>,
                                 <span class="st">&quot;md_href&quot;</span>)],
@@ -98,6 +98,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(filing[, <span clas
 <table>
 <thead>
 <tr class="header">
+<th></th>
 <th align="left">Type</th>
 <th align="left">Filing Date</th>
 <th align="left">Accession No.</th>
@@ -107,6 +108,7 @@ knitr<span class="op">::</span><span class="kw">kable</span>(filing[, <span clas
 </thead>
 <tbody>
 <tr class="odd">
+<td>2</td>
 <td align="left">10-Q</td>
 <td align="left">2017-10-27</td>
 <td align="left">0001193125-17-323042</td>
