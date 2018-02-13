@@ -8,9 +8,9 @@ Authors@R: c(
     person(c("Micah", "J"), "Waldstein", email = "micah@waldste.in", role = c("aut", "cre"))
     )
 Maintainer: Micah J Waldstein <micah@waldste.in>
-Date: 2018-02-12
+Date: 2018-02-13
 Depends: 
-    R (>= 3.3.2)
+    R (>= 3.4.0)
 Imports:
     xml2,
     methods,

@@ -33,7 +33,7 @@
 #'    \item index_href
 #'  }
 #' @examples
-#'\dontrun{
+#'\donttest{
 #'## This can be very slow running
 #' full_text('intel')
 #'}

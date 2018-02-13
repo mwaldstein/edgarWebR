@@ -31,5 +31,8 @@ Seaches filing headers going back to 1994 excluding the most recent day
 using the interface \href{here}{https://www.sec.gov/cgi-bin/srch-edgar}.
 }
 \examples{
+\donttest{
+## This can be very slow running
 header_search("company-name = Apple")
+}
 }
