@@ -137,10 +137,6 @@ parse_submission.connection <- function(con,
     if (in.text) {
       if (startsWith(l, "</TEXT>")) {
         in.text <- F
-        # is.binary = startsWith(content, "begin ") & endsWith(content, "end")
-        # if (is.binary & !include.binary) {
-        #   content <- ""
-        # }
       } else {
         text.line <- text.line + 1
         if (text.line == 1 & startsWith(l, "begin ")) {
@@ -158,8 +154,8 @@ parse_submission.connection <- function(con,
       names(file.row) <- c(keys, "TEXT")
     }
     if (any(startsWith(l, tags))) {
-      file.row[keys[startsWith(l,tags)]] <- substr(l,
-                                                   nchar(tags[startsWith(l,tags)]) + 1,
+      file.row[keys[startsWith(l, tags)]] <- substr(l,
+                                                   nchar(tags[startsWith(l, tags)]) + 1,
                                                    nchar(l))
     }
     if (startsWith(l, "</DOCUMENT")) {
@@ -169,7 +165,7 @@ parse_submission.connection <- function(con,
       #         "] ", nchar(file.row$TEXT))
     }
     if (startsWith(l, "<TEXT")) {
-      in.text = T
+      in.text <- T
       is.binary <- F
       text.line <- 0
       content <- c()

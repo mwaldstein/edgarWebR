@@ -182,8 +182,39 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt; [1] name
-#&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
+#&gt; 1   2018-03-09
+#&gt; 2   2018-03-09
+#&gt; 3   2018-03-09
+#&gt;                                                                                          name
+#&gt; 1                                                                  N-CSR for DAVIS SERIES INC
+#&gt; 2                                                     40-24B2 for SIT MID CAP GROWTH FUND INC
+#&gt; 3                                                             10-K for QUICKLOGIC CORPORATION
+#&gt;                                                                                                     href
+#&gt; 1                      https://www.sec.gov/Archives/edgar/data/203002/000020300218000005/ds_ncsr1217.htm
+#&gt; 2          https://www.sec.gov/Archives/edgar/data/356787/000035678718000017/SitNewsletterwinter2018.pdf
+#&gt; 3                    https://www.sec.gov/Archives/edgar/data/882508/000088250818000005/quik-2017x10k.htm
+#&gt;                                                                        company_name
+#&gt; 1                                                                  DAVIS SERIES INC
+#&gt; 2                                                       SIT MID CAP GROWTH FUND INC
+#&gt; 3                                                            QUICKLOGIC CORPORATION
+#&gt;        cik  sic
+#&gt; 1   203002 &lt;NA&gt;
+#&gt; 2   356787 &lt;NA&gt;
+#&gt; 3   882508 3674
+#&gt;                                                                                                                                                                                                                                                                                                         content
+#&gt; 1     UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-02679 DAVIS SERIES, INC. (Exact name of registrant as specified in charter) 2949 East Elvira Road, Suite
+#&gt; 2     Mutual Funds NewsletterWinter 2018 Sit Investment Assocai tes Sit Mutual Funds 2017 In Review Producer manufacturing, energy, and electronic technology sectors provided positive sector performance on a relative basis for the Dividend Growth Fund (+20.24% Class I). Top performing stocks during the
+#&gt; 3                   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-K S ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 FOR THE FISCAL YEAR ENDED DECEMBER 31, 2017 OR TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES
+#&gt;                                                                                          parent_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt;                                                                                           index_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt;  [ reached getOption("max.print") -- omitted 7 rows ]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
