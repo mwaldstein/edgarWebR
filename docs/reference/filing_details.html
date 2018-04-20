@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="SEC Filing Details — filing_details" />
+
+<meta property="og:description" content="The SEC generates a html page as an index for every filing it receives containing
+all the meta-information about the filing. We extract 3 main types of information:
+ Filing InformationFiling date, accepted date, etc.
+ DocumentsAll the documents included in the filing
+ FilersCompanies included in the filing
+ FundsFunds included in the filing
+" />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -32,6 +44,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -47,18 +61,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">edgarWebR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">edgarWebR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.1.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../articles/edgarWebR.html">Get Started</a>
+  <a href="../articles/edgarWebR.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -76,7 +94,7 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -88,6 +106,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -95,10 +114,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>SEC Filing Details</h1>
+    <small>Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/filing_details.R'><code>R/filing_details.R</code></a></small>
+    <div class="hidden name"><code>filing_details.Rd</code></div>
     </div>
 
     
@@ -119,7 +140,7 @@ all the meta-information about the filing. We extract 3 main types of informatio
 <span class='co'># S3 method for xml_node</span>
 <span class='fu'>filing_details</span>(<span class='no'>x</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -165,25 +186,56 @@ components, try just using filing_info</p>
 #&gt; 3    3 CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO RULE 13A-14(A)
 #&gt; 4    4 CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO RULE 13A-14(A)
 #&gt; 5    5    CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 906
+#&gt; 6    6    CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 906
+#&gt; 7   NA                                       Complete submission text file
+#&gt; 8    7                                              XBRL INSTANCE DOCUMENT
+#&gt; 9    8                             XBRL TAXONOMY EXTENSION SCHEMA DOCUMENT
+#&gt; 10   9               XBRL TAXONOMY EXTENSION CALCULATION LINKBASE DOCUMENT
+#&gt; 11  10                XBRL TAXONOMY EXTENSION DEFINITION LINKBASE DOCUMENT
+#&gt; 12  11                     XBRL TAXONOMY EXTENSION LABEL LINKBASE DOCUMENT
+#&gt; 13  12              XBRL TAXONOMY EXTENSION PRESENTATION LINKBASE DOCUMENT
 #&gt;                          document
 #&gt; 1      ea6302017-q1fy1810qdoc.htm
 #&gt; 2  ex-151kpmgawarenessletter6.htm
 #&gt; 3    ex-311sec302ceocert63017.htm
 #&gt; 4    ex-312sec302cfocert63017.htm
 #&gt; 5    ex-321sec906ceocert63017.htm
+#&gt; 6    ex-322sec906cfocert63017.htm
+#&gt; 7        0000712515-17-000063.txt
+#&gt; 8                 ea-20170630.xml
+#&gt; 9                 ea-20170630.xsd
+#&gt; 10            ea-20170630_cal.xml
+#&gt; 11            ea-20170630_def.xml
+#&gt; 12            ea-20170630_lab.xml
+#&gt; 13            ea-20170630_pre.xml
 #&gt;                                                                                                href
 #&gt; 1      https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea6302017-q1fy1810qdoc.htm
 #&gt; 2  https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-151kpmgawarenessletter6.htm
 #&gt; 3    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-311sec302ceocert63017.htm
 #&gt; 4    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-312sec302cfocert63017.htm
 #&gt; 5    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-321sec906ceocert63017.htm
+#&gt; 6    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-322sec906cfocert63017.htm
+#&gt; 7        https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063.txt
+#&gt; 8                 https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630.xml
+#&gt; 9                 https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630.xsd
+#&gt; 10            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_cal.xml
+#&gt; 11            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_def.xml
+#&gt; 12            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_lab.xml
+#&gt; 13            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_pre.xml
 #&gt;          type    size
 #&gt; 1        10-Q 1428163
 #&gt; 2     EX-15.1    4013
 #&gt; 3     EX-31.1   14907
 #&gt; 4     EX-31.2   15281
 #&gt; 5     EX-32.1    7059
-#&gt;  [ reached getOption("max.print") -- omitted 8 rows ]
+#&gt; 6     EX-32.2    7248
+#&gt; 7             8947076
+#&gt; 8  EX-101.INS 2088048
+#&gt; 9  EX-101.SCH   74416
+#&gt; 10 EX-101.CAL   92568
+#&gt; 11 EX-101.DEF  479648
+#&gt; 12 EX-101.LAB  888418
+#&gt; 13 EX-101.PRE  574659
 #&gt; 
 #&gt; $filers
 #&gt;            mailing_address_1     mailing_address_2 mailing_address_3
@@ -230,11 +282,14 @@ components, try just using filing_info</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

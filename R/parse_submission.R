@@ -21,7 +21,12 @@
 #' *NOTE:* non-text documents are uuencoded and need a separate decoder to be
 #' viewed.
 #'
-#' @param uri - URL to a SEC complete submission text file
+#' @param x - Input submission to parse. May be one of the following:
+#'   \describe{
+#'     \item{URI}{URL to a SEC complete submission text file}
+#'     \item{Text}{String with the full submission}
+#'     \item{File path}{Path to local file containing the submission}
+#'   }
 #' @param include.binary - Default TRUE, determines if the content of binary
 #'        documents is returned.
 #' @param include.content - Default TRUE, determines if the content of
@@ -34,10 +39,10 @@
 #'                  '37996/000003799617000084/0000037996-17-000084.txt'))[ ,
 #'                    c('SEQUENCE', 'TYPE', 'DESCRIPTION', 'FILENAME')]
 #' @export
-parse_submission <- function(uri,
+parse_submission <- function(x,
                              include.binary = T,
                              include.content = T) {
-  res <- charToText(uri)
+  res <- charToText(x)
 
   # Checking if we have an SEC document is more efficient than checking if every
   # string is a file

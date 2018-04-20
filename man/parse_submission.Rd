@@ -4,10 +4,15 @@
 \alias{parse_submission}
 \title{Parse Submission}
 \usage{
-parse_submission(uri, include.binary = T, include.content = T)
+parse_submission(x, include.binary = T, include.content = T)
 }
 \arguments{
-\item{uri}{- URL to a SEC complete submission text file}
+\item{x}{- Input submission to parse. May be one of the following:
+\describe{
+  \item{URI}{URL to a SEC complete submission text file}
+  \item{Text}{String with the full submission}
+  \item{File path}{Path to local file containing the submission}
+}}
 
 \item{include.binary}{- Default TRUE, determines if the content of binary
 documents is returned.}

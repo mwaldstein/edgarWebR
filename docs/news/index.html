@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>All news • edgarWebR</title>
+<title>Changelog • edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,16 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="Changelog" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -32,6 +35,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -47,18 +52,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">edgarWebR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">edgarWebR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.1.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../articles/edgarWebR.html">Get Started</a>
+  <a href="../articles/edgarWebR.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -76,7 +85,7 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -88,6 +97,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -95,17 +105,16 @@
       
       </header>
 
-      <div class="row">
-
-  <div class="col-md-9">
+<div class="row">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Change log <small>All releases</small></h1>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="contents">
     <div id="edgarwebr-0-3-1-9000---development" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-3-1-9000---development" class="anchor"></a>edgarWebR 0.3.1.9000 - <em>DEVELOPMENT</em>
+<h1 class="page-header">
+<a href="#edgarwebr-0-3-1-9000---development" class="anchor"></a><small> Unreleased </small>edgarWebR 0.3.1.9000 - <em>DEVELOPMENT</em>
 </h1>
 <div id="features" class="section level2">
 <h2 class="hasAnchor">
@@ -136,6 +145,8 @@
 <code>parse_submission</code> handles large files successfully using temp files.</li>
 <li>
 <code>parse_submission</code> handles submissions with single files correctly.</li>
+<li>
+<code>parse_submission</code> documented properly.</li>
 </ul>
 </div>
 <div id="internal" class="section level2">
@@ -148,8 +159,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-3-1---oh-yeah-data-changes" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-3-1---oh-yeah-data-changes" class="anchor"></a>edgarWebR 0.3.1 - “Oh yeah, data changes”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-3-1---oh-yeah-data-changes" class="anchor"></a>edgarWebR 0.3.1 - “Oh yeah, data changes”<small> 2018-02-13 </small>
+</h1>
 <div id="bugfixes-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bugfixes-1" class="anchor"></a>Bugfixes</h2>
@@ -163,8 +175,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-3-0---going-all-the-way-back" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-3-0---going-all-the-way-back" class="anchor"></a>edgarWebR 0.3.0 - “Going all the way back”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-3-0---going-all-the-way-back" class="anchor"></a>edgarWebR 0.3.0 - “Going all the way back”<small> 2017-12-22 </small>
+</h1>
 <div id="features-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#features-1" class="anchor"></a>Features</h2>
@@ -186,7 +199,7 @@
 <a href="#bugfixes-2" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
-<code>parse_filing</code> now treats <code>&lt;br&gt;</code> as a space avoiding words separated only by a line return getting concatenated. (Fixes #2)</li>
+<code>parse_filing</code> now treats <code>&lt;br&gt;</code> as a space avoiding words separated only by a line return getting concatenated. (Fixes <a href='https://github.com/mwaldstein/edgarWebR/issues/2'>#2</a>)</li>
 <li>
 <code>parse_filing</code> now tries to detect and remove TOC itemss/parts to avoid duplicate entries</li>
 </ul>
@@ -204,8 +217,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-2-1---thanks-testers" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-2-1---thanks-testers" class="anchor"></a>edgarWebR 0.2.1 - “Thanks Testers”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-2-1---thanks-testers" class="anchor"></a>edgarWebR 0.2.1 - “Thanks Testers”<small> 2017-10-31 </small>
+</h1>
 <p>Many thanks to everyone providing feedback, particularly Günter Leitold for rigorously testing the <code>parse_filing</code> funcion.</p>
 <div id="bugfixes-3" class="section level2">
 <h2 class="hasAnchor">
@@ -225,8 +239,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-2-0---parse-all-the-things" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-2-0---parse-all-the-things" class="anchor"></a>edgarWebR 0.2.0 - “Parse all the things”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-2-0---parse-all-the-things" class="anchor"></a>edgarWebR 0.2.0 - “Parse all the things”<small> 2017-10-12 </small>
+</h1>
 <div id="features-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#features-2" class="anchor"></a>Features</h2>
@@ -260,8 +275,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-1-1---whoops-1" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-1-1---whoops-1" class="anchor"></a>edgarWebR 0.1.1 - “Whoops 1”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-1-1---whoops-1" class="anchor"></a>edgarWebR 0.1.1 - “Whoops 1”<small> 2017-08-20 </small>
+</h1>
 <div id="bugfixes-4" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bugfixes-4" class="anchor"></a>Bugfixes</h2>
@@ -271,8 +287,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-1-0---hello-world" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-1-0---hello-world" class="anchor"></a>edgarWebR 0.1.0 - “Hello World”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-1-0---hello-world" class="anchor"></a>edgarWebR 0.1.0 - “Hello World”<small> 2017-08-15 </small>
+</h1>
 <p>First CRAN release of edgarWebR. At this point, function parameters, return colums and general shape of data will not change without a deprecation process and due warning.</p>
 <div id="features-3" class="section level2">
 <h2 class="hasAnchor">
@@ -299,8 +316,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-0-3---now-getting-it-ready" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-0-3---now-getting-it-ready" class="anchor"></a>edgarWebR 0.0.3 - “Now Getting it Ready”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-0-3---now-getting-it-ready" class="anchor"></a>edgarWebR 0.0.3 - “Now Getting it Ready”<small> Unreleased </small>
+</h1>
 <p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
 <div id="features-4" class="section level2">
 <h2 class="hasAnchor">
@@ -330,8 +348,9 @@
 </div>
 </div>
     <div id="edgarwebr-0-0-2---xpath-is-is-powerful" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-0-2---xpath-is-is-powerful" class="anchor"></a>edgarWebR 0.0.2 - “XPath is is powerful”</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-0-2---xpath-is-is-powerful" class="anchor"></a>edgarWebR 0.0.2 - “XPath is is powerful”<small> Unreleased </small>
+</h1>
 <p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
 <div id="features-5" class="section level2">
 <h2 class="hasAnchor">
@@ -361,11 +380,11 @@
 </div>
 </div>
     <div id="edgarwebr-0-0-1---initial-release" class="section level1">
-<h1 class="hasAnchor">
-<a href="#edgarwebr-0-0-1---initial-release" class="anchor"></a>edgarWebR 0.0.1 - Initial Release</h1>
+<h1 class="page-header">
+<a href="#edgarwebr-0-0-1---initial-release" class="anchor"></a>edgarWebR 0.0.1 - Initial Release<small> Unreleased </small>
+</h1>
 <p><strong><em>UNSTABLE</em> - Function calls and returns likely to change without warning</strong></p>
 </div>
-    </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -394,11 +413,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

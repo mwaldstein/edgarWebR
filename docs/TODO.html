@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • edgarWebR</title>
+<title>Todo • edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -22,10 +22,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
-<script src="../pkgdown.js"></script>
-<meta property="og:title" content="Articles" />
+<link href="pkgdown.css" rel="stylesheet">
+<script src="jquery.sticky-kit.min.js"></script>
+<script src="pkgdown.js"></script>
+<meta property="og:title" content="Todo" />
 
 
 <!-- mathjax -->
@@ -42,7 +42,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -53,7 +53,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">edgarWebR</a>
+        <a class="navbar-link" href="index.html">edgarWebR</a>
         <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.1.9000</span>
       </span>
     </div>
@@ -61,16 +61,16 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../articles/edgarWebR.html">Get started</a>
+  <a href="articles/edgarWebR.html">Get started</a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -80,12 +80,12 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/parsing.html">Parsing Functions in edgarWebR</a>
+      <a href="articles/parsing.html">Parsing Functions in edgarWebR</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -106,22 +106,59 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Articles</h1>
+      <h1>Todo</h1>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
+<div id="todo" class="section level1">
 
-      <ul>
-        <li><a href="edgarWebR.html">Introducing edgarWebR</a></li>
-        <li><a href="parsing.html">Parsing Functions in edgarWebR</a></li>
-      </ul>
-    </div>
-  </div>
+<p>A bit of a roadmap/todo</p>
+<div id="features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h2>
+<ul>
+<li>support this thing</li>
+<li><a href="https://www.sec.gov/cgi-bin/own-disp?CIK=0000051143&amp;action=getissuer" class="uri">https://www.sec.gov/cgi-bin/own-disp?CIK=0000051143&amp;action=getissuer</a></li>
+<li>[filing_filers] - parse out filer type/role</li>
+<li>Alias company_ functions to filer_ to cover non-company filers better</li>
+<li>company href given CIK</li>
+<li>Return master filing href where possible</li>
+<li>Parse filing page numbers to enable better manual section describing and TOC parsing/usage.</li>
+</ul>
 </div>
+<div id="bugs" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bugs" class="anchor"></a>Bugs</h2>
+<ul>
+<li>There are not enough “exclusions” in xpath for parse_filing leading to parents and children getting selected. E.g. <a href="https://www.sec.gov/Archives/edgar/data/7084/000000708409000051/adm10kfy09.htm" class="uri">https://www.sec.gov/Archives/edgar/data/7084/000000708409000051/adm10kfy09.htm</a>
+</li>
+</ul>
+</div>
+<div id="internal" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal" class="anchor"></a>Internal</h2>
+<ul>
+<li>Passing lints</li>
+<li>Improve makefile <a href="http://kbroman.org/minimal_make/" class="uri">http://kbroman.org/minimal_make/</a>, <a href="https://github.com/ComputationalProteomicsUnit/maker" class="uri">https://github.com/ComputationalProteomicsUnit/maker</a>
+</li>
+<li>tests for util.R and get company_information to 100% coverage</li>
+<li>downstream checks</li>
+</ul>
+</div>
+<div id="package" class="section level2">
+<h2 class="hasAnchor">
+<a href="#package" class="anchor"></a>Package</h2>
+<ul>
+<li>Vignette pulling XBL files using finstr</li>
+</ul>
+</div>
+</div>
+
+  </div>
+
+</div>
+
 
       <footer>
       <div class="copyright">

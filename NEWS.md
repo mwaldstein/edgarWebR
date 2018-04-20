@@ -17,6 +17,7 @@
    [ADP](https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq
  * `parse_submission` handles large files successfully using temp files.
  * `parse_submission` handles submissions with single files correctly.
+ * `parse_submission` documented properly.
 
 ## Internal
  * Testing now requires tokenizers for testing if parsing adds words (it often

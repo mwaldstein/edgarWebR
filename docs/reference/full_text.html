@@ -18,13 +18,20 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="SEC Full-Text Search — full_text" />
+
+<meta property="og:description" content="Provides access to the SEC fillings
+full-text search tool." />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -32,6 +39,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -47,18 +56,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">edgarWebR</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">edgarWebR</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.1.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../articles/edgarWebR.html">Get Started</a>
+  <a href="../articles/edgarWebR.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -76,7 +89,7 @@
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -88,6 +101,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -95,10 +109,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>SEC Full-Text Search</h1>
+    <small>Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/full_text.R'><code>R/full_text.R</code></a></small>
+    <div class="hidden name"><code>full_text.Rd</code></div>
     </div>
 
     
@@ -110,7 +126,7 @@
   <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>stemming</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>cik</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>sic</span> <span class='kw'>=</span> <span class='st'>""</span>,
   <span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -183,38 +199,82 @@ specify `from`</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
 <span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
-#&gt; 1   2018-03-09
-#&gt; 2   2018-03-09
-#&gt; 3   2018-03-09
-#&gt;                                                                                          name
-#&gt; 1                                                                  N-CSR for DAVIS SERIES INC
-#&gt; 2                                                     40-24B2 for SIT MID CAP GROWTH FUND INC
-#&gt; 3                                                             10-K for QUICKLOGIC CORPORATION
-#&gt;                                                                                                     href
-#&gt; 1                      https://www.sec.gov/Archives/edgar/data/203002/000020300218000005/ds_ncsr1217.htm
-#&gt; 2          https://www.sec.gov/Archives/edgar/data/356787/000035678718000017/SitNewsletterwinter2018.pdf
-#&gt; 3                    https://www.sec.gov/Archives/edgar/data/882508/000088250818000005/quik-2017x10k.htm
-#&gt;                                                                        company_name
-#&gt; 1                                                                  DAVIS SERIES INC
-#&gt; 2                                                       SIT MID CAP GROWTH FUND INC
-#&gt; 3                                                            QUICKLOGIC CORPORATION
-#&gt;        cik  sic
-#&gt; 1   203002 &lt;NA&gt;
-#&gt; 2   356787 &lt;NA&gt;
-#&gt; 3   882508 3674
+#&gt; 1   2018-04-19
+#&gt; 2   2018-04-19
+#&gt; 3   2018-04-19
+#&gt; 4   2018-04-19
+#&gt; 5   2018-04-19
+#&gt; 6   2018-04-19
+#&gt; 7   2018-04-19
+#&gt; 8   2018-04-19
+#&gt; 9   2018-04-19
+#&gt; 10  2018-04-19
+#&gt;                                                                     name
+#&gt; 1           INFORMATION TABLE of 13F-HR for VALLEY NATIONAL ADVISERS INC
+#&gt; 2         INFORMATION TABLE of 13F-HR for MOUNT VERNON ASSOCIATES INC MD
+#&gt; 3            INFORMATION TABLE of 13F-HR for Fisher Asset Management LLC
+#&gt; 4           INFORMATION TABLE of 13F-HR for GILLESPIE ROBINSON GRIMM INC
+#&gt; 5        INFORMATION TABLE of 13F-HR for Endurance Wealth Management Inc
+#&gt; 6                                487 for Advisors Disciplined Trust 1864
+#&gt; 7                                487 for Advisors Disciplined Trust 1863
+#&gt; 8  INFORMATION TABLE of 13F-HR for ARCADIA INVESTMENT MANAGEMENT CORP MI
+#&gt; 9                         INFORMATION TABLE of 13F-HR for WOODSTOCK CORP
+#&gt; 10          INFORMATION TABLE of 13F-HR for UNIVEST CORP OF PENNSYLVANIA
+#&gt;                                                                                                      href
+#&gt; 1             https://www.sec.gov/Archives/edgar/data/773411/000077341118000002/xslForm13F_X01/13F-HR.xml
+#&gt; 2          https://www.sec.gov/Archives/edgar/data/799003/000079900318000002/xslForm13F_X01/13f033118.xml
+#&gt; 3               https://www.sec.gov/Archives/edgar/data/850529/000085052918000006/xslForm13F_X01/F13F.xml
+#&gt; 4    https://www.sec.gov/Archives/edgar/data/926834/000092683418000004/xslForm13F_X01/Edgar13F_033118.xml
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1476225/000095012318003639/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 6                      https://www.sec.gov/Archives/edgar/data/1724656/000101322818000489/adt1864-487.txt
+#&gt; 7                      https://www.sec.gov/Archives/edgar/data/1724655/000101322818000492/adt1863-487.txt
+#&gt; 8          https://www.sec.gov/Archives/edgar/data/1016972/000101697218000002/xslForm13F_X01/inftable.xml
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/1008877/000106299318001722/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/102212/000108514618001109/xslForm13F_X01/form13fInfoTable.xml
+#&gt;                             company_name     cik  sic
+#&gt; 1           VALLEY NATIONAL ADVISERS INC  773411 &lt;NA&gt;
+#&gt; 2         MOUNT VERNON ASSOCIATES INC MD  799003 &lt;NA&gt;
+#&gt; 3            Fisher Asset Management LLC  850529 &lt;NA&gt;
+#&gt; 4           GILLESPIE ROBINSON GRIMM INC  926834 &lt;NA&gt;
+#&gt; 5        Endurance Wealth Management Inc 1476225 &lt;NA&gt;
+#&gt; 6        Advisors Disciplined Trust 1864 1724656 &lt;NA&gt;
+#&gt; 7        Advisors Disciplined Trust 1863 1724655 &lt;NA&gt;
+#&gt; 8  ARCADIA INVESTMENT MANAGEMENT CORP MI 1016972 &lt;NA&gt;
+#&gt; 9                         WOODSTOCK CORP 1008877 &lt;NA&gt;
+#&gt; 10          UNIVEST CORP OF PENNSYLVANIA  102212 6022
 #&gt;                                                                                                                                                                                                                                                                                                         content
-#&gt; 1     UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-02679 DAVIS SERIES, INC. (Exact name of registrant as specified in charter) 2949 East Elvira Road, Suite
-#&gt; 2     Mutual Funds NewsletterWinter 2018 Sit Investment Assocai tes Sit Mutual Funds 2017 In Review Producer manufacturing, energy, and electronic technology sectors provided positive sector performance on a relative basis for the Dividend Growth Fund (+20.24% Class I). Top performing stocks during the
-#&gt; 3                   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-K S ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 FOR THE FISCAL YEAR ENDED DECEMBER 31, 2017 OR TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES
+#&gt; 1       AMERICAN INTL GROUP INC *W EXP 01/19/202 026874156 1 68 PRN SOLE 0 0 68 LIBERTY PPTY TR SH BEN INT 531172104 57 1434 SH SOLE 0 0 1434 ADVISORSHARES TR NEW TECH MEDIA 00768Y552 2 104 SH SOLE 0 0 104 GENERAL MTRS CO *W EXP 07/10/201 37045V126 0 11 PRN SOLE 0 0 11 ROYAL DUTCH SHELL PLC SPONS ADR A
+#&gt; 2      AT&amp;T Inc. com 00206R102 927 25991 SH SOLE 5125 0 20866 Alphabet Inc. Cl C com 02079K107 2236 2167 SH SOLE 235 0 1932 Amazon.com Inc. com 023135106 4132 2855 SH SOLE 500 0 2355 American Express Co. com 025816109 1705 18275 SH SOLE 2950 0 15325 American Intl Group, Inc. com 026874784 1081 19861 SH
+#&gt; 3   AAR CORP COM 000361105 56032 1270271 SH DFND 438496 0 831775 ABB LTD ADR COM 000375204 231209 9739214 SH DFND 9462251 0 276963 AFLAC INC COM 001055102 5998 137060 SH DFND 3998 0 133062 AGL ENERGY LTD ADR COM 001201102 626 37652 SH DFND 3330 0 34322 AGNC INVT CORP COM COM 00123Q104 256 13530 SH DFND
+#&gt; 4      APPLE INC. COM 037833100 33518 199772 SH SOLE 0 196234 0 3538 ABBVIE INC COM 00287Y109 737 7783 SH SOLE 0 7783 0 0 ABBOTT LABORATORIES COM 002824100 783 13074 SH SOLE 0 12774 0 300 ACCENTURE LTD - CL A COM G1151C101 25255 164530 SH SOLE 0 160940 0 3590 AUTOMATIC DATA PROCESSING COM 053015103 318
+#&gt; 5                                                                                                                                                                                                                                                                         3D SYSTEMS CORPORATIONStock88554D2050
+#&gt; 6      1933 ACT FILE NO.: 333-222250 1940 ACT FILE NO.: 811-21056 CIK NO.: 1724656 SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 AMENDMENT NO. 1 TO REGISTRATION STATEMENT ON FORM S-6 FOR REGISTRATION UNDER THE SECURITIES ACT OF 1933 OF SECURITIES OF UNIT INVESTMENT TRUSTS REGISTERED ON FORM
+#&gt; 7      1933 ACT FILE NO.: 333-222621 1940 ACT FILE NO.: 811-21056 CIK NO.: 1724655 SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 AMENDMENT NO. 2 TO REGISTRATION STATEMENT ON FORM S-6 FOR REGISTRATION UNDER THE SECURITIES ACT OF 1933 OF SECURITIES OF UNIT INVESTMENT TRUSTS REGISTERED ON FORM
+#&gt; 8       BERKSHIRE HATHAWAY INC DEL CL B NEW 084670702 237 1186 SH SOLE 1186 0 0 BERKSHIRE HATHAWAY INC DEL CL B NEW 084670702 70 350 SH SOLE 100 0 250 CENTRAL FD CDA LTD CL A 153501101 1455 110030 PRN SOLE 110030 0 0 STERLING BANCORP DEL COM 85917A100 14 606 SH SOLE 606 0 0 SPDR SER TR PORTFOLIO SH TSR
+#&gt; 9  3M Co COMMON STOCK 88579Y101 10030 45692 SH SOLE 44092 0 1600 Abbott Laboratories COMMON STOCK 002824100 7010 116982 SH SOLE 116702 0 280 Abbvie Inc COMMON STOCK 00287Y109 8668 91581 SH SOLE 89901 0 1680 Air Prods &amp; Chems Inc COMMON STOCK 009158106 5185 32604 SH SOLE 30124 0 2480 Akamai Technologies
+#&gt; 10    3M CO COM 88579Y101 2804 12773 SH OTR 12738 0 35 ABBVIE INC COM 00287Y109 3761 39736 SH OTR 39496 0 240 AETNA INC NEW COM 00817Y108 3747 22172 SH OTR 22018 0 154 AIR PRODS &amp; CHEMS INC COM 009158106 2997 18845 SH OTR 18796 0 49 ALLSTATE CORP COM 020002101 4307 45432 SH OTR 45304 0 128 ALPHABET INC
 #&gt;                                                                                          parent_href
-#&gt; 1                                                                                               &lt;NA&gt;
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 1   https://www.sec.gov/Archives/edgar/data/773411/000077341118000002/xslForm13F_X01/primary_doc.xml
+#&gt; 2   https://www.sec.gov/Archives/edgar/data/799003/000079900318000002/xslForm13F_X01/primary_doc.xml
+#&gt; 3   https://www.sec.gov/Archives/edgar/data/850529/000085052918000006/xslForm13F_X01/primary_doc.xml
+#&gt; 4   https://www.sec.gov/Archives/edgar/data/926834/000092683418000004/xslForm13F_X01/primary_doc.xml
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1476225/000095012318003639/xslForm13F_X01/primary_doc.xml
+#&gt; 6                                                                                               &lt;NA&gt;
+#&gt; 7                                                                                               &lt;NA&gt;
+#&gt; 8   https://www.sec.gov/Archives/edgar/data/102212/000108514618001109/xslForm13F_X01/primary_doc.xml
+#&gt; 9   https://www.sec.gov/Archives/edgar/data/773411/000077341118000002/xslForm13F_X01/primary_doc.xml
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/799003/000079900318000002/xslForm13F_X01/primary_doc.xml
 #&gt;                                                                                           index_href
-#&gt; 1                                                                                               &lt;NA&gt;
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt;  [ reached getOption("max.print") -- omitted 7 rows ]</div></pre>
+#&gt; 1   https://www.sec.gov/Archives/edgar/data/773411/000077341118000002/0000773411-18-000002-index.htm
+#&gt; 2   https://www.sec.gov/Archives/edgar/data/799003/000079900318000002/0000799003-18-000002-index.htm
+#&gt; 3   https://www.sec.gov/Archives/edgar/data/850529/000085052918000006/0000850529-18-000006-index.htm
+#&gt; 4   https://www.sec.gov/Archives/edgar/data/926834/000092683418000004/0000926834-18-000004-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1476225/000095012318003639/0000950123-18-003639-index.htm
+#&gt; 6                                                                                               &lt;NA&gt;
+#&gt; 7                                                                                               &lt;NA&gt;
+#&gt; 8   https://www.sec.gov/Archives/edgar/data/102212/000108514618001109/0001085146-18-001109-index.htm
+#&gt; 9   https://www.sec.gov/Archives/edgar/data/773411/000077341118000002/0000773411-18-000002-index.htm
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/799003/000079900318000002/0000799003-18-000002-index.htm</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -235,11 +295,14 @@ specify `from`</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
