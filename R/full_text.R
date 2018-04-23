@@ -52,7 +52,7 @@ full_text <- function(
     to = "") {
   href <- paste0(
     "https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?",
-    "search_text=", ifelse(q == "", "*", q), "&",
+    "search_text=", ifelse(q == "", "*", URLencode(q, reserved = TRUE)), "&",
     "sort=", ifelse(reverse_order, "ReverseDate", "Date"), "&",
     "formType=", map_form(type), "&",
     "isAdv=true&",

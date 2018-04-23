@@ -19,6 +19,7 @@
  * `parse_submission` handles large files successfully using temp files.
  * `parse_submission` handles submissions with single files correctly.
  * `parse_submission` documented properly.
+ * `full_text` escapes the search query properly.
 
 ## Internal
  * Testing now requires tokenizers for testing if parsing adds words (it often
