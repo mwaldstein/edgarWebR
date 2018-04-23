@@ -89,7 +89,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>CIK</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/cik.htm" class="uri">https://www.sec.gov/edgar/searchedgar/cik.htm</a></td>
-<td>N/A</td>
+<td><code>cik_search()</code></td>
 </tr>
 <tr class="even">
 <td>Daily Filings</td>

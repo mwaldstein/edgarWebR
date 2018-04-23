@@ -63,7 +63,7 @@ fund search and resultant filings.
 | Var. Insurance Products       | https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html     | N/A |
 | Confidential treatment orders | https://www.sec.gov/edgar/searchedgar/ctorders.htm              | N/A |
 | Effectiveness notices         | https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect       | N/A |
-| CIK                           | https://www.sec.gov/edgar/searchedgar/cik.htm                   | N/A |
+| CIK                           | https://www.sec.gov/edgar/searchedgar/cik.htm                   | `cik_search()` |
 | Daily Filings                 | https://www.sec.gov/edgar/searchedgar/currentevents.htm         | N/A |
 | Correspondence                | https://www.sec.gov/answers/edgarletters.htm                    | N/A |
 
