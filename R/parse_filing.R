@@ -183,6 +183,7 @@ doc_nodes <- function(doc, xpath_base) {
     "/div[count(div/div/div/*) >= 1 and
           count(div/div/div/div/*) < 1]/div/div/div/*[name() != 'font' and
                                                       name() != 'table']",
+    "/div/div/div/div/font",
     "/div[count(p|div) <= 1 and
           count(div/div) > 1 and
           count(div/div/div) <= 1]/div/*",
@@ -202,6 +203,14 @@ doc_nodes <- function(doc, xpath_base) {
     "/p/font[count(p|div) > 1]/*",
     "/div/table[count(./tr) = count(./tr/td)]/tr/td/div",
     "/table[starts-with(tr[2], 'PART') or starts-with(tr[2], ' PART')]/tr",
+
+    # This deals with poor nesting in EDGARizer
+    "/div/div/text()",
+    # Fix for early versions of EDGARizer
+    "/div/div/div/text()[1]",
+    "/div/div/div/text()[2]",
+    # Catch 'Table of Contents' for Webfilings
+    "/div/div/a",
 
     # All multi-column tables
     "/table[count(./tr) < count(./tr/td)]",

@@ -4,10 +4,16 @@ context("running parse_filing")
 # important to test a wide range of values
 
 expect_similar_wc <- function(content, res) {
+  # xml_text doesn't put a break in the case of
+  # <div>word</div><div>another</div>
+  # So this ensures we're getting all the breaks
+  # Does some other cleanup so we can ensure we're comparing apples to apples
+  content <- edgarWebR:::clean_html(content)
+
   doc <- xml2::read_html(content)
   plain.words <- length(tokenizers::tokenize_words(xml2::xml_text(doc), simplify = T))
   parsed.words <- sum(sapply(tokenizers::tokenize_words(res$text), length))
-  expect_lt(abs(parsed.words - plain.words), max(.03 * plain.words, 100))
+  expect_lt(abs(parsed.words - plain.words), max(.0005 * plain.words, 10))
 }
 
 test_filing <- function(file.name, rows, parts, items) {

@@ -109,6 +109,9 @@ clean_html <- function(x) {
   x <- gsub("&#8220;", "\"", x, ignore.case = T) # left double quote
   x <- gsub("&#8221;", "\"", x, ignore.case = T) # right double quote
 
+  # xml_text doesn't break words on div closes, which we typically want
+  x <- gsub("</div>", "</div> ", x, fixed = T)
+
   x <- gsub("<br>", " ", x, ignore.case = T)
   x <- gsub("<br/>", " ", x, ignore.case = T)
   x <- gsub("<page>", " ", x, ignore.case = T)
@@ -125,6 +128,10 @@ clean_doc <- function(doc) {
   # remove hidden divs
   xml2::xml_remove(xml2::xml_find_all(doc, "//div[@style = 'display:none']"),
                    free = T)
+
+  # Don't care about non-text divs
+  xml2::xml_remove(xml2::xml_find_all(doc, "//div[(count(*) = 0 or count(hr) =
+                                      count(*)) and normalize-space() = '']"), free = T)
 
   # strip messy inlineXBRL
   if (length(xml2::xml_ns(doc)) > 1) {

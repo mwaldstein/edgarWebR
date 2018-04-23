@@ -198,94 +198,72 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
-#&gt; 1   2018-04-23
-#&gt; 2   2018-04-23
-#&gt; 3   2018-04-23
-#&gt; 4   2018-04-23
-#&gt; 5   2018-04-23
-#&gt; 6   2018-04-23
-#&gt; 7   2018-04-23
-#&gt; 8   2018-04-23
-#&gt; 9   2018-04-23
-#&gt; 10  2018-04-23
-#&gt;                                                                                        name
-#&gt; 1                            INFORMATION TABLE of 13F-HR for PERKINS CAPITAL MANAGEMENT INC
-#&gt; 2                          INFORMATION TABLE of 13F-HR for CAPITAL ONE NATIONAL ASSOCIATION
-#&gt; 3                                 INFORMATION TABLE of 13F-HR for EXCALIBUR MANAGEMENT CORP
-#&gt; 4                                   INFORMATION TABLE of 13F-HR for Selway Asset Management
-#&gt; 5                                   INFORMATION TABLE of 13F-HR for Beech Hill Advisors Inc
-#&gt; 6                                         INFORMATION TABLE of 13F-HR for St Louis Trust Co
-#&gt; 7                                              EX-99.1 of 8-K for Mellanox Technologies Ltd
-#&gt; 8                                          EX-99.1 of DEFA14A for Mellanox Technologies Ltd
-#&gt; 9                                                              S-4/A for SALESFORCE COM INC
-#&gt; 10 N-CSRS for MFS INSTITUTIONAL MONEY MARKET PORTFOLIO A SERIES OF THE MFS SERIES TRUST XIV
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                             name
+#&gt; 1   2018-04-23               INFORMATION TABLE of 13F-HR for MEYER HANDELMAN CO
+#&gt; 2   2018-04-23                          40-24B2 for SIT MID CAP GROWTH FUND INC
+#&gt; 3   2018-04-23   INFORMATION TABLE of 13F-HR for PERKINS CAPITAL MANAGEMENT INC
+#&gt; 4   2018-04-23 INFORMATION TABLE of 13F-HR for CAPITAL ONE NATIONAL ASSOCIATION
+#&gt; 5   2018-04-23        INFORMATION TABLE of 13F-HR for EXCALIBUR MANAGEMENT CORP
+#&gt; 6   2018-04-23                               DEF 14A for COLUMBIA SPORTSWEAR CO
+#&gt; 7   2018-04-23    INFORMATION TABLE of 13F-HR for Brookstone Capital Management
+#&gt; 8   2018-04-23          INFORMATION TABLE of 13F-HR for Selway Asset Management
+#&gt; 9   2018-04-23          INFORMATION TABLE of 13F-HR for Beech Hill Advisors Inc
+#&gt; 10  2018-04-23                INFORMATION TABLE of 13F-HR for St Louis Trust Co
 #&gt;                                                                                                      href
-#&gt; 1      https://www.sec.gov/Archives/edgar/data/884300/000088430018000006/xslForm13F_X01/2018-13F-1qtr.xml
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/47288/000095012318003721/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 3    https://www.sec.gov/Archives/edgar/data/1009003/000100900318000002/xslForm13F_X01/Excal13F033118.xml
-#&gt; 4          https://www.sec.gov/Archives/edgar/data/1080523/000108052318000007/xslForm13F_X01/inftable.xml
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1356202/000108514618001126/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1661144/000108514618001128/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 7                    https://www.sec.gov/Archives/edgar/data/1356104/000119312518125775/d572926dex991.htm
-#&gt; 8                    https://www.sec.gov/Archives/edgar/data/1356104/000119312518125776/d572926dex991.htm
-#&gt; 9                      https://www.sec.gov/Archives/edgar/data/1108524/000119312518125938/d552163ds4a.htm
-#&gt; 10                   https://www.sec.gov/Archives/edgar/data/1392417/000119312518126260/d523671dncsrs.htm
-#&gt;                                                                     company_name
-#&gt; 1                                                 PERKINS CAPITAL MANAGEMENT INC
-#&gt; 2                                               CAPITAL ONE NATIONAL ASSOCIATION
-#&gt; 3                                                      EXCALIBUR MANAGEMENT CORP
-#&gt; 4                                                        Selway Asset Management
-#&gt; 5                                                        Beech Hill Advisors Inc
-#&gt; 6                                                              St Louis Trust Co
-#&gt; 7                                                      Mellanox Technologies Ltd
-#&gt; 8                                                      Mellanox Technologies Ltd
-#&gt; 9                                                             SALESFORCE COM INC
-#&gt; 10 MFS INSTITUTIONAL MONEY MARKET PORTFOLIO A SERIES OF THE MFS SERIES TRUST XIV
-#&gt;        cik  sic
-#&gt; 1   884300 &lt;NA&gt;
-#&gt; 2    47288 6021
-#&gt; 3  1009003 &lt;NA&gt;
-#&gt; 4  1080523 &lt;NA&gt;
-#&gt; 5  1356202 &lt;NA&gt;
-#&gt; 6  1661144 &lt;NA&gt;
-#&gt; 7  1356104 3674
-#&gt; 8  1356104 3674
-#&gt; 9  1108524 7372
-#&gt; 10 1392417 &lt;NA&gt;
+#&gt; 1            https://www.sec.gov/Archives/edgar/data/45319/000004531918000002/xslForm13F_X01/inftable.xml
+#&gt; 2             https://www.sec.gov/Archives/edgar/data/356787/000035678718000022/SitMFFundPages4232018.pdf
+#&gt; 3      https://www.sec.gov/Archives/edgar/data/884300/000088430018000006/xslForm13F_X01/2018-13F-1qtr.xml
+#&gt; 4    https://www.sec.gov/Archives/edgar/data/47288/000095012318003721/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 5    https://www.sec.gov/Archives/edgar/data/1009003/000100900318000002/xslForm13F_X01/Excal13F033118.xml
+#&gt; 6                   https://www.sec.gov/Archives/edgar/data/1050797/000105079718000019/colm2017def14a.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1599584/000106299318001772/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 8          https://www.sec.gov/Archives/edgar/data/1080523/000108052318000007/xslForm13F_X01/inftable.xml
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/1356202/000108514618001126/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1661144/000108514618001128/xslForm13F_X01/form13fInfoTable.xml
+#&gt;                        company_name     cik  sic
+#&gt; 1                MEYER HANDELMAN CO   45319 &lt;NA&gt;
+#&gt; 2       SIT MID CAP GROWTH FUND INC  356787 &lt;NA&gt;
+#&gt; 3    PERKINS CAPITAL MANAGEMENT INC  884300 &lt;NA&gt;
+#&gt; 4  CAPITAL ONE NATIONAL ASSOCIATION   47288 6021
+#&gt; 5         EXCALIBUR MANAGEMENT CORP 1009003 &lt;NA&gt;
+#&gt; 6            COLUMBIA SPORTSWEAR CO 1050797 2300
+#&gt; 7     Brookstone Capital Management 1599584 &lt;NA&gt;
+#&gt; 8           Selway Asset Management 1080523 &lt;NA&gt;
+#&gt; 9           Beech Hill Advisors Inc 1356202 &lt;NA&gt;
+#&gt; 10                St Louis Trust Co 1661144 &lt;NA&gt;
 #&gt;                                                                                                                                                                                                                                                                                                         content
-#&gt; 1         3M CO COM 88579Y101 565 2576 SH SOLE 2576 0 0 ABBOTT LABS COM 002824100 4851 80950 SH SOLE 34679 0 46271 ADVANCED MICRO DEVICES INC COM 007903107 160 15900 SH SOLE 12900 0 3000 AFLAC INC COM 001055102 1593 36400 SH SOLE 24900 0 11500 AIR INDS GROUP COM NEW 00912N205 25 16000 SH SOLE 0 0 16000
-#&gt; 2                                                                                                                                                                                                                                                                                       AAR CORPCOM000361105753
-#&gt; 3    3M Co COM 88579y101 684 3114 SH SOLE 3114 0 0 ABBOTT LABS COM 002824100 1343 22410 SH SOLE 22410 0 0 ALPHABET CL A COM 02079K305 1026 989 SH SOLE 989 0 0 ALTRIA GROUP COM 02209s103 795 12762 SH SOLE 12762 0 0 AMAZON.COM INC COM 023135106 414 286 SH SOLE 286 0 0 AMDOCS LTD COM G02602103 347 5200 SH
-#&gt; 4  2X BDC Index COM 90267b765 9853 669340 SH SOLE 669340 0 0 Abbvie COM 00287y109 1900 20075 SH SOLE 20075 0 0 Advance Auto Parts COM 00751Y106 3811 32150 SH SOLE 32150 0 0 American Express COM 025816109 1362 14600 SH SOLE 14600 0 0 AmerisourceBergen COM 03073e105 2501 29015 SH SOLE 29015 0 0 Amgen Inc
-#&gt; 5    ABBOTT LABS COM 002824100 790 13189 SH SOLE 0 0 13189 ABBVIE INC COM 00287Y109 5261 55582 SH SOLE 5500 0 50082 ABIOMED INC COM 003654100 291 1000 SH SOLE 0 0 1000 ALBEMARLE CORP COM 012653101 2277 24555 SH SOLE 3250 0 21305 ALPHABET INC CAP STK CL C 02079K107 360 349 SH SOLE 100 0 249 ALPHABET INC
-#&gt; 6     3M CO COM 88579Y101 275 1251 SH SOLE 1251 0 0 3M CO COM 88579Y101 648 2950 SH OTR 2950 0 0 ABBOTT LABS COM 002824100 836 13955 SH OTR 13955 0 0 ABBOTT LABS COM 002824100 90 1500 SH SOLE 1500 0 0 ABBVIE INC COM 00287Y109 1132 11964 SH OTR 11964 0 0 ABBVIE INC COM 00287Y109 95 1000 SH SOLE 1000 0 0
-#&gt; 7                                              Exhibit 99.1 Corporate Update April 23, 2018 1 Disclaimers These slides and the accompanying oral presentation contain forward-looking statements and information. The use of words such as may , might , will , should , expect , plan , anticipate , believe ,
-#&gt; 8                                              Exhibit 99.1 Corporate Update April 23, 2018 1 Disclaimers These slides and the accompanying oral presentation contain forward-looking statements and information. The use of words such as may , might , will , should , expect , plan , anticipate , believe ,
-#&gt; 9                           As filed with the Securities and Exchange Commission on April 23, 2018 Registration No. 333-224067 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Amendment No. 1 To FORM S-4 REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933 SALESFORCE.COM, INC.
-#&gt; 10    UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-22033 MFS SERIES TRUST XIV (Exact name of registrant as specified in charter) 111 Huntington Avenue,
+#&gt; 1     3M COMPANY COM 88579Y101 45462 207099 SH SOLE 203899 3200 0 3M COMPANY COM 88579Y101 702 3200 SH DFND 02 3200 3200 0 3M COMPANY COM 88579Y101 66 300 SH OTR 300 0 0 3M COMPANY COM 88579Y101 702 3200 SH OTR 02 3200 3200 0 ABBOTT LABS INC COM COM 002824100 5728 95593 SH SOLE 94516 1077 0 ABBOTT LABS
+#&gt; 2     [iJ Sit Mutual Funds Mutu al Funds Account Management Retirement and Education Plans Sit Balanced Fund Forms and Publications Fi rm Information One Step Diversification FASTTRACK. Daily Pnces I Account Access I Mutual Fund Performance I Contact Us SIT BALANCED FUND Ticker: SI BAX Overview Returns
+#&gt; 3         3M CO COM 88579Y101 565 2576 SH SOLE 2576 0 0 ABBOTT LABS COM 002824100 4851 80950 SH SOLE 34679 0 46271 ADVANCED MICRO DEVICES INC COM 007903107 160 15900 SH SOLE 12900 0 3000 AFLAC INC COM 001055102 1593 36400 SH SOLE 24900 0 11500 AIR INDS GROUP COM NEW 00912N205 25 16000 SH SOLE 0 0 16000
+#&gt; 4                                                                                                                                                                                                                                                                                       AAR CORPCOM000361105753
+#&gt; 5    3M Co COM 88579y101 684 3114 SH SOLE 3114 0 0 ABBOTT LABS COM 002824100 1343 22410 SH SOLE 22410 0 0 ALPHABET CL A COM 02079K305 1026 989 SH SOLE 989 0 0 ALTRIA GROUP COM 02209s103 795 12762 SH SOLE 12762 0 0 AMAZON.COM INC COM 023135106 414 286 SH SOLE 286 0 0 AMDOCS LTD COM G02602103 347 5200 SH
+#&gt; 6                                                                                               UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 SCHEDULE 14A INFORMATION Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 (Amendment No. ) Filed by the
+#&gt; 7  AFLAC INC COM 001055102 277 6329 SH SOLE no 0 0 6329 AGNC INVT CORP COM 00123Q104 418 22070 SH SOLE no 0 0 22070 AES CORP COM 00130H105 5795 509697 SH SOLE no 0 0 509697 AMC ENTMT HLDGS INC CL A COM 00165C104 403 28680 SH SOLE no 0 0 28680 AT&amp;T INC COM 00206R102 8711 244348 SH SOLE no 0 0 244348 ARK
+#&gt; 8  2X BDC Index COM 90267b765 9853 669340 SH SOLE 669340 0 0 Abbvie COM 00287y109 1900 20075 SH SOLE 20075 0 0 Advance Auto Parts COM 00751Y106 3811 32150 SH SOLE 32150 0 0 American Express COM 025816109 1362 14600 SH SOLE 14600 0 0 AmerisourceBergen COM 03073e105 2501 29015 SH SOLE 29015 0 0 Amgen Inc
+#&gt; 9    ABBOTT LABS COM 002824100 790 13189 SH SOLE 0 0 13189 ABBVIE INC COM 00287Y109 5261 55582 SH SOLE 5500 0 50082 ABIOMED INC COM 003654100 291 1000 SH SOLE 0 0 1000 ALBEMARLE CORP COM 012653101 2277 24555 SH SOLE 3250 0 21305 ALPHABET INC CAP STK CL C 02079K107 360 349 SH SOLE 100 0 249 ALPHABET INC
+#&gt; 10    3M CO COM 88579Y101 275 1251 SH SOLE 1251 0 0 3M CO COM 88579Y101 648 2950 SH OTR 2950 0 0 ABBOTT LABS COM 002824100 836 13955 SH OTR 13955 0 0 ABBOTT LABS COM 002824100 90 1500 SH SOLE 1500 0 0 ABBVIE INC COM 00287Y109 1132 11964 SH OTR 11964 0 0 ABBVIE INC COM 00287Y109 95 1000 SH SOLE 1000 0 0
 #&gt;                                                                                          parent_href
-#&gt; 1   https://www.sec.gov/Archives/edgar/data/884300/000088430018000006/xslForm13F_X01/primary_doc.xml
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/47288/000095012318003721/xslForm13F_X01/primary_doc.xml
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1009003/000100900318000002/xslForm13F_X01/primary_doc.xml
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1080523/000108052318000007/xslForm13F_X01/primary_doc.xml
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1356202/000108514618001126/xslForm13F_X01/primary_doc.xml
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1661144/000108514618001128/xslForm13F_X01/primary_doc.xml
-#&gt; 7                  https://www.sec.gov/Archives/edgar/data/1356104/000119312518125775/d572926d8k.htm
-#&gt; 8                  https://www.sec.gov/Archives/edgar/data/1356104/000119312518125776/d572926d8k.htm
-#&gt; 9                                                                                               &lt;NA&gt;
-#&gt; 10                                                                                              &lt;NA&gt;
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/45319/000004531918000002/xslForm13F_X01/primary_doc.xml
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3    https://www.sec.gov/Archives/edgar/data/47288/000095012318003721/xslForm13F_X01/primary_doc.xml
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/1009003/000100900318000002/xslForm13F_X01/primary_doc.xml
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1599584/000106299318001772/xslForm13F_X01/primary_doc.xml
+#&gt; 6                                                                                               &lt;NA&gt;
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1356202/000108514618001126/xslForm13F_X01/primary_doc.xml
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/1661144/000108514618001128/xslForm13F_X01/primary_doc.xml
+#&gt; 9    https://www.sec.gov/Archives/edgar/data/45319/000004531918000002/xslForm13F_X01/primary_doc.xml
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/884300/000088430018000006/xslForm13F_X01/primary_doc.xml
 #&gt;                                                                                           index_href
-#&gt; 1   https://www.sec.gov/Archives/edgar/data/884300/000088430018000006/0000884300-18-000006-index.htm
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/47288/000095012318003721/0000950123-18-003721-index.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1009003/000100900318000002/0001009003-18-000002-index.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1080523/000108052318000007/0001080523-18-000007-index.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1356202/000108514618001126/0001085146-18-001126-index.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1661144/000108514618001128/0001085146-18-001128-index.htm
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1356104/000119312518125775/0001193125-18-125775-index.htm
-#&gt; 8  https://www.sec.gov/Archives/edgar/data/1356104/000119312518125776/0001193125-18-125776-index.htm
-#&gt; 9                                                                                               &lt;NA&gt;
-#&gt; 10                                                                                              &lt;NA&gt;</div></pre>
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/45319/000004531918000002/0000045319-18-000002-index.htm
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3    https://www.sec.gov/Archives/edgar/data/47288/000095012318003721/0000950123-18-003721-index.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/1009003/000100900318000002/0001009003-18-000002-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1599584/000106299318001772/0001062993-18-001772-index.htm
+#&gt; 6                                                                                               &lt;NA&gt;
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1356202/000108514618001126/0001085146-18-001126-index.htm
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/1661144/000108514618001128/0001085146-18-001128-index.htm
+#&gt; 9    https://www.sec.gov/Archives/edgar/data/45319/000004531918000002/0000045319-18-000002-index.htm
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/884300/000088430018000006/0000884300-18-000006-index.htm</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

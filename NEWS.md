@@ -16,6 +16,8 @@
  * `parse_filing` properly handles extraneous '<PAGE>' tags from ~08/09 filings
    such as
    [ADP](https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq
+ * `parse_filing` handles more edge-cases and has similar word counts to plain
+     document.
  * `parse_submission` handles large files successfully using temp files.
  * `parse_submission` handles submissions with single files correctly.
  * `parse_submission` documented properly.
@@ -25,6 +27,8 @@
  * Testing now requires tokenizers for testing if parsing adds words (it often
    does...)
  * Moved to testdata for parse_* functions rather than http cache
+ * Made wordcount comparison in test_parse_filing far more restrictive (good
+     thing!)
 
 # edgarWebR 0.3.1 - "Oh yeah, data changes"
 ## Bugfixes

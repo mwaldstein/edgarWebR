@@ -143,6 +143,8 @@
 <code>parse_filing</code> properly handles extraneous ‘<page>’ tags from ~08/09 filings such as [ADP](<a href="https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq" class="uri">https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq</a></page>
 </li>
 <li>
+<code>parse_filing</code> handles more edge-cases and has similar word counts to plain document.</li>
+<li>
 <code>parse_submission</code> handles large files successfully using temp files.</li>
 <li>
 <code>parse_submission</code> handles submissions with single files correctly.</li>
@@ -158,6 +160,7 @@
 <ul>
 <li>Testing now requires tokenizers for testing if parsing adds words (it often does…)</li>
 <li>Moved to testdata for parse_* functions rather than http cache</li>
+<li>Made wordcount comparison in test_parse_filing far more restrictive (good thing!)</li>
 </ul>
 </div>
 </div>
