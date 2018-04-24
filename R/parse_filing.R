@@ -244,7 +244,8 @@ doc_nodes <- function(doc, xpath_base) {
       paste0(c(
         paste0("not(",
                apply(expand.grid(depths, non.para), 1, function(x) {
-                       paste0(x, collapse = "") }),
+                       paste0(x, collapse = "")
+               }),
                ")"),
       # paste0(c(
       #   paste0(paste0("count(",

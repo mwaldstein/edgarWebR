@@ -72,6 +72,7 @@ coverage:
 	Rscript -e 'covr::report(covr::package_coverage(), file="~/public_html/edgarWebR-cov.html", browse = FALSE)'
 
 lint:
+	@echo "Make sure you're using lintr >= 1.0.1 (probably need to use github)"
 	Rscript -e 'lintr::lint_package()'
 
 site: doc-all

@@ -4,7 +4,7 @@
 #' \href{https://www.sec.gov/edgar/searchedgar/cik.htm}{here}
 #'
 #' @param company Search term to search for CIK
-#' @return A dataframe with one row per company with 
+#' @return A dataframe with one row per company with
 #'        Includes the following columns -
 #'  \itemize{
 #'    \item cik

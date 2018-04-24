@@ -101,7 +101,9 @@ parse_submission <- function(x,
   rownames(res) <- NULL
 
   get.lines <- function(doc.id) {
-    if (!include.content) { return("") }
+    if (!include.content) {
+      return("")
+    }
 
     lines <- parts$text[parts$doc == doc.id &
                         parts$in.text == 1 &
@@ -110,7 +112,9 @@ parse_submission <- function(x,
     # Check if this is a uuencoded chunk
     is.binary <- substring(lines[1], 1, 6) == "begin " &
                  lines[length(lines)] == "end"
-    if (is.binary & !include.binary) { return("") }
+    if (is.binary & !include.binary) {
+      return("")
+    }
     if (is.binary) {
         # If it is, make sure all the lines are the correct length
         lines[2:length(lines) - 1] <- sprintf("%-61s",
@@ -147,7 +151,7 @@ parse_submission.connection <- function(con,
         if (text.line == 1 & startsWith(l, "begin ")) {
           is.binary <- T
         }
-        if (include.content & (!is.binary || include.binary) ) {
+        if (include.content & (!is.binary || include.binary)) {
           content <- c(content, l)
         }
       }
