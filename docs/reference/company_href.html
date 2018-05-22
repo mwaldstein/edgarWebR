@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SEC Current Events — current_events • edgarWebR</title>
+<title>Company URL for a CIK — company_href • edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,10 +28,9 @@
 
 
 
-<meta property="og:title" content="SEC Current Events — current_events" />
+<meta property="og:title" content="Company URL for a CIK — company_href" />
 
-<meta property="og:description" content="Provides access to the SEC Current Events search tool from
-here" />
+<meta property="og:description" content="Given a CIK, provide a link to the company information page." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,79 +112,44 @@ here" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>SEC Current Events</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/current_events.R'><code>R/current_events.R</code></a></small>
-    <div class="hidden name"><code>current_events.Rd</code></div>
+    <h1>Company URL for a CIK</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
+    <div class="hidden name"><code>company_href.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Provides access to the SEC Current Events search tool from
-<a href='https://www.sec.gov/edgar/searchedgar/currentevents.htm'>here</a></p>
+    <p>Given a CIK, provide a link to the company information page.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>current_events</span>(<span class='no'>day</span>, <span class='no'>form</span>)</pre>
+    <pre class="usage"><span class='fu'>company_href</span>(<span class='no'>cik</span>, <span class='kw'>ownership</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>atom</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>day</th>
-      <td><p>(0-5) Day to search for current forms. e.g. '2' returns forms
-from 2 business days ago.</p></td>
+      <th>cik</th>
+      <td><p>Company code</p></td>
     </tr>
     <tr>
-      <th>form</th>
-      <td><p>Form to return filings (e.g. '10-K')</p></td>
+      <th>ownership</th>
+      <td><p>(default: FALSE) boolean for inclusion of company change
+filings</p></td>
+    </tr>
+    <tr>
+      <th>atom</th>
+      <td><p>(default: FALSE) if the link should be to the atom XML feed</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe with one row per company with
-       Includes the following columns -</p><ul>
-<li><p>cik</p></li>
-<li><p>type</p></li>
-<li><p>href</p></li>
-<li><p>company_name</p></li>
-<li><p>company_href</p></li>
-<li><p>filing_date</p></li>
-</ul>
-
+    <p>A string with URL requested</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>current_events</span>(<span class='fl'>0</span>, <span class='st'>"10-K"</span>)[<span class='fl'>1</span>:<span class='fl'>5</span>,]</div><div class='output co'>#&gt;     type
-#&gt; 1 10-K/A
-#&gt; 2 10-K/A
-#&gt; 3 10-K/A
-#&gt; 4 10-K/A
-#&gt; 5   10-K
-#&gt;                                                                              href
-#&gt; 1 https://www.sec.gov/Archives/edgar/data/1648087/0001078782-18-000587-index.html
-#&gt; 2 https://www.sec.gov/Archives/edgar/data/1084370/0001683168-18-001470-index.html
-#&gt; 3 https://www.sec.gov/Archives/edgar/data/1586495/0001493152-18-007586-index.html
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/711665/0001615774-18-004150-index.html
-#&gt; 5 https://www.sec.gov/Archives/edgar/data/1032975/0001032975-18-000016-index.html
-#&gt;       cik
-#&gt; 1 1648087
-#&gt; 2 1084370
-#&gt; 3 1586495
-#&gt; 4  711665
-#&gt; 5 1032975
-#&gt;                                                             company_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1648087
-#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1084370
-#&gt; 3 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1586495
-#&gt; 4  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=711665
-#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1032975
-#&gt;                  company_name filing_date
-#&gt; 1 AMERICAN REBEL HOLDINGS INC  2018-05-21
-#&gt; 2 Blockchain Industries, Inc.  2018-05-21
-#&gt; 3 Blow &amp; Drive Interlock Corp  2018-05-21
-#&gt; 4        FC Global Realty Inc  2018-05-21
-#&gt; 5   LOGITECH INTERNATIONAL SA  2018-05-21</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>company_href</span>(<span class='st'>"0000037912"</span>)</div><div class='output co'>#&gt; [1] "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000037912&amp;owner=exclude&amp;hidefilings=0"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

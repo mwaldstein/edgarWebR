@@ -9,6 +9,7 @@
    `submission_file_href()` for creating links to filings and their components.
  * Added `cik_search()` to lookup CIK codes for companies.
  * Added `current_events()` to access recent filings by form type
+ * Added `company_search()`
 
 ## Bugfixes
  * `parse_filing()` properly processes recent AIG & Costco filings
@@ -30,6 +31,7 @@
  * Moved to testdata for parse_* functions rather than http cache
  * Made wordcount comparison in test_parse_filing far more restrictive (good
      thing!)
+ * Tried to make TravisCI work, but still not great...
 
 # edgarWebR 0.3.1 - "Oh yeah, data changes"
 ## Bugfixes

@@ -201,83 +201,72 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
-#&gt; 1   2018-05-21
-#&gt; 2   2018-05-21
-#&gt; 3   2018-05-21
-#&gt; 4   2018-05-21
-#&gt; 5   2018-05-21
-#&gt; 6   2018-05-21
-#&gt; 7   2018-05-21
-#&gt; 8   2018-05-21
-#&gt; 9   2018-05-21
-#&gt; 10  2018-05-21
-#&gt;                                                                 name
-#&gt; 1                                         497 for PUTNAM FUNDS TRUST
-#&gt; 2        INFORMATION TABLE of 13F-HR for MASSMUTUAL TRUST CO FSB ADV
-#&gt; 3                            487 for Advisors Disciplined Trust 1867
-#&gt; 4                                       N-Q for DIVIDEND INCOME FUND
-#&gt; 5                                10-K/A for X Rail Entertainment Inc
-#&gt; 6           INFORMATION TABLE of 13F-HR for NAVELLIER ASSOCIATES INC
-#&gt; 7                                              20-F for SuperCom Ltd
-#&gt; 8  EX-99.(B)(7)(A) of 485BPOS for FARMERS ANNUITY SEPARATE ACCOUNT A
-#&gt; 9                                EX-99.1 of 10-12B/A for Veoneer Inc
-#&gt; 10                                    N-CSRS for MFS SERIES TRUST XI
-#&gt;                                                                                                                href
-#&gt; 1                                   https://www.sec.gov/Archives/edgar/data/1005942/000092881618001080/a_mcc497.htm
-#&gt; 2            https://www.sec.gov/Archives/edgar/data/1103653/000095012318005905/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 3                                https://www.sec.gov/Archives/edgar/data/1728581/000101322818000566/adt1867-487.txt
-#&gt; 4                                      https://www.sec.gov/Archives/edgar/data/1059213/000105921318000012/dninq.htm
-#&gt; 5                                      https://www.sec.gov/Archives/edgar/data/1697935/000109690618000271/xrail.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/872163/000110465918034722/xslForm13F_X01/a18-13858_1informationtable.xml
-#&gt; 7                               https://www.sec.gov/Archives/edgar/data/1291855/000114420418029944/tv493829_20f.htm
-#&gt; 8                            https://www.sec.gov/Archives/edgar/data/1089912/000119312518168311/d542975dex99b7a.htm
-#&gt; 9                              https://www.sec.gov/Archives/edgar/data/1733186/000119312518168532/d550335dex991.htm
-#&gt; 10                              https://www.sec.gov/Archives/edgar/data/911637/000119312518168812/d495134dncsrs.htm
-#&gt;                          company_name     cik  sic
-#&gt; 1                  PUTNAM FUNDS TRUST 1005942 &lt;NA&gt;
-#&gt; 2         MASSMUTUAL TRUST CO FSB ADV 1103653 &lt;NA&gt;
-#&gt; 3     Advisors Disciplined Trust 1867 1728581 &lt;NA&gt;
-#&gt; 4                DIVIDEND INCOME FUND 1059213 &lt;NA&gt;
-#&gt; 5            X Rail Entertainment Inc 1697935 4700
-#&gt; 6            NAVELLIER ASSOCIATES INC  872163 &lt;NA&gt;
-#&gt; 7                        SuperCom Ltd 1291855 3674
-#&gt; 8  FARMERS ANNUITY SEPARATE ACCOUNT A 1089912 &lt;NA&gt;
-#&gt; 9                         Veoneer Inc 1733186 3714
-#&gt; 10                MFS SERIES TRUST XI  911637 &lt;NA&gt;
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                             name
+#&gt; 1   2018-05-22                          424B2 for CITIGROUP INC
+#&gt; 2   2018-05-22 INFORMATION TABLE of 13F-HR for McIlrath Eck LLC
+#&gt; 3   2018-05-22                     N-Q for Securian Funds Trust
+#&gt; 4   2018-05-22  INFORMATION TABLE of 13F-HR for NBT BANK N A NY
+#&gt; 5   2018-05-22                        424B2 for HSBC USA INC MD
+#&gt; 6   2018-05-22                                6-K for TIM S p A
+#&gt; 7   2018-05-22                   N-Q for Transamerica ETF Trust
+#&gt; 8   2018-05-22                       N-Q for TRANSAMERICA FUNDS
+#&gt; 9   2018-05-22                N-Q for TRANSAMERICA SERIES TRUST
+#&gt; 10  2018-05-22                      N-Q for BlackRock Funds III
+#&gt;                                                                                                     href
+#&gt; 1          https://www.sec.gov/Archives/edgar/data/831001/000095010318006395/dp91206_424b2-us1849743.htm
+#&gt; 2     https://www.sec.gov/Archives/edgar/data/1701714/000109544918000034/xslForm13F_X01/table2018-03.xml
+#&gt; 3                     https://www.sec.gov/Archives/edgar/data/766351/000110465918035009/a18-3927_1nq.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 5                    https://www.sec.gov/Archives/edgar/data/83246/000114420418030249/tv494783_424b2.htm
+#&gt; 6                       https://www.sec.gov/Archives/edgar/data/948642/000119312518170089/d577854d6k.htm
+#&gt; 7                      https://www.sec.gov/Archives/edgar/data/1673996/000119312518170330/d551530dnq.htm
+#&gt; 8                       https://www.sec.gov/Archives/edgar/data/787623/000119312518170335/d551532dnq.htm
+#&gt; 9                       https://www.sec.gov/Archives/edgar/data/778207/000119312518170339/d540884dnq.htm
+#&gt; 10                      https://www.sec.gov/Archives/edgar/data/893818/000119312518170681/d551671dnq.htm
+#&gt;                 company_name     cik  sic
+#&gt; 1              CITIGROUP INC  831001 6021
+#&gt; 2           McIlrath Eck LLC 1701714 &lt;NA&gt;
+#&gt; 3       Securian Funds Trust  766351 &lt;NA&gt;
+#&gt; 4            NBT BANK N A NY  898413 &lt;NA&gt;
+#&gt; 5            HSBC USA INC MD   83246 6021
+#&gt; 6                  TIM S p A  948642 4899
+#&gt; 7     Transamerica ETF Trust 1673996 &lt;NA&gt;
+#&gt; 8         TRANSAMERICA FUNDS  787623 &lt;NA&gt;
+#&gt; 9  TRANSAMERICA SERIES TRUST  778207 &lt;NA&gt;
+#&gt; 10       BlackRock Funds III  893818 &lt;NA&gt;
 #&gt;                                                                                                                                                                                                                                                                                                     content
-#&gt; 1    May 25, 2018 Dear Fellow Shareholder: The Board of Trustees of Putnam Investors Fund is pleased to announce the upcoming merger of Putnam Investors Fund with and into Putnam Multi-Cap Core Fund. In this merger, shares of Putnam Investors Fund would, in effect, be exchanged for shares of Putnam
-#&gt; 2                                                                                                                                                                                                                                                      1st Source CorpCommon / Ordinary Stock33690110360744
-#&gt; 3  1933 ACT FILE NO.: 333-222794 1940 ACT FILE NO.: 811-21056 CIK NO.: 1728581 SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 AMENDMENT NO. 1 TO REGISTRATION STATEMENT ON FORM S-6 FOR REGISTRATION UNDER THE SECURITIES ACT OF 1933 OF SECURITIES OF UNIT INVESTMENT TRUSTS REGISTERED ON FORM
-#&gt; 4                    UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-08747 DIVIDEND AND INCOME FUND (Exact name of registrant as specified in
-#&gt; 5          UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-K/A (MARK ONE) [X] ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2017 Commission file number 333-218746 X RAIL ENTERTAINMENT, INC.
-#&gt; 6                                                                                                                                                                                                                                                                                51Job Inc.COM3168271041413
-#&gt; 7                 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 20-F REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR x ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal
-#&gt; 8                                                  Execution Copy REINSURANCE AGREEMENT Between FARMERS NEW WORLD LIFE INSURANCE COMPANY (referred to as the Ceding Company) and RGA REINSURANCE COMPANY (referred to as the Reinsurer) TABLE OF CONTENTS ARTICLE I DEFINITIONS 1 Section 1.1 Definitions 1
-#&gt; 9                                       Exhibit 99.1 , 2018 Dear Autoliv, Inc. Stockholder: On December 12, 2017, we announced that, following the conclusion of a strategic review by our Board of Directors, we intend to spin-off our Electronics business segment, creating a new, independent publicly
-#&gt; 10 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-07992 MFS SERIES TRUST XI (Exact name of registrant as specified in charter) 111 Huntington Avenue,
-#&gt;                                                                                          parent_href
-#&gt; 1                                                                                               &lt;NA&gt;
-#&gt; 2   https://www.sec.gov/Archives/edgar/data/872163/000110465918034722/xslForm13F_X01/primary_doc.xml
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4                                                                                               &lt;NA&gt;
-#&gt; 5                                                                                               &lt;NA&gt;
-#&gt; 6   https://www.sec.gov/Archives/edgar/data/872163/000110465918034722/xslForm13F_X01/primary_doc.xml
-#&gt; 7                                                                                               &lt;NA&gt;
-#&gt; 8              https://www.sec.gov/Archives/edgar/data/1733186/000119312518168532/d550335d1012ba.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/1103653/000095012318005905/xslForm13F_X01/primary_doc.xml
-#&gt; 10                                                                                              &lt;NA&gt;
-#&gt;                                                                                           index_href
-#&gt; 1                                                                                               &lt;NA&gt;
-#&gt; 2   https://www.sec.gov/Archives/edgar/data/872163/000110465918034722/0001104659-18-034722-index.htm
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4                                                                                               &lt;NA&gt;
-#&gt; 5                                                                                               &lt;NA&gt;
-#&gt; 6   https://www.sec.gov/Archives/edgar/data/872163/000110465918034722/0001104659-18-034722-index.htm
-#&gt; 7                                                                                               &lt;NA&gt;
-#&gt; 8  https://www.sec.gov/Archives/edgar/data/1733186/000119312518168532/0001193125-18-168532-index.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/1103653/000095012318005905/0000950123-18-005905-index.htm
-#&gt; 10                                                                                              &lt;NA&gt;</div></pre>
+#&gt; 1                                                                 Each of these risks will depend on the performance of the worst performing of the shares of common stock of Intel Corporation and the shares of common stock of PayPal Holdings, Inc. (each, the underlying shares ), as described below.
+#&gt; 2       ACCO BRANDS CORP COM 00081T108 8 650 SH SOLE 650 0 0 AGNC INVT CORP COM 00123Q104 5 256 SH SOLE 256 0 0 ALPS ETF TR C&amp;S GLOBL ETF 00162Q106 25 590 SH SOLE 590 0 0 ALPS ETF TR ALERIAN MLP 00162Q866 477 50903 SH SOLE 50903 0 0 AT&amp;T INC COM 00206R102 125 3501 SH SOLE 3501 0 0 AU OPTRONICS CORP
+#&gt; 3                 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-4279 Securian Funds Trust (Exact name of registrant as specified in charter)
+#&gt; 4                                                                                                                                                                                                                                                                           AT&amp;T IncCom00206R102313287854SH
+#&gt; 5                           Calculation of Registration Fee Title of Each Class of Securities Offered Maximum Aggregate Offering Price Amount of Registration Fee (1) Debt Securities (INTC) $2, 424, 000 $301.79 Debt Securities (MGM) $2, 956, 000 $368.02 Debt Securities (WDC) $1, 295, 000 $161.23 (1)
+#&gt; 6                        UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM 6-K REPORT OF FOREIGN PRIVATE ISSUER PURSUANT TO RULE 13a-16 OR 15D-16 UNDER THE SECURITIES EXCHANGE ACT OF 1934 FOR THE MONTH OF MAY 2018 TIM S.p.A. (Translation of registrant s name into English)
+#&gt; 7                      UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-23237 TRANSAMERICA ETF TRUST (Exact Name of Registrant as Specified in
+#&gt; 8                               SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-04556 TRANSAMERICA FUNDS (Exact Name of Registrant as Specified in Charter)
+#&gt; 9                      UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-04419 TRANSAMERICA SERIES TRUST (Exact Name of Registrant as Specified
+#&gt; 10 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file numbers: 811-07332 and 811-08162 Name of Fund: BlackRock Funds III BlackRock Cash Funds: Institutional
+#&gt;                                                                                         parent_href
+#&gt; 1                                                                                              &lt;NA&gt;
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/xslForm13F_X01/primary_doc.xml
+#&gt; 3                                                                                              &lt;NA&gt;
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/xslForm13F_X01/primary_doc.xml
+#&gt; 5                                                                                              &lt;NA&gt;
+#&gt; 6                                                                                              &lt;NA&gt;
+#&gt; 7                                                                                              &lt;NA&gt;
+#&gt; 8                                                                                              &lt;NA&gt;
+#&gt; 9                                                                                              &lt;NA&gt;
+#&gt; 10                                                                                             &lt;NA&gt;
+#&gt;                                                                                          index_href
+#&gt; 1                                                                                              &lt;NA&gt;
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/0001140361-18-025075-index.htm
+#&gt; 3                                                                                              &lt;NA&gt;
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/0001140361-18-025075-index.htm
+#&gt; 5                                                                                              &lt;NA&gt;
+#&gt; 6                                                                                              &lt;NA&gt;
+#&gt; 7                                                                                              &lt;NA&gt;
+#&gt; 8                                                                                              &lt;NA&gt;
+#&gt; 9                                                                                              &lt;NA&gt;
+#&gt; 10                                                                                             &lt;NA&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

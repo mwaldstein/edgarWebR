@@ -33,6 +33,30 @@ submission_file_href <- function(cik, accession, filename) {
          "/", filename)
 }
 
+#' Company URL for a CIK
+#'
+#' Given a CIK, provide a link to the company information page.
+#'
+#' @param cik Company code
+#' @param ownership (default: FALSE) boolean for inclusion of company change
+#'   filings
+#' @param atom (default: FALSE) if the link should be to the atom XML feed
+#' @return A string with URL requested
+#' @examples
+#' company_href("0000037912")
+#' @export
+company_href <- function(cik, ownership = FALSE, atom = FALSE) {
+  if (ownership == TRUE) ownership <- "include"
+  if (ownership == FALSE) ownership <- "exclude"
+  if (ownership == "") ownership <- "exclude"
+  paste0(
+    "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany",
+    "&CIK=", cik,
+    "&owner=", ownership,
+    "&hidefilings=0",
+    ifelse(atom, "&output=atom", ""))
+}
+
 is_url <- function(x) {
   grepl("^(http|ftp)s?://", x, ignore.case = T)
 }

@@ -39,7 +39,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>Company</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/companysearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/companysearch.html</a></td>
-<td><code>company_information()</code>, <code>company_details()</code>, <code>company_filings()</code></td>
+<td><code>company_search()</code>, <code>company_information()</code>, <code>company_details()</code>, <code>company_filings()</code></td>
 </tr>
 <tr class="even">
 <td>Recent Filings</td>
@@ -59,12 +59,12 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>Fund Disclosures</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/prospectus.htm" class="uri">https://www.sec.gov/edgar/searchedgar/prospectus.htm</a></td>
-<td>N/A</td>
+<td>Use <code>company_search()</code> and specify the 'type' parameter as 485</td>
 </tr>
 <tr class="even">
 <td>Fund Voting Records</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/n-px.htm" class="uri">https://www.sec.gov/edgar/searchedgar/n-px.htm</a></td>
-<td>N/A</td>
+<td>Use <code>company_search()</code> and specify the 'type' parameter as 'N-PX'</td>
 </tr>
 <tr class="odd">
 <td>Fund Search</td>
@@ -79,7 +79,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>Confidential treatment orders</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/ctorders.htm" class="uri">https://www.sec.gov/edgar/searchedgar/ctorders.htm</a></td>
-<td>N/A</td>
+<td>Use <code>header_search()</code>, <code>company_search()</code>, <code>latest_filings()</code>, or <code>full_text()</code> and use form types 'CT ORDER'</td>
 </tr>
 <tr class="even">
 <td>Effectiveness notices</td>
@@ -99,7 +99,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>Correspondence</td>
 <td><a href="https://www.sec.gov/answers/edgarletters.htm" class="uri">https://www.sec.gov/answers/edgarletters.htm</a></td>
-<td>N/A</td>
+<td>Use <code>header_search()</code>, <code>company_search()</code>, <code>latest_filings()</code>, or <code>full_text()</code> and use form types 'upload' or 'corresp'</td>
 </tr>
 </tbody>
 </table>

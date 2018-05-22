@@ -1,3 +1,5 @@
 docs/**/* linguist-documentation
+man/**/* linguist-documentation
+inst/**/* linguist-documentation
 tests/testdata/* linguist-generated
 tests/cache/**/* linguist-generated

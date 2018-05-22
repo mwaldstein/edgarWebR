@@ -6,7 +6,7 @@ test_that("running ", {
             res <- company_information("EA")
             expect_is(res, "data.frame")
 
-            expect_length(res, 16)
+            expect_length(res, 19)
             expect_length(rownames(res), 1)
 
             expect_equal(res$name, "ELECTRONIC ARTS INC.")

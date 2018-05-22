@@ -24,6 +24,7 @@ company_information <- function(x) {
     "name" = "conformed-name",
     "cik" = "cik",
     "fiscal_year_end" = "fiscal-year-end",
+    "company_href" = "cik-href",
     "sic" = "assigned-sic",
     "sic_description" = "assigned-sic-desc",
     "state_location" = "state-location",
@@ -32,10 +33,12 @@ company_information <- function(x) {
     "mailing_state" = "//address[@type='mailing']/state",
     "mailing_zip" = "//address[@type='mailing']/zip",
     "mailing_street" = "//address[@type='mailing']/street1",
+    "mailing_street2" = "//address[@type='mailing']/street2",
     "business_city" = "//address[@type='business']/city",
     "business_state" = "//address[@type='business']/state",
     "business_zip" = "//address[@type='business']/zip",
     "business_street" = "//address[@type='business']/street1",
+    "business_street2" = "//address[@type='business']/street2",
     "business_phone" = "//address[@type='business']/phone"
     )
 

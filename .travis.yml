@@ -7,14 +7,10 @@ warnings_are_errors: true
 
 r:
   - release
-  - devel
 
 # work around temporary travis + R 3.5 bug
 # https://github.com/tidyverse/ggplot2/blob/master/.travis.yml#L18
 r_packages: devtools
-
-r_github_packages:
-  - jimhester/lintr
 
 env:
   - PACKAGE_VERSION="0.3.1.9000"
