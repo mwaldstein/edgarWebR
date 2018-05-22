@@ -210,16 +210,32 @@
 <code><a href="reference/parse_filing.html">parse_filing()</a></code> - Takes a HTML narrative filing and annotates each paragraph with item and part numbers.</li>
 </ul>
 </div>
-<div id="installation" class="section level3">
+<div id="data-sets" class="section level3">
 <h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<a href="#data-sets" class="anchor"></a>Data Sets</h3>
+<p>There is one dataset provieded with edgarWebR - <strong>sic_codes</strong>, providing a catalog of SIC codes and their hierarchy.</p>
+</div>
+<div id="url-tools" class="section level3">
+<h3 class="hasAnchor">
+<a href="#url-tools" class="anchor"></a>URL Tools</h3>
+<p>There are also a number of utility functions to help construct useful URL’s once you have a company CIK, submission accession number or specific file.</p>
+<ul>
+<li>
+<code><a href="reference/company_href.html">company_href()</a></code> for linking to the company page</li>
+<li>
+<code><a href="reference/submission_index_href.html">submission_index_href()</a></code> and its family of related functions for linking to a specific submission and file.</li>
+</ul>
+</div>
+</div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
 <p>edgarWebR is available from CRAN, so can be simply installed via</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"edgarWebR"</span>)</code></pre></div>
 <p>To install the development version,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install the development version from GitHub:</span>
 <span class="co"># install.packages("devtools")</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"mwaldstein/edgarWebR"</span>)</code></pre></div>
-</div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">

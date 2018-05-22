@@ -91,8 +91,21 @@ no current tools exist.
  * `parse_filing()` - Takes a HTML narrative filing and annotates each
    paragraph with item and part numbers.
 
+### Data Sets
 
-### Installation
+There is one dataset provieded with edgarWebR - **sic_codes**, providing a
+catalog of SIC codes and their hierarchy.
+
+### URL Tools
+
+There are also a number of utility functions to help construct useful URL's
+once you have a company CIK, submission accession number or specific file.
+
+  * `company_href()` for linking to the company page
+  * `submission_index_href()` and its family of related functions for linking
+    to a specific submission and file.
+
+## Installation
 edgarWebR is available from CRAN, so can be simply installed via
 ```{r install, eval=FALSE}
 install.packages("edgarWebR")

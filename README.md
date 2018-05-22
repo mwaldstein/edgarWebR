@@ -119,7 +119,19 @@ While edgarWebR is primarily focused on providing an interface to the online SEC
 -   `parse_submission()` - takes a full submission SGML document and parses out compontent documents. Most of the time, the documents of interest in a particular submission will be online and accessible via `filing_documents()` - this function is to unpack the raw submission to get all the doucments. You may also find it more efficient if you're regularly downloading all of the files in a given submission.
 -   `parse_filing()` - Takes a HTML narrative filing and annotates each paragraph with item and part numbers.
 
-### Installation
+### Data Sets
+
+There is one dataset provieded with edgarWebR - **sic\_codes**, providing a catalog of SIC codes and their hierarchy.
+
+### URL Tools
+
+There are also a number of utility functions to help construct useful URL's once you have a company CIK, submission accession number or specific file.
+
+-   `company_href()` for linking to the company page
+-   `submission_index_href()` and its family of related functions for linking to a specific submission and file.
+
+Installation
+------------
 
 edgarWebR is available from CRAN, so can be simply installed via
 

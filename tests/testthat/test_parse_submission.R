@@ -31,3 +31,15 @@ with_mock_API({
     expect_equal(nchar(res$TEXT[7]), 93499)
   })
 })
+
+test_that("10-K from disk", {
+  filename <- file.path("..", "testdata", "0000037996-94-000005.txt")
+  res <- parse_submission(filename)
+  expect_is(res, "data.frame")
+  expect_length(res, 5)
+  expect_equal(nrow(res), 11)
+
+  expect_equal(res$DESCRIPTION[1], "10-K")
+  expect_equal(res$SEQUENCE[1], "1")
+  expect_equal(res$TYPE[1], "10-K")
+})
