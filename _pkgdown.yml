@@ -3,9 +3,11 @@ reference:
     contents:
       - starts_with("company_")
       - latest_filings
+      - current_events
       - full_text
       - header_search
       - fund_search
+      - cik_search
   - title: "Filing Detail Functions"
     contents:
       - starts_with("filing_")

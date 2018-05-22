@@ -156,6 +156,7 @@ from 2 business days ago.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+<<<<<<< HEAD
     <pre class="examples"><div class='input'><span class='fu'>current_events</span>(<span class='fl'>0</span>, <span class='st'>"10-K"</span>)</div><div class='output co'>#&gt;      type
 #&gt; 1    10-K
 #&gt; 2    10-K
@@ -321,6 +322,38 @@ from 2 business days ago.</p></td>
 #&gt; 30        PINNACLE WEST CAPITAL CORP  2018-02-23
 #&gt; 31                      Tintri, Inc.  2018-05-18
 #&gt; 32                Vista Outdoor Inc.  2018-05-18</div></pre>
+=======
+    <pre class="examples"><div class='input'><span class='fu'>current_events</span>(<span class='fl'>0</span>, <span class='st'>"10-K"</span>)[<span class='fl'>1</span>:<span class='fl'>5</span>,]</div><div class='output co'>#&gt;   type
+#&gt; 1 10-K
+#&gt; 2 10-K
+#&gt; 3 10-K
+#&gt; 4 10-K
+#&gt; 5 10-K
+#&gt;                                                                              href
+#&gt; 1 https://www.sec.gov/Archives/edgar/data/1278752/0001278752-18-000036-index.html
+#&gt; 2    https://www.sec.gov/Archives/edgar/data/7286/0000764622-18-000018-index.html
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/859163/0001437749-18-010388-index.html
+#&gt; 4   https://www.sec.gov/Archives/edgar/data/22872/0001615774-18-004065-index.html
+#&gt; 5 https://www.sec.gov/Archives/edgar/data/1632053/0001562884-18-000064-index.html
+#&gt;       cik
+#&gt; 1 1278752
+#&gt; 2    7286
+#&gt; 3  859163
+#&gt; 4   22872
+#&gt; 5 1632053
+#&gt;                                                             company_href
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1278752
+#&gt; 2    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=7286
+#&gt; 3  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=859163
+#&gt; 4   https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=22872
+#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1632053
+#&gt;                company_name filing_date
+#&gt; 1    APOLLO INVESTMENT CORP  2018-05-18
+#&gt; 2 ARIZONA PUBLIC SERVICE CO  2018-02-23
+#&gt; 3                  AVX Corp  2018-05-18
+#&gt; 4 Advanzeon Solutions, Inc.  2018-05-18
+#&gt; 5       Cannabis Leaf, Inc.  2018-05-18</div></pre>
+>>>>>>> Add current_events function
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

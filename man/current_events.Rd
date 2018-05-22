@@ -29,5 +29,5 @@ Provides access to the SEC Current Events search tool from
 \href{https://www.sec.gov/edgar/searchedgar/currentevents.htm}{here}
 }
 \examples{
-current_events(0, "10-K")
+current_events(0, "10-K")[1:5,]
 }

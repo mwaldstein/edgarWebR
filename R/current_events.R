@@ -17,7 +17,7 @@
 #'    \item filing_date
 #'  }
 #' @examples
-#' current_events(0, "10-K")
+#' current_events(0, "10-K")[1:5,]
 #' @export
 current_events <- function(day, form) {
   href <- paste0("https://www.sec.gov/cgi-bin/current",
@@ -26,10 +26,6 @@ current_events <- function(day, form) {
                  "&q3=", URLencode(form, reserved = TRUE))
   res <- httr::GET(href)
   doc <- xml2::read_html(res, base_url = href)
-
-  # Because this is preformatted content, using typical xml finding 
-  # doc <- httr::content(res, "text")
-  # doc_lines <- strsplit(doc, "[\r\n]+")
 
   entries_xpath <- "//pre/a[starts-with(@href,'/Archives/edgar/data')]"
 
