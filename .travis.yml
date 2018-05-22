@@ -5,6 +5,11 @@ sudo: false
 cache: packages
 warnings_are_errors: true
 
+r:
+  - oldrel
+  - release
+  - devel
+
 r_github_packages:
   - jimhester/lintr
 
@@ -15,11 +20,10 @@ os:
   - linux
   - osx
 
-before_script:
-  - curl -L https://raw.githubusercontent.com/rdatsci/travis-r-tools/master/update-packages.r -o /tmp/update-packages.r
-  - Rscript /tmp/update-packages.r
+before_install:
+  - Rscript -e 'update.packages(ask = FALSE)'
 
 after_success:
-    - Rscript -e 'covr::codecov()'
-    - make test-nocache
-    - Rscript -e 'lintr::lint_package()'
+  - Rscript -e 'covr::codecov()'
+  - make test-nocache
+  - Rscript -e 'lintr::lint_package()'

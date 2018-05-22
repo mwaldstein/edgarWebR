@@ -10,9 +10,6 @@ init:
 install:
   ps: Bootstrap
 
-cache:
-  - C:\RLibrary
-
 # Adapt as necessary starting from here
 
 version: '0.3.1.9000.{build}'
@@ -20,6 +17,8 @@ version: '0.3.1.9000.{build}'
 environment:
   global:
     WARNINGS_ARE_ERRORS: 1
+    USE_RTOOLS: true
+
 
 build_script:
   - travis-tool.sh install_deps
