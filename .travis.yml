@@ -1,6 +1,6 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
+language: r
 sudo: false
 cache: packages
 warnings_are_errors: true
@@ -14,6 +14,10 @@ env:
 os:
   - linux
   - osx
+
+before_script:
+  - curl -L https://raw.githubusercontent.com/rdatsci/travis-r-tools/master/update-packages.r -o /tmp/update-packages.r
+  - Rscript /tmp/update-packages.r
 
 after_success:
     - Rscript -e 'covr::codecov()'

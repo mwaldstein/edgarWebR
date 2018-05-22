@@ -40,8 +40,8 @@ current_events <- function(day, form) {
 
   trim_cols <- c("company_name")
 
-  res <- edgarWebR:::map_xml(doc, entries_xpath, pieces,
-                             trim = trim_cols)
+  res <- map_xml(doc, entries_xpath, pieces,
+                 trim = trim_cols)
 
   res$filing_date <- as.POSIXct(trimws(gsub(".*\n", "", res$date_str)),
                          format = "%m-%d-%Y")
