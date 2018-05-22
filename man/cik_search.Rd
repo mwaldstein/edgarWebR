@@ -10,7 +10,7 @@ cik_search(company)
 \item{company}{Search term to search for CIK}
 }
 \value{
-A dataframe with one row per company with 
+A dataframe with one row per company with
        Includes the following columns -
  \itemize{
    \item cik

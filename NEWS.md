@@ -8,6 +8,7 @@
  * Added utility functions `submission_index_href`, `submission_href`, and
    `submission_file_href` for creating links to filings and their components.
  * Added `cik_search` to lookup CIK codes for companies.
+ * Added `current_events` to access recent filings by form type
 
 ## Bugfixes
  * `parse_filing` properly processes recent AIG & Costco filings

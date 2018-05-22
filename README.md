@@ -94,7 +94,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="even">
 <td>Daily Filings</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/currentevents.htm" class="uri">https://www.sec.gov/edgar/searchedgar/currentevents.htm</a></td>
-<td>N/A</td>
+<td><code>current_events()</code></td>
 </tr>
 <tr class="odd">
 <td>Correspondence</td>

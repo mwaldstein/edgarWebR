@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="Parse Text Filing — parse_text_filing" />
 
 <meta property="og:description" content="Given a link to a filing document (e.g. the 10-K, 8-K) in TXT, process the
@@ -41,8 +44,6 @@ directly from the document without any attempt to normalize." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -115,16 +116,18 @@ directly from the document without any attempt to normalize." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Parse Text Filing</h1>
-    <small>Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/parse_filing.R'><code>R/parse_filing.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/parse_filing.R'><code>R/parse_filing.R</code></a></small>
     <div class="hidden name"><code>parse_text_filing.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Given a link to a filing document (e.g. the 10-K, 8-K) in TXT, process the
 file into parts and items. This enables follow-up processing of a desired
 section - e.g. just the Risk Factors. `item.name` and `part.name` are taken
 directly from the document without any attempt to normalize.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>parse_text_filing</span>(<span class='no'>x</span>, <span class='kw'>strip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>include.raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>fix.errors</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     

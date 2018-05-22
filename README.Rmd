@@ -64,7 +64,7 @@ fund search and resultant filings.
 | Confidential treatment orders | https://www.sec.gov/edgar/searchedgar/ctorders.htm              | N/A |
 | Effectiveness notices         | https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect       | N/A |
 | CIK                           | https://www.sec.gov/edgar/searchedgar/cik.htm                   | `cik_search()` |
-| Daily Filings                 | https://www.sec.gov/edgar/searchedgar/currentevents.htm         | N/A |
+| Daily Filings                 | https://www.sec.gov/edgar/searchedgar/currentevents.htm         | `current_events()` |
 | Correspondence                | https://www.sec.gov/answers/edgarletters.htm                    | N/A |
 
 Once a filing is found via any of the above, there are a number of functions to

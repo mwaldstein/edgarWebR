@@ -25,6 +25,9 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
 <meta property="og:title" content="SEC Filing Details — filing_details" />
 
 <meta property="og:description" content="The SEC generates a html page as an index for every filing it receives containing
@@ -44,8 +47,6 @@ all the meta-information about the filing. We extract 3 main types of informatio
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -118,10 +119,11 @@ all the meta-information about the filing. We extract 3 main types of informatio
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>SEC Filing Details</h1>
-    <small>Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/filing_details.R'><code>R/filing_details.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/filing_details.R'><code>R/filing_details.R</code></a></small>
     <div class="hidden name"><code>filing_details.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>The SEC generates a html page as an index for every filing it receives containing
 all the meta-information about the filing. We extract 3 main types of information:</p><dl class='dl-horizontal'>
@@ -131,6 +133,7 @@ all the meta-information about the filing. We extract 3 main types of informatio
  <dt>Funds</dt><dd><p>Funds included in the filing</p></dd>
 </dl>
     
+    </div>
 
     <pre class="usage"><span class='fu'>filing_details</span>(<span class='no'>x</span>)
 
