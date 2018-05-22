@@ -1,0 +1,3 @@
+docs/**/* linguist-documentation
+tests/testdata/* linguist-generated
+tests/cache/**/* linguist-generated
