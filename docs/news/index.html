@@ -125,15 +125,10 @@
 <code>sic_codes</code> a dataset for sic codes from <a href="https://www.osha.gov/pls/imis/sic_manual.html">US Department of Labor</a>
 </li>
 <li>
-<code>parse_submission</code> has options for skipping collection of all content or just binary content</li>
-<li>Added utility functions <code>submission_index_href</code>, <code>submission_href</code>, and <code>submission_file_href</code> for creating links to filings and their components.</li>
-<<<<<<< HEAD
-<li>Added <code>cik_search</code> to lookup CIK codes for companies.</li>
-<li>Added <code>current_events</code> to access recent filings by form type</li>
-=======
+<code><a href="../reference/parse_submission.html">parse_submission()</a></code> has options for skipping collection of all content or just binary content</li>
+<li>Added utility functions <code><a href="../reference/submission_index_href.html">submission_index_href()</a></code>, <code><a href="../reference/submission_index_href.html">submission_href()</a></code>, and <code><a href="../reference/submission_index_href.html">submission_file_href()</a></code> for creating links to filings and their components.</li>
 <li>Added <code><a href="../reference/cik_search.html">cik_search()</a></code> to lookup CIK codes for companies.</li>
 <li>Added <code><a href="../reference/current_events.html">current_events()</a></code> to access recent filings by form type</li>
->>>>>>> Add current_events function
 </ul>
 </div>
 <div id="bugfixes" class="section level2">
@@ -141,24 +136,24 @@
 <a href="#bugfixes" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
-<code>parse_filing</code> properly processes recent AIG &amp; Costco filings</li>
+<code><a href="../reference/parse_filing.html">parse_filing()</a></code> properly processes recent AIG &amp; Costco filings</li>
 <li>
-<code>parse_filing</code> properly processes ADM filings for fy08 &amp; fy09</li>
+<code><a href="../reference/parse_filing.html">parse_filing()</a></code> properly processes ADM filings for fy08 &amp; fy09</li>
 <li>
-<code>parse_filing</code> now fails gracefully given a unparsable filing</li>
+<code><a href="../reference/parse_filing.html">parse_filing()</a></code> now fails gracefully given a unparsable filing</li>
 <li>
-<code>parse_filing</code> properly handles extraneous ‘<page>’ tags from ~08/09 filings such as [ADP](<a href="https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq" class="uri">https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq</a></page>
+<code><a href="../reference/parse_filing.html">parse_filing()</a></code> properly handles extraneous ‘<page>’ tags from ~08/09 filings such as <a href="https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htm">ADP</a></page>
 </li>
 <li>
-<code>parse_filing</code> handles more edge-cases and has similar word counts to plain document.</li>
+<code><a href="../reference/parse_filing.html">parse_filing()</a></code> handles more edge-cases and has similar word counts to plain document.</li>
 <li>
-<code>parse_submission</code> handles large files successfully using temp files.</li>
+<code><a href="../reference/parse_submission.html">parse_submission()</a></code> handles large files successfully using temp files.</li>
 <li>
-<code>parse_submission</code> handles submissions with single files correctly.</li>
+<code><a href="../reference/parse_submission.html">parse_submission()</a></code> handles submissions with single files correctly.</li>
 <li>
-<code>parse_submission</code> documented properly.</li>
+<code><a href="../reference/parse_submission.html">parse_submission()</a></code> documented properly.</li>
 <li>
-<code>full_text</code> escapes the search query properly.</li>
+<code><a href="../reference/full_text.html">full_text()</a></code> escapes the search query properly.</li>
 </ul>
 </div>
 <div id="internal" class="section level2">

@@ -3,26 +3,26 @@
 ## Features
  * `sic_codes` a dataset for sic codes from [US Department of
    Labor](https://www.osha.gov/pls/imis/sic_manual.html)
- * `parse_submission` has options for skipping collection of all content or
+ * `parse_submission()` has options for skipping collection of all content or
    just binary content
- * Added utility functions `submission_index_href`, `submission_href`, and
-   `submission_file_href` for creating links to filings and their components.
+ * Added utility functions `submission_index_href()`, `submission_href()`, and
+   `submission_file_href()` for creating links to filings and their components.
  * Added `cik_search()` to lookup CIK codes for companies.
  * Added `current_events()` to access recent filings by form type
 
 ## Bugfixes
- * `parse_filing` properly processes recent AIG & Costco filings
- * `parse_filing` properly processes ADM filings for fy08 & fy09
- * `parse_filing` now fails gracefully given a unparsable filing
- * `parse_filing` properly handles extraneous '<PAGE>' tags from ~08/09 filings
+ * `parse_filing()` properly processes recent AIG & Costco filings
+ * `parse_filing()` properly processes ADM filings for fy08 & fy09
+ * `parse_filing()` now fails gracefully given a unparsable filing
+ * `parse_filing()` properly handles extraneous '<PAGE>' tags from ~08/09 filings
    such as
-   [ADP](https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htmq
- * `parse_filing` handles more edge-cases and has similar word counts to plain
+   [ADP](https://www.sec.gov/Archives/edgar/data/8670/000120677409001642/adp_10k.htm)
+ * `parse_filing()` handles more edge-cases and has similar word counts to plain
      document.
- * `parse_submission` handles large files successfully using temp files.
- * `parse_submission` handles submissions with single files correctly.
- * `parse_submission` documented properly.
- * `full_text` escapes the search query properly.
+ * `parse_submission()` handles large files successfully using temp files.
+ * `parse_submission()` handles submissions with single files correctly.
+ * `parse_submission()` documented properly.
+ * `full_text()` escapes the search query properly.
 
 ## Internal
  * Testing now requires tokenizers for testing if parsing adds words (it often
