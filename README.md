@@ -74,7 +74,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="even">
 <td>Var. Insurance Products</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html</a></td>
-<td><code>variable_insurance_search()</code>, <code>variable_insurance_fast_searc()</code></td>
+<td><code>variable_insurance_search()</code>, <code>variable_insurance_fast_search()</code></td>
 </tr>
 <tr class="odd">
 <td>Confidential treatment orders</td>
