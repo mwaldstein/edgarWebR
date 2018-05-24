@@ -1,6 +1,14 @@
 #' SEC Mutual Fund Search
 #'
-#' @param term Search term to look for funds
+#' Provides access to the results of the SEC's Mutual fund search tool
+#' available
+#' \href{https://www.sec.gov/edgar/searchedgar/mutualsearch.html}{here}
+#'
+#' NOTE: This is really a specific version of the Vairable Insurance search
+#' tool.
+#'
+#' @param term Search term to search for in a fund name
+#' @param identifier A Series, Class/Contract ID, Ticker Symbol or CIK
 #' @return A dataframe of funds found including the following columns -
 #'   \itemize{
 #'     \item class_id
@@ -18,36 +26,18 @@
 #'   }
 #' @examples
 #' fund_search("precious metals")
+#' fund_fast_search("VMFVX")
 #' @export
 fund_search <- function(term) {
-  href <- paste0("https://www.sec.gov/cgi-bin/series?type=N-PX",
-                "&sc=companyseries",
-                "&ticker=", URLencode(term, reserved = TRUE),
-                "&CIK=",
-                "&Find=Search")
-  res <- httr::GET(href)
-  doc <- xml2::read_html(res, base_url = href)
+  series_search(company = term, type = "N-PX")
+}
 
-  entries_xpath <- "//a[starts-with(.,'C')]"
-
-  pieces <- list(
-    class_id = ".",
-    class_filings_href = "@href",
-    class_name = "following::td[1]",
-    class_ticker = "following::td[2]",
-    series_id = "preceding::td[@colspan=2][1]/a",
-    series_filings_href = "preceding::td[@colspan=2][1]/a/@href",
-    series_name = "preceding::td[@colspan=2][1]/following-sibling::td[1]",
-    series_funds_href = "preceding::td[@colspan=2][1]/following-sibling::td[1]/a",
-    cik = "preceding::td[@colspan=3][1]/a",
-    cik_name = "preceding::td[@colspan=3][1]/following-sibling::td[1]/a",
-    cik_filings_href = "preceding::td[@colspan=3][1]/a/@href",
-    cik_funds_href = "preceding::td[@colspan=3][1]/following-sibling::td[1]/a/@href"
-  )
-
-  trim_cols <- c("class_ticker")
-
-  res <- map_xml(doc, entries_xpath, pieces, trim = trim_cols)
-
-  return(res)
+#' @describeIn fund_search Performs a 'Fast Search' based on a fund identifier
+#' @export
+fund_fast_search <- function(identifier) {
+  if (grepl("^\\d+$", identifier)) {
+    series_search(cik = identifier, type = "N-PX")
+  } else {
+    series_search(ticker = identifier, type = "N-PX")
+  }
 }

@@ -2,12 +2,17 @@
 % Please edit documentation in R/fund_search.R
 \name{fund_search}
 \alias{fund_search}
+\alias{fund_fast_search}
 \title{SEC Mutual Fund Search}
 \usage{
 fund_search(term)
+
+fund_fast_search(identifier)
 }
 \arguments{
-\item{term}{Search term to look for funds}
+\item{term}{Search term to search for in a fund name}
+
+\item{identifier}{A Series, Class/Contract ID, Ticker Symbol or CIK}
 }
 \value{
 A dataframe of funds found including the following columns -
@@ -27,8 +32,20 @@ A dataframe of funds found including the following columns -
   }
 }
 \description{
-SEC Mutual Fund Search
+Provides access to the results of the SEC's Mutual fund search tool
+available
+\href{https://www.sec.gov/edgar/searchedgar/mutualsearch.html}{here}
 }
+\details{
+NOTE: This is really a specific version of the Vairable Insurance search
+tool.
+}
+\section{Functions}{
+\itemize{
+\item \code{fund_fast_search}: Performs a 'Fast Search' based on a fund identifier
+}}
+
 \examples{
 fund_search("precious metals")
+fund_fast_search("VMFVX")
 }

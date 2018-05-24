@@ -10,6 +10,8 @@
  * Added `cik_search()` to lookup CIK codes for companies.
  * Added `current_events()` to access recent filings by form type
  * Added `company_search()`
+ * Added `variable_insurance_search()` and `variable_insurance_fast_search()`
+ * Added `fund_fast_search()`
 
 ## Bugfixes
  * `parse_filing()` properly processes recent AIG & Costco filings
@@ -32,6 +34,8 @@
  * Made wordcount comparison in test_parse_filing far more restrictive (good
      thing!)
  * Tried to make TravisCI work, but still not great...
+ * Added series_search to cover the main work for fund and variable insurance
+     searches.
 
 # edgarWebR 0.3.1 - "Oh yeah, data changes"
 ## Bugfixes

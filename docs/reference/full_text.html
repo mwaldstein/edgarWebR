@@ -201,72 +201,72 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                             name
-#&gt; 1   2018-05-22 INFORMATION TABLE of 13F-HR for AMALGAMATED BANK
-#&gt; 2   2018-05-22                          424B2 for CITIGROUP INC
-#&gt; 3   2018-05-22                             10-Q for NVIDIA CORP
-#&gt; 4   2018-05-22 INFORMATION TABLE of 13F-HR for McIlrath Eck LLC
-#&gt; 5   2018-05-22                     N-Q for Securian Funds Trust
-#&gt; 6   2018-05-22  INFORMATION TABLE of 13F-HR for NBT BANK N A NY
-#&gt; 7   2018-05-22                        424B2 for HSBC USA INC MD
-#&gt; 8   2018-05-22                                6-K for TIM S p A
-#&gt; 9   2018-05-22                   N-Q for Transamerica ETF Trust
-#&gt; 10  2018-05-22                       N-Q for TRANSAMERICA FUNDS
-#&gt;                                                                                                           href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/919192/000091919218000004/xslForm13F_X01/form_f13_data_20180331.xml
-#&gt; 2                https://www.sec.gov/Archives/edgar/data/831001/000095010318006395/dp91206_424b2-us1849743.htm
-#&gt; 3                         https://www.sec.gov/Archives/edgar/data/1045810/000104581018000080/nvda2019q110q.htm
-#&gt; 4           https://www.sec.gov/Archives/edgar/data/1701714/000109544918000034/xslForm13F_X01/table2018-03.xml
-#&gt; 5                           https://www.sec.gov/Archives/edgar/data/766351/000110465918035009/a18-3927_1nq.htm
-#&gt; 6        https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 7                          https://www.sec.gov/Archives/edgar/data/83246/000114420418030249/tv494783_424b2.htm
-#&gt; 8                             https://www.sec.gov/Archives/edgar/data/948642/000119312518170089/d577854d6k.htm
-#&gt; 9                            https://www.sec.gov/Archives/edgar/data/1673996/000119312518170330/d551530dnq.htm
-#&gt; 10                            https://www.sec.gov/Archives/edgar/data/787623/000119312518170335/d551532dnq.htm
-#&gt;              company_name     cik  sic
-#&gt; 1        AMALGAMATED BANK  919192 &lt;NA&gt;
-#&gt; 2           CITIGROUP INC  831001 6021
-#&gt; 3             NVIDIA CORP 1045810 3674
-#&gt; 4        McIlrath Eck LLC 1701714 &lt;NA&gt;
-#&gt; 5    Securian Funds Trust  766351 &lt;NA&gt;
-#&gt; 6         NBT BANK N A NY  898413 &lt;NA&gt;
-#&gt; 7         HSBC USA INC MD   83246 6021
-#&gt; 8               TIM S p A  948642 4899
-#&gt; 9  Transamerica ETF Trust 1673996 &lt;NA&gt;
-#&gt; 10     TRANSAMERICA FUNDS  787623 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                       content
-#&gt; 1  ABBOTT LABORATORIES COM 002824100 12666 211381 SH SOLE 211381 0 0 ADVANCED MICRO DEVICES INC COM 007903107 1938 192859 SH SOLE 192859 0 0 AETNA INC COM 00817Y108 7107 42054 SH SOLE 42054 0 0 AIR PRODUCTS CHEMICALS INC COM 009158106 4243 26683 SH SOLE 26683 0 0 AMERICAN ELECTRIC POWER COM 025537101
-#&gt; 2                                                                   Each of these risks will depend on the performance of the worst performing of the shares of common stock of Intel Corporation and the shares of common stock of PayPal Holdings, Inc. (each, the underlying shares ), as described below.
-#&gt; 3      UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-Q [x] QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended April 29, 2018 OR [_] TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES
-#&gt; 4         ACCO BRANDS CORP COM 00081T108 8 650 SH SOLE 650 0 0 AGNC INVT CORP COM 00123Q104 5 256 SH SOLE 256 0 0 ALPS ETF TR C&amp;S GLOBL ETF 00162Q106 25 590 SH SOLE 590 0 0 ALPS ETF TR ALERIAN MLP 00162Q866 477 50903 SH SOLE 50903 0 0 AT&amp;T INC COM 00206R102 125 3501 SH SOLE 3501 0 0 AU OPTRONICS CORP
-#&gt; 5                   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-4279 Securian Funds Trust (Exact name of registrant as specified in charter)
-#&gt; 6                                                                                                                                                                                                                                                                             AT&amp;T IncCom00206R102313287854SH
-#&gt; 7                             Calculation of Registration Fee Title of Each Class of Securities Offered Maximum Aggregate Offering Price Amount of Registration Fee (1) Debt Securities (INTC) $2, 424, 000 $301.79 Debt Securities (MGM) $2, 956, 000 $368.02 Debt Securities (WDC) $1, 295, 000 $161.23 (1)
-#&gt; 8                          UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM 6-K REPORT OF FOREIGN PRIVATE ISSUER PURSUANT TO RULE 13a-16 OR 15D-16 UNDER THE SECURITIES EXCHANGE ACT OF 1934 FOR THE MONTH OF MAY 2018 TIM S.p.A. (Translation of registrant s name into English)
-#&gt; 9                        UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-23237 TRANSAMERICA ETF TRUST (Exact Name of Registrant as Specified in
-#&gt; 10                                SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-Q QUARTERLY SCHEDULE OF PORTFOLIO HOLDINGS OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-04556 TRANSAMERICA FUNDS (Exact Name of Registrant as Specified in Charter)
-#&gt;                                                                                         parent_href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/919192/000091919218000004/xslForm13F_X01/primary_doc.xml
-#&gt; 2                                                                                              &lt;NA&gt;
-#&gt; 3                                                                                              &lt;NA&gt;
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/919192/000091919218000004/xslForm13F_X01/primary_doc.xml
-#&gt; 5                                                                                              &lt;NA&gt;
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/xslForm13F_X01/primary_doc.xml
-#&gt; 7                                                                                              &lt;NA&gt;
-#&gt; 8                                                                                              &lt;NA&gt;
-#&gt; 9                                                                                              &lt;NA&gt;
-#&gt; 10                                                                                             &lt;NA&gt;
-#&gt;                                                                                          index_href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/919192/000091919218000004/0000919192-18-000004-index.htm
-#&gt; 2                                                                                              &lt;NA&gt;
-#&gt; 3                                                                                              &lt;NA&gt;
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/919192/000091919218000004/0000919192-18-000004-index.htm
-#&gt; 5                                                                                              &lt;NA&gt;
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/898413/000114036118025075/0001140361-18-025075-index.htm
-#&gt; 7                                                                                              &lt;NA&gt;
-#&gt; 8                                                                                              &lt;NA&gt;
-#&gt; 9                                                                                              &lt;NA&gt;
-#&gt; 10                                                                                             &lt;NA&gt;</div></pre>
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                         name
+#&gt; 1   2018-05-24            10-Q for APPLIED MATERIALS INC DE
+#&gt; 2   2018-05-24     XML of 10-Q for APPLIED MATERIALS INC DE
+#&gt; 3   2018-05-24     XML of 10-Q for APPLIED MATERIALS INC DE
+#&gt; 4   2018-05-24      N-Q for AMERICAN FUNDS INSURANCE SERIES
+#&gt; 5   2018-05-24               N-Q for AMERICAN BALANCED FUND
+#&gt; 6   2018-05-24 N-Q for AMERICAN FUNDS FUNDAMENTAL INVESTORS
+#&gt; 7   2018-05-24             N-Q for INVESTMENT CO OF AMERICA
+#&gt; 8   2018-05-24                       10-K for MCKESSON CORP
+#&gt; 9   2018-05-24    N-CSRS for VANGUARD WELLESLEY INCOME FUND
+#&gt; 10  2018-05-24             N-CSRS for VANGUARD FENWAY FUNDS
+#&gt;                                                                                           href
+#&gt; 1   https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/amat0429201810-qq22018.htm
+#&gt; 2                      https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/R20.htm
+#&gt; 3                      https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/R31.htm
+#&gt; 4                https://www.sec.gov/Archives/edgar/data/729528/000005193118000518/afis_nq.htm
+#&gt; 5                 https://www.sec.gov/Archives/edgar/data/4568/000005193118000519/ambal_nq.htm
+#&gt; 6                   https://www.sec.gov/Archives/edgar/data/39473/000005193118000523/fi_nq.htm
+#&gt; 7                  https://www.sec.gov/Archives/edgar/data/51931/000005193118000524/ica-nq.htm
+#&gt; 8        https://www.sec.gov/Archives/edgar/data/927653/000092765318000010/mck_10kx3312018.htm
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/105544/000093247118006083/wellesleyincome_final.htm
+#&gt; 10          https://www.sec.gov/Archives/edgar/data/826473/000093247118006084/fenway_final.htm
+#&gt;                            company_name    cik  sic
+#&gt; 1              APPLIED MATERIALS INC DE   6951 3674
+#&gt; 2              APPLIED MATERIALS INC DE   6951 3674
+#&gt; 3              APPLIED MATERIALS INC DE   6951 3674
+#&gt; 4       AMERICAN FUNDS INSURANCE SERIES 729528 &lt;NA&gt;
+#&gt; 5                AMERICAN BALANCED FUND   4568 &lt;NA&gt;
+#&gt; 6  AMERICAN FUNDS FUNDAMENTAL INVESTORS  39473 &lt;NA&gt;
+#&gt; 7              INVESTMENT CO OF AMERICA  51931 &lt;NA&gt;
+#&gt; 8                         MCKESSON CORP 927653 5122
+#&gt; 9        VANGUARD WELLESLEY INCOME FUND 105544 &lt;NA&gt;
+#&gt; 10                VANGUARD FENWAY FUNDS 826473 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                           content
+#&gt; 1  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 10-Q (Mark One) QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended April 29, 2018 or TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE
+#&gt; 2                                                                                                                              Percentage of Net Sales Samsung Electronics Co., Ltd. 18 % Taiwan Semiconductor Manufacturing Company Limited 12 % Intel Corporation 12 % No definition available.
+#&gt; 3                           v3.8.0.1 Industry Segment Operations (Tables) 6 Months Ended Apr. 29, 2018 Net sales and operating income (loss) for each reportable segment were as follows: Three Months Ended Six Months Ended Net Sales Operating Income (Loss) Net Sales Operating Income (Loss)
+#&gt; 4                UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-03857 American Funds Insurance Series (Exact Name of Registrant as
+#&gt; 5            UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-00066 American Balanced Fund (Exact Name of Registrant as Specified in
+#&gt; 6              UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-00032 American Funds Fundamental Investors (Exact Name of Registrant
+#&gt; 7              UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-00116 The Investment Company of America (Exact Name of Registrant as
+#&gt; 8        UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-K x ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended March 31, 2018 OR TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES
+#&gt; 9  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-01766 Name of Registrant: Vanguard Wellesley Income Fund Address of Registrant: P.O. Box
+#&gt; 10     UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-05445 Name of Registrant: Vanguard Fenway Funds Address of Registrant: P.O. Box 2600
+#&gt;                                                                                   parent_href
+#&gt; 1                                                                                        &lt;NA&gt;
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/amat0429201810-qq22018.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/amat0429201810-qq22018.htm
+#&gt; 4                                                                                        &lt;NA&gt;
+#&gt; 5                                                                                        &lt;NA&gt;
+#&gt; 6                                                                                        &lt;NA&gt;
+#&gt; 7                                                                                        &lt;NA&gt;
+#&gt; 8                                                                                        &lt;NA&gt;
+#&gt; 9                                                                                        &lt;NA&gt;
+#&gt; 10                                                                                       &lt;NA&gt;
+#&gt;                                                                                        index_href
+#&gt; 1                                                                                            &lt;NA&gt;
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/0000006951-18-000017-index.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/0000006951-18-000017-index.htm
+#&gt; 4                                                                                            &lt;NA&gt;
+#&gt; 5                                                                                            &lt;NA&gt;
+#&gt; 6                                                                                            &lt;NA&gt;
+#&gt; 7                                                                                            &lt;NA&gt;
+#&gt; 8                                                                                            &lt;NA&gt;
+#&gt; 9                                                                                            &lt;NA&gt;
+#&gt; 10                                                                                           &lt;NA&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

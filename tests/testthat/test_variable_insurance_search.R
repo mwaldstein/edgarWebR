@@ -1,8 +1,8 @@
-context("running fund_search")
+context("running variable_insurance_search")
 
 with_mock_API({
   test_that("running", {
-    res <- fund_search("precious metals")
+    res <- variable_insurance_search("precious metals")
     expect_is(res, "data.frame")
 
     expect_length(res, 12)
@@ -16,7 +16,7 @@ with_mock_API({
   })
 
   test_that("fast search (Class)", {
-    res <- fund_fast_search("C000191892")
+    res <- variable_insurance_fast_search("C000191892")
     expect_is(res, "data.frame")
 
     expect_length(res, 12)
@@ -29,7 +29,7 @@ with_mock_API({
     expect_equal(test.row$cik, "0000725781")
   })
   test_that("fast search (CIK)", {
-    res <- fund_fast_search("0000891190")
+    res <- variable_insurance_fast_search("0000891190")
     expect_is(res, "data.frame")
 
     expect_length(res, 12)

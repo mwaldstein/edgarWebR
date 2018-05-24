@@ -69,12 +69,12 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="odd">
 <td>Fund Search</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/mutualsearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/mutualsearch.html</a></td>
-<td><code>fund_search()</code></td>
+<td><code>fund_search()</code>, <code>fund_fast_search()</code></td>
 </tr>
 <tr class="even">
 <td>Var. Insurance Products</td>
 <td><a href="https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html" class="uri">https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html</a></td>
-<td>N/A</td>
+<td><code>variable_insurance_search()</code>, <code>variable_insurance_fast_searc()</code></td>
 </tr>
 <tr class="odd">
 <td>Confidential treatment orders</td>

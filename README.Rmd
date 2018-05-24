@@ -59,8 +59,8 @@ fund search and resultant filings.
 | Header Search                 | https://www.sec.gov/cgi-bin/srch-edgar                          | `header_search()` |
 | Fund Disclosures              | https://www.sec.gov/edgar/searchedgar/prospectus.htm            | Use `company_search()` and specify the 'type' parameter as 485 |
 | Fund Voting Records           | https://www.sec.gov/edgar/searchedgar/n-px.htm                  | Use `company_search()` and specify the 'type' parameter as 'N-PX' |
-| Fund Search                   | https://www.sec.gov/edgar/searchedgar/mutualsearch.html         | `fund_search()` |
-| Var. Insurance Products       | https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html     | N/A |
+| Fund Search                   | https://www.sec.gov/edgar/searchedgar/mutualsearch.html         | `fund_search()`, `fund_fast_search()` |
+| Var. Insurance Products       | https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html     | `variable_insurance_search()`, `variable_insurance_fast_searc()` |
 | Confidential treatment orders | https://www.sec.gov/edgar/searchedgar/ctorders.htm              | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types 'CT ORDER'|
 | Effectiveness notices         | https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect       | N/A |
 | CIK                           | https://www.sec.gov/edgar/searchedgar/cik.htm                   | `cik_search()` |

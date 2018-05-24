@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SEC Mutual Fund Search — fund_search • edgarWebR</title>
+<title>SEC Variable Insurance Search — variable_insurance_search • edgarWebR</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,10 +28,10 @@
 
 
 
-<meta property="og:title" content="SEC Mutual Fund Search — fund_search" />
+<meta property="og:title" content="SEC Variable Insurance Search — variable_insurance_search" />
 
-<meta property="og:description" content="Provides access to the results of the SEC's Mutual fund search tool
-available
+<meta property="og:description" content="Provides access to the results of the SEC's Variable Insurance Product
+search tool available
 here" />
 <meta name="twitter:card" content="summary" />
 
@@ -114,29 +114,29 @@ here" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>SEC Mutual Fund Search</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/fund_search.R'><code>R/fund_search.R</code></a></small>
-    <div class="hidden name"><code>fund_search.Rd</code></div>
+    <h1>SEC Variable Insurance Search</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/R/variable_insurance_search.R'><code>R/variable_insurance_search.R</code></a></small>
+    <div class="hidden name"><code>variable_insurance_search.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Provides access to the results of the SEC's Mutual fund search tool
-available
-<a href='https://www.sec.gov/edgar/searchedgar/mutualsearch.html'>here</a></p>
+    <p>Provides access to the results of the SEC's Variable Insurance Product
+search tool available
+<a href='https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html'>here</a></p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>fund_search</span>(<span class='no'>term</span>)
+    <pre class="usage"><span class='fu'>variable_insurance_search</span>(<span class='no'>term</span>)
 
-<span class='fu'>fund_fast_search</span>(<span class='no'>identifier</span>)</pre>
+<span class='fu'>variable_insurance_fast_search</span>(<span class='no'>identifier</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>term</th>
-      <td><p>Search term to search for in a fund name</p></td>
+      <td><p>Search term to search for in a company, fund or contract name</p></td>
     </tr>
     <tr>
       <th>identifier</th>
@@ -146,7 +146,7 @@ available
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe of funds found including the following columns -</p><ul>
+    <p>A dataframe of products found including the following columns -</p><ul>
 <li><p>class_id</p></li>
 <li><p>class_filings_href</p></li>
 <li><p>class_name</p></li>
@@ -162,20 +162,15 @@ available
 </ul>
 
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>NOTE: This is really a specific version of the Vairable Insurance search
-tool.</p>
-    
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     <ul>
-<li><p><code>fund_fast_search</code>: Performs a 'Fast Search' based on a fund identifier</p></li>
+<li><p><code>variable_insurance_fast_search</code>: Performs a 'Fast Search' based on an identifier</p></li>
 </ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>fund_search</span>(<span class='st'>"precious metals"</span>)</div><div class='output co'>#&gt;      class_id
+    <pre class="examples"><div class='input'><span class='fu'>variable_insurance_search</span>(<span class='st'>"precious metals"</span>)</div><div class='output co'>#&gt;      class_id
 #&gt; 1  C000000347
 #&gt; 2  C000000348
 #&gt; 3  C000000349
@@ -984,7 +979,7 @@ tool.</p>
 #&gt; 77 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
 #&gt; 78 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
 #&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
-#&gt; 80 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series</div><div class='input'><span class='fu'>fund_fast_search</span>(<span class='st'>"VMFVX"</span>)</div><div class='output co'>#&gt;     class_id
+#&gt; 80 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series</div><div class='input'><span class='fu'>variable_insurance_fast_search</span>(<span class='st'>"VMFVX"</span>)</div><div class='output co'>#&gt;     class_id
 #&gt; 1 C000092041
 #&gt;                                                                      class_filings_href
 #&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000092041&amp;action=getcompany&amp;scd=filings
@@ -1007,8 +1002,6 @@ tool.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
 
       <li><a href="#functions">Functions</a></li>
       
