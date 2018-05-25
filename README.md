@@ -18,7 +18,7 @@ EdgarWebR does *not* provide any functionality to extract financial data or othe
 EDGAR Tools
 -----------
 
-The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searchedgar/webusers.htm) for filing and entity lookup and examination. edgarWebR will eventually support all of the provided tools, but for now it is focused on covering company and fund search and resultant filings.
+The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searchedgar/webusers.htm) for filing and entity lookup and examination. As of v1.0, edgarWebR supports all public search and browse interfaces.
 
 *Search Interfaces:*
 
