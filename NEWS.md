@@ -1,4 +1,4 @@
-# edgarWebR 0.3.1.9000 - *DEVELOPMENT*
+# edgarWebR 1.0.0 - "Everything in its place"
 
 ## Features
  * `sic_codes` a dataset for sic codes from [US Department of

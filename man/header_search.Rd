@@ -27,7 +27,7 @@ A dataframe of funds found including the following columns -
   }
 }
 \description{
-Seaches filing headers going back to 1994 excluding the most recent day
+Searches filing headers going back to 1994 excluding the most recent day
 using the interface \href{here}{https://www.sec.gov/cgi-bin/srch-edgar}.
 }
 \examples{

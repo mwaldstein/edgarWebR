@@ -4,7 +4,7 @@
 #' available
 #' \href{https://www.sec.gov/edgar/searchedgar/mutualsearch.html}{here}
 #'
-#' NOTE: This is really a specific version of the Vairable Insurance search
+#' NOTE: This is really a specific version of the Variable Insurance search
 #' tool.
 #'
 #' @param term Search term to search for in a fund name

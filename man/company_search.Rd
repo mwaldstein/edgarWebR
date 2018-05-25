@@ -41,7 +41,7 @@ unfortunately the best way to find it is to examine the company search page.}
 
 \item{ownership}{boolean for inclusion of company change filings}
 
-\item{type}{Limit to companiew with a given filing type - e.g. 'N-PX'}
+\item{type}{Limit to companies with a given filing type - e.g. 'N-PX'}
 
 \item{count}{Number of filings to fetch per page. Valid options are 10, 20,
 40, 80, or 100. Other values will result in the closest count.}

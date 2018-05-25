@@ -2,7 +2,7 @@
 title: "Parsing Functions in edgarWebR"
 output: rmarkdown::html_vignette
 date: "October 12, 2017"
-autho: "Micah J Waldstein <micah@waldste.in>"
+author: "Micah J Waldstein <micah@waldste.in>"
 vignette: >
   %\VignetteIndexEntry{Parsing Functions in edgarWebR}
   %\VignetteEngine{knitr::rmarkdown}
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(collapse = T, comment = "#>")
 library(edgarWebR)
 set.seed(0451)
 ```
-New to edgarWebR 0.2.0 are funtions for parsing SEC documents. While there are
+New to edgarWebR 0.2.0 are functions for parsing SEC documents. While there are
 good R packages for XBRL processing, there is a gap in extracting information
 from other document types available via the site. edgarWebR currently provides
 functions for 2 of those -

@@ -29,7 +29,7 @@
 #'   unfortunately the best way to find it is to examine the company search page.
 #' @param sic SIC Code
 #' @param ownership boolean for inclusion of company change filings
-#' @param type Limit to companiew with a given filing type - e.g. 'N-PX'
+#' @param type Limit to companies with a given filing type - e.g. 'N-PX'
 #' @param count Number of filings to fetch per page. Valid options are 10, 20,
 #'   40, 80, or 100. Other values will result in the closest count.
 #' @param page Which page of results to return.

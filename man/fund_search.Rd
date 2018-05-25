@@ -37,7 +37,7 @@ available
 \href{https://www.sec.gov/edgar/searchedgar/mutualsearch.html}{here}
 }
 \details{
-NOTE: This is really a specific version of the Vairable Insurance search
+NOTE: This is really a specific version of the Variable Insurance search
 tool.
 }
 \section{Functions}{

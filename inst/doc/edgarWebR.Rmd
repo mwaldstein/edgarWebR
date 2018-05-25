@@ -2,7 +2,7 @@
 title: "Introducing edgarWebR"
 output: rmarkdown::html_vignette
 date: "August 2, 2017"
-autho: "Micah J Waldstein <micah@waldste.in>"
+author: "Micah J Waldstein <micah@waldste.in>"
 vignette: >
   %\VignetteIndexEntry{Introducing edgarWebR}
   %\VignetteEngine{knitr::rmarkdown}
@@ -103,7 +103,7 @@ knitr::kable(filings %>%
 ```
 
 No surprise, yearly filings (10-K's) are larger and take more time than
-quarterly filings (10-K's). Lets see how the times are destributed:
+quarterly filings (10-K's). Lets see how the times are distributed:
 
 ```{r plotDelay, fig.width=6}
 ggplot(filings, aes(x = factor(type), y = filing_delay)) +

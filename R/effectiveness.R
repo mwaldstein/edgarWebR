@@ -1,6 +1,6 @@
 #' SEC Notice of Effectiveness
 #'
-#' Returns the current Noice of Effectiveness from the most recently completed
+#' Returns the current Notice of Effectiveness from the most recently completed
 #' business day from
 #' \href{https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect}{here}
 #'
