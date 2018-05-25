@@ -62,7 +62,7 @@ fund search and resultant filings.
 | Fund Search                   | https://www.sec.gov/edgar/searchedgar/mutualsearch.html         | `fund_search()`, `fund_fast_search()` |
 | Var. Insurance Products       | https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html     | `variable_insurance_search()`, `variable_insurance_fast_search()` |
 | Confidential treatment orders | https://www.sec.gov/edgar/searchedgar/ctorders.htm              | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types 'CT ORDER'|
-| Effectiveness notices         | https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect       | N/A |
+| Effectiveness notices         | https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect       | `effectiveness()` |
 | CIK                           | https://www.sec.gov/edgar/searchedgar/cik.htm                   | `cik_search()` |
 | Daily Filings                 | https://www.sec.gov/edgar/searchedgar/currentevents.htm         | `current_events()` |
 | Correspondence                | https://www.sec.gov/answers/edgarletters.htm                    | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types 'upload' or 'corresp'|

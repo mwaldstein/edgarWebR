@@ -84,7 +84,7 @@ The EDGAR System provides a number of [tools](https://www.sec.gov/edgar/searched
 <tr class="even">
 <td>Effectiveness notices</td>
 <td><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect" class="uri">https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect</a></td>
-<td>N/A</td>
+<td><code>effectiveness()</code></td>
 </tr>
 <tr class="odd">
 <td>CIK</td>

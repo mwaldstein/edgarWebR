@@ -12,6 +12,7 @@
  * Added `company_search()`
  * Added `variable_insurance_search()` and `variable_insurance_fast_search()`
  * Added `fund_fast_search()`
+ * Added `effectiveness()`
 
 ## Bugfixes
  * `parse_filing()` properly processes recent AIG & Costco filings

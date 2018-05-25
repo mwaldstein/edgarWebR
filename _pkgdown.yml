@@ -2,8 +2,6 @@ reference:
   - title: "Searching Functions"
     contents:
       - starts_with("company_")
-      - latest_filings
-      - current_events
       - full_text
       - header_search
       - fund_search
@@ -11,6 +9,11 @@ reference:
       - variable_insurance_search
       - variable_insurance_fast_search
       - cik_search
+  - title: "Recent Functions"
+    contents:
+      - current_events
+      - effectiveness
+      - latest_filings
   - title: "Filing Detail Functions"
     contents:
       - starts_with("filing_")
