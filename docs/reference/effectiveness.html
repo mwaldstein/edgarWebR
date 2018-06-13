@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -34,6 +36,7 @@
 business day from
 here" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -151,160 +154,55 @@ business day from
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>effectiveness</span>()</div><div class='output co'>#&gt;    registration_number
-#&gt; 1         \n333-220295
-#&gt; 2         \n333-222475
-#&gt; 3         \n333-224990
-#&gt; 4         \n333-224881
-#&gt; 5         \n333-223956
-#&gt; 6         \n333-224930
-#&gt; 7         \n333-222829
-#&gt; 8         \n333-224732
-#&gt; 9         \n333-224505
-#&gt; 10        \n333-224488
-#&gt; 11        \n333-224884
-#&gt; 12        \n333-222581
-#&gt; 13        \n333-225077
-#&gt; 14        \n333-224493
-#&gt; 15        \n333-224951
-#&gt; 16        \n333-224880
-#&gt; 17        \n333-224153
-#&gt; 18        \n333-213451
-#&gt; 19        \n333-217272
-#&gt; 20        \n333-223255
-#&gt; 21        \n333-208174
-#&gt;                                                                                                file_href
-#&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-220295&amp;owner=exclude&amp;count=200
-#&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-222475&amp;owner=exclude&amp;count=200
-#&gt; 3  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224990&amp;owner=exclude&amp;count=200
-#&gt; 4  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224881&amp;owner=exclude&amp;count=200
-#&gt; 5  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-223956&amp;owner=exclude&amp;count=200
-#&gt; 6  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224930&amp;owner=exclude&amp;count=200
-#&gt; 7  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-222829&amp;owner=exclude&amp;count=200
-#&gt; 8  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224732&amp;owner=exclude&amp;count=200
-#&gt; 9  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224505&amp;owner=exclude&amp;count=200
-#&gt; 10 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224488&amp;owner=exclude&amp;count=200
-#&gt; 11 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224884&amp;owner=exclude&amp;count=200
-#&gt; 12 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-222581&amp;owner=exclude&amp;count=200
-#&gt; 13 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-225077&amp;owner=exclude&amp;count=200
-#&gt; 14 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224493&amp;owner=exclude&amp;count=200
-#&gt; 15 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224951&amp;owner=exclude&amp;count=200
-#&gt; 16 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224880&amp;owner=exclude&amp;count=200
-#&gt; 17 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224153&amp;owner=exclude&amp;count=200
-#&gt; 18 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-213451&amp;owner=exclude&amp;count=200
-#&gt; 19 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-217272&amp;owner=exclude&amp;count=200
-#&gt; 20 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-223255&amp;owner=exclude&amp;count=200
-#&gt; 21 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-208174&amp;owner=exclude&amp;count=200
-#&gt;                                registrant
-#&gt; 1               AIRBORNE WIRELESS NETWORK
-#&gt; 2                        Altice USA, Inc.
-#&gt; 3  Bluerock Residential Growth REIT, Inc.
-#&gt; 4                     CHF Solutions, Inc.
-#&gt; 5                                CLPS Inc
-#&gt; 6                        DYNATRONICS CORP
-#&gt; 7                             EXENT CORP.
-#&gt; 8                            EuroDry Ltd.
-#&gt; 9                          GreenSky, Inc.
-#&gt; 10          Kiniksa Pharmaceuticals, Ltd.
-#&gt; 11           MACKINAC FINANCIAL CORP /MI/
-#&gt; 12                            PAVmed Inc.
-#&gt; 13  Sailpoint Technologies Holdings, Inc.
-#&gt; 14              Scholar Rock Holding Corp
-#&gt; 15               TENAX THERAPEUTICS, INC.
-#&gt; 16                            Tocagen Inc
-#&gt; 17              TEMPLETON GROWTH FUND INC
-#&gt; 18               NIOCORP DEVELOPMENTS LTD
-#&gt; 19               NIOCORP DEVELOPMENTS LTD
-#&gt; 20                  Nautilus Holdco, Inc.
-#&gt; 21              ZAIS Group Holdings, Inc.
-#&gt;                                                                                      registrant_href
-#&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001537258&amp;owner=include&amp;count=200
-#&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001702780&amp;owner=include&amp;count=200
-#&gt; 3  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001442626&amp;owner=include&amp;count=200
-#&gt; 4  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001506492&amp;owner=include&amp;count=200
-#&gt; 5  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001724542&amp;owner=include&amp;count=200
-#&gt; 6  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000720875&amp;owner=include&amp;count=200
-#&gt; 7  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001726744&amp;owner=include&amp;count=200
-#&gt; 8  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001731388&amp;owner=include&amp;count=200
-#&gt; 9  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001712923&amp;owner=include&amp;count=200
-#&gt; 10 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001730430&amp;owner=include&amp;count=200
-#&gt; 11 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000036506&amp;owner=include&amp;count=200
-#&gt; 12 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001624326&amp;owner=include&amp;count=200
-#&gt; 13 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001627857&amp;owner=include&amp;count=200
-#&gt; 14 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001727196&amp;owner=include&amp;count=200
-#&gt; 15 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000034956&amp;owner=include&amp;count=200
-#&gt; 16 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001419041&amp;owner=include&amp;count=200
-#&gt; 17 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000805664&amp;owner=include&amp;count=200
-#&gt; 18 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001512228&amp;owner=include&amp;count=200
-#&gt; 19 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001512228&amp;owner=include&amp;count=200
-#&gt; 20 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001732004&amp;owner=include&amp;count=200
-#&gt; 21 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001562214&amp;owner=include&amp;count=200
-#&gt;                 division
-#&gt; 1    Corporation Finance
-#&gt; 2    Corporation Finance
-#&gt; 3    Corporation Finance
-#&gt; 4    Corporation Finance
-#&gt; 5    Corporation Finance
-#&gt; 6    Corporation Finance
-#&gt; 7    Corporation Finance
-#&gt; 8    Corporation Finance
-#&gt; 9    Corporation Finance
-#&gt; 10   Corporation Finance
-#&gt; 11   Corporation Finance
-#&gt; 12   Corporation Finance
-#&gt; 13   Corporation Finance
-#&gt; 14   Corporation Finance
-#&gt; 15   Corporation Finance
-#&gt; 16   Corporation Finance
-#&gt; 17 Investment Management
-#&gt; 18   Corporation Finance
-#&gt; 19   Corporation Finance
-#&gt; 20   Corporation Finance
-#&gt; 21   Corporation Finance
-#&gt;                                                        type effective_date
-#&gt; 1                               Securities Act Registration     1527107400
-#&gt; 2                               Securities Act Registration     1527105600
-#&gt; 3                               Securities Act Registration     1527105600
-#&gt; 4                               Securities Act Registration     1527109200
-#&gt; 5                               Securities Act Registration     1527109200
-#&gt; 6                               Securities Act Registration     1527105600
-#&gt; 7                               Securities Act Registration     1527094800
-#&gt; 8                               Securities Act Registration     1527080400
-#&gt; 9                               Securities Act Registration     1527105600
-#&gt; 10                              Securities Act Registration     1527105600
-#&gt; 11                              Securities Act Registration     1527105600
-#&gt; 12                              Securities Act Registration     1527107400
-#&gt; 13                              Securities Act Registration     1527107400
-#&gt; 14                              Securities Act Registration     1527105600
-#&gt; 15                              Securities Act Registration     1527107400
-#&gt; 16                              Securities Act Registration     1527105600
-#&gt; 17                              Securities Act Registration     1527096600
-#&gt; 18 Post-effective Amendments to Securities Act Registration     1527048000
-#&gt; 19 Post-effective Amendments to Securities Act Registration     1527048000
-#&gt; 20 Post-effective Amendments to Securities Act Registration     1527048000
-#&gt; 21 Post-effective Amendments to Securities Act Registration     1527048000
-#&gt;    filing_date
-#&gt; 1           NA
-#&gt; 2           NA
-#&gt; 3           NA
-#&gt; 4           NA
-#&gt; 5           NA
-#&gt; 6           NA
-#&gt; 7           NA
-#&gt; 8           NA
-#&gt; 9           NA
-#&gt; 10          NA
-#&gt; 11          NA
-#&gt; 12          NA
-#&gt; 13          NA
-#&gt; 14          NA
-#&gt; 15          NA
-#&gt; 16          NA
-#&gt; 17          NA
-#&gt; 18  1526443200
-#&gt; 19  1526443200
-#&gt; 20  1526529600
-#&gt; 21  1526616000</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>effectiveness</span>()</div><div class='output co'>#&gt;   registration_number
+#&gt; 1        \n333-224209
+#&gt; 2        \n333-225448
+#&gt; 3        \n333-225267
+#&gt; 4        \n333-223604
+#&gt; 5        \n333-224857
+#&gt; 6        \n333-215581
+#&gt;                                                                                               file_href
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224209&amp;owner=exclude&amp;count=200
+#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-225448&amp;owner=exclude&amp;count=200
+#&gt; 3 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-225267&amp;owner=exclude&amp;count=200
+#&gt; 4 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-223604&amp;owner=exclude&amp;count=200
+#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-224857&amp;owner=exclude&amp;count=200
+#&gt; 6 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-215581&amp;owner=exclude&amp;count=200
+#&gt;                                  registrant
+#&gt; 1                           HRG GROUP, INC.
+#&gt; 2                     REMARK HOLDINGS, INC.
+#&gt; 3                           Rise Gold Corp.
+#&gt; 4                        SAUER ENERGY, INC.
+#&gt; 5                                   FT 7424
+#&gt; 6 PIMCO CORPORATE &amp; INCOME OPPORTUNITY FUND
+#&gt;                                                                                     registrant_href
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000109177&amp;owner=include&amp;count=200
+#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001368365&amp;owner=include&amp;count=200
+#&gt; 3 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001424864&amp;owner=include&amp;count=200
+#&gt; 4 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001446152&amp;owner=include&amp;count=200
+#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001734473&amp;owner=include&amp;count=200
+#&gt; 6 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001190935&amp;owner=include&amp;count=200
+#&gt;                division
+#&gt; 1   Corporation Finance
+#&gt; 2   Corporation Finance
+#&gt; 3   Corporation Finance
+#&gt; 4   Corporation Finance
+#&gt; 5 Investment Management
+#&gt; 6 Investment Management
+#&gt;                                                       type      effective_date
+#&gt; 1                              Securities Act Registration 2018-06-12 09:00:00
+#&gt; 2                              Securities Act Registration 2018-06-12 16:00:00
+#&gt; 3                              Securities Act Registration 2018-06-12 16:30:00
+#&gt; 4                              Securities Act Registration 2018-06-12 11:00:00
+#&gt; 5                              Securities Act Registration 2018-06-12 17:00:00
+#&gt; 6 Post-effective Amendments to Securities Act Registration 2018-06-12 00:00:00
+#&gt;   filing_date
+#&gt; 1        &lt;NA&gt;
+#&gt; 2        &lt;NA&gt;
+#&gt; 3        &lt;NA&gt;
+#&gt; 4        &lt;NA&gt;
+#&gt; 5        &lt;NA&gt;
+#&gt; 6  2018-06-11</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

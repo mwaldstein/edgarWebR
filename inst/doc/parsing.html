@@ -76,8 +76,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <p>New to edgarWebR 0.2.0 are functions for parsing SEC documents. While there are good R packages for XBRL processing, there is a gap in extracting information from other document types available via the site. edgarWebR currently provides functions for 2 of those -</p>
 <ul>
-<li><code>parse_submission()</code> - Processes a raw SGML filing into component documents</li>
-<li><code>parse_filing()</code> - Processes a narrative filing (e.g. 10-K, 10-Q) into paragraphs annotated with part and item numbers</li>
+<li><code>parse_submission()</code> - Processes a raw SGML filing into component documents. These are the ‘Complete submission text file’ on filing pages. Similar to zip files, they contain all the files included in particular submission.</li>
+<li><code>parse_filing()</code> - Processes a narrative filing (e.g. 10-K, 10-Q) into paragraphs annotated with part and item numbers. In a submission with many files, this is the main form.</li>
 </ul>
 <p>This vignette will show how to use both functions to find the risks reported by in a company’s recent filing.</p>
 <div id="find-a-submission" class="section level2">

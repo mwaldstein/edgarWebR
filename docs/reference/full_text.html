@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -33,6 +35,7 @@
 <meta property="og:description" content="Provides access to the SEC fillings
 full-text search tool." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -201,72 +204,8 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                         name
-#&gt; 1   2018-05-24            10-Q for APPLIED MATERIALS INC DE
-#&gt; 2   2018-05-24     XML of 10-Q for APPLIED MATERIALS INC DE
-#&gt; 3   2018-05-24     XML of 10-Q for APPLIED MATERIALS INC DE
-#&gt; 4   2018-05-24      N-Q for AMERICAN FUNDS INSURANCE SERIES
-#&gt; 5   2018-05-24               N-Q for AMERICAN BALANCED FUND
-#&gt; 6   2018-05-24 N-Q for AMERICAN FUNDS FUNDAMENTAL INVESTORS
-#&gt; 7   2018-05-24             N-Q for INVESTMENT CO OF AMERICA
-#&gt; 8   2018-05-24                       10-K for MCKESSON CORP
-#&gt; 9   2018-05-24    N-CSRS for VANGUARD WELLESLEY INCOME FUND
-#&gt; 10  2018-05-24             N-CSRS for VANGUARD FENWAY FUNDS
-#&gt;                                                                                           href
-#&gt; 1   https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/amat0429201810-qq22018.htm
-#&gt; 2                      https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/R20.htm
-#&gt; 3                      https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/R31.htm
-#&gt; 4                https://www.sec.gov/Archives/edgar/data/729528/000005193118000518/afis_nq.htm
-#&gt; 5                 https://www.sec.gov/Archives/edgar/data/4568/000005193118000519/ambal_nq.htm
-#&gt; 6                   https://www.sec.gov/Archives/edgar/data/39473/000005193118000523/fi_nq.htm
-#&gt; 7                  https://www.sec.gov/Archives/edgar/data/51931/000005193118000524/ica-nq.htm
-#&gt; 8        https://www.sec.gov/Archives/edgar/data/927653/000092765318000010/mck_10kx3312018.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/105544/000093247118006083/wellesleyincome_final.htm
-#&gt; 10          https://www.sec.gov/Archives/edgar/data/826473/000093247118006084/fenway_final.htm
-#&gt;                            company_name    cik  sic
-#&gt; 1              APPLIED MATERIALS INC DE   6951 3674
-#&gt; 2              APPLIED MATERIALS INC DE   6951 3674
-#&gt; 3              APPLIED MATERIALS INC DE   6951 3674
-#&gt; 4       AMERICAN FUNDS INSURANCE SERIES 729528 &lt;NA&gt;
-#&gt; 5                AMERICAN BALANCED FUND   4568 &lt;NA&gt;
-#&gt; 6  AMERICAN FUNDS FUNDAMENTAL INVESTORS  39473 &lt;NA&gt;
-#&gt; 7              INVESTMENT CO OF AMERICA  51931 &lt;NA&gt;
-#&gt; 8                         MCKESSON CORP 927653 5122
-#&gt; 9        VANGUARD WELLESLEY INCOME FUND 105544 &lt;NA&gt;
-#&gt; 10                VANGUARD FENWAY FUNDS 826473 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                           content
-#&gt; 1  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 10-Q (Mark One) QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended April 29, 2018 or TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE
-#&gt; 2                                                                                                                              Percentage of Net Sales Samsung Electronics Co., Ltd. 18 % Taiwan Semiconductor Manufacturing Company Limited 12 % Intel Corporation 12 % No definition available.
-#&gt; 3                           v3.8.0.1 Industry Segment Operations (Tables) 6 Months Ended Apr. 29, 2018 Net sales and operating income (loss) for each reportable segment were as follows: Three Months Ended Six Months Ended Net Sales Operating Income (Loss) Net Sales Operating Income (Loss)
-#&gt; 4                UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-03857 American Funds Insurance Series (Exact Name of Registrant as
-#&gt; 5            UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-00066 American Balanced Fund (Exact Name of Registrant as Specified in
-#&gt; 6              UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-00032 American Funds Fundamental Investors (Exact Name of Registrant
-#&gt; 7              UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-Q Quarterly Schedule of Portfolio Holdings of Registered Management Investment Company Investment Company Act File Number: 811-00116 The Investment Company of America (Exact Name of Registrant as
-#&gt; 8        UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-K x ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended March 31, 2018 OR TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES
-#&gt; 9  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-01766 Name of Registrant: Vanguard Wellesley Income Fund Address of Registrant: P.O. Box
-#&gt; 10     UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-05445 Name of Registrant: Vanguard Fenway Funds Address of Registrant: P.O. Box 2600
-#&gt;                                                                                   parent_href
-#&gt; 1                                                                                        &lt;NA&gt;
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/amat0429201810-qq22018.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/amat0429201810-qq22018.htm
-#&gt; 4                                                                                        &lt;NA&gt;
-#&gt; 5                                                                                        &lt;NA&gt;
-#&gt; 6                                                                                        &lt;NA&gt;
-#&gt; 7                                                                                        &lt;NA&gt;
-#&gt; 8                                                                                        &lt;NA&gt;
-#&gt; 9                                                                                        &lt;NA&gt;
-#&gt; 10                                                                                       &lt;NA&gt;
-#&gt;                                                                                        index_href
-#&gt; 1                                                                                            &lt;NA&gt;
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/0000006951-18-000017-index.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/6951/000000695118000017/0000006951-18-000017-index.htm
-#&gt; 4                                                                                            &lt;NA&gt;
-#&gt; 5                                                                                            &lt;NA&gt;
-#&gt; 6                                                                                            &lt;NA&gt;
-#&gt; 7                                                                                            &lt;NA&gt;
-#&gt; 8                                                                                            &lt;NA&gt;
-#&gt; 9                                                                                            &lt;NA&gt;
-#&gt; 10                                                                                           &lt;NA&gt;</div></pre>
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt; [1] name
+#&gt; &lt;0 rows&gt; (or 0-length row.names)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
