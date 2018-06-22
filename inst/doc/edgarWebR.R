@@ -23,22 +23,6 @@ knitr::kable(tail(filings)[, c("type", "filing_date", "accession_number", "size"
              digits = 2,
              format.args = list(big.mark = ","))
 
-## ----filingInfo,cache = TRUE---------------------------------------------
-# this can take a while - we're fetching ~100 html files!
-filing_infos <- map_df(filings$href, filing_information)
-
-filings <- bind_cols(filings, filing_infos)
-filings$filing_delay <- filings$filing_date - filings$period_date
-
-# Take a peak at the data
-knitr::kable(head(filings) %>% select(type, filing_date, period_date,
-                                      filing_delay, documents, bytes) %>%
-             mutate(filing_delay = as.numeric(filing_delay)),
-             col.names = c("Type", "Filing Date", "Period Date", "Delay",
-                           "Documents", "Size (B)"),
-             digits = 2,
-             format.args = list(big.mark = ","))
-
 ## ----filingAnalysis------------------------------------------------------
 knitr::kable(filings %>%
              group_by(type) %>% summarize(

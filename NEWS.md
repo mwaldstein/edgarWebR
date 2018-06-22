@@ -1,5 +1,9 @@
 # edgarWebR 1.0.0.9000 - ** DEVELOPMENT **
 
+## Bugfixes
+ * `parse_text_filing()` correctly parses filings that have spaces in
+     separating lines. (Fixes #4)
+
 ## Documentation
  * Elaborate the parsing vignette to better explain the files processed by
    `parse_filing()` and `parse_submission()`

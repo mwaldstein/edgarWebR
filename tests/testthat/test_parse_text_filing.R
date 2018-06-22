@@ -21,4 +21,19 @@ with_mock_API({
     expect_equal(length(unique(res$part.name)), 5)
     expect_equal(length(unique(res$item.name)), 15)
   })
+  test_that("WMX Technologies", {
+    #href <- "https://www.sec.gov/Archives/edgar/data/104938/0000950131-94-000440.txt"
+    submission_file <- file.path("..", "testdata", "0000950131-94-000440.txt")
+    submission <- parse_submission(submission_file)
+    expect_equal(nrow(submission), 8)
+    doc <- submission[submission$TYPE == "10-K", "TEXT"]
+    expect_equal(nchar(doc), 220403)
+    res <- parse_text_filing(doc)
+    expect_is(res, "data.frame")
+    expect_length(res, 3)
+    expect_equal(nrow(res), 464)
+    expect_equal(length(unique(res$part.name)), 5)
+    expect_equal(length(unique(res$item.name)), 15)
+    expect_equal(nrow(res[startsWith(res$item.name, "ITEM 7."),]), 2)
+  })
 })

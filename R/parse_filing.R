@@ -114,7 +114,10 @@ parse_text_filing <- function(x,
                               include.raw = FALSE,
                               fix.errors = TRUE) {
   doc <- charToText(x)
+  # Clean empty lines
+  doc <- gsub("\\n +\\n", "\n\n", doc)
   if (strip) {
+    # TODO - page number isn't always there
     doc <- gsub("^<PAGE>[:blank:]*[:digit:]+$", "", doc)
   }
   parts <- data.frame(text = trimws(unlist(strsplit(doc, "\n{2,}"))),
