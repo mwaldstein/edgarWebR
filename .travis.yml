@@ -13,7 +13,7 @@ r:
 r_packages: devtools
 
 env:
-  - PACKAGE_VERSION="1.0.0"
+  - PACKAGE_VERSION="1.0.0.9000"
 
 os:
   - linux
