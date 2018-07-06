@@ -1,12 +1,16 @@
 ---
 title: "Parsing Functions in edgarWebR"
 output: rmarkdown::html_vignette
-date: "October 12, 2017"
+date: 2017-10-12
 author: "Micah J Waldstein <micah@waldste.in>"
 vignette: >
   %\VignetteIndexEntry{Parsing Functions in edgarWebR}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
+projects: ['edgarWebR']
+categories: ['RStats']
+type: post
+draft: false
 ---
 ```{r setup, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")

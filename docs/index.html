@@ -102,7 +102,7 @@
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
 <p>edgarWebR provides an interface to access the <a href="https://www.sec.gov/edgar/searchedgar/webusers.htm">SEC’s EDGAR system</a> for company financial filings.</p>
-<p>EdgarWebR does <em>not</em> provide any functionality to extract financial data or other information from filings, only the metadata and company information. For processing of the financia data.</p>
+<p>edgarWebR does <em>not</em> provide any functionality to extract financial data or other information from filings, only the metadata and company information. For processing of the financial data.</p>
 </div>
 <div id="edgar-tools" class="section level2">
 <h2 class="hasAnchor">
@@ -209,7 +209,7 @@
 <p>While edgarWebR is primarily focused on providing an interface to the online SEC tools, there are a few activities for handling filing documents for which no current tools exist.</p>
 <ul>
 <li>
-<code><a href="reference/parse_submission.html">parse_submission()</a></code> - takes a full submission SGML document and parses out compontent documents. Most of the time, the documents of interest in a particular submission will be online and accessible via <code><a href="reference/filing_documents.html">filing_documents()</a></code> - this function is to unpack the raw submission to get all the doucments. You may also find it more efficient if you’re regularly downloading all of the files in a given submission.</li>
+<code><a href="reference/parse_submission.html">parse_submission()</a></code> - takes a full submission SGML document and parses out component documents. Most of the time, the documents of interest in a particular submission will be online and accessible via <code><a href="reference/filing_documents.html">filing_documents()</a></code> - this function is to unpack the raw submission to get all the documents. You may also find it more efficient if you’re regularly downloading all of the files in a given submission.</li>
 <li>
 <code><a href="reference/parse_filing.html">parse_filing()</a></code> - Takes a HTML narrative filing and annotates each paragraph with item and part numbers.</li>
 </ul>
@@ -217,7 +217,7 @@
 <div id="data-sets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-sets" class="anchor"></a>Data Sets</h3>
-<p>There is one dataset provieded with edgarWebR - <strong>sic_codes</strong>, providing a catalog of SIC codes and their hierarchy.</p>
+<p>There is one dataset provided with edgarWebR - <code>sic_codes</code>, providing a catalog of SIC codes and their hierarchy.</p>
 </div>
 <div id="url-tools" class="section level3">
 <h3 class="hasAnchor">
