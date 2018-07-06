@@ -114,16 +114,24 @@ parse_text_filing <- function(x,
                               include.raw = FALSE,
                               fix.errors = TRUE) {
   doc <- charToText(x)
+
+  # Make sure page markers are isolated
+  doc <- gsub("([^\\n])\\n<PAGE>", "\\1\n\n<PAGE>", doc)
+  doc <- gsub("(<PAGE>[^\n]*)\\n([^\n])", "\\1\n\n\\2", doc)
+
+
   # Clean empty lines
   doc <- gsub("\\n +\\n", "\n\n", doc)
-  if (strip) {
-    # TODO - page number isn't always there
-    doc <- gsub("^<PAGE>[:blank:]*[:digit:]+$", "", doc)
-  }
   parts <- data.frame(text = trimws(unlist(strsplit(doc, "\n{2,}"))),
                       stringsAsFactors = F)
   if (strip) {
+    # Remove SGML front/end matter
     parts$text[1] <- sub("^.*<TEXT>[ \n]*", "", parts$text[1])
+    parts$text[nrow(parts)] <- sub("</TEXT>.*$", "", parts$text[nrow(parts)])
+
+    parts <- parts[
+      !grepl("^<PAGE>[[:blank:]]*[[:digit:]]*[[:blank:]]*$", parts$text),
+      , drop = FALSE]
 
     parts <- parts[parts$text != "", , drop = FALSE]
   }

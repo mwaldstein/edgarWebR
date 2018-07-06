@@ -3,6 +3,8 @@
 ## Bugfixes
  * `parse_text_filing()` correctly parses filings that have spaces in
      separating lines. (Fixes #4)
+ * `parse_text_filing()` correctly removes and splits on '<PAGE>' dividers,
+     including when there is no page number. (fixes #6)
 
 ## Documentation
  * Elaborate the parsing vignette to better explain the files processed by
