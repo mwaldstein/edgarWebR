@@ -21,7 +21,18 @@ documents is returned.}
 documents is returned.}
 }
 \value{
-a dataframe with one row per document.
+a dataframe with one row per document. For the metadata (TYPE,
+  DESCRIPTION, FILENAME) it is important to note that these are provided by
+  the filer and have little standardization or enforcement.
+  \describe{
+    \item{SEQUENCE}{Sequence number of the file}
+    \item{TYPE}{The type of document, e.g. 10-K, EX-99, GRAPHIC}
+    \item{DESCRIPTION}{The type of document, e.g. 10-K, EX-99, GRAPHIC}
+    \item{FILENAME}{The document's filename}
+    \item{TEXT}{The text representation of the document. For text-based
+      documents (txt, html) this is the actual file contents. For binary
+      files (graphics, pdfs) this contains the uuencoded contents.}
+  }
 }
 \description{
 Raw SEC filings are sent in a SGML file - this parses that master submission
@@ -43,8 +54,8 @@ submission -
           downloading a single file.}
   }
 
-*NOTE:* non-text documents are uuencoded and need a separate decoder to be
-viewed.
+\emph{NOTE: non-text documents are uuencoded and need a separate decoder to be
+viewed.}
 }
 \examples{
 parse_submission(paste0('https://www.sec.gov/Archives/edgar/data/',

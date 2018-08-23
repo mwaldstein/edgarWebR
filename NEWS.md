@@ -9,6 +9,10 @@
 ## Documentation
  * Elaborate the parsing vignette to better explain the files processed by
    `parse_filing()` and `parse_submission()`
+ * Document output of `parse_submission()`
+
+## Internal
+ * Add missing pkgdown dev dependency
 
 # edgarWebR 1.0.0 - "Everything in its place"
 

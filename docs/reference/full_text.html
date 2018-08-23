@@ -204,72 +204,61 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                     name
-#&gt; 1   2018-07-06 INFORMATION TABLE of 13F-HR for FIRST AMERICAN TRUST FSB
-#&gt; 2   2018-07-06        INFORMATION TABLE of 13F-HR for ROCKLAND TRUST CO
-#&gt; 3   2018-07-06           N-2/A for Hedge Fund Guided Portfolio Solution
-#&gt; 4   2018-07-06                          N-CSRS for HENNESSY FUNDS TRUST
-#&gt; 5   2018-07-06  INFORMATION TABLE of 13F-HR for DnB Asset Management AS
-#&gt; 6   2018-07-06  INFORMATION TABLE of 13F-HR for ABNER HERRMAN BROCK LLC
-#&gt; 7   2018-07-06     INFORMATION TABLE of 13F-HR for West Oak Capital LLC
-#&gt; 8   2018-07-06                        N-PX for Reality Shares ETF Trust
-#&gt; 9   2018-07-06          N-CSR for OPPENHEIMER DIVIDEND OPPORTUNITY FUND
-#&gt; 10  2018-07-06                N-CSRS for OPPENHEIMER EQUITY INCOME FUND
-#&gt;                                                                                                      href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/36066/000003606618000011/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 2           https://www.sec.gov/Archives/edgar/data/84616/000008461618000002/xslForm13F_X01/13fr-0630.xml
-#&gt; 3                              https://www.sec.gov/Archives/edgar/data/1738008/000089843218000774/n2a.htm
-#&gt; 4                      https://www.sec.gov/Archives/edgar/data/891944/000089853118000390/hft_hf-ncsrs.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1456670/000095012318006606/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 6    https://www.sec.gov/Archives/edgar/data/1038661/000103866118000003/xslForm13F_X01/inftable070618.xml
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1387399/000114036118031695/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 8                    https://www.sec.gov/Archives/edgar/data/1573496/000114420418037444/tv497973_n-px.htm
-#&gt; 9                     https://www.sec.gov/Archives/edgar/data/1191290/000119312518213229/d504917dncsr.htm
-#&gt; 10                    https://www.sec.gov/Archives/edgar/data/799029/000119312518213248/d600714dncsrs.htm
-#&gt;                             company_name     cik  sic
-#&gt; 1               FIRST AMERICAN TRUST FSB   36066 &lt;NA&gt;
-#&gt; 2                      ROCKLAND TRUST CO   84616 &lt;NA&gt;
-#&gt; 3   Hedge Fund Guided Portfolio Solution 1738008 &lt;NA&gt;
-#&gt; 4                   HENNESSY FUNDS TRUST  891944 &lt;NA&gt;
-#&gt; 5                DnB Asset Management AS 1456670 &lt;NA&gt;
-#&gt; 6                ABNER HERRMAN BROCK LLC 1038661 &lt;NA&gt;
-#&gt; 7                   West Oak Capital LLC 1387399 &lt;NA&gt;
-#&gt; 8               Reality Shares ETF Trust 1573496 &lt;NA&gt;
-#&gt; 9  OPPENHEIMER DIVIDEND OPPORTUNITY FUND 1191290 &lt;NA&gt;
-#&gt; 10        OPPENHEIMER EQUITY INCOME FUND  799029 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                        content
-#&gt; 1                                                                                                                                                                                                                                                                                                             
-#&gt; 2     ABBOTT LABS COMMON STOCK 002824100 4388 71945 SH DFND 0 71945 0 0 ABBVIE INC COMMON STOCK 00287Y109 1055 11387 SH DFND 0 11247 0 140 ADOBE SYS INC COMMON STOCK 00724F101 700 2871 SH DFND 0 2871 0 0 AFLAC INC COMMON STOCK 001055102 772 17934 SH DFND 0 17934 0 0 AIR PRODUCTS &amp; CHEMICALS INC COMMON
-#&gt; 3                         Securities Act File No. 333-224465 Investment Company Act File No. 811-23347 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form N-2 REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933 Pre-Effective Amendment No. 1 Post-Effective Amendment No. and
-#&gt; 4             As filed with the Securities and Exchange Commission on July 6, 2018 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number (811-07168) Hennessy Funds
-#&gt; 5                                                                                                                                                                                                                                                                      Noble Energy Inccommon65504410527463504
-#&gt; 6  3M CO COM 88579Y101 1113 5657 SH SOLE 5657 0 0 ABBOTT LABORATORIES COM 002824100 13142 215477 SH SOLE 215477 0 0 ABBVIE INC COM 00287Y109 604 6518 SH SOLE 6518 0 0 ACCENTURE PLC IRELAND SHS CL A COM g1151c101 502 3067 SH SOLE 3067 0 0 ACTIVISION BLIZZARD INC COM 00507V109 8063 105645 SH SOLE 105645
-#&gt; 7                                                                                                                                                                                                                                                                           3M CompanyCOM88579Y1013590141825SH
-#&gt; 8                    UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-22991 Reality Shares ETF Trust (Exact name of registrant as specified in charter)
-#&gt; 9     UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-21208 Oppenheimer Dividend Opportunity Fund (Exact name of registrant as specified in charter) 6803
-#&gt; 10     UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-04797 Oppenheimer Equity Income Fund (Exact name of registrant as specified in charter) 6803 South
-#&gt;                                                                                          parent_href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/36066/000003606618000011/xslForm13F_X01/primary_doc.xml
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/84616/000008461618000002/xslForm13F_X01/primary_doc.xml
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4                                                                                               &lt;NA&gt;
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1387399/000114036118031695/xslForm13F_X01/primary_doc.xml
-#&gt; 6    https://www.sec.gov/Archives/edgar/data/36066/000003606618000011/xslForm13F_X01/primary_doc.xml
-#&gt; 7    https://www.sec.gov/Archives/edgar/data/84616/000008461618000002/xslForm13F_X01/primary_doc.xml
-#&gt; 8                                                                                               &lt;NA&gt;
-#&gt; 9                                                                                               &lt;NA&gt;
-#&gt; 10                                                                                              &lt;NA&gt;
-#&gt;                                                                                           index_href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/36066/000003606618000011/0000036066-18-000011-index.htm
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/84616/000008461618000002/0000084616-18-000002-index.htm
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4                                                                                               &lt;NA&gt;
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1387399/000114036118031695/0001140361-18-031695-index.htm
-#&gt; 6    https://www.sec.gov/Archives/edgar/data/36066/000003606618000011/0000036066-18-000011-index.htm
-#&gt; 7    https://www.sec.gov/Archives/edgar/data/84616/000008461618000002/0000084616-18-000002-index.htm
-#&gt; 8                                                                                               &lt;NA&gt;
-#&gt; 9                                                                                               &lt;NA&gt;
-#&gt; 10                                                                                              &lt;NA&gt;</div></pre>
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                         name
+#&gt; 1   2018-08-23                 N-PX for FIDELITY CONTRAFUND
+#&gt; 2   2018-08-23         N-PX for FIDELITY DESTINY PORTFOLIOS
+#&gt; 3   2018-08-23        N-PX for FIDELITY SCHOOL STREET TRUST
+#&gt; 4   2018-08-23            N-PX for FIDELITY SECURITIES FUND
+#&gt; 5   2018-08-23    N-PX for VARIABLE INSURANCE PRODUCTS FUND
+#&gt; 6   2018-08-23 N-PX for VARIABLE INSURANCE PRODUCTS FUND II
+#&gt; 7   2018-08-23        N-PX for FIDELITY SUMMER STREET TRUST
+#&gt; 8   2018-08-23            N-PX for FIDELITY COVINGTON TRUST
+#&gt; 9   2018-08-23           N-PX for FIDELITY ADVISOR SERIES I
+#&gt; 10  2018-08-23         N-PX for FIDELITY ADVISOR SERIES VII
+#&gt;                                                                                      href
+#&gt; 1   https://www.sec.gov/Archives/edgar/data/24238/000079542218000037/npx811-01400_114.htm
+#&gt; 2   https://www.sec.gov/Archives/edgar/data/35331/000079542218000038/npx811-01796_100.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/215829/000079542218000041/npx811-02676_102.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/754510/000079542218000042/npx811-04118_111.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/356494/000079542218000043/npx811-03329_103.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/831016/000079542218000048/npx811-05511_100.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/225322/000079542218000054/npx811-02737_106.htm
+#&gt; 8   https://www.sec.gov/Archives/edgar/data/945908/000079542218000058/npx811-07319_35.htm
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/722574/000088019518000124/npx811-03785_117.htm
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/315700/000088019518000125/npx811-03010_98.htm
+#&gt;                           company_name    cik  sic
+#&gt; 1                  FIDELITY CONTRAFUND  24238 &lt;NA&gt;
+#&gt; 2          FIDELITY DESTINY PORTFOLIOS  35331 &lt;NA&gt;
+#&gt; 3         FIDELITY SCHOOL STREET TRUST 215829 &lt;NA&gt;
+#&gt; 4             FIDELITY SECURITIES FUND 754510 &lt;NA&gt;
+#&gt; 5     VARIABLE INSURANCE PRODUCTS FUND 356494 &lt;NA&gt;
+#&gt; 6  VARIABLE INSURANCE PRODUCTS FUND II 831016 &lt;NA&gt;
+#&gt; 7         FIDELITY SUMMER STREET TRUST 225322 &lt;NA&gt;
+#&gt; 8             FIDELITY COVINGTON TRUST 945908 &lt;NA&gt;
+#&gt; 9            FIDELITY ADVISOR SERIES I 722574 &lt;NA&gt;
+#&gt; 10         FIDELITY ADVISOR SERIES VII 315700 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                                         content
+#&gt; 1    FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-01400 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Contrafund 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE) MARC
+#&gt; 2       FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-01796 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Destiny Portfolios 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
+#&gt; 3      FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-02676 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity School Street Trust 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
+#&gt; 4    FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-04118 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Securities Fund 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE)
+#&gt; 5  FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-03329 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Variable Insurance Products Fund 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
+#&gt; 6            FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-05511 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Variable Insurance Products Fund II 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE
+#&gt; 7      FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-02737 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Summer Street Trust 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
+#&gt; 8    FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-07319 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Covington Trust 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE)
+#&gt; 9   FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-03785 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Advisor Series I 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE)
+#&gt; 10      FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-03010 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Advisor Series VII 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
+#&gt;    parent_href index_href
+#&gt; 1         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 2         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 3         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 4         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 5         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 6         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 7         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 8         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 9         &lt;NA&gt;       &lt;NA&gt;
+#&gt; 10        &lt;NA&gt;       &lt;NA&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

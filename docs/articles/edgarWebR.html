@@ -121,7 +121,7 @@ initial_count &lt;-<span class="st"> </span><span class="kw">nrow</span>(filings
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
 filings &lt;-<span class="st"> </span>filings[filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-K"</span> <span class="op">|</span><span class="st"> </span>filings<span class="op">$</span>type <span class="op">==</span><span class="st"> "10-Q"</span>, ]</code></pre></div>
-<p>Note that explicitly filtering caused us to go from 97 to 93 rows.</p>
+<p>Note that explicitly filtering caused us to go from 98 to 94 rows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filings<span class="op">$</span>md_href &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">"[Link]("</span>, filings<span class="op">$</span>href, <span class="st">")"</span>)
 knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw">tail</span>(filings)[, <span class="kw">c</span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
                                <span class="st">"md_href"</span>)],
@@ -139,7 +139,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>91</td>
+<td>92</td>
 <td align="left">10-Q</td>
 <td align="left">1996-08-14</td>
 <td align="left">0000950005-96-000615</td>
@@ -147,7 +147,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000950005-96-000615-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>92</td>
+<td>93</td>
 <td align="left">10-K</td>
 <td align="left">1996-07-01</td>
 <td align="left">0000912057-96-013563</td>
@@ -155,7 +155,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-013563-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>93</td>
+<td>94</td>
 <td align="left">10-Q</td>
 <td align="left">1996-02-14</td>
 <td align="left">0000912057-96-002551</td>
@@ -163,7 +163,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-002551-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>94</td>
+<td>95</td>
 <td align="left">10-Q</td>
 <td align="left">1995-11-14</td>
 <td align="left">0000912057-95-009843</td>
@@ -171,7 +171,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-95-009843-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>95</td>
+<td>96</td>
 <td align="left">10-Q</td>
 <td align="left">1995-08-10</td>
 <td align="left">0000912057-95-006218</td>
@@ -179,7 +179,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-95-006218-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>97</td>
+<td>98</td>
 <td align="left">10-Q</td>
 <td align="left">1995-02-13</td>
 <td align="left">0000912057-95-000644</td>
@@ -215,6 +215,14 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td align="left">10-Q</td>
+<td align="left">2018-08-08</td>
+<td align="left">2018-06-30</td>
+<td align="right">39.00</td>
+<td align="right">102</td>
+<td align="right">12,517,185</td>
+</tr>
+<tr class="even">
 <td align="left">10-K</td>
 <td align="left">2018-05-23</td>
 <td align="left">2018-03-31</td>
@@ -222,7 +230,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">129</td>
 <td align="right">15,691,834</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">10-Q</td>
 <td align="left">2018-02-06</td>
 <td align="left">2017-12-31</td>
@@ -230,7 +238,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">94</td>
 <td align="right">11,486,015</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">10-Q</td>
 <td align="left">2017-11-07</td>
 <td align="left">2017-09-30</td>
@@ -238,7 +246,7 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">88</td>
 <td align="right">9,961,835</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">10-Q</td>
 <td align="left">2017-08-08</td>
 <td align="left">2017-06-30</td>
@@ -246,21 +254,13 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 <td align="right">87</td>
 <td align="right">8,947,076</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">10-K</td>
 <td align="left">2017-05-24</td>
 <td align="left">2017-03-31</td>
 <td align="right">54.00</td>
 <td align="right">127</td>
 <td align="right">14,944,223</td>
-</tr>
-<tr class="even">
-<td align="left">10-Q</td>
-<td align="left">2017-02-07</td>
-<td align="left">2016-12-31</td>
-<td align="right">38.00</td>
-<td align="right">89</td>
-<td align="right">10,322,322</td>
 </tr>
 </tbody>
 </table>
@@ -301,11 +301,11 @@ knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentati
 </tr>
 <tr class="even">
 <td align="left">10-Q</td>
-<td align="right">70</td>
-<td align="right">39.96</td>
+<td align="right">71</td>
+<td align="right">39.94</td>
 <td align="right">39.04</td>
-<td align="right">4,595.07</td>
-<td align="right">16.40</td>
+<td align="right">4,702.52</td>
+<td align="right">17.61</td>
 </tr>
 </tbody>
 </table>
