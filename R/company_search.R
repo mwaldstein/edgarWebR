@@ -4,6 +4,15 @@
 #' \href{https://www.sec.gov/edgar/searchedgar/companysearch.html}{here}
 #' using a company's formal name rather than its common name.
 #'
+#' \emph{Note On 'Fast Search'} --
+#' The SEC
+#' \href{https://www.sec.gov/edgar/searchedgar/companysearch.html}{Company Search}
+#' page also includes a 'Fast Search' function to "search" by CIK or Stock
+#' Ticker. This doesn't actually search, but rather goes directly to the
+#' company details page if found. If you have a company's CIK or Ticker, use the
+#' \code{\link{company_information}}, \code{\link{company_filings}}, or
+#' \code{\link{company_details}} functions.
+#'
 #' @param x Name of company to search or file number
 #' @param match (default: 'start') Either 'start' or 'contains' for where in
 #'   the company name to search
@@ -33,6 +42,7 @@
 #' @param count Number of filings to fetch per page. Valid options are 10, 20,
 #'   40, 80, or 100. Other values will result in the closest count.
 #' @param page Which page of results to return.
+#'
 #' @return A dataframe of companies
 #'   \itemize{
 #'     \item cik

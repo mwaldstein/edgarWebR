@@ -10,6 +10,8 @@
  * Elaborate the parsing vignette to better explain the files processed by
    `parse_filing()` and `parse_submission()`
  * Document output of `parse_submission()`
+ * Document how the SEC Company 'Fast Search' works and how edgarWebR
+   implements it. (addresses #7)
 
 ## Internal
  * Add missing pkgdown dev dependency

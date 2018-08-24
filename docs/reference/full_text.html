@@ -204,61 +204,83 @@ specify `from`</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                         name
-#&gt; 1   2018-08-23                 N-PX for FIDELITY CONTRAFUND
-#&gt; 2   2018-08-23         N-PX for FIDELITY DESTINY PORTFOLIOS
-#&gt; 3   2018-08-23        N-PX for FIDELITY SCHOOL STREET TRUST
-#&gt; 4   2018-08-23            N-PX for FIDELITY SECURITIES FUND
-#&gt; 5   2018-08-23    N-PX for VARIABLE INSURANCE PRODUCTS FUND
-#&gt; 6   2018-08-23 N-PX for VARIABLE INSURANCE PRODUCTS FUND II
-#&gt; 7   2018-08-23        N-PX for FIDELITY SUMMER STREET TRUST
-#&gt; 8   2018-08-23            N-PX for FIDELITY COVINGTON TRUST
-#&gt; 9   2018-08-23           N-PX for FIDELITY ADVISOR SERIES I
-#&gt; 10  2018-08-23         N-PX for FIDELITY ADVISOR SERIES VII
-#&gt;                                                                                      href
-#&gt; 1   https://www.sec.gov/Archives/edgar/data/24238/000079542218000037/npx811-01400_114.htm
-#&gt; 2   https://www.sec.gov/Archives/edgar/data/35331/000079542218000038/npx811-01796_100.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/215829/000079542218000041/npx811-02676_102.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/754510/000079542218000042/npx811-04118_111.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/356494/000079542218000043/npx811-03329_103.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/831016/000079542218000048/npx811-05511_100.htm
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/225322/000079542218000054/npx811-02737_106.htm
-#&gt; 8   https://www.sec.gov/Archives/edgar/data/945908/000079542218000058/npx811-07319_35.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/722574/000088019518000124/npx811-03785_117.htm
-#&gt; 10  https://www.sec.gov/Archives/edgar/data/315700/000088019518000125/npx811-03010_98.htm
-#&gt;                           company_name    cik  sic
-#&gt; 1                  FIDELITY CONTRAFUND  24238 &lt;NA&gt;
-#&gt; 2          FIDELITY DESTINY PORTFOLIOS  35331 &lt;NA&gt;
-#&gt; 3         FIDELITY SCHOOL STREET TRUST 215829 &lt;NA&gt;
-#&gt; 4             FIDELITY SECURITIES FUND 754510 &lt;NA&gt;
-#&gt; 5     VARIABLE INSURANCE PRODUCTS FUND 356494 &lt;NA&gt;
-#&gt; 6  VARIABLE INSURANCE PRODUCTS FUND II 831016 &lt;NA&gt;
-#&gt; 7         FIDELITY SUMMER STREET TRUST 225322 &lt;NA&gt;
-#&gt; 8             FIDELITY COVINGTON TRUST 945908 &lt;NA&gt;
-#&gt; 9            FIDELITY ADVISOR SERIES I 722574 &lt;NA&gt;
-#&gt; 10         FIDELITY ADVISOR SERIES VII 315700 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                         content
-#&gt; 1    FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-01400 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Contrafund 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE) MARC
-#&gt; 2       FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-01796 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Destiny Portfolios 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
-#&gt; 3      FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-02676 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity School Street Trust 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
-#&gt; 4    FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-04118 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Securities Fund 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE)
-#&gt; 5  FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-03329 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Variable Insurance Products Fund 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
-#&gt; 6            FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-05511 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Variable Insurance Products Fund II 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE
-#&gt; 7      FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-02737 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Summer Street Trust 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
-#&gt; 8    FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-07319 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Covington Trust 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE)
-#&gt; 9   FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-03785 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Advisor Series I 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP CODE)
-#&gt; 10      FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-03010 EXACT NAME OF REGISTRANT AS SPECIFIED IN CHARTER: Fidelity Advisor Series VII 245 SUMMER STREET, BOSTON, MA 02210 (ADDRESS OF PRINCIPAL EXECUTIVE OFFICES)(ZIP
-#&gt;    parent_href index_href
-#&gt; 1         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 2         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 3         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 4         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 5         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 6         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 7         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 8         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 9         &lt;NA&gt;       &lt;NA&gt;
-#&gt; 10        &lt;NA&gt;       &lt;NA&gt;</div></pre>
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
+#&gt; 1   2018-08-24
+#&gt; 2   2018-08-24
+#&gt; 3   2018-08-24
+#&gt; 4   2018-08-24
+#&gt; 5   2018-08-24
+#&gt; 6   2018-08-24
+#&gt; 7   2018-08-24
+#&gt; 8   2018-08-24
+#&gt; 9   2018-08-24
+#&gt; 10  2018-08-24
+#&gt;                                                                      name
+#&gt; 1                                       N-PX for WELLS FARGO MASTER TRUST
+#&gt; 2                                       N-PX for THRIVENT SERIES FUND INC
+#&gt; 3                                          N-CSR for SIT MUTUAL FUNDS INC
+#&gt; 4                                   N-CSR for SIT MID CAP GROWTH FUND INC
+#&gt; 5                                 N-CSR for SIT LARGE CAP GROWTH FUND INC
+#&gt; 6                                          N-PX for THOMPSON IM FUNDS INC
+#&gt; 7                                               N-PX for JPMorgan Trust I
+#&gt; 8                                               N-PX for Highland Funds I
+#&gt; 9                                              N-PX for HIGHLAND FUNDS II
+#&gt; 10 INFORMATION TABLE of 13F-HR/A for SCHRODER INVESTMENT MANAGEMENT GROUP
+#&gt;                                                                                                      href
+#&gt; 1               https://www.sec.gov/Archives/edgar/data/1087961/000108140018000762/mastertrustnpx2018.txt
+#&gt; 2                       https://www.sec.gov/Archives/edgar/data/790166/000119312518256420/d502012dnpx.htm
+#&gt; 3                      https://www.sec.gov/Archives/edgar/data/877880/000119312518256703/d590614dncsr.htm
+#&gt; 4                      https://www.sec.gov/Archives/edgar/data/356787/000119312518256704/d595976dncsr.htm
+#&gt; 5                      https://www.sec.gov/Archives/edgar/data/356786/000119312518256705/d595901dncsr.htm
+#&gt; 6                    https://www.sec.gov/Archives/edgar/data/795264/000120677418002595/tim3456981-npx.htm
+#&gt; 7           https://www.sec.gov/Archives/edgar/data/1217286/000143893418000330/brdG4F_0001217286_2018.txt
+#&gt; 8                https://www.sec.gov/Archives/edgar/data/1354917/000143893418000332/brdQY8_0001354917.txt
+#&gt; 9                 https://www.sec.gov/Archives/edgar/data/891079/000143893418000334/brdQY8_0000891079.txt
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1086619/000156761918001750/xslForm13F_X01/form13fInfoTable.xml
+#&gt;                            company_name     cik  sic
+#&gt; 1              WELLS FARGO MASTER TRUST 1087961 &lt;NA&gt;
+#&gt; 2              THRIVENT SERIES FUND INC  790166 &lt;NA&gt;
+#&gt; 3                  SIT MUTUAL FUNDS INC  877880 &lt;NA&gt;
+#&gt; 4           SIT MID CAP GROWTH FUND INC  356787 &lt;NA&gt;
+#&gt; 5         SIT LARGE CAP GROWTH FUND INC  356786 &lt;NA&gt;
+#&gt; 6                 THOMPSON IM FUNDS INC  795264 &lt;NA&gt;
+#&gt; 7                      JPMorgan Trust I 1217286 &lt;NA&gt;
+#&gt; 8                      Highland Funds I 1354917 &lt;NA&gt;
+#&gt; 9                     HIGHLAND FUNDS II  891079 &lt;NA&gt;
+#&gt; 10 SCHRODER INVESTMENT MANAGEMENT GROUP 1086619 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                                        content
+#&gt; 1       UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-09689 Wells Fargo Master Trust _ (Exact name of registrant as specified in charter) 525 Market
+#&gt; 2                          UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-4603 Thrivent Series Fund, Inc. (Exact name of registrant as specified
+#&gt; 3                                 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-06373 Sit Mutual Funds, Inc. (Exact name of registrant as specified in
+#&gt; 4                          UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-03342 Sit Mid Cap Growth Fund, Inc. (Exact name of registrant as specified in
+#&gt; 5                           UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-03343 Sit Large Cap Growth Fund, Inc. (Exact name of registrant as specified
+#&gt; 6     UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act File Number 811-4946 THOMPSON IM FUNDS, INC. (Exact name of registrant as specified in charter) 918 Deming Way
+#&gt; 7       UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-21295 NAME OF REGISTRANT: JPMorgan Trust I ADDRESS OF PRINCIPAL EXECUTIVE OFFICES: 270 Park
+#&gt; 8   UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-21866 NAME OF REGISTRANT: Highland Funds I ADDRESS OF PRINCIPAL EXECUTIVE OFFICES: 200 Crescent
+#&gt; 9  UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY INVESTMENT COMPANY ACT FILE NUMBER: 811-07142 NAME OF REGISTRANT: Highland Funds II ADDRESS OF PRINCIPAL EXECUTIVE OFFICES: 200 Crescent
+#&gt; 10                                                                                                                                                                                                               21VIANET GROUP INCORPORATED SPONSORED ADR (EACH REPRESENTS 6 ORDINARY SHARES)ADR90138A1032192
+#&gt;                                                                                          parent_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 4                                                                                               &lt;NA&gt;
+#&gt; 5                                                                                               &lt;NA&gt;
+#&gt; 6                                                                                               &lt;NA&gt;
+#&gt; 7                                                                                               &lt;NA&gt;
+#&gt; 8                                                                                               &lt;NA&gt;
+#&gt; 9                                                                                               &lt;NA&gt;
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1086619/000156761918001750/xslForm13F_X01/primary_doc.xml
+#&gt;                                                                                           index_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 4                                                                                               &lt;NA&gt;
+#&gt; 5                                                                                               &lt;NA&gt;
+#&gt; 6                                                                                               &lt;NA&gt;
+#&gt; 7                                                                                               &lt;NA&gt;
+#&gt; 8                                                                                               &lt;NA&gt;
+#&gt; 9                                                                                               &lt;NA&gt;
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1086619/000156761918001750/0001567619-18-001750-index.htm</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
