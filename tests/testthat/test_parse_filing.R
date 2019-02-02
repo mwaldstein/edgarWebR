@@ -8,11 +8,16 @@ expect_similar_wc <- function(content, res) {
   # <div>word</div><div>another</div>
   # So this ensures we're getting all the breaks
   # Does some other cleanup so we can ensure we're comparing apples to apples
-  content <- edgarWebR:::clean_html(content)
+  clean_content <- edgarWebR:::clean_html(content)
 
-  doc <- xml2::read_html(content)
+  doc <- try({xml2::read_html(clean_content)}, silent = T)
+  #if (class(doc) == "try-error") {
+  if (inherits(doc, "try-error")) {
+    doc <- xml2::read_html(clean_content, options = "HUGE")
+  }
   plain.words <- length(tokenizers::tokenize_words(xml2::xml_text(doc), simplify = T))
   parsed.words <- sum(sapply(tokenizers::tokenize_words(res$text), length))
+  # parsed.words <- unlist(tokenizers::tokenize_words(res$text))
   expect_lt(abs(parsed.words - plain.words), max(.0005 * plain.words, 10))
 }
 
@@ -159,5 +164,11 @@ with_mock_API({
     res <- test_filing("form10k_122308.htm", 796, 4, 19)
     expect_equal(length(unique(res[res$part.name == "PART II",
                                "item.name"])), 8)
+  })
+  test_that("Handles deeply nested HTML filings from EDGARizer 4.0.7.0", {
+    # href <- "https://www.sec.gov/Archives/edgar/data/1065648/000106564809000009/form_10k.htm"
+    res <- test_filing("form_10k.htm", 796, 6, 22)
+    expect_equal(length(unique(res[res$part.name == "PART II",
+                               "item.name"])), 9)
   })
 })

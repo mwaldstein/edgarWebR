@@ -69,14 +69,23 @@ get_doc <- function(x, clean = F) {
       if (clean) {
         content <- clean_html(content)
       }
-      doc <- xml2::read_html(content, base_url = x)
+      # The 'HUGE' option can lead to some negative consequences with
+      # particularly large documents, but given how poorly formed a lot of SEC
+      # filings are, it is needed to ensure some parse at all...
+      doc <- try({xml2::read_html(content, base_url = x)}, silent = T)
+      if (inherits(doc, "try-error")) {
+        doc <- xml2::read_html(content, base_url = x, options = "HUGE")
+      }
     } else {
       if (clean) {
         content <- clean_html(x)
       } else {
         content <- x
       }
-      doc <- xml2::read_html(content)
+      doc <- try({xml2::read_html(content)}, silent = T)
+      if (inherits(doc, "try-error")) {
+        doc <- xml2::read_html(content, options = "HUGE")
+      }
     }
   } else {
     doc <- x

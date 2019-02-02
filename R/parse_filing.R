@@ -228,10 +228,14 @@ doc_nodes <- function(doc, xpath_base) {
     "/div/table[count(./tr) < count(./tr/td)]",
     "/div/div/table[count(./tr) < count(./tr/td)]",
     "/div/div/div/table[count(./tr) < count(./tr/td)]",
-    "/div/div/div/div/table[count(./tr) < count(./tr/td)]"
+    "/div/div/div/div/table[count(./tr) < count(./tr/td)]",
     # "bare" text blocks
     # Only impacts a few filings for huge performance hit.
     # "/text()[normalize-space() != '']"
+
+    # Nasty deeply nested table from
+    # https://www.sec.gov/Archives/edgar/data/1065648/000106564809000009/form_10k.htm
+    "/div/div/div/div/div/div/div/div/div/div/table"
     )
 
 

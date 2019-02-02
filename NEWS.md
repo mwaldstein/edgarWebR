@@ -5,6 +5,8 @@
      separating lines. (Fixes #4)
  * `parse_text_filing()` correctly removes and splits on '<PAGE>' dividers,
      including when there is no page number. (fixes #6)
+ * Initial fix for #11 where some documents with especially deep structures
+     would error in the parsing phase.
 
 ## Documentation
  * Elaborate the parsing vignette to better explain the files processed by
