@@ -1,0 +1,1708 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<HTML lang=ENG>
+  <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+
+  <SCRIPT LANGUAGE="javascript" SRC="/EDGARFSClient/assets/scripts/fullTextSearch.js"></SCRIPT>
+  <SCRIPT LANGUAGE="javascript" SRC="/EDGARFSClient/assets/scripts/sec.js"></SCRIPT>
+  <!-- calendar stylesheet -->
+  
+
+
+<link rel="icon" type="image/x-icon" href="/EDGARFSClient/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" media="all" href="/EDGARFSClient/assets/style_sheets/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+
+  
+
+
+  <!-- main calendar program -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/calendar.js"></script>
+
+  <!-- language for the calendar -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/calendar-en.js"></script>
+
+
+  
+
+  <!-- the following script defines the Calendar.setup helper function, which makes
+       adding a calendar a matter of 1 or 2 lines of code. -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/calendar-setup.js"></script>
+
+  <!-- CSS This file is for the tooltip -->
+  <link rel="stylesheet" type="text/css" href="/EDGARFSClient/assets/style_sheets/container.css">
+
+  <!-- Dependencies This file is for the tooltip -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/yahoo-dom-event.js"></script>
+
+  <!-- Source file  This file is for the tooltip -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/container-min.js"></script>
+
+  <title>Full Text Search</title>
+
+  <STYLE>
+    TH { FONT-WEIGHT: bold; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center }
+    .center { TEXT-ALIGN: center }
+  </STYLE>
+  <script language="JavaScript">
+    var isIE;
+    if (navigator.appName == "Microsoft Internet Explorer")
+    {
+      if (parseInt(navigator.appVersion) >= 4)
+      {
+        isIE = true;
+        document.write("<LINK REL='STYLESHEET' HREF='/EDGARFSClient/assets/style_sheets/ie.css'>");
+      }
+    }
+    else
+    {
+      isIE = false;
+      document.write("<LINK REL='STYLESHEET' HREF='/EDGARFSClient/assets/style_sheets/others.css'>");
+    }
+  </script>
+
+  <LINK REL="stylesheet" HREF="/EDGARFSClient/assets/style_sheets/fullTextSearch.css"></LINK>
+</HEAD>
+
+<BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0" onload="set_focus('search_text');">
+
+      <!-- Display the results width="760"-->
+      <table width="655" id="result" style="" cellSpacing=0 cellPadding=0 bgColor=white border=0>
+        <tr>
+          <td >
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td class="iframe">
+            <div name="ifrm2" id="ifrm2" style="">
+        <table id="header" width="100%"><tr><td><font class="normalbold">1 - 4</font><font class="normal"> of </font><font class="normalbold">4</font><font class="normal"> results</font></td><td align="right">&nbsp;<a href="" onclick="window.print(); return false;">Print</a>&nbsp;|&nbsp;<a href="" onclick="window.close(); return false;" tabindex="100">Close</a></td></tr><tr><td colspan="2"><font class="normal">Previous</font>&nbsp;&nbsp;<b>1</b>&nbsp;&nbsp;<font class="normal">Next</font></td></tr></table><table xmlns:autn="http://schemas.autonomy.com/aci/">
+<tr class="infoBorder">
+<td class="H1" width="11%">
+          Date Filed
+        </td><td align="left" class="H1">
+          Title
+        </td>
+</tr>
+<tr>
+<td><i class="blue">02/01/2019</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-10kdocument.htm','INTEL CORP','');">10-K for INTEL CORP </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">INTEL CORP (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('50863');">50863</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('3674');">3674</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">TABLE OF CONTENTS ORGANIZATION OF OUR ANNUAL REPORT ON FORM 10-K The order and presentation of content in our Annual Report on Form 10-K (Form 10-K) differs from the traditional U.S. Securities and Exchange Commission (SEC) Form 10-K format.</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000005086319000007/a12292018q4-10kdocument.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex102.htm','INTEL CORP','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex211.htm','INTEL CORP','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex231.htm','INTEL CORP','');">3</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 4" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex311.htm','INTEL CORP','');">4</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 5" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex312.htm','INTEL CORP','');">5</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 6" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex321.htm','INTEL CORP','');">6</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 7" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/a12292018q4-ex991.htm','INTEL CORP','');">7</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 8" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R1.htm','INTEL CORP','');">8</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 9" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R2.htm','INTEL CORP','');">9</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 10" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R3.htm','INTEL CORP','');">10</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 11" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R4.htm','INTEL CORP','');">11</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 12" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R5.htm','INTEL CORP','');">12</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 13" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R6.htm','INTEL CORP','');">13</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 14" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R7.htm','INTEL CORP','');">14</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 15" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R8.htm','INTEL CORP','');">15</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 16" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R9.htm','INTEL CORP','');">16</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 17" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R10.htm','INTEL CORP','');">17</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 18" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R11.htm','INTEL CORP','');">18</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 19" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R12.htm','INTEL CORP','');">19</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 20" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R13.htm','INTEL CORP','');">20</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 21" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R14.htm','INTEL CORP','');">21</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 22" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R15.htm','INTEL CORP','');">22</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 23" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R16.htm','INTEL CORP','');">23</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 24" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R17.htm','INTEL CORP','');">24</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 25" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R18.htm','INTEL CORP','');">25</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 26" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R19.htm','INTEL CORP','');">26</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 27" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R20.htm','INTEL CORP','');">27</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 28" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R21.htm','INTEL CORP','');">28</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 29" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R22.htm','INTEL CORP','');">29</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 30" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R23.htm','INTEL CORP','');">30</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 31" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R24.htm','INTEL CORP','');">31</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 32" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R25.htm','INTEL CORP','');">32</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 33" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R26.htm','INTEL CORP','');">33</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 34" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R27.htm','INTEL CORP','');">34</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 35" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R28.htm','INTEL CORP','');">35</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 36" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R29.htm','INTEL CORP','');">36</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 37" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R30.htm','INTEL CORP','');">37</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 38" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R31.htm','INTEL CORP','');">38</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 39" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R32.htm','INTEL CORP','');">39</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 40" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R33.htm','INTEL CORP','');">40</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 41" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R34.htm','INTEL CORP','');">41</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 42" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R35.htm','INTEL CORP','');">42</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 43" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R36.htm','INTEL CORP','');">43</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 44" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R37.htm','INTEL CORP','');">44</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 45" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R38.htm','INTEL CORP','');">45</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 46" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R39.htm','INTEL CORP','');">46</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 47" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R40.htm','INTEL CORP','');">47</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 48" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R41.htm','INTEL CORP','');">48</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 49" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R42.htm','INTEL CORP','');">49</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 50" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R43.htm','INTEL CORP','');">50</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 51" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R44.htm','INTEL CORP','');">51</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 52" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R45.htm','INTEL CORP','');">52</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 53" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R46.htm','INTEL CORP','');">53</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 54" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R47.htm','INTEL CORP','');">54</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 55" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R48.htm','INTEL CORP','');">55</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 56" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R49.htm','INTEL CORP','');">56</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 57" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R50.htm','INTEL CORP','');">57</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 58" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R51.htm','INTEL CORP','');">58</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 59" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R52.htm','INTEL CORP','');">59</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 60" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R53.htm','INTEL CORP','');">60</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 61" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R54.htm','INTEL CORP','');">61</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 62" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R55.htm','INTEL CORP','');">62</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 63" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R56.htm','INTEL CORP','');">63</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 64" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R57.htm','INTEL CORP','');">64</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 65" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R58.htm','INTEL CORP','');">65</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 66" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R59.htm','INTEL CORP','');">66</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 67" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R60.htm','INTEL CORP','');">67</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 68" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R61.htm','INTEL CORP','');">68</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 69" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R62.htm','INTEL CORP','');">69</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 70" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R63.htm','INTEL CORP','');">70</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 71" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R64.htm','INTEL CORP','');">71</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 72" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R65.htm','INTEL CORP','');">72</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 73" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R66.htm','INTEL CORP','');">73</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 74" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R67.htm','INTEL CORP','');">74</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 75" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R68.htm','INTEL CORP','');">75</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 76" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R69.htm','INTEL CORP','');">76</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 77" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R70.htm','INTEL CORP','');">77</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 78" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R71.htm','INTEL CORP','');">78</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 79" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R72.htm','INTEL CORP','');">79</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 80" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R73.htm','INTEL CORP','');">80</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 81" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R74.htm','INTEL CORP','');">81</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 82" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R75.htm','INTEL CORP','');">82</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 83" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R76.htm','INTEL CORP','');">83</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 84" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R77.htm','INTEL CORP','');">84</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 85" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R78.htm','INTEL CORP','');">85</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 86" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R79.htm','INTEL CORP','');">86</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 87" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R80.htm','INTEL CORP','');">87</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 88" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R81.htm','INTEL CORP','');">88</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 89" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R82.htm','INTEL CORP','');">89</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 90" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R83.htm','INTEL CORP','');">90</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 91" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R84.htm','INTEL CORP','');">91</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 92" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R85.htm','INTEL CORP','');">92</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 93" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R86.htm','INTEL CORP','');">93</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 94" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R87.htm','INTEL CORP','');">94</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 95" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/R9999.htm','INTEL CORP','');">95</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 96" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086319000007/FilingSummary.xml','INTEL CORP','');">96</a></td>
+</tr>
+<tr>
+<td><i class="blue">02/16/2018</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-10kdocument.htm','INTEL CORP','');">10-K for INTEL CORP </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">INTEL CORP (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('50863');">50863</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('3674');">3674</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">Table of contents CHANGES TO OUR ANNUAL REPORT ON FORM 10-K To improve readability and better present how we organize and manage our business, we have changed the order and presentation of content in our Annual Report on Form 10-K (Form 10-K).</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000005086318000007/a12302017q4-10kdocument.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex4213.htm','INTEL CORP','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex1012.htm','INTEL CORP','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex1013.htm','INTEL CORP','');">3</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 4" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex10a1a3.htm','INTEL CORP','');">4</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 5" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex1016.htm','INTEL CORP','');">5</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 6" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex121.htm','INTEL CORP','');">6</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 7" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex211.htm','INTEL CORP','');">7</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 8" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex231.htm','INTEL CORP','');">8</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 9" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex311.htm','INTEL CORP','');">9</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 10" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex312.htm','INTEL CORP','');">10</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 11" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex321.htm','INTEL CORP','');">11</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 12" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/a12302017q4-ex991.htm','INTEL CORP','');">12</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 13" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R1.htm','INTEL CORP','');">13</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 14" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R2.htm','INTEL CORP','');">14</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 15" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R3.htm','INTEL CORP','');">15</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 16" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R4.htm','INTEL CORP','');">16</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 17" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R5.htm','INTEL CORP','');">17</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 18" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R6.htm','INTEL CORP','');">18</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 19" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R7.htm','INTEL CORP','');">19</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 20" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R8.htm','INTEL CORP','');">20</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 21" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R9.htm','INTEL CORP','');">21</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 22" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R10.htm','INTEL CORP','');">22</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 23" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R11.htm','INTEL CORP','');">23</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 24" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R12.htm','INTEL CORP','');">24</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 25" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R13.htm','INTEL CORP','');">25</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 26" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R14.htm','INTEL CORP','');">26</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 27" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R15.htm','INTEL CORP','');">27</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 28" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R16.htm','INTEL CORP','');">28</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 29" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R17.htm','INTEL CORP','');">29</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 30" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R18.htm','INTEL CORP','');">30</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 31" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R19.htm','INTEL CORP','');">31</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 32" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R20.htm','INTEL CORP','');">32</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 33" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R21.htm','INTEL CORP','');">33</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 34" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R22.htm','INTEL CORP','');">34</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 35" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R23.htm','INTEL CORP','');">35</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 36" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R24.htm','INTEL CORP','');">36</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 37" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R25.htm','INTEL CORP','');">37</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 38" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R26.htm','INTEL CORP','');">38</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 39" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R27.htm','INTEL CORP','');">39</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 40" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R28.htm','INTEL CORP','');">40</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 41" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R29.htm','INTEL CORP','');">41</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 42" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R30.htm','INTEL CORP','');">42</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 43" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R31.htm','INTEL CORP','');">43</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 44" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R32.htm','INTEL CORP','');">44</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 45" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R33.htm','INTEL CORP','');">45</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 46" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R34.htm','INTEL CORP','');">46</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 47" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R35.htm','INTEL CORP','');">47</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 48" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R36.htm','INTEL CORP','');">48</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 49" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R37.htm','INTEL CORP','');">49</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 50" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R38.htm','INTEL CORP','');">50</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 51" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R39.htm','INTEL CORP','');">51</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 52" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R40.htm','INTEL CORP','');">52</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 53" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R41.htm','INTEL CORP','');">53</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 54" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R42.htm','INTEL CORP','');">54</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 55" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R43.htm','INTEL CORP','');">55</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 56" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R44.htm','INTEL CORP','');">56</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 57" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R45.htm','INTEL CORP','');">57</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 58" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R46.htm','INTEL CORP','');">58</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 59" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R47.htm','INTEL CORP','');">59</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 60" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R48.htm','INTEL CORP','');">60</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 61" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R49.htm','INTEL CORP','');">61</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 62" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R50.htm','INTEL CORP','');">62</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 63" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R51.htm','INTEL CORP','');">63</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 64" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R52.htm','INTEL CORP','');">64</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 65" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R53.htm','INTEL CORP','');">65</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 66" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R54.htm','INTEL CORP','');">66</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 67" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R55.htm','INTEL CORP','');">67</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 68" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R56.htm','INTEL CORP','');">68</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 69" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R57.htm','INTEL CORP','');">69</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 70" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R58.htm','INTEL CORP','');">70</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 71" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R59.htm','INTEL CORP','');">71</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 72" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R60.htm','INTEL CORP','');">72</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 73" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R61.htm','INTEL CORP','');">73</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 74" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R62.htm','INTEL CORP','');">74</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 75" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R63.htm','INTEL CORP','');">75</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 76" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R64.htm','INTEL CORP','');">76</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 77" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R65.htm','INTEL CORP','');">77</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 78" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R66.htm','INTEL CORP','');">78</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 79" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R67.htm','INTEL CORP','');">79</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 80" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R68.htm','INTEL CORP','');">80</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 81" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R69.htm','INTEL CORP','');">81</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 82" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R70.htm','INTEL CORP','');">82</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 83" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R71.htm','INTEL CORP','');">83</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 84" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R72.htm','INTEL CORP','');">84</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 85" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R73.htm','INTEL CORP','');">85</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 86" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R74.htm','INTEL CORP','');">86</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 87" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R75.htm','INTEL CORP','');">87</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 88" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R76.htm','INTEL CORP','');">88</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 89" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R77.htm','INTEL CORP','');">89</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 90" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R78.htm','INTEL CORP','');">90</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 91" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R79.htm','INTEL CORP','');">91</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 92" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R80.htm','INTEL CORP','');">92</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 93" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R81.htm','INTEL CORP','');">93</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 94" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R82.htm','INTEL CORP','');">94</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 95" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R83.htm','INTEL CORP','');">95</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 96" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/R84.htm','INTEL CORP','');">96</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 97" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086318000007/FilingSummary.xml','INTEL CORP','');">97</a></td>
+</tr>
+<tr>
+<td><i class="blue">02/17/2017</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/a10kdocument12312016q4.htm','INTEL CORP','');">10-K for INTEL CORP </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">INTEL CORP (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('50863');">50863</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('3674');">3674</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">Forward-Looking Statements This Annual Report on Form 10-K contains forward-looking statements that involve a number of risks and uncertainties.</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000005086317000012/a10kdocument12312016q4.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex1012712312016q4.htm','INTEL CORP','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex107512312016q4.htm','INTEL CORP','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex12112312016q4.htm','INTEL CORP','');">3</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 4" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex21112312016q4.htm','INTEL CORP','');">4</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 5" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex23112312016q4.htm','INTEL CORP','');">5</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 6" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex31112312016q4.htm','INTEL CORP','');">6</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 7" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex31212312016q4.htm','INTEL CORP','');">7</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 8" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/ex32112312016q4.htm','INTEL CORP','');">8</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 9" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R1.htm','INTEL CORP','');">9</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 10" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R2.htm','INTEL CORP','');">10</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 11" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R3.htm','INTEL CORP','');">11</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 12" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R4.htm','INTEL CORP','');">12</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 13" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R5.htm','INTEL CORP','');">13</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 14" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R6.htm','INTEL CORP','');">14</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 15" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R7.htm','INTEL CORP','');">15</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 16" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R8.htm','INTEL CORP','');">16</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 17" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R9.htm','INTEL CORP','');">17</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 18" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R10.htm','INTEL CORP','');">18</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 19" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R11.htm','INTEL CORP','');">19</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 20" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R12.htm','INTEL CORP','');">20</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 21" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R13.htm','INTEL CORP','');">21</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 22" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R14.htm','INTEL CORP','');">22</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 23" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R15.htm','INTEL CORP','');">23</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 24" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R16.htm','INTEL CORP','');">24</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 25" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R17.htm','INTEL CORP','');">25</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 26" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R18.htm','INTEL CORP','');">26</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 27" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R19.htm','INTEL CORP','');">27</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 28" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R20.htm','INTEL CORP','');">28</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 29" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R21.htm','INTEL CORP','');">29</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 30" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R22.htm','INTEL CORP','');">30</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 31" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R23.htm','INTEL CORP','');">31</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 32" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R24.htm','INTEL CORP','');">32</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 33" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R25.htm','INTEL CORP','');">33</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 34" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R26.htm','INTEL CORP','');">34</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 35" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R27.htm','INTEL CORP','');">35</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 36" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R28.htm','INTEL CORP','');">36</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 37" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R29.htm','INTEL CORP','');">37</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 38" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R30.htm','INTEL CORP','');">38</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 39" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R31.htm','INTEL CORP','');">39</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 40" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R32.htm','INTEL CORP','');">40</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 41" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R33.htm','INTEL CORP','');">41</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 42" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R34.htm','INTEL CORP','');">42</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 43" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R35.htm','INTEL CORP','');">43</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 44" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R36.htm','INTEL CORP','');">44</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 45" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R37.htm','INTEL CORP','');">45</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 46" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R38.htm','INTEL CORP','');">46</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 47" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R39.htm','INTEL CORP','');">47</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 48" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R40.htm','INTEL CORP','');">48</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 49" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R41.htm','INTEL CORP','');">49</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 50" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R42.htm','INTEL CORP','');">50</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 51" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R43.htm','INTEL CORP','');">51</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 52" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R44.htm','INTEL CORP','');">52</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 53" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R45.htm','INTEL CORP','');">53</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 54" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R46.htm','INTEL CORP','');">54</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 55" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R47.htm','INTEL CORP','');">55</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 56" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R48.htm','INTEL CORP','');">56</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 57" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R49.htm','INTEL CORP','');">57</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 58" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R50.htm','INTEL CORP','');">58</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 59" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R51.htm','INTEL CORP','');">59</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 60" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R52.htm','INTEL CORP','');">60</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 61" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R53.htm','INTEL CORP','');">61</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 62" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R54.htm','INTEL CORP','');">62</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 63" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R55.htm','INTEL CORP','');">63</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 64" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R56.htm','INTEL CORP','');">64</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 65" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R57.htm','INTEL CORP','');">65</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 66" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R58.htm','INTEL CORP','');">66</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 67" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R59.htm','INTEL CORP','');">67</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 68" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R60.htm','INTEL CORP','');">68</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 69" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R61.htm','INTEL CORP','');">69</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 70" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R62.htm','INTEL CORP','');">70</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 71" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R63.htm','INTEL CORP','');">71</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 72" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R64.htm','INTEL CORP','');">72</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 73" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R65.htm','INTEL CORP','');">73</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 74" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R66.htm','INTEL CORP','');">74</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 75" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R67.htm','INTEL CORP','');">75</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 76" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R68.htm','INTEL CORP','');">76</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 77" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R69.htm','INTEL CORP','');">77</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 78" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R70.htm','INTEL CORP','');">78</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 79" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R71.htm','INTEL CORP','');">79</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 80" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R72.htm','INTEL CORP','');">80</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 81" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R73.htm','INTEL CORP','');">81</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 82" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R74.htm','INTEL CORP','');">82</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 83" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R75.htm','INTEL CORP','');">83</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 84" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R76.htm','INTEL CORP','');">84</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 85" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R77.htm','INTEL CORP','');">85</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 86" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R78.htm','INTEL CORP','');">86</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 87" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R79.htm','INTEL CORP','');">87</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 88" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R80.htm','INTEL CORP','');">88</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 89" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R81.htm','INTEL CORP','');">89</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 90" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R82.htm','INTEL CORP','');">90</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 91" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R83.htm','INTEL CORP','');">91</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 92" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/R84.htm','INTEL CORP','');">92</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 93" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086317000012/FilingSummary.xml','INTEL CORP','');">93</a></td>
+</tr>
+<tr>
+<td><i class="blue">02/12/2016</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/a10kdocument12262015q4.htm','INTEL CORP','');">10-K for INTEL CORP </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">INTEL CORP (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('50863');">50863</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('3674');">3674</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 10-K (Mark One) x ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 26, 2015. or <font color=red>TRANSITION REPORT</font> PURSUANT TO SECTION 13 OR 15(d) OF THE</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000005086316000105/a10kdocument12262015q4.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex101412262015q4.htm','INTEL CORP','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex12112262015q4.htm','INTEL CORP','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex21112262015q4.htm','INTEL CORP','');">3</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 4" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex23112262015q4.htm','INTEL CORP','');">4</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 5" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex31112262015q4.htm','INTEL CORP','');">5</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 6" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex31212262015q4.htm','INTEL CORP','');">6</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 7" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex32112262015q4.htm','INTEL CORP','');">7</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 8" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R1.htm','INTEL CORP','');">8</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 9" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R2.htm','INTEL CORP','');">9</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 10" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R3.htm','INTEL CORP','');">10</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 11" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R4.htm','INTEL CORP','');">11</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 12" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R5.htm','INTEL CORP','');">12</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 13" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R6.htm','INTEL CORP','');">13</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 14" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R7.htm','INTEL CORP','');">14</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 15" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R8.htm','INTEL CORP','');">15</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 16" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R9.htm','INTEL CORP','');">16</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 17" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R10.htm','INTEL CORP','');">17</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 18" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R11.htm','INTEL CORP','');">18</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 19" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R12.htm','INTEL CORP','');">19</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 20" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R13.htm','INTEL CORP','');">20</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 21" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R14.htm','INTEL CORP','');">21</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 22" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R15.htm','INTEL CORP','');">22</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 23" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R16.htm','INTEL CORP','');">23</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 24" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R17.htm','INTEL CORP','');">24</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 25" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R18.htm','INTEL CORP','');">25</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 26" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R19.htm','INTEL CORP','');">26</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 27" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R20.htm','INTEL CORP','');">27</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 28" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R21.htm','INTEL CORP','');">28</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 29" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R22.htm','INTEL CORP','');">29</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 30" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R23.htm','INTEL CORP','');">30</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 31" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R24.htm','INTEL CORP','');">31</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 32" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R25.htm','INTEL CORP','');">32</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 33" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R26.htm','INTEL CORP','');">33</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 34" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R27.htm','INTEL CORP','');">34</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 35" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R28.htm','INTEL CORP','');">35</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 36" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R29.htm','INTEL CORP','');">36</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 37" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R30.htm','INTEL CORP','');">37</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 38" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R31.htm','INTEL CORP','');">38</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 39" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R32.htm','INTEL CORP','');">39</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 40" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R33.htm','INTEL CORP','');">40</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 41" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R34.htm','INTEL CORP','');">41</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 42" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R35.htm','INTEL CORP','');">42</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 43" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R36.htm','INTEL CORP','');">43</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 44" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R37.htm','INTEL CORP','');">44</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 45" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R38.htm','INTEL CORP','');">45</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 46" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R39.htm','INTEL CORP','');">46</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 47" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R40.htm','INTEL CORP','');">47</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 48" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R41.htm','INTEL CORP','');">48</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 49" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R42.htm','INTEL CORP','');">49</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 50" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R43.htm','INTEL CORP','');">50</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 51" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R44.htm','INTEL CORP','');">51</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 52" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R45.htm','INTEL CORP','');">52</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 53" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R46.htm','INTEL CORP','');">53</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 54" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R47.htm','INTEL CORP','');">54</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 55" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R48.htm','INTEL CORP','');">55</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 56" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R49.htm','INTEL CORP','');">56</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 57" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R50.htm','INTEL CORP','');">57</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 58" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R51.htm','INTEL CORP','');">58</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 59" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R52.htm','INTEL CORP','');">59</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 60" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R53.htm','INTEL CORP','');">60</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 61" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R54.htm','INTEL CORP','');">61</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 62" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R55.htm','INTEL CORP','');">62</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 63" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R56.htm','INTEL CORP','');">63</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 64" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R57.htm','INTEL CORP','');">64</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 65" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R58.htm','INTEL CORP','');">65</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 66" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R59.htm','INTEL CORP','');">66</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 67" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R60.htm','INTEL CORP','');">67</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 68" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R61.htm','INTEL CORP','');">68</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 69" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R62.htm','INTEL CORP','');">69</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 70" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R63.htm','INTEL CORP','');">70</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 71" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R64.htm','INTEL CORP','');">71</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 72" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R65.htm','INTEL CORP','');">72</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 73" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R66.htm','INTEL CORP','');">73</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 74" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R67.htm','INTEL CORP','');">74</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 75" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R68.htm','INTEL CORP','');">75</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 76" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R69.htm','INTEL CORP','');">76</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 77" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R70.htm','INTEL CORP','');">77</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 78" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R71.htm','INTEL CORP','');">78</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 79" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R72.htm','INTEL CORP','');">79</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 80" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R73.htm','INTEL CORP','');">80</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 81" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R74.htm','INTEL CORP','');">81</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 82" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R75.htm','INTEL CORP','');">82</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 83" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R76.htm','INTEL CORP','');">83</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 84" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R77.htm','INTEL CORP','');">84</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 85" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R78.htm','INTEL CORP','');">85</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 86" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R79.htm','INTEL CORP','');">86</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 87" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R80.htm','INTEL CORP','');">87</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 88" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R81.htm','INTEL CORP','');">88</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 89" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R82.htm','INTEL CORP','');">89</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 90" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R83.htm','INTEL CORP','');">90</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 91" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R84.htm','INTEL CORP','');">91</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 92" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R85.htm','INTEL CORP','');">92</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 93" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R86.htm','INTEL CORP','');">93</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 94" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R87.htm','INTEL CORP','');">94</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 95" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R88.htm','INTEL CORP','');">95</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 96" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R89.htm','INTEL CORP','');">96</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 97" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R90.htm','INTEL CORP','');">97</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 98" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R91.htm','INTEL CORP','');">98</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 99" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/R92.htm','INTEL CORP','');">99</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/50863/000005086316000105/FilingSummary.xml','INTEL CORP','');">100</a></td>
+</tr>
+</table>
+<table id="header" width="100%"><tr><td><font class="normalbold">1 - 4</font><font class="normal"> of </font><font class="normalbold">4</font><font class="normal"> results</font></td><td align="right">&nbsp;<a href="" onclick="window.print(); return false;">Print</a>&nbsp;|&nbsp;<a href="" onclick="window.close(); return false;" tabindex="100">Close</a></td></tr><tr><td colspan="2"><font class="normal">Previous</font>&nbsp;&nbsp;<b>1</b>&nbsp;&nbsp;<font class="normal">Next</font></td></tr></table>&nbsp;
+            </div>
+          </td>
+        </tr>
+      </table>
+  <!-- End Display results -->
+
+</BODY>
+</HTML>
+
+

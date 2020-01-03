@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+<HTML lang=ENG>
+  <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+
+  <SCRIPT LANGUAGE="javascript" SRC="/EDGARFSClient/assets/scripts/fullTextSearch.js"></SCRIPT>
+  <SCRIPT LANGUAGE="javascript" SRC="/EDGARFSClient/assets/scripts/sec.js"></SCRIPT>
+  <!-- calendar stylesheet -->
+  
+
+
+<link rel="icon" type="image/x-icon" href="/EDGARFSClient/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" media="all" href="/EDGARFSClient/assets/style_sheets/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+
+  
+
+
+  <!-- main calendar program -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/calendar.js"></script>
+
+  <!-- language for the calendar -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/calendar-en.js"></script>
+
+
+  
+
+  <!-- the following script defines the Calendar.setup helper function, which makes
+       adding a calendar a matter of 1 or 2 lines of code. -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/calendar-setup.js"></script>
+
+  <!-- CSS This file is for the tooltip -->
+  <link rel="stylesheet" type="text/css" href="/EDGARFSClient/assets/style_sheets/container.css">
+
+  <!-- Dependencies This file is for the tooltip -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/yahoo-dom-event.js"></script>
+
+  <!-- Source file  This file is for the tooltip -->
+  <script type="text/javascript" src="/EDGARFSClient/assets/scripts/container-min.js"></script>
+
+  <title>Full Text Search</title>
+
+  <STYLE>
+    TH { FONT-WEIGHT: bold; FONT-SIZE: 10pt; VERTICAL-ALIGN: bottom; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: center }
+    .center { TEXT-ALIGN: center }
+  </STYLE>
+  <script language="JavaScript">
+    var isIE;
+    if (navigator.appName == "Microsoft Internet Explorer")
+    {
+      if (parseInt(navigator.appVersion) >= 4)
+      {
+        isIE = true;
+        document.write("<LINK REL='STYLESHEET' HREF='/EDGARFSClient/assets/style_sheets/ie.css'>");
+      }
+    }
+    else
+    {
+      isIE = false;
+      document.write("<LINK REL='STYLESHEET' HREF='/EDGARFSClient/assets/style_sheets/others.css'>");
+    }
+  </script>
+
+  <LINK REL="stylesheet" HREF="/EDGARFSClient/assets/style_sheets/fullTextSearch.css"></LINK>
+</HEAD>
+
+<BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0" onload="set_focus('search_text');">
+
+      <!-- Display the results width="760"-->
+      <table width="655" id="result" style="" cellSpacing=0 cellPadding=0 bgColor=white border=0>
+        <tr>
+          <td >
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td class="iframe">
+            <div name="ifrm2" id="ifrm2" style="">
+        <table id="header" width="100%"><tr><td><font class="normalbold">1 - 10</font><font class="normal"> of over </font><font class="normalbold">8000+</font><font class="normal"> results</font></td><td align="right">&nbsp;<a href="" onclick="window.print(); return false;">Print</a>&nbsp;|&nbsp;<a href="" onclick="window.close(); return false;" tabindex="100">Close</a></td></tr><tr><td colspan="2"><font class="normal">Previous</font>&nbsp;&nbsp;<b>1</b>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=11&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 2" tabindex="100">2</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=21&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 3" tabindex="100">3</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=31&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 4" tabindex="100">4</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=41&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 5" tabindex="100">5</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=51&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 6" tabindex="100">6</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=61&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 7" tabindex="100">7</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=71&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 8" tabindex="100">8</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=81&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 9" tabindex="100">9</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=91&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 10" tabindex="100">10</a>&nbsp;&nbsp;<a class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=11&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Next Page" tabindex="100">Next</a></td></tr></table><table xmlns:autn="http://schemas.autonomy.com/aci/">
+<tr class="infoBorder">
+<td class="H1" width="11%">
+          Date Filed
+        </td><td align="left" class="H1">
+          Title
+        </td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/51812/000005181220000001/xslForm13F_X01/SEC13f123119.xlsx.xml','STONEBRIDGE CAPITAL MANAGEMENT INC','');">INFORMATION TABLE of 13F-HR for STONEBRIDGE CAPITAL MANAGEMENT INC </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">STONEBRIDGE CAPITAL MANAGEMENT INC (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('51812');">51812</a> /SIC - Unspecified)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">3M COMPANY COM COM 88579Y101 1576 8932 SH SOLE 0 0 8932 3M COMPANY COM COM 88579Y101 159 900 SH OTR 0 0 900 ABB LTD SPONSORED ADR FOREIGN COMMON 000375204 982 40750 SH SOLE 0 0 40750 ABB LTD SPONSORED ADR FOREIGN COMMON 000375204 314 13050 SH OTR 0 0 13050 ABBOTT LABS COM 002824100 356 4094 SH SOLE</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="Parent Filing" href="javascript:opennewfiling('http://www.sec.gov/Archives/edgar/data/51812/000005181220000001/xslForm13F_X01/primary_doc.xml','STONEBRIDGE CAPITAL MANAGEMENT INC','');">
+            Parent Filing 
+          </a> | 
+
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="Index of Filing Documents" href="javascript:opennewfiling('http://www.sec.gov/Archives/edgar/data/51812/000005181220000001/0000051812-20-000001-index.htm','STONEBRIDGE CAPITAL MANAGEMENT INC','');">
+            Index of Filing Documents 
+          </a><b><font class="normal">- of</font></b></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/71701/000007170120000002/dgf_dif_ncsr_1019.htm','DAVIS NEW YORK VENTURE FUND INC','');">N-CSR for DAVIS NEW YORK VENTURE FUND INC </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">DAVIS NEW YORK VENTURE FUND INC (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('71701');">71701</a> /SIC - Unspecified)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number 811-01701 DAVIS NEW YORK VENTURE FUND, INC. (Exact name of registrant as specified in charter) 2949 East</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000007170120000002/dgf_dif_ncsr_1019.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/71701/000007170120000002/cert302.htm','DAVIS NEW YORK VENTURE FUND INC','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/71701/000007170120000002/cert906.htm','DAVIS NEW YORK VENTURE FUND INC','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/71701/000007170120000002/code_ethics.htm','DAVIS NEW YORK VENTURE FUND INC','');">3</a></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/746458/000074645820000002/acmt2020mash485a.htm','AMERICAN CENTURY MUNICIPAL TRUST, AMERICAN CENTURY MUNICIPAL TRUST','');">485APOS for AMERICAN CENTURY MUNICIPAL TRUST </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">AMERICAN CENTURY MUNICIPAL TRUST (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('746458');">746458</a> /SIC - Unspecified), </font><font class="normalbold">AMERICAN CENTURY MUNICIPAL TRUST (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('');"></a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('');"></a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">As Filed with the U.S. Securities and Exchange Commission on January 2, 2020 1933 Act File No. 002-91229 1940 Act File No. 811-04025 UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 _ FORM N-1A _ REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i>&nbsp;&nbsp;</i></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/819940/000081994020000002/lp1-0310.htm','BNY Mellon Investment Funds IV Inc','');">N-CSR for BNY Mellon Investment Funds IV Inc </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">BNY Mellon Investment Funds IV Inc (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('819940');">819940</a> /SIC - Unspecified)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-05202 BNY Mellon Investment Funds IV, Inc. (Exact name of Registrant as</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000081994020000002/lp1-0310.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/819940/000081994020000002/ncsrcodeofethics-june2019.htm','BNY Mellon Investment Funds IV Inc','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/819940/000081994020000002/exhibit302-0310.htm','BNY Mellon Investment Funds IV Inc','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/819940/000081994020000002/exhibit906-0310.htm','BNY Mellon Investment Funds IV Inc','');">3</a></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/1114446/000091412120000016/ub54548307-424b2.htm','UBS AG','');">424B2 for UBS AG </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">UBS AG (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('1114446');">1114446</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('6021');">6021</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">The information in this preliminary pricing supplement is not complete and may be changed. We may not sell these Notes until the pricing supplement, the accompanying product supplement and the accompanying prospectus (collectively, the Offering Documents ) are delivered in final form. The</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i>&nbsp;&nbsp;</i></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/1452208/000110465920000145/xslForm13F_X01/infotable.xml','CACTI ASSET MANAGEMENT LLC','');">INFORMATION TABLE of 13F-HR for CACTI ASSET MANAGEMENT LLC </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">CACTI ASSET MANAGEMENT LLC (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('1452208');">1452208</a> /SIC - Unspecified)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">ADOBE SYS INC COM 37045V100 1025 3100 SH SOLE 3100 0 0 ALLIANCEBERNSTEIN HLDG LP UNIT LTD PARTN 01881G106 1852 61850 SH SOLE 61850 0 0 AMERICAN EXPRESS CO COM 025816109 69042 551499 SH SOLE 551499 0 0 APPOLLO GLOBAL MGMT INC CL A COM 03768E105 1346 28000 SH SOLE 28000 0 0 APPLE INC COM COM 037833100</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="Parent Filing" href="javascript:opennewfiling('http://www.sec.gov/Archives/edgar/data/1452208/000110465920000145/xslForm13F_X01/primary_doc.xml','CACTI ASSET MANAGEMENT LLC','');">
+            Parent Filing 
+          </a> | 
+
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="Index of Filing Documents" href="javascript:opennewfiling('http://www.sec.gov/Archives/edgar/data/1452208/000110465920000145/0001104659-20-000145-index.htm','CACTI ASSET MANAGEMENT LLC','');">
+            Index of Filing Documents 
+          </a><b><font class="normal">- of</font></b></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/805676/000110465920000356/xslForm13F_X01/infotable.xml','PARK NATIONAL CORP OH','');">INFORMATION TABLE of 13F-HR for PARK NATIONAL CORP OH </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">PARK NATIONAL CORP OH (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('805676');">805676</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('6021');">6021</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">Aflac Inc Com 001055102 426 8052 SH SOLE 8052 0 0 Aflac Inc Com 001055102 68 1286 SH DFND 1286 0 0 AIA Group Ltd Sponsored ADR Com 001317205 453 10796 SH SOLE 5920 0 4876 AT&T Inc Com 00206R102 27382 700655 SH SOLE 693384 0 7271 AT&T Inc Com 00206R102 1167 29874 SH DFND 29554 0 320 Abbott</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="Parent Filing" href="javascript:opennewfiling('http://www.sec.gov/Archives/edgar/data/805676/000110465920000356/xslForm13F_X01/primary_doc.xml','PARK NATIONAL CORP OH','');">
+            Parent Filing 
+          </a> | 
+
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="Index of Filing Documents" href="javascript:opennewfiling('http://www.sec.gov/Archives/edgar/data/805676/000110465920000356/0001104659-20-000356-index.htm','PARK NATIONAL CORP OH','');">
+            Index of Filing Documents 
+          </a><b><font class="normal">- of</font></b></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/1000275/000114036120000021/formfwp.htm','ROYAL BANK OF CANADA, ROYAL BANK OF CANADA','');">FWP for ROYAL BANK OF CANADA </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">ROYAL BANK OF CANADA (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('1000275');">1000275</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('6029');">6029</a>), </font><font class="normalbold">ROYAL BANK OF CANADA (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('1000275');">1000275</a> /SIC - <a id="sicSearch" name="sicSearch" tabindex="100" class="clsBlueBg" title="Display filings with this SIC Code" href="javascript:opensicsearch('6029');">6029</a>)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">RBC Capital Markets Filed Pursuant to Rule 433 Registration Statement No. 333-227001 The information in this preliminary terms supplement is not complete and may be changed. Preliminary Terms Supplement Subject to Completion: Dated January 2, 2020 Pricing Supplement Dated January _, 2020 to</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i>&nbsp;&nbsp;</i></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/869365/000119312520000455/d732533dncsr.htm','SCHWAB INVESTMENTS','');">N-CSR for SCHWAB INVESTMENTS </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">SCHWAB INVESTMENTS (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('869365');">869365</a> /SIC - Unspecified)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-6200 Schwab Investments Schwab 1000 Index Fund (Exact name of registrant as</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000119312520000455/d732533dncsr.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/869365/000119312520000455/d732533dex99codeeth.htm','SCHWAB INVESTMENTS','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/869365/000119312520000455/d732533dex99cert.htm','SCHWAB INVESTMENTS','');">2</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 3" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/869365/000119312520000455/d732533dex99906cert.htm','SCHWAB INVESTMENTS','');">3</a></td>
+</tr>
+<tr>
+<td><i class="blue">01/02/2020</i></td><td align="left"><a id="viewFiling" name="viewFiling" class="filing" tabindex="100" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/1557156/000119312520000470/d787992dncsr.htm','Goldman Sachs Trust II','');">N-CSR for Goldman Sachs Trust II </a>
+		&nbsp;&nbsp;&nbsp;
+		</td><td align="left"></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><font class="normal">COMPANY NAME(s) - [</font><font class="normalbold">Goldman Sachs Trust II (CIK - <a id="cikSearch" name="cikSearch" tabindex="100" class="clsBlueBg" title="Display filings with this CIK" href="javascript:openciksearch('1557156');">1557156</a> /SIC - Unspecified)</font><font class="normal">] </font></td>
+</tr>
+<tr class="blue">
+<td>&nbsp;</td><td align="left" colspan="2"><i class="small">UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-22781 Goldman Sachs Trust II (Exact name of registrant as specified in charter) 200</i></td>
+</tr>
+<tr class="infoBorder">
+<td>&nbsp;</td><td class="footer" align="left" colspan="2"><i><a class="clsBlueBg" id="exhibitList" name="exhibitList" title="Exhibits List" tabindex="100" href="javascript:openwindow('exhibitResults.jsp?id=000119312520000470/d787992dncsr.htm');">
+                    Exhibits List-&gt;&nbsp;&nbsp;
+                  </a></i>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 1" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/1557156/000119312520000470/d787992dex99cert.htm','Goldman Sachs Trust II','');">1</a>
+          &nbsp;<font class="normal">|</font>&nbsp;
+          
+          <a class="clsBlueBg" id="viewFiling" name="viewFiling" tabindex="100" title="
+				  Exhibit 2" href="javascript:opennew('http://www.sec.gov/Archives/edgar/data/1557156/000119312520000470/d787992dex99906cert.htm','Goldman Sachs Trust II','');">2</a></td>
+</tr>
+</table>
+<table id="header" width="100%"><tr><td><font class="normalbold">1 - 10</font><font class="normal"> of over </font><font class="normalbold">8000+</font><font class="normal"> results</font></td><td align="right">&nbsp;<a href="" onclick="window.print(); return false;">Print</a>&nbsp;|&nbsp;<a href="" onclick="window.close(); return false;" tabindex="100">Close</a></td></tr><tr><td colspan="2"><font class="normal">Previous</font>&nbsp;&nbsp;<b>1</b>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=11&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 2" tabindex="100">2</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=21&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 3" tabindex="100">3</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=31&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 4" tabindex="100">4</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=41&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 5" tabindex="100">5</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=51&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 6" tabindex="100">6</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=61&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 7" tabindex="100">7</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=71&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 8" tabindex="100">8</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=81&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 9" tabindex="100">9</a>&nbsp;&nbsp;<a  class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=91&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Page Number 10" tabindex="100">10</a>&nbsp;&nbsp;<a class="clsBlueBg" href="/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=intel&sort=Date&startDoc=11&numResults=10&isAdv=true&formType=1&fromDate=mm/dd/yyyy&toDate=mm/dd/yyyy&stemming=true" title="Next Page" tabindex="100">Next</a></td></tr></table>&nbsp;
+            </div>
+          </td>
+        </tr>
+      </table>
+  <!-- End Display results -->
+
+</BODY>
+</HTML>
+
+

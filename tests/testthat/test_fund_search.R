@@ -6,13 +6,13 @@ with_mock_API({
     expect_is(res, "data.frame")
 
     expect_length(res, 12)
-    expect_equal(nrow(res), 80)
-    expect_length(unique(res$class_id), 80)
+    expect_equal(nrow(res), 79)
+    expect_length(unique(res$class_id), 79)
 
     test.row <- res[75, ]
-    expect_equal(test.row$class_id, "C000008009")
-    expect_equal(test.row$class_name, "Investor Shares")
-    expect_equal(test.row$cik, "0000734383")
+    expect_equal(test.row$class_id, "C000092800")
+    expect_equal(test.row$class_name, "Administrator Class")
+    expect_equal(test.row$cik, "0001081400")
   })
 
   test_that("fast search (Class)", {
