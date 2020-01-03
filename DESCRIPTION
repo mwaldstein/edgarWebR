@@ -19,6 +19,7 @@ Suggests:
     covr,
     ggplot2,
     knitr,
+    lintr,
     purrr,
     rmarkdown,
     httptest,
