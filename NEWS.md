@@ -7,6 +7,7 @@
      including when there is no page number. (fixes #6)
  * Initial fix for #11 where some documents with especially deep structures
      would error in the parsing phase.
+ * Check for errors connecting to SEC servers and stop on failures.
 
 ## Documentation
  * Elaborate the parsing vignette to better explain the files processed by
@@ -17,6 +18,8 @@
 
 ## Internal
  * Add missing pkgdown dev dependency
+ * Add lintr dev dependency
+ * Update tests w/ current data
 
 # edgarWebR 1.0.0 - "Everything in its place"
 
