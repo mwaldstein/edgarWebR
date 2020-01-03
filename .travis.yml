@@ -6,6 +6,7 @@ cache: packages
 warnings_are_errors: true
 
 r:
+  - oldrel
   - release
 
 # work around temporary travis + R 3.5 bug
