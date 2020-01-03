@@ -4,9 +4,18 @@
 \alias{company_search}
 \title{SEC Company Search}
 \usage{
-company_search(x, match = "start", file_number = FALSE, state = "",
-  country = "", sic = "", ownership = FALSE, type = "",
-  count = 40, page = 1)
+company_search(
+  x,
+  match = "start",
+  file_number = FALSE,
+  state = "",
+  country = "",
+  sic = "",
+  ownership = FALSE,
+  type = "",
+  count = 40,
+  page = 1
+)
 }
 \arguments{
 \item{x}{Name of company to search or file number}

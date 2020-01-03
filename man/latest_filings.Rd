@@ -4,8 +4,14 @@
 \alias{latest_filings}
 \title{SEC Latest Filings}
 \usage{
-latest_filings(name = "", cik = "", type = "", owner = "include",
-  count = 40, page = 1)
+latest_filings(
+  name = "",
+  cik = "",
+  type = "",
+  owner = "include",
+  count = 40,
+  page = 1
+)
 }
 \arguments{
 \item{name}{Optional company name to limit filing results}

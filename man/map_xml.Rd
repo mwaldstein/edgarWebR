@@ -4,8 +4,14 @@
 \alias{map_xml}
 \title{Map XML Entries}
 \usage{
-map_xml(doc, entries_xpath, parts, trim = c(), integers = c(),
-  date_format = "")
+map_xml(
+  doc,
+  entries_xpath,
+  parts,
+  trim = c(),
+  integers = c(),
+  date_format = ""
+)
 }
 \arguments{
 \item{doc}{An XML document}

@@ -4,8 +4,14 @@
 \alias{company_details}
 \title{SEC Company Details}
 \usage{
-company_details(x, ownership = FALSE, type = "", before = "",
-  count = 40, page = 1)
+company_details(
+  x,
+  ownership = FALSE,
+  type = "",
+  before = "",
+  count = 40,
+  page = 1
+)
 }
 \arguments{
 \item{x}{either a stock ticker, CIK number, or XML document for a company page}

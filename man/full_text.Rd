@@ -4,9 +4,19 @@
 \alias{full_text}
 \title{SEC Full-Text Search}
 \usage{
-full_text(q = "*", type = "", reverse_order = FALSE, count = 10,
-  page = 1, stemming = TRUE, name = "", cik = "", sic = "",
-  from = "", to = "")
+full_text(
+  q = "*",
+  type = "",
+  reverse_order = FALSE,
+  count = 10,
+  page = 1,
+  stemming = TRUE,
+  name = "",
+  cik = "",
+  sic = "",
+  from = "",
+  to = ""
+)
 }
 \arguments{
 \item{q}{Search query. For details on special formatting, see the

@@ -4,8 +4,7 @@
 \alias{parse_text_filing}
 \title{Parse Text Filing}
 \usage{
-parse_text_filing(x, strip = TRUE, include.raw = FALSE,
-  fix.errors = TRUE)
+parse_text_filing(x, strip = TRUE, include.raw = FALSE, fix.errors = TRUE)
 }
 \arguments{
 \item{x}{- URL to a filing text document or actual text}

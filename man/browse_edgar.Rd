@@ -4,8 +4,14 @@
 \alias{browse_edgar}
 \title{Browse Edgar Web}
 \usage{
-browse_edgar(ticker, ownership = FALSE, type = "", before = "",
-  count = 40, page = 1)
+browse_edgar(
+  ticker,
+  ownership = FALSE,
+  type = "",
+  before = "",
+  count = 40,
+  page = 1
+)
 }
 \arguments{
 \item{ticker}{either a stock ticker or CIK number}

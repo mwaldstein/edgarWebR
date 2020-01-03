@@ -2,16 +2,16 @@ structure(list(url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany
     status_code = 200L, headers = structure(list(`content-encoding` = "gzip", 
         `content-type` = "application/atom+xml", server = "Apache", 
         `x-content-type-options` = "nosniff", `x-frame-options` = "SAMEORIGIN", 
-        `x-xss-protection` = "1; mode=block", `content-length` = "3131", 
-        `cache-control` = "no-cache", date = "Fri, 03 Jan 2020 01:39:28 GMT", 
+        `x-xss-protection` = "1; mode=block", `content-length` = "3130", 
+        `cache-control` = "no-cache", date = "Fri, 03 Jan 2020 02:04:00 GMT", 
         connection = "keep-alive", vary = "Accept-Encoding", 
         `strict-transport-security` = "max-age=31536000 ; includeSubDomains ; preload"), class = c("insensitive", 
     "list")), all_headers = list(list(status = 200L, version = "HTTP/1.1", 
         headers = structure(list(`content-encoding` = "gzip", 
             `content-type` = "application/atom+xml", server = "Apache", 
             `x-content-type-options` = "nosniff", `x-frame-options` = "SAMEORIGIN", 
-            `x-xss-protection` = "1; mode=block", `content-length` = "3131", 
-            `cache-control` = "no-cache", date = "Fri, 03 Jan 2020 01:39:28 GMT", 
+            `x-xss-protection` = "1; mode=block", `content-length` = "3130", 
+            `cache-control` = "no-cache", date = "Fri, 03 Jan 2020 02:04:00 GMT", 
             connection = "keep-alive", vary = "Accept-Encoding", 
             `strict-transport-security` = "max-age=31536000 ; includeSubDomains ; preload"), class = c("insensitive", 
         "list")))), cookies = structure(list(domain = logical(0), 
@@ -3690,11 +3690,11 @@ structure(list(url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany
     0x33, 0x29, 0x3c, 0x2f, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x3e, 
     0x0a, 0x20, 0x20, 0x20, 0x20, 0x3c, 0x75, 0x70, 0x64, 0x61, 
     0x74, 0x65, 0x64, 0x3e, 0x32, 0x30, 0x32, 0x30, 0x2d, 0x30, 
-    0x31, 0x2d, 0x30, 0x32, 0x54, 0x32, 0x30, 0x3a, 0x33, 0x39, 
-    0x3a, 0x32, 0x38, 0x2d, 0x30, 0x35, 0x3a, 0x30, 0x30, 0x3c, 
+    0x31, 0x2d, 0x30, 0x32, 0x54, 0x32, 0x31, 0x3a, 0x30, 0x34, 
+    0x3a, 0x30, 0x30, 0x2d, 0x30, 0x35, 0x3a, 0x30, 0x30, 0x3c, 
     0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x3e, 0x0a, 
     0x20, 0x20, 0x3c, 0x2f, 0x66, 0x65, 0x65, 0x64, 0x3e, 0x0a
-    )), date = structure(1578015568, class = c("POSIXct", "POSIXt"
-    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 6.2e-05, 
-    connect = 6.3e-05, pretransfer = 0.000119, starttransfer = 0.122009, 
-    total = 0.122281)), class = "response")
+    )), date = structure(1578017040, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.3e-05, 
+    connect = 2.4e-05, pretransfer = 6.2e-05, starttransfer = 0.182673, 
+    total = 0.183182)), class = "response")

@@ -8,21 +8,25 @@
 
 <title>SEC Latest Filings — latest_filings • edgarWebR</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,11 +34,12 @@
 
 
 
-<meta property="og:title" content="SEC Latest Filings — latest_filings" />
 
+<meta property="og:title" content="SEC Latest Filings — latest_filings" />
 <meta property="og:description" content="Provides access to the latest SEC filings from
 here" />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -46,6 +51,7 @@ here" />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -64,7 +70,7 @@ here" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -72,7 +78,7 @@ here" />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -98,11 +104,10 @@ here" />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/mwaldstein/edgarWebR">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -113,6 +118,7 @@ here" />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -124,15 +130,19 @@ here" />
     </div>
 
     <div class="ref-description">
-    
     <p>Provides access to the latest SEC filings from
 <a href='https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent'>here</a></p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>latest_filings</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>cik</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>owner</span> <span class='kw'>=</span> <span class='st'>"include"</span>,
-  <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>40</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>latest_filings</span>(
+  <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>cik</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>owner</span> <span class='kw'>=</span> <span class='st'>"include"</span>,
+  <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>40</span>,
+  <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -165,7 +175,7 @@ here" />
       <td><p>Which page of results to return</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a dataframe list of recent results, ordered by descending accepted
@@ -181,186 +191,184 @@ here" />
 <li><p>size</p></li>
 </ul>
 
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>latest_filings</span>()</div><div class='output co'>#&gt;          accepted_date
-#&gt; 1  2019-02-01 21:45:16
-#&gt; 2  2019-02-01 21:45:16
-#&gt; 3  2019-02-01 21:45:15
-#&gt; 4  2019-02-01 21:45:15
-#&gt; 5  2019-02-01 21:45:14
-#&gt; 6  2019-02-01 21:45:14
-#&gt; 7  2019-02-01 21:44:07
-#&gt; 8  2019-02-01 21:44:07
-#&gt; 9  2019-02-01 21:43:02
-#&gt; 10 2019-02-01 21:43:02
-#&gt; 11 2019-02-01 21:39:44
-#&gt; 12 2019-02-01 21:39:44
-#&gt; 13 2019-02-01 21:38:44
-#&gt; 14 2019-02-01 21:38:44
-#&gt; 15 2019-02-01 21:38:30
-#&gt; 16 2019-02-01 21:38:30
-#&gt; 17 2019-02-01 21:36:21
-#&gt; 18 2019-02-01 21:36:21
-#&gt; 19 2019-02-01 21:35:12
-#&gt; 20 2019-02-01 21:35:12
-#&gt; 21 2019-02-01 21:35:01
-#&gt; 22 2019-02-01 21:35:01
-#&gt; 23 2019-02-01 21:34:23
-#&gt; 24 2019-02-01 21:34:23
-#&gt; 25 2019-02-01 21:34:12
-#&gt; 26 2019-02-01 21:34:12
-#&gt; 27 2019-02-01 21:34:02
-#&gt; 28 2019-02-01 21:34:02
-#&gt; 29 2019-02-01 21:33:51
-#&gt; 30 2019-02-01 21:33:51
-#&gt; 31 2019-02-01 21:28:56
-#&gt; 32 2019-02-01 21:28:56
-#&gt; 33 2019-02-01 21:27:42
-#&gt; 34 2019-02-01 21:27:42
-#&gt; 35 2019-02-01 21:16:32
-#&gt; 36 2019-02-01 21:16:32
-#&gt; 37 2019-02-01 21:14:57
-#&gt; 38 2019-02-01 21:14:57
-#&gt; 39 2019-02-01 21:13:25
-#&gt; 40 2019-02-01 21:13:25
+#&gt; 1  2020-01-02 21:01:17
+#&gt; 2  2020-01-02 21:01:17
+#&gt; 3  2020-01-02 21:01:09
+#&gt; 4  2020-01-02 21:01:09
+#&gt; 5  2020-01-02 21:00:54
+#&gt; 6  2020-01-02 21:00:54
+#&gt; 7  2020-01-02 21:00:42
+#&gt; 8  2020-01-02 21:00:42
+#&gt; 9  2020-01-02 21:00:38
+#&gt; 10 2020-01-02 21:00:38
+#&gt; 11 2020-01-02 21:00:35
+#&gt; 12 2020-01-02 21:00:35
+#&gt; 13 2020-01-02 21:00:30
+#&gt; 14 2020-01-02 21:00:30
+#&gt; 15 2020-01-02 21:00:27
+#&gt; 16 2020-01-02 21:00:27
+#&gt; 17 2020-01-02 21:00:19
+#&gt; 18 2020-01-02 21:00:19
+#&gt; 19 2020-01-02 21:00:17
+#&gt; 20 2020-01-02 21:00:17
+#&gt; 21 2020-01-02 21:00:09
+#&gt; 22 2020-01-02 21:00:09
+#&gt; 23 2020-01-02 20:59:32
+#&gt; 24 2020-01-02 20:59:32
+#&gt; 25 2020-01-02 20:58:54
+#&gt; 26 2020-01-02 20:58:54
+#&gt; 27 2020-01-02 20:58:27
+#&gt; 28 2020-01-02 20:58:27
+#&gt; 29 2020-01-02 20:58:18
+#&gt; 30 2020-01-02 20:58:18
+#&gt; 31 2020-01-02 20:57:49
+#&gt; 32 2020-01-02 20:57:49
+#&gt; 33 2020-01-02 20:57:02
+#&gt; 34 2020-01-02 20:57:02
+#&gt; 35 2020-01-02 20:55:38
+#&gt; 36 2020-01-02 20:55:38
+#&gt; 37 2020-01-02 20:54:21
+#&gt; 38 2020-01-02 20:54:21
+#&gt; 39 2020-01-02 20:53:04
+#&gt; 40 2020-01-02 20:53:04
 #&gt;                                                                                                 href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/1461736/000159396819000317/0001593968-19-000317-index.htm
-#&gt; 2   https://www.sec.gov/Archives/edgar/data/887247/000159396819000317/0001593968-19-000317-index.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1643192/000141588919000119/0001415889-19-000119-index.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1374328/000141588919000119/0001415889-19-000119-index.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1756441/000089924319002381/0000899243-19-002381-index.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1603756/000089924319002381/0000899243-19-002381-index.htm
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1038322/000159396819000316/0001593968-19-000316-index.htm
-#&gt; 8   https://www.sec.gov/Archives/edgar/data/887247/000159396819000316/0001593968-19-000316-index.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/1530197/000159396819000315/0001593968-19-000315-index.htm
-#&gt; 10  https://www.sec.gov/Archives/edgar/data/887247/000159396819000315/0001593968-19-000315-index.htm
-#&gt; 11 https://www.sec.gov/Archives/edgar/data/1756216/000089924319002379/0000899243-19-002379-index.htm
-#&gt; 12 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002379/0000899243-19-002379-index.htm
-#&gt; 13 https://www.sec.gov/Archives/edgar/data/1756437/000089924319002378/0000899243-19-002378-index.htm
-#&gt; 14 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002378/0000899243-19-002378-index.htm
-#&gt; 15 https://www.sec.gov/Archives/edgar/data/1756240/000089924319002377/0000899243-19-002377-index.htm
-#&gt; 16 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002377/0000899243-19-002377-index.htm
-#&gt; 17 https://www.sec.gov/Archives/edgar/data/1461753/000159396819000311/0001593968-19-000311-index.htm
-#&gt; 18  https://www.sec.gov/Archives/edgar/data/887247/000159396819000311/0001593968-19-000311-index.htm
-#&gt; 19 https://www.sec.gov/Archives/edgar/data/1216989/000159396819000310/0001593968-19-000310-index.htm
-#&gt; 20  https://www.sec.gov/Archives/edgar/data/887247/000159396819000310/0001593968-19-000310-index.htm
-#&gt; 21 https://www.sec.gov/Archives/edgar/data/1756399/000089924319002372/0000899243-19-002372-index.htm
-#&gt; 22 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002372/0000899243-19-002372-index.htm
-#&gt; 23 https://www.sec.gov/Archives/edgar/data/1756438/000089924319002371/0000899243-19-002371-index.htm
-#&gt; 24 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002371/0000899243-19-002371-index.htm
-#&gt; 25 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002370/0000899243-19-002370-index.htm
-#&gt; 26  https://www.sec.gov/Archives/edgar/data/904634/000089924319002370/0000899243-19-002370-index.htm
-#&gt; 27 https://www.sec.gov/Archives/edgar/data/1277431/000159396819000309/0001593968-19-000309-index.htm
-#&gt; 28  https://www.sec.gov/Archives/edgar/data/887247/000159396819000309/0001593968-19-000309-index.htm
-#&gt; 29 https://www.sec.gov/Archives/edgar/data/1603756/000089924319002369/0000899243-19-002369-index.htm
-#&gt; 30 https://www.sec.gov/Archives/edgar/data/1359446/000089924319002369/0000899243-19-002369-index.htm
-#&gt; 31 https://www.sec.gov/Archives/edgar/data/1700786/000159396819000308/0001593968-19-000308-index.htm
-#&gt; 32  https://www.sec.gov/Archives/edgar/data/887247/000159396819000308/0001593968-19-000308-index.htm
-#&gt; 33 https://www.sec.gov/Archives/edgar/data/1492426/000120919119006641/0001209191-19-006641-index.htm
-#&gt; 34 https://www.sec.gov/Archives/edgar/data/1349376/000120919119006641/0001209191-19-006641-index.htm
-#&gt; 35 https://www.sec.gov/Archives/edgar/data/1575793/000156761919002192/0001567619-19-002192-index.htm
-#&gt; 36 https://www.sec.gov/Archives/edgar/data/1366294/000156761919002192/0001567619-19-002192-index.htm
-#&gt; 37 https://www.sec.gov/Archives/edgar/data/1575793/000156761919002191/0001567619-19-002191-index.htm
-#&gt; 38 https://www.sec.gov/Archives/edgar/data/1043906/000156761919002191/0001567619-19-002191-index.htm
-#&gt; 39 https://www.sec.gov/Archives/edgar/data/1613480/000156761919002190/0001567619-19-002190-index.htm
-#&gt; 40 https://www.sec.gov/Archives/edgar/data/1575793/000156761919002190/0001567619-19-002190-index.htm
-#&gt;    type        cik                          company_name company_type
-#&gt; 1     4 0001461736                      Hopkins Robert O    Reporting
-#&gt; 2     4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 3     4 0001643192                           Dayton Judd    Reporting
-#&gt; 4     4 0001374328                  FITLIFE BRANDS, INC.       Issuer
-#&gt; 5     4 0001756441                 Williamson Michael V.    Reporting
-#&gt; 6     4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 7     4 0001038322                    CARLO DENNIS J PHD    Reporting
-#&gt; 8     4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 9     4 0001530197                      Daniels Karen K.    Reporting
-#&gt; 10    4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 11    4 0001756216                      Jiang Guangqiang    Reporting
-#&gt; 12    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 13    4 0001756437                            Woock John    Reporting
-#&gt; 14    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 15    4 0001756240                         Noblett Karen    Reporting
-#&gt; 16    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 17    4 0001461753                    Marguglio David J.    Reporting
-#&gt; 18    4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 19    4 0001216989                    WILLIAMS RICHARD C    Reporting
-#&gt; 20    4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 21    4 0001756399                            Sama Rinda    Reporting
-#&gt; 22    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 23    4 0001756438                       Dearen Danny L.    Reporting
-#&gt; 24    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 25    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 26    4 0000904634                        MATHUR PRABODH    Reporting
-#&gt; 27    4 0001277431                    ROTHERMEL ROBERT B    Reporting
-#&gt; 28    4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 29    4 0001603756 Axonics Modulation Technologies, Inc.       Issuer
-#&gt; 30    4 0001359446                      Ford Alfred J Jr    Reporting
-#&gt; 31    4 0001700786                        Moss Ronald B.    Reporting
-#&gt; 32    4 0000887247           Adamis Pharmaceuticals Corp       Issuer
-#&gt; 33    4 0001492426                    Horizon Pharma plc       Issuer
-#&gt; 34    4 0001349376                     Walbert Timothy P    Reporting
-#&gt; 35    4 0001575793                         Energous Corp       Issuer
-#&gt; 36    4 0001366294                        Sereda Brian J    Reporting
-#&gt; 37    4 0001575793                         Energous Corp       Issuer
-#&gt; 38    4 0001043906                     RIZZONE STEPHEN R    Reporting
-#&gt; 39    4 0001613480                        Johnston Cesar    Reporting
-#&gt; 40    4 0001575793                         Energous Corp       Issuer
+#&gt; 1  https://www.sec.gov/Archives/edgar/data/1689843/000089924320000162/0000899243-20-000162-index.htm
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/1644406/000089924320000162/0000899243-20-000162-index.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1780878/000156218020000061/0001562180-20-000061-index.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/1636422/000156218020000061/0001562180-20-000061-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1636422/000156218020000060/0001562180-20-000060-index.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1494174/000156218020000060/0001562180-20-000060-index.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1752566/000156218020000059/0001562180-20-000059-index.htm
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/1253176/000156218020000059/0001562180-20-000059-index.htm
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/1731814/000156218020000058/0001562180-20-000058-index.htm
+#&gt; 10   https://www.sec.gov/Archives/edgar/data/51143/000156218020000058/0001562180-20-000058-index.htm
+#&gt; 11 https://www.sec.gov/Archives/edgar/data/1753455/000156218020000057/0001562180-20-000057-index.htm
+#&gt; 12 https://www.sec.gov/Archives/edgar/data/1253176/000156218020000057/0001562180-20-000057-index.htm
+#&gt; 13 https://www.sec.gov/Archives/edgar/data/1780978/000156218020000056/0001562180-20-000056-index.htm
+#&gt; 14 https://www.sec.gov/Archives/edgar/data/1636422/000156218020000056/0001562180-20-000056-index.htm
+#&gt; 15 https://www.sec.gov/Archives/edgar/data/1435005/000156218020000055/0001562180-20-000055-index.htm
+#&gt; 16 https://www.sec.gov/Archives/edgar/data/1253176/000156218020000055/0001562180-20-000055-index.htm
+#&gt; 17 https://www.sec.gov/Archives/edgar/data/1777768/000120919120000481/0001209191-20-000481-index.htm
+#&gt; 18    https://www.sec.gov/Archives/edgar/data/8868/000120919120000481/0001209191-20-000481-index.htm
+#&gt; 19 https://www.sec.gov/Archives/edgar/data/1752887/000156218020000054/0001562180-20-000054-index.htm
+#&gt; 20 https://www.sec.gov/Archives/edgar/data/1253176/000156218020000054/0001562180-20-000054-index.htm
+#&gt; 21 https://www.sec.gov/Archives/edgar/data/1780883/000156218020000053/0001562180-20-000053-index.htm
+#&gt; 22 https://www.sec.gov/Archives/edgar/data/1636422/000156218020000053/0001562180-20-000053-index.htm
+#&gt; 23 https://www.sec.gov/Archives/edgar/data/1780980/000156218020000052/0001562180-20-000052-index.htm
+#&gt; 24 https://www.sec.gov/Archives/edgar/data/1636422/000156218020000052/0001562180-20-000052-index.htm
+#&gt; 25 https://www.sec.gov/Archives/edgar/data/1796545/000156218020000051/0001562180-20-000051-index.htm
+#&gt; 26 https://www.sec.gov/Archives/edgar/data/1636422/000156218020000051/0001562180-20-000051-index.htm
+#&gt; 27 https://www.sec.gov/Archives/edgar/data/1636422/000156218020000050/0001562180-20-000050-index.htm
+#&gt; 28 https://www.sec.gov/Archives/edgar/data/1473973/000156218020000050/0001562180-20-000050-index.htm
+#&gt; 29 https://www.sec.gov/Archives/edgar/data/1768897/000120919120000480/0001209191-20-000480-index.htm
+#&gt; 30    https://www.sec.gov/Archives/edgar/data/8868/000120919120000480/0001209191-20-000480-index.htm
+#&gt; 31 https://www.sec.gov/Archives/edgar/data/1614929/000156218020000049/0001562180-20-000049-index.htm
+#&gt; 32   https://www.sec.gov/Archives/edgar/data/46195/000156218020000049/0001562180-20-000049-index.htm
+#&gt; 33 https://www.sec.gov/Archives/edgar/data/1472194/000120919120000479/0001209191-20-000479-index.htm
+#&gt; 34    https://www.sec.gov/Archives/edgar/data/8868/000120919120000479/0001209191-20-000479-index.htm
+#&gt; 35 https://www.sec.gov/Archives/edgar/data/1711220/000120919120000478/0001209191-20-000478-index.htm
+#&gt; 36    https://www.sec.gov/Archives/edgar/data/8868/000120919120000478/0001209191-20-000478-index.htm
+#&gt; 37 https://www.sec.gov/Archives/edgar/data/1764348/000120919120000477/0001209191-20-000477-index.htm
+#&gt; 38    https://www.sec.gov/Archives/edgar/data/8868/000120919120000477/0001209191-20-000477-index.htm
+#&gt; 39 https://www.sec.gov/Archives/edgar/data/1764145/000120919120000476/0001209191-20-000476-index.htm
+#&gt; 40    https://www.sec.gov/Archives/edgar/data/8868/000120919120000476/0001209191-20-000476-index.htm
+#&gt;    type        cik                         company_name company_type
+#&gt; 1     4 0001689843           Hostess CDM Co-Invest, LLC    Reporting
+#&gt; 2     4 0001644406                 Hostess Brands, Inc.       Issuer
+#&gt; 3     4 0001780878                       Llewelyn Linda    Reporting
+#&gt; 4     4 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 5     4 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 6     4 0001494174                  Orenstein Daniel H.    Reporting
+#&gt; 7     4 0001752566                         Blouin David    Reporting
+#&gt; 8     4 0001253176                        VAPOTHERM INC       Issuer
+#&gt; 9     4 0001731814         MCNABB FREDERICK WILLIAM III    Reporting
+#&gt; 10    4 0000051143 INTERNATIONAL BUSINESS MACHINES CORP       Issuer
+#&gt; 11    4 0001753455                          Landry John    Reporting
+#&gt; 12    4 0001253176                        VAPOTHERM INC       Issuer
+#&gt; 13    4 0001780978                      Horstmeier Paul    Reporting
+#&gt; 14    4 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 15    4 0001435005                          Army Joseph    Reporting
+#&gt; 16    4 0001253176                        VAPOTHERM INC       Issuer
+#&gt; 17    4 0001777768                        Edwards Ginny    Reporting
+#&gt; 18    4 0000008868                    AVON PRODUCTS INC       Issuer
+#&gt; 19    4 0001752887                      Ramade Gregoire    Reporting
+#&gt; 20    4 0001253176                        VAPOTHERM INC       Issuer
+#&gt; 21    4 0001780883              Nelli James Patrick Jr.    Reporting
+#&gt; 22    4 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 23    4 0001780980                     Burton Daniel D.    Reporting
+#&gt; 24    4 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 25    3 0001796545                   Larson-Green Julie    Reporting
+#&gt; 26    3 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 27    3 0001636422                Health Catalyst, Inc.       Issuer
+#&gt; 28    3 0001473973                        Smith S. Dawn    Reporting
+#&gt; 29    4 0001768897                    Nemoto Kay Yukako    Reporting
+#&gt; 30    4 0000008868                    AVON PRODUCTS INC       Issuer
+#&gt; 31    4 0001614929                     Nichols Victor K    Reporting
+#&gt; 32    4 0000046195                  BANK OF HAWAII CORP       Issuer
+#&gt; 33    4 0001472194        Fernandez Calero Miguel Angel    Reporting
+#&gt; 34    4 0000008868                    AVON PRODUCTS INC       Issuer
+#&gt; 35    4 0001711220               Myers Jonathan Charles    Reporting
+#&gt; 36    4 0000008868                    AVON PRODUCTS INC       Issuer
+#&gt; 37    4 0001764348                        Arnal Gustavo    Reporting
+#&gt; 38    4 0000008868                    AVON PRODUCTS INC       Issuer
+#&gt; 39    4 0001764145                       Agarwal Vikram    Reporting
+#&gt; 40    4 0000008868                    AVON PRODUCTS INC       Issuer
 #&gt;    filing_date     accession_number  size
-#&gt; 1   2019-02-01 0001593968-19-000317  5 KB
-#&gt; 2   2019-02-01 0001593968-19-000317  5 KB
-#&gt; 3   2019-02-01 0001415889-19-000119  6 KB
-#&gt; 4   2019-02-01 0001415889-19-000119  6 KB
-#&gt; 5   2019-02-01 0000899243-19-002381 11 KB
-#&gt; 6   2019-02-01 0000899243-19-002381 11 KB
-#&gt; 7   2019-02-01 0001593968-19-000316  6 KB
-#&gt; 8   2019-02-01 0001593968-19-000316  6 KB
-#&gt; 9   2019-02-01 0001593968-19-000315  5 KB
-#&gt; 10  2019-02-01 0001593968-19-000315  5 KB
-#&gt; 11  2019-02-01 0000899243-19-002379 11 KB
-#&gt; 12  2019-02-01 0000899243-19-002379 11 KB
-#&gt; 13  2019-02-01 0000899243-19-002378 11 KB
-#&gt; 14  2019-02-01 0000899243-19-002378 11 KB
-#&gt; 15  2019-02-01 0000899243-19-002377 11 KB
-#&gt; 16  2019-02-01 0000899243-19-002377 11 KB
-#&gt; 17  2019-02-01 0001593968-19-000311  6 KB
-#&gt; 18  2019-02-01 0001593968-19-000311  6 KB
-#&gt; 19  2019-02-01 0001593968-19-000310  5 KB
-#&gt; 20  2019-02-01 0001593968-19-000310  5 KB
-#&gt; 21  2019-02-01 0000899243-19-002372 11 KB
-#&gt; 22  2019-02-01 0000899243-19-002372 11 KB
-#&gt; 23  2019-02-01 0000899243-19-002371 11 KB
-#&gt; 24  2019-02-01 0000899243-19-002371 11 KB
-#&gt; 25  2019-02-01 0000899243-19-002370 11 KB
-#&gt; 26  2019-02-01 0000899243-19-002370 11 KB
-#&gt; 27  2019-02-01 0001593968-19-000309  5 KB
-#&gt; 28  2019-02-01 0001593968-19-000309  5 KB
-#&gt; 29  2019-02-01 0000899243-19-002369 11 KB
-#&gt; 30  2019-02-01 0000899243-19-002369 11 KB
-#&gt; 31  2019-02-01 0001593968-19-000308  5 KB
-#&gt; 32  2019-02-01 0001593968-19-000308  5 KB
-#&gt; 33  2019-02-01 0001209191-19-006641  5 KB
-#&gt; 34  2019-02-01 0001209191-19-006641  5 KB
-#&gt; 35  2019-02-01 0001567619-19-002192  7 KB
-#&gt; 36  2019-02-01 0001567619-19-002192  7 KB
-#&gt; 37  2019-02-01 0001567619-19-002191  6 KB
-#&gt; 38  2019-02-01 0001567619-19-002191  6 KB
-#&gt; 39  2019-02-01 0001567619-19-002190  7 KB
-#&gt; 40  2019-02-01 0001567619-19-002190  7 KB</div></pre>
+#&gt; 1   2020-01-02 0000899243-20-000162 22 KB
+#&gt; 2   2020-01-02 0000899243-20-000162 22 KB
+#&gt; 3   2020-01-02 0001562180-20-000061  5 KB
+#&gt; 4   2020-01-02 0001562180-20-000061  5 KB
+#&gt; 5   2020-01-02 0001562180-20-000060  5 KB
+#&gt; 6   2020-01-02 0001562180-20-000060  5 KB
+#&gt; 7   2020-01-02 0001562180-20-000059  5 KB
+#&gt; 8   2020-01-02 0001562180-20-000059  5 KB
+#&gt; 9   2020-01-02 0001562180-20-000058  5 KB
+#&gt; 10  2020-01-02 0001562180-20-000058  5 KB
+#&gt; 11  2020-01-02 0001562180-20-000057  5 KB
+#&gt; 12  2020-01-02 0001562180-20-000057  5 KB
+#&gt; 13  2020-01-02 0001562180-20-000056  5 KB
+#&gt; 14  2020-01-02 0001562180-20-000056  5 KB
+#&gt; 15  2020-01-02 0001562180-20-000055  5 KB
+#&gt; 16  2020-01-02 0001562180-20-000055  5 KB
+#&gt; 17  2020-01-02 0001209191-20-000481 10 KB
+#&gt; 18  2020-01-02 0001209191-20-000481 10 KB
+#&gt; 19  2020-01-02 0001562180-20-000054  5 KB
+#&gt; 20  2020-01-02 0001562180-20-000054  5 KB
+#&gt; 21  2020-01-02 0001562180-20-000053  5 KB
+#&gt; 22  2020-01-02 0001562180-20-000053  5 KB
+#&gt; 23  2020-01-02 0001562180-20-000052  6 KB
+#&gt; 24  2020-01-02 0001562180-20-000052  6 KB
+#&gt; 25  2020-01-02 0001562180-20-000051  3 KB
+#&gt; 26  2020-01-02 0001562180-20-000051  3 KB
+#&gt; 27  2020-01-02 0001562180-20-000050  3 KB
+#&gt; 28  2020-01-02 0001562180-20-000050  3 KB
+#&gt; 29  2020-01-02 0001209191-20-000480 15 KB
+#&gt; 30  2020-01-02 0001209191-20-000480 15 KB
+#&gt; 31  2020-01-02 0001562180-20-000049  6 KB
+#&gt; 32  2020-01-02 0001562180-20-000049  6 KB
+#&gt; 33  2020-01-02 0001209191-20-000479 15 KB
+#&gt; 34  2020-01-02 0001209191-20-000479 15 KB
+#&gt; 35  2020-01-02 0001209191-20-000478 15 KB
+#&gt; 36  2020-01-02 0001209191-20-000478 15 KB
+#&gt; 37  2020-01-02 0001209191-20-000477 10 KB
+#&gt; 38  2020-01-02 0001209191-20-000477 10 KB
+#&gt; 39  2020-01-02 0001209191-20-000476 15 KB
+#&gt; 40  2020-01-02 0001209191-20-000476 15 KB</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -368,13 +376,16 @@ here" />
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

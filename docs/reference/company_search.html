@@ -8,21 +8,25 @@
 
 <title>SEC Company Search — company_search • edgarWebR</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,12 +34,13 @@
 
 
 
-<meta property="og:title" content="SEC Company Search — company_search" />
 
+<meta property="og:title" content="SEC Company Search — company_search" />
 <meta property="og:description" content="Provides access to the SEC Company Name Search from
 here
 using a company's formal name rather than its common name." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -47,6 +52,7 @@ using a company's formal name rather than its common name." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -65,7 +71,7 @@ using a company's formal name rather than its common name." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -73,7 +79,7 @@ using a company's formal name rather than its common name." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -99,11 +105,10 @@ using a company's formal name rather than its common name." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/mwaldstein/edgarWebR">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -114,6 +119,7 @@ using a company's formal name rather than its common name." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -125,17 +131,24 @@ using a company's formal name rather than its common name." />
     </div>
 
     <div class="ref-description">
-    
     <p>Provides access to the SEC Company Name Search from
 <a href='https://www.sec.gov/edgar/searchedgar/companysearch.html'>here</a>
 using a company's formal name rather than its common name.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>company_search</span>(<span class='no'>x</span>, <span class='kw'>match</span> <span class='kw'>=</span> <span class='st'>"start"</span>, <span class='kw'>file_number</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>state</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>country</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>sic</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ownership</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>40</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>company_search</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>match</span> <span class='kw'>=</span> <span class='st'>"start"</span>,
+  <span class='kw'>file_number</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>state</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>country</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>sic</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ownership</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>40</span>,
+  <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -169,6 +182,7 @@ number</p></td>
   <dt>A8</dt><dd><p>Quebec, Canada</p></dd>
   <dt>A9</dt><dd><p>Saskatchewan, Canada</p></dd>
   <dt>B0</dt><dd><p>Yukon, Canada</p></dd>
+
 </dl></td>
     </tr>
     <tr>
@@ -198,7 +212,7 @@ unfortunately the best way to find it is to examine the company search page.</p>
       <td><p>Which page of results to return.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A dataframe of companies</p><ul>
@@ -213,7 +227,6 @@ unfortunately the best way to find it is to examine the company search page.</p>
 <li><p>sic_href</p></li>
 </ul>
 
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><em>Note On 'Fast Search'</em> --
@@ -224,7 +237,6 @@ Ticker. This doesn't actually search, but rather goes directly to the
 company details page if found. If you have a company's CIK or Ticker, use the
 <code><a href='company_information.html'>company_information</a></code>, <code><a href='company_filings.html'>company_filings</a></code>, or
 <code><a href='company_details.html'>company_details</a></code> functions.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>company_search</span>(<span class='st'>"Intel"</span>)</div><div class='output co'>#&gt;                                                   name        cik
@@ -235,203 +247,162 @@ company details page if found. If you have a company's CIK or Ticker, use the
 #&gt; 5                                  INTEL OVERSEAS CORP 0000768545
 #&gt; 6                        Intel Technology Asia Pte Ltd 0001504543
 #&gt; 7                                     IntelAccount Inc 0001330442
-#&gt; 8                                       INTELAGARD INC 0001007001
-#&gt; 9                                        Intelage Corp 0001761317
-#&gt; 10                                        NEXGRID, LLC 0001495887
-#&gt; 11                                   IntelaSight, Inc. 0001318139
-#&gt; 12                                     INTELATRADE.COM 0001109248
-#&gt; 13                                    IntelaTrak, Inc. 0001617224
-#&gt; 14                               Uniontown Energy Inc. 0001310482
-#&gt; 15                         ICG HOLDINGS CANADA CO /CO/ 0000786343
-#&gt; 16                                    ICG HOLDINGS INC 0001001131
-#&gt; 17                                         Intele Inc. 0001535797
-#&gt; 18                                  INTELECOM CORP INC 0001141741
-#&gt; 19                        Intelecom Data Systems, Inc. 0001522997
-#&gt; 20                                    INTELECOM INC/IN 0001374166
-#&gt; 21                             INTELECOM SOLUTIONS INC 0001169428
-#&gt; 22                           TERAFORCE TECHNOLOGY CORP 0000316672
-#&gt; 23                                IntElect Medical Inc 0001402706
-#&gt; 24                      Intelective Communications Inc 0001416837
-#&gt; 25                                     INTELEFILM CORP 0000882160
-#&gt; 26                    Intelemedia Communications, Inc. 0001342517
-#&gt; 27                                      INTELEPEER INC 0001423664
-#&gt; 28                                       INTELEPIX LLC 0001452405
-#&gt; 29                     INTELETECH  CORP OF AMERICA INC 0001178710
-#&gt; 30                        IntelGenx Technologies Corp. 0001098880
-#&gt; 31                                        INTELIBS INC 0001437567
-#&gt; 32                     INTELICARE HEALTH SERVICES, LLC 0001591726
-#&gt; 33                                      INTELICIS CORP 0001354587
-#&gt; 34                           INTELICLOUD HOLDINGS INC. 0001534353
-#&gt; 35                        INTELICLOUD TECHNOLOGY, INC. 0001507834
-#&gt; 36 Intelicoat Technologies Image Products Matthews LLC 0001501758
-#&gt; 37                                  INTRATEL GROUP LTD 0000931758
-#&gt; 38                        INTELIDATA TECHNOLOGIES CORP 0001021810
-#&gt; 39                                  INTELILABS COM INC 0001085257
-#&gt; 40                                 INTELIMAX MEDIA INC 0001453350
+#&gt; 8                                     IntelAegis, Inc. 0001795529
+#&gt; 9                                       INTELAGARD INC 0001007001
+#&gt; 10                                       Intelage Corp 0001761317
+#&gt; 11                                        NEXGRID, LLC 0001495887
+#&gt; 12                                   IntelaSight, Inc. 0001318139
+#&gt; 13                                     INTELATRADE.COM 0001109248
+#&gt; 14                                    IntelaTrak, Inc. 0001617224
+#&gt; 15                               Uniontown Energy Inc. 0001310482
+#&gt; 16                         ICG HOLDINGS CANADA CO /CO/ 0000786343
+#&gt; 17                                    ICG HOLDINGS INC 0001001131
+#&gt; 18                                         Intele Inc. 0001535797
+#&gt; 19                                  INTELECOM CORP INC 0001141741
+#&gt; 20                        Intelecom Data Systems, Inc. 0001522997
+#&gt; 21                                    INTELECOM INC/IN 0001374166
+#&gt; 22                             INTELECOM SOLUTIONS INC 0001169428
+#&gt; 23                           TERAFORCE TECHNOLOGY CORP 0000316672
+#&gt; 24                                IntElect Medical Inc 0001402706
+#&gt; 25                      Intelective Communications Inc 0001416837
+#&gt; 26                                     INTELEFILM CORP 0000882160
+#&gt; 27                    Intelemedia Communications, Inc. 0001342517
+#&gt; 28                                      INTELEPEER INC 0001423664
+#&gt; 29                                       INTELEPIX LLC 0001452405
+#&gt; 30                     INTELETECH  CORP OF AMERICA INC 0001178710
+#&gt; 31                        IntelGenx Technologies Corp. 0001098880
+#&gt; 32                                        INTELIBS INC 0001437567
+#&gt; 33                     INTELICARE HEALTH SERVICES, LLC 0001591726
+#&gt; 34                                      INTELICIS CORP 0001354587
+#&gt; 35                           INTELICLOUD HOLDINGS INC. 0001534353
+#&gt; 36                        INTELICLOUD TECHNOLOGY, INC. 0001507834
+#&gt; 37 Intelicoat Technologies Image Products Matthews LLC 0001501758
+#&gt; 38                                  INTRATEL GROUP LTD 0000931758
+#&gt; 39                        INTELIDATA TECHNOLOGIES CORP 0001021810
+#&gt; 40                                  INTELILABS COM INC 0001085257
 #&gt;    fiscal_year_end company_href  sic state_location state_incorporation
 #&gt; 1             1231         &lt;NA&gt; &lt;NA&gt;             E9                  E9
 #&gt; 2             1231         &lt;NA&gt; &lt;NA&gt;             DE                  DE
-#&gt; 3             1231         &lt;NA&gt; 3674             CA                  DE
+#&gt; 3             1228         &lt;NA&gt; 3674             CA                  DE
 #&gt; 4             1231         &lt;NA&gt; &lt;NA&gt;             OR                  OR
 #&gt; 5             1231         &lt;NA&gt; 3674             CA                  CA
 #&gt; 6             1231         &lt;NA&gt; &lt;NA&gt;             U0                  U0
 #&gt; 7             &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             MN                &lt;NA&gt;
-#&gt; 8             &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CO                &lt;NA&gt;
-#&gt; 9             1231         &lt;NA&gt; &lt;NA&gt;             WA                  DE
-#&gt; 10            1231         &lt;NA&gt; &lt;NA&gt;             VA                  VA
-#&gt; 11            1231         &lt;NA&gt; &lt;NA&gt;             AZ                  WA
-#&gt; 12            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CT                  CT
-#&gt; 13            1231         &lt;NA&gt; &lt;NA&gt;             NH                  DE
-#&gt; 14            1031         &lt;NA&gt; 1311             A1                  NV
-#&gt; 15            1231         &lt;NA&gt; 4813             CO                  DE
-#&gt; 16            1231         &lt;NA&gt; 4813             CO                  CO
-#&gt; 17            1231         &lt;NA&gt; &lt;NA&gt;             NJ                  DE
-#&gt; 18            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;           &lt;NA&gt;                &lt;NA&gt;
-#&gt; 19            1231         &lt;NA&gt; &lt;NA&gt;             MA                  RI
-#&gt; 20            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             IN                &lt;NA&gt;
-#&gt; 21            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             NY                &lt;NA&gt;
-#&gt; 22            1231         &lt;NA&gt; 3576             TX                  DE
-#&gt; 23            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             OH                  de
-#&gt; 24            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CA                  CA
-#&gt; 25            1231         &lt;NA&gt; 7812             MN                  MN
-#&gt; 26            1231         &lt;NA&gt; &lt;NA&gt;             TX                  TX
-#&gt; 27            &lt;NA&gt;         &lt;NA&gt; 7385             CA                  DE
-#&gt; 28            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             NY                  NY
-#&gt; 29            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             FL                &lt;NA&gt;
-#&gt; 30            1231         &lt;NA&gt; 2834             A8                  DE
-#&gt; 31            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             NJ                  DE
-#&gt; 32            1231         &lt;NA&gt; &lt;NA&gt;             FL                  FL
-#&gt; 33            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CA                &lt;NA&gt;
-#&gt; 34            1231         &lt;NA&gt; &lt;NA&gt;             CA                  DE
-#&gt; 35            1031         &lt;NA&gt; &lt;NA&gt;             CA                  NV
-#&gt; 36            1231         &lt;NA&gt; &lt;NA&gt;             SC                  DE
-#&gt; 37            1231         &lt;NA&gt; 4813             FL                  DE
-#&gt; 38            1231         &lt;NA&gt; 7373             VA                  DE
-#&gt; 39            0630         &lt;NA&gt; 7389             FL                  DE
-#&gt; 40            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             XX                  XX
-#&gt;                                                                                                                                                      formerly
-#&gt; 1                                                                                                                                                        &lt;NA&gt;
-#&gt; 2                                                                                             &lt;name&gt;INTEL PACIFIC INC&lt;/name&gt;&lt;last_date&gt;2002-02-14&lt;/last_date&gt;
-#&gt; 3                                                                                                                                                        &lt;NA&gt;
-#&gt; 4                                                                                                                                                        &lt;NA&gt;
-#&gt; 5                                                                                                                                                        &lt;NA&gt;
-#&gt; 6                                                                                                                                                        &lt;NA&gt;
-#&gt; 7                                                                                                                                                        &lt;NA&gt;
-#&gt; 8                                                                                                                                                        &lt;NA&gt;
-#&gt; 9                                                                                                                                                        &lt;NA&gt;
-#&gt; 10                                                                                              &lt;name&gt;Intelagrid, LLC&lt;/name&gt;&lt;last_date&gt;2011-05-11&lt;/last_date&gt;
-#&gt; 11                                                                                              &lt;name&gt;Intelasight Inc&lt;/name&gt;&lt;last_date&gt;2009-02-02&lt;/last_date&gt;
-#&gt; 12                                                  &lt;name&gt;INTELATRADE COM                                         /BD&lt;/name&gt;&lt;last_date&gt;2007-03-01&lt;/last_date&gt;
-#&gt; 13                                                                                                                                                       &lt;NA&gt;
-#&gt; 14                    &lt;name&gt;Intelbahn Inc.&lt;/name&gt;&lt;last_date&gt;2010-12-20&lt;/last_date&gt;&lt;name&gt;LODGE BAY OIL &amp;amp; GAS CORP.&lt;/name&gt;&lt;last_date&gt;2008-04-16&lt;/last_date&gt;
-#&gt; 15                      &lt;name&gt;ICG HOLDINGS CANADA INC&lt;/name&gt;&lt;last_date&gt;1999-02-26&lt;/last_date&gt;&lt;name&gt;INTELCOM GROUP INC&lt;/name&gt;&lt;last_date&gt;1997-02-18&lt;/last_date&gt;
-#&gt; 16                                                                                       &lt;name&gt;INTELCOM GROUP USA INC&lt;/name&gt;&lt;last_date&gt;1997-02-03&lt;/last_date&gt;
-#&gt; 17                                                                                                                                                       &lt;NA&gt;
-#&gt; 18                                                                                                                                                       &lt;NA&gt;
-#&gt; 19                                                                                                                                                       &lt;NA&gt;
-#&gt; 20                                                                                                                                                       &lt;NA&gt;
-#&gt; 21                                                                                                                                                       &lt;NA&gt;
-#&gt; 22 &lt;name&gt;INTELECT COMMUNICATIONS INC&lt;/name&gt;&lt;last_date&gt;2001-01-11&lt;/last_date&gt;&lt;name&gt;INTELECT COMMUNICATIONS SYSTEMS LTD&lt;/name&gt;&lt;last_date&gt;1997-05-08&lt;/last_date&gt;
-#&gt; 23                                                                                                                                                       &lt;NA&gt;
-#&gt; 24                                                                                                                                                       &lt;NA&gt;
-#&gt; 25                                                                                  &lt;name&gt;CHILDRENS BROADCASTING CORP&lt;/name&gt;&lt;last_date&gt;1999-03-08&lt;/last_date&gt;
-#&gt; 26                                                                                                                                                       &lt;NA&gt;
-#&gt; 27                                                                                                                                                       &lt;NA&gt;
-#&gt; 28                                                                                                                                                       &lt;NA&gt;
-#&gt; 29                                                                                                                                                       &lt;NA&gt;
-#&gt; 30                                                                                               &lt;name&gt;BIG FLASH CORP&lt;/name&gt;&lt;last_date&gt;2006-08-15&lt;/last_date&gt;
-#&gt; 31                                                                                                                                                       &lt;NA&gt;
-#&gt; 32                                                                                                                                                       &lt;NA&gt;
-#&gt; 33                                                                                                                                                       &lt;NA&gt;
-#&gt; 34                                                                                                                                                       &lt;NA&gt;
-#&gt; 35                                                                                                                                                       &lt;NA&gt;
-#&gt; 36                                                                                                                                                       &lt;NA&gt;
-#&gt; 37                          &lt;name&gt;INTELICOM CORP&lt;/name&gt;&lt;last_date&gt;1997-03-27&lt;/last_date&gt;&lt;name&gt;THREE-L ENTERPRISES INC&lt;/name&gt;&lt;last_date&gt;1996-07-18&lt;/last_date&gt;
-#&gt; 38                                                                                           &lt;name&gt;USOCDT MERGER CORP&lt;/name&gt;&lt;last_date&gt;1996-09-04&lt;/last_date&gt;
-#&gt; 39                                                                                 &lt;name&gt;QUENTIN ROAD PRODUCTIONS INC&lt;/name&gt;&lt;last_date&gt;2000-05-12&lt;/last_date&gt;
-#&gt; 40                                                                                                                                                       &lt;NA&gt;
-#&gt;               mailing_city mailing_state mailing_zip
-#&gt; 1  GEORGETOWN GRAND CAYMAN            E9    KY1-1102
-#&gt; 2               WILMINGTON            DE       19801
-#&gt; 3              SANTA CLARA            CA       95054
-#&gt; 4                HILLSBORO            OR       97124
-#&gt; 5              SANTA CLARA            CA       95052
-#&gt; 6             PWC BUILDING            U0      048424
-#&gt; 7              MINNEAPOLIS            MN       55455
-#&gt; 8                     &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
-#&gt; 9                 BELLEVUE            WA       98006
-#&gt; 10            LOCUST GROVE            VA       22508
-#&gt; 11                    MESA            AZ       85210
-#&gt; 12                 NORWALK            CT       06855
-#&gt; 13                HENNIKER            NH       03242
-#&gt; 14               VANCOUVER            A1     V6C 3E2
-#&gt; 15               ENGLEWOOD            CO       80112
-#&gt; 16               ENGLEWOOD            CO       80112
-#&gt; 17            ROBBINSVILLE            NJ       08691
-#&gt; 18                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
-#&gt; 19              BURLINGTON            MA       01803
-#&gt; 20            INDIANOPOLIS            IN       46201
-#&gt; 21                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
-#&gt; 22              RICHARDSON            TX       75081
-#&gt; 23               Cleveland            OH       44114
-#&gt; 24             Penn Valley            CA       95946
-#&gt; 25             MINNEAPOLIS            MN       55416
-#&gt; 26                   PLANO            TX       75075
-#&gt; 27               SAN MATEO            CA       94403
-#&gt; 28               GLEN COVE            NY       11542
-#&gt; 29                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
-#&gt; 30           SAINT LAURENT            A8     H4S 1Y2
-#&gt; 31                  SUMMIT            NJ       07901
-#&gt; 32           BOYNTON BEACH            FL       33472
-#&gt; 33             SANTA CLARA            CA       95054
-#&gt; 34           NEWPORT BEACH            CA       92660
-#&gt; 35           NEWPORT BEACH            CA       92660
-#&gt; 36             SPARTANBURG            SC       29302
-#&gt; 37                METAIRIE            LA       70005
-#&gt; 38                  RESTON            VA       20191
-#&gt; 39                   MIAMI            FL       33131
-#&gt; 40               VANCOUVER            XX     V6B 4N6
+#&gt; 8             1231         &lt;NA&gt; &lt;NA&gt;             WI                  WI
+#&gt; 9             &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CO                &lt;NA&gt;
+#&gt; 10            1231         &lt;NA&gt; &lt;NA&gt;             WA                  DE
+#&gt; 11            1231         &lt;NA&gt; &lt;NA&gt;             VA                  VA
+#&gt; 12            1231         &lt;NA&gt; &lt;NA&gt;             AZ                  WA
+#&gt; 13            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CT                  CT
+#&gt; 14            1231         &lt;NA&gt; &lt;NA&gt;             NH                  DE
+#&gt; 15            1031         &lt;NA&gt; 1311             A1                  NV
+#&gt; 16            1231         &lt;NA&gt; 4813             CO                  DE
+#&gt; 17            1231         &lt;NA&gt; 4813             CO                  CO
+#&gt; 18            1231         &lt;NA&gt; &lt;NA&gt;             NJ                  DE
+#&gt; 19            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;           &lt;NA&gt;                &lt;NA&gt;
+#&gt; 20            1231         &lt;NA&gt; &lt;NA&gt;             MA                  RI
+#&gt; 21            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             IN                &lt;NA&gt;
+#&gt; 22            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             NY                &lt;NA&gt;
+#&gt; 23            1231         &lt;NA&gt; 3576             TX                  DE
+#&gt; 24            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             OH                  de
+#&gt; 25            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CA                  CA
+#&gt; 26            1231         &lt;NA&gt; 7812             MN                  MN
+#&gt; 27            1231         &lt;NA&gt; &lt;NA&gt;             TX                  TX
+#&gt; 28            &lt;NA&gt;         &lt;NA&gt; 7385             CA                  DE
+#&gt; 29            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             NY                  NY
+#&gt; 30            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             FL                &lt;NA&gt;
+#&gt; 31            1231         &lt;NA&gt; 2834             A8                  DE
+#&gt; 32            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             NJ                  DE
+#&gt; 33            1231         &lt;NA&gt; &lt;NA&gt;             FL                  FL
+#&gt; 34            &lt;NA&gt;         &lt;NA&gt; &lt;NA&gt;             CA                &lt;NA&gt;
+#&gt; 35            1231         &lt;NA&gt; &lt;NA&gt;             CA                  DE
+#&gt; 36            1031         &lt;NA&gt; &lt;NA&gt;             CA                  NV
+#&gt; 37            1231         &lt;NA&gt; &lt;NA&gt;             SC                  DE
+#&gt; 38            1231         &lt;NA&gt; 4813             FL                  DE
+#&gt; 39            1231         &lt;NA&gt; 7373             VA                  DE
+#&gt; 40            0630         &lt;NA&gt; 7389             FL                  DE
+#&gt;    formerly            mailing_city mailing_state mailing_zip
+#&gt; 1      &lt;NA&gt; GEORGETOWN GRAND CAYMAN            E9    KY1-1102
+#&gt; 2      &lt;NA&gt;              WILMINGTON            DE       19801
+#&gt; 3      &lt;NA&gt;             SANTA CLARA            CA       95054
+#&gt; 4      &lt;NA&gt;               HILLSBORO            OR       97124
+#&gt; 5      &lt;NA&gt;             SANTA CLARA            CA       95052
+#&gt; 6      &lt;NA&gt;            PWC BUILDING            U0      048424
+#&gt; 7      &lt;NA&gt;             MINNEAPOLIS            MN       55455
+#&gt; 8      &lt;NA&gt;               MILWAUKEE            WI       53203
+#&gt; 9      &lt;NA&gt;                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
+#&gt; 10     &lt;NA&gt;                BELLEVUE            WA       98006
+#&gt; 11     &lt;NA&gt;            LOCUST GROVE            VA       22508
+#&gt; 12     &lt;NA&gt;                    MESA            AZ       85210
+#&gt; 13     &lt;NA&gt;                 NORWALK            CT       06855
+#&gt; 14     &lt;NA&gt;                HENNIKER            NH       03242
+#&gt; 15     &lt;NA&gt;               VANCOUVER            A1     V6C 3E2
+#&gt; 16     &lt;NA&gt;               ENGLEWOOD            CO       80112
+#&gt; 17     &lt;NA&gt;               ENGLEWOOD            CO       80112
+#&gt; 18     &lt;NA&gt;            ROBBINSVILLE            NJ       08691
+#&gt; 19     &lt;NA&gt;                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
+#&gt; 20     &lt;NA&gt;              BURLINGTON            MA       01803
+#&gt; 21     &lt;NA&gt;            INDIANOPOLIS            IN       46201
+#&gt; 22     &lt;NA&gt;                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
+#&gt; 23     &lt;NA&gt;              RICHARDSON            TX       75081
+#&gt; 24     &lt;NA&gt;               Cleveland            OH       44114
+#&gt; 25     &lt;NA&gt;             Penn Valley            CA       95946
+#&gt; 26     &lt;NA&gt;             MINNEAPOLIS            MN       55416
+#&gt; 27     &lt;NA&gt;                   PLANO            TX       75075
+#&gt; 28     &lt;NA&gt;               SAN MATEO            CA       94403
+#&gt; 29     &lt;NA&gt;               GLEN COVE            NY       11542
+#&gt; 30     &lt;NA&gt;                    &lt;NA&gt;          &lt;NA&gt;        &lt;NA&gt;
+#&gt; 31     &lt;NA&gt;           SAINT LAURENT            A8     H4S 1Y2
+#&gt; 32     &lt;NA&gt;                  SUMMIT            NJ       07901
+#&gt; 33     &lt;NA&gt;           BOYNTON BEACH            FL       33472
+#&gt; 34     &lt;NA&gt;             SANTA CLARA            CA       95054
+#&gt; 35     &lt;NA&gt;           NEWPORT BEACH            CA       92660
+#&gt; 36     &lt;NA&gt;           NEWPORT BEACH            CA       92660
+#&gt; 37     &lt;NA&gt;             SPARTANBURG            SC       29302
+#&gt; 38     &lt;NA&gt;                METAIRIE            LA       70005
+#&gt; 39     &lt;NA&gt;                  RESTON            VA       20191
+#&gt; 40     &lt;NA&gt;                   MIAMI            FL       33131
 #&gt;                           mailing_street1
-#&gt; 1         STERLING TRUST (CAYMAN) COMPANY
+#&gt; 1         STERLING TRUST (CAYMAN) LIMITED
 #&gt; 2           THE CORPORATION TRUST COMPANY
 #&gt; 3               2200 MISSION COLLEGE BLVD
 #&gt; 4  5200 NE ELAM YOUNG PARKWAY, MS AG6-601
 #&gt; 5                                    &lt;NA&gt;
 #&gt; 6                  8 CROSS STREET # 11-00
 #&gt; 7                         7701 FRANCE AVE
-#&gt; 8                                    &lt;NA&gt;
-#&gt; 9         5545 LAKEMONT BLVD SE, STE 1003
-#&gt; 10       4444 GERMANNA HIGHWAY, SUITE 330
-#&gt; 11              1201 SOUTH ALMA SCHOOL RD
-#&gt; 12                      14 DUCK POND ROAD
-#&gt; 13              388 WESTERN AVE., UNIT A3
-#&gt; 14            999 CANADA PLACE, SUITE 404
-#&gt; 15               161 INVERNESS DRIVE WEST
+#&gt; 8             840 N. OLD WORLD 3RD STREET
+#&gt; 9                                    &lt;NA&gt;
+#&gt; 10        5545 LAKEMONT BLVD SE, STE 1003
+#&gt; 11       4444 GERMANNA HIGHWAY, SUITE 330
+#&gt; 12              1201 SOUTH ALMA SCHOOL RD
+#&gt; 13                      14 DUCK POND ROAD
+#&gt; 14              388 WESTERN AVE., UNIT A3
+#&gt; 15            999 CANADA PLACE, SUITE 404
 #&gt; 16               161 INVERNESS DRIVE WEST
-#&gt; 17                         6 THOMPSON WAY
-#&gt; 18             P O BOX 63 1 RUE DE BUGNON
-#&gt; 19                          5 WALL STREET
-#&gt; 20                   2421 E WASHINGTON ST
-#&gt; 21                                   &lt;NA&gt;
-#&gt; 22                     1240 CAMPBELL ROAD
-#&gt; 23                         1300 E 9th Str
-#&gt; 24             11348 Pleasant Valley Road
-#&gt; 25                    5501 EXCELSIOR BLVD
-#&gt; 26         1255 W. 15TH STREET, SUITE 700
-#&gt; 27                      2855 CAMPUS DRIVE
-#&gt; 28                         70 GLEN STREET
-#&gt; 29                                   &lt;NA&gt;
-#&gt; 30                            6420 ABRAMS
-#&gt; 31                     246 BLACKBURN ROAD
-#&gt; 32                          8198 JOG ROAD
-#&gt; 33               4633 OLD IRONSIDES DRIVE
-#&gt; 34                      4600 CAMPUS DRIVE
-#&gt; 35                        895 DOVE STREET
-#&gt; 36                    3070 SOUTHPORT ROAD
-#&gt; 37                           1109 ANDREWS
-#&gt; 38             11600 SUNRISE VALLEY DRIVE
-#&gt; 39           701 BRICKELL AVENUE STE 3120
-#&gt; 40        2320 - 555 WEST HASTINGS STREET
+#&gt; 17               161 INVERNESS DRIVE WEST
+#&gt; 18                         6 THOMPSON WAY
+#&gt; 19             P O BOX 63 1 RUE DE BUGNON
+#&gt; 20                          5 WALL STREET
+#&gt; 21                   2421 E WASHINGTON ST
+#&gt; 22                                   &lt;NA&gt;
+#&gt; 23                     1240 CAMPBELL ROAD
+#&gt; 24                         1300 E 9th Str
+#&gt; 25             11348 Pleasant Valley Road
+#&gt; 26                    5501 EXCELSIOR BLVD
+#&gt; 27         1255 W. 15TH STREET, SUITE 700
+#&gt; 28                      2855 CAMPUS DRIVE
+#&gt; 29                         70 GLEN STREET
+#&gt; 30                                   &lt;NA&gt;
+#&gt; 31                            6420 ABRAMS
+#&gt; 32                     246 BLACKBURN ROAD
+#&gt; 33                          8198 JOG ROAD
+#&gt; 34               4633 OLD IRONSIDES DRIVE
+#&gt; 35                      4600 CAMPUS DRIVE
+#&gt; 36                        895 DOVE STREET
+#&gt; 37                    3070 SOUTHPORT ROAD
+#&gt; 38                           1109 ANDREWS
+#&gt; 39             11600 SUNRISE VALLEY DRIVE
+#&gt; 40           701 BRICKELL AVENUE STE 3120
 #&gt;                            mailing_street2           business_city
 #&gt; 1  WHITEHALL HOUSE 238 NORTH CHURCH STREET GEORGETOWN GRAND CAYMAN
 #&gt; 2                       1209 ORANGE STREET              WILMINGTON
@@ -440,80 +411,80 @@ company details page if found. If you have a company's CIK or Ticker, use the
 #&gt; 5                2200 MISSION COLLEGE BLVD             SANTA CLARA
 #&gt; 6                                     &lt;NA&gt;            PWC BUILDING
 #&gt; 7                                SUITE 200             MINNEAPOLIS
-#&gt; 8                                     &lt;NA&gt;              BROOMFIELD
-#&gt; 9                                     &lt;NA&gt;                BELLEVUE
-#&gt; 10                                    &lt;NA&gt;            LOCUST GROVE
-#&gt; 11                              SUITE 4450                    MESA
-#&gt; 12                                    &lt;NA&gt;                 NORWALK
-#&gt; 13                                    &lt;NA&gt;                HENNIKER
-#&gt; 14                                    &lt;NA&gt;               VANCOUVER
-#&gt; 15                             PO BOX 6742               ENGLEWOOD
-#&gt; 16                              SUITE 1610               ENGLEWOOD
-#&gt; 17                                    &lt;NA&gt;            ROBBINSVILLE
-#&gt; 18             CRANS VAAD SWITZERLAND 1299                    &lt;NA&gt;
-#&gt; 19                                    &lt;NA&gt;              BURLINGTON
-#&gt; 20                                    &lt;NA&gt;            INDIANOPOLIS
-#&gt; 21                                    &lt;NA&gt;               PLAINVIEW
-#&gt; 22                                    &lt;NA&gt;              RICHARDSON
-#&gt; 23                                    &lt;NA&gt;               Cleveland
-#&gt; 24                               Suite 251             Penn Valley
-#&gt; 25                                    &lt;NA&gt;             MINNEAPOLIS
-#&gt; 26                                    &lt;NA&gt;                   PLANO
-#&gt; 27                               SUITE 200               SAN MATEO
-#&gt; 28                               SUITE 360               GLEN COVE
-#&gt; 29                                    &lt;NA&gt;         FORT LAUDERDALE
-#&gt; 30                                    &lt;NA&gt;           SAINT LAURENT
-#&gt; 31                                    &lt;NA&gt;                  SUMMIT
-#&gt; 32                               SUITE 201           BOYNTON BEACH
-#&gt; 33                               SUITE 130             SANTA CLARA
-#&gt; 34                               SUITE 106           NEWPORT BEACH
-#&gt; 35                               SUITE 300           NEWPORT BEACH
-#&gt; 36                                    &lt;NA&gt;             SPARTANBURG
-#&gt; 37                                    &lt;NA&gt;              CLEARWATER
-#&gt; 38                               SUITE 100                  RESTON
-#&gt; 39                                    &lt;NA&gt;                   MIAMI
-#&gt; 40                                    &lt;NA&gt;               VANCOUVER
+#&gt; 8                                SUITE 500               MILWAUKEE
+#&gt; 9                                     &lt;NA&gt;              BROOMFIELD
+#&gt; 10                                    &lt;NA&gt;                BELLEVUE
+#&gt; 11                                    &lt;NA&gt;            LOCUST GROVE
+#&gt; 12                              SUITE 4450                    MESA
+#&gt; 13                                    &lt;NA&gt;                 NORWALK
+#&gt; 14                                    &lt;NA&gt;                HENNIKER
+#&gt; 15                                    &lt;NA&gt;               VANCOUVER
+#&gt; 16                             PO BOX 6742               ENGLEWOOD
+#&gt; 17                              SUITE 1610               ENGLEWOOD
+#&gt; 18                                    &lt;NA&gt;            ROBBINSVILLE
+#&gt; 19             CRANS VAAD SWITZERLAND 1299                    &lt;NA&gt;
+#&gt; 20                                    &lt;NA&gt;              BURLINGTON
+#&gt; 21                                    &lt;NA&gt;            INDIANOPOLIS
+#&gt; 22                                    &lt;NA&gt;               PLAINVIEW
+#&gt; 23                                    &lt;NA&gt;              RICHARDSON
+#&gt; 24                                    &lt;NA&gt;               Cleveland
+#&gt; 25                               Suite 251             Penn Valley
+#&gt; 26                                    &lt;NA&gt;             MINNEAPOLIS
+#&gt; 27                                    &lt;NA&gt;                   PLANO
+#&gt; 28                               SUITE 200               SAN MATEO
+#&gt; 29                               SUITE 360               GLEN COVE
+#&gt; 30                                    &lt;NA&gt;         FORT LAUDERDALE
+#&gt; 31                                    &lt;NA&gt;           SAINT LAURENT
+#&gt; 32                                    &lt;NA&gt;                  SUMMIT
+#&gt; 33                               SUITE 201           BOYNTON BEACH
+#&gt; 34                               SUITE 130             SANTA CLARA
+#&gt; 35                               SUITE 106           NEWPORT BEACH
+#&gt; 36                               SUITE 300           NEWPORT BEACH
+#&gt; 37                                    &lt;NA&gt;             SPARTANBURG
+#&gt; 38                                    &lt;NA&gt;              CLEARWATER
+#&gt; 39                               SUITE 100                  RESTON
+#&gt; 40                                    &lt;NA&gt;                   MIAMI
 #&gt;    business_state business_zip                       business_street1
-#&gt; 1              E9     KY1-1102        STERLING TRUST (CAYMAN) COMPANY
+#&gt; 1              E9     KY1-1102        STERLING TRUST (CAYMAN) LIMITED
 #&gt; 2              DE        19801          THE CORPORATION TRUST COMPANY
 #&gt; 3              CA        95054              2200 MISSION COLLEGE BLVD
 #&gt; 4              OR        97124 5200 NE ELAM YOUNG PARKWAY, MS AG6-601
 #&gt; 5              CA        95051              2200 MISSION COLLEGE BLVD
 #&gt; 6              U0       048424                 8 CROSS STREET # 11-00
 #&gt; 7              MN        55455                        7701 FRANCE AVE
-#&gt; 8              CO        80020                         590 BURBANK ST
-#&gt; 9              WA        98006        5545 LAKEMONT BLVD SE, STE 1003
-#&gt; 10             VA        22508       4444 GERMANNA HIGHWAY, SUITE 330
-#&gt; 11             AZ        85210              1201 SOUTH ALMA SCHOOL RD
-#&gt; 12             CT        06855                      14 DUCK POND ROAD
-#&gt; 13             NH        03242              388 WESTERN AVE., UNIT A3
-#&gt; 14             A1      V6C 3E2            999 CANADA PLACE, SUITE 404
-#&gt; 15             CO        80112               161 INVERNESS DRIVE WEST
+#&gt; 8              WI        53203            840 N. OLD WORLD 3RD STREET
+#&gt; 9              CO        80020                         590 BURBANK ST
+#&gt; 10             WA        98006        5545 LAKEMONT BLVD SE, STE 1003
+#&gt; 11             VA        22508       4444 GERMANNA HIGHWAY, SUITE 330
+#&gt; 12             AZ        85210              1201 SOUTH ALMA SCHOOL RD
+#&gt; 13             CT        06855                      14 DUCK POND ROAD
+#&gt; 14             NH        03242              388 WESTERN AVE., UNIT A3
+#&gt; 15             A1      V6C 3E2            999 CANADA PLACE, SUITE 404
 #&gt; 16             CO        80112               161 INVERNESS DRIVE WEST
-#&gt; 17             NJ        08691                         6 THOMPSON WAY
-#&gt; 18           &lt;NA&gt;         &lt;NA&gt;             P O BOX 63 1 RUE DE BUGNON
-#&gt; 19             MA        01803                          5 WALL STREET
-#&gt; 20             IN        46201                   2421 E WASHINGTON ST
-#&gt; 21             NY        11803                  1600 OLD COUNTRY ROAD
-#&gt; 22             TX        75081                     1240 CAMPBELL ROAD
-#&gt; 23             OH        44114                         1300 E 9th Str
-#&gt; 24             CA        95946             11348 Pleasant Valley Road
-#&gt; 25             MN        55416                    5501 EXCELSIOR BLVD
-#&gt; 26             TX        75075         1255 W. 15TH STREET, SUITE 700
-#&gt; 27             CA        94403                      2855 CAMPUS DRIVE
-#&gt; 28             NY        11542                         70 GLEN STREET
-#&gt; 29             FL        33301                  ONE BROWARD BOULEVARD
-#&gt; 30             A8      H4S 1Y2                            6420 ABRAMS
-#&gt; 31             NJ        07901                     246 BLACKBURN ROAD
-#&gt; 32             FL        33472                          8198 JOG ROAD
-#&gt; 33             CA        95054               4633 OLD IRONSIDES DRIVE
-#&gt; 34             CA        92660                      4600 CAMPUS DRIVE
-#&gt; 35             CA        92660                        895 DOVE STREET
-#&gt; 36             SC        29302                    3070 SOUTHPORT ROAD
-#&gt; 37             FL        34621                       28050 US HWY 19N
-#&gt; 38             VA        20191             11600 SUNRISE VALLEY DRIVE
-#&gt; 39             FL        33131                       701 BRICKELL AVE
-#&gt; 40             XX      V6B 4N6        2320 - 555 WEST HASTINGS STREET
+#&gt; 17             CO        80112               161 INVERNESS DRIVE WEST
+#&gt; 18             NJ        08691                         6 THOMPSON WAY
+#&gt; 19           &lt;NA&gt;         &lt;NA&gt;             P O BOX 63 1 RUE DE BUGNON
+#&gt; 20             MA        01803                          5 WALL STREET
+#&gt; 21             IN        46201                   2421 E WASHINGTON ST
+#&gt; 22             NY        11803                  1600 OLD COUNTRY ROAD
+#&gt; 23             TX        75081                     1240 CAMPBELL ROAD
+#&gt; 24             OH        44114                         1300 E 9th Str
+#&gt; 25             CA        95946             11348 Pleasant Valley Road
+#&gt; 26             MN        55416                    5501 EXCELSIOR BLVD
+#&gt; 27             TX        75075         1255 W. 15TH STREET, SUITE 700
+#&gt; 28             CA        94403                      2855 CAMPUS DRIVE
+#&gt; 29             NY        11542                         70 GLEN STREET
+#&gt; 30             FL        33301                  ONE BROWARD BOULEVARD
+#&gt; 31             A8      H4S 1Y2                            6420 ABRAMS
+#&gt; 32             NJ        07901                     246 BLACKBURN ROAD
+#&gt; 33             FL        33472                          8198 JOG ROAD
+#&gt; 34             CA        95054               4633 OLD IRONSIDES DRIVE
+#&gt; 35             CA        92660                      4600 CAMPUS DRIVE
+#&gt; 36             CA        92660                        895 DOVE STREET
+#&gt; 37             SC        29302                    3070 SOUTHPORT ROAD
+#&gt; 38             FL        34621                       28050 US HWY 19N
+#&gt; 39             VA        20191             11600 SUNRISE VALLEY DRIVE
+#&gt; 40             FL        33131                       701 BRICKELL AVE
 #&gt;                           business_street2     business_phone
 #&gt; 1  WHITEHALL HOUSE 238 NORTH CHURCH STREET         4087658080
 #&gt; 2                       1209 ORANGE STREET         4087658080
@@ -522,54 +493,52 @@ company details page if found. If you have a company's CIK or Ticker, use the
 #&gt; 5                                     &lt;NA&gt;         4089878080
 #&gt; 6                                     &lt;NA&gt;        65 62131000
 #&gt; 7                                SUITE 200       612-920-1747
-#&gt; 8                                SUITE 220       303-309-6309
-#&gt; 9                                     &lt;NA&gt;       206.201.4389
-#&gt; 10                                    &lt;NA&gt; 888 556 0911 X1002
-#&gt; 11                              SUITE 4450       480-307-8700
-#&gt; 12                                    &lt;NA&gt;       203 838-8470
-#&gt; 13                                    &lt;NA&gt;     (339) 933-2793
-#&gt; 14                                    &lt;NA&gt;     (702) 583-5533
-#&gt; 15                            P O BOX 6742         3034145431
-#&gt; 16                            P O BOX 6742         3034145643
-#&gt; 17                                    &lt;NA&gt;     (609) 802-2273
-#&gt; 18             CRANS VAAD SWITZERLAND 1299               &lt;NA&gt;
-#&gt; 19                                    &lt;NA&gt;     (404) 815-0770
-#&gt; 20                                    &lt;NA&gt;       317-639-6545
-#&gt; 21                               PLAINVIEW       516-847-7700
-#&gt; 22                                    &lt;NA&gt;         9723672100
-#&gt; 23                                    &lt;NA&gt;       216-916-6924
-#&gt; 24                               Suite 251     (800) 804-5007
-#&gt; 25                                    &lt;NA&gt;         6129258840
-#&gt; 26                                    &lt;NA&gt;       972 994 0700
-#&gt; 27                               SUITE 200       650-235-8509
-#&gt; 28                               SUITE 360  516-801-6460 X 11
-#&gt; 29                               SUITE 700       954-745-5820
-#&gt; 30                                    &lt;NA&gt;       514-331-7440
-#&gt; 31                                    &lt;NA&gt;       908-273-2696
-#&gt; 32                               SUITE 201       561-877-2132
-#&gt; 33                               SUITE 130               &lt;NA&gt;
-#&gt; 34                               SUITE 106       949-309-2406
-#&gt; 35                               SUITE 300       949-309-2406
-#&gt; 36                                    &lt;NA&gt;       864-596-7115
-#&gt; 37                                 STE 202         8137979000
-#&gt; 38                               SUITE 100         7032593000
-#&gt; 39                              SUITE 3120         3055390900
-#&gt; 40                                    &lt;NA&gt;       604-742-1111</div></pre>
+#&gt; 8                                SUITE 500       312-218-5363
+#&gt; 9                                SUITE 220       303-309-6309
+#&gt; 10                                    &lt;NA&gt;       206.201.4389
+#&gt; 11                                    &lt;NA&gt; 888 556 0911 X1002
+#&gt; 12                              SUITE 4450       480-307-8700
+#&gt; 13                                    &lt;NA&gt;       203 838-8470
+#&gt; 14                                    &lt;NA&gt;     (339) 933-2793
+#&gt; 15                                    &lt;NA&gt;     (702) 583-5533
+#&gt; 16                            P O BOX 6742         3034145431
+#&gt; 17                            P O BOX 6742         3034145643
+#&gt; 18                                    &lt;NA&gt;     (609) 802-2273
+#&gt; 19             CRANS VAAD SWITZERLAND 1299               &lt;NA&gt;
+#&gt; 20                                    &lt;NA&gt;     (404) 815-0770
+#&gt; 21                                    &lt;NA&gt;       317-639-6545
+#&gt; 22                               PLAINVIEW       516-847-7700
+#&gt; 23                                    &lt;NA&gt;         9723672100
+#&gt; 24                                    &lt;NA&gt;       216-916-6924
+#&gt; 25                               Suite 251     (800) 804-5007
+#&gt; 26                                    &lt;NA&gt;         6129258840
+#&gt; 27                                    &lt;NA&gt;       972 994 0700
+#&gt; 28                               SUITE 200       650-235-8509
+#&gt; 29                               SUITE 360  516-801-6460 X 11
+#&gt; 30                               SUITE 700       954-745-5820
+#&gt; 31                                    &lt;NA&gt;       514-331-7440
+#&gt; 32                                    &lt;NA&gt;       908-273-2696
+#&gt; 33                               SUITE 201       561-877-2132
+#&gt; 34                               SUITE 130               &lt;NA&gt;
+#&gt; 35                               SUITE 106       949-309-2406
+#&gt; 36                               SUITE 300       949-309-2406
+#&gt; 37                                    &lt;NA&gt;       864-596-7115
+#&gt; 38                                 STE 202         8137979000
+#&gt; 39                               SUITE 100         7032593000
+#&gt; 40                              SUITE 3120         3055390900</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -577,13 +546,16 @@ company details page if found. If you have a company's CIK or Ticker, use the
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
