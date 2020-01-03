@@ -48,6 +48,9 @@ latest_filings <- function(name = "",
     "&count=", count,
     "&output=atom")
   res <- httr::GET(href)
+  if (res$status != "200") {
+    stop("Unable to reach the SEC latest filings endpoint (https://www.sec.gov/cgi-bin/browse-edgar)")
+  }
   doc <- xml2::read_xml(res, base_url = href)
 
   entries_xpath <- "entry"

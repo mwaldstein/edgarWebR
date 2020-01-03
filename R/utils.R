@@ -65,6 +65,9 @@ get_doc <- function(x, clean = F) {
   if (typeof(x) == "character") {
     if (is_url(x)) {
       res <- httr::GET(x)
+      if (res$status != "200") {
+        stop(paste0("Unable to reach the SEC endpoint (",x,")"))
+      }
       content <- httr::content(res, encoding = "UTF-8", as = "text")
       if (clean) {
         content <- clean_html(content)
@@ -101,6 +104,9 @@ get_doc <- function(x, clean = F) {
 charToDoc <- function(x) {
   if (is_url(x)) {
     res <- httr::GET(x)
+    if (res$status != "200") {
+      stop(paste0("Unable to reach the SEC endpoint (",x,")"))
+    }
     xml2::read_html(res, base_url = x)
   } else {
     xml2::read_html(x)
@@ -110,6 +116,9 @@ charToDoc <- function(x) {
 charToText <- function(x) {
   if (is_url(x)) {
     res <- httr::GET(x)
+    if (res$status != "200") {
+      stop(paste0("Unable to reach the SEC endpoint (",x,")"))
+    }
     return(httr::content(res, encoding = "UTF-8"))
   } else {
     return(x)

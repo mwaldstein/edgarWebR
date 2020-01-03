@@ -25,6 +25,9 @@ current_events <- function(day, form) {
                  "&q2=0",       # This is the form box which q3 overrides
                  "&q3=", URLencode(form, reserved = TRUE))
   res <- httr::GET(href)
+  if (res$status != "200") {
+    stop("Unable to reach the SEC current events endpoint (https://www.sec.gov/cgi-bin/current)")
+  }
   doc <- xml2::read_html(res, base_url = href)
 
   entries_xpath <- "//pre/a[starts-with(@href,'/Archives/edgar/data')]"

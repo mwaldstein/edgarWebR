@@ -66,6 +66,9 @@ full_text <- function(
                   "toDate=", to, "&"), ""),
     "prt=true")
   res <- httr::GET(href)
+  if (res$status != "200") {
+    stop("Unable to reach the SEC full text search endpoint (https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp)")
+  }
   doc <- xml2::read_html(res, base_url = href)
 
   entries_xpath <- "//table/tr[@class = 'infoBorder'][preceding-sibling::*]"
