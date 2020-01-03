@@ -1,4 +1,4 @@
-# edgarWebR 1.0.0.9000 - ** DEVELOPMENT **
+# edgarWebR 1.0.1
 
 ## Bugfixes
  * `parse_text_filing()` correctly parses filings that have spaces in
