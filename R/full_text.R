@@ -67,7 +67,9 @@ full_text <- function(
     "prt=true")
   res <- httr::GET(href)
   if (res$status != "200") {
-    stop("Unable to reach the SEC full text search endpoint (https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp)")
+    stop(paste0("Unable to reach the SEC full text search endpoint (",
+                "https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp",
+                ")"))
   }
   doc <- xml2::read_html(res, base_url = href)
 

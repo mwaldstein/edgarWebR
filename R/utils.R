@@ -66,7 +66,7 @@ get_doc <- function(x, clean = F) {
     if (is_url(x)) {
       res <- httr::GET(x)
       if (res$status != "200") {
-        stop(paste0("Unable to reach the SEC endpoint (",x,")"))
+        stop(paste0("Unable to reach the SEC endpoint (", x, ")"))
       }
       content <- httr::content(res, encoding = "UTF-8", as = "text")
       if (clean) {
@@ -75,7 +75,9 @@ get_doc <- function(x, clean = F) {
       # The 'HUGE' option can lead to some negative consequences with
       # particularly large documents, but given how poorly formed a lot of SEC
       # filings are, it is needed to ensure some parse at all...
-      doc <- try({xml2::read_html(content, base_url = x)}, silent = T)
+      doc <- try({
+        xml2::read_html(content, base_url = x)
+      }, silent = T)
       if (inherits(doc, "try-error")) {
         doc <- xml2::read_html(content, base_url = x, options = "HUGE")
       }
@@ -85,7 +87,9 @@ get_doc <- function(x, clean = F) {
       } else {
         content <- x
       }
-      doc <- try({xml2::read_html(content)}, silent = T)
+      doc <- try({
+        xml2::read_html(content)
+      }, silent = T)
       if (inherits(doc, "try-error")) {
         doc <- xml2::read_html(content, options = "HUGE")
       }
@@ -105,7 +109,7 @@ charToDoc <- function(x) {
   if (is_url(x)) {
     res <- httr::GET(x)
     if (res$status != "200") {
-      stop(paste0("Unable to reach the SEC endpoint (",x,")"))
+      stop(paste0("Unable to reach the SEC endpoint (", x, ")"))
     }
     xml2::read_html(res, base_url = x)
   } else {
@@ -117,7 +121,7 @@ charToText <- function(x) {
   if (is_url(x)) {
     res <- httr::GET(x)
     if (res$status != "200") {
-      stop(paste0("Unable to reach the SEC endpoint (",x,")"))
+      stop(paste0("Unable to reach the SEC endpoint (", x, ")"))
     }
     return(httr::content(res, encoding = "UTF-8"))
   } else {

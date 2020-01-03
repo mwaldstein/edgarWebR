@@ -80,10 +80,10 @@ raw.words <- doc %>% xml_find_first("//text") %>% xml_text %>% tokenize_words %>
 
 #res <- parse_filing(href, include.raw = T)
 res <- build_parts(edgarWebR:::get_doc(href, clean = T), "//text")
-res$n <- c(1:nrow(res))
+res$n <- c(seq_len(nrow(res)))
 
   t.rows <- paste0("<tr ",
-                   ifelse(startsWith(res$text[1:length(res$text) - 1],
+                   ifelse(startsWith(res$text[seq_len(length(res$text)) - 1],
                                      res$text[2:length(res$text)]),
                           "style = 'background: #aff'",
                           "style = 'background: #fff'"),

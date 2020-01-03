@@ -32,21 +32,21 @@ public search and browse interfaces.
 
 *Search Interfaces:*
 
-| Tool                          | URL                                                               | edgarWebR function(s)                                                                                                    |
-| ----------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Company                       | <https://www.sec.gov/edgar/searchedgar/companysearch.html>        | `company_search()`, `company_information()`, `company_details()`, `company_filings()`                                    |
-| Recent Filings                | <https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent>      | `latest_filings()`                                                                                                       |
-| Full Text                     | <http://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp> | `full_text()`                                                                                                            |
-| Header Search                 | <https://www.sec.gov/cgi-bin/srch-edgar>                          | `header_search()`                                                                                                        |
-| Fund Disclosures              | <https://www.sec.gov/edgar/searchedgar/prospectus.htm>            | Use `company_search()` and specify the ‘type’ parameter as 485                                                           |
-| Fund Voting Records           | <https://www.sec.gov/edgar/searchedgar/n-px.htm>                  | Use `company_search()` and specify the ‘type’ parameter as ‘N-PX’                                                        |
-| Fund Search                   | <https://www.sec.gov/edgar/searchedgar/mutualsearch.html>         | `fund_search()`, `fund_fast_search()`                                                                                    |
-| Var. Insurance Products       | <https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html>     | `variable_insurance_search()`, `variable_insurance_fast_search()`                                                        |
-| Confidential treatment orders | <https://www.sec.gov/edgar/searchedgar/ctorders.htm>              | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘CT ORDER’            |
-| Effectiveness notices         | <https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect>       | `effectiveness()`                                                                                                        |
-| CIK                           | <https://www.sec.gov/edgar/searchedgar/cik.htm>                   | `cik_search()`                                                                                                           |
-| Daily Filings                 | <https://www.sec.gov/edgar/searchedgar/currentevents.htm>         | `current_events()`                                                                                                       |
-| Correspondence                | <https://www.sec.gov/answers/edgarletters.htm>                    | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘upload’ or ‘corresp’ |
+| Tool                          | URL                                                                | edgarWebR function(s)                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Company                       | <https://www.sec.gov/edgar/searchedgar/companysearch.html>         | `company_search()`, `company_information()`, `company_details()`, `company_filings()`                                    |
+| Recent Filings                | <https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent>       | `latest_filings()`                                                                                                       |
+| Full Text                     | <https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp> | `full_text()`                                                                                                            |
+| Header Search                 | <https://www.sec.gov/cgi-bin/srch-edgar>                           | `header_search()`                                                                                                        |
+| Fund Disclosures              | <https://www.sec.gov/edgar/searchedgar/prospectus.htm>             | Use `company_search()` and specify the ‘type’ parameter as 485                                                           |
+| Fund Voting Records           | <https://www.sec.gov/edgar/searchedgar/n-px.htm>                   | Use `company_search()` and specify the ‘type’ parameter as ‘N-PX’                                                        |
+| Fund Search                   | <https://www.sec.gov/edgar/searchedgar/mutualsearch.html>          | `fund_search()`, `fund_fast_search()`                                                                                    |
+| Var. Insurance Products       | <https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html>      | `variable_insurance_search()`, `variable_insurance_fast_search()`                                                        |
+| Confidential treatment orders | <https://www.sec.gov/edgar/searchedgar/ctorders.htm>               | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘CT ORDER’            |
+| Effectiveness notices         | <https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect>        | `effectiveness()`                                                                                                        |
+| CIK                           | <https://www.sec.gov/edgar/searchedgar/cik.htm>                    | `cik_search()`                                                                                                           |
+| Daily Filings                 | <https://www.sec.gov/edgar/searchedgar/currentevents.htm>          | `current_events()`                                                                                                       |
+| Correspondence                | <https://www.sec.gov/answers/edgarletters.htm>                     | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘upload’ or ‘corresp’ |
 
 Once a filing is found via any of the above, there are a number of
 functions to process the result -

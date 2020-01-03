@@ -10,7 +10,9 @@ expect_similar_wc <- function(content, res) {
   # Does some other cleanup so we can ensure we're comparing apples to apples
   clean_content <- edgarWebR:::clean_html(content)
 
-  doc <- try({xml2::read_html(clean_content)}, silent = T)
+  doc <- try({
+    xml2::read_html(clean_content)
+  }, silent = T)
   #if (class(doc) == "try-error") {
   if (inherits(doc, "try-error")) {
     doc <- xml2::read_html(clean_content, options = "HUGE")

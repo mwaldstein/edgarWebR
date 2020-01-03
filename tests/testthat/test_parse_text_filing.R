@@ -40,7 +40,7 @@ with_mock_API({
     expect_equal(nrow(res), 463)
     expect_equal(length(unique(res$part.name)), 5)
     expect_equal(length(unique(res$item.name)), 15)
-    expect_equal(nrow(res[startsWith(res$item.name, "ITEM 7."),]), 2)
+    expect_equal(nrow(res[startsWith(res$item.name, "ITEM 7."), ]), 2)
     expect_length(grep("<PAGE>", res$text), 0)
     expect_length(grep("<TEXT>", res$text), 0)
     expect_length(grep("</TEXT>", res$text), 0)
