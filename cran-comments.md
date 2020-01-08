@@ -11,3 +11,10 @@ There were no ERRORs, WARNINGs or NOTEs.
 
 ## Downstream dependencies
 There are no downstream dependencies at this point.
+
+## NOTE
+
+The motivation for this release was to add appropriate messaging when API
+servers are unavailable.
+
+Corrected broken links

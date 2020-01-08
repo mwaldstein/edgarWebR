@@ -161,65 +161,45 @@ business day from
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>effectiveness</span>()</div><div class='output co'>#&gt;   registration_number
-#&gt; 1        \n333-234425
-#&gt; 2     \n333-234425-01
-#&gt; 3        \n333-235666
-#&gt; 4        \n333-235655
-#&gt; 5        \n333-235675
-#&gt; 6        \n333-235650
-#&gt; 7        \n333-216033
-#&gt; 8        \n333-231951
-#&gt; 9        \n333-228659
-#&gt;                                                                                                  file_href
-#&gt; 1    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-234425&amp;owner=exclude&amp;count=200
-#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-234425-01&amp;owner=exclude&amp;count=200
-#&gt; 3    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235666&amp;owner=exclude&amp;count=200
-#&gt; 4    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235655&amp;owner=exclude&amp;count=200
-#&gt; 5    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235675&amp;owner=exclude&amp;count=200
-#&gt; 6    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235650&amp;owner=exclude&amp;count=200
-#&gt; 7    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-216033&amp;owner=exclude&amp;count=200
-#&gt; 8    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-231951&amp;owner=exclude&amp;count=200
-#&gt; 9    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-228659&amp;owner=exclude&amp;count=200
-#&gt;                                registrant
-#&gt; 1               BANK OF AMERICA CORP /DE/
-#&gt; 2                        BofA Finance LLC
-#&gt; 3                            Cerecor Inc.
-#&gt; 4          Eiger BioPharmaceuticals, Inc.
-#&gt; 5                       FedNat Holding Co
-#&gt; 6                       Hess Midstream LP
-#&gt; 7 AlphaCentric Prime Meridian Income Fund
-#&gt; 8                Emerald Bioscience, Inc.
-#&gt; 9       FSI Low Beta Absolute Return Fund
+#&gt; 1        \n333-235751
+#&gt; 2        \n333-235606
+#&gt; 3        \n333-235740
+#&gt; 4        \n333-235351
+#&gt; 5        \n333-235465
+#&gt; 6        \n333-235393
+#&gt; 7        \n333-234341
+#&gt;                                                                                               file_href
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235751&amp;owner=exclude&amp;count=200
+#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235606&amp;owner=exclude&amp;count=200
+#&gt; 3 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235740&amp;owner=exclude&amp;count=200
+#&gt; 4 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235351&amp;owner=exclude&amp;count=200
+#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235465&amp;owner=exclude&amp;count=200
+#&gt; 6 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-235393&amp;owner=exclude&amp;count=200
+#&gt; 7 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;filenum=333-234341&amp;owner=exclude&amp;count=200
+#&gt;                      registrant
+#&gt; 1         DELCATH SYSTEMS, INC.
+#&gt; 2             GENESIS ENERGY LP
+#&gt; 3             Green Plains Inc.
+#&gt; 4       Menlo Therapeutics Inc.
+#&gt; 5 SOUTHERN FIRST BANCSHARES INC
+#&gt; 6                       FT 8485
+#&gt; 7                SmartTrust 458
 #&gt;                                                                                     registrant_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000070858&amp;owner=include&amp;count=200
-#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001682472&amp;owner=include&amp;count=200
-#&gt; 3 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001534120&amp;owner=include&amp;count=200
-#&gt; 4 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001305253&amp;owner=include&amp;count=200
-#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001069996&amp;owner=include&amp;count=200
-#&gt; 6 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001789832&amp;owner=include&amp;count=200
-#&gt; 7 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001697196&amp;owner=include&amp;count=200
-#&gt; 8 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001516551&amp;owner=include&amp;count=200
-#&gt; 9 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001527413&amp;owner=include&amp;count=200
-#&gt;                division
-#&gt; 1   Corporation Finance
-#&gt; 2   Corporation Finance
-#&gt; 3   Corporation Finance
-#&gt; 4   Corporation Finance
-#&gt; 5   Corporation Finance
-#&gt; 6   Corporation Finance
-#&gt; 7 Investment Management
-#&gt; 8   Corporation Finance
-#&gt; 9 Investment Management
-#&gt;                                                       type      effective_date
-#&gt; 1                              Securities Act Registration 2019-12-31 10:00:00
-#&gt; 2                              Securities Act Registration 2019-12-31 10:00:00
-#&gt; 3                              Securities Act Registration 2019-12-31 16:05:00
-#&gt; 4                              Securities Act Registration 2019-12-31 16:00:00
-#&gt; 5                              Securities Act Registration 2019-12-31 14:00:00
-#&gt; 6                              Securities Act Registration 2019-12-31 15:00:00
-#&gt; 7                              Securities Act Registration 2019-12-31 14:00:00
-#&gt; 8 Post-effective Amendments to Securities Act Registration 2019-12-31 00:00:00
-#&gt; 9 Post-effective Amendments to Securities Act Registration 2019-12-31 00:00:00
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000872912&amp;owner=include&amp;count=200
+#&gt; 2 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001022321&amp;owner=include&amp;count=200
+#&gt; 3 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001309402&amp;owner=include&amp;count=200
+#&gt; 4 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001566044&amp;owner=include&amp;count=200
+#&gt; 5 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001090009&amp;owner=include&amp;count=200
+#&gt; 6 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001792858&amp;owner=include&amp;count=200
+#&gt; 7 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001790304&amp;owner=include&amp;count=200
+#&gt;                division                        type      effective_date
+#&gt; 1   Corporation Finance Securities Act Registration 2020-01-07 16:01:00
+#&gt; 2   Corporation Finance Securities Act Registration 2020-01-07 16:30:00
+#&gt; 3   Corporation Finance Securities Act Registration 2020-01-07 16:00:00
+#&gt; 4   Corporation Finance Securities Act Registration 2020-01-07 16:30:00
+#&gt; 5   Corporation Finance Securities Act Registration 2020-01-07 09:00:00
+#&gt; 6 Investment Management Securities Act Registration 2020-01-07 13:00:00
+#&gt; 7 Investment Management Securities Act Registration 2020-01-07 11:50:00
 #&gt;   filing_date
 #&gt; 1        &lt;NA&gt;
 #&gt; 2        &lt;NA&gt;
@@ -227,9 +207,7 @@ business day from
 #&gt; 4        &lt;NA&gt;
 #&gt; 5        &lt;NA&gt;
 #&gt; 6        &lt;NA&gt;
-#&gt; 7        &lt;NA&gt;
-#&gt; 8  2019-12-24
-#&gt; 9  2019-12-27</div></pre>
+#&gt; 7        &lt;NA&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
