@@ -111,9 +111,9 @@ charToDoc <- function(x) {
     if (res$status != "200") {
       stop(paste0("Unable to reach the SEC endpoint (", x, ")"))
     }
-    xml2::read_html(res, base_url = x)
+    xml2::read_html(res, base_url = x, options = "HUGE")
   } else {
-    xml2::read_html(x)
+    xml2::read_html(x, options = "HUGE")
   }
 }
 

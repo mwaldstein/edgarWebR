@@ -71,7 +71,7 @@ full_text <- function(
                 "https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp",
                 ")"))
   }
-  doc <- xml2::read_html(res, base_url = href)
+  doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "//table/tr[@class = 'infoBorder'][preceding-sibling::*]"
 

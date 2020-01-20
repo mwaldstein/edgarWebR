@@ -8,7 +8,9 @@
 #' @return a dataframe with all SEC company information
 #' @importFrom methods is
 #' @examples
+#' \donttest{
 #' company_information("INTC")
+#' }
 #' @export
 company_information <- function(x) {
   # We want to accept a pre-fetched document or possibly a sub-page node

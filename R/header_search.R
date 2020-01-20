@@ -36,7 +36,7 @@ header_search <- function(q, page = 1, from = 1994, to = 2017) {
   if (res$status != "200") {
     stop("Unable to reach the SEC company search endpoint (https://www.sec.gov/cgi-bin/srch-edgar)")
   }
-  doc <- xml2::read_html(res, base_url = href)
+  doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "body/div/table/tr[position() > 1]"
 

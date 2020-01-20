@@ -5,10 +5,12 @@
 #' @return A dataframe with all the filers in the filing along with their info
 #'
 #' @examples
+#' \donttest{
 #' # Typically you'd get the URL from one of the search functions
 #' x <- paste0("https://www.sec.gov/Archives/edgar/data/",
 #'             "712515/000071251517000063/0000712515-17-000063-index.htm")
 #' filing_filers(x)
+#' }
 #' @export
 filing_filers <- function(x) {
   UseMethod("filing_filers")

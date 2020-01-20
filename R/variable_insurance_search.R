@@ -22,8 +22,10 @@
 #'     \item cik_funds_href
 #'   }
 #' @examples
+#' \donttest{
 #' variable_insurance_search("precious metals")
 #' variable_insurance_fast_search("VMFVX")
+#' }
 #' @export
 variable_insurance_search <- function(term) {
   series_search(company = term)

@@ -34,5 +34,5 @@ browse_edgar <- function(ticker,
     stop(paste0("Could not find company: ", ticker));
   }
 
-  xml2::read_xml(res, base_url = href)
+  xml2::read_xml(res, base_url = href, options = "HUGE")
 }

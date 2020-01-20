@@ -46,5 +46,7 @@ sets of information:
 }
 }
 \examples{
+\donttest{
 company_details("AAPL", before = "20170810")
+}
 }

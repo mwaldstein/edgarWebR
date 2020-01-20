@@ -5,6 +5,7 @@
 * Ubuntu 16.04.03 (on travis-ci), R 3.6.1
 * Windows i386-w64-mingw32 (on appveyor), R 3.6.2
 * Ubuntu 19.10, R 3.6.1
+* Oracle Solaris 10, x86, 32 bit, R-patched (on R-hub builder)
 
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTEs.
@@ -14,7 +15,4 @@ There are no downstream dependencies at this point.
 
 ## NOTE
 
-The motivation for this release was to add appropriate messaging when API
-servers are unavailable.
-
-Corrected broken links
+Motivation to fix the CHECK failure on Solaris (from https://cran.r-project.org/web/checks/check_results_edgarWebR.html)

@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -149,7 +149,8 @@ code</p></td>
     <p>a dataframe with all SEC company information</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>company_information</span>(<span class='st'>"INTC"</span>)</div><div class='output co'>#&gt;         name        cik fiscal_year_end
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>company_information</span>(<span class='st'>"INTC"</span>)</div><div class='output co'>#&gt;         name        cik fiscal_year_end
 #&gt; 1 INTEL CORP 0000050863            1228
 #&gt;                                                                                       company_href
 #&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000050863&amp;owner=exclude&amp;count=40
@@ -160,7 +161,8 @@ code</p></td>
 #&gt;   mailing_street2 business_city business_state business_zip
 #&gt; 1       RNB-4-151   SANTA CLARA             CA        95054
 #&gt;             business_street business_street2 business_phone
-#&gt; 1 2200 MISSION COLLEGE BLVD        RNB-4-151     4087658080</div></pre>
+#&gt; 1 2200 MISSION COLLEGE BLVD        RNB-4-151     4087658080</div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

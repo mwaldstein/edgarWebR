@@ -51,5 +51,7 @@ Provides access to the latest SEC filings from
 \href{https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent}{here}
 }
 \examples{
+\donttest{
 latest_filings()
+}
 }

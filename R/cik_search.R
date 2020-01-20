@@ -12,7 +12,9 @@
 #'    \item company_name
 #'  }
 #' @examples
+#' \donttest{
 #' cik_search("cloudera")
+#' }
 #' @export
 cik_search <- function(company) {
   href <- paste0("https://www.sec.gov/cgi-bin/cik_lookup",
@@ -21,7 +23,7 @@ cik_search <- function(company) {
   if (res$status != "200") {
     stop("Unable to reach the SEC cik lookup endpoint (https://www.sec.gov/cgi-bin/cik_lookup)")
   }
-  doc <- xml2::read_html(res, base_url = href)
+  doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "//pre/a[starts-with(@href,'browse-edgar')]"
 

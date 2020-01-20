@@ -29,7 +29,9 @@
 #'    \item size
 #'  }
 #' @examples
+#' \donttest{
 #' latest_filings()
+#' }
 #'@export
 latest_filings <- function(name = "",
                            cik = "",
@@ -51,7 +53,7 @@ latest_filings <- function(name = "",
   if (res$status != "200") {
     stop("Unable to reach the SEC latest filings endpoint (https://www.sec.gov/cgi-bin/browse-edgar)")
   }
-  doc <- xml2::read_xml(res, base_url = href)
+  doc <- xml2::read_xml(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "entry"
   info_pieces <- list(

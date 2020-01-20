@@ -3,12 +3,12 @@ Title: SEC Filings Access
 Description: A set of methods to access and parse live filing information from the
     U.S. Securities and Exchange Commission (SEC - <https://sec.gov>) including
     company and fund filings along with all associated metadata.
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
     person(c("Micah", "J"), "Waldstein", email = "micah@waldste.in", role = c("aut", "cre"))
     )
 Maintainer: Micah J Waldstein <micah@waldste.in>
-Date: 2020-01-02
+Date: 2020-01-20
 Depends:
     R (>= 3.4.0)
 Imports:

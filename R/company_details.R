@@ -16,7 +16,9 @@
 #'  }
 #' @importFrom methods is
 #' @examples
+#' \donttest{
 #' company_details("AAPL", before = "20170810")
+#' }
 #' @export
 company_details <- function(x,
                          ownership = FALSE,

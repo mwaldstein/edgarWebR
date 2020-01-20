@@ -30,5 +30,7 @@ You can also see the same filings going further back by using
 `latest_filings()` specifying the type = "EFFECT"
 }
 \examples{
+\donttest{
 effectiveness()
+}
 }

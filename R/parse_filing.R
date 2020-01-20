@@ -27,8 +27,10 @@
 #'   }
 #'
 #' @examples
+#' \donttest{
 #' head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
 #'      '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
+#' }
 #' @export
 parse_filing <- function(x,
                          strip = TRUE,
@@ -105,9 +107,11 @@ parse_filing <- function(x,
 #'   }
 #'
 #' @examples
+#' \donttest{
 #' head(parse_text_filing(
 #'   "https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"
 #' ))
+#' }
 #' @export
 parse_text_filing <- function(x,
                               strip = TRUE,

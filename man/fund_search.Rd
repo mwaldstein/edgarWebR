@@ -46,6 +46,8 @@ tool.
 }}
 
 \examples{
+\donttest{
 fund_search("precious metals")
 fund_fast_search("VMFVX")
+}
 }

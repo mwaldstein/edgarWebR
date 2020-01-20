@@ -72,7 +72,7 @@ directly from the document without any attempt to normalize." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -181,7 +181,8 @@ that isn't parsed correctly.</p>
 spacing, etc. These can all throw the parsing off!</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>parse_text_filing</span>(
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>parse_text_filing</span>(
   <span class='st'>"https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"</span>
 ))</div><div class='output co'>#&gt;                                                                                                                            text
 #&gt; 1 UNITED STATES\n                       SECURITIES AND EXCHANGE COMMISSION\n                             Washington, D.C. 20549
@@ -196,7 +197,8 @@ spacing, etc. These can all throw the parsing off!</p>
 #&gt; 3                    
 #&gt; 4                    
 #&gt; 5                    
-#&gt; 6                    </div></pre>
+#&gt; 6                    </div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

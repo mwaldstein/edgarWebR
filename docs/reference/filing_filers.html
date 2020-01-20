@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -154,7 +154,8 @@
     <p>A dataframe with all the filers in the filing along with their info</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Typically you'd get the URL from one of the search functions</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='co'># Typically you'd get the URL from one of the search functions</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://www.sec.gov/Archives/edgar/data/"</span>,
             <span class='st'>"712515/000071251517000063/0000712515-17-000063-index.htm"</span>)
 <span class='fu'>filing_filers</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;            mailing_address_1     mailing_address_2 mailing_address_3
@@ -174,7 +175,8 @@
 #&gt;   file_number film_number sic_code
 #&gt; 1   000-17948   171015593     7372
 #&gt;                                                                            sic_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;SIC=7372&amp;owner=include</div></pre>
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;SIC=7372&amp;owner=include</div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

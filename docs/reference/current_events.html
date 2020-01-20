@@ -70,7 +70,7 @@ here" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -164,36 +164,38 @@ from 2 business days ago.</p></td>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>current_events</span>(<span class='fl'>0</span>, <span class='st'>"10-K"</span>)[<span class='fl'>1</span>:<span class='fl'>5</span>,]</div><div class='output co'>#&gt;      type
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>current_events</span>(<span class='fl'>0</span>, <span class='st'>"10-K"</span>)[<span class='fl'>1</span>:<span class='fl'>5</span>,]</div><div class='output co'>#&gt;      type
 #&gt; 1    10-K
 #&gt; 2    10-K
-#&gt; 3    10-K
-#&gt; 4  10-K/A
 #&gt; NA   &lt;NA&gt;
-#&gt;                                                                               href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/1622996/0001640334-20-000007-index.html
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/1083848/0001683168-20-000046-index.html
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1191334/0001483798-20-000004-index.html
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1734875/0000939057-20-000006-index.html
-#&gt; NA                                                                            &lt;NA&gt;
-#&gt;        cik
-#&gt; 1  1622996
-#&gt; 2  1083848
-#&gt; 3  1191334
-#&gt; 4  1734875
-#&gt; NA    &lt;NA&gt;
-#&gt;                                                              company_href
-#&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1622996
-#&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1083848
-#&gt; 3  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1191334
-#&gt; 4  https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1734875
-#&gt; NA                                                                   &lt;NA&gt;
-#&gt;                  company_name filing_date
-#&gt; 1   ACRO BIOMEDICAL CO., LTD.  2020-01-07
-#&gt; 2       CAN CAL RESOURCES LTD  2020-01-07
-#&gt; 3      Chun Can Capital Group  2020-01-07
-#&gt; 4  Mid-Southern Bancorp, Inc.  2020-01-07
-#&gt; NA                       &lt;NA&gt;        &lt;NA&gt;</div></pre>
+#&gt; NA.1 &lt;NA&gt;
+#&gt; NA.2 &lt;NA&gt;
+#&gt;                                                                                 href
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/1598014/0001598014-20-000008-index.html
+#&gt; 2    https://www.sec.gov/Archives/edgar/data/1723187/0001493152-20-000707-index.html
+#&gt; NA                                                                              &lt;NA&gt;
+#&gt; NA.1                                                                            &lt;NA&gt;
+#&gt; NA.2                                                                            &lt;NA&gt;
+#&gt;          cik
+#&gt; 1    1598014
+#&gt; 2    1723187
+#&gt; NA      &lt;NA&gt;
+#&gt; NA.1    &lt;NA&gt;
+#&gt; NA.2    &lt;NA&gt;
+#&gt;                                                                company_href
+#&gt; 1    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1598014
+#&gt; 2    https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=1723187
+#&gt; NA                                                                     &lt;NA&gt;
+#&gt; NA.1                                                                   &lt;NA&gt;
+#&gt; NA.2                                                                   &lt;NA&gt;
+#&gt;          company_name filing_date
+#&gt; 1     IHS Markit Ltd.  2020-01-17
+#&gt; 2    Leader Hill Corp  2020-01-17
+#&gt; NA               &lt;NA&gt;        &lt;NA&gt;
+#&gt; NA.1             &lt;NA&gt;        &lt;NA&gt;
+#&gt; NA.2             &lt;NA&gt;        &lt;NA&gt;</div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

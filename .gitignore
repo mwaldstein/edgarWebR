@@ -5,11 +5,7 @@ doc
 .RData
 ..Rcheck/
 # when directly testing vignettes, some garbage appears
-vignettes/*.html
-vignettes/*.md
-vignettes/*cache/
-vignettes/*figure/
-vignettes/*_files/
+vignettes/figure/
 docs/*cache/
 docs/articles/*cache/
 tests/dev_tests/10cache.rds

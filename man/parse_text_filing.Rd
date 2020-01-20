@@ -40,7 +40,9 @@ that isn't parsed correctly.
 spacing, etc. These can all throw the parsing off!
 }
 \examples{
+\donttest{
 head(parse_text_filing(
   "https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"
 ))
+}
 }

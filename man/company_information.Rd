@@ -17,5 +17,7 @@ a dataframe with all SEC company information
 Fetches basic information on a given company from the SEC site
 }
 \examples{
+\donttest{
 company_information("INTC")
+}
 }

@@ -17,7 +17,9 @@
 #'    \item filing_date
 #'  }
 #' @examples
+#' \donttest{
 #' current_events(0, "10-K")[1:5,]
+#' }
 #' @export
 current_events <- function(day, form) {
   href <- paste0("https://www.sec.gov/cgi-bin/current",
@@ -28,7 +30,7 @@ current_events <- function(day, form) {
   if (res$status != "200") {
     stop("Unable to reach the SEC current events endpoint (https://www.sec.gov/cgi-bin/current)")
   }
-  doc <- xml2::read_html(res, base_url = href)
+  doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "//pre/a[starts-with(@href,'/Archives/edgar/data')]"
 

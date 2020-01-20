@@ -25,8 +25,10 @@
 #'     \item cik_funds_href
 #'   }
 #' @examples
+#' \donttest{
 #' fund_search("precious metals")
 #' fund_fast_search("VMFVX")
+#' }
 #' @export
 fund_search <- function(term) {
   series_search(company = term, type = "N-PX")

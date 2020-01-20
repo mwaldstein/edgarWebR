@@ -7,7 +7,6 @@ Makefile
 ^\.gitignore
 ^\.lintr
 ^vignettes/*.html
-^vignettes/.*\.html$
 ^vignettes/.*cache
 ^vignettes/.*figure
 ^vignettes/.*_files

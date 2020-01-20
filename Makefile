@@ -35,10 +35,16 @@ build: doc
 doc-all: doc readme vignettes
 
 vignettes:
-	Rscript -e 'devtools::build_vignettes()'
+	Rscript -e 'devtools::build_vignettes(clean = FALSE)'
 
 live-vignettes:
 	Rscript -e 'servr::rmdv2(dir="vignettes",port = 8080)'
+
+vignettes-clean:
+	${RM} -r vignettes/intro
+	${RM} -r vignettes/parsing
+
+vignettes-rebuild: vignettes-clean vignettes
 
 # Tidy, but keep everything in git
 clean:

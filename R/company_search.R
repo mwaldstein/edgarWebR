@@ -56,7 +56,9 @@
 #'     \item sic_href
 #'   }
 #' @examples
+#' \donttest{
 #' company_search("Intel")
+#' }
 #' @export
 company_search <- function(x,
                            match = "start",
@@ -90,7 +92,7 @@ company_search <- function(x,
   if (res$status != "200") {
     stop("Unable to reach the SEC company search endpoint (https://www.sec.gov/cgi-bin/browse-edgar)")
   }
-  doc <- xml2::read_xml(res, base_url = href)
+  doc <- xml2::read_xml(res, base_url = href, options = "HUGE")
   xml2::xml_ns_strip(doc)
 
  # Check if there is only one result and we\ ve gone to a company page

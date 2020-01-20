@@ -70,7 +70,7 @@ here" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -193,211 +193,172 @@ here" />
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>latest_filings</span>()</div><div class='output co'>#&gt;          accepted_date
-#&gt; 1  2020-01-08 10:34:39
-#&gt; 2  2020-01-08 10:32:23
-#&gt; 3  2020-01-08 10:32:19
-#&gt; 4  2020-01-08 10:30:52
-#&gt; 5  2020-01-08 10:29:59
-#&gt; 6  2020-01-08 10:29:59
-#&gt; 7  2020-01-08 10:28:30
-#&gt; 8  2020-01-08 10:28:30
-#&gt; 9  2020-01-08 10:27:54
-#&gt; 10 2020-01-08 10:27:54
-#&gt; 11 2020-01-08 10:26:57
-#&gt; 12 2020-01-08 10:26:32
-#&gt; 13 2020-01-08 10:25:38
-#&gt; 14 2020-01-08 10:25:38
-#&gt; 15 2020-01-08 10:25:36
-#&gt; 16 2020-01-08 10:25:36
-#&gt; 17 2020-01-08 10:25:35
-#&gt; 18 2020-01-08 10:25:35
-#&gt; 19 2020-01-08 10:25:34
-#&gt; 20 2020-01-08 10:25:34
-#&gt; 21 2020-01-08 10:25:32
-#&gt; 22 2020-01-08 10:25:32
-#&gt; 23 2020-01-08 10:25:26
-#&gt; 24 2020-01-08 10:25:26
-#&gt; 25 2020-01-08 10:25:20
-#&gt; 26 2020-01-08 10:25:20
-#&gt; 27 2020-01-08 10:24:35
-#&gt; 28 2020-01-08 10:24:35
-#&gt; 29 2020-01-08 10:24:08
-#&gt; 30 2020-01-08 10:24:08
-#&gt; 31 2020-01-08 10:23:39
-#&gt; 32 2020-01-08 10:23:39
-#&gt; 33 2020-01-08 10:22:27
-#&gt; 34 2020-01-08 10:22:26
-#&gt; 35 2020-01-08 10:22:26
-#&gt; 36 2020-01-08 10:22:11
-#&gt; 37 2020-01-08 10:22:01
-#&gt; 38 2020-01-08 10:22:01
-#&gt; 39 2020-01-08 10:21:40
-#&gt; 40 2020-01-08 10:21:29
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>latest_filings</span>()</div><div class='output co'>#&gt;          accepted_date
+#&gt; 1  2020-01-17 21:55:46
+#&gt; 2  2020-01-17 21:55:46
+#&gt; 3  2020-01-17 21:53:58
+#&gt; 4  2020-01-17 21:53:58
+#&gt; 5  2020-01-17 21:50:17
+#&gt; 6  2020-01-17 21:50:17
+#&gt; 7  2020-01-17 21:48:43
+#&gt; 8  2020-01-17 21:48:43
+#&gt; 9  2020-01-17 21:35:28
+#&gt; 10 2020-01-17 21:35:28
+#&gt; 11 2020-01-17 21:33:58
+#&gt; 12 2020-01-17 21:33:58
+#&gt; 13 2020-01-17 21:31:58
+#&gt; 14 2020-01-17 21:31:58
+#&gt; 15 2020-01-17 21:31:43
+#&gt; 16 2020-01-17 21:31:43
+#&gt; 17 2020-01-17 21:30:13
+#&gt; 18 2020-01-17 21:30:13
+#&gt; 19 2020-01-17 21:23:27
+#&gt; 20 2020-01-17 21:23:27
+#&gt; 21 2020-01-17 21:23:13
+#&gt; 22 2020-01-17 21:23:13
+#&gt; 23 2020-01-17 21:22:58
+#&gt; 24 2020-01-17 21:22:58
+#&gt; 25 2020-01-17 21:22:39
+#&gt; 26 2020-01-17 21:22:39
+#&gt; 27 2020-01-17 21:20:45
+#&gt; 28 2020-01-17 21:20:45
+#&gt; 29 2020-01-17 21:19:55
+#&gt; 30 2020-01-17 21:19:55
+#&gt; 31 2020-01-17 21:19:45
+#&gt; 32 2020-01-17 21:19:45
+#&gt; 33 2020-01-17 21:18:26
+#&gt; 34 2020-01-17 21:18:26
+#&gt; 35 2020-01-17 21:16:50
+#&gt; 36 2020-01-17 21:16:50
+#&gt; 37 2020-01-17 21:16:42
+#&gt; 38 2020-01-17 21:16:42
+#&gt; 39 2020-01-17 21:16:23
+#&gt; 40 2020-01-17 21:16:23
 #&gt;                                                                                                 href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/1763758/000176375820000001/0001763758-20-000001-index.htm
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/1771885/000135445720000010/0001354457-20-000010-index.htm
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/1137360/000093041320000039/0000930413-20-000039-index.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1753008/000175300820000001/0001753008-20-000001-index.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1698093/000169809320000001/0001698093-20-000001-index.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1458696/000169809320000001/0001698093-20-000001-index.htm
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1753635/000149315220000342/0001493152-20-000342-index.htm
-#&gt; 8  https://www.sec.gov/Archives/edgar/data/1512922/000149315220000342/0001493152-20-000342-index.htm
-#&gt; 9   https://www.sec.gov/Archives/edgar/data/831001/000095010320000391/0000950103-20-000391-index.htm
-#&gt; 10  https://www.sec.gov/Archives/edgar/data/200245/000095010320000391/0000950103-20-000391-index.htm
-#&gt; 11 https://www.sec.gov/Archives/edgar/data/1614862/000161486220000001/0001614862-20-000001-index.htm
-#&gt; 12 https://www.sec.gov/Archives/edgar/data/1797504/000179750420000001/0001797504-20-000001-index.htm
-#&gt; 13  https://www.sec.gov/Archives/edgar/data/894405/000001961720000040/0000019617-20-000040-index.htm
-#&gt; 14   https://www.sec.gov/Archives/edgar/data/19617/000001961720000040/0000019617-20-000040-index.htm
-#&gt; 15 https://www.sec.gov/Archives/edgar/data/1673985/000001961720000037/0000019617-20-000037-index.htm
-#&gt; 16   https://www.sec.gov/Archives/edgar/data/19617/000001961720000037/0000019617-20-000037-index.htm
-#&gt; 17  https://www.sec.gov/Archives/edgar/data/109563/000001961720000039/0000019617-20-000039-index.htm
-#&gt; 18   https://www.sec.gov/Archives/edgar/data/19617/000001961720000039/0000019617-20-000039-index.htm
-#&gt; 19   https://www.sec.gov/Archives/edgar/data/19617/000001961720000038/0000019617-20-000038-index.htm
-#&gt; 20    https://www.sec.gov/Archives/edgar/data/6281/000001961720000038/0000019617-20-000038-index.htm
-#&gt; 21 https://www.sec.gov/Archives/edgar/data/1419242/000001961720000041/0000019617-20-000041-index.htm
-#&gt; 22   https://www.sec.gov/Archives/edgar/data/19617/000001961720000041/0000019617-20-000041-index.htm
-#&gt; 23 https://www.sec.gov/Archives/edgar/data/1418100/000001961720000042/0000019617-20-000042-index.htm
-#&gt; 24   https://www.sec.gov/Archives/edgar/data/19617/000001961720000042/0000019617-20-000042-index.htm
-#&gt; 25 https://www.sec.gov/Archives/edgar/data/1520697/000001961720000036/0000019617-20-000036-index.htm
-#&gt; 26   https://www.sec.gov/Archives/edgar/data/19617/000001961720000036/0000019617-20-000036-index.htm
-#&gt; 27 https://www.sec.gov/Archives/edgar/data/1665650/000161577420000122/0001615774-20-000122-index.htm
-#&gt; 28   https://www.sec.gov/Archives/edgar/data/19617/000161577420000122/0001615774-20-000122-index.htm
-#&gt; 29 https://www.sec.gov/Archives/edgar/data/1543681/000112760220001309/0001127602-20-001309-index.htm
-#&gt; 30 https://www.sec.gov/Archives/edgar/data/1177394/000112760220001309/0001127602-20-001309-index.htm
-#&gt; 31 https://www.sec.gov/Archives/edgar/data/1427920/000142792020000002/0001427920-20-000002-index.htm
-#&gt; 32  https://www.sec.gov/Archives/edgar/data/896747/000142792020000002/0001427920-20-000002-index.htm
-#&gt; 33 https://www.sec.gov/Archives/edgar/data/1611696/000161169620000002/0001611696-20-000002-index.htm
-#&gt; 34 https://www.sec.gov/Archives/edgar/data/1354917/000144554620000091/0001445546-20-000091-index.htm
-#&gt; 35 https://www.sec.gov/Archives/edgar/data/1184765/000144554620000091/0001445546-20-000091-index.htm
-#&gt; 36 https://www.sec.gov/Archives/edgar/data/1798958/000179895820000003/0001798958-20-000003-index.htm
-#&gt; 37 https://www.sec.gov/Archives/edgar/data/1396502/000144554620000090/0001445546-20-000090-index.htm
-#&gt; 38 https://www.sec.gov/Archives/edgar/data/1184765/000144554620000090/0001445546-20-000090-index.htm
-#&gt; 39  https://www.sec.gov/Archives/edgar/data/830744/000114554920000520/0001145549-20-000520-index.htm
-#&gt; 40 https://www.sec.gov/Archives/edgar/data/1233087/000144554620000089/0001445546-20-000089-index.htm
-#&gt;        type        cik
-#&gt; 1       D/A 0001763758
-#&gt; 2      CERT 0001771885
-#&gt; 3    N-CSRS 0001137360
-#&gt; 4         D 0001753008
-#&gt; 5  SC 13G/A 0001698093
-#&gt; 6  SC 13G/A 0001458696
-#&gt; 7         4 0001753635
-#&gt; 8         4 0001512922
-#&gt; 9     424B2 0000831001
-#&gt; 10    424B2 0000200245
-#&gt; 11     MA-A 0001614862
-#&gt; 12        D 0001797504
-#&gt; 13 SC 13G/A 0000894405
-#&gt; 14 SC 13G/A 0000019617
-#&gt; 15 SC 13G/A 0001673985
-#&gt; 16 SC 13G/A 0000019617
-#&gt; 17 SC 13G/A 0000109563
-#&gt; 18 SC 13G/A 0000019617
-#&gt; 19 SC 13G/A 0000019617
-#&gt; 20 SC 13G/A 0000006281
-#&gt; 21 SC 13G/A 0001419242
-#&gt; 22 SC 13G/A 0000019617
-#&gt; 23 SC 13G/A 0001418100
-#&gt; 24 SC 13G/A 0000019617
-#&gt; 25 SC 13G/A 0001520697
-#&gt; 26 SC 13G/A 0000019617
-#&gt; 27    424B2 0001665650
-#&gt; 28    424B2 0000019617
-#&gt; 29        4 0001543681
-#&gt; 30        4 0001177394
-#&gt; 31        5 0001427920
-#&gt; 32        5 0000896747
-#&gt; 33     MA-A 0001611696
-#&gt; 34 SC 13G/A 0001354917
-#&gt; 35 SC 13G/A 0001184765
-#&gt; 36        D 0001798958
-#&gt; 37 SC 13G/A 0001396502
-#&gt; 38 SC 13G/A 0001184765
-#&gt; 39   N-MFP2 0000830744
-#&gt; 40 SC 13G/A 0001233087
-#&gt;                                                 company_name company_type
-#&gt; 1                               MYDA Short Term Strategy, LP        Filer
-#&gt; 2                                            FSD Pharma Inc.        Filer
-#&gt; 3                                   VanEck Vectors ETF Trust        Filer
-#&gt; 4                                 Post Acute Analytics, Inc.        Filer
-#&gt; 5                                  Maso Capital Partners Ltd     Filed by
-#&gt; 6                                           Changyou.com Ltd      Subject
-#&gt; 7                                           Deming David Don    Reporting
-#&gt; 8                                     PetVivo Holdings, Inc.       Issuer
-#&gt; 9                                              CITIGROUP INC        Filer
-#&gt; 10                    Citigroup Global Markets Holdings Inc.        Filer
-#&gt; 11                                              DIXWORKS LLC        Filer
-#&gt; 12                                 2017 Ultra-Safe Fund, LLC        Filer
-#&gt; 13                                         ARCBEST CORP /DE/      Subject
-#&gt; 14                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 15                                             AdvanSix Inc.      Subject
-#&gt; 16                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 17                       APPLIED INDUSTRIAL TECHNOLOGIES INC      Subject
-#&gt; 18                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 19                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 20                                        ANALOG DEVICES INC      Subject
-#&gt; 21                                       ATLANTIC POWER CORP      Subject
-#&gt; 22                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 23                                      Avaya Holdings Corp.      Subject
-#&gt; 24                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 25                           Acadia Healthcare Company, Inc.      Subject
-#&gt; 26                                       JPMORGAN CHASE &amp; CO     Filed by
-#&gt; 27                          JPMorgan Chase Financial Co. LLC        Filer
-#&gt; 28                                       JPMORGAN CHASE &amp; CO        Filer
-#&gt; 29                                         Wurster Thomas S.    Reporting
-#&gt; 30                                               SYNNEX CORP       Issuer
-#&gt; 31                                                 Neff Jean    Reporting
-#&gt; 32                                  AMERICAN BIO MEDICA CORP       Issuer
-#&gt; 33                    Stephen H. McDonald &amp; Associates, Inc.        Filer
-#&gt; 34                                          Highland Funds I      Subject
-#&gt; 35                                 FIRST TRUST PORTFOLIOS LP     Filed by
-#&gt; 36          Investec Africa Credit Opportunities Fund 2 SCSp        Filer
-#&gt; 37 John Hancock Tax-Advantaged Global Shareholder Yield Fund      Subject
-#&gt; 38                                 FIRST TRUST PORTFOLIOS LP     Filed by
-#&gt; 39                                          WILMINGTON FUNDS        Filer
-#&gt; 40                        FRANKLIN LTD DURATION INCOME TRUST      Subject
-#&gt;    filing_date     accession_number   size
-#&gt; 1   2020-01-08 0001763758-20-000001   7 KB
-#&gt; 2   2020-01-08 0001354457-20-000010 628 KB
-#&gt; 3   2020-01-08 0000930413-20-000039   8 MB
-#&gt; 4   2020-01-08 0001753008-20-000001   7 KB
-#&gt; 5   2020-01-08 0001698093-20-000001  11 KB
-#&gt; 6   2020-01-08 0001698093-20-000001  11 KB
-#&gt; 7   2020-01-08 0001493152-20-000342   5 KB
-#&gt; 8   2020-01-08 0001493152-20-000342   5 KB
-#&gt; 9   2020-01-08 0000950103-20-000391 273 KB
-#&gt; 10  2020-01-08 0000950103-20-000391 273 KB
-#&gt; 11  2020-01-03 0001614862-20-000001  11 KB
-#&gt; 12  2020-01-08 0001797504-20-000001   6 KB
-#&gt; 13  2020-01-08 0000019617-20-000040  89 KB
-#&gt; 14  2020-01-08 0000019617-20-000040  89 KB
-#&gt; 15  2020-01-08 0000019617-20-000037  89 KB
-#&gt; 16  2020-01-08 0000019617-20-000037  89 KB
-#&gt; 17  2020-01-08 0000019617-20-000039  89 KB
-#&gt; 18  2020-01-08 0000019617-20-000039  89 KB
-#&gt; 19  2020-01-08 0000019617-20-000038  90 KB
-#&gt; 20  2020-01-08 0000019617-20-000038  90 KB
-#&gt; 21  2020-01-08 0000019617-20-000041  89 KB
-#&gt; 22  2020-01-08 0000019617-20-000041  89 KB
-#&gt; 23  2020-01-08 0000019617-20-000042  90 KB
-#&gt; 24  2020-01-08 0000019617-20-000042  90 KB
-#&gt; 25  2020-01-08 0000019617-20-000036  89 KB
-#&gt; 26  2020-01-08 0000019617-20-000036  89 KB
-#&gt; 27  2020-01-08 0001615774-20-000122 434 KB
-#&gt; 28  2020-01-08 0001615774-20-000122 434 KB
-#&gt; 29  2020-01-08 0001127602-20-001309  21 KB
-#&gt; 30  2020-01-08 0001127602-20-001309  21 KB
-#&gt; 31  2020-01-08 0001427920-20-000002  17 KB
-#&gt; 32  2020-01-08 0001427920-20-000002  17 KB
-#&gt; 33  2020-01-07 0001611696-20-000002  19 KB
-#&gt; 34  2020-01-08 0001445546-20-000091  16 KB
-#&gt; 35  2020-01-08 0001445546-20-000091  16 KB
-#&gt; 36  2020-01-08 0001798958-20-000003   6 KB
-#&gt; 37  2020-01-08 0001445546-20-000090  16 KB
-#&gt; 38  2020-01-08 0001445546-20-000090  16 KB
-#&gt; 39  2020-01-08 0001145549-20-000520  63 KB
-#&gt; 40  2020-01-08 0001445546-20-000089  16 KB</div></pre>
+#&gt; 1  https://www.sec.gov/Archives/edgar/data/1753110/000120919120004195/0001209191-20-004195-index.htm
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/1739936/000120919120004195/0001209191-20-004195-index.htm
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/1753128/000120919120004194/0001209191-20-004194-index.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/1739936/000120919120004194/0001209191-20-004194-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1739936/000120919120004192/0001209191-20-004192-index.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1421413/000120919120004192/0001209191-20-004192-index.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1798117/000110465920005263/0001104659-20-005263-index.htm
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/1621227/000110465920005263/0001104659-20-005263-index.htm
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/1661780/000110465920005262/0001104659-20-005262-index.htm
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1621227/000110465920005262/0001104659-20-005262-index.htm
+#&gt; 11 https://www.sec.gov/Archives/edgar/data/1784487/000110465920005261/0001104659-20-005261-index.htm
+#&gt; 12 https://www.sec.gov/Archives/edgar/data/1621227/000110465920005261/0001104659-20-005261-index.htm
+#&gt; 13 https://www.sec.gov/Archives/edgar/data/1621227/000110465920005258/0001104659-20-005258-index.htm
+#&gt; 14 https://www.sec.gov/Archives/edgar/data/1291937/000110465920005258/0001104659-20-005258-index.htm
+#&gt; 15 https://www.sec.gov/Archives/edgar/data/1705873/000156218020000437/0001562180-20-000437-index.htm
+#&gt; 16 https://www.sec.gov/Archives/edgar/data/1622068/000156218020000437/0001562180-20-000437-index.htm
+#&gt; 17 https://www.sec.gov/Archives/edgar/data/1621227/000110465920005256/0001104659-20-005256-index.htm
+#&gt; 18 https://www.sec.gov/Archives/edgar/data/1555851/000110465920005256/0001104659-20-005256-index.htm
+#&gt; 19 https://www.sec.gov/Archives/edgar/data/1794796/000089924320001430/0000899243-20-001430-index.htm
+#&gt; 20 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001430/0000899243-20-001430-index.htm
+#&gt; 21 https://www.sec.gov/Archives/edgar/data/1722964/000110465920005251/0001104659-20-005251-index.htm
+#&gt; 22 https://www.sec.gov/Archives/edgar/data/1245624/000110465920005251/0001104659-20-005251-index.htm
+#&gt; 23 https://www.sec.gov/Archives/edgar/data/1794794/000089924320001429/0000899243-20-001429-index.htm
+#&gt; 24 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001429/0000899243-20-001429-index.htm
+#&gt; 25 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001428/0000899243-20-001428-index.htm
+#&gt; 26 https://www.sec.gov/Archives/edgar/data/1524986/000089924320001428/0000899243-20-001428-index.htm
+#&gt; 27 https://www.sec.gov/Archives/edgar/data/1794791/000089924320001424/0000899243-20-001424-index.htm
+#&gt; 28 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001424/0000899243-20-001424-index.htm
+#&gt; 29 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001423/0000899243-20-001423-index.htm
+#&gt; 30 https://www.sec.gov/Archives/edgar/data/1524990/000089924320001423/0000899243-20-001423-index.htm
+#&gt; 31 https://www.sec.gov/Archives/edgar/data/1794812/000089924320001422/0000899243-20-001422-index.htm
+#&gt; 32 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001422/0000899243-20-001422-index.htm
+#&gt; 33 https://www.sec.gov/Archives/edgar/data/1794795/000089924320001418/0000899243-20-001418-index.htm
+#&gt; 34 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001418/0000899243-20-001418-index.htm
+#&gt; 35 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001417/0000899243-20-001417-index.htm
+#&gt; 36 https://www.sec.gov/Archives/edgar/data/1524993/000089924320001417/0000899243-20-001417-index.htm
+#&gt; 37 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001416/0000899243-20-001416-index.htm
+#&gt; 38 https://www.sec.gov/Archives/edgar/data/1412378/000089924320001416/0000899243-20-001416-index.htm
+#&gt; 39 https://www.sec.gov/Archives/edgar/data/1794793/000089924320001415/0000899243-20-001415-index.htm
+#&gt; 40 https://www.sec.gov/Archives/edgar/data/1692376/000089924320001415/0000899243-20-001415-index.htm
+#&gt;    type        cik                 company_name company_type filing_date
+#&gt; 1     4 0001753110             Cantieri Rebecca    Reporting  2020-01-17
+#&gt; 2     4 0001739936                    SVMK Inc.       Issuer  2020-01-17
+#&gt; 3     4 0001753128           Schoenstein John S    Reporting  2020-01-17
+#&gt; 4     4 0001739936                    SVMK Inc.       Issuer  2020-01-17
+#&gt; 5     4 0001739936                    SVMK Inc.       Issuer  2020-01-17
+#&gt; 6     4 0001421413            Lurie Alexander J    Reporting  2020-01-17
+#&gt; 7     4 0001798117                 Norry Elliot    Reporting  2020-01-17
+#&gt; 8     4 0001621227 Adaptimmune Therapeutics PLC       Issuer  2020-01-17
+#&gt; 9     4 0001661780  TAYTON-MARTIN HELEN KATRINA    Reporting  2020-01-17
+#&gt; 10    4 0001621227 Adaptimmune Therapeutics PLC       Issuer  2020-01-17
+#&gt; 11    4 0001784487                  Lunger John    Reporting  2020-01-17
+#&gt; 12    4 0001621227 Adaptimmune Therapeutics PLC       Issuer  2020-01-17
+#&gt; 13    4 0001621227 Adaptimmune Therapeutics PLC       Issuer  2020-01-17
+#&gt; 14    4 0001291937        Bertrand William C JR    Reporting  2020-01-17
+#&gt; 15    4 0001705873         Berry Petroleum Corp       Issuer  2020-01-17
+#&gt; 16    4 0001622068              Helm Michael S.    Reporting  2020-01-17
+#&gt; 17    4 0001621227 Adaptimmune Therapeutics PLC       Issuer  2020-01-17
+#&gt; 18    4 0001555851             Rawcliffe Adrian    Reporting  2020-01-17
+#&gt; 19    3 0001794796              Cowell Joseph A    Reporting  2020-01-17
+#&gt; 20    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 21    4 0001722964    Y-mAbs Therapeutics, Inc.       Issuer  2020-01-17
+#&gt; 22    4 0001245624                  HEALY JAMES    Reporting  2020-01-17
+#&gt; 23    3 0001794794              Comley Graham M    Reporting  2020-01-17
+#&gt; 24    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 25    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 26    3 0001524986            Taylor Jeffrey T.    Reporting  2020-01-17
+#&gt; 27    3 0001794791                Mantel Alan H    Reporting  2020-01-17
+#&gt; 28    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 29    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 30    3 0001524990              Schaefer Joy L.    Reporting  2020-01-17
+#&gt; 31    3 0001794812           Szczepaniak Mark R    Reporting  2020-01-17
+#&gt; 32    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 33    3 0001794795                 Pless John A    Reporting  2020-01-17
+#&gt; 34    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 35    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 36    3 0001524993        Farrar Christopher D.    Reporting  2020-01-17
+#&gt; 37    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt; 38    3 0001412378                Pitstick John    Reporting  2020-01-17
+#&gt; 39    3 0001794793        Oltmann Christopher J    Reporting  2020-01-17
+#&gt; 40    3 0001692376      Velocity Financial, LLC       Issuer  2020-01-17
+#&gt;        accession_number  size
+#&gt; 1  0001209191-20-004195  7 KB
+#&gt; 2  0001209191-20-004195  7 KB
+#&gt; 3  0001209191-20-004194 15 KB
+#&gt; 4  0001209191-20-004194 15 KB
+#&gt; 5  0001209191-20-004192 10 KB
+#&gt; 6  0001209191-20-004192 10 KB
+#&gt; 7  0001104659-20-005263  8 KB
+#&gt; 8  0001104659-20-005263  8 KB
+#&gt; 9  0001104659-20-005262  8 KB
+#&gt; 10 0001104659-20-005262  8 KB
+#&gt; 11 0001104659-20-005261  8 KB
+#&gt; 12 0001104659-20-005261  8 KB
+#&gt; 13 0001104659-20-005258  8 KB
+#&gt; 14 0001104659-20-005258  8 KB
+#&gt; 15 0001562180-20-000437  8 KB
+#&gt; 16 0001562180-20-000437  8 KB
+#&gt; 17 0001104659-20-005256  8 KB
+#&gt; 18 0001104659-20-005256  8 KB
+#&gt; 19 0000899243-20-001430  6 KB
+#&gt; 20 0000899243-20-001430  6 KB
+#&gt; 21 0001104659-20-005251 12 KB
+#&gt; 22 0001104659-20-005251 12 KB
+#&gt; 23 0000899243-20-001429  6 KB
+#&gt; 24 0000899243-20-001429  6 KB
+#&gt; 25 0000899243-20-001428  7 KB
+#&gt; 26 0000899243-20-001428  7 KB
+#&gt; 27 0000899243-20-001424  5 KB
+#&gt; 28 0000899243-20-001424  5 KB
+#&gt; 29 0000899243-20-001423  7 KB
+#&gt; 30 0000899243-20-001423  7 KB
+#&gt; 31 0000899243-20-001422  6 KB
+#&gt; 32 0000899243-20-001422  6 KB
+#&gt; 33 0000899243-20-001418  5 KB
+#&gt; 34 0000899243-20-001418  5 KB
+#&gt; 35 0000899243-20-001417  7 KB
+#&gt; 36 0000899243-20-001417  7 KB
+#&gt; 37 0000899243-20-001416  6 KB
+#&gt; 38 0000899243-20-001416  6 KB
+#&gt; 39 0000899243-20-001415  6 KB
+#&gt; 40 0000899243-20-001415  6 KB</div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

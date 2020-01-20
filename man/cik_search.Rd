@@ -23,5 +23,7 @@ Provides access to the SEC CIK search tool from
 \href{https://www.sec.gov/edgar/searchedgar/cik.htm}{here}
 }
 \examples{
+\donttest{
 cik_search("cloudera")
+}
 }

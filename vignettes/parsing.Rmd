@@ -16,6 +16,9 @@ draft: false
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 library(edgarWebR)
 set.seed(0451)
+# Cache http requests
+library(httptest)
+start_vignette("parsing")
 ```
 New to edgarWebR 0.2.0 are functions for parsing SEC documents. While there are
 good R packages for XBRL processing, there is a gap in extracting information
@@ -143,4 +146,8 @@ from github by using devtools:
 ```{r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("mwaldstein/edgarWebR")
+```
+```{r, include=FALSE}
+# Cleanup
+end_vignette()
 ```

@@ -77,7 +77,7 @@ all the meta-information about the filing. We extract 3 main types of informatio
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
       </span>
     </div>
 
@@ -183,7 +183,8 @@ for funds get more complicated - e.g. 400+ funds with 100's of companies</p>
 components, try just using filing_info</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Typically you'd get the URL from one of the search functions</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='co'># Typically you'd get the URL from one of the search functions</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://www.sec.gov/Archives/edgar/data/"</span>,
             <span class='st'>"712515/000071251517000063/0000712515-17-000063-index.htm"</span>)
 <span class='fu'>filing_details</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; $information
@@ -274,7 +275,8 @@ components, try just using filing_info</p>
 #&gt; 
 #&gt; $funds
 #&gt; data frame with 0 columns and 0 rows
-#&gt; </div></pre>
+#&gt; </div><div class='input'># }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

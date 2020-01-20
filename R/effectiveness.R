@@ -20,7 +20,9 @@
 #'     \item{type}{}
 #'  }
 #' @examples
+#' \donttest{
 #' effectiveness()
+#' }
 #' @export
 effectiveness <- function() {
   href <- "https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect"
@@ -28,7 +30,7 @@ effectiveness <- function() {
   if (res$status != "200") {
     stop("Unable to reach the SEC get effectiveness endpoint (https://www.sec.gov/cgi-bin/browse-edgar)")
   }
-  doc <- xml2::read_html(res, base_url = href)
+  doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "//a[contains(@href, 'filenum=')]"
   info_pieces <- list(

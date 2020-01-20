@@ -87,5 +87,7 @@ company details page if found. If you have a company's CIK or Ticker, use the
 \code{\link{company_details}} functions.
 }
 \examples{
+\donttest{
 company_search("Intel")
+}
 }

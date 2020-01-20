@@ -1,3 +1,13 @@
+# edgarWebR 1.0.2
+
+## Bugfixes
+ * User `options = 'HUGE'` for _all_ xml/html parsing - should resolve some
+     test failures on Solaris.
+ * All vignettes now use cached requests (tests were all ready using caches)
+
+## Internal
+ * httptest redaction/resolving logic centralized in a more standard way
+
 # edgarWebR 1.0.1
 
 ## Bugfixes
