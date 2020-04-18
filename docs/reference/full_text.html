@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,7 +42,6 @@
 <meta property="og:title" content="SEC Full-Text Search — full_text" />
 <meta property="og:description" content="Provides access to the SEC fillings
 full-text search tool." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -56,7 +59,7 @@ full-text search tool." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -106,7 +109,7 @@ full-text search tool." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/mwaldstein/edgarWebR">
+  <a href="https://github.com/mwaldstein/edgarWebR/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -220,93 +223,78 @@ specify `from`</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date
-#&gt; 1   2020-01-17
-#&gt; 2   2020-01-17
-#&gt; 3   2020-01-17
-#&gt; 4   2020-01-17
-#&gt; 5   2020-01-17
-#&gt; 6   2020-01-17
-#&gt; 7   2020-01-17
-#&gt; 8   2020-01-17
-#&gt; 9   2020-01-17
-#&gt; 10  2020-01-17
-#&gt;                                                                  name
-#&gt; 1         INFORMATION TABLE of 13F-HR for ARGUS INVESTORS COUNSEL INC
-#&gt; 2        INFORMATION TABLE of 13F-HR for FIRST NATIONAL BANK OF OMAHA
-#&gt; 3            INFORMATION TABLE of 13F-HR for HUNTINGTON NATIONAL BANK
-#&gt; 4  INFORMATION TABLE of 13F-HR for CANANDAIGUA NATIONAL BANK TRUST CO
-#&gt; 5           INFORMATION TABLE of 13F-HR for HC FINANCIAL ADVISORS INC
-#&gt; 6  INFORMATION TABLE of 13F-HR for CREATIVE FINANCIAL DESIGNS INC ADV
-#&gt; 7               INFORMATION TABLE of 13F-HR for STEWART PATTEN CO LLC
-#&gt; 8        INFORMATION TABLE of 13F-HR for WENDELL DAVID ASSOCIATES INC
-#&gt; 9          INFORMATION TABLE of 13F-HR for BTR CAPITAL MANAGEMENT INC
-#&gt; 10    INFORMATION TABLE of 13F-HR for American Research Management Co
-#&gt;                                                                                                               href
-#&gt; 1                      https://www.sec.gov/Archives/edgar/data/7195/000000719520000001/xslForm13F_X01/inftable.xml
-#&gt; 2                       https://www.sec.gov/Archives/edgar/data/36644/000003664420000001/xslForm13F_X01/PTR289.xml
-#&gt; 3              https://www.sec.gov/Archives/edgar/data/49205/000004920520000001/xslForm13F_X01/QTR42019_13F_HR.xml
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1074266/000075945820000001/xslForm13F_X01/CNB_13F_Submission_201912.xml
-#&gt; 5           https://www.sec.gov/Archives/edgar/data/784045/000078404520000001/xslForm13F_X01/hc13fexport123119.xml
-#&gt; 6               https://www.sec.gov/Archives/edgar/data/819864/000081986420000002/xslForm13F_X01/cfd13freport4.xml
-#&gt; 7                    https://www.sec.gov/Archives/edgar/data/860580/000086058020000002/xslForm13F_X01/inftable.xml
-#&gt; 8           https://www.sec.gov/Archives/edgar/data/878228/000087822820000002/xslForm13F_X01/dwasec13f12312019.xml
-#&gt; 9                        https://www.sec.gov/Archives/edgar/data/883790/000088379020000002/xslForm13F_X01/F13F.xml
-#&gt; 10                   https://www.sec.gov/Archives/edgar/data/1506796/000090901220000005/xslForm13F_X01/aci_13f.xml
-#&gt;                          company_name     cik  sic
-#&gt; 1         ARGUS INVESTORS COUNSEL INC    7195 &lt;NA&gt;
-#&gt; 2        FIRST NATIONAL BANK OF OMAHA   36644 &lt;NA&gt;
-#&gt; 3            HUNTINGTON NATIONAL BANK   49205 &lt;NA&gt;
-#&gt; 4  CANANDAIGUA NATIONAL BANK TRUST CO 1074266 &lt;NA&gt;
-#&gt; 5           HC FINANCIAL ADVISORS INC  784045 &lt;NA&gt;
-#&gt; 6  CREATIVE FINANCIAL DESIGNS INC ADV  819864 &lt;NA&gt;
-#&gt; 7               STEWART PATTEN CO LLC  860580 &lt;NA&gt;
-#&gt; 8        WENDELL DAVID ASSOCIATES INC  878228 &lt;NA&gt;
-#&gt; 9          BTR CAPITAL MANAGEMENT INC  883790 &lt;NA&gt;
-#&gt; 10    American Research Management Co 1506796 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                         content
-#&gt; 1   3M Co COM 88579Y101 3947 22370 SH SOLE 17220 0 5150 Adobe Inc COM 00724F101 5047 15304 SH SOLE 10810 0 4494 Air Prods &amp; Chems Inc COM 009158106 4188 17820 SH SOLE 13750 0 4070 Alphabet Inc COM 02079K305 4914 3669 SH SOLE 2540 0 1129 Amazon.com Inc COM 023135106 4958 2683 SH SOLE 1858 0 825 American
-#&gt; 2  AMBARELLA INC SHS G037AX101 1652 27278 SH SOLE 27278 0 0 AMBARELLA INC SHS G037AX101 32 525 SH OTR 525 0 0 AON PLC SHS CL A G0408V102 5830 27988 SH SOLE 25075 0 2913 AON PLC SHS CL A G0408V102 158 760 SH OTR 585 175 0 ARGO GROUP INTL HLDGS LTD COM G0464B107 1159 17632 SH SOLE 17632 0 0 ACCENTURE PLC
-#&gt; 3                                                                                                                                                                                                                                                                                                              
-#&gt; 4                                                                                                                                                                                                                                                                               Aflac, Inc. Com 001055102 1811 
-#&gt; 5   ENTERPRISE PRODS PARTNERS L COM 293792107 244 8671 SH SOLE 0 0 8671 AT&amp;T INC COM 00206R102 261 6668 SH SOLE 0 0 6668 INOGEN INC COM 45780L104 279 4077 SH SOLE 0 0 4077 INVESCO EXCHNG TRADED FD TR FTSE RAFI DEV 46138E743 280 6588 SH SOLE 0 0 6588 MONDELEZ INTL INC CL A 609207105 364 6600 SH SOLE 0 0
-#&gt; 6       AMAZON COM INC COM Stock 023135106 1312 691 SH SOLE 0 0 691 ISHARES MORNINGSTAR MID-CAP GROWTH ETF ETF 464288307 890 3348 SH SOLE 0 0 3348 CERNER CORP COM Stock 156782104 45 615 SH SOLE 0 0 614 ISHARES NORTH AMERICAN NATURAL RESOURCES ETF 464287374 6 185 SH SOLE 0 0 184 VIACOMCBS INC CL B Stock
-#&gt; 7  3M Company COM STK 88579y101 20129 114099 SH SOLE 3043 0 111056 3M Company COM STK 88579y101 24 135 SH DFND 0 0 135 AFLAC, Inc. COM STK 001055102 801 15148 SH SOLE 0 0 15148 AFLAC, Inc. COM STK 001055102 8 150 SH DFND 0 0 150 AT &amp; T, Inc. COM STK 00206r102 17743 454023 SH SOLE 13675 0 440348 AT &amp; T,
-#&gt; 8          1st Trust Pfd Sec &amp; Inc ETF DEBT 33739E108 261 13000 SH OTR 0 0 13000 3M Company COMM 88579Y101 1613 9144 SH OTR 0 0 9144 Abbott Labs COMM 002824100 16452 189413 SH OTR 0 0 189413 AbbVie COMM 00287Y109 9278 104788 SH OTR 0 0 104788 Accenture 'A' COMM G1151C101 7666 36404 SH OTR 0 0 36404 Air
-#&gt; 9    ALPS ALERIAN MLP ETF COM 00162Q866 98 11575 SH DFND 0 0 11575 AT&amp;T INC COM 00206R102 3119 79816 SH DFND 7277 0 72539 ABBOTT LABORATORIES COM 002824100 8866 102072 SH DFND 2850 0 99222 ABBVIE INC COM 00287Y109 1792 20243 SH DFND 150 0 20093 ADOBE INC. COM 00724F101 536 1625 SH DFND 0 0 1625 AGILENT
-#&gt; 10 3M Company com 88579Y101 123 700 SH SOLE 01 02 700 0 0 Abbott Laboratories com 002824100 455 5237 SH SOLE 01 02 5237 0 0 AbbVie Inc com 00287Y109 304 3437 SH SOLE 01 02 3437 0 0 Acadia Pharmaceuticals, Inc com 004225108 4 100 SH SOLE 01 02 100 0 0 Accenture Plc com G1150G111 26 124 SH SOLE 01 02 124
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                             name
+#&gt; 1   2020-04-17                 INFORMATION TABLE of 13F-HR for CENTRAL TRUST Co
+#&gt; 2   2020-04-17                                        DEF 14A for USA TRUCK INC
+#&gt; 3   2020-04-17                    485BPOS for WILSHIRE VARIABLE INSURANCE TRUST
+#&gt; 4   2020-04-17     INFORMATION TABLE of 13F-HR for NISA INVESTMENT ADVISORS LLC
+#&gt; 5   2020-04-17 INFORMATION TABLE of 13F-HR for Bremer Bank National Association
+#&gt; 6   2020-04-17          INFORMATION TABLE of 13F-HR for DnB Asset Management AS
+#&gt; 7   2020-04-17        INFORMATION TABLE of 13F-HR for JCIC Asset Management Inc
+#&gt; 8   2020-04-17  INFORMATION TABLE of 13F-HR for Endurance Wealth Management Inc
+#&gt; 9   2020-04-17                          DEF 14A for ROYAL CARIBBEAN CRUISES LTD
+#&gt; 10  2020-04-17  INFORMATION TABLE of 13F-HR for MARCO INVESTMENT MANAGEMENT LLC
+#&gt;                                                                                                      href
+#&gt; 1          https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/xslForm13F_X01/MAR202013F.xml
+#&gt; 2              https://www.sec.gov/Archives/edgar/data/883945/000088394520000016/usak-20200417xdef14a.htm
+#&gt; 3           https://www.sec.gov/Archives/edgar/data/1026708/000089418920002786/wilshirevitcombineddoc.htm
+#&gt; 4        https://www.sec.gov/Archives/edgar/data/937615/000093761520000005/xslForm13F_X01/13F03312020.xml
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1775321/000095012320003400/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1456670/000095012320003408/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1492040/000095012320003437/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/1476225/000095012320003447/xslForm13F_X01/form13fInfoTable.xml
+#&gt; 9                   https://www.sec.gov/Archives/edgar/data/884887/000104746920002406/a2241308zdef14a.htm
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1080493/000106299320001836/xslForm13F_X01/form13fInfoTable.xml
+#&gt;                         company_name     cik  sic
+#&gt; 1                   CENTRAL TRUST Co   44365 &lt;NA&gt;
+#&gt; 2                      USA TRUCK INC  883945 4213
+#&gt; 3  WILSHIRE VARIABLE INSURANCE TRUST 1026708 &lt;NA&gt;
+#&gt; 4       NISA INVESTMENT ADVISORS LLC  937615 &lt;NA&gt;
+#&gt; 5   Bremer Bank National Association 1775321 &lt;NA&gt;
+#&gt; 6            DnB Asset Management AS 1456670 &lt;NA&gt;
+#&gt; 7          JCIC Asset Management Inc 1492040 &lt;NA&gt;
+#&gt; 8    Endurance Wealth Management Inc 1476225 &lt;NA&gt;
+#&gt; 9        ROYAL CARIBBEAN CRUISES LTD  884887 4400
+#&gt; 10   MARCO INVESTMENT MANAGEMENT LLC 1080493 &lt;NA&gt;
+#&gt;                                                                                                                                                                                                                                                                                                        content
+#&gt; 1                                                                                                                                                                                                                                                                                                             
+#&gt; 2                                               UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 SCHEDULE 14A Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 Filed by the Registrant Filed by a Party other than the Registrant Check the appropriate
+#&gt; 3      As filed with the Securities and Exchange Commission on April 17, 2020 1933 Act Registration File No. 333-15881 1940 Act File No. 811-07917 SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-1A REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933 [X] Pre-Effective Amendment No.
+#&gt; 4  AAON INC COM 000360206 14 300 SH SOLE 300 0 0 AAR CORP COM 000361105 6 345 SH SOLE 345 0 0 ACCO BRANDS CORP COM 00081T108 8 1570 SH SOLE 1570 0 0 ABM INDS INC COM 000957100 59 2430 SH SOLE 2430 0 0 AFLAC INC COM 001055102 10883 317849 SH OTR 01 317789 0 60 AGCO CORP COM 001084102 1465 31010 SH SOLE
+#&gt; 5                                                                                                                                                                                                                                                                                    3M Co COM 88579Y101 2983 
+#&gt; 6                                                                                                                                                                                                                                                            Elanco Animal Health Inc common 28414H103 1153779
+#&gt; 7                                                                                                                                                                                                                                                                   ISHARES TR CORE US AGGBD ET 464287226 136 
+#&gt; 8                                                                                                                                                                                                                                                                               3M CO COM Stock 88579Y101 501 
+#&gt; 9        UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 SCHEDULE 14A Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 Filed by the Registrant Filed by a Party other than the Registrant o Check the appropriate box: o Preliminary Proxy Statement o
+#&gt; 10     AFLAC INC COM 001055102 3456 100930 SH SOLE 0 0 0 AGCO CORP COM 001084102 898 19000 SH SOLE 0 0 0 AT&amp;T INC COM 00206R102 1714 58809 SH SOLE 0 0 0 ABBOTT LABS COM 002824100 5988 75886 SH SOLE 0 0 0 ABBVIE INC COM 00287Y109 6280 82427 SH SOLE 0 0 0 ACCENTURE PLC IRELAND SHS CLASS A G1151C101 2094
 #&gt;                                                                                          parent_href
-#&gt; 1     https://www.sec.gov/Archives/edgar/data/7195/000000719520000001/xslForm13F_X01/primary_doc.xml
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/36644/000003664420000001/xslForm13F_X01/primary_doc.xml
-#&gt; 3    https://www.sec.gov/Archives/edgar/data/49205/000004920520000001/xslForm13F_X01/primary_doc.xml
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1074266/000075945820000001/xslForm13F_X01/primary_doc.xml
-#&gt; 5   https://www.sec.gov/Archives/edgar/data/784045/000078404520000001/xslForm13F_X01/primary_doc.xml
-#&gt; 6   https://www.sec.gov/Archives/edgar/data/819864/000081986420000002/xslForm13F_X01/primary_doc.xml
-#&gt; 7   https://www.sec.gov/Archives/edgar/data/860580/000086058020000002/xslForm13F_X01/primary_doc.xml
-#&gt; 8   https://www.sec.gov/Archives/edgar/data/878228/000087822820000002/xslForm13F_X01/primary_doc.xml
-#&gt; 9   https://www.sec.gov/Archives/edgar/data/883790/000088379020000002/xslForm13F_X01/primary_doc.xml
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/1506796/000090901220000005/xslForm13F_X01/primary_doc.xml
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/xslForm13F_X01/primary_doc.xml
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/1456670/000095012320003408/xslForm13F_X01/primary_doc.xml
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1492040/000095012320003437/xslForm13F_X01/primary_doc.xml
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1476225/000095012320003447/xslForm13F_X01/primary_doc.xml
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1080493/000106299320001836/xslForm13F_X01/primary_doc.xml
+#&gt; 8    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/xslForm13F_X01/primary_doc.xml
+#&gt; 9                                                                                               &lt;NA&gt;
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1775321/000095012320003400/xslForm13F_X01/primary_doc.xml
 #&gt;                                                                                           index_href
-#&gt; 1     https://www.sec.gov/Archives/edgar/data/7195/000000719520000001/0000007195-20-000001-index.htm
-#&gt; 2    https://www.sec.gov/Archives/edgar/data/36644/000003664420000001/0000036644-20-000001-index.htm
-#&gt; 3    https://www.sec.gov/Archives/edgar/data/49205/000004920520000001/0000049205-20-000001-index.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1074266/000075945820000001/0000759458-20-000001-index.htm
-#&gt; 5   https://www.sec.gov/Archives/edgar/data/784045/000078404520000001/0000784045-20-000001-index.htm
-#&gt; 6   https://www.sec.gov/Archives/edgar/data/819864/000081986420000002/0000819864-20-000002-index.htm
-#&gt; 7   https://www.sec.gov/Archives/edgar/data/860580/000086058020000002/0000860580-20-000002-index.htm
-#&gt; 8   https://www.sec.gov/Archives/edgar/data/878228/000087822820000002/0000878228-20-000002-index.htm
-#&gt; 9   https://www.sec.gov/Archives/edgar/data/883790/000088379020000002/0000883790-20-000002-index.htm
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/1506796/000090901220000005/0000909012-20-000005-index.htm</div><div class='input'># }
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/0000044365-20-000002-index.htm
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/1456670/000095012320003408/0000950123-20-003408-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/1492040/000095012320003437/0000950123-20-003437-index.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1476225/000095012320003447/0000950123-20-003447-index.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/1080493/000106299320001836/0001062993-20-001836-index.htm
+#&gt; 8    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/0000044365-20-000002-index.htm
+#&gt; 9                                                                                               &lt;NA&gt;
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/1775321/000095012320003400/0000950123-20-003400-index.htm</div><div class='input'># }
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -317,7 +305,7 @@ specify `from`</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

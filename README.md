@@ -3,6 +3,14 @@
 
 # edgarWebR
 
+## NOTES:
+
+  - A recent release of `xml2` has broken this package - until a fix is
+    released, please make sure to use a version *prior* to v1.3.0
+  - A bug was encountered on the Solaris CRAN checks which led to the
+    package being removed from CRAN. I’m working on a fix, but not
+    having access to the platform makes testing challenging.
+
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/edgarWebR)](https://cran.r-project.org/package=edgarWebR)
 [![Travis-CI Build
 Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
