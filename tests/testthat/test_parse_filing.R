@@ -23,8 +23,12 @@ expect_similar_wc <- function(content, res) {
   expect_lt(abs(parsed.words - plain.words), max(.0005 * plain.words, 10))
 }
 
-test_filing <- function(file.name, rows, parts, items) {
-  test.file <- file.path("..", "testdata", file.name)
+test_filing <- function(file.name, rows, parts, items, is_dev = TRUE) {
+  if (is_dev) {
+    test.file <- file.path("..", "testdata", "dev", file.name)
+  } else {
+    test.file <- file.path("..", "testdata", file.name)
+  }
   content <- readChar(test.file, file.info(test.file)$size)
   res <- parse_filing(content)
   expect_is(res, "data.frame")
@@ -40,6 +44,7 @@ test_filing <- function(file.name, rows, parts, items) {
 
 with_mock_API({
   test_that("Basics (type 10-Q)", {
+    skip_on_cran()
     # "https://www.sec.gov/Archives/edgar/data/712515/000071251517000010/ea12312016-q3fy1710qdoc.htm"
     res <- test_filing("ea12312016-q3fy1710qdoc.htm", 633, 3, 11)
     expect_equal(length(unique(res[startsWith(res$part.name, "PART I "),
@@ -49,7 +54,7 @@ with_mock_API({
   })
   test_that("Basics (type 10-Q - STX)", {
     # "https://www.sec.gov/Archives/edgar/data/1137789/000119312517148855/d381726d10q.htm"
-    res <- test_filing("d381726d10q.htm", 500, 3, 12)
+    res <- test_filing("d381726d10q.htm", 500, 3, 12, is_dev = FALSE)
 
     expect_equal(length(unique(res[res$part.name == "PART I",
                                "item.name"])), 5)
@@ -58,7 +63,7 @@ with_mock_API({
   })
   test_that("Handles 8-K", {
     # href <- "https://www.sec.gov/Archives/edgar/data/320193/000162828017000663/a8-kq1201712312016.htm"
-    res <- test_filing("a8-kq1201712312016.htm", 35, 1, 3)
+    res <- test_filing("a8-kq1201712312016.htm", 35, 1, 3, is_dev = FALSE)
   })
   test_that("Handles 10-K (edgarx.com)", {
     skip_on_cran() # Basics for CRAN are sufficiently tested...
@@ -120,9 +125,8 @@ with_mock_API({
                                "item.name"])), 8)
   })
   test_that("Handles 10-K (Verizon)", {
-    skip_on_cran() # Basics for CRAN are sufficiently tested...
     #href <- "https://www.sec.gov/Archives/edgar/data/732712/000119312509036349/d10k.htm"
-    res <- test_filing("d10k.htm", 348, 5, 21)
+    res <- test_filing("d10k.htm", 348, 5, 21, is_dev = FALSE)
     expect_equal(length(unique(res[res$part.name == "PART II",
                                "item.name"])), 9)
   })
@@ -155,6 +159,7 @@ with_mock_API({
                                "item.name"])), 9)
   })
   test_that("Treats <br> as space", {
+    skip_on_cran()
     # href <- "https://www.sec.gov/Archives/edgar/data/1399855/000119312514363235/d778787d10q.htm"
     res <- test_filing("d778787d10q.htm", 267, 3, 12)
     tmp <- res[grepl("Weighted average exercise price", res$text,
@@ -162,12 +167,14 @@ with_mock_API({
     expect_equal(nrow(tmp), 1)
   })
   test_that("Handles HTML wrapped text filling", {
+    skip_on_cran()
     # href <- "https://www.sec.gov/Archives/edgar/data/1424844/000092290708000774/form10k_122308.htm"
     res <- test_filing("form10k_122308.htm", 796, 4, 19)
     expect_equal(length(unique(res[res$part.name == "PART II",
                                "item.name"])), 8)
   })
   test_that("Handles deeply nested HTML filings from EDGARizer 4.0.7.0", {
+    skip_on_cran()
     # href <- "https://www.sec.gov/Archives/edgar/data/1065648/000106564809000009/form_10k.htm"
     res <- test_filing("form_10k.htm", 796, 6, 22)
     expect_equal(length(unique(res[res$part.name == "PART II",

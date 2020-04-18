@@ -28,8 +28,9 @@ with_mock_API({
     expect_length(grep("</TEXT>", res$text), 0)
   })
   test_that("WMX Technologies", {
+    skip_on_cran()
     #href <- "https://www.sec.gov/Archives/edgar/data/104938/0000950131-94-000440.txt"
-    submission_file <- file.path("..", "testdata", "0000950131-94-000440.txt")
+    submission_file <- file.path("..", "testdata", "dev", "0000950131-94-000440.txt")
     submission <- parse_submission(submission_file)
     expect_equal(nrow(submission), 8)
     doc <- submission[submission$TYPE == "10-K", "TEXT"]

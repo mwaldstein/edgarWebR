@@ -21,6 +21,7 @@ Makefile
 ^README-.*\.png$
 ^revdep
 ^tests/dev_test
+^tests/testdata/dev
 ^data-raw$
 ^_pkgdown\.yml$
 ^CRAN-RELEASE$
