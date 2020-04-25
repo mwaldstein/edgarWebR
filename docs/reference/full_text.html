@@ -223,72 +223,72 @@ specify `from`</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                             name
-#&gt; 1   2020-04-17                 INFORMATION TABLE of 13F-HR for CENTRAL TRUST Co
-#&gt; 2   2020-04-17                                        DEF 14A for USA TRUCK INC
-#&gt; 3   2020-04-17                    485BPOS for WILSHIRE VARIABLE INSURANCE TRUST
-#&gt; 4   2020-04-17     INFORMATION TABLE of 13F-HR for NISA INVESTMENT ADVISORS LLC
-#&gt; 5   2020-04-17 INFORMATION TABLE of 13F-HR for Bremer Bank National Association
-#&gt; 6   2020-04-17          INFORMATION TABLE of 13F-HR for DnB Asset Management AS
-#&gt; 7   2020-04-17        INFORMATION TABLE of 13F-HR for JCIC Asset Management Inc
-#&gt; 8   2020-04-17  INFORMATION TABLE of 13F-HR for Endurance Wealth Management Inc
-#&gt; 9   2020-04-17                          DEF 14A for ROYAL CARIBBEAN CRUISES LTD
-#&gt; 10  2020-04-17  INFORMATION TABLE of 13F-HR for MARCO INVESTMENT MANAGEMENT LLC
-#&gt;                                                                                                      href
-#&gt; 1          https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/xslForm13F_X01/MAR202013F.xml
-#&gt; 2              https://www.sec.gov/Archives/edgar/data/883945/000088394520000016/usak-20200417xdef14a.htm
-#&gt; 3           https://www.sec.gov/Archives/edgar/data/1026708/000089418920002786/wilshirevitcombineddoc.htm
-#&gt; 4        https://www.sec.gov/Archives/edgar/data/937615/000093761520000005/xslForm13F_X01/13F03312020.xml
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1775321/000095012320003400/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1456670/000095012320003408/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1492040/000095012320003437/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 8  https://www.sec.gov/Archives/edgar/data/1476225/000095012320003447/xslForm13F_X01/form13fInfoTable.xml
-#&gt; 9                   https://www.sec.gov/Archives/edgar/data/884887/000104746920002406/a2241308zdef14a.htm
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/1080493/000106299320001836/xslForm13F_X01/form13fInfoTable.xml
-#&gt;                         company_name     cik  sic
-#&gt; 1                   CENTRAL TRUST Co   44365 &lt;NA&gt;
-#&gt; 2                      USA TRUCK INC  883945 4213
-#&gt; 3  WILSHIRE VARIABLE INSURANCE TRUST 1026708 &lt;NA&gt;
-#&gt; 4       NISA INVESTMENT ADVISORS LLC  937615 &lt;NA&gt;
-#&gt; 5   Bremer Bank National Association 1775321 &lt;NA&gt;
-#&gt; 6            DnB Asset Management AS 1456670 &lt;NA&gt;
-#&gt; 7          JCIC Asset Management Inc 1492040 &lt;NA&gt;
-#&gt; 8    Endurance Wealth Management Inc 1476225 &lt;NA&gt;
-#&gt; 9        ROYAL CARIBBEAN CRUISES LTD  884887 4400
-#&gt; 10   MARCO INVESTMENT MANAGEMENT LLC 1080493 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                        content
-#&gt; 1                                                                                                                                                                                                                                                                                                             
-#&gt; 2                                               UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 SCHEDULE 14A Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 Filed by the Registrant Filed by a Party other than the Registrant Check the appropriate
-#&gt; 3      As filed with the Securities and Exchange Commission on April 17, 2020 1933 Act Registration File No. 333-15881 1940 Act File No. 811-07917 SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-1A REGISTRATION STATEMENT UNDER THE SECURITIES ACT OF 1933 [X] Pre-Effective Amendment No.
-#&gt; 4  AAON INC COM 000360206 14 300 SH SOLE 300 0 0 AAR CORP COM 000361105 6 345 SH SOLE 345 0 0 ACCO BRANDS CORP COM 00081T108 8 1570 SH SOLE 1570 0 0 ABM INDS INC COM 000957100 59 2430 SH SOLE 2430 0 0 AFLAC INC COM 001055102 10883 317849 SH OTR 01 317789 0 60 AGCO CORP COM 001084102 1465 31010 SH SOLE
-#&gt; 5                                                                                                                                                                                                                                                                                    3M Co COM 88579Y101 2983 
-#&gt; 6                                                                                                                                                                                                                                                            Elanco Animal Health Inc common 28414H103 1153779
-#&gt; 7                                                                                                                                                                                                                                                                   ISHARES TR CORE US AGGBD ET 464287226 136 
-#&gt; 8                                                                                                                                                                                                                                                                               3M CO COM Stock 88579Y101 501 
-#&gt; 9        UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 SCHEDULE 14A Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 Filed by the Registrant Filed by a Party other than the Registrant o Check the appropriate box: o Preliminary Proxy Statement o
-#&gt; 10     AFLAC INC COM 001055102 3456 100930 SH SOLE 0 0 0 AGCO CORP COM 001084102 898 19000 SH SOLE 0 0 0 AT&amp;T INC COM 00206R102 1714 58809 SH SOLE 0 0 0 ABBOTT LABS COM 002824100 5988 75886 SH SOLE 0 0 0 ABBVIE INC COM 00287Y109 6280 82427 SH SOLE 0 0 0 ACCENTURE PLC IRELAND SHS CLASS A G1151C101 2094
-#&gt;                                                                                          parent_href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/xslForm13F_X01/primary_doc.xml
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1456670/000095012320003408/xslForm13F_X01/primary_doc.xml
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1492040/000095012320003437/xslForm13F_X01/primary_doc.xml
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1476225/000095012320003447/xslForm13F_X01/primary_doc.xml
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1080493/000106299320001836/xslForm13F_X01/primary_doc.xml
-#&gt; 8    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/xslForm13F_X01/primary_doc.xml
-#&gt; 9                                                                                               &lt;NA&gt;
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/1775321/000095012320003400/xslForm13F_X01/primary_doc.xml
-#&gt;                                                                                           index_href
-#&gt; 1    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/0000044365-20-000002-index.htm
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/1456670/000095012320003408/0000950123-20-003408-index.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/1492040/000095012320003437/0000950123-20-003437-index.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/1476225/000095012320003447/0000950123-20-003447-index.htm
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1080493/000106299320001836/0001062993-20-001836-index.htm
-#&gt; 8    https://www.sec.gov/Archives/edgar/data/44365/000004436520000002/0000044365-20-000002-index.htm
-#&gt; 9                                                                                               &lt;NA&gt;
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/1775321/000095012320003400/0000950123-20-003400-index.htm</div><div class='input'># }
+<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                        name
+#&gt; 1   2020-04-24 INFORMATION TABLE of 13F-HR for ARGUS INVESTORS COUNSEL INC
+#&gt; 2   2020-04-24                                         10-Q for INTEL CORP
+#&gt; 3   2020-04-24                              EX-31.1 of 10-Q for INTEL CORP
+#&gt; 4   2020-04-24                              EX-31.2 of 10-Q for INTEL CORP
+#&gt; 5   2020-04-24                              EX-32.1 of 10-Q for INTEL CORP
+#&gt; 6   2020-04-24                              EX-10.1 of 10-Q for INTEL CORP
+#&gt; 7   2020-04-24                              EX-10.3 of 10-Q for INTEL CORP
+#&gt; 8   2020-04-24                                  XML of 10-Q for INTEL CORP
+#&gt; 9   2020-04-24                                  XML of 10-Q for INTEL CORP
+#&gt; 10  2020-04-24                                  XML of 10-Q for INTEL CORP
+#&gt;                                                                                           href
+#&gt; 1  https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/xslForm13F_X01/inftable.xml
+#&gt; 2  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 3      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020ex311-use.htm
+#&gt; 4      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020ex312-use.htm
+#&gt; 5      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020ex321-use.htm
+#&gt; 6       https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020q1-ex101.htm
+#&gt; 7       https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020q1-ex103.htm
+#&gt; 8           https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/FilingSummary.xml
+#&gt; 9                      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/R1.htm
+#&gt; 10                    https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/R10.htm
+#&gt;                   company_name   cik  sic
+#&gt; 1  ARGUS INVESTORS COUNSEL INC  7195 &lt;NA&gt;
+#&gt; 2                   INTEL CORP 50863 3674
+#&gt; 3                   INTEL CORP 50863 3674
+#&gt; 4                   INTEL CORP 50863 3674
+#&gt; 5                   INTEL CORP 50863 3674
+#&gt; 6                   INTEL CORP 50863 3674
+#&gt; 7                   INTEL CORP 50863 3674
+#&gt; 8                   INTEL CORP 50863 3674
+#&gt; 9                   INTEL CORP 50863 3674
+#&gt; 10                  INTEL CORP 50863 3674
+#&gt;                                                                                                                                                                                                                                                                                                       content
+#&gt; 1  3M Co COM 88579Y101 3145 23040 SH SOLE 17140 0 5900 Adobe Inc COM 00724F101 4215 13245 SH SOLE 9195 0 4050 Air Prods &amp; Chems Inc COM 009158106 3457 17320 SH SOLE 13250 0 4070 Alphabet Inc COM 02079K305 4128 3553 SH SOLE 2420 0 1133 Amazon.com Inc COM 023135106 4751 2437 SH SOLE 1617 0 820 American
+#&gt; 2   Document false -12-26 Q1 2020 2020-03-28 0000050863 73321000000 75686000000 0.63 0.66 4290000000 4234000000 4290000000 4234000000 0.0035 0.0008 0.0270 0.0240 0.0373 0.0245 0.0325 0.0410 0.0480 0.0400 0.0310 0.0270 0.0288 0.0410 0.0315 0.0325 0.0245 0.0330 0.0490 0.0370 0.0270 0.0235 0.0170 0.0410
+#&gt; 3                                                                                                                                                                                                                                 I have reviewed this quarterly report on Form 10-Q of Intel Corporation; 2.
+#&gt; 4                                                                                                                                                                                                                                 I have reviewed this quarterly report on Form 10-Q of Intel Corporation; 2.
+#&gt; 5        This written statement is being furnished to the Securities and Exchange Commission as an exhibit to such Form 10-Q. A signed original of this statement has been provided to Intel and will be retained by Intel and furnished to the Securities and Exchange Commission or its staff upon request.
+#&gt; 6                                                                                                                                                                                           Those components, as explained below in this Section 4 are: (i) the Intel Relative TSR and (ii) Intel EPS Growth.
+#&gt; 7                                                         Exhibit 10.3 INTEL CORPORATION SHELTERED EMPLOYEE RETIREMENT PLAN PLUS (As Amended and Restated Effective January 1, 2020) INTEL CORPORATION SHELTERED EMPLOYEE RETIREMENT PLAN PLUS (As Amended and Restated Effective January 1, 2020) SECTION 1.
+#&gt; 8                          3.20.1 html 381 319 1 false 104 0 false 5 false false R1.htm 0001000 - Document - Cover Page Cover Page Sheet http:/www.intel.com/role/CoverPageCoverPage Cover Page Cover Page Cover 1 false false R2.htm 1001000 - Statement - Consolidated Condensed Statements of Income Sheet
+#&gt; 9       v3.20.1 Cover Page Cover Page shares in Millions 3 Months Ended Mar. 28, 2020 shares 10-Q true false Mar. 28, 2020 000-06217 INTEL CORPORATION 0000050863 -12-26 2020 Q1 false DE 94-1672743 2200 Mission College Boulevard, Santa Clara, CA 95054-1549 (408) 765-8080 Common stock, $0.001 par value
+#&gt; 10                                                                                                                                                                                          Except for these differences, the accounting policies for segment reporting are the same as for Intel as a whole.
+#&gt;                                                                                       parent_href
+#&gt; 1  https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/xslForm13F_X01/primary_doc.xml
+#&gt; 2                                                                                            &lt;NA&gt;
+#&gt; 3     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 4     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 5     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 6     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 7     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 8     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 9     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
+#&gt; 10 https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/xslForm13F_X01/primary_doc.xml
+#&gt;                                                                                         index_href
+#&gt; 1   https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/0000007195-20-000002-index.htm
+#&gt; 2                                                                                             &lt;NA&gt;
+#&gt; 3  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 4  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 5  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 7  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 8  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 9  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
+#&gt; 10  https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/0000007195-20-000002-index.htm</div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

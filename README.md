@@ -5,8 +5,6 @@
 
 ## NOTES:
 
-  - A recent release of `xml2` has broken this package - until a fix is
-    released, please make sure to use a version *prior* to v1.3.0
   - A bug was encountered on the Solaris CRAN checks which led to the
     package being removed from CRAN. I’m working on a fix, but not
     having access to the platform makes testing challenging.
