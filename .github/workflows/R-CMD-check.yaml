@@ -94,7 +94,7 @@ jobs:
 
       - name: Check (Windows)
         if: runner.os == 'Windows'
-        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--no-build-vignettes"), error_on = "warning", check_dir = "check")
+        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--no-build-vignettes"), build_args = c("--no-build-vignettes"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
 
       - name: Show testthat output
