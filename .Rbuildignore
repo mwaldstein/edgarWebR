@@ -27,3 +27,4 @@ Makefile
 ^CRAN-RELEASE$
 ^\.gitpod.yml
 ^\.gitpod.Dockerfile
+^\.github$
