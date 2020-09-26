@@ -5,6 +5,7 @@
 Makefile
 ^\.\.Rcheck
 ^\.gitignore
+^\.gitattributes
 ^\.lintr
 ^vignettes/*.html
 ^vignettes/.*cache

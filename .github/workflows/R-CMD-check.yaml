@@ -42,11 +42,6 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: Set git to use LF
-        run: |
-          git config --global core.autocrlf false
-          git config --global core.eol lf
-
       - uses: actions/checkout@v2
 
       - uses: r-lib/actions/setup-r@master
@@ -93,14 +88,8 @@ jobs:
         shell: Rscript {0}
 
       - name: Check
-        # if: runner.os != 'Windows'
         run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
-
-        # - name: Check (Windows)
-        #   if: runner.os == 'Windows'
-        #   run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--no-build-vignettes"), build_args = c("--no-build-vignettes"), error_on = "warning", check_dir = "check")
-        #   shell: Rscript {0}
 
       - name: Show testthat output
         if: always()
