@@ -79,7 +79,9 @@ from dplyr and purrr to make things a bit easier.
 # this can take a while - we're fetching ~100 html files!
 filing_infos <- map_df(filings$href, filing_information)
 
-filings <- bind_cols(filings, filing_infos)
+filings <- bind_cols(
+                     filings[, !(names(filings) %in% names(filing_infos))],
+                     filing_infos)
 filings$filing_delay <- filings$filing_date - filings$period_date
 
 # Take a peak at the data
