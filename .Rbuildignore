@@ -25,3 +25,5 @@ Makefile
 ^data-raw$
 ^_pkgdown\.yml$
 ^CRAN-RELEASE$
+^\.gitpod.yml
+^\.gitpod.Dockerfile
