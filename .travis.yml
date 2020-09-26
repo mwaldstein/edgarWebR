@@ -26,5 +26,4 @@ before_install:
 
 after_success:
   - Rscript -e 'covr::codecov()'
-  - make test-nocache
   - Rscript -e 'lintr::lint_package()'
