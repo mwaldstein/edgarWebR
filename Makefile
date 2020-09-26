@@ -10,7 +10,7 @@ TGZVNR  := $(PKGSRC)_$(PKGVERS)-vignettes-not-rebuilt.tar.gz
 # containing the first instance of R on the PATH.
 RBIN ?= $(shell dirname "`which R`")
 
-all: version doc build
+all: doc build
 .PHONY: doc clean build vignettes check revdep data
 
 # build package documentation
@@ -68,7 +68,7 @@ install:
 check: build
 	cd ..;R CMD check $(TGZ)
 
-cran-check: version doc build
+cran-check: doc build
 	cd ..;R CMD check --as-cran $(TGZ)
 
 live-test:
@@ -86,13 +86,6 @@ site: doc-all
 
 readme:
 	Rscript -e 'rmarkdown::render("README.Rmd")'
-
-# Makes reading builds easier on appveyor and travis
-version:
-	sed "s/^version:.*/version: '$(PKGVERS).{build}'/" appveyor.yml > appveyor.tmp
-	mv appveyor.tmp appveyor.yml
-	sed "s/^  - PACKAGE.*/  - PACKAGE_VERSION=\"$(PKGVERS)\"/" .travis.yml > travis.tmp
-	mv travis.tmp .travis.yml
 
 ubuntu-deps:
 	apt-get install texlive-latex-base texlive-fonts-extra

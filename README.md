@@ -10,10 +10,7 @@
     having access to the platform makes testing challenging.
 
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/edgarWebR)](https://cran.r-project.org/package=edgarWebR)
-[![Travis-CI Build
-Status](https://travis-ci.org/mwaldstein/edgarWebR.svg?branch=master)](https://travis-ci.org/mwaldstein/edgarWebR)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/mwaldstein/edgarWebR?branch=master&svg=true)](https://ci.appveyor.com/project/mwaldstein/edgarWebR)
+![R-CMD-check](https://github.com/mwaldstein/edgarWebR/workflows/R-CMD-check/badge.svg)
 [![codecov.io](https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master)](https://codecov.io/github/mwaldstein/edgarWebR?branch=master)
 
   - Author/Maintainer: [Micah J Waldstein](https://micah.waldste.in)
