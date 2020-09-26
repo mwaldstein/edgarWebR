@@ -25,6 +25,7 @@ expect_similar_wc <- function(content, res) {
 
 test_filing <- function(file.name, rows, parts, items, is_dev = TRUE) {
   if (is_dev) {
+    skip_on_cran()
     test.file <- file.path("..", "testdata", "dev", file.name)
   } else {
     test.file <- file.path("..", "testdata", file.name)
