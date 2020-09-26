@@ -74,7 +74,7 @@ here" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -139,9 +139,9 @@ search tool available
 <a href='https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html'>here</a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>variable_insurance_search</span>(<span class='no'>term</span>)
+    <pre class="usage"><span class='fu'>variable_insurance_search</span><span class='op'>(</span><span class='va'>term</span><span class='op'>)</span>
 
-<span class='fu'>variable_insurance_fast_search</span>(<span class='no'>identifier</span>)</pre>
+<span class='fu'>variable_insurance_fast_search</span><span class='op'>(</span><span class='va'>identifier</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -182,7 +182,8 @@ search tool available
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>variable_insurance_search</span>(<span class='st'>"precious metals"</span>)</div><div class='output co'>#&gt;      class_id
+<span class='fu'>variable_insurance_search</span><span class='op'>(</span><span class='st'>"precious metals"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;      class_id
 #&gt; 1  C000000347
 #&gt; 2  C000000348
 #&gt; 3  C000000349
@@ -255,13 +256,14 @@ search tool available
 #&gt; 70 C000130162
 #&gt; 71 C000008672
 #&gt; 72 C000091158
-#&gt; 73 C000066842
-#&gt; 74 C000034879
-#&gt; 75 C000092800
-#&gt; 76 C000089457
-#&gt; 77 C000089458
-#&gt; 78 C000089459
-#&gt; 79 C000089460
+#&gt; 73 C000220623
+#&gt; 74 C000066842
+#&gt; 75 C000034879
+#&gt; 76 C000092800
+#&gt; 77 C000089457
+#&gt; 78 C000089458
+#&gt; 79 C000089459
+#&gt; 80 C000089460
 #&gt;                                                                       class_filings_href
 #&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000000347&amp;action=getcompany&amp;scd=filings
 #&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000000348&amp;action=getcompany&amp;scd=filings
@@ -335,13 +337,14 @@ search tool available
 #&gt; 70 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000130162&amp;action=getcompany&amp;scd=filings
 #&gt; 71 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000008672&amp;action=getcompany&amp;scd=filings
 #&gt; 72 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000091158&amp;action=getcompany&amp;scd=filings
-#&gt; 73 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000066842&amp;action=getcompany&amp;scd=filings
-#&gt; 74 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000034879&amp;action=getcompany&amp;scd=filings
-#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000092800&amp;action=getcompany&amp;scd=filings
-#&gt; 76 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089457&amp;action=getcompany&amp;scd=filings
-#&gt; 77 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089458&amp;action=getcompany&amp;scd=filings
-#&gt; 78 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089459&amp;action=getcompany&amp;scd=filings
-#&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089460&amp;action=getcompany&amp;scd=filings
+#&gt; 73 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000220623&amp;action=getcompany&amp;scd=filings
+#&gt; 74 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000066842&amp;action=getcompany&amp;scd=filings
+#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000034879&amp;action=getcompany&amp;scd=filings
+#&gt; 76 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000092800&amp;action=getcompany&amp;scd=filings
+#&gt; 77 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089457&amp;action=getcompany&amp;scd=filings
+#&gt; 78 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089458&amp;action=getcompany&amp;scd=filings
+#&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089459&amp;action=getcompany&amp;scd=filings
+#&gt; 80 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000089460&amp;action=getcompany&amp;scd=filings
 #&gt;                                                     class_name class_ticker
 #&gt; 1                                                      Class A        IGDAX
 #&gt; 2                                                      Class B        IGDBX
@@ -415,13 +418,14 @@ search tool available
 #&gt; 70                                  Institutional Class Shares        USEIX
 #&gt; 71                           Precious Metals and Minerals Fund        USAGX
 #&gt; 72            Precious Metals and Minerals Fund Adviser Shares        UPMMX
-#&gt; 73      Precious Metals and Minerals Fund Institutional Shares        UIPMX
-#&gt; 74                    Precious Metals and Minerals Fund Shares        USAGX
-#&gt; 75                                         Administrator Class        EKWDX
-#&gt; 76                                                     Class A        EKWAX
-#&gt; 77                                                     Class B        EKWBX
-#&gt; 78                                                     Class C        EKWCX
-#&gt; 79                                         Institutional Class        EKWYX
+#&gt; 73                   Precious Metals and Minerals Fund Class A             
+#&gt; 74      Precious Metals and Minerals Fund Institutional Shares        UIPMX
+#&gt; 75                    Precious Metals and Minerals Fund Shares        USAGX
+#&gt; 76                                         Administrator Class        EKWDX
+#&gt; 77                                                     Class A        EKWAX
+#&gt; 78                                                     Class B        EKWBX
+#&gt; 79                                                     Class C        EKWCX
+#&gt; 80                                         Institutional Class        EKWYX
 #&gt;     series_id
 #&gt; 1  S000000157
 #&gt; 2  S000000157
@@ -497,11 +501,12 @@ search tool available
 #&gt; 72 S000012910
 #&gt; 73 S000012910
 #&gt; 74 S000012910
-#&gt; 75 S000029099
+#&gt; 75 S000012910
 #&gt; 76 S000029099
 #&gt; 77 S000029099
 #&gt; 78 S000029099
 #&gt; 79 S000029099
+#&gt; 80 S000029099
 #&gt;                                                                      series_filings_href
 #&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000000157&amp;action=getcompany&amp;scd=filings
 #&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000000157&amp;action=getcompany&amp;scd=filings
@@ -577,11 +582,12 @@ search tool available
 #&gt; 72 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000012910&amp;action=getcompany&amp;scd=filings
 #&gt; 73 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000012910&amp;action=getcompany&amp;scd=filings
 #&gt; 74 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000012910&amp;action=getcompany&amp;scd=filings
-#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000029099&amp;action=getcompany&amp;scd=filings
+#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000012910&amp;action=getcompany&amp;scd=filings
 #&gt; 76 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000029099&amp;action=getcompany&amp;scd=filings
 #&gt; 77 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000029099&amp;action=getcompany&amp;scd=filings
 #&gt; 78 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000029099&amp;action=getcompany&amp;scd=filings
 #&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000029099&amp;action=getcompany&amp;scd=filings
+#&gt; 80 https://www.sec.gov/cgi-bin/browse-edgar?CIK=S000029099&amp;action=getcompany&amp;scd=filings
 #&gt;                                                    series_name
 #&gt; 1                          INVESCO Gold &amp; Precious Metals Fund
 #&gt; 2                          INVESCO Gold &amp; Precious Metals Fund
@@ -657,11 +663,12 @@ search tool available
 #&gt; 72                           Precious Metals and Minerals Fund
 #&gt; 73                           Precious Metals and Minerals Fund
 #&gt; 74                           Precious Metals and Minerals Fund
-#&gt; 75                            Wells Fargo Precious Metals Fund
+#&gt; 75                           Precious Metals and Minerals Fund
 #&gt; 76                            Wells Fargo Precious Metals Fund
 #&gt; 77                            Wells Fargo Precious Metals Fund
 #&gt; 78                            Wells Fargo Precious Metals Fund
 #&gt; 79                            Wells Fargo Precious Metals Fund
+#&gt; 80                            Wells Fargo Precious Metals Fund
 #&gt;    series_funds_href        cik
 #&gt; 1               &lt;NA&gt; 0000725781
 #&gt; 2               &lt;NA&gt; 0000725781
@@ -737,11 +744,12 @@ search tool available
 #&gt; 72              &lt;NA&gt; 0000908695
 #&gt; 73              &lt;NA&gt; 0000908695
 #&gt; 74              &lt;NA&gt; 0000908695
-#&gt; 75              &lt;NA&gt; 0001081400
+#&gt; 75              &lt;NA&gt; 0000908695
 #&gt; 76              &lt;NA&gt; 0001081400
 #&gt; 77              &lt;NA&gt; 0001081400
 #&gt; 78              &lt;NA&gt; 0001081400
 #&gt; 79              &lt;NA&gt; 0001081400
+#&gt; 80              &lt;NA&gt; 0001081400
 #&gt;                                                         cik_name
 #&gt; 1                        AIM SECTOR FUNDS (INVESCO SECTOR FUNDS)
 #&gt; 2                        AIM SECTOR FUNDS (INVESCO SECTOR FUNDS)
@@ -817,11 +825,12 @@ search tool available
 #&gt; 72                                       USAA MUTUAL FUNDS TRUST
 #&gt; 73                                       USAA MUTUAL FUNDS TRUST
 #&gt; 74                                       USAA MUTUAL FUNDS TRUST
-#&gt; 75                                       WELLS FARGO FUNDS TRUST
+#&gt; 75                                       USAA MUTUAL FUNDS TRUST
 #&gt; 76                                       WELLS FARGO FUNDS TRUST
 #&gt; 77                                       WELLS FARGO FUNDS TRUST
 #&gt; 78                                       WELLS FARGO FUNDS TRUST
 #&gt; 79                                       WELLS FARGO FUNDS TRUST
+#&gt; 80                                       WELLS FARGO FUNDS TRUST
 #&gt;                                                             cik_filings_href
 #&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000725781&amp;action=getcompany
 #&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000725781&amp;action=getcompany
@@ -897,11 +906,12 @@ search tool available
 #&gt; 72 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany
 #&gt; 73 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany
 #&gt; 74 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany
-#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany
+#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany
 #&gt; 76 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany
 #&gt; 77 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany
 #&gt; 78 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany
 #&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany
+#&gt; 80 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany
 #&gt;                                                                          cik_funds_href
 #&gt; 1  https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000725781&amp;action=getcompany&amp;scd=series
 #&gt; 2  https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000725781&amp;action=getcompany&amp;scd=series
@@ -977,11 +987,13 @@ search tool available
 #&gt; 72 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany&amp;scd=series
 #&gt; 73 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany&amp;scd=series
 #&gt; 74 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany&amp;scd=series
-#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
+#&gt; 75 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000908695&amp;action=getcompany&amp;scd=series
 #&gt; 76 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
 #&gt; 77 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
 #&gt; 78 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
-#&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series</div><div class='input'><span class='fu'>variable_insurance_fast_search</span>(<span class='st'>"VMFVX"</span>)</div><div class='output co'>#&gt;     class_id
+#&gt; 79 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series
+#&gt; 80 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001081400&amp;action=getcompany&amp;scd=series</div><div class='input'><span class='fu'>variable_insurance_fast_search</span><span class='op'>(</span><span class='st'>"VMFVX"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;     class_id
 #&gt; 1 C000092041
 #&gt;                                                                      class_filings_href
 #&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?CIK=C000092041&amp;action=getcompany&amp;scd=filings
@@ -996,7 +1008,7 @@ search tool available
 #&gt;                                                            cik_filings_href
 #&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000891190&amp;action=getcompany
 #&gt;                                                                         cik_funds_href
-#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000891190&amp;action=getcompany&amp;scd=series</div><div class='input'># }
+#&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?CIK=0000891190&amp;action=getcompany&amp;scd=series</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -1013,7 +1025,7 @@ search tool available
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

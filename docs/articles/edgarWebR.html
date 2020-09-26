@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -99,9 +99,10 @@
     
     
 <!-- ```{r setup, echo = FALSE, message = FALSE} -->
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="no"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span>$<span class="fu">set</span>(<span class="kw">collapse</span> <span class="kw">=</span> <span class="no">T</span>, <span class="kw">comment</span> <span class="kw">=</span> <span class="st">"#&gt;"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">edgarWebR</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>, <span class="kw">quietly</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>collapse <span class="op">=</span> <span class="cn">T</span>, comment <span class="op">=</span> <span class="st">"#&gt;"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mwaldstein.github.io/edgarWebR/">edgarWebR</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span>, quietly<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></pre></div>
 <pre><code>## 
 ## Attaching package: 'dplyr'</code></pre>
 <pre><code>## The following objects are masked from 'package:stats':
@@ -110,11 +111,12 @@
 <pre><code>## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">purrr</span>, <span class="kw">quietly</span><span class="kw">=</span><span class="fl">TRUE</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">0451</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://purrr.tidyverse.org">purrr</a></span>, quietly<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">0451</span><span class="op">)</span>
 <span class="co"># Cache http requests</span>
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">httptest</span>)</pre></body></html></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://enpiar.com/r/httptest">httptest</a></span><span class="op">)</span></pre></div>
 <pre><code>## Loading required package: testthat</code></pre>
 <pre><code>## 
 ## Attaching package: 'testthat'</code></pre>
@@ -124,7 +126,8 @@
 <pre><code>## The following object is masked from 'package:dplyr':
 ## 
 ##     matches</code></pre>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://enpiar.com/r/httptest/reference/start_vignette.html">start_vignette</a></span>(<span class="st">"intro"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="fu"><a href="https://enpiar.com/r/httptest/reference/start_vignette.html">start_vignette</a></span><span class="op">(</span><span class="st">"intro"</span><span class="op">)</span></pre></div>
 <pre><code>## Loading required package: curl</code></pre>
 <pre><code>## Tracing function "form_file" as seen from package "httr"</code></pre>
 <p>There are plenty of packages for R that allow for fetching and manipulation of companies’ financial data, often fetching that direct from public filings with the SEC. All of these packages have the goal of getting to the XBRL data, containing financial statements, typically in annual (10-K) or quarterly (10-Q) filings.</p>
@@ -146,23 +149,25 @@
 <h3 class="hasAnchor">
 <a href="#get-data" class="anchor"></a>Get Data</h3>
 <p>First, we’ll fetch a bunch of 10-K and 10-Q filings for our given company using <code><a href="../reference/company_filings.html">company_filings()</a></code>. To make sure we’re going far enough back we’ll take a peak at the tail of our results</p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">ticker</span> <span class="kw">&lt;-</span> <span class="st">"EA"</span>
+<div class="sourceCode" id="cb13"><pre class="downlit">
+<span class="va">ticker</span> <span class="op">&lt;-</span> <span class="st">"EA"</span>
 
-<span class="no">filings</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/company_filings.html">company_filings</a></span>(<span class="no">ticker</span>, <span class="kw">type</span> <span class="kw">=</span> <span class="st">"10-"</span>, <span class="kw">count</span> <span class="kw">=</span> <span class="fl">100</span>)
-<span class="no">initial_count</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="no">filings</span>)
+<span class="va">filings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/company_filings.html">company_filings</a></span><span class="op">(</span><span class="va">ticker</span>, type <span class="op">=</span> <span class="st">"10-"</span>, count <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>
+<span class="va">initial_count</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">filings</span><span class="op">)</span>
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
 <span class="co"># manually filter.</span>
-<span class="no">filings</span> <span class="kw">&lt;-</span> <span class="no">filings</span>[<span class="no">filings</span>$<span class="no">type</span> <span class="kw">==</span> <span class="st">"10-K"</span> <span class="kw">|</span> <span class="no">filings</span>$<span class="no">type</span> <span class="kw">==</span> <span class="st">"10-Q"</span>, ]</pre></body></html></div>
+<span class="va">filings</span> <span class="op">&lt;-</span> <span class="va">filings</span><span class="op">[</span><span class="va">filings</span><span class="op">$</span><span class="va">type</span> <span class="op">==</span> <span class="st">"10-K"</span> <span class="op">|</span> <span class="va">filings</span><span class="op">$</span><span class="va">type</span> <span class="op">==</span> <span class="st">"10-Q"</span>, <span class="op">]</span></pre></div>
 <p>Note that explicitly filtering caused us to go from 100 to 97 rows.</p>
-<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="no">filings</span>$<span class="no">md_href</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"[Link]("</span>, <span class="no">filings</span>$<span class="no">href</span>, <span class="st">")"</span>)
-<span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span>(<span class="no">filings</span>)[, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
-                               <span class="st">"md_href"</span>)],
-             <span class="kw">col.names</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span>),
-             <span class="kw">digits</span> <span class="kw">=</span> <span class="fl">2</span>,
-             <span class="kw">format.args</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">big.mark</span> <span class="kw">=</span> <span class="st">","</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb14"><pre class="downlit">
+<span class="va">filings</span><span class="op">$</span><span class="va">md_href</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"[Link]("</span>, <span class="va">filings</span><span class="op">$</span><span class="va">href</span>, <span class="st">")"</span><span class="op">)</span>
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">filings</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"type"</span>, <span class="st">"filing_date"</span>, <span class="st">"accession_number"</span>, <span class="st">"size"</span>,
+                               <span class="st">"md_href"</span><span class="op">)</span><span class="op">]</span>,
+             col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span><span class="op">)</span>,
+             digits <span class="op">=</span> <span class="fl">2</span>,
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Type</th>
 <th align="left">Filing Date</th>
 <th align="left">Accession No.</th>
@@ -171,7 +176,7 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>95</td>
+<td align="left">95</td>
 <td align="left">10-Q</td>
 <td align="left">1997-02-14</td>
 <td align="left">0000950005-97-000277</td>
@@ -179,7 +184,7 @@
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000950005-97-000277-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>96</td>
+<td align="left">96</td>
 <td align="left">10-Q</td>
 <td align="left">1996-11-14</td>
 <td align="left">0000950005-96-000920</td>
@@ -187,7 +192,7 @@
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000950005-96-000920-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>97</td>
+<td align="left">97</td>
 <td align="left">10-Q</td>
 <td align="left">1996-08-14</td>
 <td align="left">0000950005-96-000615</td>
@@ -195,7 +200,7 @@
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000950005-96-000615-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>98</td>
+<td align="left">98</td>
 <td align="left">10-K</td>
 <td align="left">1996-07-01</td>
 <td align="left">0000912057-96-013563</td>
@@ -203,7 +208,7 @@
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-013563-index.html">Link</a></td>
 </tr>
 <tr class="odd">
-<td>99</td>
+<td align="left">99</td>
 <td align="left">10-Q</td>
 <td align="left">1996-02-14</td>
 <td align="left">0000912057-96-002551</td>
@@ -211,7 +216,7 @@
 <td align="left"><a href="https://www.sec.gov/Archives/edgar/data/712515/0000912057-96-002551-index.html">Link</a></td>
 </tr>
 <tr class="even">
-<td>100</td>
+<td align="left">100</td>
 <td align="left">10-Q</td>
 <td align="left">1995-11-14</td>
 <td align="left">0000912057-95-009843</td>
@@ -222,20 +227,23 @@
 </table>
 <p>We’ve received filings dating back to 1995 which seems good enough for our purposes, so next we’ll get the filing information for each filing.</p>
 <p>So far we’ve done everything in base R, but now we’ll use some useful functions from dplyr and purrr to make things a bit easier.</p>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="co"># this can take a while - we're fetching ~100 html files!</span>
-<span class="no">filing_infos</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span>(<span class="no">filings</span>$<span class="no">href</span>, <span class="no">filing_information</span>)
+<div class="sourceCode" id="cb15"><pre class="downlit">
+<span class="co"># this can take a while - we're fetching ~100 html files!</span>
+<span class="va">filing_infos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span><span class="op">(</span><span class="va">filings</span><span class="op">$</span><span class="va">href</span>, <span class="va">filing_information</span><span class="op">)</span>
 
-<span class="no">filings</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_cols</a></span>(<span class="no">filings</span>, <span class="no">filing_infos</span>)
-<span class="no">filings</span>$<span class="no">filing_delay</span> <span class="kw">&lt;-</span> <span class="no">filings</span>$<span class="no">filing_date</span> - <span class="no">filings</span>$<span class="no">period_date</span>
+<span class="va">filings</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_cols</a></span><span class="op">(</span>
+                     <span class="va">filings</span><span class="op">[</span>, <span class="op">!</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">filings</span><span class="op">)</span> <span class="op">%in%</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">filing_infos</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>,
+                     <span class="va">filing_infos</span><span class="op">)</span>
+<span class="va">filings</span><span class="op">$</span><span class="va">filing_delay</span> <span class="op">&lt;-</span> <span class="va">filings</span><span class="op">$</span><span class="va">filing_date</span> <span class="op">-</span> <span class="va">filings</span><span class="op">$</span><span class="va">period_date</span>
 
 <span class="co"># Take a peak at the data</span>
-<span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">filings</span>) <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">type</span>, <span class="no">filing_date</span>, <span class="no">period_date</span>,
-                                      <span class="no">filing_delay</span>, <span class="no">documents</span>, <span class="no">bytes</span>) <span class="kw">%&gt;%</span>
-             <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">filing_delay</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">filing_delay</span>)),
-             <span class="kw">col.names</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Period Date"</span>, <span class="st">"Delay"</span>,
-                           <span class="st">"Documents"</span>, <span class="st">"Size (B)"</span>),
-             <span class="kw">digits</span> <span class="kw">=</span> <span class="fl">2</span>,
-             <span class="kw">format.args</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">big.mark</span> <span class="kw">=</span> <span class="st">","</span>))</pre></body></html></div>
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">filings</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">type</span>, <span class="va">filing_date</span>, <span class="va">period_date</span>,
+                                      <span class="va">filing_delay</span>, <span class="va">documents</span>, <span class="va">bytes</span><span class="op">)</span> <span class="op">%&gt;%</span>
+             <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>filing_delay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">filing_delay</span><span class="op">)</span><span class="op">)</span>,
+             col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Period Date"</span>, <span class="st">"Delay"</span>,
+                           <span class="st">"Documents"</span>, <span class="st">"Size (B)"</span><span class="op">)</span>,
+             digits <span class="op">=</span> <span class="fl">2</span>,
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Type</th>
@@ -301,18 +309,20 @@
 <h3 class="hasAnchor">
 <a href="#basic-analysis" class="anchor"></a>Basic Analysis</h3>
 <p>Now our data is arranged, we can run some summary statistics and plot using ggplot2.</p>
-<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="no">filings</span> <span class="kw">%&gt;%</span>
-             <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(<span class="no">type</span>) <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(
-               <span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/n.html">n</a></span>(),
-               <span class="kw">avg_delay</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="no">filing_delay</span>)),
-               <span class="kw">median_delay</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span>(<span class="no">filing_delay</span>)),
-               <span class="kw">avg_size</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="no">bytes</span> / <span class="fl">1024</span>),
-               <span class="kw">avg_docs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="no">documents</span>)
-             ),
-             <span class="kw">col.names</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Type"</span>, <span class="st">"Count"</span>, <span class="st">"Avg. Delay"</span>, <span class="st">"Median Delay"</span>,
-                           <span class="st">"Avg. Size"</span>, <span class="st">"Avg. Docs"</span>),
-             <span class="kw">digits</span> <span class="kw">=</span> <span class="fl">2</span>,
-             <span class="kw">format.args</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">big.mark</span> <span class="kw">=</span> <span class="st">","</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb16"><pre class="downlit">
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">filings</span> <span class="op">%&gt;%</span>
+             <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>
+               n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,
+               avg_delay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">filing_delay</span><span class="op">)</span><span class="op">)</span>,
+               median_delay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">filing_delay</span><span class="op">)</span><span class="op">)</span>,
+               avg_size <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">bytes</span> <span class="op">/</span> <span class="fl">1024</span><span class="op">)</span>,
+               avg_docs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">documents</span><span class="op">)</span>
+             <span class="op">)</span>,
+             col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Type"</span>, <span class="st">"Count"</span>, <span class="st">"Avg. Delay"</span>, <span class="st">"Median Delay"</span>,
+                           <span class="st">"Avg. Size"</span>, <span class="st">"Avg. Docs"</span><span class="op">)</span>,
+             digits <span class="op">=</span> <span class="fl">2</span>,
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; `summarise()` ungrouping output (override with `.groups` argument)</span></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Type</th>
@@ -342,22 +352,25 @@
 </tbody>
 </table>
 <p>No surprise, yearly filings (10-K’s) are larger and take more time than quarterly filings (10-K’s). Lets see how the times are distributed:</p>
-<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">filings</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">type</span>), <span class="kw">y</span> <span class="kw">=</span> <span class="no">filing_delay</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span>() + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span>(<span class="kw">height</span> <span class="kw">=</span> <span class="fl">0</span>, <span class="kw">width</span> <span class="kw">=</span> <span class="fl">0.1</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Filing Date"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Filing delay (days)"</span>)
-<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></pre></body></html></div>
+<div class="sourceCode" id="cb17"><pre class="downlit">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">filings</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">type</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">filing_delay</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span>height <span class="op">=</span> <span class="fl">0</span>, width <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Filing Date"</span>, y <span class="op">=</span> <span class="st">"Filing delay (days)"</span><span class="op">)</span>
+<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotDelay-1.png" width="576"></p>
 <p>We can also examine how the filing delay has changed over time:</p>
-<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">filings</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">filing_date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">filing_delay</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">type</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">type</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Filing Type"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Filing delay (days)"</span>)
-<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></pre></body></html></div>
+<div class="sourceCode" id="cb18"><pre class="downlit">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">filings</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">filing_date</span>, y <span class="op">=</span> <span class="va">filing_delay</span>, group <span class="op">=</span> <span class="va">type</span>, color <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Filing Type"</span>, y <span class="op">=</span> <span class="st">"Filing delay (days)"</span><span class="op">)</span>
+<span class="co">#&gt; Don't know how to automatically pick scale for object of type difftime. Defaulting to continuous.</span></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotType-1.png" width="576"></p>
 <p>Whether because of some internal change or change to SEC rules, the time between the end of the fiscal year and the 10-K has dropped quite a bit, though there is still a bit of variation.</p>
 <p>An interesting extension would be to compare the filing delays to the company’s stock price, overall market performance and other companies to see if there are particular drivers to the pattern.</p>
-<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">filings</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">filing_date</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">bytes</span> / <span class="fl">1024</span>, <span class="kw">group</span> <span class="kw">=</span> <span class="no">type</span>, <span class="kw">color</span> <span class="kw">=</span> <span class="no">type</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() + <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Filing Type"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Filing Size (KB)"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb19"><pre class="downlit">
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">filings</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">filing_date</span>, y <span class="op">=</span> <span class="va">bytes</span> <span class="op">/</span> <span class="fl">1024</span>, group <span class="op">=</span> <span class="va">type</span>, color <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Filing Type"</span>, y <span class="op">=</span> <span class="st">"Filing Size (KB)"</span><span class="op">)</span></pre></div>
 <p><img src="edgarWebR_files/figure-html/plotSize-1.png" width="576"></p>
 <p>The jump in size ~2010 is the requirement for inclusion of financial datafiles starting, but there is still interesting variations.</p>
 </div>
@@ -371,10 +384,12 @@
 <h2 class="hasAnchor">
 <a href="#how-to-download" class="anchor"></a>How to Download</h2>
 <p>edgarWebR is available from CRAN, so can be simply installed via</p>
-<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"edgarWebR"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb20"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"edgarWebR"</span><span class="op">)</span></pre></div>
 <p>If you want the latest and greatest, you can get a copy of the development version from github by using devtools:</p>
-<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"mwaldstein/edgarWebR"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb21"><pre class="downlit">
+<span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mwaldstein/edgarWebR"</span><span class="op">)</span></pre></div>
 </div>
   </div>
 
@@ -393,7 +408,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

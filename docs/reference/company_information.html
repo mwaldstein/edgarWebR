@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@
     <p>Fetches basic information on a given company from the SEC site</p>
     </div>
 
-    <pre class="usage"><span class='fu'>company_information</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>company_information</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,7 +153,8 @@ code</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>company_information</span>(<span class='st'>"INTC"</span>)</div><div class='output co'>#&gt;         name        cik fiscal_year_end
+<span class='fu'>company_information</span><span class='op'>(</span><span class='st'>"INTC"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;         name        cik fiscal_year_end
 #&gt; 1 INTEL CORP 0000050863            1228
 #&gt;                                                                                       company_href
 #&gt; 1 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000050863&amp;owner=exclude&amp;count=40
@@ -164,7 +165,7 @@ code</p></td>
 #&gt;   mailing_street2 business_city business_state business_zip
 #&gt; 1       RNB-4-151   SANTA CLARA             CA        95054
 #&gt;             business_street business_street2 business_phone
-#&gt; 1 2200 MISSION COLLEGE BLVD        RNB-4-151     4087658080</div><div class='input'># }
+#&gt; 1 2200 MISSION COLLEGE BLVD        RNB-4-151     4087658080</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -181,7 +182,7 @@ code</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

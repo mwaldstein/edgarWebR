@@ -1,14 +1,14 @@
 Package: edgarWebR
 Title: SEC Filings Access
 Description: A set of methods to access and parse live filing information from the
-    U.S. Securities and Exchange Commission (SEC - <https://sec.gov>) including
+    U.S. Securities and Exchange Commission (SEC - <https://www.sec.gov/>) including
     company and fund filings along with all associated metadata.
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: c(
     person(c("Micah", "J"), "Waldstein", email = "micah@waldste.in", role = c("aut", "cre"))
     )
 Maintainer: Micah J Waldstein <micah@waldste.in>
-Date: 2020-01-20
+Date: 2020-09-26
 Depends:
     R (>= 3.4.0)
 Imports:
@@ -33,6 +33,6 @@ VignetteBuilder: knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
-URL: https://mwaldstein.github.io/edgarWebR, https://github.com/mwaldstein/edgarWebR
+RoxygenNote: 7.1.1
+URL: https://mwaldstein.github.io/edgarWebR/, https://github.com/mwaldstein/edgarWebR
 BugReports: https://github.com/mwaldstein/edgarWebR/issues

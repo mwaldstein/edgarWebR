@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -135,14 +135,14 @@
     <p>SEC Company Filings</p>
     </div>
 
-    <pre class="usage"><span class='fu'>company_filings</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>ownership</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>before</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>40</span>,
-  <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>
-)</pre>
+    <pre class="usage"><span class='fu'>company_filings</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  ownership <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  type <span class='op'>=</span> <span class='st'>""</span>,
+  before <span class='op'>=</span> <span class='st'>""</span>,
+  count <span class='op'>=</span> <span class='fl'>40</span>,
+  page <span class='op'>=</span> <span class='fl'>1</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -183,47 +183,48 @@ you only get the type you want, best practice would be to filter the results.</p
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>company_filings</span>(<span class='st'>"AAPL"</span>, <span class='kw'>before</span> <span class='kw'>=</span> <span class='st'>"20170810"</span>)</div><div class='output co'>#&gt;        accession_number act file_number filing_date accepted_date
-#&gt; 1  0000320193-17-000009  34   001-36743  2017-08-02    2017-08-02
-#&gt; 2  0000320193-17-000006  34   001-36743  2017-08-01    2017-08-01
-#&gt; 3  0001193125-17-208226  34   001-36743  2017-06-20    2017-06-20
-#&gt; 4  0001193125-17-203548  33  333-210983  2017-06-14    2017-06-14
-#&gt; 5  0001193125-17-202772  34  333-210983  2017-06-14    2017-06-13
-#&gt; 6  0001193125-17-201958  33  333-210983  2017-06-13    2017-06-13
-#&gt; 7  9999999997-17-006550  34   001-36743  2017-05-25    2017-05-25
-#&gt; 8  0001193125-17-181871  34   001-36743  2017-05-24    2017-05-24
-#&gt; 9  0001193125-17-181867  34   001-36743  2017-05-24    2017-05-24
-#&gt; 10 0001193125-17-175330  33  333-210983  2017-05-18    2017-05-18
-#&gt; 11 0001193125-17-173678  34  333-210983  2017-05-17    2017-05-17
-#&gt; 12 0001193125-17-172693  33  333-210983  2017-05-17    2017-05-17
-#&gt; 13 0001193125-17-167400  34   001-36743  2017-05-11    2017-05-11
-#&gt; 14 0001193125-17-160948  33  333-210983  2017-05-05    2017-05-05
-#&gt; 15 0001193125-17-159397  34   001-36743  2017-05-05    2017-05-05
-#&gt; 16 0001193125-17-159324  34  333-210983  2017-05-05    2017-05-04
-#&gt; 17 0001193125-17-157385  33  333-210983  2017-05-04    2017-05-04
-#&gt; 18 0001628280-17-004790  34   001-36743  2017-05-03    2017-05-03
-#&gt; 19 0001628280-17-004663  34   001-36743  2017-05-02    2017-05-02
-#&gt; 20 0001193125-17-069853  34   001-36743  2017-03-03    2017-03-03
-#&gt; 21 0001193125-17-064019  34   001-36743  2017-03-01    2017-03-01
-#&gt; 22 0001193125-17-044564  33  333-210983  2017-02-15    2017-02-15
-#&gt; 23 0001193125-17-042083  34  333-210983  2017-02-14    2017-02-14
-#&gt; 24 0001193125-17-041233  33  333-210983  2017-02-14    2017-02-13
-#&gt; 25 0001193125-17-036283  34   001-36743  2017-02-09    2017-02-09
-#&gt; 26 0000932471-17-000777  34   005-33632  2017-02-09    2017-02-09
-#&gt; 27 0001193125-17-030832  33  333-210983  2017-02-03    2017-02-03
-#&gt; 28 0001193125-17-029548  34  333-210983  2017-02-03    2017-02-02
-#&gt; 29 0001193125-17-028315  33  333-210983  2017-02-02    2017-02-02
-#&gt; 30 0001628280-17-000717  34   001-36743  2017-02-01    2017-02-01
-#&gt; 31 0001628280-17-000663  34   001-36743  2017-01-31    2017-01-31
-#&gt; 32 0001214659-17-000547  34   001-36743  2017-01-31    2017-01-31
-#&gt; 33 0000215457-17-001275  34   005-33632  2017-01-19    2017-01-19
-#&gt; 34 0001193125-17-003764  34   001-36743  2017-01-06    2017-01-06
-#&gt; 35 0001193125-17-003753  34   001-36743  2017-01-06    2017-01-06
-#&gt; 36 0001628280-16-022047  34   001-36743  2016-12-15    2016-12-15
-#&gt; 37 9999999997-17-000002  34   001-36743  2016-12-05    2017-01-03
-#&gt; 38 9999999997-17-000809  34   001-36743  2016-10-27    2017-02-16
-#&gt; 39 9999999997-16-026607  34   001-36743  2016-10-26    2016-11-01
-#&gt; 40 0001628280-16-020309  34   001-36743  2016-10-26    2016-10-26
+<span class='fu'>company_filings</span><span class='op'>(</span><span class='st'>"AAPL"</span>, before <span class='op'>=</span> <span class='st'>"20170810"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    accession_number act file_number filing_date accepted_date
+#&gt; 1              &lt;NA&gt;  34   001-36743  2017-08-02    2017-08-02
+#&gt; 2              &lt;NA&gt;  34   001-36743  2017-08-01    2017-08-01
+#&gt; 3              &lt;NA&gt;  34   001-36743  2017-06-20    2017-06-20
+#&gt; 4              &lt;NA&gt;  33  333-210983  2017-06-14    2017-06-14
+#&gt; 5              &lt;NA&gt;  34  333-210983  2017-06-14    2017-06-13
+#&gt; 6              &lt;NA&gt;  33  333-210983  2017-06-13    2017-06-13
+#&gt; 7              &lt;NA&gt;  34   001-36743  2017-05-25    2017-05-25
+#&gt; 8              &lt;NA&gt;  34   001-36743  2017-05-24    2017-05-24
+#&gt; 9              &lt;NA&gt;  34   001-36743  2017-05-24    2017-05-24
+#&gt; 10             &lt;NA&gt;  33  333-210983  2017-05-18    2017-05-18
+#&gt; 11             &lt;NA&gt;  34  333-210983  2017-05-17    2017-05-17
+#&gt; 12             &lt;NA&gt;  33  333-210983  2017-05-17    2017-05-17
+#&gt; 13             &lt;NA&gt;  34   001-36743  2017-05-11    2017-05-11
+#&gt; 14             &lt;NA&gt;  33  333-210983  2017-05-05    2017-05-05
+#&gt; 15             &lt;NA&gt;  34   001-36743  2017-05-05    2017-05-05
+#&gt; 16             &lt;NA&gt;  34  333-210983  2017-05-05    2017-05-04
+#&gt; 17             &lt;NA&gt;  33  333-210983  2017-05-04    2017-05-04
+#&gt; 18             &lt;NA&gt;  34   001-36743  2017-05-03    2017-05-03
+#&gt; 19             &lt;NA&gt;  34   001-36743  2017-05-02    2017-05-02
+#&gt; 20             &lt;NA&gt;  34   001-36743  2017-03-03    2017-03-03
+#&gt; 21             &lt;NA&gt;  34   001-36743  2017-03-01    2017-03-01
+#&gt; 22             &lt;NA&gt;  33  333-210983  2017-02-15    2017-02-15
+#&gt; 23             &lt;NA&gt;  34  333-210983  2017-02-14    2017-02-14
+#&gt; 24             &lt;NA&gt;  33  333-210983  2017-02-14    2017-02-13
+#&gt; 25             &lt;NA&gt;  34   001-36743  2017-02-09    2017-02-09
+#&gt; 26             &lt;NA&gt;  34   005-33632  2017-02-09    2017-02-09
+#&gt; 27             &lt;NA&gt;  33  333-210983  2017-02-03    2017-02-03
+#&gt; 28             &lt;NA&gt;  34  333-210983  2017-02-03    2017-02-02
+#&gt; 29             &lt;NA&gt;  33  333-210983  2017-02-02    2017-02-02
+#&gt; 30             &lt;NA&gt;  34   001-36743  2017-02-01    2017-02-01
+#&gt; 31             &lt;NA&gt;  34   001-36743  2017-01-31    2017-01-31
+#&gt; 32             &lt;NA&gt;  34   001-36743  2017-01-31    2017-01-31
+#&gt; 33             &lt;NA&gt;  34   005-33632  2017-01-19    2017-01-19
+#&gt; 34             &lt;NA&gt;  34   001-36743  2017-01-06    2017-01-06
+#&gt; 35             &lt;NA&gt;  34   001-36743  2017-01-06    2017-01-06
+#&gt; 36             &lt;NA&gt;  34   001-36743  2016-12-15    2016-12-15
+#&gt; 37             &lt;NA&gt;  34   001-36743  2016-12-05    2017-01-03
+#&gt; 38             &lt;NA&gt;  34   001-36743  2016-10-27    2017-02-16
+#&gt; 39             &lt;NA&gt;  34   001-36743  2016-10-26    2016-11-01
+#&gt; 40             &lt;NA&gt;  34   001-36743  2016-10-26    2016-10-26
 #&gt;                                                                                                href
 #&gt; 1  https://www.sec.gov/Archives/edgar/data/320193/000032019317000009/0000320193-17-000009-index.htm
 #&gt; 2  https://www.sec.gov/Archives/edgar/data/320193/000032019317000006/0000320193-17-000006-index.htm
@@ -321,7 +322,7 @@ you only get the type you want, best practice would be to filter the results.</p
 #&gt; 12                                                   Prospectus [Rule 424(b)(2)]
 #&gt; 13                                                                Current report
 #&gt; 14                                                   Prospectus [Rule 424(b)(2)]
-#&gt; 15                                                                          &lt;NA&gt;
+#&gt; 15                                                 Specialized disclosure report
 #&gt; 16        Filing under Securities Act Rules 163/433 of free writing prospectuses
 #&gt; 17                                                   Prospectus [Rule 424(b)(2)]
 #&gt; 18                                       Quarterly report [Sections 13 or 15(d)]
@@ -387,7 +388,7 @@ you only get the type you want, best practice would be to filter the results.</p
 #&gt; 37                &lt;NA&gt;   1 KB
 #&gt; 38                &lt;NA&gt;   1 KB
 #&gt; 39                &lt;NA&gt;   1 KB
-#&gt; 40                &lt;NA&gt;  13 MB</div><div class='input'># }
+#&gt; 40                &lt;NA&gt;  13 MB</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -404,7 +405,7 @@ you only get the type you want, best practice would be to filter the results.</p
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

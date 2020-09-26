@@ -73,7 +73,7 @@ full-text search tool." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
       </span>
     </div>
 
@@ -137,19 +137,19 @@ full-text search tool." />
 <a href='https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp'>full-text search tool</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>full_text</span>(
-  <span class='kw'>q</span> <span class='kw'>=</span> <span class='st'>"*"</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>reverse_order</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>stemming</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>cik</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>sic</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>""</span>
-)</pre>
+    <pre class="usage"><span class='fu'>full_text</span><span class='op'>(</span>
+  q <span class='op'>=</span> <span class='st'>"*"</span>,
+  type <span class='op'>=</span> <span class='st'>""</span>,
+  reverse_order <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  count <span class='op'>=</span> <span class='fl'>10</span>,
+  page <span class='op'>=</span> <span class='fl'>1</span>,
+  stemming <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  name <span class='op'>=</span> <span class='st'>""</span>,
+  cik <span class='op'>=</span> <span class='st'>""</span>,
+  sic <span class='op'>=</span> <span class='st'>""</span>,
+  from <span class='op'>=</span> <span class='st'>""</span>,
+  to <span class='op'>=</span> <span class='st'>""</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -223,72 +223,73 @@ specify `from`</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span>(<span class='st'>'intel'</span>)</div><div class='output co'>#&gt;    filing_date                                                        name
-#&gt; 1   2020-04-24 INFORMATION TABLE of 13F-HR for ARGUS INVESTORS COUNSEL INC
-#&gt; 2   2020-04-24                                         10-Q for INTEL CORP
-#&gt; 3   2020-04-24                              EX-31.1 of 10-Q for INTEL CORP
-#&gt; 4   2020-04-24                              EX-31.2 of 10-Q for INTEL CORP
-#&gt; 5   2020-04-24                              EX-32.1 of 10-Q for INTEL CORP
-#&gt; 6   2020-04-24                              EX-10.1 of 10-Q for INTEL CORP
-#&gt; 7   2020-04-24                              EX-10.3 of 10-Q for INTEL CORP
-#&gt; 8   2020-04-24                                  XML of 10-Q for INTEL CORP
-#&gt; 9   2020-04-24                                  XML of 10-Q for INTEL CORP
-#&gt; 10  2020-04-24                                  XML of 10-Q for INTEL CORP
-#&gt;                                                                                           href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/xslForm13F_X01/inftable.xml
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 3      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020ex311-use.htm
-#&gt; 4      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020ex312-use.htm
-#&gt; 5      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020ex321-use.htm
-#&gt; 6       https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020q1-ex101.htm
-#&gt; 7       https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a03282020q1-ex103.htm
-#&gt; 8           https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/FilingSummary.xml
-#&gt; 9                      https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/R1.htm
-#&gt; 10                    https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/R10.htm
-#&gt;                   company_name   cik  sic
-#&gt; 1  ARGUS INVESTORS COUNSEL INC  7195 &lt;NA&gt;
-#&gt; 2                   INTEL CORP 50863 3674
-#&gt; 3                   INTEL CORP 50863 3674
-#&gt; 4                   INTEL CORP 50863 3674
-#&gt; 5                   INTEL CORP 50863 3674
-#&gt; 6                   INTEL CORP 50863 3674
-#&gt; 7                   INTEL CORP 50863 3674
-#&gt; 8                   INTEL CORP 50863 3674
-#&gt; 9                   INTEL CORP 50863 3674
-#&gt; 10                  INTEL CORP 50863 3674
+<span class='fu'>full_text</span><span class='op'>(</span><span class='st'>'intel'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    filing_date                                                     name
+#&gt; 1   2020-09-25                                         424B2 for UBS AG
+#&gt; 2   2020-09-25                                         424B2 for UBS AG
+#&gt; 3   2020-09-25                            N-CSR/A for SSGA Active Trust
+#&gt; 4   2020-09-25                          S-1 for Aligos Therapeutics Inc
+#&gt; 5   2020-09-25                        424B2 for GOLDMAN SACHS GROUP INC
+#&gt; 6   2020-09-25 INFORMATION TABLE of 13F-HR/A for Your Advocates Ltd LLP
+#&gt; 7   2020-09-25                     DEF 14A for NIOCORP DEVELOPMENTS LTD
+#&gt; 8   2020-09-24                                         424B2 for UBS AG
+#&gt; 9   2020-09-24                                  10-Q for BLACKBERRY Ltd
+#&gt; 10  2020-09-24                             424B4 for Corsair Gaming Inc
+#&gt;                                                                                                  href
+#&gt; 1              https://www.sec.gov/Archives/edgar/data/1114446/000111444620005166/tc6218048i_0fwp.htm
+#&gt; 2              https://www.sec.gov/Archives/edgar/data/1114446/000111444620005169/tc6218048f_1fwp.htm
+#&gt; 3                 https://www.sec.gov/Archives/edgar/data/1516212/000119312520254021/d12026dncsra.htm
+#&gt; 4                    https://www.sec.gov/Archives/edgar/data/1799448/000119312520254760/d31402ds1.htm
+#&gt; 5                      https://www.sec.gov/Archives/edgar/data/886982/000156459020044652/gs-424b2.htm
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1774437/000177443720000005/xslForm13F_X01/advocatesamt.xml
+#&gt; 7               https://www.sec.gov/Archives/edgar/data/1512228/000178598220000899/sf0030h_def14a.htm
+#&gt; 8             https://www.sec.gov/Archives/edgar/data/1114446/000091412120003403/ub55320920-424b2.htm
+#&gt; 9                https://www.sec.gov/Archives/edgar/data/1070235/000107023520000101/bbry-20200831.htm
+#&gt; 10               https://www.sec.gov/Archives/edgar/data/1743759/000119312520252781/d507744d424b4.htm
+#&gt;                company_name     cik  sic
+#&gt; 1                    UBS AG 1114446 6021
+#&gt; 2                    UBS AG 1114446 6021
+#&gt; 3         SSGA Active Trust 1516212 &lt;NA&gt;
+#&gt; 4   Aligos Therapeutics Inc 1799448 2836
+#&gt; 5   GOLDMAN SACHS GROUP INC  886982 6211
+#&gt; 6    Your Advocates Ltd LLP 1774437 &lt;NA&gt;
+#&gt; 7  NIOCORP DEVELOPMENTS LTD 1512228 1000
+#&gt; 8                    UBS AG 1114446 6021
+#&gt; 9            BLACKBERRY Ltd 1070235 7372
+#&gt; 10       Corsair Gaming Inc 1743759 3577
 #&gt;                                                                                                                                                                                                                                                                                                       content
-#&gt; 1  3M Co COM 88579Y101 3145 23040 SH SOLE 17140 0 5900 Adobe Inc COM 00724F101 4215 13245 SH SOLE 9195 0 4050 Air Prods &amp; Chems Inc COM 009158106 3457 17320 SH SOLE 13250 0 4070 Alphabet Inc COM 02079K305 4128 3553 SH SOLE 2420 0 1133 Amazon.com Inc COM 023135106 4751 2437 SH SOLE 1617 0 820 American
-#&gt; 2   Document false -12-26 Q1 2020 2020-03-28 0000050863 73321000000 75686000000 0.63 0.66 4290000000 4234000000 4290000000 4234000000 0.0035 0.0008 0.0270 0.0240 0.0373 0.0245 0.0325 0.0410 0.0480 0.0400 0.0310 0.0270 0.0288 0.0410 0.0315 0.0325 0.0245 0.0330 0.0490 0.0370 0.0270 0.0235 0.0170 0.0410
-#&gt; 3                                                                                                                                                                                                                                 I have reviewed this quarterly report on Form 10-Q of Intel Corporation; 2.
-#&gt; 4                                                                                                                                                                                                                                 I have reviewed this quarterly report on Form 10-Q of Intel Corporation; 2.
-#&gt; 5        This written statement is being furnished to the Securities and Exchange Commission as an exhibit to such Form 10-Q. A signed original of this statement has been provided to Intel and will be retained by Intel and furnished to the Securities and Exchange Commission or its staff upon request.
-#&gt; 6                                                                                                                                                                                           Those components, as explained below in this Section 4 are: (i) the Intel Relative TSR and (ii) Intel EPS Growth.
-#&gt; 7                                                         Exhibit 10.3 INTEL CORPORATION SHELTERED EMPLOYEE RETIREMENT PLAN PLUS (As Amended and Restated Effective January 1, 2020) INTEL CORPORATION SHELTERED EMPLOYEE RETIREMENT PLAN PLUS (As Amended and Restated Effective January 1, 2020) SECTION 1.
-#&gt; 8                          3.20.1 html 381 319 1 false 104 0 false 5 false false R1.htm 0001000 - Document - Cover Page Cover Page Sheet http:/www.intel.com/role/CoverPageCoverPage Cover Page Cover Page Cover 1 false false R2.htm 1001000 - Statement - Consolidated Condensed Statements of Income Sheet
-#&gt; 9       v3.20.1 Cover Page Cover Page shares in Millions 3 Months Ended Mar. 28, 2020 shares 10-Q true false Mar. 28, 2020 000-06217 INTEL CORPORATION 0000050863 -12-26 2020 Q1 false DE 94-1672743 2200 Mission College Boulevard, Santa Clara, CA 95054-1549 (408) 765-8080 Common stock, $0.001 par value
-#&gt; 10                                                                                                                                                                                          Except for these differences, the accounting policies for segment reporting are the same as for Intel as a whole.
-#&gt;                                                                                       parent_href
-#&gt; 1  https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/xslForm13F_X01/primary_doc.xml
-#&gt; 2                                                                                            &lt;NA&gt;
-#&gt; 3     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 4     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 5     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 6     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 7     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 8     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 9     https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/a0328202010qdocument-u.htm
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/xslForm13F_X01/primary_doc.xml
-#&gt;                                                                                         index_href
-#&gt; 1   https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/0000007195-20-000002-index.htm
-#&gt; 2                                                                                             &lt;NA&gt;
-#&gt; 3  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 5  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 6  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 8  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/50863/000005086320000017/0000050863-20-000017-index.htm
-#&gt; 10  https://www.sec.gov/Archives/edgar/data/7195/000000719520000002/0000007195-20-000002-index.htm</div><div class='input'># }
+#&gt; 1                                   Underlying Asset The common stock of Intel Corporation Contingent Coupon If the closing price of the underlying asset is equal to or greater than the coupon barrier on any observation date, UBS will pay you the contingent coupon applicable to such observation date.
+#&gt; 2                                   Underlying Asset The common stock of Intel Corporation Contingent Coupon If the closing price of the underlying asset is equal to or greater than the coupon barrier on any observation date, UBS will pay you the contingent coupon applicable to such observation date.
+#&gt; 3                            UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number: 811-22542 SSGA ACTIVE TRUST (Exact name of registrant as specified in charter)
+#&gt; 4                                                           As filed with the Securities and Exchange Commission on September 25, 2020. Registration No. 333- UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM S-1 REGISTRATION STATEMENT Under The Securities Act of 1933 Aligos
+#&gt; 5        Filed Pursuant to Rule 424(b)(2) Registration Statement No. 333-239610 Underlier Supplement No. 12 to the Prospectus and the Prospectus Supplement, each as may be amended from time to time, that form a part of Registration Statement No. 333-239610 GS Finance Corp. Medium-Term Notes, Series E
+#&gt; 6  Advanced Micro Devices COM 007903107 11 206 SH SOLE 0 0 206 Air Prod &amp; Chemicals Inc COM 009158106 29 100 SH SOLE 0 0 100 Albemarle Corp COM 012653101 1 12 SH SOLE 0 0 12 Allegiance Bank COM 01748H107 32 1414 SH SOLE 0 0 1414 Allstate Corporation COM 020002101 36 400 SH SOLE 0 0 400 Amazon Com Inc
+#&gt; 7                              UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 SCHEDULE 14A Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 (Amendment No. _) Filed by the Registrant Filed by a Party other than the Registrant Check the appropriate
+#&gt; 8               PRICING SUPPLEMENT Dated September 23, 2020 Filed Pursuant to Rule 424(b)(2) Registration Statement No. 333-225551 (To Prospectus dated October 31, 2018 and Product Supplement dated October 31, 2018) UBS AG Airbag Autocallable Yield Notes UBS AG $5, 000, 000 Notes Linked to the Common
+#&gt; 9                             bbry-20200831 8/31/2020 False 2021 Q2 0001070235 -02-28 556, 467, 825 554, 199, 016 556, 467, 825 554, 199, 016 14 9 1 2 1 1 P1M P5Y 605 3.75 60.5 10 November 13, 2020 7.75 115 35 50 0001070235 2020-03-01 2020-08-31 0001070235 exch:XNYS 2020-03-01 2020-08-31 xbrli:shares
+#&gt; 10                                                    Filed pursuant to Rule 424(b)(4) Registration No. 333-248247 14, 000, 000 Shares Corsair Gaming, Inc. Common Stock This is an initial public offering of common stock of Corsair Gaming, Inc. We are selling 7, 500, 00 shares of our common stock. The
+#&gt;                                                                                          parent_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 4                                                                                               &lt;NA&gt;
+#&gt; 5                                                                                               &lt;NA&gt;
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1774437/000177443720000005/xslForm13F_X01/primary_doc.xml
+#&gt; 7                                                                                               &lt;NA&gt;
+#&gt; 8                                                                                               &lt;NA&gt;
+#&gt; 9                                                                                               &lt;NA&gt;
+#&gt; 10                                                                                              &lt;NA&gt;
+#&gt;                                                                                           index_href
+#&gt; 1                                                                                               &lt;NA&gt;
+#&gt; 2                                                                                               &lt;NA&gt;
+#&gt; 3                                                                                               &lt;NA&gt;
+#&gt; 4                                                                                               &lt;NA&gt;
+#&gt; 5                                                                                               &lt;NA&gt;
+#&gt; 6  https://www.sec.gov/Archives/edgar/data/1774437/000177443720000005/0001774437-20-000005-index.htm
+#&gt; 7                                                                                               &lt;NA&gt;
+#&gt; 8                                                                                               &lt;NA&gt;
+#&gt; 9                                                                                               &lt;NA&gt;
+#&gt; 10                                                                                              &lt;NA&gt;</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -305,7 +306,7 @@ specify `from`</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
