@@ -31,6 +31,8 @@ with_mock_API({
     skip_on_cran()
     #href <- "https://www.sec.gov/Archives/edgar/data/104938/0000950131-94-000440.txt"
     submission_file <- file.path("..", "testdata", "dev", "0000950131-94-000440.txt")
+    skip_if_not(file.exists(submission_file),
+                message = paste0("Dev test file ", submission_file, " does not exist - SKIP"))
     submission <- parse_submission(submission_file)
     expect_equal(nrow(submission), 8)
     doc <- submission[submission$TYPE == "10-K", "TEXT"]

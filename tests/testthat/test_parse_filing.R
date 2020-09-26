@@ -27,6 +27,9 @@ test_filing <- function(file.name, rows, parts, items, is_dev = TRUE) {
   if (is_dev) {
     skip_on_cran()
     test.file <- file.path("..", "testdata", "dev", file.name)
+    # Depending on the exact way test was called, we may not have dev files
+    skip_if_not(file.exists(test.file),
+                message = paste0("Dev test file ", file.name, " does not exist - SKIP"))
   } else {
     test.file <- file.path("..", "testdata", file.name)
   }
