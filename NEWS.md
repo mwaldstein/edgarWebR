@@ -1,3 +1,11 @@
+# edgarWebR 1.0.3
+
+## Bugfixes
+ * Tests using dev testdata are skipped on cran to reduce overall package size
+
+## Internal
+ * Add github actions for testing to expand and normalize testing
+
 # edgarWebR 1.0.2
 
 ## Bugfixes

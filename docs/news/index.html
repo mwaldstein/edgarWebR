@@ -129,21 +129,40 @@
       <small>Source: <a href='https://github.com/mwaldstein/edgarWebR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="edgarwebr-102" class="section level1">
-<h1 class="page-header" data-toc-text="1.0.2">
-<a href="#edgarwebr-102" class="anchor"></a>edgarWebR 1.0.2<small> Unreleased </small>
+    <div id="edgarwebr-103" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.3">
+<a href="#edgarwebr-103" class="anchor"></a>edgarWebR 1.0.3<small> Unreleased </small>
 </h1>
 <div id="bugfixes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bugfixes" class="anchor"></a>Bugfixes</h2>
 <ul>
-<li>User <code>options = 'HUGE'</code> for <em>all</em> xml/html parsing - should resolve some test failures on Solaris.</li>
-<li>All vignettes now use cached requests (tests were all ready using caches)</li>
+<li>Tests using dev testdata are skipped on cran to reduce overall package size</li>
 </ul>
 </div>
 <div id="internal" class="section level2">
 <h2 class="hasAnchor">
 <a href="#internal" class="anchor"></a>Internal</h2>
+<ul>
+<li>Add github actions for testing to expand and normalize testing</li>
+</ul>
+</div>
+</div>
+    <div id="edgarwebr-102" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.2">
+<a href="#edgarwebr-102" class="anchor"></a>edgarWebR 1.0.2<small> Unreleased </small>
+</h1>
+<div id="bugfixes-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bugfixes-1" class="anchor"></a>Bugfixes</h2>
+<ul>
+<li>User <code>options = 'HUGE'</code> for <em>all</em> xml/html parsing - should resolve some test failures on Solaris.</li>
+<li>All vignettes now use cached requests (tests were all ready using caches)</li>
+</ul>
+</div>
+<div id="internal-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#internal-1" class="anchor"></a>Internal</h2>
 <ul>
 <li>httptest redaction/resolving logic centralized in a more standard way</li>
 </ul>
@@ -153,9 +172,9 @@
 <h1 class="page-header" data-toc-text="1.0.1">
 <a href="#edgarwebr-101" class="anchor"></a>edgarWebR 1.0.1<small> 2020-01-09 </small>
 </h1>
-<div id="bugfixes-1" class="section level2">
+<div id="bugfixes-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-1" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-2" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
 <code><a href="../reference/parse_text_filing.html">parse_text_filing()</a></code> correctly parses filings that have spaces in separating lines. (Fixes <a href='https://github.com/mwaldstein/edgarWebR/issues/4'>#4</a>)</li>
@@ -177,9 +196,9 @@
 <li>Document how the SEC Company ‘Fast Search’ works and how edgarWebR implements it. (addresses <a href='https://github.com/mwaldstein/edgarWebR/issues/7'>#7</a>)</li>
 </ul>
 </div>
-<div id="internal-1" class="section level2">
+<div id="internal-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-1" class="anchor"></a>Internal</h2>
+<a href="#internal-2" class="anchor"></a>Internal</h2>
 <ul>
 <li>Add missing pkgdown dev dependency</li>
 <li>Add lintr dev dependency</li>
@@ -213,9 +232,9 @@
 </li>
 </ul>
 </div>
-<div id="bugfixes-2" class="section level2">
+<div id="bugfixes-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-2" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-3" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
 <code><a href="../reference/parse_filing.html">parse_filing()</a></code> properly processes recent AIG &amp; Costco filings</li>
@@ -238,9 +257,9 @@
 <code><a href="../reference/full_text.html">full_text()</a></code> escapes the search query properly.</li>
 </ul>
 </div>
-<div id="internal-2" class="section level2">
+<div id="internal-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-2" class="anchor"></a>Internal</h2>
+<a href="#internal-3" class="anchor"></a>Internal</h2>
 <ul>
 <li>Testing now requires tokenizers for testing if parsing adds words (it often does…)</li>
 <li>Moved to testdata for parse_* functions rather than http cache</li>
@@ -254,9 +273,9 @@
 <h1 class="page-header" data-toc-text="0.3.1">
 <a href="#edgarwebr-031---oh-yeah-data-changes" class="anchor"></a>edgarWebR 0.3.1 - “Oh yeah, data changes”<small> 2018-02-13 </small>
 </h1>
-<div id="bugfixes-3" class="section level2">
+<div id="bugfixes-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-3" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-4" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
 <code>full_text</code> no longer tests example as it often is long-running</li>
@@ -286,9 +305,9 @@
 <code>header_search</code> provides access to search filing headers back to 1994</li>
 </ul>
 </div>
-<div id="bugfixes-4" class="section level2">
+<div id="bugfixes-5" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-4" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-5" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>
 <code>parse_filing</code> now treats <code>&lt;br&gt;</code> as a space avoiding words separated only by a line return getting concatenated. (Fixes <a href='https://github.com/mwaldstein/edgarWebR/issues/2'>#2</a>)</li>
@@ -296,9 +315,9 @@
 <code>parse_filing</code> now tries to detect and remove TOC itemss/parts to avoid duplicate entries</li>
 </ul>
 </div>
-<div id="internal-3" class="section level2">
+<div id="internal-4" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-3" class="anchor"></a>Internal</h2>
+<a href="#internal-4" class="anchor"></a>Internal</h2>
 <ul>
 <li>
 <code>map_xml</code> processes href’s out of javascript links</li>
@@ -313,18 +332,18 @@
 <a href="#edgarwebr-021---thanks-testers" class="anchor"></a>edgarWebR 0.2.1 - “Thanks Testers”<small> 2017-10-31 </small>
 </h1>
 <p>Many thanks to everyone providing feedback, particularly Günter Leitold for rigorously testing the <code>parse_filing</code> funcion.</p>
-<div id="bugfixes-5" class="section level2">
+<div id="bugfixes-6" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-5" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-6" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>Parser covers a wider range of document formats for 10-K’s.</li>
 <li>
 <code>filing_documents</code> correctly provides the href for the document not the iXBRL viewer when present.</li>
 </ul>
 </div>
-<div id="internal-4" class="section level2">
+<div id="internal-5" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-4" class="anchor"></a>Internal</h2>
+<a href="#internal-5" class="anchor"></a>Internal</h2>
 <ul>
 <li>Limited testing of <code>parse_filing</code> on CRAN.</li>
 </ul>
@@ -349,9 +368,9 @@
 <p>New function <code>parse_submission</code> extracts documents from the full submission file. This is needed for older submissions and accessing documents that are not extracted individually online.</p>
 </div>
 </div>
-<div id="internal-5" class="section level2">
+<div id="internal-6" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-5" class="anchor"></a>Internal</h2>
+<a href="#internal-6" class="anchor"></a>Internal</h2>
 <ul>
 <li>Incorporated <a href="https://github.com/nealrichardson/httptest">httptest</a> for cached testing. Altered most functions to use <a href="https://cran.r-project.org/package=httr">httr</a> for remote calls to support this test method.</li>
 <li>New Makefile targets to support cached testing -
@@ -373,9 +392,9 @@
 <h1 class="page-header" data-toc-text="0.1.1">
 <a href="#edgarwebr-011---whoops-1" class="anchor"></a>edgarWebR 0.1.1 - “Whoops 1”<small> 2017-08-20 </small>
 </h1>
-<div id="bugfixes-6" class="section level2">
+<div id="bugfixes-7" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bugfixes-6" class="anchor"></a>Bugfixes</h2>
+<a href="#bugfixes-7" class="anchor"></a>Bugfixes</h2>
 <ul>
 <li>Removed a test for the “changed_date” field in filing information as the source test document removed the field. Permanent fix will be to use a a more stable data source for testing.</li>
 </ul>
@@ -430,9 +449,9 @@
 <li>[vignettes] changed Introduction to use purrr for clearer code</li>
 </ul>
 </div>
-<div id="internal-6" class="section level2">
+<div id="internal-7" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-6" class="anchor"></a>Internal</h2>
+<a href="#internal-7" class="anchor"></a>Internal</h2>
 <ul>
 <li>Added caches and markdown folders to ignore files</li>
 <li>Made map_xml handle parsing integers</li>
@@ -465,9 +484,9 @@
 <li>[tests] initial testes created</li>
 </ul>
 </div>
-<div id="internal-7" class="section level2">
+<div id="internal-8" class="section level2">
 <h2 class="hasAnchor">
-<a href="#internal-7" class="anchor"></a>Internal</h2>
+<a href="#internal-8" class="anchor"></a>Internal</h2>
 <ul>
 <li>[map_xml] map_xml now parses date/time columns into POSIXlt dates</li>
 <li>[browse_edgar] escape text fields</li>
