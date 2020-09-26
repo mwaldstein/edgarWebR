@@ -1,17 +1,18 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: r
-sudo: false
+# sudo: false
 cache: packages
 warnings_are_errors: true
 
 r:
   - oldrel
   - release
+  - devel
 
 # work around temporary travis + R 3.5 bug
 # https://github.com/tidyverse/ggplot2/blob/master/.travis.yml#L18
-r_packages: devtools
+# r_packages: devtools
 
 env:
   - PACKAGE_VERSION="1.0.2"
