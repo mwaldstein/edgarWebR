@@ -3,7 +3,7 @@ context("running filing_filers")
 # The XPath for filing_filers is particularly complex, so it is particularly
 # important to test a wide range of values
 
-with_mock_API({
+with_mock_api({
   test_that("Basics (type 4)", {
     href <- "https://www.sec.gov/Archives/edgar/data/1333712/000156218017002633/0001562180-17-002633-index.htm"
     res <- filing_filers(href)

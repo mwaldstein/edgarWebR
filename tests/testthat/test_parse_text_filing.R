@@ -1,6 +1,6 @@
 context("running parse_text_filing")
 
-with_mock_API({
+with_mock_api({
   test_that("Ford 10-K", {
     href <-
       "https://www.sec.gov/Archives/edgar/data/37996/000003799602000015/v7.txt"

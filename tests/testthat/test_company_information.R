@@ -1,6 +1,6 @@
 context("running company_information")
 
-with_mock_API({
+with_mock_api({
 test_that("running ", {
             expect_error(company_information("EAR"))
             res <- company_information("EA")

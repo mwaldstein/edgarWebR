@@ -1,6 +1,6 @@
 context("running latest_filings")
 
-with_mock_API({
+with_mock_api({
   test_that("basics", {
     res <- latest_filings()
     expect_length(res, 9)

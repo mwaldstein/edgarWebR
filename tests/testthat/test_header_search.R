@@ -1,6 +1,6 @@
 context("running header_search")
 
-with_mock_API({
+with_mock_api({
   test_that("basic search", {
     res <- header_search("company-name = Apple")
     expect_length(res, 5)

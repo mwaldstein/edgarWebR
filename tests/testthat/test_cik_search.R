@@ -1,6 +1,6 @@
 context("running cik_search")
 
-with_mock_API({
+with_mock_api({
   test_that("One Result (Cloudera)", {
     res <- cik_search("cloudera")
 

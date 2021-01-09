@@ -1,6 +1,6 @@
 context("running current_events")
 
-with_mock_API({
+with_mock_api({
   test_that("Basic Search", {
     res <- current_events(0, "10-K")
 

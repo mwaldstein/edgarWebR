@@ -1,6 +1,6 @@
 context("running full_text")
 
-with_mock_API({
+with_mock_api({
   test_that("basic search", {
     res <- full_text("intel")
     expect_length(res, 9)

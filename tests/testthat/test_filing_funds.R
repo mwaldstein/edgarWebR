@@ -1,6 +1,6 @@
 context("running filing_funds")
 
-with_mock_API({
+with_mock_api({
   test_that("Basics (type 485APOS)", {
     href <- "https://www.sec.gov/Archives/edgar/data/933691/000093369117000309/0000933691-17-000309-index.htm"
     res <- filing_funds(href)

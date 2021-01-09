@@ -3,7 +3,7 @@ context("running parse_submission")
 # The XPath for filing_filers is particularly complex, so it is particularly
 # important to test a wide range of values
 
-with_mock_API({
+with_mock_api({
   test_that("Basics (type 8-K)", {
     href <- "https://www.sec.gov/Archives/edgar/data/37996/000003799617000084/0000037996-17-000084.txt"
     res <- parse_submission(href)
