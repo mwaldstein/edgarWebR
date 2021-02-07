@@ -1,17 +1,19 @@
 #' SEC Full-Text Search
 #'
 #' Provides access to the SEC fillings
-#' \href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
+#' \href{https://www.sec.gov/edgar/search/}{full-text search tool}.
 #'
 #'@param q Search query. For details on special formatting, see the
-#' \href{https://www.sec.gov/edgar/searchedgar/edgarfulltextfaq.htm}{FAQ}.
-#'@param type Type of forms to search - e.g. '10-K'
-#'@param reverse_order If true, order by oldest first instead of newest first
-#'@param count Number of results to return
+#' \href{https://www.sec.gov/edgar/search/efts-faq.html}{FAQ}.
+#'@param type Type of forms to search - e.g. '10-K'. Can also be a list of
+#'        types - e.g. c("10-K", "10-Q")
+#'@param reverse_order [DEP] If true, order by oldest first instead of newest first
+#'@param count [DEP] Number of results to return - will always try to return
+#'        100
 #'@param page Which page of results to return
-#'@param stemming Search by base words(default) or exactly as entered
-#'@param name Company name. Cannot be combined with `cik` or `sik`.
-#'@param sic Standard Industrial Classification of filer to search for. Cannot
+#'@param stemming [DEP] Search by base words(default) or exactly as entered
+#'@param name Company name OR individual's name. Cannot be combined with `cik` or `sik`.
+#'@param sic [DEP] Standard Industrial Classification of filer to search for. Cannot
 #'        be combined with `cik` or `name`. Special options - 1: all, 0:
 #'        Unspecified.
 #'@param cik Company code to search. Cannot be combined with `name` or `sic`
@@ -42,86 +44,100 @@ full_text <- function(
     q = "*",
     type = "",
     reverse_order = FALSE,
-    count = 10,
+    count = 100,
     page = 1,
     stemming = TRUE,
     name = "",
     cik = "",
     sic = "",
     from = "",
-    to = "") {
-  href <- paste0(
-    "https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?",
-    "search_text=", ifelse(q == "", "*", URLencode(q, reserved = TRUE)), "&",
-    "sort=", ifelse(reverse_order, "ReverseDate", "Date"), "&",
-    "formType=", map_form(type), "&",
-    "isAdv=true&",
-    "stemming=", ifelse(stemming, "true", "false"), "&",
-    ifelse(page != 1,
-           paste0("startDoc=", count * (page - 1) + 1, "&"), ""),
-    "numResults=", count, "&",
-    map_opt(name, cik, sic),
-    ifelse(from != "" && to != "",
-           paste0("fromDate=", from, "&",
-                  "toDate=", to, "&"), ""),
-    "prt=true")
-  res <- httr::GET(href)
+    to = "",
+    location = "",
+    incorporated_location = FALSE) {
+  href <- "https://efts.sec.gov/LATEST/search-index"
+  query <- list()
+  if (q != "*" && q != "") {
+    query["q"] <- jsonlite::unbox(q)
+  }
+  if (from != "" && to != "") {
+    query["startdt"] <- jsonlite::unbox(format_date(from))
+    query["enddt"] <- jsonlite::unbox(format_date(to))
+  }
+  if (type != "") {
+    query["category"] <- jsonlite::unbox("custom")
+    query["forms"] <- map_form(type)
+  }
+  if (page != "" && page != 1) {
+    query["page"] <- jsonlite::unbox(page)
+    query["from"] <- jsonlite::unbox(page * 100)
+  }
+  if ( name != "" && cik != "") {
+    stop("Cannot perform full search with both a name and cik")
+  }
+  if (name != "" || cik != "") {
+    query["entityName"] <- jsonlite::unbox(ifelse(name == "", cik, name))
+  }
+  if (location != "") {
+    if (incorporated_location) {
+      query["locationType"] <- "incorporated"
+    }
+    query["locationCode"] <- jsonlite::unbox(location)
+    query["locationCodes"] <- location
+  }
+
+  res <- httr::POST(href, body = query, encode = "json")
   if (res$status != "200") {
     stop(paste0("Unable to reach the SEC full text search endpoint (",
-                "https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp",
+                href,
                 ")"))
   }
-  doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
-  entries_xpath <- "//table/tr[@class = 'infoBorder'][preceding-sibling::*]"
+  json_res <- httr::content(res, as = "parsed")
+  hits <- json_res$hits$hits
+  lRes <- lapply(hits, function (hit) {
+                   cik <- hit[["_source"]]$ciks[[length(hit[["_source"]]$ciks)]]
+                   accession <- hit[["_source"]]$adsh
+                   filename <- gsub("^.+:", "", hit[["_id"]])
+                   parent_href <- submission_file_href(
+                                                       cik,
+                                                       accession,
 
-  info_pieces <- list(
-    filing_date = "preceding-sibling::tr[3]/td[1]",
-    name = "preceding-sibling::tr[3]/td[2]/a",
-    href = "preceding-sibling::tr[3]/td[2]/a/@href",
-    company_name = "substring-before(
-      preceding-sibling::tr[2]/td[2]/font[2]/text()[1],
-      ' (CIK - '
-    )",
-    cik = "preceding-sibling::tr[2]/td[2]/font[2]/a[1]",
-    sic = "preceding-sibling::tr[2]/td[2]/font[2]/a[2]",
-    content = "preceding-sibling::tr[1]/td[2]/i",
-    parent_href = "./td[2]/a[@title = 'Parent Filing']/@href",
-    index_href = "./td[2]/a[@title = 'Index of Filing Documents']/@href"
-  )
 
-  trim_cols <- c('name')
+                                                       )
+                   list(
+                        filing_date = hit[["_source"]]$file_date,
+                        name = hit[["_source"]]$root_form,
+                        href = submission_file_href(cik, accession, filename),
+                        company_name = hit[["_source"]]$display_names[[length(hit[["_source"]]$display_names)]],
+                        cik = cik,
+                        sic = hit[["_source"]]$sics[[length(hit[["_source"]]$sics)]],
+                        content = "",
+                        # parent_href = "",
+                        parent_href = submission_index_href(cik, accession),
+                        index_href = submission_index_href(cik, accession)
+                        )
+    })
 
-  res <- map_xml(doc, entries_xpath,
-                 info_pieces, trim = trim_cols,
-                 date_format = "%m/%d/%Y")
+  df_res <- do.call(rbind.data.frame, lRes)
+  df_res$filing_date <- as.POSIXct(df_res$filing_date,
+                                   format = "%m/%d/%Y")
+  return(df_res)
 
-  return(res)
-
+  # res <- map_xml(doc, entries_xpath,
+  #                info_pieces, trim = trim_cols,
+  #                date_format = "%m/%d/%Y")
 }
 
 map_form <- function(form) {
-  if (form == "") return(1)
-  form <- gsub("-", "", form)
-  form <- gsub(" ", "", form)
-  form <- ifelse(grepl("/", form),
-                 paste0(sub("/", "", form),
-                        ifelse(form == "DOS/A", "", "D")), # Yes, DOS/A has a
-                                                           # different format
-                 form)
-  form <- paste0("Form", form)
+  form <- sub("/", "", form)
 
   return(form)
 }
 
-map_opt <- function(name, cik, sic) {
-  if (name != "") {
-    return(paste0("queryCo=", name, "&"))
-  } else if (cik != "") {
-    return(paste0("queryCik=", cik, "&"))
-  } else if (sic != "") {
-    return(paste0("querySic=", sic, "&"))
-  } else {
-    return("")
+format_date <- function(slash_date) {
+  parts <- strsplit(slash_date, "/")[[1]]
+  if (length(parts) != 3) {
+    stop("Input dates must be int 'mm/dd/yyyy' format!")
   }
+  return(paste0(parts[3], "-", parts[1], "-", parts[2]))
 }
