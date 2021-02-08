@@ -95,37 +95,42 @@ full_text <- function(
   json_res <- httr::content(res, as = "parsed")
   hits <- json_res$hits$hits
   lRes <- lapply(hits, function (hit) {
+                   nsic = length(hit[["_source"]]$sics)
+                   ncik = length(hit[["_source"]]$ciks)
+                   if (ncik == 0) {
+                     # We often seen to end up w/out and ciks - don't worry
+                     # about this row in that case...
+                     return()
+                   }
+
                    cik <- hit[["_source"]]$ciks[[length(hit[["_source"]]$ciks)]]
                    accession <- hit[["_source"]]$adsh
                    filename <- gsub("^.+:", "", hit[["_id"]])
-                   parent_href <- submission_file_href(
-                                                       cik,
-                                                       accession,
+                   root_form <- hit[["_source"]]$root_form
+                   file_type <- hit[["_source"]]$file_type
 
-
-                                                       )
                    list(
                         filing_date = hit[["_source"]]$file_date,
-                        name = hit[["_source"]]$root_form,
+                        name = trimws(paste(hit[["_source"]]$root_form, ifelse(root_form == file_type, "", hit[["_source"]]$file_type))),
                         href = submission_file_href(cik, accession, filename),
-                        company_name = hit[["_source"]]$display_names[[length(hit[["_source"]]$display_names)]],
+                        company_name = gsub("\\s+\\(CIK.*$", "", hit[["_source"]]$display_names[[length(hit[["_source"]]$display_names)]]),
                         cik = cik,
-                        sic = hit[["_source"]]$sics[[length(hit[["_source"]]$sics)]],
-                        content = "",
+                        sic = ifelse(nsic > 0,
+                                     hit[["_source"]]$sics[[nsic]],
+                                     NA),
+                        content = ifelse(length(hit[["_source"]]$file_description) > 0, hit[["_source"]]$file_description, NA),
                         # parent_href = "",
                         parent_href = submission_index_href(cik, accession),
                         index_href = submission_index_href(cik, accession)
                         )
     })
 
-  df_res <- do.call(rbind.data.frame, lRes)
-  df_res$filing_date <- as.POSIXct(df_res$filing_date,
-                                   format = "%m/%d/%Y")
-  return(df_res)
+  df_res <- data.frame(matrix(unlist(lRes), ncol = max(lengths(lRes)), byrow = TRUE), stringsAsFactors = FALSE)
+  names(df_res) <- names(lRes[[which(lengths(lRes)>0)[1]]])
 
-  # res <- map_xml(doc, entries_xpath,
-  #                info_pieces, trim = trim_cols,
-  #                date_format = "%m/%d/%Y")
+  df_res$filing_date <- as.POSIXct(df_res$filing_date,
+                                   format = "%Y-%m-%d")
+  return(df_res)
 }
 
 map_form <- function(form) {
