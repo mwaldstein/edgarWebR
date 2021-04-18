@@ -7,3 +7,4 @@ tests/cache/**/* linguist-generated
 
 *.png binary
 *.jpg binary
+*.rdata binary
