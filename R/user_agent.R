@@ -31,7 +31,8 @@ check_result <- function(res) {
     stop(paste0(
       "EDGAR request blocked from Undeclared Automated Tool.\n",
       "Please visit https://www.sec.gov/developer for best practices.\n",
-      "Consider also setting the environment variable 'EDGARWEBR_USER_AGENT"
+      "See https://mwaldstein.github.io/edgarWebR/index.html#ethical-use--fair-access for your responsibilities\n",
+      "Consider also setting the environment variable 'EDGARWEBR_USER_AGENT",
     ))
   }
   stop(
