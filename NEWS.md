@@ -1,3 +1,9 @@
+# edgarWebR 1.0.3.9999
+
+## Features
+ * Support new EDGAR full-text search
+ * Add user-agent setting
+
 # edgarWebR 1.0.3
 
 ## Bugfixes

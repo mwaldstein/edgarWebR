@@ -57,35 +57,36 @@ full_text <- function(
   href <- "https://efts.sec.gov/LATEST/search-index"
   query <- list()
   if (q != "*" && q != "") {
-    query["q"] <- jsonlite::unbox(q)
+    query[["q"]] <- jsonlite::unbox(q)
   }
   if (from != "" && to != "") {
-    query["startdt"] <- jsonlite::unbox(format_date(from))
-    query["enddt"] <- jsonlite::unbox(format_date(to))
+    query[["startdt"]] <- jsonlite::unbox(format_date(from))
+    query[["enddt"]] <- jsonlite::unbox(format_date(to))
   }
-  if (type != "") {
-    query["category"] <- jsonlite::unbox("custom")
-    query["forms"] <- map_form(type)
+  if (any(type != "")) {
+    query[["category"]] <- jsonlite::unbox("custom")
+    query[["forms"]] <- map_form(type)
   }
   if (page != "" && page != 1) {
-    query["page"] <- jsonlite::unbox(page)
-    query["from"] <- jsonlite::unbox(page * 100)
+    query[["page"]] <- jsonlite::unbox(page)
+    query[["from"]] <- jsonlite::unbox(page * 100)
   }
   if ( name != "" && cik != "") {
     stop("Cannot perform full search with both a name and cik")
   }
   if (name != "" || cik != "") {
-    query["entityName"] <- jsonlite::unbox(ifelse(name == "", cik, name))
+    query[["entityName"]] <- jsonlite::unbox(ifelse(name == "", cik, name))
   }
   if (location != "") {
     if (incorporated_location) {
-      query["locationType"] <- "incorporated"
+      query[["locationType"]] <- "incorporated"
     }
-    query["locationCode"] <- jsonlite::unbox(location)
-    query["locationCodes"] <- location
+    query[["locationCode"]] <- jsonlite::unbox(location)
+    query[["locationCodes"]] <- location
   }
 
-  res <- httr::POST(href, body = query, encode = "json")
+  # stop(jsonlite::toJSON(query))
+  res <- edgar_POST(href, body = query, encode = "json")
   if (res$status != "200") {
     stop(paste0("Unable to reach the SEC full text search endpoint (",
                 href,
@@ -94,6 +95,10 @@ full_text <- function(
 
   json_res <- httr::content(res, as = "parsed")
   hits <- json_res$hits$hits
+  if (length(hits) == 0) {
+    return(list())
+  }
+
   lRes <- lapply(hits, function (hit) {
                    nsic = length(hit[["_source"]]$sics)
                    ncik = length(hit[["_source"]]$ciks)
@@ -136,7 +141,7 @@ full_text <- function(
 map_form <- function(form) {
   form <- sub("/", "", form)
 
-  return(form)
+  return(as.list(form))
 }
 
 format_date <- function(slash_date) {

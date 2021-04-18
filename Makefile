@@ -21,10 +21,10 @@ test:
 	Rscript -e 'library(httptest); devtools::test()'
 
 test-nocache:
-	MOCK_BYPASS="true" Rscript -e 'library(httptest); devtools::test()'
+	MOCK_BYPASS="true" EDGARWEBR_USER_AGENT="EDGARWebR Automated Tests" Rscript -e 'library(httptest); devtools::test()'
 
 test-buildcache: test-cleancache
-	MOCK_BYPASS="capture" Rscript -e 'library(httptest); devtools::test()'
+	MOCK_BYPASS="capture" EDGARWEBR_USER_AGENT="EDGARWebR Automated Tests" Rscript -e 'library(httptest); devtools::test()'
 
 test-cleancache:
 	${RM} -r tests/cache
@@ -88,7 +88,7 @@ readme:
 	Rscript -e 'rmarkdown::render("README.Rmd")'
 
 ubuntu-deps:
-	apt-get install texlive-latex-base texlive-fonts-extra
+	apt-get install texlive-latex-base texlive-fonts-extra libharfbuzz-dev libfribidi-dev
 
 revdep:
 	cd revdep; Rscript check.R

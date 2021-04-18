@@ -10,3 +10,6 @@ docs/*cache/
 docs/articles/*cache/
 tests/dev_tests/10cache.rds
 tests/dev_tests/*.out*csv
+/doc/
+/Meta/
+CRAN-RELEASE

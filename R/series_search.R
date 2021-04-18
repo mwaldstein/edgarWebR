@@ -13,10 +13,7 @@ series_search <- function(cik = NULL,
                           type = NULL) {
   href <- series_search_href(cik, company, ticker, type)
 
-  res <- httr::GET(href)
-  if (res$status != "200") {
-    stop("Unable to reach the SEC series search endpoint (https://www.sec.gov/cgi-bin/series)")
-  }
+  res <- edgar_GET(href)
   doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "//a[starts-with(.,'C')]"

@@ -2,7 +2,7 @@ context("running company_details")
 
 with_mock_API({
   test_that("running", {
-    expect_error(company_details("EAR"))
+    expect_error(company_details("BAD"))
     res <- company_details("AAPL")
     expect_is(res, "list")
 

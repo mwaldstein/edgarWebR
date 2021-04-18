@@ -29,7 +29,7 @@ browse_edgar <- function(ticker,
                 "&count=", count,
                 "&output=atom")
 
-  res <- httr::GET(href)
+  res <- edgar_GET(href)
   if (res$status != "200" | res$headers["content-type"] != "application/atom+xml") {
     stop(paste0("Could not find company: ", ticker));
   }

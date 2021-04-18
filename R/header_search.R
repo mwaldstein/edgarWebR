@@ -32,10 +32,7 @@ header_search <- function(q, page = 1, from = 1994, to = 2017) {
                    "&start=", 80 * (page - 1) + 1,
                    "&count=80")
   }
-  res <- httr::GET(href)
-  if (res$status != "200") {
-    stop("Unable to reach the SEC company search endpoint (https://www.sec.gov/cgi-bin/srch-edgar)")
-  }
+  res <- edgar_GET(href)
   doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "body/div/table/tr[position() > 1]"

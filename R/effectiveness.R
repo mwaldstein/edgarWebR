@@ -26,10 +26,7 @@
 #' @export
 effectiveness <- function() {
   href <- "https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect"
-  res <- httr::GET(href)
-  if (res$status != "200") {
-    stop("Unable to reach the SEC get effectiveness endpoint (https://www.sec.gov/cgi-bin/browse-edgar)")
-  }
+  res <- edgar_GET(href)
   doc <- xml2::read_html(res, base_url = href, options = "HUGE")
 
   entries_xpath <- "//a[contains(@href, 'filenum=')]"

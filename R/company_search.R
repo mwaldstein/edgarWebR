@@ -88,10 +88,7 @@ company_search <- function(x,
     ifelse(page != 1, paste0("&start=", count * (page - 1)), ""),
     "&output=atom")
 
-  res <- httr::GET(href)
-  if (res$status != "200") {
-    stop("Unable to reach the SEC company search endpoint (https://www.sec.gov/cgi-bin/browse-edgar)")
-  }
+  res <- edgar_GET(href)
   doc <- xml2::read_xml(res, base_url = href, options = "HUGE")
   xml2::xml_ns_strip(doc)
 
