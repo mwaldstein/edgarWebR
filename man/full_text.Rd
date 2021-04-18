@@ -8,35 +8,39 @@ full_text(
   q = "*",
   type = "",
   reverse_order = FALSE,
-  count = 10,
+  count = 100,
   page = 1,
   stemming = TRUE,
   name = "",
   cik = "",
   sic = "",
   from = "",
-  to = ""
+  to = "",
+  location = "",
+  incorporated_location = FALSE
 )
 }
 \arguments{
 \item{q}{Search query. For details on special formatting, see the
-\href{https://www.sec.gov/edgar/searchedgar/edgarfulltextfaq.htm}{FAQ}.}
+\href{https://www.sec.gov/edgar/search/efts-faq.html}{FAQ}.}
 
-\item{type}{Type of forms to search - e.g. '10-K'}
+\item{type}{Type of forms to search - e.g. '10-K'. Can also be a list of
+types - e.g. c("10-K", "10-Q")}
 
-\item{reverse_order}{If true, order by oldest first instead of newest first}
+\item{reverse_order}{[DEP] If true, order by oldest first instead of newest first}
 
-\item{count}{Number of results to return}
+\item{count}{[DEP] Number of results to return - will always try to return
+100}
 
 \item{page}{Which page of results to return}
 
-\item{stemming}{Search by base words(default) or exactly as entered}
+\item{stemming}{[DEP] Search by base words(default) or exactly as entered}
 
-\item{name}{Company name. Cannot be combined with `cik` or `sik`.}
+\item{name}{Company name OR individual's name. Cannot be combined with `cik` or `sik`.}
 
 \item{cik}{Company code to search. Cannot be combined with `name` or `sic`}
 
-\item{sic}{Standard Industrial Classification of filer to search for. Cannot
+\item{sic}{[DEP] Standard Industrial Classification of filer to search for. Cannot
 be combined with `cik` or `name`. Special options - 1: all, 0:
 Unspecified.}
 
@@ -62,7 +66,7 @@ A dataframe list of results including the following columns -
 }
 \description{
 Provides access to the SEC fillings
-\href{https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp}{full-text search tool}.
+\href{https://www.sec.gov/edgar/search/}{full-text search tool}.
 }
 \examples{
 \donttest{

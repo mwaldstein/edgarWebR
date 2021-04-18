@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3.9999</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -68,7 +68,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/mwaldstein/edgarWebR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -110,8 +110,8 @@
 <h2 class="hasAnchor">
 <a href="#find-a-submission" class="anchor"></a>Find a Submission</h2>
 <p>Using edgarWebR functions, we’ll first look up a recent filing.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="va">ticker</span> <span class="op">&lt;-</span> <span class="st">"STX"</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ticker</span> <span class="op">&lt;-</span> <span class="st">"STX"</span>
 
 <span class="va">filings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/company_filings.html">company_filings</a></span><span class="op">(</span><span class="va">ticker</span>, type <span class="op">=</span> <span class="st">"10-Q"</span>, count <span class="op">=</span> <span class="fl">40</span><span class="op">)</span>
 <span class="co"># Specifying the type provides all forms that start with 10-, so we need to</span>
@@ -124,7 +124,7 @@
                                 <span class="st">"md_href"</span><span class="op">)</span><span class="op">]</span>,
              col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Type"</span>, <span class="st">"Filing Date"</span>, <span class="st">"Accession No."</span>, <span class="st">"Size"</span>, <span class="st">"Link"</span><span class="op">)</span>,
              digits <span class="op">=</span> <span class="fl">2</span>,
-             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></pre></div>
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"></th>
@@ -148,8 +148,8 @@
 <h2 class="hasAnchor">
 <a href="#get-the-complete-submission-file" class="anchor"></a>Get the Complete Submission File</h2>
 <p>We’ll next get the list of files and find the link to the complete submission.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">docs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filing_documents.html">filing_documents</a></span><span class="op">(</span><span class="va">filing</span><span class="op">$</span><span class="va">href</span><span class="op">)</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">docs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/filing_documents.html">filing_documents</a></span><span class="op">(</span><span class="va">filing</span><span class="op">$</span><span class="va">href</span><span class="op">)</span>
 <span class="va">doc</span> <span class="op">&lt;-</span> <span class="va">docs</span><span class="op">[</span><span class="va">docs</span><span class="op">$</span><span class="va">description</span> <span class="op">==</span> <span class="st">'Complete submission text file'</span>, <span class="op">]</span>
 <span class="va">doc</span><span class="op">$</span><span class="va">md_href</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"[Link]("</span>, <span class="va">doc</span><span class="op">$</span><span class="va">href</span>, <span class="st">")"</span><span class="op">)</span>
 
@@ -158,7 +158,7 @@
              col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sequence"</span>, <span class="st">"Description"</span>, <span class="st">"Document"</span>,
                            <span class="st">"Size"</span>, <span class="st">"Link"</span><span class="op">)</span>,
              digits <span class="op">=</span> <span class="fl">2</span>,
-             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></pre></div>
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"></th>
@@ -183,12 +183,12 @@
 <h2 class="hasAnchor">
 <a href="#parse-the-complete-submission-file" class="anchor"></a>Parse the Complete Submission File</h2>
 <p>Now that we have the link to the complete submission file, we can parse it into components.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">parsed_docs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_submission.html">parse_submission</a></span><span class="op">(</span><span class="va">doc</span><span class="op">$</span><span class="va">href</span><span class="op">)</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">parsed_docs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_submission.html">parse_submission</a></span><span class="op">(</span><span class="va">doc</span><span class="op">$</span><span class="va">href</span><span class="op">)</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">parsed_docs</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SEQUENCE"</span>, <span class="st">"TYPE"</span>, <span class="st">"DESCRIPTION"</span>, <span class="st">"FILENAME"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,
              col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sequence"</span>, <span class="st">"Type"</span>, <span class="st">"Description"</span>, <span class="st">"Document"</span><span class="op">)</span>,
              digits <span class="op">=</span> <span class="fl">2</span>,
-             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></pre></div>
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Sequence</th>
@@ -236,11 +236,11 @@
 </tbody>
 </table>
 <p>And just for example, here’s the end of the full list - note the excel that isn’t on the SEC site for instance.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">parsed_docs</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SEQUENCE"</span>, <span class="st">"TYPE"</span>, <span class="st">"DESCRIPTION"</span>, <span class="st">"FILENAME"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">parsed_docs</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SEQUENCE"</span>, <span class="st">"TYPE"</span>, <span class="st">"DESCRIPTION"</span>, <span class="st">"FILENAME"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,
              col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sequence"</span>, <span class="st">"Type"</span>, <span class="st">"Description"</span>, <span class="st">"Document"</span><span class="op">)</span>,
              digits <span class="op">=</span> <span class="fl">2</span>,
-             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></pre></div>
+             format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left"></th>
@@ -295,21 +295,21 @@
 </tbody>
 </table>
 <p>The 10-Q Filing document is Seq. 1, with the full text of the document in the TEXT column.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="co"># NOTE: the filing document is not always #1, so it is a good idea to also look</span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># NOTE: the filing document is not always #1, so it is a good idea to also look</span>
 <span class="co"># at the type &amp; Description</span>
 <span class="va">filing_doc</span> <span class="op">&lt;-</span> <span class="va">parsed_docs</span><span class="op">[</span><span class="va">parsed_docs</span><span class="op">$</span><span class="va">TYPE</span> <span class="op">==</span> <span class="st">'10-Q'</span> <span class="op">&amp;</span>
                           <span class="va">parsed_docs</span><span class="op">$</span><span class="va">DESCRIPTION</span> <span class="op">==</span> <span class="st">'10-Q'</span>, <span class="st">'TEXT'</span><span class="op">]</span>
 <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span><span class="op">(</span><span class="va">filing_doc</span>, <span class="fl">1</span>, <span class="fl">80</span><span class="op">)</span>
-<span class="co">#&gt; [1] "&lt;HTML&gt;&lt;HEAD&gt;\n&lt;TITLE&gt;10-Q&lt;/TITLE&gt;\n&lt;/HEAD&gt;\n &lt;BODY BGCOLOR=\"WHITE\"&gt;\n&lt;h5 align=\"left"</span></pre></div>
+<span class="co">#&gt; [1] "&lt;HTML&gt;&lt;HEAD&gt;\n&lt;TITLE&gt;10-Q&lt;/TITLE&gt;\n&lt;/HEAD&gt;\n &lt;BODY BGCOLOR=\"WHITE\"&gt;\n&lt;h5 align=\"left"</span></code></pre></div>
 <p>We can see that contains the raw document. For document types which are not plain text, e.g. the XBRL zip file, the content is uuencoded and would been further processing.</p>
 </div>
 <div id="parse-the-filing-document" class="section level2">
 <h2 class="hasAnchor">
 <a href="#parse-the-filing-document" class="anchor"></a>Parse the Filing Document</h2>
 <p>Fortunately edgaWebR functions that take URL’s will also take a string containing the document, so to parse the document, while we could have passed the URL to the online document we can just pass in the full string.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="va">doc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_filing.html">parse_filing</a></span><span class="op">(</span><span class="va">filing_doc</span>, include.raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">doc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/parse_filing.html">parse_filing</a></span><span class="op">(</span><span class="va">filing_doc</span>, include.raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">doc</span><span class="op">$</span><span class="va">part.name</span><span class="op">)</span>
 <span class="co">#&gt; [1] ""        "PART I"  "PART II"</span>
 <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">doc</span><span class="op">$</span><span class="va">item.name</span><span class="op">)</span>
@@ -329,27 +329,27 @@
 <span class="co">#&gt; [1] "ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK"                                                                                                                                                                                                                                                                                                                                                                                                                                     </span>
 <span class="co">#&gt; [2] "We have exposure to market risks due to the volatility of interest rates, foreign currency exchange rates, credit rating changes, equity and bond markets. A portion of these risks may be hedged, but fluctuations could impact our results of operations, financial position and cash flows."                                                                                                                                                                                                         </span>
 <span class="co">#&gt; [3] "Interest Rate Risk. Our exposure to market risk for changes in interest rates relates primarily to our investment portfolio. As of September 29, 2017, we had no available-for-sale securities that had been in a continuous unrealized loss position for a period greater than 12 months. The Company determined no available-for-sale securities were other-than-temporarily impaired as of September 29, 2017. We currently do not use derivative financial instruments in our investment portfolio."</span>
-<span class="va">risks</span> <span class="op">&lt;-</span> <span class="va">doc</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"market risk"</span>, <span class="va">doc</span><span class="op">$</span><span class="va">item.name</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="st">"raw"</span><span class="op">]</span></pre></div>
+<span class="va">risks</span> <span class="op">&lt;-</span> <span class="va">doc</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"market risk"</span>, <span class="va">doc</span><span class="op">$</span><span class="va">item.name</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="st">"raw"</span><span class="op">]</span></code></pre></div>
 <p>Now the document is all ready for whatever further processing we want. As a quick example we’ll pull out all the italicized risks.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="va">risks</span> <span class="op">&lt;-</span> <span class="va">risks</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span><span class="op">(</span><span class="st">"&lt;i&gt;"</span>, <span class="va">risks</span><span class="op">)</span><span class="op">]</span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">risks</span> <span class="op">&lt;-</span> <span class="va">risks</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span><span class="op">(</span><span class="st">"&lt;i&gt;"</span>, <span class="va">risks</span><span class="op">)</span><span class="op">]</span>
 <span class="va">risks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">"^.*&lt;i&gt;|&lt;/i&gt;.*$"</span>, <span class="st">""</span>, <span class="va">risks</span><span class="op">)</span>
 <span class="va">risks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">"\n"</span>, <span class="st">" "</span>, <span class="va">risks</span><span class="op">)</span>
 <span class="va">risks</span>
 <span class="co">#&gt; [1] "Interest Rate Risk"             "Foreign Currency Exchange Risk"</span>
-<span class="co">#&gt; [3] "Derivatives and Hedging. "      "Other Market Risks"</span></pre></div>
+<span class="co">#&gt; [3] "Derivatives and Hedging. "      "Other Market Risks"</span></code></pre></div>
 <p>This is a fairly simplistic example, but should serve as a good tutorial on processing filings.</p>
 </div>
 <div id="how-to-download" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-download" class="anchor"></a>How to Download</h2>
 <p>edgarWebR is available from CRAN, so can be simply installed via</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"edgarWebR"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"edgarWebR"</span><span class="op">)</span></code></pre></div>
 <p>If you want the latest and greatest, you can get a copy of the development version from github by using devtools:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mwaldstein/edgarWebR"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mwaldstein/edgarWebR"</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 

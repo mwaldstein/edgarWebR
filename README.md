@@ -3,12 +3,6 @@
 
 # edgarWebR
 
-## NOTES:
-
-  - A bug was encountered on the Solaris CRAN checks which led to the
-    package being removed from CRAN. I’m working on a fix, but not
-    having access to the platform makes testing challenging.
-
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/edgarWebR)](https://cran.r-project.org/package=edgarWebR)
 ![R-CMD-check](https://github.com/mwaldstein/edgarWebR/workflows/R-CMD-check/badge.svg)
 [![codecov.io](https://codecov.io/github/mwaldstein/edgarWebR/coverage.svg?branch=master)](https://codecov.io/github/mwaldstein/edgarWebR?branch=master)
@@ -26,6 +20,33 @@ edgarWebR does *not* provide any functionality to extract financial data
 or other information from filings, only the metadata and company
 information. For processing of the financial data.
 
+## Ethical Use & Fair Access
+
+Because of abusive use of this library, the SEC is likely to block its
+use “as is” without setting a custom ‘User Agent’ identifier. Details
+for setting a custom agent are below.
+
+Users of this library are required to follow the SEC’s [Privacy and
+Security Policy](https://www.sec.gov/privacy.htm#security). Failure to
+follow that guidance may result in having your requests blocked. Per the
+SEC’s [Developer Resources](https://www.sec.gov/developer):
+
+> To ensure that everyone has equitable access to SEC EDGAR content,
+> please use efficient scripting, downloading only what you need and
+> please moderate requests to minimize server load. Current guidelines
+> limit each user to a total of no more than 10 requests per second,
+> regardless of the number of machines used to submit requests.
+> 
+> To ensure that SEC.gov remains available to all users, we reserve the
+> right to block IP addresses that submit excessive requests. The SEC
+> does not allow “unclassified” bots or automated tools to crawl the
+> site. Any request that has been identified as part of an unclassified
+> bot or an automated tool outside of the acceptable policy will be
+> managed to ensure fair access for all users.
+
+Users of this library are advised to set a custom user-agent by setting
+the environment variable `EDGARWEBR_USER_AGENT`.
+
 ## EDGAR Tools
 
 The EDGAR System provides a number of
@@ -35,21 +56,21 @@ search and browse interfaces.
 
 *Search Interfaces:*
 
-| Tool                          | URL                                                                | edgarWebR function(s)                                                                                                    |
-| ----------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| Company                       | <https://www.sec.gov/edgar/searchedgar/companysearch.html>         | `company_search()`, `company_information()`, `company_details()`, `company_filings()`                                    |
-| Recent Filings                | <https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent>       | `latest_filings()`                                                                                                       |
-| Full Text                     | <https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp> | `full_text()`                                                                                                            |
-| Header Search                 | <https://www.sec.gov/cgi-bin/srch-edgar>                           | `header_search()`                                                                                                        |
-| Fund Disclosures              | <https://www.sec.gov/edgar/searchedgar/prospectus.htm>             | Use `company_search()` and specify the ‘type’ parameter as 485                                                           |
-| Fund Voting Records           | <https://www.sec.gov/edgar/searchedgar/n-px.htm>                   | Use `company_search()` and specify the ‘type’ parameter as ‘N-PX’                                                        |
-| Fund Search                   | <https://www.sec.gov/edgar/searchedgar/mutualsearch.html>          | `fund_search()`, `fund_fast_search()`                                                                                    |
-| Var. Insurance Products       | <https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html>      | `variable_insurance_search()`, `variable_insurance_fast_search()`                                                        |
-| Confidential treatment orders | <https://www.sec.gov/edgar/searchedgar/ctorders.htm>               | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘CT ORDER’            |
-| Effectiveness notices         | <https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect>        | `effectiveness()`                                                                                                        |
-| CIK                           | <https://www.sec.gov/edgar/searchedgar/cik.htm>                    | `cik_search()`                                                                                                           |
-| Daily Filings                 | <https://www.sec.gov/edgar/searchedgar/currentevents.htm>          | `current_events()`                                                                                                       |
-| Correspondence                | <https://www.sec.gov/answers/edgarletters.htm>                     | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘upload’ or ‘corresp’ |
+| Tool                          | URL                                                           | edgarWebR function(s)                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Company                       | <https://www.sec.gov/edgar/searchedgar/companysearch.html>    | `company_search()`, `company_information()`, `company_details()`, `company_filings()`                                    |
+| Recent Filings                | <https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent>  | `latest_filings()`                                                                                                       |
+| Full Text                     | <https://www.sec.gov/edgar/search/>                           | `full_text()`                                                                                                            |
+| Header Search                 | <https://www.sec.gov/cgi-bin/srch-edgar>                      | `header_search()`                                                                                                        |
+| Fund Disclosures              | <https://www.sec.gov/edgar/searchedgar/prospectus.htm>        | Use `company_search()` and specify the ‘type’ parameter as 485                                                           |
+| Fund Voting Records           | <https://www.sec.gov/edgar/searchedgar/n-px.htm>              | Use `company_search()` and specify the ‘type’ parameter as ‘N-PX’                                                        |
+| Fund Search                   | <https://www.sec.gov/edgar/searchedgar/mutualsearch.html>     | `fund_search()`, `fund_fast_search()`                                                                                    |
+| Var. Insurance Products       | <https://www.sec.gov/edgar/searchedgar/vinsurancesearch.html> | `variable_insurance_search()`, `variable_insurance_fast_search()`                                                        |
+| Confidential treatment orders | <https://www.sec.gov/edgar/searchedgar/ctorders.htm>          | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘CT ORDER’            |
+| Effectiveness notices         | <https://www.sec.gov/cgi-bin/browse-edgar?action=geteffect>   | `effectiveness()`                                                                                                        |
+| CIK                           | <https://www.sec.gov/edgar/searchedgar/cik.htm>               | `cik_search()`                                                                                                           |
+| Daily Filings                 | <https://www.sec.gov/edgar/searchedgar/currentevents.htm>     | `current_events()`                                                                                                       |
+| Correspondence                | <https://www.sec.gov/answers/edgarletters.htm>                | Use `header_search()`, `company_search()`, `latest_filings()`, or `full_text()` and use form types ‘upload’ or ‘corresp’ |
 
 Once a filing is found via any of the above, there are a number of
 functions to process the result -

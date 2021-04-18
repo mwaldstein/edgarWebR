@@ -73,7 +73,7 @@ full-text search tool." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">edgarWebR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3.9999</span>
       </span>
     </div>
 
@@ -81,7 +81,7 @@ full-text search tool." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -110,7 +110,7 @@ full-text search tool." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/mwaldstein/edgarWebR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -134,21 +134,23 @@ full-text search tool." />
 
     <div class="ref-description">
     <p>Provides access to the SEC fillings
-<a href='https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp'>full-text search tool</a>.</p>
+<a href='https://www.sec.gov/edgar/search/'>full-text search tool</a>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>full_text</span><span class='op'>(</span>
   q <span class='op'>=</span> <span class='st'>"*"</span>,
   type <span class='op'>=</span> <span class='st'>""</span>,
   reverse_order <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  count <span class='op'>=</span> <span class='fl'>10</span>,
+  count <span class='op'>=</span> <span class='fl'>100</span>,
   page <span class='op'>=</span> <span class='fl'>1</span>,
   stemming <span class='op'>=</span> <span class='cn'>TRUE</span>,
   name <span class='op'>=</span> <span class='st'>""</span>,
   cik <span class='op'>=</span> <span class='st'>""</span>,
   sic <span class='op'>=</span> <span class='st'>""</span>,
   from <span class='op'>=</span> <span class='st'>""</span>,
-  to <span class='op'>=</span> <span class='st'>""</span>
+  to <span class='op'>=</span> <span class='st'>""</span>,
+  location <span class='op'>=</span> <span class='st'>""</span>,
+  incorporated_location <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -157,19 +159,21 @@ full-text search tool." />
     <tr>
       <th>q</th>
       <td><p>Search query. For details on special formatting, see the
-<a href='https://www.sec.gov/edgar/searchedgar/edgarfulltextfaq.htm'>FAQ</a>.</p></td>
+<a href='https://www.sec.gov/edgar/search/efts-faq.html'>FAQ</a>.</p></td>
     </tr>
     <tr>
       <th>type</th>
-      <td><p>Type of forms to search - e.g. '10-K'</p></td>
+      <td><p>Type of forms to search - e.g. '10-K'. Can also be a list of
+types - e.g. c("10-K", "10-Q")</p></td>
     </tr>
     <tr>
       <th>reverse_order</th>
-      <td><p>If true, order by oldest first instead of newest first</p></td>
+      <td><p>[DEP] If true, order by oldest first instead of newest first</p></td>
     </tr>
     <tr>
       <th>count</th>
-      <td><p>Number of results to return</p></td>
+      <td><p>[DEP] Number of results to return - will always try to return
+100</p></td>
     </tr>
     <tr>
       <th>page</th>
@@ -177,11 +181,11 @@ full-text search tool." />
     </tr>
     <tr>
       <th>stemming</th>
-      <td><p>Search by base words(default) or exactly as entered</p></td>
+      <td><p>[DEP] Search by base words(default) or exactly as entered</p></td>
     </tr>
     <tr>
       <th>name</th>
-      <td><p>Company name. Cannot be combined with `cik` or `sik`.</p></td>
+      <td><p>Company name OR individual's name. Cannot be combined with `cik` or `sik`.</p></td>
     </tr>
     <tr>
       <th>cik</th>
@@ -189,7 +193,7 @@ full-text search tool." />
     </tr>
     <tr>
       <th>sic</th>
-      <td><p>Standard Industrial Classification of filer to search for. Cannot
+      <td><p>[DEP] Standard Industrial Classification of filer to search for. Cannot
 be combined with `cik` or `name`. Special options - 1: all, 0:
 Unspecified.</p></td>
     </tr>
@@ -224,83 +228,706 @@ specify `from`</p></td>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='co'>## This can be very slow running</span>
 <span class='fu'>full_text</span><span class='op'>(</span><span class='st'>'intel'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    filing_date
-#&gt; 1   2020-08-31
-#&gt; 2   2020-08-31
-#&gt; 3   2020-08-31
-#&gt; 4   2020-08-31
-#&gt; 5   2020-08-31
-#&gt; 6   2020-08-31
-#&gt; 7   2020-08-31
-#&gt; 8   2020-08-31
-#&gt; 9   2020-08-31
-#&gt; 10  2020-08-31
-#&gt;                                                                        name
-#&gt; 1                                         N-CSRS for AMERICAN BALANCED FUND
-#&gt; 2                           N-CSRS for AMERICAN FUNDS FUNDAMENTAL INVESTORS
-#&gt; 3                                       N-CSRS for INVESTMENT CO OF AMERICA
-#&gt; 4                                         N-PX for AMANA MUTUAL FUNDS TRUST
-#&gt; 5                                         N-PX for SATURNA INVESTMENT TRUST
-#&gt; 6                                                    N-CSRS for TORRAY FUND
-#&gt; 7              EX-102 of ABS-EE for CSAIL 2017 C8 Commercial Mortgage Trust
-#&gt; 8    EX-102 of 10-D for JPMCC Commercial Mortgage Securities Trust 2017 JP7
-#&gt; 9  EX-102 of ABS-EE for JPMCC Commercial Mortgage Securities Trust 2017 JP7
-#&gt; 10                                          N-CSRS for Securian Funds Trust
-#&gt;                                                                                       href
-#&gt; 1          https://www.sec.gov/Archives/edgar/data/4568/000005193120000747/ambal_ncsrs.htm
-#&gt; 2            https://www.sec.gov/Archives/edgar/data/39473/000005193120000751/fi_ncsrs.htm
-#&gt; 3           https://www.sec.gov/Archives/edgar/data/51931/000005193120000752/ica_ncsrs.htm
-#&gt; 4  https://www.sec.gov/Archives/edgar/data/766285/000076628520000016/amanaformnpx19-20.htm
-#&gt; 5    https://www.sec.gov/Archives/edgar/data/811860/000081186020000043/sitformnpx19-20.htm
-#&gt; 6          https://www.sec.gov/Archives/edgar/data/862696/000089853120000358/ttf-ncsrs.htm
-#&gt; 7           https://www.sec.gov/Archives/edgar/data/1708131/000105640420009721/exh_102.xml
-#&gt; 8           https://www.sec.gov/Archives/edgar/data/1709967/000105640420009734/exh_102.xml
-#&gt; 9           https://www.sec.gov/Archives/edgar/data/1709967/000105640420009735/exh_102.xml
-#&gt; 10 https://www.sec.gov/Archives/edgar/data/766351/000110465920100749/tm2025137d1_ncsrs.htm
-#&gt;                                           company_name     cik  sic
-#&gt; 1                               AMERICAN BALANCED FUND    4568 &lt;NA&gt;
-#&gt; 2                 AMERICAN FUNDS FUNDAMENTAL INVESTORS   39473 &lt;NA&gt;
-#&gt; 3                             INVESTMENT CO OF AMERICA   51931 &lt;NA&gt;
-#&gt; 4                             AMANA MUTUAL FUNDS TRUST  766285 &lt;NA&gt;
-#&gt; 5                             SATURNA INVESTMENT TRUST  811860 &lt;NA&gt;
-#&gt; 6                                          TORRAY FUND  862696 &lt;NA&gt;
-#&gt; 7              CSAIL 2017 C8 Commercial Mortgage Trust 1708131 6189
-#&gt; 8  JPMCC Commercial Mortgage Securities Trust 2017 JP7 1709967 6189
-#&gt; 9  JPMCC Commercial Mortgage Securities Trust 2017 JP7 1709967 6189
-#&gt; 10                                Securian Funds Trust  766351 &lt;NA&gt;
-#&gt;                                                                                                                                                                                                                                                                                                       content
-#&gt; 1                  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR Certified Shareholder Report of Registered Management Investment Companies Investment Company Act File Number: 811-00066 American Balanced Fund (Exact Name of Registrant as Specified in Charter) 6455
-#&gt; 2                  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR Certified Shareholder Report of Registered Management Investment Companies Investment Company Act File Number: 811-00032 American Funds Fundamental Investors (Exact Name of Registrant as Specified in
-#&gt; 3            UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR Certified Shareholder Report of Registered Management Investment Companies Investment Company Act File Number: 811-00116 The Investment Company of America (Exact Name of Registrant as Specified in Charter)
-#&gt; 4    UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-04276 AMANA MUTUAL FUNDS TRUST (Exact Name of Registrant as Specified in Charter) 1300 N. State
-#&gt; 5    UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, DC 20549 FORM N-PX ANNUAL REPORT OF PROXY VOTING RECORD OF REGISTERED MANAGEMENT INVESTMENT COMPANY Investment Company Act file number: 811-05071 SATURNA INVESTMENT TRUST (Exact Name of Registrant as Specified in Charter) 1300 N. State
-#&gt; 6  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-06096 The Torray Fund (Exact name of registrant as specified in charter) 7501 Wisconsin Avenue, Suite
-#&gt; 7   Prospectus Loan ID 1 07-14-2020 08-11-2020 Natixis Real Estate Capital LLC 05-24-2017 70000000.00 120 06-05-2027 0.0341253 0.0341253 3 1 120 07-05-2017 true 1 PP 3 259494.47 70000000.00 1 1 1 0 true true true false false 06-04-2018 12-04-2026 12-04-2026 85 BROAD STREET 85 BROAD STREET New York NY
-#&gt; 8     Prospectus Loan ID 1 07-14-2020 08-11-2020 JPMorgan Chase Bank, National Association/Natixis Real Estate Capital LLC/Soci t G n rale/Deutsche Bank AG, New York Branch/Barclays Bank PLC 05-05-2017 75000000.00 120 06-01-2027 0.036694 0.036694 3 1 120 07-01-2017 true 1 A1 3 229337.50 75000000.00 1
-#&gt; 9     Prospectus Loan ID 1 07-14-2020 08-11-2020 JPMorgan Chase Bank, National Association/Natixis Real Estate Capital LLC/Soci t G n rale/Deutsche Bank AG, New York Branch/Barclays Bank PLC 05-05-2017 75000000.00 120 06-01-2027 0.036694 0.036694 3 1 120 07-01-2017 true 1 A1 3 229337.50 75000000.00 1
-#&gt; 10                      UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM N-CSR CERTIFIED SHAREHOLDER REPORT OF REGISTERED MANAGEMENT INVESTMENT COMPANIES Investment Company Act file number 811-4279 Securian Funds Trust (Exact name of registrant as specified in charter) 400
-#&gt;                                                                                     parent_href
-#&gt; 1                                                                                          &lt;NA&gt;
-#&gt; 2                                                                                          &lt;NA&gt;
-#&gt; 3                                                                                          &lt;NA&gt;
-#&gt; 4                                                                                          &lt;NA&gt;
-#&gt; 5                                                                                          &lt;NA&gt;
-#&gt; 6                                                                                          &lt;NA&gt;
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1708131/000105640420009721/csc17sa8_absee-202008.htm
-#&gt; 8    https://www.sec.gov/Archives/edgar/data/1709967/000105640420009734/jpc17jp7_10d-202008.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/1709967/000105640420009735/jpc17jp7_absee-202008.htm
-#&gt; 10                                                                                         &lt;NA&gt;
+</div><div class='output co'>#&gt;    filing_date                    name
+#&gt; 1   2007-08-06            10-Q EX-10.3
+#&gt; 2   2008-05-02            10-Q EX-10.1
+#&gt; 3   2007-08-03             6-K EX-99.1
+#&gt; 4   2021-03-23             8-K EX-99.1
+#&gt; 5   2001-03-26                   424B2
+#&gt; 6   2008-05-02            10-Q EX-10.2
+#&gt; 7   2019-05-09             8-K EX-99.3
+#&gt; 8   2003-04-24                   424B2
+#&gt; 9   2003-05-12                   424B3
+#&gt; 10  2004-03-31                 DEF 14A
+#&gt; 11  2013-04-26            10-Q EX-10.2
+#&gt; 12  2000-10-27            S-1 EX-10.21
+#&gt; 13  2003-05-29                   424B3
+#&gt; 14  2019-05-09             8-K EX-99.4
+#&gt; 15  2016-08-19               DRS EX-10
+#&gt; 16  2000-08-11              10-Q EX-10
+#&gt; 17  2007-11-27            S-1 EX-10.23
+#&gt; 18  2009-03-26           10-K EX-10.27
+#&gt; 19  2005-04-19             8-K EX-99.1
+#&gt; 20  2000-11-13            S-1 EX-10.21
+#&gt; 21  2008-08-22            S-4 EX-10.60
+#&gt; 22  2015-06-01             8-K EX-99.1
+#&gt; 23  2017-01-11            DRS EX-10.12
+#&gt; 24  2012-02-23            10-K EX-21.1
+#&gt; 25  2009-06-16            S-1 EX-10.16
+#&gt; 26  2011-10-18             8-K EX-99.1
+#&gt; 27  2007-03-27                   424B2
+#&gt; 28  2017-05-16            DRS EX-10.12
+#&gt; 29  2010-05-12             8-K EX-99.2
+#&gt; 30  2004-03-30             8-K EX-99.1
+#&gt; 31  2011-01-31             8-K EX-99.2
+#&gt; 32  2011-07-20             8-K EX-99.1
+#&gt; 33  2002-07-30                   424B3
+#&gt; 34  2004-01-14               8-K EX-99
+#&gt; 35  2011-01-31             8-K EX-99.1
+#&gt; 36  2015-11-20             8-K EX-99.1
+#&gt; 37  2001-03-08       SC TO-T SC TO-T/A
+#&gt; 38  2007-04-10          10-Q EX-10.164
+#&gt; 39  2015-01-27           10-K EX-10.13
+#&gt; 40  2009-11-17             8-K EX-10.1
+#&gt; 41  2009-09-22 SC TO-I EX-99.(A)(1)(G)
+#&gt; 42  2011-01-24             8-K EX-99.1
+#&gt; 43  2002-08-15                   424B3
+#&gt; 44  2007-08-06            10-Q EX-10.4
+#&gt; 45  2002-03-13                    10-K
+#&gt; 46  2008-03-17           10-K EX-10.38
+#&gt; 47  2011-03-14             S-1 EX-10.8
+#&gt; 48  2019-04-03             8-K EX-10.1
+#&gt; 49  2008-03-04               8-K EX-99
+#&gt; 50  2001-12-04        10-K405 EX-10.15
+#&gt; 51  2020-10-20                     8-K
+#&gt; 52  2002-04-30             8-K EX-10.1
+#&gt; 53  2004-02-23            10-K EX-21.1
+#&gt; 54  2019-01-31             8-K EX-99.1
+#&gt; 55  2016-11-14               DRS EX-10
+#&gt; 56  2001-01-16                 SC TO-C
+#&gt; 57  2007-01-08            S-1 EX-10.58
+#&gt; 58  2007-02-20                   424B2
+#&gt; 59  2007-11-15               8-K EX-99
+#&gt; 60  2012-11-20          10-Q EX-10.113
+#&gt; 61  2004-02-17          8-A12B EX-99.B
+#&gt; 62  2009-11-12             8-K EX-10.1
+#&gt; 63  2017-06-22       SC TO-T SC TO-T/A
+#&gt; 64  2007-12-11            S-1 EX-10.23
+#&gt; 65  2009-06-26            S-1 EX-10.16
+#&gt; 66  2021-01-14             8-K EX-10.1
+#&gt; 67  2016-02-12            10-K EX-21.1
+#&gt; 68  2004-07-16            SB-2 EX-10.9
+#&gt; 69  2015-02-13            10-K EX-21.1
+#&gt; 70  2015-07-27            10-Q EX-10.4
+#&gt; 71  2017-03-31            S-1 EX-10.12
+#&gt; 72  2008-11-17           10-Q EX-10.42
+#&gt; 73  2007-01-08            S-1 EX-10.52
+#&gt; 74  2019-01-31             8-K EX-10.1
+#&gt; 75  2006-02-27            10-K EX-21.1
+#&gt; 76  2001-08-10           10-Q EX-10.58
+#&gt; 77  2004-10-12             8-K EX-99.1
+#&gt; 78  2015-11-20             8-K EX-99.3
+#&gt; 79  2015-01-15             8-K EX-99.1
+#&gt; 80  2017-10-06            S-1 EX-10.12
+#&gt; 81  2007-02-20                     FWP
+#&gt; 82  2010-05-12             8-K EX-99.1
+#&gt; 83  2020-08-14             8-K EX-10.1
+#&gt; 84  2009-06-04                 CORRESP
+#&gt; 85  2016-02-12           10-K EX-10.14
+#&gt; 86  2012-07-09             8-K EX-99.1
+#&gt; 87  2005-02-22            10-K EX-21.1
+#&gt; 88  2015-07-02             8-K EX-99.1
+#&gt; 89  2021-01-14                     8-K
+#&gt; 90  2018-10-25             8-K EX-99.1
+#&gt; 91  2015-10-27           10-K EX-10.51
+#&gt; 92  2003-02-13         SC 13G SC 13G/A
+#&gt; 93  2007-12-06            S-1 EX-10.23
+#&gt; 94  2007-08-03            S-1 EX-10.23
+#&gt; 95  2007-06-29          SC 13D EX-99.A
+#&gt; 96  2017-08-08       SC TO-T SC TO-T/A
+#&gt; 97  2017-03-31             S-1 EX-4.04
+#&gt; 98  2010-08-05            10-Q EX-10.1
+#&gt; 99  2011-05-17             8-K EX-99.1
+#&gt;                                                                                                href
+#&gt; 1                https://www.sec.gov/Archives/edgar/data/50863/000095013407016808/f32127exv10w3.htm
+#&gt; 2                https://www.sec.gov/Archives/edgar/data/50863/000095013408008205/f40150exv10w1.htm
+#&gt; 3               https://www.sec.gov/Archives/edgar/data/932787/000095012307010792/y01797exv99w1.htm
+#&gt; 4                https://www.sec.gov/Archives/edgar/data/50863/000119312521091374/d153275dex991.htm
+#&gt; 5              https://www.sec.gov/Archives/edgar/data/200245/000095012301002657/e45834b2e424b2.txt
+#&gt; 6                https://www.sec.gov/Archives/edgar/data/50863/000095013408008205/f40150exv10w2.htm
+#&gt; 7                https://www.sec.gov/Archives/edgar/data/50863/000119312519142117/d741646dex993.htm
+#&gt; 8              https://www.sec.gov/Archives/edgar/data/200245/000095012303004687/y85661b2e424b2.txt
+#&gt; 9               https://www.sec.gov/Archives/edgar/data/895421/000095010303001288/may0603_424b3.txt
+#&gt; 10                     https://www.sec.gov/Archives/edgar/data/50863/000119312504054199/ddef14a.htm
+#&gt; 11    https://www.sec.gov/Archives/edgar/data/768251/000076825113000023/altera_2013q1x10qxex102.htm
+#&gt; 12           https://www.sec.gov/Archives/edgar/data/1022652/000109581100004115/a62761a6ex10-21.txt
+#&gt; 13         https://www.sec.gov/Archives/edgar/data/895421/000095010303001359/may2303_424b3-ps48.txt
+#&gt; 14               https://www.sec.gov/Archives/edgar/data/50863/000119312519142117/d741646dex994.htm
+#&gt; 15                 https://www.sec.gov/Archives/edgar/data/1316016/000095012316020279/filename3.htm
+#&gt; 16                      https://www.sec.gov/Archives/edgar/data/932290/000091205700036562/ex-10.htm
+#&gt; 17                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507253790/dex1023.htm
+#&gt; 18            https://www.sec.gov/Archives/edgar/data/1442505/000095013409006072/v51173exv10w27.htm
+#&gt; 19               https://www.sec.gov/Archives/edgar/data/50863/000115752305003483/a4867865ex991.txt
+#&gt; 20           https://www.sec.gov/Archives/edgar/data/1022652/000095015000000898/v62761b4ex10-21.txt
+#&gt; 21            https://www.sec.gov/Archives/edgar/data/1442505/000095012308009987/y63518exv10w60.htm
+#&gt; 22               https://www.sec.gov/Archives/edgar/data/50863/000119312515209231/d935756dex991.htm
+#&gt; 23                 https://www.sec.gov/Archives/edgar/data/1316016/000095012317004142/filename2.htm
+#&gt; 24               https://www.sec.gov/Archives/edgar/data/50863/000119312512075534/d302695dex211.htm
+#&gt; 25          https://www.sec.gov/Archives/edgar/data/1420302/000095012309014140/b75316a8exv10w16.htm
+#&gt; 26             https://www.sec.gov/Archives/edgar/data/50863/000115752311005759/a50033968-ex991.htm
+#&gt; 27                    https://www.sec.gov/Archives/edgar/data/1318281/000119312507064810/d424b2.htm
+#&gt; 28                 https://www.sec.gov/Archives/edgar/data/1316016/000095012317005440/filename2.htm
+#&gt; 29                      https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/exh992.htm
+#&gt; 30       https://www.sec.gov/Archives/edgar/data/351145/000035114504000009/intel-dell_agreement.pdf
+#&gt; 31                      https://www.sec.gov/Archives/edgar/data/50863/000005086311000020/exh992.htm
+#&gt; 32              https://www.sec.gov/Archives/edgar/data/50863/000115752311004100/a6800886ex99_1.htm
+#&gt; 33              https://www.sec.gov/Archives/edgar/data/895421/000095010302000756/jul2602_424b3.txt
+#&gt; 34                https://www.sec.gov/Archives/edgar/data/50863/000115752304000218/a4550018ex99.txt
+#&gt; 35                      https://www.sec.gov/Archives/edgar/data/50863/000005086311000020/exh991.htm
+#&gt; 36                https://www.sec.gov/Archives/edgar/data/50863/000119312515382423/d90133dex991.htm
+#&gt; 37             https://www.sec.gov/Archives/edgar/data/50863/000089161801500166/f68556a6scto-ta.txt
+#&gt; 38         https://www.sec.gov/Archives/edgar/data/723125/000072312507000028/q2-07exhibit10_164.htm
+#&gt; 39                   https://www.sec.gov/Archives/edgar/data/1171012/000118518515000158/ex10-13.htm
+#&gt; 40                       https://www.sec.gov/Archives/edgar/data/2488/000119312509236705/dex101.htm
+#&gt; 41       https://www.sec.gov/Archives/edgar/data/50863/000095012309044666/f53534exv99wxayx1yxgy.htm
+#&gt; 42                      https://www.sec.gov/Archives/edgar/data/50863/000005086311000013/exh991.htm
+#&gt; 43           https://www.sec.gov/Archives/edgar/data/895421/000095010302000842/aug1202_424b3ps7.txt
+#&gt; 44               https://www.sec.gov/Archives/edgar/data/50863/000095013407016808/f32127exv10w4.htm
+#&gt; 45               https://www.sec.gov/Archives/edgar/data/50863/000091205702009698/a2072777z10-k.htm
+#&gt; 46            https://www.sec.gov/Archives/edgar/data/1001193/000095013408004919/f38968exv10w38.htm
+#&gt; 47                    https://www.sec.gov/Archives/edgar/data/1280363/000119312511065181/dex108.htm
+#&gt; 48               https://www.sec.gov/Archives/edgar/data/50863/000119312519096036/d642676dex101.htm
+#&gt; 49                       https://www.sec.gov/Archives/edgar/data/50863/000005086308000089/exh99.htm
+#&gt; 50                    https://www.sec.gov/Archives/edgar/data/917273/000101287001503032/dex1015.txt
+#&gt; 51                   https://www.sec.gov/Archives/edgar/data/50863/000119312520272580/d76122d8k.htm
+#&gt; 52         https://www.sec.gov/Archives/edgar/data/351145/000035114502000021/redactedsettlement.txt
+#&gt; 53                      https://www.sec.gov/Archives/edgar/data/50863/000119312504027430/dex211.htm
+#&gt; 54               https://www.sec.gov/Archives/edgar/data/50863/000119312519023301/d702987dex991.htm
+#&gt; 55                 https://www.sec.gov/Archives/edgar/data/1316016/000095012317004138/filename2.htm
+#&gt; 56              https://www.sec.gov/Archives/edgar/data/50863/000089161801000052/f68556c1scto-c.txt
+#&gt; 57          https://www.sec.gov/Archives/edgar/data/1285551/000089102007000003/v25599a1exv10w58.txt
+#&gt; 58                    https://www.sec.gov/Archives/edgar/data/1318281/000119312507034882/d424b2.htm
+#&gt; 59                      https://www.sec.gov/Archives/edgar/data/50863/000005086307000402/exh991.htm
+#&gt; 60        https://www.sec.gov/Archives/edgar/data/723125/000072312512000163/a2012q310qaex10-113.htm
+#&gt; 61                      https://www.sec.gov/Archives/edgar/data/65100/000119312504025255/dex99b.htm
+#&gt; 62                      https://www.sec.gov/Archives/edgar/data/50863/000005086309000213/exh101.htm
+#&gt; 63              https://www.sec.gov/Archives/edgar/data/50863/000119312517209888/d413660dsctota.htm
+#&gt; 64                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/dex1023.htm
+#&gt; 65          https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/b75316a9exv10w16.htm
+#&gt; 66                https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/d82915dex101.htm
+#&gt; 67             https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex21112262015q4.htm
+#&gt; 68             https://www.sec.gov/Archives/edgar/data/1283073/000093041304003280/c32316_ex10-9.txt
+#&gt; 69           https://www.sec.gov/Archives/edgar/data/50863/000005086315000015/a10kex21112272014.htm
+#&gt; 70         https://www.sec.gov/Archives/edgar/data/50863/000005086315000055/intcex10410q6272015.htm
+#&gt; 71            https://www.sec.gov/Archives/edgar/data/1535379/000162828017003221/s-1exhibit1012.htm
+#&gt; 72            https://www.sec.gov/Archives/edgar/data/1001193/000089161808000487/f50377exv10w42.htm
+#&gt; 73          https://www.sec.gov/Archives/edgar/data/1285551/000089102007000003/v25599a1exv10w52.txt
+#&gt; 74               https://www.sec.gov/Archives/edgar/data/50863/000119312519023301/d702987dex101.htm
+#&gt; 75               https://www.sec.gov/Archives/edgar/data/50863/000089161806000089/f12963exv21w1.htm
+#&gt; 76                      https://www.sec.gov/Archives/edgar/data/2488/000101287001501532/dex1058.txt
+#&gt; 77               https://www.sec.gov/Archives/edgar/data/50863/000115752304009185/a4738419ex991.txt
+#&gt; 78                https://www.sec.gov/Archives/edgar/data/50863/000119312515382423/d90133dex993.htm
+#&gt; 79       https://www.sec.gov/Archives/edgar/data/50863/000005086315000009/earningsreleaseq42014.htm
+#&gt; 80            https://www.sec.gov/Archives/edgar/data/1316016/000119312517306042/d106686dex1012.htm
+#&gt; 81                      https://www.sec.gov/Archives/edgar/data/1318281/000119312507034886/dfwp.htm
+#&gt; 82                      https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/exh991.htm
+#&gt; 83               https://www.sec.gov/Archives/edgar/data/50863/000119312520220333/d229439dex101.htm
+#&gt; 84                   https://www.sec.gov/Archives/edgar/data/50863/000005086309000116/filename1.htm
+#&gt; 85            https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex101412262015q4.htm
+#&gt; 86               https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/d372356dex991.htm
+#&gt; 87                      https://www.sec.gov/Archives/edgar/data/50863/000119312505033162/dex211.htm
+#&gt; 88                      https://www.sec.gov/Archives/edgar/data/50863/000005086315000044/exh991.htm
+#&gt; 89                   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/d82915d8k.htm
+#&gt; 90     https://www.sec.gov/Archives/edgar/data/50863/000005086318000027/q3-2018_earningsrelease.htm
+#&gt; 91 https://www.sec.gov/Archives/edgar/data/723125/000072312515000112/a2015q4ex10-51supplyagreem.htm
+#&gt; 92                    https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/pccwtest.txt
+#&gt; 93                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/dex1023.htm
+#&gt; 94                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507170681/dex1023.htm
+#&gt; 95             https://www.sec.gov/Archives/edgar/data/1388447/000089102007000191/v31483exv99wa.txt
+#&gt; 96              https://www.sec.gov/Archives/edgar/data/50863/000119312517251345/d439645dsctota.htm
+#&gt; 97             https://www.sec.gov/Archives/edgar/data/1535379/000162828017003221/s-1exhibit404.htm
+#&gt; 98             https://www.sec.gov/Archives/edgar/data/1442505/000095012310073483/v55909exv10w1.htm
+#&gt; 99                      https://www.sec.gov/Archives/edgar/data/50863/000005086311000094/exh991.htm
+#&gt;                                                             company_name
+#&gt; 1                                                     INTEL CORP  (INTC)
+#&gt; 2                                                     INTEL CORP  (INTC)
+#&gt; 3                                           STMICROELECTRONICS NV  (STM)
+#&gt; 4                                                     INTEL CORP  (INTC)
+#&gt; 5                                      SALOMON SMITH BARNEY HOLDINGS INC
+#&gt; 6                                                     INTEL CORP  (INTC)
+#&gt; 7                                                     INTEL CORP  (INTC)
+#&gt; 8                                  CITIGROUP GLOBAL MARKETS HOLDINGS INC
+#&gt; 9  MORGAN STANLEY  (MS, CNY, INR, URR, MLPY, MS-PA, MS-PI, MS-PK, MS-PL)
+#&gt; 10                                                    INTEL CORP  (INTC)
+#&gt; 11                                                           ALTERA CORP
+#&gt; 12                                          NOVATEL WIRELESS INC  (INSG)
+#&gt; 13 MORGAN STANLEY  (MS, CNY, INR, URR, MLPY, MS-PA, MS-PI, MS-PK, MS-PL)
+#&gt; 14                                                    INTEL CORP  (INTC)
+#&gt; 15                                                         AQUANTIA CORP
+#&gt; 16                                        CENTERSPAN COMMUNICATIONS CORP
+#&gt; 17                                                         INTELLON CORP
+#&gt; 18                                                    Clearwire Corp /DE
+#&gt; 19                                                    INTEL CORP  (INTC)
+#&gt; 20                                          NOVATEL WIRELESS INC  (INSG)
+#&gt; 21                                                    New Clearwire CORP
+#&gt; 22                                                    INTEL CORP  (INTC)
+#&gt; 23                                                         AQUANTIA CORP
+#&gt; 24                                                    INTEL CORP  (INTC)
+#&gt; 25                                                 LogMeIn, Inc.  (LOGM)
+#&gt; 26                                                    INTEL CORP  (INTC)
+#&gt; 27                                                Citigroup Funding Inc.
+#&gt; 28                                                         AQUANTIA CORP
+#&gt; 29                                                    INTEL CORP  (INTC)
+#&gt; 30                                                       INTERGRAPH CORP
+#&gt; 31                                                    INTEL CORP  (INTC)
+#&gt; 32                                                    INTEL CORP  (INTC)
+#&gt; 33 MORGAN STANLEY  (MS, CNY, INR, URR, MLPY, MS-PA, MS-PI, MS-PK, MS-PL)
+#&gt; 34                                                    INTEL CORP  (INTC)
+#&gt; 35                                                    INTEL CORP  (INTC)
+#&gt; 36                                                    INTEL CORP  (INTC)
+#&gt; 37                                                    INTEL CORP  (INTC)
+#&gt; 38                                           MICRON TECHNOLOGY INC  (MU)
+#&gt; 39                                                     Uni-Pixel  (UNXL)
+#&gt; 40                                     ADVANCED MICRO DEVICES INC  (AMD)
+#&gt; 41                                                    INTEL CORP  (INTC)
+#&gt; 42                                                    INTEL CORP  (INTC)
+#&gt; 43 MORGAN STANLEY  (MS, CNY, INR, URR, MLPY, MS-PA, MS-PI, MS-PK, MS-PL)
+#&gt; 44                                                    INTEL CORP  (INTC)
+#&gt; 45                                                    INTEL CORP  (INTC)
+#&gt; 46                                                        TRANSMETA CORP
+#&gt; 47                                           APACHE DESIGN SOLUTIONS INC
+#&gt; 48                                                    INTEL CORP  (INTC)
+#&gt; 49                                                    INTEL CORP  (INTC)
+#&gt; 50                                                    RAMBUS INC  (RMBS)
+#&gt; 51                                                    INTEL CORP  (INTC)
+#&gt; 52                                                       INTERGRAPH CORP
+#&gt; 53                                                    INTEL CORP  (INTC)
+#&gt; 54                                                    INTEL CORP  (INTC)
+#&gt; 55                                                         AQUANTIA CORP
+#&gt; 56                                                    INTEL CORP  (INTC)
+#&gt; 57                                                        CLEARWIRE CORP
+#&gt; 58                                                Citigroup Funding Inc.
+#&gt; 59                                                    INTEL CORP  (INTC)
+#&gt; 60                                           MICRON TECHNOLOGY INC  (MU)
+#&gt; 61                                                MERRILL LYNCH &amp; CO INC
+#&gt; 62                                                    INTEL CORP  (INTC)
+#&gt; 63                                                    INTEL CORP  (INTC)
+#&gt; 64                                                         INTELLON CORP
+#&gt; 65                                                 LogMeIn, Inc.  (LOGM)
+#&gt; 66                                                    INTEL CORP  (INTC)
+#&gt; 67                                                    INTEL CORP  (INTC)
+#&gt; 68                                                          GURUNET CORP
+#&gt; 69                                                    INTEL CORP  (INTC)
+#&gt; 70                                                    INTEL CORP  (INTC)
+#&gt; 71                                                Cloudera, Inc.  (CLDR)
+#&gt; 72                                                        TRANSMETA CORP
+#&gt; 73                                                        CLEARWIRE CORP
+#&gt; 74                                                    INTEL CORP  (INTC)
+#&gt; 75                                                    INTEL CORP  (INTC)
+#&gt; 76                                     ADVANCED MICRO DEVICES INC  (AMD)
+#&gt; 77                                                    INTEL CORP  (INTC)
+#&gt; 78                                                    INTEL CORP  (INTC)
+#&gt; 79                                                    INTEL CORP  (INTC)
+#&gt; 80                                                         AQUANTIA CORP
+#&gt; 81                                                Citigroup Funding Inc.
+#&gt; 82                                                    INTEL CORP  (INTC)
+#&gt; 83                                                    INTEL CORP  (INTC)
+#&gt; 84                                                    INTEL CORP  (INTC)
+#&gt; 85                                                    INTEL CORP  (INTC)
+#&gt; 86                                                    INTEL CORP  (INTC)
+#&gt; 87                                                    INTEL CORP  (INTC)
+#&gt; 88                                                    INTEL CORP  (INTC)
+#&gt; 89                                                    INTEL CORP  (INTC)
+#&gt; 90                                                    INTEL CORP  (INTC)
+#&gt; 91                                           MICRON TECHNOLOGY INC  (MU)
+#&gt; 92                                                    INTEL CORP  (INTC)
+#&gt; 93                                                         INTELLON CORP
+#&gt; 94                                                         INTELLON CORP
+#&gt; 95                                             Eagle River Holdings, LLC
+#&gt; 96                                                    INTEL CORP  (INTC)
+#&gt; 97                                                Cloudera, Inc.  (CLDR)
+#&gt; 98                                                    Clearwire Corp /DE
+#&gt; 99                                                    INTEL CORP  (INTC)
+#&gt;           cik  sic
+#&gt; 1  0000050863 3674
+#&gt; 2  0000050863 3674
+#&gt; 3  0000932787 3674
+#&gt; 4  0000050863 3674
+#&gt; 5  0000200245 6211
+#&gt; 6  0000050863 3674
+#&gt; 7  0000050863 3674
+#&gt; 8  0000200245 6211
+#&gt; 9  0000895421 6199
+#&gt; 10 0000050863 3674
+#&gt; 11 0000768251 3674
+#&gt; 12 0001022652 7370
+#&gt; 13 0000895421 6199
+#&gt; 14 0000050863 3674
+#&gt; 15 0001316016 3674
+#&gt; 16 0000932290 3577
+#&gt; 17 0001120105 3674
+#&gt; 18 0001442505 4899
+#&gt; 19 0000050863 3674
+#&gt; 20 0001022652 7370
+#&gt; 21 0001442505 &lt;NA&gt;
+#&gt; 22 0000050863 3674
+#&gt; 23 0001316016 3674
+#&gt; 24 0000050863 3674
+#&gt; 25 0001420302 7372
+#&gt; 26 0000050863 3674
+#&gt; 27 0001318281 6199
+#&gt; 28 0001316016 3674
+#&gt; 29 0000050863 3674
+#&gt; 30 0000351145 7373
+#&gt; 31 0000050863 3674
+#&gt; 32 0000050863 3674
+#&gt; 33 0000895421 6199
+#&gt; 34 0000050863 3674
+#&gt; 35 0000050863 3674
+#&gt; 36 0000050863 3674
+#&gt; 37 0000050863 3674
+#&gt; 38 0000723125 3674
+#&gt; 39 0001171012 3679
+#&gt; 40 0000002488 3674
+#&gt; 41 0000050863 3674
+#&gt; 42 0000050863 3674
+#&gt; 43 0000895421 6199
+#&gt; 44 0000050863 3674
+#&gt; 45 0000050863 3674
+#&gt; 46 0001001193 3674
+#&gt; 47 0001280363 &lt;NA&gt;
+#&gt; 48 0000050863 3674
+#&gt; 49 0000050863 3674
+#&gt; 50 0000917273 3674
+#&gt; 51 0000050863 3674
+#&gt; 52 0000351145 7373
+#&gt; 53 0000050863 3674
+#&gt; 54 0000050863 3674
+#&gt; 55 0001316016 3674
+#&gt; 56 0000050863 3674
+#&gt; 57 0001285551 4899
+#&gt; 58 0001318281 6199
+#&gt; 59 0000050863 3674
+#&gt; 60 0000723125 3674
+#&gt; 61 0000065100 6211
+#&gt; 62 0000050863 3674
+#&gt; 63 0000050863 3674
+#&gt; 64 0001120105 3674
+#&gt; 65 0001420302 7372
+#&gt; 66 0000050863 3674
+#&gt; 67 0000050863 3674
+#&gt; 68 0001283073 7389
+#&gt; 69 0000050863 3674
+#&gt; 70 0000050863 3674
+#&gt; 71 0001535379 7372
+#&gt; 72 0001001193 3674
+#&gt; 73 0001285551 4899
+#&gt; 74 0000050863 3674
+#&gt; 75 0000050863 3674
+#&gt; 76 0000002488 3674
+#&gt; 77 0000050863 3674
+#&gt; 78 0000050863 3674
+#&gt; 79 0000050863 3674
+#&gt; 80 0001316016 3674
+#&gt; 81 0001318281 6199
+#&gt; 82 0000050863 3674
+#&gt; 83 0000050863 3674
+#&gt; 84 0000050863 3674
+#&gt; 85 0000050863 3674
+#&gt; 86 0000050863 3674
+#&gt; 87 0000050863 3674
+#&gt; 88 0000050863 3674
+#&gt; 89 0000050863 3674
+#&gt; 90 0000050863 3674
+#&gt; 91 0000723125 3674
+#&gt; 92 0000050863 3674
+#&gt; 93 0001120105 3674
+#&gt; 94 0001120105 3674
+#&gt; 95 0001388447 4899
+#&gt; 96 0000050863 3674
+#&gt; 97 0001535379 7372
+#&gt; 98 0001442505 4899
+#&gt; 99 0000050863 3674
+#&gt;                                                                                 content
+#&gt; 1                                                                          EXHIBIT 10.3
+#&gt; 2                                                                          EXHIBIT 10.1
+#&gt; 3                                                                          EXHIBIT 99.1
+#&gt; 4                                                                               EX-99.1
+#&gt; 5                                                    SALOMON SMITH BARNEY HOLDINGS INC.
+#&gt; 6                                                                          EXHIBIT 10.2
+#&gt; 7                                                                               EX-99.3
+#&gt; 8                                                 CITIGROUP GLOBAL MARKETS HOLDINGS INC
+#&gt; 9                                                                                  &lt;NA&gt;
+#&gt; 10                                                           DEFINITIVE PROXY MATERIALS
+#&gt; 11           INTEL CORP AMENDED AND RESTATED FOUNDRY AND MANUFACTURING CUSTOMER AGREEME
+#&gt; 12                                                                        EXHIBIT 10.21
+#&gt; 13                                                                                 &lt;NA&gt;
+#&gt; 14                                                                              EX-99.4
+#&gt; 15                                                                                 &lt;NA&gt;
+#&gt; 16                                                                           EXHIBIT 10
+#&gt; 17                                                                        EXHIBIT 10.23
+#&gt; 18                                                                             EX-10.27
+#&gt; 19                                                       INTEL CORPORATION EXHIBIT 99.1
+#&gt; 20                                                                        EXHIBIT 10.21
+#&gt; 21                                                                        EXHIBIT 10.60
+#&gt; 22                                                                              EX-99.1
+#&gt; 23                                                                                 &lt;NA&gt;
+#&gt; 24                                                       INTEL CORPORATION SUBSIDIARIES
+#&gt; 25                              EX-10.16 - CONNECTIVITY SERVICE AND MARKETING AGREEMENT
+#&gt; 26                                                                         EXHIBIT 99.1
+#&gt; 27                                                             FINAL PRICING SUPPLEMENT
+#&gt; 28                                                                                 &lt;NA&gt;
+#&gt; 29                                                                         EXHIBIT 99.2
+#&gt; 30               UNOFFICIAL COPY OF SETTLEMENT AGREEMENT WITH INTEL AND LICENSE TO DELL
+#&gt; 31                                                                         EXHIBIT 99.2
+#&gt; 32                                                                         EXHIBIT 99.1
+#&gt; 33                                                                                 &lt;NA&gt;
+#&gt; 34                                                           EXHIBIT 99.1 PRESS RELEASE
+#&gt; 35                                                                         EXHIBIT 99.1
+#&gt; 36                                                                              EX-99.1
+#&gt; 37                                                     AMENDMENT NO. 6 TO SCHEDULE TO-T
+#&gt; 38                                                                       EXHIBIT 10.164
+#&gt; 39                                                                             EX-10.13
+#&gt; 40                                                                 SETTLEMENT AGREEMENT
+#&gt; 41                                                                      EX-99.(A)(1)(G)
+#&gt; 42                                                                         EXHIBIT 99.1
+#&gt; 43                                                                                 &lt;NA&gt;
+#&gt; 44                                                                         EXHIBIT 10.4
+#&gt; 45                                                                                 10-K
+#&gt; 46                                                                        EXHIBIT 10.38
+#&gt; 47                                           DEVELOPMENT, MARKETING &amp; LICENSE AGREEMENT
+#&gt; 48                                                                              EX-10.1
+#&gt; 49                                                                         EXHIBIT 99.1
+#&gt; 50                                                             PATENT LICENSE AGREEMENT
+#&gt; 51                                                                                  8-K
+#&gt; 52                                                                 SETTLEMENT AGREEMENT
+#&gt; 53                                                                   INTEL SUBSIDIARIES
+#&gt; 54                                                                              EX-99.1
+#&gt; 55                                                                                 &lt;NA&gt;
+#&gt; 56                                                                        SCHEDULE TO-C
+#&gt; 57                                                                SIDE LETTER AGREEMENT
+#&gt; 58                                                       PRELIMINARY PRICING SUPPLEMENT
+#&gt; 59                                                                         EXHIBIT 99.1
+#&gt; 60                                                                       EXHIBIT 10.113
+#&gt; 61                                                                         FORM OF NOTE
+#&gt; 62                                                                         EXHIBIT 10.1
+#&gt; 63                                                                            SC TO-T/A
+#&gt; 64                                                                        EXHIBIT 10.23
+#&gt; 65 EX-10.16 CONNECTIVITY SERVICE AND MARKETING AGREEMENT, DATED AS OF DECEMBER 26, 2007
+#&gt; 66                                                                              EX-10.1
+#&gt; 67                                                                         EXHIBIT 21.1
+#&gt; 68                                                                                 &lt;NA&gt;
+#&gt; 69                                                                         EXHIBIT 21.1
+#&gt; 70                                                                         EXHIBIT 10.4
+#&gt; 71                                                                        EXHIBIT 10.12
+#&gt; 72                                                                        EXHIBIT 10.42
+#&gt; 73                                         MOBILE WIMAX NETWORK COLLABORATION AGREEMENT
+#&gt; 74                                                                              EX-10.1
+#&gt; 75                                               EX-21.1 INTEL CORPORATION SUBSIDIARIES
+#&gt; 76                                                       PATENT CROSS-LICENSE AGREEMENT
+#&gt; 77                                                                        PRESS RELEASE
+#&gt; 78                                                                              EX-99.3
+#&gt; 79                                                                              EXHIBIT
+#&gt; 80                                                                             EX-10.12
+#&gt; 81                                                                     OFFERING SUMMARY
+#&gt; 82                                                                         EXHIBIT 99.1
+#&gt; 83                                                                              EX-10.1
+#&gt; 84                                                                                 &lt;NA&gt;
+#&gt; 85                                                                        EXHIBIT 10.14
+#&gt; 86                                                                        PRESS RELEASE
+#&gt; 87                                                                   INTEL SUBSIDIARIES
+#&gt; 88                                                                         EXHIBIT 99.1
+#&gt; 89                                                                                  8-K
+#&gt; 90                                                                         EXHIBIT 99.1
+#&gt; 91                                                                        EXHIBIT 10.51
+#&gt; 92                                                                                 &lt;NA&gt;
+#&gt; 93                                                                        EXHIBIT 10.23
+#&gt; 94                                                                        EXHIBIT 10.23
+#&gt; 95                                                                         EXHIBIT 99.A
+#&gt; 96                                                                            SC TO-T/A
+#&gt; 97                                                                         EXHIBIT 4.04
+#&gt; 98                                                                              EX-10.1
+#&gt; 99                                                                         EXHIBIT 99.1
+#&gt;                                                                                          parent_href
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/50863/000095013407016808/0000950134-07-016808-index.htm
+#&gt; 2    https://www.sec.gov/Archives/edgar/data/50863/000095013408008205/0000950134-08-008205-index.htm
+#&gt; 3   https://www.sec.gov/Archives/edgar/data/932787/000095012307010792/0000950123-07-010792-index.htm
+#&gt; 4    https://www.sec.gov/Archives/edgar/data/50863/000119312521091374/0001193125-21-091374-index.htm
+#&gt; 5   https://www.sec.gov/Archives/edgar/data/200245/000095012301002657/0000950123-01-002657-index.htm
+#&gt; 6    https://www.sec.gov/Archives/edgar/data/50863/000095013408008205/0000950134-08-008205-index.htm
+#&gt; 7    https://www.sec.gov/Archives/edgar/data/50863/000119312519142117/0001193125-19-142117-index.htm
+#&gt; 8   https://www.sec.gov/Archives/edgar/data/200245/000095012303004687/0000950123-03-004687-index.htm
+#&gt; 9   https://www.sec.gov/Archives/edgar/data/895421/000095010303001288/0000950103-03-001288-index.htm
+#&gt; 10   https://www.sec.gov/Archives/edgar/data/50863/000119312504054199/0001193125-04-054199-index.htm
+#&gt; 11  https://www.sec.gov/Archives/edgar/data/768251/000076825113000023/0000768251-13-000023-index.htm
+#&gt; 12 https://www.sec.gov/Archives/edgar/data/1022652/000109581100004115/0001095811-00-004115-index.htm
+#&gt; 13  https://www.sec.gov/Archives/edgar/data/895421/000095010303001359/0000950103-03-001359-index.htm
+#&gt; 14   https://www.sec.gov/Archives/edgar/data/50863/000119312519142117/0001193125-19-142117-index.htm
+#&gt; 15 https://www.sec.gov/Archives/edgar/data/1316016/000095012316020279/0000950123-16-020279-index.htm
+#&gt; 16  https://www.sec.gov/Archives/edgar/data/932290/000091205700036562/0000912057-00-036562-index.htm
+#&gt; 17 https://www.sec.gov/Archives/edgar/data/1120105/000119312507253790/0001193125-07-253790-index.htm
+#&gt; 18 https://www.sec.gov/Archives/edgar/data/1442505/000095013409006072/0000950134-09-006072-index.htm
+#&gt; 19   https://www.sec.gov/Archives/edgar/data/50863/000115752305003483/0001157523-05-003483-index.htm
+#&gt; 20 https://www.sec.gov/Archives/edgar/data/1022652/000095015000000898/0000950150-00-000898-index.htm
+#&gt; 21 https://www.sec.gov/Archives/edgar/data/1442505/000095012308009987/0000950123-08-009987-index.htm
+#&gt; 22   https://www.sec.gov/Archives/edgar/data/50863/000119312515209231/0001193125-15-209231-index.htm
+#&gt; 23 https://www.sec.gov/Archives/edgar/data/1316016/000095012317004142/0000950123-17-004142-index.htm
+#&gt; 24   https://www.sec.gov/Archives/edgar/data/50863/000119312512075534/0001193125-12-075534-index.htm
+#&gt; 25 https://www.sec.gov/Archives/edgar/data/1420302/000095012309014140/0000950123-09-014140-index.htm
+#&gt; 26   https://www.sec.gov/Archives/edgar/data/50863/000115752311005759/0001157523-11-005759-index.htm
+#&gt; 27 https://www.sec.gov/Archives/edgar/data/1318281/000119312507064810/0001193125-07-064810-index.htm
+#&gt; 28 https://www.sec.gov/Archives/edgar/data/1316016/000095012317005440/0000950123-17-005440-index.htm
+#&gt; 29   https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/0000050863-10-000050-index.htm
+#&gt; 30  https://www.sec.gov/Archives/edgar/data/351145/000035114504000009/0000351145-04-000009-index.htm
+#&gt; 31   https://www.sec.gov/Archives/edgar/data/50863/000005086311000020/0000050863-11-000020-index.htm
+#&gt; 32   https://www.sec.gov/Archives/edgar/data/50863/000115752311004100/0001157523-11-004100-index.htm
+#&gt; 33  https://www.sec.gov/Archives/edgar/data/895421/000095010302000756/0000950103-02-000756-index.htm
+#&gt; 34   https://www.sec.gov/Archives/edgar/data/50863/000115752304000218/0001157523-04-000218-index.htm
+#&gt; 35   https://www.sec.gov/Archives/edgar/data/50863/000005086311000020/0000050863-11-000020-index.htm
+#&gt; 36   https://www.sec.gov/Archives/edgar/data/50863/000119312515382423/0001193125-15-382423-index.htm
+#&gt; 37   https://www.sec.gov/Archives/edgar/data/50863/000089161801500166/0000891618-01-500166-index.htm
+#&gt; 38  https://www.sec.gov/Archives/edgar/data/723125/000072312507000028/0000723125-07-000028-index.htm
+#&gt; 39 https://www.sec.gov/Archives/edgar/data/1171012/000118518515000158/0001185185-15-000158-index.htm
+#&gt; 40    https://www.sec.gov/Archives/edgar/data/2488/000119312509236705/0001193125-09-236705-index.htm
+#&gt; 41   https://www.sec.gov/Archives/edgar/data/50863/000095012309044666/0000950123-09-044666-index.htm
+#&gt; 42   https://www.sec.gov/Archives/edgar/data/50863/000005086311000013/0000050863-11-000013-index.htm
+#&gt; 43  https://www.sec.gov/Archives/edgar/data/895421/000095010302000842/0000950103-02-000842-index.htm
+#&gt; 44   https://www.sec.gov/Archives/edgar/data/50863/000095013407016808/0000950134-07-016808-index.htm
+#&gt; 45   https://www.sec.gov/Archives/edgar/data/50863/000091205702009698/0000912057-02-009698-index.htm
+#&gt; 46 https://www.sec.gov/Archives/edgar/data/1001193/000095013408004919/0000950134-08-004919-index.htm
+#&gt; 47 https://www.sec.gov/Archives/edgar/data/1280363/000119312511065181/0001193125-11-065181-index.htm
+#&gt; 48   https://www.sec.gov/Archives/edgar/data/50863/000119312519096036/0001193125-19-096036-index.htm
+#&gt; 49   https://www.sec.gov/Archives/edgar/data/50863/000005086308000089/0000050863-08-000089-index.htm
+#&gt; 50  https://www.sec.gov/Archives/edgar/data/917273/000101287001503032/0001012870-01-503032-index.htm
+#&gt; 51   https://www.sec.gov/Archives/edgar/data/50863/000119312520272580/0001193125-20-272580-index.htm
+#&gt; 52  https://www.sec.gov/Archives/edgar/data/351145/000035114502000021/0000351145-02-000021-index.htm
+#&gt; 53   https://www.sec.gov/Archives/edgar/data/50863/000119312504027430/0001193125-04-027430-index.htm
+#&gt; 54   https://www.sec.gov/Archives/edgar/data/50863/000119312519023301/0001193125-19-023301-index.htm
+#&gt; 55 https://www.sec.gov/Archives/edgar/data/1316016/000095012317004138/0000950123-17-004138-index.htm
+#&gt; 56   https://www.sec.gov/Archives/edgar/data/50863/000089161801000052/0000891618-01-000052-index.htm
+#&gt; 57 https://www.sec.gov/Archives/edgar/data/1285551/000089102007000003/0000891020-07-000003-index.htm
+#&gt; 58 https://www.sec.gov/Archives/edgar/data/1318281/000119312507034882/0001193125-07-034882-index.htm
+#&gt; 59   https://www.sec.gov/Archives/edgar/data/50863/000005086307000402/0000050863-07-000402-index.htm
+#&gt; 60  https://www.sec.gov/Archives/edgar/data/723125/000072312512000163/0000723125-12-000163-index.htm
+#&gt; 61   https://www.sec.gov/Archives/edgar/data/65100/000119312504025255/0001193125-04-025255-index.htm
+#&gt; 62   https://www.sec.gov/Archives/edgar/data/50863/000005086309000213/0000050863-09-000213-index.htm
+#&gt; 63   https://www.sec.gov/Archives/edgar/data/50863/000119312517209888/0001193125-17-209888-index.htm
+#&gt; 64 https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/0001193125-07-262676-index.htm
+#&gt; 65 https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/0000950123-09-017935-index.htm
+#&gt; 66   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
+#&gt; 67   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 68 https://www.sec.gov/Archives/edgar/data/1283073/000093041304003280/0000930413-04-003280-index.htm
+#&gt; 69   https://www.sec.gov/Archives/edgar/data/50863/000005086315000015/0000050863-15-000015-index.htm
+#&gt; 70   https://www.sec.gov/Archives/edgar/data/50863/000005086315000055/0000050863-15-000055-index.htm
+#&gt; 71 https://www.sec.gov/Archives/edgar/data/1535379/000162828017003221/0001628280-17-003221-index.htm
+#&gt; 72 https://www.sec.gov/Archives/edgar/data/1001193/000089161808000487/0000891618-08-000487-index.htm
+#&gt; 73 https://www.sec.gov/Archives/edgar/data/1285551/000089102007000003/0000891020-07-000003-index.htm
+#&gt; 74   https://www.sec.gov/Archives/edgar/data/50863/000119312519023301/0001193125-19-023301-index.htm
+#&gt; 75   https://www.sec.gov/Archives/edgar/data/50863/000089161806000089/0000891618-06-000089-index.htm
+#&gt; 76    https://www.sec.gov/Archives/edgar/data/2488/000101287001501532/0001012870-01-501532-index.htm
+#&gt; 77   https://www.sec.gov/Archives/edgar/data/50863/000115752304009185/0001157523-04-009185-index.htm
+#&gt; 78   https://www.sec.gov/Archives/edgar/data/50863/000119312515382423/0001193125-15-382423-index.htm
+#&gt; 79   https://www.sec.gov/Archives/edgar/data/50863/000005086315000009/0000050863-15-000009-index.htm
+#&gt; 80 https://www.sec.gov/Archives/edgar/data/1316016/000119312517306042/0001193125-17-306042-index.htm
+#&gt; 81 https://www.sec.gov/Archives/edgar/data/1318281/000119312507034886/0001193125-07-034886-index.htm
+#&gt; 82   https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/0000050863-10-000050-index.htm
+#&gt; 83   https://www.sec.gov/Archives/edgar/data/50863/000119312520220333/0001193125-20-220333-index.htm
+#&gt; 84   https://www.sec.gov/Archives/edgar/data/50863/000005086309000116/0000050863-09-000116-index.htm
+#&gt; 85   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 86   https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/0001193125-12-297577-index.htm
+#&gt; 87   https://www.sec.gov/Archives/edgar/data/50863/000119312505033162/0001193125-05-033162-index.htm
+#&gt; 88   https://www.sec.gov/Archives/edgar/data/50863/000005086315000044/0000050863-15-000044-index.htm
+#&gt; 89   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
+#&gt; 90   https://www.sec.gov/Archives/edgar/data/50863/000005086318000027/0000050863-18-000027-index.htm
+#&gt; 91  https://www.sec.gov/Archives/edgar/data/723125/000072312515000112/0000723125-15-000112-index.htm
+#&gt; 92   https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/0000050863-03-000053-index.htm
+#&gt; 93 https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/0001193125-07-260104-index.htm
+#&gt; 94 https://www.sec.gov/Archives/edgar/data/1120105/000119312507170681/0001193125-07-170681-index.htm
+#&gt; 95 https://www.sec.gov/Archives/edgar/data/1388447/000089102007000191/0000891020-07-000191-index.htm
+#&gt; 96   https://www.sec.gov/Archives/edgar/data/50863/000119312517251345/0001193125-17-251345-index.htm
+#&gt; 97 https://www.sec.gov/Archives/edgar/data/1535379/000162828017003221/0001628280-17-003221-index.htm
+#&gt; 98 https://www.sec.gov/Archives/edgar/data/1442505/000095012310073483/0000950123-10-073483-index.htm
+#&gt; 99   https://www.sec.gov/Archives/edgar/data/50863/000005086311000094/0000050863-11-000094-index.htm
 #&gt;                                                                                           index_href
-#&gt; 1                                                                                               &lt;NA&gt;
-#&gt; 2                                                                                               &lt;NA&gt;
-#&gt; 3                                                                                               &lt;NA&gt;
-#&gt; 4                                                                                               &lt;NA&gt;
-#&gt; 5                                                                                               &lt;NA&gt;
-#&gt; 6                                                                                               &lt;NA&gt;
-#&gt; 7  https://www.sec.gov/Archives/edgar/data/1708131/000105640420009721/0001056404-20-009721-index.htm
-#&gt; 8  https://www.sec.gov/Archives/edgar/data/1709967/000105640420009734/0001056404-20-009734-index.htm
-#&gt; 9  https://www.sec.gov/Archives/edgar/data/1709967/000105640420009735/0001056404-20-009735-index.htm
-#&gt; 10                                                                                              &lt;NA&gt;</div><div class='input'><span class='co'># }</span>
+#&gt; 1    https://www.sec.gov/Archives/edgar/data/50863/000095013407016808/0000950134-07-016808-index.htm
+#&gt; 2    https://www.sec.gov/Archives/edgar/data/50863/000095013408008205/0000950134-08-008205-index.htm
+#&gt; 3   https://www.sec.gov/Archives/edgar/data/932787/000095012307010792/0000950123-07-010792-index.htm
+#&gt; 4    https://www.sec.gov/Archives/edgar/data/50863/000119312521091374/0001193125-21-091374-index.htm
+#&gt; 5   https://www.sec.gov/Archives/edgar/data/200245/000095012301002657/0000950123-01-002657-index.htm
+#&gt; 6    https://www.sec.gov/Archives/edgar/data/50863/000095013408008205/0000950134-08-008205-index.htm
+#&gt; 7    https://www.sec.gov/Archives/edgar/data/50863/000119312519142117/0001193125-19-142117-index.htm
+#&gt; 8   https://www.sec.gov/Archives/edgar/data/200245/000095012303004687/0000950123-03-004687-index.htm
+#&gt; 9   https://www.sec.gov/Archives/edgar/data/895421/000095010303001288/0000950103-03-001288-index.htm
+#&gt; 10   https://www.sec.gov/Archives/edgar/data/50863/000119312504054199/0001193125-04-054199-index.htm
+#&gt; 11  https://www.sec.gov/Archives/edgar/data/768251/000076825113000023/0000768251-13-000023-index.htm
+#&gt; 12 https://www.sec.gov/Archives/edgar/data/1022652/000109581100004115/0001095811-00-004115-index.htm
+#&gt; 13  https://www.sec.gov/Archives/edgar/data/895421/000095010303001359/0000950103-03-001359-index.htm
+#&gt; 14   https://www.sec.gov/Archives/edgar/data/50863/000119312519142117/0001193125-19-142117-index.htm
+#&gt; 15 https://www.sec.gov/Archives/edgar/data/1316016/000095012316020279/0000950123-16-020279-index.htm
+#&gt; 16  https://www.sec.gov/Archives/edgar/data/932290/000091205700036562/0000912057-00-036562-index.htm
+#&gt; 17 https://www.sec.gov/Archives/edgar/data/1120105/000119312507253790/0001193125-07-253790-index.htm
+#&gt; 18 https://www.sec.gov/Archives/edgar/data/1442505/000095013409006072/0000950134-09-006072-index.htm
+#&gt; 19   https://www.sec.gov/Archives/edgar/data/50863/000115752305003483/0001157523-05-003483-index.htm
+#&gt; 20 https://www.sec.gov/Archives/edgar/data/1022652/000095015000000898/0000950150-00-000898-index.htm
+#&gt; 21 https://www.sec.gov/Archives/edgar/data/1442505/000095012308009987/0000950123-08-009987-index.htm
+#&gt; 22   https://www.sec.gov/Archives/edgar/data/50863/000119312515209231/0001193125-15-209231-index.htm
+#&gt; 23 https://www.sec.gov/Archives/edgar/data/1316016/000095012317004142/0000950123-17-004142-index.htm
+#&gt; 24   https://www.sec.gov/Archives/edgar/data/50863/000119312512075534/0001193125-12-075534-index.htm
+#&gt; 25 https://www.sec.gov/Archives/edgar/data/1420302/000095012309014140/0000950123-09-014140-index.htm
+#&gt; 26   https://www.sec.gov/Archives/edgar/data/50863/000115752311005759/0001157523-11-005759-index.htm
+#&gt; 27 https://www.sec.gov/Archives/edgar/data/1318281/000119312507064810/0001193125-07-064810-index.htm
+#&gt; 28 https://www.sec.gov/Archives/edgar/data/1316016/000095012317005440/0000950123-17-005440-index.htm
+#&gt; 29   https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/0000050863-10-000050-index.htm
+#&gt; 30  https://www.sec.gov/Archives/edgar/data/351145/000035114504000009/0000351145-04-000009-index.htm
+#&gt; 31   https://www.sec.gov/Archives/edgar/data/50863/000005086311000020/0000050863-11-000020-index.htm
+#&gt; 32   https://www.sec.gov/Archives/edgar/data/50863/000115752311004100/0001157523-11-004100-index.htm
+#&gt; 33  https://www.sec.gov/Archives/edgar/data/895421/000095010302000756/0000950103-02-000756-index.htm
+#&gt; 34   https://www.sec.gov/Archives/edgar/data/50863/000115752304000218/0001157523-04-000218-index.htm
+#&gt; 35   https://www.sec.gov/Archives/edgar/data/50863/000005086311000020/0000050863-11-000020-index.htm
+#&gt; 36   https://www.sec.gov/Archives/edgar/data/50863/000119312515382423/0001193125-15-382423-index.htm
+#&gt; 37   https://www.sec.gov/Archives/edgar/data/50863/000089161801500166/0000891618-01-500166-index.htm
+#&gt; 38  https://www.sec.gov/Archives/edgar/data/723125/000072312507000028/0000723125-07-000028-index.htm
+#&gt; 39 https://www.sec.gov/Archives/edgar/data/1171012/000118518515000158/0001185185-15-000158-index.htm
+#&gt; 40    https://www.sec.gov/Archives/edgar/data/2488/000119312509236705/0001193125-09-236705-index.htm
+#&gt; 41   https://www.sec.gov/Archives/edgar/data/50863/000095012309044666/0000950123-09-044666-index.htm
+#&gt; 42   https://www.sec.gov/Archives/edgar/data/50863/000005086311000013/0000050863-11-000013-index.htm
+#&gt; 43  https://www.sec.gov/Archives/edgar/data/895421/000095010302000842/0000950103-02-000842-index.htm
+#&gt; 44   https://www.sec.gov/Archives/edgar/data/50863/000095013407016808/0000950134-07-016808-index.htm
+#&gt; 45   https://www.sec.gov/Archives/edgar/data/50863/000091205702009698/0000912057-02-009698-index.htm
+#&gt; 46 https://www.sec.gov/Archives/edgar/data/1001193/000095013408004919/0000950134-08-004919-index.htm
+#&gt; 47 https://www.sec.gov/Archives/edgar/data/1280363/000119312511065181/0001193125-11-065181-index.htm
+#&gt; 48   https://www.sec.gov/Archives/edgar/data/50863/000119312519096036/0001193125-19-096036-index.htm
+#&gt; 49   https://www.sec.gov/Archives/edgar/data/50863/000005086308000089/0000050863-08-000089-index.htm
+#&gt; 50  https://www.sec.gov/Archives/edgar/data/917273/000101287001503032/0001012870-01-503032-index.htm
+#&gt; 51   https://www.sec.gov/Archives/edgar/data/50863/000119312520272580/0001193125-20-272580-index.htm
+#&gt; 52  https://www.sec.gov/Archives/edgar/data/351145/000035114502000021/0000351145-02-000021-index.htm
+#&gt; 53   https://www.sec.gov/Archives/edgar/data/50863/000119312504027430/0001193125-04-027430-index.htm
+#&gt; 54   https://www.sec.gov/Archives/edgar/data/50863/000119312519023301/0001193125-19-023301-index.htm
+#&gt; 55 https://www.sec.gov/Archives/edgar/data/1316016/000095012317004138/0000950123-17-004138-index.htm
+#&gt; 56   https://www.sec.gov/Archives/edgar/data/50863/000089161801000052/0000891618-01-000052-index.htm
+#&gt; 57 https://www.sec.gov/Archives/edgar/data/1285551/000089102007000003/0000891020-07-000003-index.htm
+#&gt; 58 https://www.sec.gov/Archives/edgar/data/1318281/000119312507034882/0001193125-07-034882-index.htm
+#&gt; 59   https://www.sec.gov/Archives/edgar/data/50863/000005086307000402/0000050863-07-000402-index.htm
+#&gt; 60  https://www.sec.gov/Archives/edgar/data/723125/000072312512000163/0000723125-12-000163-index.htm
+#&gt; 61   https://www.sec.gov/Archives/edgar/data/65100/000119312504025255/0001193125-04-025255-index.htm
+#&gt; 62   https://www.sec.gov/Archives/edgar/data/50863/000005086309000213/0000050863-09-000213-index.htm
+#&gt; 63   https://www.sec.gov/Archives/edgar/data/50863/000119312517209888/0001193125-17-209888-index.htm
+#&gt; 64 https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/0001193125-07-262676-index.htm
+#&gt; 65 https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/0000950123-09-017935-index.htm
+#&gt; 66   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
+#&gt; 67   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 68 https://www.sec.gov/Archives/edgar/data/1283073/000093041304003280/0000930413-04-003280-index.htm
+#&gt; 69   https://www.sec.gov/Archives/edgar/data/50863/000005086315000015/0000050863-15-000015-index.htm
+#&gt; 70   https://www.sec.gov/Archives/edgar/data/50863/000005086315000055/0000050863-15-000055-index.htm
+#&gt; 71 https://www.sec.gov/Archives/edgar/data/1535379/000162828017003221/0001628280-17-003221-index.htm
+#&gt; 72 https://www.sec.gov/Archives/edgar/data/1001193/000089161808000487/0000891618-08-000487-index.htm
+#&gt; 73 https://www.sec.gov/Archives/edgar/data/1285551/000089102007000003/0000891020-07-000003-index.htm
+#&gt; 74   https://www.sec.gov/Archives/edgar/data/50863/000119312519023301/0001193125-19-023301-index.htm
+#&gt; 75   https://www.sec.gov/Archives/edgar/data/50863/000089161806000089/0000891618-06-000089-index.htm
+#&gt; 76    https://www.sec.gov/Archives/edgar/data/2488/000101287001501532/0001012870-01-501532-index.htm
+#&gt; 77   https://www.sec.gov/Archives/edgar/data/50863/000115752304009185/0001157523-04-009185-index.htm
+#&gt; 78   https://www.sec.gov/Archives/edgar/data/50863/000119312515382423/0001193125-15-382423-index.htm
+#&gt; 79   https://www.sec.gov/Archives/edgar/data/50863/000005086315000009/0000050863-15-000009-index.htm
+#&gt; 80 https://www.sec.gov/Archives/edgar/data/1316016/000119312517306042/0001193125-17-306042-index.htm
+#&gt; 81 https://www.sec.gov/Archives/edgar/data/1318281/000119312507034886/0001193125-07-034886-index.htm
+#&gt; 82   https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/0000050863-10-000050-index.htm
+#&gt; 83   https://www.sec.gov/Archives/edgar/data/50863/000119312520220333/0001193125-20-220333-index.htm
+#&gt; 84   https://www.sec.gov/Archives/edgar/data/50863/000005086309000116/0000050863-09-000116-index.htm
+#&gt; 85   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 86   https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/0001193125-12-297577-index.htm
+#&gt; 87   https://www.sec.gov/Archives/edgar/data/50863/000119312505033162/0001193125-05-033162-index.htm
+#&gt; 88   https://www.sec.gov/Archives/edgar/data/50863/000005086315000044/0000050863-15-000044-index.htm
+#&gt; 89   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
+#&gt; 90   https://www.sec.gov/Archives/edgar/data/50863/000005086318000027/0000050863-18-000027-index.htm
+#&gt; 91  https://www.sec.gov/Archives/edgar/data/723125/000072312515000112/0000723125-15-000112-index.htm
+#&gt; 92   https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/0000050863-03-000053-index.htm
+#&gt; 93 https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/0001193125-07-260104-index.htm
+#&gt; 94 https://www.sec.gov/Archives/edgar/data/1120105/000119312507170681/0001193125-07-170681-index.htm
+#&gt; 95 https://www.sec.gov/Archives/edgar/data/1388447/000089102007000191/0000891020-07-000191-index.htm
+#&gt; 96   https://www.sec.gov/Archives/edgar/data/50863/000119312517251345/0001193125-17-251345-index.htm
+#&gt; 97 https://www.sec.gov/Archives/edgar/data/1535379/000162828017003221/0001628280-17-003221-index.htm
+#&gt; 98 https://www.sec.gov/Archives/edgar/data/1442505/000095012310073483/0000950123-10-073483-index.htm
+#&gt; 99   https://www.sec.gov/Archives/edgar/data/50863/000005086311000094/0000050863-11-000094-index.htm</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
