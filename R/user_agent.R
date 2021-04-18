@@ -5,19 +5,19 @@
 
 edgar_agent <- Sys.getenv(
   "EDGARWEBR_USER_AGENT",
-  unset = "edgarWebR (https://mwaldstein.github.io/edgarWebR/)"
+  unset = "edgarWebR (https://github.com/mwaldstein/edgarWebR)"
 )
 ua <- httr::user_agent(edgar_agent)
 
-edgar_GET <- function(path) {
-  res <- httr::GET(path, ua)
+edgar_GET <- function(href) {
+  res <- httr::GET(href, ua)
   check_result(res)
   return(res)
 }
 
 edgar_POST <- function(href, body, encode = "json") {
   # res <- httr::POST(href, body = body, encode = encode, httr::verbose())
-  res <- httr::POST(href, body = body, encode = encode)
+  res <- httr::POST(href, body = body, encode = encode, ua)
   check_result(res)
   return(res)
 }
