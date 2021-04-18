@@ -3,7 +3,7 @@ structure(list(url = "/browse-edgar?action=getcompany&CIK=AAPL&owner=exclude&typ
         `content-type` = "application/atom+xml", server = "Apache", 
         `x-content-type-options` = "nosniff", `x-frame-options` = "SAMEORIGIN", 
         `x-xss-protection` = "1; mode=block", `content-length` = "3128", 
-        `cache-control` = "no-cache", date = "Sun, 18 Apr 2021 16:07:14 GMT", 
+        `cache-control` = "no-cache", date = "Sun, 18 Apr 2021 16:54:08 GMT", 
         vary = "Accept-Encoding", `strict-transport-security` = "max-age=31536000 ; includeSubDomains ; preload", 
         location = character(0)), class = c("insensitive", "list"
     )), all_headers = list(list(status = 200L, version = "HTTP/2", 
@@ -11,7 +11,7 @@ structure(list(url = "/browse-edgar?action=getcompany&CIK=AAPL&owner=exclude&typ
             `content-type` = "application/atom+xml", server = "Apache", 
             `x-content-type-options` = "nosniff", `x-frame-options` = "SAMEORIGIN", 
             `x-xss-protection` = "1; mode=block", `content-length` = "3128", 
-            `cache-control` = "no-cache", date = "Sun, 18 Apr 2021 16:07:14 GMT", 
+            `cache-control` = "no-cache", date = "Sun, 18 Apr 2021 16:54:08 GMT", 
             vary = "Accept-Encoding", `strict-transport-security` = "max-age=31536000 ; includeSubDomains ; preload"), class = c("insensitive", 
         "list")))), cookies = structure(list(domain = logical(0), 
         flag = logical(0), path = logical(0), secure = logical(0), 
@@ -3689,11 +3689,11 @@ structure(list(url = "/browse-edgar?action=getcompany&CIK=AAPL&owner=exclude&typ
     0x33, 0x29, 0x3c, 0x2f, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x3e, 
     0x0a, 0x20, 0x20, 0x20, 0x20, 0x3c, 0x75, 0x70, 0x64, 0x61, 
     0x74, 0x65, 0x64, 0x3e, 0x32, 0x30, 0x32, 0x31, 0x2d, 0x30, 
-    0x34, 0x2d, 0x31, 0x38, 0x54, 0x31, 0x32, 0x3a, 0x30, 0x37, 
-    0x3a, 0x31, 0x34, 0x2d, 0x30, 0x34, 0x3a, 0x30, 0x30, 0x3c, 
+    0x34, 0x2d, 0x31, 0x38, 0x54, 0x31, 0x32, 0x3a, 0x35, 0x34, 
+    0x3a, 0x30, 0x38, 0x2d, 0x30, 0x34, 0x3a, 0x30, 0x30, 0x3c, 
     0x2f, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x3e, 0x0a, 
     0x20, 0x20, 0x3c, 0x2f, 0x66, 0x65, 0x65, 0x64, 0x3e, 0x0a
-    )), date = structure(1618762034, class = c("POSIXct", "POSIXt"
-    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.4e-05, 
-    connect = 2.5e-05, pretransfer = 7.3e-05, starttransfer = 0.075317, 
-    total = 0.075473)), class = "response")
+    )), date = structure(1618764848, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.5e-05, 
+    connect = 2.6e-05, pretransfer = 7.7e-05, starttransfer = 0.018184, 
+    total = 0.019019)), class = "response")

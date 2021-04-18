@@ -1,5 +1,5 @@
 {
-    "took": 88,
+    "took": 93,
     "timed_out": false,
     "_shards": {
         "total": 50,
@@ -62,7 +62,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-17-000012:a10kdocument12312016q4.htm",
-                "_score": 1099.7275,
+                "_score": 1099.9774,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -194,7 +194,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-21-000010:intc-20201226.htm",
-                "_score": 1062.2197,
+                "_score": 1062.215,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -238,7 +238,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-18-000007:a12302017q4-10kdocument.htm",
-                "_score": 1059.2172,
+                "_score": 1059.2173,
                 "_source": {
                     "ciks": [
                         "0000050863"

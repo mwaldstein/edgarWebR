@@ -1,5 +1,5 @@
 {
-    "took": 165,
+    "took": 175,
     "timed_out": false,
     "_shards": {
         "total": 50,
@@ -12,13 +12,13 @@
             "value": 10000,
             "relation": "gte"
         },
-        "max_score": 9.330846,
+        "max_score": 9.330845,
         "hits": [
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950134-07-016808:f32127exv10w3.htm",
-                "_score": 9.330846,
+                "_score": 9.330845,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -150,7 +150,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-21-091374:d153275dex991.htm",
-                "_score": 9.306144,
+                "_score": 9.306119,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -195,7 +195,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950123-01-002657:e45834b2e424b2.txt",
-                "_score": 9.301156,
+                "_score": 9.301152,
                 "_source": {
                     "ciks": [
                         "0000200245"
@@ -372,7 +372,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950103-03-001288:may0603_424b3.txt",
-                "_score": 9.291103,
+                "_score": 9.291102,
                 "_source": {
                     "ciks": [
                         "0000895421"
@@ -416,7 +416,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-04-054199:ddef14a.htm",
-                "_score": 9.289519,
+                "_score": 9.2895155,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -460,7 +460,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000768251-13-000023:altera_2013q1x10qxex102.htm",
-                "_score": 9.289093,
+                "_score": 9.289087,
                 "_source": {
                     "ciks": [
                         "0000768251"
@@ -548,7 +548,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950103-03-001359:may2303_424b3-ps48.txt",
-                "_score": 9.288254,
+                "_score": 9.288263,
                 "_source": {
                     "ciks": [
                         "0000895421"
@@ -592,7 +592,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-19-142117:d741646dex994.htm",
-                "_score": 9.287926,
+                "_score": 9.287944,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -637,7 +637,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950123-16-020279:filename3.htm",
-                "_score": 9.287503,
+                "_score": 9.2874975,
                 "_source": {
                     "ciks": [
                         "0001316016"
@@ -681,7 +681,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000912057-00-036562:ex-10.htm",
-                "_score": 9.282993,
+                "_score": 9.28301,
                 "_source": {
                     "ciks": [
                         "0000932290"
@@ -725,7 +725,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-07-253790:dex1023.htm",
-                "_score": 9.278731,
+                "_score": 9.278747,
                 "_source": {
                     "ciks": [
                         "0001120105"
@@ -813,7 +813,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001157523-05-003483:a4867865ex991.txt",
-                "_score": 9.277599,
+                "_score": 9.27761,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -945,7 +945,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-15-209231:d935756dex991.htm",
-                "_score": 9.277071,
+                "_score": 9.277066,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -991,7 +991,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950123-17-004142:filename2.htm",
-                "_score": 9.276753,
+                "_score": 9.276771,
                 "_source": {
                     "ciks": [
                         "0001316016"
@@ -1123,7 +1123,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001157523-11-005759:a50033968-ex991.htm",
-                "_score": 9.274071,
+                "_score": 9.274067,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -1167,7 +1167,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-07-064810:d424b2.htm",
-                "_score": 9.273499,
+                "_score": 9.273517,
                 "_source": {
                     "ciks": [
                         "0000831001",
@@ -1306,7 +1306,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000351145-04-000009:intel-dell_agreement.pdf",
-                "_score": 9.270468,
+                "_score": 9.270467,
                 "_source": {
                     "ciks": [
                         "0000351145"
@@ -1396,7 +1396,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001157523-11-004100:a6800886ex99_1.htm",
-                "_score": 9.269672,
+                "_score": 9.269669,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -1440,7 +1440,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950103-02-000756:jul2602_424b3.txt",
-                "_score": 9.269151,
+                "_score": 9.269161,
                 "_source": {
                     "ciks": [
                         "0000895421"
@@ -1528,7 +1528,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-11-000020:exh991.htm",
-                "_score": 9.266029,
+                "_score": 9.2660055,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -1574,7 +1574,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-15-382423:d90133dex991.htm",
-                "_score": 9.265438,
+                "_score": 9.265432,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -1619,7 +1619,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000891618-01-500166:f68556a6scto-ta.txt",
-                "_score": 9.265398,
+                "_score": 9.2654085,
                 "_source": {
                     "ciks": [
                         "0000883905",
@@ -1680,7 +1680,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000723125-07-000028:q2-07exhibit10_164.htm",
-                "_score": 9.265354,
+                "_score": 9.265353,
                 "_source": {
                     "ciks": [
                         "0000723125"
@@ -1814,7 +1814,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950123-09-044666:f53534exv99wxayx1yxgy.htm",
-                "_score": 9.263752,
+                "_score": 9.263747,
                 "_source": {
                     "ciks": [
                         "0000050863",
@@ -1863,7 +1863,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-11-000013:exh991.htm",
-                "_score": 9.263719,
+                "_score": 9.263715,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -1907,52 +1907,8 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
-                "_id": "0000950134-07-016808:f32127exv10w4.htm",
-                "_score": 9.261356,
-                "_source": {
-                    "ciks": [
-                        "0000050863"
-                    ],
-                    "period_ending": "2007-06-30",
-                    "root_form": "10-Q",
-                    "file_num": [
-                        "000-06217"
-                    ],
-                    "display_names": [
-                        "INTEL CORP  (INTC)  (CIK 0000050863)"
-                    ],
-                    "xsl": null,
-                    "sequence": "3",
-                    "file_date": "2007-08-06",
-                    "biz_states": [
-                        "CA"
-                    ],
-                    "sics": [
-                        "3674"
-                    ],
-                    "form": "10-Q",
-                    "adsh": "0000950134-07-016808",
-                    "film_num": [
-                        "071025139"
-                    ],
-                    "biz_locations": [
-                        "Santa Clara, CA"
-                    ],
-                    "file_type": "EX-10.4",
-                    "file_description": "EXHIBIT 10.4",
-                    "inc_states": [
-                        "DE"
-                    ],
-                    "items": [
-
-                    ]
-                }
-            },
-            {
-                "_index": "edgar_file",
-                "_type": "_doc",
                 "_id": "0000950103-02-000842:aug1202_424b3ps7.txt",
-                "_score": 9.26121,
+                "_score": 9.261201,
                 "_source": {
                     "ciks": [
                         "0000895421"
@@ -1995,8 +1951,52 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
+                "_id": "0000950134-07-016808:f32127exv10w4.htm",
+                "_score": 9.260505,
+                "_source": {
+                    "ciks": [
+                        "0000050863"
+                    ],
+                    "period_ending": "2007-06-30",
+                    "root_form": "10-Q",
+                    "file_num": [
+                        "000-06217"
+                    ],
+                    "display_names": [
+                        "INTEL CORP  (INTC)  (CIK 0000050863)"
+                    ],
+                    "xsl": null,
+                    "sequence": "3",
+                    "file_date": "2007-08-06",
+                    "biz_states": [
+                        "CA"
+                    ],
+                    "sics": [
+                        "3674"
+                    ],
+                    "form": "10-Q",
+                    "adsh": "0000950134-07-016808",
+                    "film_num": [
+                        "071025139"
+                    ],
+                    "biz_locations": [
+                        "Santa Clara, CA"
+                    ],
+                    "file_type": "EX-10.4",
+                    "file_description": "EXHIBIT 10.4",
+                    "inc_states": [
+                        "DE"
+                    ],
+                    "items": [
+
+                    ]
+                }
+            },
+            {
+                "_index": "edgar_file",
+                "_type": "_doc",
                 "_id": "0000912057-02-009698:a2072777z10-k.htm",
-                "_score": 9.2590885,
+                "_score": 9.259065,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -2040,7 +2040,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950134-08-004919:f38968exv10w38.htm",
-                "_score": 9.258948,
+                "_score": 9.258943,
                 "_source": {
                     "ciks": [
                         "0001001193"
@@ -2084,7 +2084,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-11-065181:dex108.htm",
-                "_score": 9.258486,
+                "_score": 9.25848,
                 "_source": {
                     "ciks": [
                         "0001280363"
@@ -2128,7 +2128,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-19-096036:d642676dex101.htm",
-                "_score": 9.257179,
+                "_score": 9.25719,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -2174,7 +2174,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-08-000089:exh99.htm",
-                "_score": 9.257079,
+                "_score": 9.257073,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -2218,7 +2218,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001012870-01-503032:dex1015.txt",
-                "_score": 9.256479,
+                "_score": 9.256495,
                 "_source": {
                     "ciks": [
                         "0000917273"
@@ -2308,7 +2308,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000351145-02-000021:redactedsettlement.txt",
-                "_score": 9.25618,
+                "_score": 9.256171,
                 "_source": {
                     "ciks": [
                         "0000351145"
@@ -2352,7 +2352,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-04-027430:dex211.htm",
-                "_score": 9.255988,
+                "_score": 9.255963,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -2396,7 +2396,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-19-023301:d702987dex991.htm",
-                "_score": 9.255377,
+                "_score": 9.255353,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -2442,7 +2442,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000950123-17-004138:filename2.htm",
-                "_score": 9.255144,
+                "_score": 9.255138,
                 "_source": {
                     "ciks": [
                         "0001316016"
@@ -2535,7 +2535,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000891020-07-000003:v25599a1exv10w58.txt",
-                "_score": 9.254286,
+                "_score": 9.254305,
                 "_source": {
                     "ciks": [
                         "0001285551"
@@ -2857,8 +2857,52 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
+                "_id": "0001193125-07-262676:dex1023.htm",
+                "_score": 9.250905,
+                "_source": {
+                    "ciks": [
+                        "0001120105"
+                    ],
+                    "period_ending": null,
+                    "root_form": "S-1",
+                    "file_num": [
+                        "333-144520"
+                    ],
+                    "display_names": [
+                        "INTELLON CORP  (CIK 0001120105)"
+                    ],
+                    "xsl": null,
+                    "sequence": "4",
+                    "file_date": "2007-12-11",
+                    "biz_states": [
+                        "FL"
+                    ],
+                    "sics": [
+                        "3674"
+                    ],
+                    "form": "S-1/A",
+                    "adsh": "0001193125-07-262676",
+                    "film_num": [
+                        "071297374"
+                    ],
+                    "biz_locations": [
+                        "Ocala, FL"
+                    ],
+                    "file_type": "EX-10.23",
+                    "file_description": "EXHIBIT 10.23",
+                    "inc_states": [
+                        "DE"
+                    ],
+                    "items": [
+
+                    ]
+                }
+            },
+            {
+                "_index": "edgar_file",
+                "_type": "_doc",
                 "_id": "0000950123-09-017935:b75316a9exv10w16.htm",
-                "_score": 9.250847,
+                "_score": 9.250836,
                 "_source": {
                     "ciks": [
                         "0001420302"
@@ -2949,7 +2993,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-16-000105:ex21112262015q4.htm",
-                "_score": 9.250724,
+                "_score": 9.250723,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -2992,52 +3036,8 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
-                "_id": "0001193125-07-262676:dex1023.htm",
-                "_score": 9.250553,
-                "_source": {
-                    "ciks": [
-                        "0001120105"
-                    ],
-                    "period_ending": null,
-                    "root_form": "S-1",
-                    "file_num": [
-                        "333-144520"
-                    ],
-                    "display_names": [
-                        "INTELLON CORP  (CIK 0001120105)"
-                    ],
-                    "xsl": null,
-                    "sequence": "4",
-                    "file_date": "2007-12-11",
-                    "biz_states": [
-                        "FL"
-                    ],
-                    "sics": [
-                        "3674"
-                    ],
-                    "form": "S-1/A",
-                    "adsh": "0001193125-07-262676",
-                    "film_num": [
-                        "071297374"
-                    ],
-                    "biz_locations": [
-                        "Ocala, FL"
-                    ],
-                    "file_type": "EX-10.23",
-                    "file_description": "EXHIBIT 10.23",
-                    "inc_states": [
-                        "DE"
-                    ],
-                    "items": [
-
-                    ]
-                }
-            },
-            {
-                "_index": "edgar_file",
-                "_type": "_doc",
                 "_id": "undefined:f68556a2scto-ta.txt",
-                "_score": 9.250518,
+                "_score": 9.250536,
                 "_source": {
                     "ciks": [
 
@@ -3167,7 +3167,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-15-000055:intcex10410q6272015.htm",
-                "_score": 9.2495365,
+                "_score": 9.249536,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -3211,7 +3211,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001628280-17-003221:s-1exhibit1012.htm",
-                "_score": 9.248997,
+                "_score": 9.249016,
                 "_source": {
                     "ciks": [
                         "0001535379"
@@ -3255,7 +3255,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000891618-08-000487:f50377exv10w42.htm",
-                "_score": 9.248892,
+                "_score": 9.248421,
                 "_source": {
                     "ciks": [
                         "0001001193"
@@ -3299,7 +3299,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000891020-07-000003:v25599a1exv10w52.txt",
-                "_score": 9.248129,
+                "_score": 9.248124,
                 "_source": {
                     "ciks": [
                         "0001285551"
@@ -3433,7 +3433,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000891618-06-000089:f12963exv21w1.htm",
-                "_score": 9.247929,
+                "_score": 9.247905,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -3477,7 +3477,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001157523-04-009185:a4738419ex991.txt",
-                "_score": 9.247444,
+                "_score": 9.247438,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -3654,7 +3654,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-07-034886:dfwp.htm",
-                "_score": 9.24552,
+                "_score": 9.24551,
                 "_source": {
                     "ciks": [
                         "0001318281",
@@ -3792,7 +3792,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-09-000116:filename1.htm",
-                "_score": 9.245126,
+                "_score": 9.244273,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -3836,7 +3836,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-12-297577:d372356dex991.htm",
-                "_score": 9.243533,
+                "_score": 9.243532,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -4015,7 +4015,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0001193125-21-009142:d82915d8k.htm",
-                "_score": 9.242936,
+                "_score": 9.24293,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -4062,7 +4062,7 @@
                 "_index": "edgar_file",
                 "_type": "_doc",
                 "_id": "0000050863-18-000027:q3-2018_earningsrelease.htm",
-                "_score": 9.242927,
+                "_score": 9.242923,
                 "_source": {
                     "ciks": [
                         "0000050863"
@@ -4150,8 +4150,52 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
+                "_id": "0001193125-07-260104:dex1023.htm",
+                "_score": 9.242707,
+                "_source": {
+                    "ciks": [
+                        "0001120105"
+                    ],
+                    "period_ending": null,
+                    "root_form": "S-1",
+                    "file_num": [
+                        "333-144520"
+                    ],
+                    "display_names": [
+                        "INTELLON CORP  (CIK 0001120105)"
+                    ],
+                    "xsl": null,
+                    "sequence": "4",
+                    "file_date": "2007-12-06",
+                    "biz_states": [
+                        "FL"
+                    ],
+                    "sics": [
+                        "3674"
+                    ],
+                    "form": "S-1/A",
+                    "adsh": "0001193125-07-260104",
+                    "film_num": [
+                        "071288210"
+                    ],
+                    "biz_locations": [
+                        "Ocala, FL"
+                    ],
+                    "file_type": "EX-10.23",
+                    "file_description": "EXHIBIT 10.23",
+                    "inc_states": [
+                        "DE"
+                    ],
+                    "items": [
+
+                    ]
+                }
+            },
+            {
+                "_index": "edgar_file",
+                "_type": "_doc",
                 "_id": "0000050863-03-000053:pccwtest.txt",
-                "_score": 9.242705,
+                "_score": 9.242701,
                 "_source": {
                     "ciks": [
                         "0000842519",
@@ -4199,52 +4243,8 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
-                "_id": "0001193125-07-260104:dex1023.htm",
-                "_score": 9.242669,
-                "_source": {
-                    "ciks": [
-                        "0001120105"
-                    ],
-                    "period_ending": null,
-                    "root_form": "S-1",
-                    "file_num": [
-                        "333-144520"
-                    ],
-                    "display_names": [
-                        "INTELLON CORP  (CIK 0001120105)"
-                    ],
-                    "xsl": null,
-                    "sequence": "4",
-                    "file_date": "2007-12-06",
-                    "biz_states": [
-                        "FL"
-                    ],
-                    "sics": [
-                        "3674"
-                    ],
-                    "form": "S-1/A",
-                    "adsh": "0001193125-07-260104",
-                    "film_num": [
-                        "071288210"
-                    ],
-                    "biz_locations": [
-                        "Ocala, FL"
-                    ],
-                    "file_type": "EX-10.23",
-                    "file_description": "EXHIBIT 10.23",
-                    "inc_states": [
-                        "DE"
-                    ],
-                    "items": [
-
-                    ]
-                }
-            },
-            {
-                "_index": "edgar_file",
-                "_type": "_doc",
                 "_id": "0001193125-07-170681:dex1023.htm",
-                "_score": 9.242601,
+                "_score": 9.242596,
                 "_source": {
                     "ciks": [
                         "0001120105"
@@ -4328,50 +4328,6 @@
                     ],
                     "items": [
 
-                    ]
-                }
-            },
-            {
-                "_index": "edgar_file",
-                "_type": "_doc",
-                "_id": "0000050863-11-000094:exh991.htm",
-                "_score": 9.241656,
-                "_source": {
-                    "ciks": [
-                        "0000050863"
-                    ],
-                    "period_ending": "2011-05-17",
-                    "root_form": "8-K",
-                    "file_num": [
-                        "000-06217"
-                    ],
-                    "display_names": [
-                        "INTEL CORP  (INTC)  (CIK 0000050863)"
-                    ],
-                    "xsl": null,
-                    "sequence": "2",
-                    "file_date": "2011-05-17",
-                    "biz_states": [
-                        "CA"
-                    ],
-                    "sics": [
-                        "3674"
-                    ],
-                    "form": "8-K",
-                    "adsh": "0000050863-11-000094",
-                    "film_num": [
-                        "11850696"
-                    ],
-                    "biz_locations": [
-                        "Santa Clara, CA"
-                    ],
-                    "file_type": "EX-99.1",
-                    "file_description": "EXHIBIT 99.1",
-                    "inc_states": [
-                        "DE"
-                    ],
-                    "items": [
-                        "7.01"
                     ]
                 }
             },
@@ -4472,44 +4428,88 @@
             {
                 "_index": "edgar_file",
                 "_type": "_doc",
-                "_id": "0001193125-11-153530:dex108.htm",
-                "_score": 9.241227,
+                "_id": "0000950123-10-073483:v55909exv10w1.htm",
+                "_score": 9.241074,
                 "_source": {
                     "ciks": [
-                        "0001280363"
+                        "0001442505"
                     ],
-                    "period_ending": null,
-                    "root_form": "S-1",
+                    "period_ending": "2010-06-30",
+                    "root_form": "10-Q",
                     "file_num": [
-                        "333-172804"
+                        "001-34196"
                     ],
                     "display_names": [
-                        "APACHE DESIGN SOLUTIONS INC  (CIK 0001280363)"
+                        "Clearwire Corp /DE  (CIK 0001442505)"
                     ],
                     "xsl": null,
-                    "sequence": "5",
-                    "file_date": "2011-05-27",
+                    "sequence": "2",
+                    "file_date": "2010-08-05",
                     "biz_states": [
-                        "CA"
+                        "WA"
                     ],
                     "sics": [
-                        "7372"
+                        "4899"
                     ],
-                    "form": "S-1/A",
-                    "adsh": "0001193125-11-153530",
+                    "form": "10-Q",
+                    "adsh": "0000950123-10-073483",
                     "film_num": [
-                        "11879157"
+                        "10995450"
                     ],
                     "biz_locations": [
-                        "San Jose, CA"
+                        "Kirkland, WA"
                     ],
-                    "file_type": "EX-10.8",
-                    "file_description": "DEVELOPMENT, MARKETING & LICENSE AGREEMENT",
+                    "file_type": "EX-10.1",
+                    "file_description": "EX-10.1",
                     "inc_states": [
                         "DE"
                     ],
                     "items": [
 
+                    ]
+                }
+            },
+            {
+                "_index": "edgar_file",
+                "_type": "_doc",
+                "_id": "0000050863-11-000094:exh991.htm",
+                "_score": 9.240806,
+                "_source": {
+                    "ciks": [
+                        "0000050863"
+                    ],
+                    "period_ending": "2011-05-17",
+                    "root_form": "8-K",
+                    "file_num": [
+                        "000-06217"
+                    ],
+                    "display_names": [
+                        "INTEL CORP  (INTC)  (CIK 0000050863)"
+                    ],
+                    "xsl": null,
+                    "sequence": "2",
+                    "file_date": "2011-05-17",
+                    "biz_states": [
+                        "CA"
+                    ],
+                    "sics": [
+                        "3674"
+                    ],
+                    "form": "8-K",
+                    "adsh": "0000050863-11-000094",
+                    "film_num": [
+                        "11850696"
+                    ],
+                    "biz_locations": [
+                        "Santa Clara, CA"
+                    ],
+                    "file_type": "EX-99.1",
+                    "file_description": "EXHIBIT 99.1",
+                    "inc_states": [
+                        "DE"
+                    ],
+                    "items": [
+                        "7.01"
                     ]
                 }
             }
