@@ -40,7 +40,7 @@ check_result <- function(res) {
                "EDGAR request failed [%s]\n%s\n<%s>",
                httr::status_code(res),
                httr::content(res, "text"),
-               res.url
+               res$url
                )
        )
 }
