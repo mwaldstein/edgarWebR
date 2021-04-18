@@ -1,6 +1,6 @@
 context("running browse_edgar")
 
-with_mock_API({
+with_mock_api({
   test_that("running ", {
     expect_error(browse_edgar("BAD"),
                  "Could not find company: BAD")

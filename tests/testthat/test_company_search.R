@@ -1,6 +1,6 @@
 context("running company_search")
 
-with_mock_API({
+with_mock_api({
   test_that("Multipe Results", {
     res <- company_search("delhaize")
     expect_length(res, 19)

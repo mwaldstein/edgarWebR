@@ -30,10 +30,10 @@ if (nchar(redactor) && nchar(requester)) {
 if (ewr_mock_bypass == "capture") {
   message("Capturing mocks...")
   options(httptest.verbose = TRUE)
-  with_mock_API <- function(f) {
+  with_mock_api <- function(f) {
     httptest::capture_requests(f)
   }
 } else if (ewr_mock_bypass == "true" | !ewr_has_mocks) {
   message("Bypassing mocks...")
-  with_mock_API <- force
+  with_mock_api <- force
 }

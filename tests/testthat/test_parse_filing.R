@@ -46,7 +46,7 @@ test_filing <- function(file.name, rows, parts, items, is_dev = TRUE) {
   res
 }
 
-with_mock_API({
+with_mock_api({
   test_that("Basics (type 10-Q)", {
     skip_on_cran()
     # "https://www.sec.gov/Archives/edgar/data/712515/000071251517000010/ea12312016-q3fy1710qdoc.htm"

@@ -1,6 +1,6 @@
 context("running variable_insurance_search")
 
-with_mock_API({
+with_mock_api({
   test_that("running", {
     res <- variable_insurance_search("precious metals")
     expect_is(res, "data.frame")
