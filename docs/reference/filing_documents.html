@@ -176,62 +176,11 @@ funds and filers, look at `filing_details`</p>
 <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"https://www.sec.gov/Archives/edgar/data/"</span>,
             <span class='st'>"712515/000071251517000063/0000712515-17-000063-index.htm"</span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>filing_documents</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    seq                                                         description
-#&gt; 1    1                                       QUARTERLY REPORT ON FORM 10-Q
-#&gt; 2    2                                        AWARENESS LETTER OF KPMG LLP
-#&gt; 3    3 CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO RULE 13A-14(A)
-#&gt; 4    4 CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO RULE 13A-14(A)
-#&gt; 5    5    CERTIFICATION OF CHIEF EXECUTIVE OFFICER PURSUANT TO SECTION 906
-#&gt; 6    6    CERTIFICATION OF CHIEF FINANCIAL OFFICER PURSUANT TO SECTION 906
-#&gt; 7   NA                                       Complete submission text file
-#&gt; 8    7                                              XBRL INSTANCE DOCUMENT
-#&gt; 9    8                             XBRL TAXONOMY EXTENSION SCHEMA DOCUMENT
-#&gt; 10   9               XBRL TAXONOMY EXTENSION CALCULATION LINKBASE DOCUMENT
-#&gt; 11  10                XBRL TAXONOMY EXTENSION DEFINITION LINKBASE DOCUMENT
-#&gt; 12  11                     XBRL TAXONOMY EXTENSION LABEL LINKBASE DOCUMENT
-#&gt; 13  12              XBRL TAXONOMY EXTENSION PRESENTATION LINKBASE DOCUMENT
-#&gt;                          document
-#&gt; 1      ea6302017-q1fy1810qdoc.htm
-#&gt; 2  ex-151kpmgawarenessletter6.htm
-#&gt; 3    ex-311sec302ceocert63017.htm
-#&gt; 4    ex-312sec302cfocert63017.htm
-#&gt; 5    ex-321sec906ceocert63017.htm
-#&gt; 6    ex-322sec906cfocert63017.htm
-#&gt; 7        0000712515-17-000063.txt
-#&gt; 8                 ea-20170630.xml
-#&gt; 9                 ea-20170630.xsd
-#&gt; 10            ea-20170630_cal.xml
-#&gt; 11            ea-20170630_def.xml
-#&gt; 12            ea-20170630_lab.xml
-#&gt; 13            ea-20170630_pre.xml
-#&gt;                                                                                                href
-#&gt; 1      https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea6302017-q1fy1810qdoc.htm
-#&gt; 2  https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-151kpmgawarenessletter6.htm
-#&gt; 3    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-311sec302ceocert63017.htm
-#&gt; 4    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-312sec302cfocert63017.htm
-#&gt; 5    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-321sec906ceocert63017.htm
-#&gt; 6    https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ex-322sec906cfocert63017.htm
-#&gt; 7        https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/0000712515-17-000063.txt
-#&gt; 8                 https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630.xml
-#&gt; 9                 https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630.xsd
-#&gt; 10            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_cal.xml
-#&gt; 11            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_def.xml
-#&gt; 12            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_lab.xml
-#&gt; 13            https://www.sec.gov/Archives/edgar/data/712515/000071251517000063/ea-20170630_pre.xml
-#&gt;          type    size
-#&gt; 1        10-Q 1428163
-#&gt; 2     EX-15.1    4013
-#&gt; 3     EX-31.1   14907
-#&gt; 4     EX-31.2   15281
-#&gt; 5     EX-32.1    7059
-#&gt; 6     EX-32.2    7248
-#&gt; 7             8947076
-#&gt; 8  EX-101.INS 2088048
-#&gt; 9  EX-101.SCH   74416
-#&gt; 10 EX-101.CAL   92568
-#&gt; 11 EX-101.DEF  479648
-#&gt; 12 EX-101.LAB  888418
-#&gt; 13 EX-101.PRE  574659</div><div class='input'><span class='co'># }</span>
+</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; Error in check_result(res) : 
+#&gt;   EDGAR request blocked from Undeclared Automated Tool.
+#&gt; Please visit https://www.sec.gov/developer for best practices.
+#&gt; See https://mwaldstein.github.io/edgarWebR/index.html#ethical-use--fair-access for your responsibilities
+#&gt; Consider also setting the environment variable 'EDGARWEBR_USER_AGENT</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

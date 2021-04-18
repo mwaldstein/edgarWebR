@@ -180,11 +180,10 @@ funds and filers, look at `filing_details`</p>
 <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"https://www.sec.gov/Archives/edgar/data/"</span>,
             <span class='st'>"933691/000119312517247698/0001193125-17-247698-index.htm"</span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>filing_information</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; Error in check_result(res) : 
-#&gt;   EDGAR request blocked from Undeclared Automated Tool.
-#&gt; Please visit https://www.sec.gov/developer for best practices.
-#&gt; See https://mwaldstein.github.io/edgarWebR/index.html#ethical-use--fair-access for your responsibilities
-#&gt; Consider also setting the environment variable 'EDGARWEBR_USER_AGENT</div><div class='input'><span class='co'># }</span>
+</div><div class='output co'>#&gt;   type           description     accession_number filing_date
+#&gt; 1  497 Definitive materials: 0001193125-17-247698  2017-08-04
+#&gt;         accepted_date documents period_date changed_date effective_date  bytes
+#&gt; 1 2017-08-03 18:23:11        15        &lt;NA&gt;         &lt;NA&gt;     2017-08-04 628369</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
