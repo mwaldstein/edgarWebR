@@ -4,6 +4,9 @@
  * Support new EDGAR full-text search
  * Add user-agent setting
 
+## Internal
+ * Change to use `with_mock_api` from httptest
+
 # edgarWebR 1.0.3
 
 ## Bugfixes

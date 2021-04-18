@@ -203,7 +203,14 @@ viewed.</em></p>
 <span class='fu'>parse_submission</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>'https://www.sec.gov/Archives/edgar/data/'</span>,
                  <span class='st'>'37996/000003799617000084/0000037996-17-000084.txt'</span><span class='op'>)</span><span class='op'>)</span><span class='op'>[</span> ,
                    <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'SEQUENCE'</span>, <span class='st'>'TYPE'</span>, <span class='st'>'DESCRIPTION'</span>, <span class='st'>'FILENAME'</span><span class='op'>)</span><span class='op'>]</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='error'>Error in paste0("EDGAR request blocked from Undeclared Automated Tool.\n",     "Please visit https://www.sec.gov/developer for best practices.\n",     "See https://mwaldstein.github.io/edgarWebR/index.html#ethical-use--fair-access for your responsibilities\n",     "Consider also setting the environment variable 'EDGARWEBR_USER_AGENT",     ): argument is missing, with no default</span></div><div class='input'><span class='co'># }</span>
+</div><div class='output co'>#&gt;   SEQUENCE    TYPE DESCRIPTION                        FILENAME
+#&gt; 1        1     8-K         8-K       ceostrategicupdate8-k.htm
+#&gt; 2        2   EX-99  EXHIBIT 99    exhibit99ceostrategicupd.htm
+#&gt; 3        3 GRAPHIC             exhibit99ceostrategicupd001.jpg
+#&gt; 4        4 GRAPHIC             exhibit99ceostrategicupd002.jpg
+#&gt; 5        5 GRAPHIC             exhibit99ceostrategicupd003.jpg
+#&gt; 6        6 GRAPHIC             exhibit99ceostrategicupd004.jpg
+#&gt; 7        7 GRAPHIC             exhibit99ceostrategicupd005.jpg</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
