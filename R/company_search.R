@@ -57,7 +57,7 @@
 #'   }
 #' @examples
 #' \donttest{
-#' company_search("Intel")
+#' try(company_search("Intel"))
 #' }
 #' @export
 company_search <- function(x,

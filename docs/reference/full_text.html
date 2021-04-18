@@ -235,8 +235,7 @@ than location of HQ</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='co'>## This can be very slow running</span>
-<span class='fu'>full_text</span><span class='op'>(</span><span class='st'>'intel'</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>full_text</span><span class='op'>(</span><span class='st'>'intel'</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;    filing_date                    name
 #&gt; 1   2007-08-06            10-Q EX-10.3
 #&gt; 2   2008-05-02            10-Q EX-10.1
@@ -301,10 +300,10 @@ than location of HQ</p></td>
 #&gt; 61  2012-11-20          10-Q EX-10.113
 #&gt; 62  2009-11-12             8-K EX-10.1
 #&gt; 63  2017-06-22       SC TO-T SC TO-T/A
-#&gt; 64  2007-12-11            S-1 EX-10.23
-#&gt; 65  2009-06-26            S-1 EX-10.16
-#&gt; 66  2021-01-14             8-K EX-10.1
-#&gt; 67  2016-02-12            10-K EX-21.1
+#&gt; 64  2009-06-26            S-1 EX-10.16
+#&gt; 65  2021-01-14             8-K EX-10.1
+#&gt; 66  2016-02-12            10-K EX-21.1
+#&gt; 67  2007-12-11            S-1 EX-10.23
 #&gt; 68  2004-07-16            SB-2 EX-10.9
 #&gt; 69  2015-02-13            10-K EX-21.1
 #&gt; 70  2015-07-27            10-Q EX-10.4
@@ -322,15 +321,15 @@ than location of HQ</p></td>
 #&gt; 82  2010-05-12             8-K EX-99.1
 #&gt; 83  2020-08-14             8-K EX-10.1
 #&gt; 84  2009-06-04                 CORRESP
-#&gt; 85  2016-02-12           10-K EX-10.14
-#&gt; 86  2012-07-09             8-K EX-99.1
+#&gt; 85  2012-07-09             8-K EX-99.1
+#&gt; 86  2016-02-12           10-K EX-10.14
 #&gt; 87  2005-02-22            10-K EX-21.1
 #&gt; 88  2015-07-02             8-K EX-99.1
 #&gt; 89  2021-01-14                     8-K
 #&gt; 90  2018-10-25             8-K EX-99.1
 #&gt; 91  2015-10-27           10-K EX-10.51
-#&gt; 92  2007-12-06            S-1 EX-10.23
-#&gt; 93  2003-02-13         SC 13G SC 13G/A
+#&gt; 92  2003-02-13         SC 13G SC 13G/A
+#&gt; 93  2007-12-06            S-1 EX-10.23
 #&gt; 94  2007-08-03            S-1 EX-10.23
 #&gt; 95  2007-06-29          SC 13D EX-99.A
 #&gt; 96  2011-05-17             8-K EX-99.1
@@ -401,10 +400,10 @@ than location of HQ</p></td>
 #&gt; 61        https://www.sec.gov/Archives/edgar/data/723125/000072312512000163/a2012q310qaex10-113.htm
 #&gt; 62                      https://www.sec.gov/Archives/edgar/data/50863/000005086309000213/exh101.htm
 #&gt; 63              https://www.sec.gov/Archives/edgar/data/50863/000119312517209888/d413660dsctota.htm
-#&gt; 64                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/dex1023.htm
-#&gt; 65          https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/b75316a9exv10w16.htm
-#&gt; 66                https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/d82915dex101.htm
-#&gt; 67             https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex21112262015q4.htm
+#&gt; 64          https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/b75316a9exv10w16.htm
+#&gt; 65                https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/d82915dex101.htm
+#&gt; 66             https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex21112262015q4.htm
+#&gt; 67                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/dex1023.htm
 #&gt; 68             https://www.sec.gov/Archives/edgar/data/1283073/000093041304003280/c32316_ex10-9.txt
 #&gt; 69           https://www.sec.gov/Archives/edgar/data/50863/000005086315000015/a10kex21112272014.htm
 #&gt; 70         https://www.sec.gov/Archives/edgar/data/50863/000005086315000055/intcex10410q6272015.htm
@@ -422,15 +421,15 @@ than location of HQ</p></td>
 #&gt; 82                      https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/exh991.htm
 #&gt; 83               https://www.sec.gov/Archives/edgar/data/50863/000119312520220333/d229439dex101.htm
 #&gt; 84                   https://www.sec.gov/Archives/edgar/data/50863/000005086309000116/filename1.htm
-#&gt; 85            https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex101412262015q4.htm
-#&gt; 86               https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/d372356dex991.htm
+#&gt; 85               https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/d372356dex991.htm
+#&gt; 86            https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/ex101412262015q4.htm
 #&gt; 87                      https://www.sec.gov/Archives/edgar/data/50863/000119312505033162/dex211.htm
 #&gt; 88                      https://www.sec.gov/Archives/edgar/data/50863/000005086315000044/exh991.htm
 #&gt; 89                   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/d82915d8k.htm
 #&gt; 90     https://www.sec.gov/Archives/edgar/data/50863/000005086318000027/q3-2018_earningsrelease.htm
 #&gt; 91 https://www.sec.gov/Archives/edgar/data/723125/000072312515000112/a2015q4ex10-51supplyagreem.htm
-#&gt; 92                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/dex1023.htm
-#&gt; 93                    https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/pccwtest.txt
+#&gt; 92                    https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/pccwtest.txt
+#&gt; 93                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/dex1023.htm
 #&gt; 94                   https://www.sec.gov/Archives/edgar/data/1120105/000119312507170681/dex1023.htm
 #&gt; 95             https://www.sec.gov/Archives/edgar/data/1388447/000089102007000191/v31483exv99wa.txt
 #&gt; 96                      https://www.sec.gov/Archives/edgar/data/50863/000005086311000094/exh991.htm
@@ -501,10 +500,10 @@ than location of HQ</p></td>
 #&gt; 61                                           MICRON TECHNOLOGY INC  (MU)
 #&gt; 62                                                    INTEL CORP  (INTC)
 #&gt; 63                                                    INTEL CORP  (INTC)
-#&gt; 64                                                         INTELLON CORP
-#&gt; 65                                                 LogMeIn, Inc.  (LOGM)
+#&gt; 64                                                 LogMeIn, Inc.  (LOGM)
+#&gt; 65                                                    INTEL CORP  (INTC)
 #&gt; 66                                                    INTEL CORP  (INTC)
-#&gt; 67                                                    INTEL CORP  (INTC)
+#&gt; 67                                                         INTELLON CORP
 #&gt; 68                                                          GURUNET CORP
 #&gt; 69                                                    INTEL CORP  (INTC)
 #&gt; 70                                                    INTEL CORP  (INTC)
@@ -529,8 +528,8 @@ than location of HQ</p></td>
 #&gt; 89                                                    INTEL CORP  (INTC)
 #&gt; 90                                                    INTEL CORP  (INTC)
 #&gt; 91                                           MICRON TECHNOLOGY INC  (MU)
-#&gt; 92                                                         INTELLON CORP
-#&gt; 93                                                    INTEL CORP  (INTC)
+#&gt; 92                                                    INTEL CORP  (INTC)
+#&gt; 93                                                         INTELLON CORP
 #&gt; 94                                                         INTELLON CORP
 #&gt; 95                                             Eagle River Holdings, LLC
 #&gt; 96                                                    INTEL CORP  (INTC)
@@ -601,10 +600,10 @@ than location of HQ</p></td>
 #&gt; 61 0000723125 3674
 #&gt; 62 0000050863 3674
 #&gt; 63 0000050863 3674
-#&gt; 64 0001120105 3674
-#&gt; 65 0001420302 7372
+#&gt; 64 0001420302 7372
+#&gt; 65 0000050863 3674
 #&gt; 66 0000050863 3674
-#&gt; 67 0000050863 3674
+#&gt; 67 0001120105 3674
 #&gt; 68 0001283073 7389
 #&gt; 69 0000050863 3674
 #&gt; 70 0000050863 3674
@@ -629,8 +628,8 @@ than location of HQ</p></td>
 #&gt; 89 0000050863 3674
 #&gt; 90 0000050863 3674
 #&gt; 91 0000723125 3674
-#&gt; 92 0001120105 3674
-#&gt; 93 0000050863 3674
+#&gt; 92 0000050863 3674
+#&gt; 93 0001120105 3674
 #&gt; 94 0001120105 3674
 #&gt; 95 0001388447 4899
 #&gt; 96 0000050863 3674
@@ -701,10 +700,10 @@ than location of HQ</p></td>
 #&gt; 61                                                                       EXHIBIT 10.113
 #&gt; 62                                                                         EXHIBIT 10.1
 #&gt; 63                                                                            SC TO-T/A
-#&gt; 64                                                                        EXHIBIT 10.23
-#&gt; 65 EX-10.16 CONNECTIVITY SERVICE AND MARKETING AGREEMENT, DATED AS OF DECEMBER 26, 2007
-#&gt; 66                                                                              EX-10.1
-#&gt; 67                                                                         EXHIBIT 21.1
+#&gt; 64 EX-10.16 CONNECTIVITY SERVICE AND MARKETING AGREEMENT, DATED AS OF DECEMBER 26, 2007
+#&gt; 65                                                                              EX-10.1
+#&gt; 66                                                                         EXHIBIT 21.1
+#&gt; 67                                                                        EXHIBIT 10.23
 #&gt; 68                                                                                 &lt;NA&gt;
 #&gt; 69                                                                         EXHIBIT 21.1
 #&gt; 70                                                                         EXHIBIT 10.4
@@ -722,15 +721,15 @@ than location of HQ</p></td>
 #&gt; 82                                                                         EXHIBIT 99.1
 #&gt; 83                                                                              EX-10.1
 #&gt; 84                                                                                 &lt;NA&gt;
-#&gt; 85                                                                        EXHIBIT 10.14
-#&gt; 86                                                                        PRESS RELEASE
+#&gt; 85                                                                        PRESS RELEASE
+#&gt; 86                                                                        EXHIBIT 10.14
 #&gt; 87                                                                   INTEL SUBSIDIARIES
 #&gt; 88                                                                         EXHIBIT 99.1
 #&gt; 89                                                                                  8-K
 #&gt; 90                                                                         EXHIBIT 99.1
 #&gt; 91                                                                        EXHIBIT 10.51
-#&gt; 92                                                                        EXHIBIT 10.23
-#&gt; 93                                                                                 &lt;NA&gt;
+#&gt; 92                                                                                 &lt;NA&gt;
+#&gt; 93                                                                        EXHIBIT 10.23
 #&gt; 94                                                                        EXHIBIT 10.23
 #&gt; 95                                                                         EXHIBIT 99.A
 #&gt; 96                                                                         EXHIBIT 99.1
@@ -801,10 +800,10 @@ than location of HQ</p></td>
 #&gt; 61  https://www.sec.gov/Archives/edgar/data/723125/000072312512000163/0000723125-12-000163-index.htm
 #&gt; 62   https://www.sec.gov/Archives/edgar/data/50863/000005086309000213/0000050863-09-000213-index.htm
 #&gt; 63   https://www.sec.gov/Archives/edgar/data/50863/000119312517209888/0001193125-17-209888-index.htm
-#&gt; 64 https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/0001193125-07-262676-index.htm
-#&gt; 65 https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/0000950123-09-017935-index.htm
-#&gt; 66   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
-#&gt; 67   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 64 https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/0000950123-09-017935-index.htm
+#&gt; 65   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
+#&gt; 66   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 67 https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/0001193125-07-262676-index.htm
 #&gt; 68 https://www.sec.gov/Archives/edgar/data/1283073/000093041304003280/0000930413-04-003280-index.htm
 #&gt; 69   https://www.sec.gov/Archives/edgar/data/50863/000005086315000015/0000050863-15-000015-index.htm
 #&gt; 70   https://www.sec.gov/Archives/edgar/data/50863/000005086315000055/0000050863-15-000055-index.htm
@@ -822,15 +821,15 @@ than location of HQ</p></td>
 #&gt; 82   https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/0000050863-10-000050-index.htm
 #&gt; 83   https://www.sec.gov/Archives/edgar/data/50863/000119312520220333/0001193125-20-220333-index.htm
 #&gt; 84   https://www.sec.gov/Archives/edgar/data/50863/000005086309000116/0000050863-09-000116-index.htm
-#&gt; 85   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
-#&gt; 86   https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/0001193125-12-297577-index.htm
+#&gt; 85   https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/0001193125-12-297577-index.htm
+#&gt; 86   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
 #&gt; 87   https://www.sec.gov/Archives/edgar/data/50863/000119312505033162/0001193125-05-033162-index.htm
 #&gt; 88   https://www.sec.gov/Archives/edgar/data/50863/000005086315000044/0000050863-15-000044-index.htm
 #&gt; 89   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
 #&gt; 90   https://www.sec.gov/Archives/edgar/data/50863/000005086318000027/0000050863-18-000027-index.htm
 #&gt; 91  https://www.sec.gov/Archives/edgar/data/723125/000072312515000112/0000723125-15-000112-index.htm
-#&gt; 92 https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/0001193125-07-260104-index.htm
-#&gt; 93   https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/0000050863-03-000053-index.htm
+#&gt; 92   https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/0000050863-03-000053-index.htm
+#&gt; 93 https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/0001193125-07-260104-index.htm
 #&gt; 94 https://www.sec.gov/Archives/edgar/data/1120105/000119312507170681/0001193125-07-170681-index.htm
 #&gt; 95 https://www.sec.gov/Archives/edgar/data/1388447/000089102007000191/0000891020-07-000191-index.htm
 #&gt; 96   https://www.sec.gov/Archives/edgar/data/50863/000005086311000094/0000050863-11-000094-index.htm
@@ -901,10 +900,10 @@ than location of HQ</p></td>
 #&gt; 61  https://www.sec.gov/Archives/edgar/data/723125/000072312512000163/0000723125-12-000163-index.htm
 #&gt; 62   https://www.sec.gov/Archives/edgar/data/50863/000005086309000213/0000050863-09-000213-index.htm
 #&gt; 63   https://www.sec.gov/Archives/edgar/data/50863/000119312517209888/0001193125-17-209888-index.htm
-#&gt; 64 https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/0001193125-07-262676-index.htm
-#&gt; 65 https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/0000950123-09-017935-index.htm
-#&gt; 66   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
-#&gt; 67   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 64 https://www.sec.gov/Archives/edgar/data/1420302/000095012309017935/0000950123-09-017935-index.htm
+#&gt; 65   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
+#&gt; 66   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
+#&gt; 67 https://www.sec.gov/Archives/edgar/data/1120105/000119312507262676/0001193125-07-262676-index.htm
 #&gt; 68 https://www.sec.gov/Archives/edgar/data/1283073/000093041304003280/0000930413-04-003280-index.htm
 #&gt; 69   https://www.sec.gov/Archives/edgar/data/50863/000005086315000015/0000050863-15-000015-index.htm
 #&gt; 70   https://www.sec.gov/Archives/edgar/data/50863/000005086315000055/0000050863-15-000055-index.htm
@@ -922,15 +921,15 @@ than location of HQ</p></td>
 #&gt; 82   https://www.sec.gov/Archives/edgar/data/50863/000005086310000050/0000050863-10-000050-index.htm
 #&gt; 83   https://www.sec.gov/Archives/edgar/data/50863/000119312520220333/0001193125-20-220333-index.htm
 #&gt; 84   https://www.sec.gov/Archives/edgar/data/50863/000005086309000116/0000050863-09-000116-index.htm
-#&gt; 85   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
-#&gt; 86   https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/0001193125-12-297577-index.htm
+#&gt; 85   https://www.sec.gov/Archives/edgar/data/50863/000119312512297577/0001193125-12-297577-index.htm
+#&gt; 86   https://www.sec.gov/Archives/edgar/data/50863/000005086316000105/0000050863-16-000105-index.htm
 #&gt; 87   https://www.sec.gov/Archives/edgar/data/50863/000119312505033162/0001193125-05-033162-index.htm
 #&gt; 88   https://www.sec.gov/Archives/edgar/data/50863/000005086315000044/0000050863-15-000044-index.htm
 #&gt; 89   https://www.sec.gov/Archives/edgar/data/50863/000119312521009142/0001193125-21-009142-index.htm
 #&gt; 90   https://www.sec.gov/Archives/edgar/data/50863/000005086318000027/0000050863-18-000027-index.htm
 #&gt; 91  https://www.sec.gov/Archives/edgar/data/723125/000072312515000112/0000723125-15-000112-index.htm
-#&gt; 92 https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/0001193125-07-260104-index.htm
-#&gt; 93   https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/0000050863-03-000053-index.htm
+#&gt; 92   https://www.sec.gov/Archives/edgar/data/50863/000005086303000053/0000050863-03-000053-index.htm
+#&gt; 93 https://www.sec.gov/Archives/edgar/data/1120105/000119312507260104/0001193125-07-260104-index.htm
 #&gt; 94 https://www.sec.gov/Archives/edgar/data/1120105/000119312507170681/0001193125-07-170681-index.htm
 #&gt; 95 https://www.sec.gov/Archives/edgar/data/1388447/000089102007000191/0000891020-07-000191-index.htm
 #&gt; 96   https://www.sec.gov/Archives/edgar/data/50863/000005086311000094/0000050863-11-000094-index.htm

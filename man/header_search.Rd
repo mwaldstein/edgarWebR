@@ -32,7 +32,6 @@ using the interface \href{https://www.sec.gov/cgi-bin/srch-edgar}{here}
 }
 \examples{
 \donttest{
-## This can be very slow running
-header_search("company-name = Apple")
+try(header_search("company-name = Apple"))
 }
 }

@@ -23,8 +23,8 @@
 #'   }
 #' @examples
 #' \donttest{
-#' variable_insurance_search("precious metals")
-#' variable_insurance_fast_search("VMFVX")
+#'   try(variable_insurance_search("precious metals"))
+#'   try(variable_insurance_fast_search("VMFVX"))
 #' }
 #' @export
 variable_insurance_search <- function(term) {

@@ -88,6 +88,6 @@ company details page if found. If you have a company's CIK or Ticker, use the
 }
 \examples{
 \donttest{
-company_search("Intel")
+try(company_search("Intel"))
 }
 }

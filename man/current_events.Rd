@@ -30,6 +30,6 @@ Provides access to the SEC Current Events search tool from
 }
 \examples{
 \donttest{
-current_events(0, "10-K")[1:5,]
+try(current_events(0, "10-K")[1:5,])
 }
 }

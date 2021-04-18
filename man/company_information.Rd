@@ -18,6 +18,6 @@ Fetches basic information on a given company from the SEC site
 }
 \examples{
 \donttest{
-company_information("INTC")
+try(company_information("INTC"))
 }
 }

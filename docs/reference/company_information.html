@@ -153,11 +153,12 @@ code</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>company_information</span><span class='op'>(</span><span class='st'>"INTC"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; <span class='error'>Error in check_result(res): EDGAR request blocked from Undeclared Automated Tool.</span>
-#&gt; <span class='error'>Please visit https://www.sec.gov/developer for best practices.</span>
-#&gt; <span class='error'>See https://mwaldstein.github.io/edgarWebR/index.html#ethical-use--fair-access for your responsibilities</span>
-#&gt; <span class='error'>Consider also setting the environment variable 'EDGARWEBR_USER_AGENT</span></div><div class='input'><span class='co'># }</span>
+<span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>company_information</span><span class='op'>(</span><span class='st'>"INTC"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>No encoding supplied: defaulting to UTF-8.</span></div><div class='output co'>#&gt; Error in check_result(res) : 
+#&gt;   EDGAR request blocked from Undeclared Automated Tool.
+#&gt; Please visit https://www.sec.gov/developer for best practices.
+#&gt; See https://mwaldstein.github.io/edgarWebR/index.html#ethical-use--fair-access for your responsibilities
+#&gt; Consider also setting the environment variable 'EDGARWEBR_USER_AGENT</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

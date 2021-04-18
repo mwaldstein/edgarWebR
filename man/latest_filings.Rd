@@ -52,6 +52,6 @@ Provides access to the latest SEC filings from
 }
 \examples{
 \donttest{
-latest_filings()
+try(latest_filings())
 }
 }

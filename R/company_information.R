@@ -9,7 +9,7 @@
 #' @importFrom methods is
 #' @examples
 #' \donttest{
-#' company_information("INTC")
+#' try(company_information("INTC"))
 #' }
 #' @export
 company_information <- function(x) {

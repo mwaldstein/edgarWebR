@@ -15,7 +15,7 @@
 #' @importFrom methods is
 #' @examples
 #' \donttest{
-#' company_filings("AAPL", before = "20170810")
+#' try(company_filings("AAPL", before = "20170810"))
 #' }
 #' @export
 company_filings <- function(x,

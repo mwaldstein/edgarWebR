@@ -24,6 +24,6 @@ Provides access to the SEC CIK search tool from
 }
 \examples{
 \donttest{
-cik_search("cloudera")
+try(cik_search("cloudera"))
 }
 }

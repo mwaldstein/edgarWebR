@@ -38,6 +38,6 @@ SEC Company Filings
 }
 \examples{
 \donttest{
-company_filings("AAPL", before = "20170810")
+try(company_filings("AAPL", before = "20170810"))
 }
 }

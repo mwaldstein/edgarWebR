@@ -28,8 +28,8 @@
 #'
 #' @examples
 #' \donttest{
-#' head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
-#'      '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6)
+#' try(head(parse_filing(paste0('https://www.sec.gov/Archives/edgar/data/',
+#'      '712515/000071251517000010/ea12312016-q3fy1710qdoc.htm')), 6))
 #' }
 #' @export
 parse_filing <- function(x,

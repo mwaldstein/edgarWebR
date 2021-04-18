@@ -39,8 +39,7 @@
 #'  }
 #' @examples
 #'\donttest{
-#'## This can be very slow running
-#' full_text('intel')
+#' try(full_text('intel'))
 #'}
 #'@export
 full_text <- function(

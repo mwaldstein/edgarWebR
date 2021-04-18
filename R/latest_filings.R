@@ -30,7 +30,7 @@
 #'  }
 #' @examples
 #' \donttest{
-#' latest_filings()
+#' try(latest_filings())
 #' }
 #'@export
 latest_filings <- function(name = "",

@@ -21,7 +21,7 @@
 #'  }
 #' @examples
 #' \donttest{
-#' effectiveness()
+#' try(effectiveness())
 #' }
 #' @export
 effectiveness <- function() {

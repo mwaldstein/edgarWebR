@@ -75,7 +75,6 @@ Provides access to the SEC fillings
 }
 \examples{
 \donttest{
-## This can be very slow running
-full_text('intel')
+try(full_text('intel'))
 }
 }

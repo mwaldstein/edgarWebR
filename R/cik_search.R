@@ -13,7 +13,7 @@
 #'  }
 #' @examples
 #' \donttest{
-#' cik_search("cloudera")
+#' try(cik_search("cloudera"))
 #' }
 #' @export
 cik_search <- function(company) {

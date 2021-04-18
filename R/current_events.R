@@ -18,7 +18,7 @@
 #'  }
 #' @examples
 #' \donttest{
-#' current_events(0, "10-K")[1:5,]
+#' try(current_events(0, "10-K")[1:5,])
 #' }
 #' @export
 current_events <- function(day, form) {

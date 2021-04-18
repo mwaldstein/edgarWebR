@@ -31,6 +31,6 @@ You can also see the same filings going further back by using
 }
 \examples{
 \donttest{
-effectiveness()
+try(effectiveness())
 }
 }
