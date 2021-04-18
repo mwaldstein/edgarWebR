@@ -16,7 +16,7 @@ A data frame with 1005 rows and 6 variables:
 }
 }
 \source{
-\url{https://www.osha.gov/pls/imis/sic_manual.html}
+\url{https://www.osha.gov/data/sic-manual}
 
 \url{https://www.sec.gov/info/edgar/siccodes.htm}
 }
