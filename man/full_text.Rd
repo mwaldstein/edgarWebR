@@ -49,6 +49,11 @@ specify `to`}
 
 \item{to}{End date. Must be in the form of `mm/dd/yyyy`. Must also
 specify `from`}
+
+\item{location}{Filter based on company's location}
+
+\item{incorporated_location}{boolean to use location of incorporation rather
+than location of HQ}
 }
 \value{
 A dataframe list of results including the following columns -

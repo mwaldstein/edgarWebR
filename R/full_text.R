@@ -21,6 +21,9 @@
 #'       specify `to`
 #'@param to End date. Must be in the form of `mm/dd/yyyy`. Must also
 #'       specify `from`
+#'@param location Filter based on company's location
+#'@param incorporated_location boolean to use location of incorporation rather
+#'       than location of HQ
 #'
 #'@return A dataframe list of results including the following columns -
 #'  \itemize{
