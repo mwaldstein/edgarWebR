@@ -5,7 +5,8 @@
 
 edgar_agent <- Sys.getenv(
   "EDGARWEBR_USER_AGENT",
-  unset = "edgarWebR (https://github.com/mwaldstein/edgarWebR)"
+  # unset = "edgarWebR (https://github.com/mwaldstein/edgarWebR)"
+  unset = "edgarpackage@examplemail.com"
 )
 ua <- httr::user_agent(edgar_agent)
 
