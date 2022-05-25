@@ -3,11 +3,7 @@
 # We do this to handle edgar-specific error messages and ensure we set the UA
 # and similar configuration properties once
 
-edgar_agent <- Sys.getenv(
-  "EDGARWEBR_USER_AGENT",
-  unset = "edgarpackage@examplemail.com"
-)
-ua <- httr::user_agent(edgar_agent)
+ua <- httr::user_agent("https://github.com/mwaldstein/edgarWebR")
 
 edgar_GET <- function(href) {
   res <- httr::GET(href, ua)
