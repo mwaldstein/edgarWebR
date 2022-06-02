@@ -6,4 +6,9 @@ linters: with_defaults(
     object_usage_linter = NULL,   # 1
     absolute_paths_linter = NULL  # XPath is detected as absolute path
   )
-exclusions: c(list.files(path = "tests/cache", recursive = T, full.names = T), list.files(path = "inst", recursive = T, full.names = T))
+exclusions: c(
+    list.files(path = "tests/cache", pattern = "\\.R$", recursive = TRUE, full.names = TRUE),
+    list.files(path = "inst", pattern = "\\.R$", recursive = TRUE, full.names = TRUE),
+    list.files(path = "vignettes/intro/0", full.names = TRUE),
+    list.files(path = "vignettes/parsing/0", full.names = TRUE),
+  )
